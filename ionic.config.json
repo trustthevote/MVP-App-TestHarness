@@ -1,0 +1,7 @@
+{
+  "name": "mvp-app-ballot",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
