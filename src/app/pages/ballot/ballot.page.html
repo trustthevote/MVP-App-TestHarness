@@ -67,13 +67,14 @@
       </ion-row>
       <ion-row class="mt100 ion-text-center">
         <ion-col size="12">
-          <ion-button (click)="submitForm()" class="main-btn-style" color="primary">Next</ion-button>
+          <ion-button type="submit" class="main-btn-style" color="primary">Next</ion-button>
         </ion-col>
       </ion-row>
     </form>
   </ion-grid>
 
   <div class="mt30 ion-text-center">
-    <ion-button type="submit" color="primary" fill="clear">About This App</ion-button>
+    <!-- <ion-button [routerLink]="['/about']" color="primary" fill="clear">About This App</ion-button> -->
+    <ion-button href="https://trustthevote.org/about_abc/" color="primary" fill="clear">About This App</ion-button>
   </div>
 </ion-content>

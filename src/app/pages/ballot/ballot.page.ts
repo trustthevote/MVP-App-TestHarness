@@ -19,7 +19,7 @@ export class BallotPage {
           Validators.required,
           Validators.minLength(2),
           Validators.maxLength(50),
-          Validators.pattern('^[a-zA-Z-( )]+$')
+          Validators.pattern('^[a-zA-Z-( )][\x20-\x7F]+$') // allow only letters, spaces, hyphens and PrintableASCII chars
         ]
       ],
       lastname: [
@@ -28,7 +28,7 @@ export class BallotPage {
           Validators.required,
           Validators.minLength(2),
           Validators.maxLength(50),
-          Validators.pattern('^[a-zA-Z-( )]+$')
+          Validators.pattern('^[a-zA-Z-( )][\x20-\x7F]+$') // allow only letters, spaces, hyphens and PrintableASCII chars
         ]
       ],
    });
