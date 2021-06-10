@@ -1,6 +1,8 @@
 /* eslint-disable max-len */
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NavigationExtras, Router } from '@angular/router';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-ballot',
@@ -11,7 +13,10 @@ export class BallotPage {
   signupForm: FormGroup;
   isSubmitted = false;
 
-  constructor(public formBuilder: FormBuilder) {
+  constructor(
+    public formBuilder: FormBuilder,
+    public toastController: ToastController,
+    private router: Router) {
     this.signupForm = this.formBuilder.group({
       firstname: [
         '',
@@ -38,14 +43,28 @@ export class BallotPage {
     return this.signupForm.controls;
   }
 
+  async presentToast(mess) {
+    const toast = await this.toastController.create({
+      cssClass: 'toast',
+      message: mess,
+      position: 'top',
+      duration: 2000
+    });
+    toast.present();
+  }
+
   submitForm() {
-    console.log(this.signupForm.value);
     this.isSubmitted = true;
+
     if (!this.signupForm.valid) {
-      console.log('Please provide all the required values!');
+      this.presentToast('Please provide all the required values!');
       return false;
     } else {
-      console.log(this.signupForm.value);
+      const naviExtras: NavigationExtras = {
+        state: { user: this.signupForm.value }
+      };
+      this.router.navigate(['ballot-form'], naviExtras);
+      this.signupForm.reset();
     }
   }
 }

@@ -1,0 +1,26 @@
+<ion-content class="ion-padding">
+  <div class="ion-text-center mt60">
+    <ion-card-title>Thank you {{ paramData?.firstname }}</ion-card-title>
+  </div>
+
+  <div class="ion-text-center sub-title">
+    <p>Your Ballot is Complete</p>
+  </div>
+
+  <div class="mt60">
+    <p>Your absentee ballot and voter statement documents are ready
+      for printing.</p>
+  </div>
+
+  <ion-grid class="ion-no-padding mt60">
+    <ion-row class="mt100 ion-text-center">
+      <ion-col size="12">
+        <ion-button (click)="goToPrint()" class="main-btn-style" color="primary">Print</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="mt30 ion-text-center">
+    <ion-button (click)="goToBallot()" class="main-btn-style" color="primary" fill="clear">Cancel</ion-button>
+  </div>
+</ion-content>

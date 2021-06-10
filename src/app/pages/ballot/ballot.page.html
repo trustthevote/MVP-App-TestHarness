@@ -1,23 +1,10 @@
 <ion-content class="ion-padding">
-  <!-- <ion-title>Welcome to the Jetsons Ballot</ion-title> -->
   <div class="ion-text-center mt60">
     <ion-card-title>Welcome to the Jetsons Ballot</ion-card-title>
   </div>
   <div class="ion-text-center">
     <p>To get started, Please provide your name.</p>
   </div>
-
-  <!-- <div>
-    <ion-item lines="none">
-      <ion-label position="stacked" clearInput>First Name</ion-label>
-      <ion-input placeholder="First Name"></ion-input>
-    </ion-item>
-    <br />
-    <ion-item lines="none">
-      <ion-label position="stacked" clearInput>Last Name</ion-label>
-      <ion-input placeholder="Last Name"></ion-input>
-    </ion-item>
-  </div> -->
 
   <ion-grid class="ion-no-padding mt60">
     <form [formGroup]="signupForm" (ngSubmit)="submitForm()" novalidate>
@@ -74,7 +61,6 @@
   </ion-grid>
 
   <div class="mt30 ion-text-center">
-    <!-- <ion-button [routerLink]="['/about']" color="primary" fill="clear">About This App</ion-button> -->
     <ion-button href="https://trustthevote.org/about_abc/" color="primary" fill="clear">About This App</ion-button>
   </div>
 </ion-content>

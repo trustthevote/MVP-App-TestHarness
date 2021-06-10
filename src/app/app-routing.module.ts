@@ -14,6 +14,18 @@ const routes: Routes = [
   {
     path: 'ballot',
     loadChildren: () => import('./pages/ballot/ballot.module').then( m => m.BallotPageModule)
+  },
+  {
+    path: 'ballot-form',
+    loadChildren: () => import('./pages/ballot-form/ballot-form.module').then( m => m.BallotFormPageModule)
+  },
+  {
+    path: 'ballot-complete',
+    loadChildren: () => import('./pages/ballot-complete/ballot-complete.module').then( m => m.BallotCompletePageModule)
+  },
+  {
+    path: 'print',
+    loadChildren: () => import('./pages/print/print.module').then( m => m.PrintPageModule)
   }
 ];
 
