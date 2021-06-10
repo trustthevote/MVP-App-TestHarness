@@ -1,3 +1,79 @@
-<ion-content>
-  <ion-title>Ballot Page</ion-title>
+<ion-content class="ion-padding">
+  <!-- <ion-title>Welcome to the Jetsons Ballot</ion-title> -->
+  <div class="ion-text-center mt60">
+    <ion-card-title>Welcome to the Jetsons Ballot</ion-card-title>
+  </div>
+  <div class="ion-text-center">
+    <p>To get started, Please provide your name.</p>
+  </div>
+
+  <!-- <div>
+    <ion-item lines="none">
+      <ion-label position="stacked" clearInput>First Name</ion-label>
+      <ion-input placeholder="First Name"></ion-input>
+    </ion-item>
+    <br />
+    <ion-item lines="none">
+      <ion-label position="stacked" clearInput>Last Name</ion-label>
+      <ion-input placeholder="Last Name"></ion-input>
+    </ion-item>
+  </div> -->
+
+  <ion-grid class="ion-no-padding mt60">
+    <form [formGroup]="signupForm" (ngSubmit)="submitForm()" novalidate>
+      <ion-row>
+        <ion-col size="6">
+          <ion-item lines="none">
+            <ion-label position="stacked">First Name</ion-label>
+            <ion-input formControlName="firstname" type="text" placeholder="First Name" required clearInput></ion-input>
+          </ion-item>
+          <!-- Error messages -->
+          <div class="err-messages">
+            <small class="error ion-padding" *ngIf="isSubmitted && errorControl.firstname.errors?.required">
+              First Name is required.
+            </small>
+            <small class="error ion-padding" *ngIf="isSubmitted && errorControl.firstname.errors?.minlength">
+              First Name should be min 2 chars long.
+            </small>
+            <small class="error ion-padding" *ngIf="isSubmitted && errorControl.firstname.errors?.maxlength">
+              First Name should not be more than 50 chars long.
+            </small>
+            <small class="error ion-padding" *ngIf="isSubmitted && errorControl.firstname.errors?.pattern">
+              Please provide: a First Name that consists of letters, space, and hyphen
+            </small>
+          </div>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item lines="none">
+            <ion-label position="stacked">Last Name</ion-label>
+            <ion-input formControlName="lastname" type="text" placeholder="Last Name" required clearInput></ion-input>
+          </ion-item>
+          <!-- Error messages -->
+          <div class="err-messages">
+            <small class="error ion-padding" *ngIf="isSubmitted && errorControl.lastname.errors?.required">
+              First Name is required.
+            </small>
+            <small class="error ion-padding" *ngIf="isSubmitted && errorControl.lastname.errors?.minlength">
+              First Name must be min 2 chars long.
+            </small>
+            <small class="error ion-padding" *ngIf="isSubmitted && errorControl.lastname.errors?.maxlength">
+              First Name should not be more than 50 chars long.
+            </small>
+            <small class="error ion-padding" *ngIf="isSubmitted && errorControl.lastname.errors?.pattern">
+              Please provide: a Last Name that consists of letters, space, and hyphen
+            </small>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row class="mt100 ion-text-center">
+        <ion-col size="12">
+          <ion-button (click)="submitForm()" class="main-btn-style" color="primary">Next</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+
+  <div class="mt30 ion-text-center">
+    <ion-button type="submit" color="primary" fill="clear">About This App</ion-button>
+  </div>
 </ion-content>

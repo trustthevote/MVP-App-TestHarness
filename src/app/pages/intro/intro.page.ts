@@ -5,11 +5,11 @@ import { Router } from '@angular/router';
   selector: 'app-intro',
   styleUrls: ['./intro.page.scss'],
   template: `<ion-content scroll-y="false">
-                <ion-slides pager="true" [options]="slideOpts">
+                <ion-slides (ionSlideReachEnd)="onSlideEnd()" [options]="slideOpts">
                   <ion-slide>
                     <img src="../../../assets/images/slides/slide-1.jpg">
                   </ion-slide>
-                  <ion-slide (click)="next(1)">
+                  <ion-slide (click)="next()">
                     <img src="../../../assets/images/slides/slide-2.jpg">
                   </ion-slide>
                 </ion-slides>
@@ -31,10 +31,13 @@ export class IntroPage implements OnInit {
 
   ngOnInit() { }
 
-  next(slideIndex: number) {
-    console.log('slideIndex', slideIndex);
-    if (slideIndex === 1) {
+  next() {
+    this.router.navigate(['/ballot']);
+  }
+
+  onSlideEnd() {
+    setTimeout(() => {
       this.router.navigate(['/ballot']);
-    }
+    }, 2000);
   }
 }
