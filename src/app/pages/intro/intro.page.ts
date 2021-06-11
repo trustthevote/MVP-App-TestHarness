@@ -7,10 +7,10 @@ import { Router } from '@angular/router';
   template: `<ion-content scroll-y="false">
                 <ion-slides (ionSlideReachEnd)="onSlideEnd()" [options]="slideOpts">
                   <ion-slide>
-                    <img src="../../../assets/images/slides/slide-1.jpg">
+                    <img src="../../../assets/images/slides/slide-1.png">
                   </ion-slide>
                   <ion-slide (click)="next()">
-                    <img src="../../../assets/images/slides/slide-2.jpg">
+                    <img src="../../../assets/images/slides/slide-2.png">
                   </ion-slide>
                 </ion-slides>
               </ion-content>`
