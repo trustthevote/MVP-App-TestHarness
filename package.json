@@ -1,5 +1,5 @@
 {
-  "name": "mvp-app-ballot",
+  "name": "abc-prototype",
   "version": "0.0.1",
   "author": "OSET Foundation",
   "homepage": "https://www.osetfoundation.org/",
@@ -9,7 +9,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "resources": "capacitor-resources -p android,ios"
   },
   "private": true,
   "dependencies": {

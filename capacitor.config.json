@@ -1,6 +1,6 @@
 {
-	"appId": "org.osetfoundation.mvpballotapp",
-	"appName": "mvp-app-ballot",
+	"appId": "org.osetfoundation.abcprototype",
+	"appName": "abc-prototype",
 	"webDir": "www",
 	"bundledWebRuntime": false
 }
