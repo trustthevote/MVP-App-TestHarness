@@ -1,0 +1,31 @@
+<ion-content>
+  <div class="list-question">
+    <p>Copy-Confirmed</p>
+  </div>
+  <div class="Required-div">
+    <p>Your code has been copied to memory. </p><p>Leave the ABC App open.</p> Go to your test
+    site, paste your code, get your result and return.
+  </div>
+</ion-content>
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <ion-row>
+      <ion-col size="6" class="back-btn">
+        <ion-button color="dark" (click)="backbtn()" >
+          Back
+          <ion-icon
+            slot="start"
+            name="chevron-back-outline"
+          ></ion-icon> </ion-button
+      ></ion-col>
+      <ion-col size="6" class="next-btn">
+        <ion-button color="dark" (click)="nextbtn()">
+          Next
+          <ion-icon
+            slot="end"
+            name="chevron-forward-outline"
+          ></ion-icon> </ion-button
+      ></ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,130 @@
+ion-content {
+    --padding-bottom: 10px;
+    --padding-end: 20px;
+    --padding-start: 20px;
+    --padding-top: 20px;
+  }
+  .list-question{
+      p{
+        font-size: 30px;
+    font-weight: 700;
+    border-bottom: 1px solid;
+    padding-bottom: 12px;
+      }
+  }
+  ion-label{
+    
+    font-weight: 500;
+  }
+  ion-item{
+    margin-top: 15px;
+  }
+//   .back-btn{
+//     padding-left: 24px;
+// }
+.next-btn{
+    text-align: end;
+    // padding-right: 10px;
+}
+.x{
+  display: inline-block;
+    width: 47px;
+    border-bottom: 1.5px solid #000;
+    height: 43px;
+    margin: 6px;
+    --padding-start: 14px;
+  }
+  ion-row {
+    padding-top: 10px;
+    padding-bottom: 20px;
+   padding-right: 0;
+}
+  input 
+{ 
+ background:none; 
+ outline: none; 
+ -webkit-appearance: none; 
+ box-shadow: none !important; 
+ border: none; 
+}
+  .opt-box-area {
+    // display: flex;
+    justify-content: left;
+    align-items: center;
+    // margin-top: 24vw;
+    margin-left: 0%;
+    // margin-top: 25%;
+
+    .nk-otp-box {
+      height: 50px;
+      width: 11vw;
+      margin: 9px;
+      font-size: 18px;
+      color: #000000;
+      font-family: "Roboto Regular";
+      text-align: center;
+      background: #FFFFFF 0% 0% no-repeat padding-box;
+      border-bottom: 1px solid #040404;
+      border-radius: 0px;
+      opacity: 1;
+    }
+
+    .nk-otp-box-first {
+      height: 50px;
+      width: 11vw;
+      margin: 9px 9px 9px 0px;
+      font-size: 18px;
+      color: #000000;
+      font-family: "Roboto Regular";
+      text-align: center;
+      background: #FFFFFF 0% 0% no-repeat padding-box;
+      border-bottom: 1px solid #111213d1;
+      border-radius: 0px;
+      opacity: 1;
+    }
+
+    .nk-otp-box:focus {
+        border: 1px solid #8a6ddc;
+        outline: none;
+        box-shadow: 0px 1px 2px;
+    }
+}
+
+.incorrect-otp{
+    text-align: left;
+    font-family: 'Roboto';
+    font-size: 14px;
+    letter-spacing: 0px;
+    color: #D92212;
+    opacity: 1;
+}
+
+.time{
+    margin-top: 5vh;
+    text-align: left;
+    font-family: 'Roboto';
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    font-size: 16px;
+    height: 20px;
+}
+
+.receive-otp{
+    text-align: left;
+    font-family: 'Roboto';
+    letter-spacing: 0px;
+    color: #8B94B4;
+    opacity: 1;
+    font-size: 16px;
+}
+
+.resend{
+    text-align: left;
+    text-decoration: underline;
+    font-family: 'Roboto';
+    letter-spacing: 0px;
+    color: #C4C4C4;
+    opacity: 1;
+    font-size: 16px;
+}

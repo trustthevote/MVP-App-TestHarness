@@ -1,0 +1,45 @@
+<ion-content>
+  
+  <!-- <ion-grid class="ion-no-padding mt60">
+    <ion-row class="mt100 ion-text-center">
+      <ion-col size="12">
+        <ion-button (click)="openPDF(precinctNum)" class="main-btn-style" color="primary">Print Ballot</ion-button>
+        <ion-button (click)="openPDF2(precinctNum)" class="main-btn-style" color="primary">Print Affidavit</ion-button>
+        <ion-button (click)="openXML(precinctNum)" class="main-btn-style" color="secondary">Print Xml</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
+  <div class="list-question">
+    <p>Print Return</p>
+  </div>
+  <div class="cen-div-text" (click)="openPDF(precinctNum)">
+    <p>Ballot Print Preview</p>
+
+    <ion-icon name="documents-outline"></ion-icon>
+  </div>
+  <div class="bottom-div-text" (click)="openPDF2(precinctNum)">
+    <p>Affidavit Print Preview</p>
+    <ion-icon name="document-outline"></ion-icon>
+  </div>
+</ion-content>
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <ion-row>
+      <ion-col size="6" class="back-btn">
+        <ion-button color="dark" (click)=" backbtn()">
+          Back
+          <ion-icon
+            slot="start"
+            name="chevron-back-outline"
+          ></ion-icon> </ion-button
+      ></ion-col>
+      <ion-col size="6" class="next-btn">
+        <ion-button color="dark" (click)="goToFinish()">
+          Finish
+        
+          <!-- <ion-icon slot="end" name="print-outline"></ion-icon> -->
+          </ion-button 
+      ></ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

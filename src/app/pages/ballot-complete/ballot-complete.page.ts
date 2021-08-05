@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Browser } from '@capacitor/browser';
 
+
 @Component({
   selector: 'app-ballot-complete',
   templateUrl: './ballot-complete.page.html',
@@ -30,16 +31,16 @@ export class BallotCompletePage implements OnInit {
   }
 
   ngOnInit() {
-    const lastName = this.paramData.lastname.charAt(0).toUpperCase() + this.paramData.lastname.slice(1);
-    if (lastName.includes('A', 0)) {
-      this.precinctNum = 1;
-    } else if(lastName.includes('B', 0)) {
-      this.precinctNum = 2;
-    } else if (lastName.includes('C', 0)) {
-      this.precinctNum = 3;
-    } else {
-      this.precinctNum = 4;
-    }
+    // const lastName = this.paramData.lastname.charAt(0).toUpperCase() + this.paramData.lastname.slice(1);
+    // if (lastName.includes('A', 0)) {
+    //   this.precinctNum = 1;
+    // } else if(lastName.includes('B', 0)) {
+    //   this.precinctNum = 2;
+    // } else if (lastName.includes('C', 0)) {
+    //   this.precinctNum = 3;
+    // } else {
+    //   this.precinctNum = 4;
+    // }
   }
 
 
@@ -83,4 +84,12 @@ export class BallotCompletePage implements OnInit {
       await Browser.open({ url: 'https://drive.google.com/file/d/1FBLU2ZGeVOO71zwqnPiWtOH_ibgCosId/view?usp=sharing' });
     }
   }
+
+  Physicalret(){
+   this.router.navigate(['/print-return']);
+  }
+  Digitalret(){
+    this.router.navigate(['/access-code']);
+  }
+
 }

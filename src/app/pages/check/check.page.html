@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Check</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-row>
+    <ion-col size="6" class="back-btn">
+      <ion-button color="dark" (click)=" failsbtn()">
+        fail-check-network
+        <ion-icon
+          slot="start"
+          name="chevron-back-outline"
+        ></ion-icon> </ion-button
+    ></ion-col>
+    <ion-col size="6" class="back-btn">
+      <ion-button color="dark" (click)=" fail2btn()">
+        fail-ckeck-server
+        <ion-icon
+          slot="start"
+          name="chevron-back-outline"
+        ></ion-icon> </ion-button
+    ></ion-col>
+    <ion-col size="6" class="next-btn">
+      <ion-button color="dark" (click)="confirm()">
+        pass
+       
+        <ion-icon slot="end" name="chevron-forward-outline"></ion-icon> </ion-button
+    ></ion-col>
+  </ion-row>
+
+</ion-content>
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    
+  </ion-toolbar>
+</ion-footer>

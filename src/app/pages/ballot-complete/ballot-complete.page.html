@@ -1,4 +1,4 @@
-<ion-content class="ion-padding">
+<!-- <ion-content class="ion-padding">
   <div class="ion-text-center mt60">
     <ion-card-title>Thank you {{ paramData?.firstname }}</ion-card-title>
   </div>
@@ -25,4 +25,40 @@
   <div class="mt30 ion-text-center">
     <ion-button (click)="goToFinish()" class="main-btn-style" color="primary" fill="clear">Next</ion-button>
   </div>
+</ion-content> -->
+<ion-content>
+  <div class="list-question">
+    <div class="upr-text">Thank you {{ paramData?.firstname }}</div>
+    <div class="cen-div">Your ballot is Complete</div>
+    <p>Choose A Return</p>
+  </div>
+  <div class="cen-div-text" (click)="Physicalret()">
+    <p>Physical Return  <br> <i>Requires a Printer</i></p>
+  
+    <ion-icon name="archive-outline" ></ion-icon>
+  </div>
+  <div class="bottom-div-text" (click)="Digitalret()">
+    <p>Online Ballot Return</p>
+    <ion-icon name="tv-outline" ></ion-icon>
+  </div>
 </ion-content>
+<!-- <ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <ion-row>
+      <ion-col size="6" class="back-btn">
+        <ion-button color="dark">
+          Back
+          <ion-icon
+            slot="start"
+            name="chevron-back-outline"
+          ></ion-icon> </ion-button
+      ></ion-col>
+      <ion-col size="6" class="next-btn">
+        <ion-button color="dark" >
+          Next
+ 
+          <ion-icon slot="end" name="chevron-forward-outline"></ion-icon> </ion-button
+      ></ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer> -->

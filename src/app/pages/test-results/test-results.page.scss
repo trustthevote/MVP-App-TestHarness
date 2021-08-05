@@ -1,0 +1,61 @@
+ion-content {
+    --padding-bottom: 10px;
+    --padding-end: 0px;
+    --padding-start: 20px;
+    --padding-top: 20px;
+  }
+  .list-question {
+    p {
+      font-size: 30px;
+      font-weight: 700;
+      border-bottom: 1px solid;
+      padding-bottom: 12px;
+      margin-bottom: 0px;
+      margin-top: 10px;
+      color: black;
+    }
+  }
+  .back-btn{
+    padding-left: 24px;
+}
+.next-btn{
+    text-align: end;
+    padding-right: 10px;
+}
+
+
+p{
+    padding-bottom: 0px;
+}
+.Required-div{
+    font-size: 24px;
+    font-weight: 600; 
+    padding-right: 20px;
+    padding-left: 0px;
+}
+.div-two{
+    padding-top: 25px;
+    text-align: center;
+    // padding-left: 30%;
+    .div-upr-text{
+        border: 2px solid #000;
+        margin: 0 35% 0 35%;
+        // width: 125px;
+        // height: 100px;
+        border-radius: 5px;
+        p{
+            font-size: 14px;
+            font-weight: 600;
+        }
+        ion-icon{
+            font-size: 57px;
+        }
+    }
+}
+.div-text-mid{
+    text-align: center;
+    padding-top: 20%;
+    font-size: 20px;
+    // padding-right: 20px;
+
+}
