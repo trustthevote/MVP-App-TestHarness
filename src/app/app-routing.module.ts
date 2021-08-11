@@ -78,7 +78,15 @@ const routes: Routes = [
   {
     path: 'print-return',
     loadChildren: () => import('./pages/print-return/print-return.module').then( m => m.PrintReturnPageModule)
+  },
+  {
+    path: 'user-time-out',
+    loadChildren: () => import('./pages/user-time-out/user-time-out.module').then( m => m.UserTimeOutPageModule)
+  },  {
+    path: 'tobecontinue',
+    loadChildren: () => import('./pages/tobecontinue/tobecontinue.module').then( m => m.TobecontinuePageModule)
   }
+
 ];
 
 @NgModule({

@@ -9,6 +9,8 @@ import { Browser } from '@capacitor/browser';
 })
 export class PrintReturnPage implements OnInit {
   paramData: any;
+  precinct: any;
+
   precinctNum: number;
 
   // P1 ballot - https://drive.google.com/file/d/1NjMf2sUwjTPH20jN4ajnWRZDvkobq9hR/view?usp=sharing
@@ -26,6 +28,7 @@ export class PrintReturnPage implements OnInit {
   constructor(private router: Router) {
     if (this.router.getCurrentNavigation().extras.state) {
       this.paramData = this.router.getCurrentNavigation().extras.state.user;
+      console.log(this.paramData);
     }
   }
 
@@ -44,7 +47,7 @@ export class PrintReturnPage implements OnInit {
 
 
   goToFinish() {
-    this.router.navigate(['print']);
+    this.router.navigate(['tobecontinue']);
   }
 
   async openPDF(precinctNum) {
