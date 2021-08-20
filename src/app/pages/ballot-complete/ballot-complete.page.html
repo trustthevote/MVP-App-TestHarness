@@ -28,18 +28,18 @@
 </ion-content> -->
 <ion-content>
   <div class="list-question">
-    <div class="upr-text">Thank you {{ paramData?.firstname }}</div>
-    <div class="cen-div">Your ballot is Complete</div>
-    <p>Choose A Return</p>
+    <div class="upr-text">{{results.thank_you}} {{ paramData?.firstname }}</div>
+    <div class="cen-div">{{results.your_ballot_is_complete}}</div>
+    <p>{{results.choose_a_return}}</p>
   </div>
   <div class="cen-div-text" (click)="Physicalret()">
-    <p>Physical Return  <br> <i>Requires a Printer</i></p>
-  
-    <ion-icon name="archive-outline" ></ion-icon>
+    <p>{{results.physical_return}} <br> <i>{{results.requires_printer}}</i></p>
+
+    <ion-icon name="archive-outline"></ion-icon>
   </div>
   <div class="bottom-div-text" (click)="Digitalret()">
-    <p>Online Ballot Return</p>
-    <ion-icon name="tv-outline" ></ion-icon>
+    <p>{{results.online_ballot_return}}</p>
+    <ion-icon name="tv-outline"></ion-icon>
   </div>
 </ion-content>
 <!-- <ion-footer class="ion-no-border">

@@ -1,0 +1,164 @@
+[{
+  "ballot": {
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "welcome_to_jetsons_ballot": "Welcome to Jetsons Ballot",
+    "to_get_started": "To get started, please provide your name.",
+    "firstname_errors": "First Name is required.",
+    "firstname_errors1": "Name should be a minimum of 2 characters long.",
+    "firstname_errors2": "Name should be a minimum of 50 characters long.",
+    "firstname_errors3": "Please provide: Name that consists of letters, space and hyphen.",
+    "last_name_errors": "Last Name is required.",
+    "last_name_errors1": "Name should be a minimum of 2 characters long.",
+    "last_name_errors2": "Name should be a minimum of 50 characters long.",
+    "please_provide": "Please provide: Name that consists of letters, space and hyphen.",
+    "about_this_app": "About This App",
+    "next": "Next",
+    "tm": "Please provide all the required values!"
+  },
+  "ballot_form": {
+    "welcome": "Welcome",
+    "start": "Start",
+    "cancel": "Cancel",
+    "please": "Please",
+    "your_ballot_marking": "to being your ballot marking process with a screen that shows your first ballot item."
+  },
+  "ballot_comp": {
+    "thank_you": "Thank you",
+    "your_ballot_is_complete": "Your ballot is Complete",
+    "choose_a_return": "Choose A Return",
+    "physical_return": "Physical Return",
+    "requires_printer": "Requires a Printer",
+    "online_ballot_return": "Online Ballot Return"
+  },
+  "access_code": {
+    "enter_access_code": "Enter Access Code",
+    "next": "Next",
+    "back": "Back",
+    "tm_ee": "Enter your Election code",
+    "tm_ev": "your Access code valid but expired",
+    "alert_msg": "Enter a 5 digit Election Access code"
+  },
+  "ballot_fingerp": {
+    "ybr": "Your Ballot Is Ready",
+    "ydn": "You can send it digitally now.",
+    "bfp": "Ballot Fingerprint:",
+    "zyx098": "zyx098-wvu765-tsr432-1234",
+    "tv_fp": " Or if you like, you may perform a technical test to verify your ballot fingerprint. To do so, copy the ballot fingerprint below, and paste into your external validator of choice.",
+    "send": "send",
+    "copy": "Copy"
+  },
+  "copy_confirm": {
+    "copy_confirmed": "Copy-Confirmed",
+    "yccm": "Your code has been copied to memory.",
+    "yccm1": "Leave the ABC App open",
+    "yccm2": " Go to your test site, paste your code, get your result and return.",
+    "next": "Next",
+    "back": "Back"
+  },
+  "test_result_page": {
+    "test_results": "Test-Results",
+    "dbf": "Did your ballot pass or fail?",
+    "passed": "Passed",
+    "failed": "Failed",
+    "next": "Next",
+    "back": "Back"
+  },
+  "failed_auth": {
+    "try_again": "Try again",
+    "www_link": "www.linktosite.go!",
+    "auth_p_1": " Sorry, your authorization code did not work. Please try again, or click the link below for help.",
+    "auth_p_2": "You can also click the print button below to proceed with a physical return instead."
+  },
+  "sending_page": {
+    "sending": "Sending....",
+    "next": "Next",
+    "back": "Back"
+  },
+  "new_ballot_finger_print": {
+    "heading": "Your Ballot Is Ready",
+    "text": "You can send it digitally now.",
+    "send": "send",
+    "text_detail": "  Or if you like, you may perform a technical test to verify your ballot fingerprint. To do so, copy the ballot fingerprint below, and paste into your external validator of choice.",
+    "copy": "Copy",
+    "nbf": "New Ballot Fingerprint:",
+    "tsr432": "tsr432-wvu765-zyx098-4321"
+  },
+  "check_page": {
+    "header": "Check",
+    "fail_check_network": "fail-check-network",
+    "fail_check_server": "fail-check-server",
+    "pass": "pass"
+  },
+  "check_network_page": {
+    "text": " Sorry, it seems there was a network error. Please check your connection and try again.",
+    "try_again": "Try again"
+  },
+  "check_server_page": {
+    "text": " Sorry, it seems we are have some network connection issues on our end. Please try again. ",
+    "text1": "If the issue persists, please click the link below to check the status of our servers.",
+    "text2": " We are Sorry for the inconvenience!",
+    "link": "www.linktosite.gov ",
+    "try_again": "Try again"
+  },
+  "sending_confirmation_page": {
+    "heading": "Congrats, your ballot has been sent! Please proceed for your next steps!",
+    "next": "Next"
+  },
+  "digital_return_next_step_page": {
+    "header": "Urgent Next Steps!",
+    "textD": "Congrats on finishing your ballot! There are still a few more important steps that you need to complete. Please click the link below to begin.",
+    "link_www": "www.linktosite.gov",
+    "tyABC": "Thank you for using ABC!",
+    "finish": "Finish"
+  },
+  "tobe_continue_page": {
+    "tbc": "To Be Continued...",
+    "ty_ta": "Thank you for testing the app!",
+    "detail": "You have reached the end of the app's current development. Reset to begin a new test.",
+    "back": "Back",
+    "reset": "Reset"
+  },
+  "print_return_page": {
+    "print_return": "Print Return",
+    "bpp": "Ballot Print Preview",
+    "app": "Affidavit Print Preview",
+    "back": "Back",
+    "print": "print"
+  },
+  "printing_page": {
+    "printing": "Printing",
+    "ydp": "Your Documents have been sent to your printer.",
+    "dt": "Please check that both your absentee ballot and voter statement documents have printed successfully, before using the",
+    "finish": "Finish",
+    "btn": "button, or",
+    "re_try": "Re-Try",
+    "pa": "to print again."
+  },
+  "user_time_out_page": {
+     "d_text": "Sorry, it seems you have been inactive for too long. Please go back and start a new ballot.",
+     "d_text1": "For more information on this, please follow the link below.",
+     "link": " www.linktosite.gov",
+     "back": "Back"
+  },
+
+  "provide_information": "Provide Information",
+  "required": "Required",
+  "dodl": "Do You Have A Drivers License?",
+  "dob": "Date of Birth",
+  "dln": "Drivers License Number",
+  "nol": "No,I do not have a License",
+  "next": "Next",
+  "checkEligibility": "Check-Eligibility",
+  "noFail": "no fail",
+  "yesFail": "yes fail",
+  "pass": "pass",
+  "back": "Back",
+  "welcome": "Welcome",
+  "start": "Start",
+  "cancel": "Cancel",
+  "please": "Please",
+  "thank_you": "Thank you",
+  "send": "send",
+  "copy": "Copy"
+}]

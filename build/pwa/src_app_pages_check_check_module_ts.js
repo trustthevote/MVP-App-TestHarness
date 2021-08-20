@@ -105,8 +105,14 @@ __webpack_require__.r(__webpack_exports__);
 let CheckPage = class CheckPage {
     constructor(route) {
         this.route = route;
+        this.results = [];
     }
     ngOnInit() {
+        fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
+            // console.log("json", json);
+            this.results = json[0]['check_page'];
+            // console.log("results: ", this.results); 
+        });
     }
     confirm() {
         this.route.navigate(['/sending-confirmation']);
@@ -159,7 +165,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-header>\r\n  <ion-toolbar>\r\n    <ion-title>Check</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n\r\n  <ion-row>\r\n    <ion-col size=\"6\" class=\"back-btn\">\r\n      <ion-button color=\"dark\" (click)=\" failsbtn()\">\r\n        fail-check-network\r\n        <ion-icon\r\n          slot=\"start\"\r\n          name=\"chevron-back-outline\"\r\n        ></ion-icon> </ion-button\r\n    ></ion-col>\r\n    <ion-col size=\"6\" class=\"back-btn\">\r\n      <ion-button color=\"dark\" (click)=\" fail2btn()\">\r\n        fail-check-server\r\n        <ion-icon\r\n          slot=\"start\"\r\n          name=\"chevron-back-outline\"\r\n        ></ion-icon> </ion-button\r\n    ></ion-col>\r\n    <ion-col size=\"6\" class=\"next-btn\">\r\n      <ion-button color=\"dark\" (click)=\"confirm()\">\r\n        pass\r\n       \r\n        <ion-icon slot=\"end\" name=\"chevron-forward-outline\"></ion-icon> </ion-button\r\n    ></ion-col>\r\n  </ion-row>\r\n\r\n</ion-content>\r\n<ion-footer class=\"ion-no-border\">\r\n  <ion-toolbar>\r\n    \r\n  </ion-toolbar>\r\n</ion-footer>\r\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-header>\r\n  <ion-toolbar>\r\n    <ion-title>{{results.header}}</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n\r\n  <ion-row>\r\n    <ion-col size=\"6\" class=\"back-btn\">\r\n      <ion-button color=\"dark\" (click)=\" failsbtn()\">\r\n        {{results.fail_check_network}}\r\n        <ion-icon slot=\"start\" name=\"chevron-back-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-col>\r\n    <ion-col size=\"6\" class=\"back-btn\">\r\n      <ion-button color=\"dark\" (click)=\" fail2btn()\">\r\n        {{results.fail_check_server}}\r\n        <ion-icon slot=\"start\" name=\"chevron-back-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-col>\r\n    <ion-col size=\"6\" class=\"next-btn\">\r\n      <ion-button color=\"dark\" (click)=\"confirm()\">\r\n        {{results.pass}}\r\n\r\n        <ion-icon slot=\"end\" name=\"chevron-forward-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-col>\r\n  </ion-row>\r\n\r\n</ion-content>\r\n<ion-footer class=\"ion-no-border\">\r\n  <ion-toolbar>\r\n\r\n  </ion-toolbar>\r\n</ion-footer>\r\n");
 
 /***/ })
 

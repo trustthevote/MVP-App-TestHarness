@@ -8,16 +8,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./test-results.page.scss'],
 })
 export class TestResultsPage implements OnInit {
-
-  constructor(private route: Router) { }
+  results = [];
+  constructor(private route: Router) {}
 
   ngOnInit() {
+    fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
+
+      this.results = json[0]['test_result_page'];
+    
+    });
   }
- nextbtn(){
-   this.route.navigate(['/new-ballot-fingerprint']);
- }
- passbtn(){
-   this.route.navigate(['/copy-confirmed']);
- }
+  nextbtn() {
+    this.route.navigate(['/new-ballot-fingerprint']);
+  }
+  passbtn() {
+    this.route.navigate(['/copy-confirmed']);
+  }
 
 }

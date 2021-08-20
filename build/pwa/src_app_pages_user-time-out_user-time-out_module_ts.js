@@ -105,8 +105,12 @@ __webpack_require__.r(__webpack_exports__);
 let UserTimeOutPage = class UserTimeOutPage {
     constructor(router) {
         this.router = router;
+        this.results = [];
     }
     ngOnInit() {
+        fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
+            this.results = json[0]['user_time_out_page'];
+        });
     }
     backbtn() {
         this.router.navigate(['/ballot']);
@@ -153,7 +157,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n  <div class=\"Required-div\">\r\n    <p>\r\n      Sorry, it seems you have been inactive for too long. Please go back and start a new ballot.\r\n    </p>\r\n\r\n    <p>\r\n      For more information on this, please follow the link below.\r\n    </p>\r\n\r\n    <p>\r\n      www.linktosite.gov\r\n    </p>\r\n  </div>\r\n</ion-content>\r\n\r\n<ion-footer class=\"ion-no-border\">\r\n  <ion-toolbar>\r\n    <ion-button color=\"dark\" (click)=\"backbtn()\">\r\n      Back\r\n      <ion-icon slot=\"start\" name=\"chevron-back-outline\"></ion-icon>\r\n    </ion-button>\r\n  </ion-toolbar>\r\n</ion-footer>\r\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n  <div class=\"Required-div\">\r\n    <p>\r\n      {{results.d_text}}\r\n    </p>\r\n    <p>\r\n      {{results.d_text1}}\r\n    </p>\r\n\r\n    <p>\r\n     {{results.link}}\r\n    </p>\r\n  </div>\r\n</ion-content>\r\n\r\n<ion-footer class=\"ion-no-border\">\r\n  <ion-toolbar>\r\n    <ion-button color=\"dark\" (click)=\"backbtn()\">\r\n      {{results.back}}\r\n      <ion-icon slot=\"start\" name=\"chevron-back-outline\"></ion-icon>\r\n    </ion-button>\r\n  </ion-toolbar>\r\n</ion-footer>\r\n");
 
 /***/ })
 

@@ -7,15 +7,20 @@ import { Router } from '@angular/router';
   styleUrls: ['./copy-confirmed.page.scss'],
 })
 export class CopyConfirmedPage implements OnInit {
-
-  constructor(private route: Router) { }
+  results = [];
+  constructor(private route: Router) {}
 
   ngOnInit() {
+    fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
+
+      this.results = json[0]['copy_confirm'];
+ 
+    });
   }
-  nextbtn(){
+  nextbtn() {
     this.route.navigate(['/test-results']);
   }
-  backbtn(){
+  backbtn() {
     this.route.navigate(['/ballot-fingerprint']);
   }
 

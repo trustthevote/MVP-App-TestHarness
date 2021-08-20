@@ -8,7 +8,7 @@
   <div style="text-align: center">
     <ion-icon name="checkmark-circle-outline" class="cir-icon"></ion-icon>
     <p>
-      Congrats, your ballot has been sent! Please proceed for your next steps!
+      {{results.heading}}
     </p>
     <!-- <p>
       Congrats John, you<br />
@@ -20,7 +20,7 @@
 <ion-footer class="ion-no-border">
   <ion-toolbar>
     <ion-button color="dark" (click)="Continuebtn()">
-      Next
+      {{results.next}}
       <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
     </ion-button>
   </ion-toolbar>

@@ -1,27 +1,25 @@
-
-
 <ion-content>
   <div class="Required-div">
     <p>
-      Sorry, it seems we are have some network connection issues on our end. Please try again. 
+      {{results.text}}
       <br>
       <br>
-      If the issue persists, please click the link below to check the status of our servers.
+      {{results.text1}}
       <br>
       <br>
-      We are Sorry for the inconvenience!
+      {{results.text2}}
       <br>
     </p>
   </div>
   <p class="link">
-    www.linktosite.gov 
+    {{results.link}}
   </p>
 </ion-content>
 
 <ion-footer class="ion-no-border">
   <ion-toolbar>
     <ion-button color="dark" (click)="confirm()">
-       Try again
+      {{results.try_again}}
       <ion-icon slot="start" name="chevron-back-outline"></ion-icon>
     </ion-button>
   </ion-toolbar>

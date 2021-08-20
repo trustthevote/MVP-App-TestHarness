@@ -105,8 +105,12 @@ __webpack_require__.r(__webpack_exports__);
 let NewBallotFingerprintPage = class NewBallotFingerprintPage {
     constructor(route) {
         this.route = route;
+        this.results = [];
     }
     ngOnInit() {
+        fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
+            this.results = json[0]['new_ballot_finger_print'];
+        });
     }
     sendbtn() {
         this.route.navigate(['/sending']);
@@ -156,7 +160,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n  <div class=\"list-question\">\r\n    <p>Your Ballot Is Ready</p>\r\n  </div>\r\n  <div class=\"cen-div-text\">\r\n    <p>You can send it digitally now.</p>\r\n    <ion-button color=\"dark\" (click)=\"sendbtn()\">\r\n      send\r\n      <ion-icon slot=\"end\" name=\"paper-plane-outline\"></ion-icon>\r\n    </ion-button>\r\n  </div>\r\n  <div class=\"bottom-div-text\">\r\n    <p>\r\n      Or if you like, you may perform a technical test to verify your ballot\r\n      fingerprint. To do so, copy the ballot fingerprint below, and paste into\r\n      your external validator of choice.\r\n    </p>\r\n    <ion-button color=\"dark\" (click)=\"copybtn()\">\r\n      Copy\r\n\r\n      <ion-icon slot=\"end\" name=\"copy-outline\"></ion-icon>\r\n    </ion-button>\r\n  </div>\r\n</ion-content>\r\n<ion-footer class=\"ion-no-border\">\r\n  <ion-toolbar>\r\n    <ion-row>\r\n      <p>\r\n        New Ballot Fingerprint:<br/>\r\n        tsr432-wvu765-zyx098-4321\r\n      </p>\r\n    </ion-row>\r\n  </ion-toolbar>\r\n</ion-footer>\r\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n  <div class=\"list-question\">\r\n    <p> {{results.heading}} </p>\r\n  </div>\r\n  <div class=\"cen-div-text\">\r\n    <p>{{results.text}}</p>\r\n    <ion-button color=\"dark\" (click)=\"sendbtn()\">\r\n      {{results.send}}\r\n      <ion-icon slot=\"end\" name=\"paper-plane-outline\"></ion-icon>\r\n    </ion-button>\r\n  </div>\r\n  <div class=\"bottom-div-text\">\r\n    <p>\r\n      {{results.text_detail}}\r\n    </p>\r\n    <ion-button color=\"dark\" (click)=\"copybtn()\">\r\n      {{results.copy}}\r\n\r\n      <ion-icon slot=\"end\" name=\"copy-outline\"></ion-icon>\r\n    </ion-button>\r\n  </div>\r\n</ion-content>\r\n<ion-footer class=\"ion-no-border\">\r\n  <ion-toolbar>\r\n    <ion-row>\r\n      <p>\r\n        {{results.nbf}}<br />\r\n        {{results.tsr432}}\r\n      </p>\r\n    </ion-row>\r\n  </ion-toolbar>\r\n</ion-footer>\r\n");
 
 /***/ })
 

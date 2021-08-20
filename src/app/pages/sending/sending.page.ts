@@ -8,16 +8,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./sending.page.scss'],
 })
 export class SendingPage implements OnInit {
-
-  constructor(private route:Router) { }
+  results = [];
+  constructor(private route: Router) {}
 
   ngOnInit() {
+    fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
+   
+      this.results = json[0]['sending_page'];
+     
+    });
   }
-  confirm(){
+  confirm() {
     this.route.navigate(['/check']);
   }
 
-  backbtn(){
+  backbtn() {
     this.route.navigate(['/ballot-fingerprint']);
   }
 }

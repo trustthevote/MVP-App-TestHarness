@@ -105,8 +105,14 @@ __webpack_require__.r(__webpack_exports__);
 let PrintPage = class PrintPage {
     constructor(router) {
         this.router = router;
+        this.results = [];
     }
     ngOnInit() {
+        fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
+            // console.log("json", json);
+            this.results = json[0]['printing_page'];
+            // console.log("results: ", this.results); 
+        });
     }
     goToRetry() {
         this.router.navigate(['ballot-complete']);
@@ -156,7 +162,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content class=\"ion-padding\">\r\n  <div class=\"ion-text-center mt60\">\r\n    <ion-card-title>Printing</ion-card-title>\r\n  </div>\r\n\r\n  <div class=\"ion-text-center sub-title\">\r\n    <p>Your Documents have been sent to your printer.</p>\r\n  </div>\r\n\r\n  <div class=\"mt60\">\r\n    <p>Please check that both your absentee ballot and voter statement\r\n      documents have printed successfully, before using the <b>Finish</b> button, or\r\n      <b>Re-Try</b> to print again.</p>\r\n  </div>\r\n\r\n  <ion-grid class=\"ion-no-padding mt60\">\r\n    <ion-row class=\"mt100 ion-text-center\">\r\n      <ion-col size=\"12\">\r\n        <ion-button (click)=\"goToBallot()\" class=\"main-btn-style\" color=\"primary\">Finish</ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n\r\n  <div class=\"mt30 ion-text-center\">\r\n    <ion-button (click)=\"goToRetry()\" class=\"main-btn-style\" color=\"primary\" fill=\"clear\">Re-try</ion-button>\r\n  </div>\r\n</ion-content>\r\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content class=\"ion-padding\">\r\n  <div class=\"ion-text-center mt60\">\r\n    <ion-card-title>{{results.printing}}</ion-card-title>\r\n  </div>\r\n\r\n  <div class=\"ion-text-center sub-title\">\r\n    <p>{{results.ydp}}</p>\r\n  </div>\r\n\r\n  <div class=\"mt60\">\r\n    <p>{{results.dt}} <b>{{results.finish}}</b> {{results.btn}}\r\n      <b>{{results.re_try}}</b> {{results.pa}}</p>\r\n  </div>\r\n\r\n  <ion-grid class=\"ion-no-padding mt60\">\r\n    <ion-row class=\"mt100 ion-text-center\">\r\n      <ion-col size=\"12\">\r\n        <ion-button (click)=\"goToBallot()\" class=\"main-btn-style\" color=\"primary\">{{results.finish}}</ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n\r\n  <div class=\"mt30 ion-text-center\">\r\n    <ion-button (click)=\"goToRetry()\" class=\"main-btn-style\" color=\"primary\" fill=\"clear\">{{results.re_try}}\r\n    </ion-button>\r\n  </div>\r\n</ion-content>\r\n");
 
 /***/ })
 

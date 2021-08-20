@@ -105,28 +105,33 @@ __webpack_require__.r(__webpack_exports__);
 let BallotFormPage = class BallotFormPage {
     constructor(router) {
         this.router = router;
+        this.results = [];
         if (this.router.getCurrentNavigation().extras.state) {
             this.paramData = this.router.getCurrentNavigation().extras.state.user;
         }
     }
     ngOnInit() {
-        const lastName = this.paramData.lastname.charAt(0).toUpperCase() + this.paramData.lastname.slice(1);
-        if (lastName.includes('A', 0)) {
-            this.precinct = 'Your Ballot is for Precinct #1';
-        }
-        else if (lastName.includes('B', 0)) {
-            this.precinct = 'Your Ballot is for Precinct #2';
-        }
-        else if (lastName.includes('C', 0)) {
-            this.precinct = 'Your Ballot is for Precinct #3';
-        }
-        else {
-            this.precinct = 'Your Ballot is for Precinct #4';
-        }
+        // const lastName = this.paramData.lastname.charAt(0).toUpperCase() + this.paramData.lastname.slice(1);
+        // if (lastName.includes('A', 0)) {
+        //   this.precinct = 'Your Ballot is for Precinct #1';
+        // } else if(lastName.includes('B', 0)) {
+        //   this.precinct = 'Your Ballot is for Precinct #2';
+        // } else if (lastName.includes('C', 0)) {
+        //   this.precinct = 'Your Ballot is for Precinct #3';
+        // } else {
+        //   this.precinct = 'Your Ballot is for Precinct #4';
+        // }
+        fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
+            // console.log("json", json);
+            this.results = json[0]['ballot_form'];
+            console.log("results: ", this.results);
+        });
     }
     goToComplete() {
         const naviExtras = {
-            state: { user: this.paramData }
+            state: {
+                user: this.paramData
+            }
         };
         this.router.navigate(['ballot-complete'], naviExtras);
     }
@@ -160,7 +165,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (".mt30 {\n  margin-top: 30px;\n}\n\n.mt60 {\n  margin-top: 60px;\n}\n\n.mt100 {\n  margin-top: 100px;\n}\n\n.sub-title {\n  font-size: 20px;\n}\n\nion-card-title, p {\n  color: #464648;\n}\n\n.main-btn-style {\n  --border-radius: 0;\n  height: 50px;\n  width: 180px;\n  font-size: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJhbGxvdC1mb3JtLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFBO0FBQ0Y7O0FBRUE7RUFDRSxnQkFBQTtBQUNGOztBQUVBO0VBQ0UsaUJBQUE7QUFDRjs7QUFFQTtFQUNFLGVBQUE7QUFDRjs7QUFFQTtFQUNFLGNBQUE7QUFDRjs7QUFFQTtFQUNFLGtCQUFBO0VBQ0EsWUFBQTtFQUNBLFlBQUE7RUFDQSxlQUFBO0FBQ0YiLCJmaWxlIjoiYmFsbG90LWZvcm0ucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm10MzAge1xyXG4gIG1hcmdpbi10b3A6IDMwcHg7XHJcbn1cclxuXHJcbi5tdDYwIHtcclxuICBtYXJnaW4tdG9wOiA2MHB4O1xyXG59XHJcblxyXG4ubXQxMDAge1xyXG4gIG1hcmdpbi10b3A6IDEwMHB4O1xyXG59XHJcblxyXG4uc3ViLXRpdGxlIHtcclxuICBmb250LXNpemU6IDIwcHg7XHJcbn1cclxuXHJcbmlvbi1jYXJkLXRpdGxlLCBwIHtcclxuICBjb2xvcjogIzQ2NDY0ODtcclxufVxyXG5cclxuLm1haW4tYnRuLXN0eWxlIHtcclxuICAtLWJvcmRlci1yYWRpdXM6IDA7XHJcbiAgaGVpZ2h0OiA1MHB4O1xyXG4gIHdpZHRoOiAxODBweDtcclxuICBmb250LXNpemU6IDIwcHg7XHJcbn1cclxuIl19 */");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (".mt30 {\n  margin-top: 30px;\n}\n\n.mt60 {\n  margin-top: 60px;\n}\n\n.mt100 {\n  margin-top: 100px;\n}\n\n.sub-title {\n  font-size: 20px;\n}\n\nion-card-title, p {\n  color: #464648;\n}\n\n.main-btn-style {\n  --border-radius: 0;\n  height: 50px;\n  width: 180px;\n  font-size: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJhbGxvdC1mb3JtLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFBO0FBQ0Y7O0FBQ0E7RUFDRSxnQkFBQTtBQUVGOztBQUFBO0VBQ0UsaUJBQUE7QUFHRjs7QUFEQTtFQUNFLGVBQUE7QUFJRjs7QUFGQTtFQUNFLGNBQUE7QUFLRjs7QUFIQTtFQUNFLGtCQUFBO0VBQ0EsWUFBQTtFQUNBLFlBQUE7RUFDQSxlQUFBO0FBTUYiLCJmaWxlIjoiYmFsbG90LWZvcm0ucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm10MzAge1xyXG4gIG1hcmdpbi10b3A6IDMwcHg7XHJcbn1cclxuLm10NjAge1xyXG4gIG1hcmdpbi10b3A6IDYwcHg7XHJcbn1cclxuLm10MTAwIHtcclxuICBtYXJnaW4tdG9wOiAxMDBweDtcclxufVxyXG4uc3ViLXRpdGxlIHtcclxuICBmb250LXNpemU6IDIwcHg7XHJcbn1cclxuaW9uLWNhcmQtdGl0bGUsIHAge1xyXG4gIGNvbG9yOiAjNDY0NjQ4O1xyXG59XHJcbi5tYWluLWJ0bi1zdHlsZSB7XHJcbiAgLS1ib3JkZXItcmFkaXVzOiAwO1xyXG4gIGhlaWdodDogNTBweDtcclxuICB3aWR0aDogMTgwcHg7XHJcbiAgZm9udC1zaXplOiAyMHB4O1xyXG59XHJcbiJdfQ== */");
 
 /***/ }),
 
@@ -175,7 +180,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content class=\"ion-padding\">\r\n  <div class=\"ion-text-center mt60\">\r\n    <ion-card-title>Welcome {{ paramData?.firstname }}!</ion-card-title>\r\n  </div>\r\n\r\n  <div class=\"ion-text-center sub-title\">\r\n    <p>{{ precinct }}</p>\r\n  </div>\r\n\r\n  <div class=\"ion-text-center mt60\">\r\n    <p>Please <b>Start</b> to being your ballot marking process with a screen\r\n      that shows your first ballot item.</p>\r\n  </div>\r\n\r\n  <ion-grid class=\"ion-no-padding mt60\">\r\n    <ion-row class=\"mt100 ion-text-center\">\r\n      <ion-col size=\"12\">\r\n        <ion-button (click)=\"goToComplete()\" class=\"main-btn-style\" color=\"primary\">Start</ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n\r\n  <div class=\"mt30 ion-text-center\">\r\n    <ion-button (click)=\"goBack()\" class=\"main-btn-style\" color=\"primary\" fill=\"clear\">Cancel</ion-button>\r\n  </div>\r\n</ion-content>\r\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content class=\"ion-padding\">\r\n  <div class=\"ion-text-center mt60\">\r\n    <ion-card-title>{{results.welcome}} {{ paramData?.firstname }}!</ion-card-title>\r\n  </div>\r\n\r\n  <div class=\"ion-text-center sub-title\">\r\n    <p>{{ precinct }}</p>\r\n  </div>\r\n\r\n  <div class=\"ion-text-center mt60\">\r\n    <p>{{results.please}} <b>{{results.start}}</b> {{results.your_ballot_marking}}</p>\r\n  </div>\r\n\r\n  <ion-grid class=\"ion-no-padding mt60\">\r\n    <ion-row class=\"mt100 ion-text-center\">\r\n      <ion-col size=\"12\">\r\n        <ion-button (click)=\"goToComplete()\" class=\"main-btn-style\" color=\"primary\">{{results.start}}</ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n\r\n  <div class=\"mt30 ion-text-center\">\r\n    <ion-button (click)=\"goBack()\" class=\"main-btn-style\" color=\"primary\" fill=\"clear\"> {{results.cancel}}</ion-button>\r\n  </div>\r\n</ion-content>\r\n");
 
 /***/ })
 

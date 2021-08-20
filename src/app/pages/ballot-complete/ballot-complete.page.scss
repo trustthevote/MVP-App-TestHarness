@@ -1,29 +1,4 @@
-// .mt30 {
-//   margin-top: 30px;
-// }
 
-// .mt60 {
-//   margin-top: 60px;
-// }
-
-// .mt100 {
-//   margin-top: 100px;
-// }
-
-// .sub-title {
-//   font-size: 20px;
-// }
-
-// ion-card-title, p {
-//   color: #464648;
-// }
-
-// .main-btn-style {
-//   --border-radius: 0;
-//   height: 50px;
-//   width: 180px;
-//   font-size: 20px;
-// }
 ion-content {
   --padding-bottom: 10px;
   --padding-end: 0px;
@@ -72,13 +47,12 @@ ion-label {
     font-weight: 600;
 }
 p {
-  font-size: 22px;
-  font-weight: 700;
-  color: #000000;
+  font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 5px;
 }
-ion-icon {
-  // color: black;
-}
+
 .Required-div {
   padding-left: 0;
   ion-input {
@@ -129,7 +103,7 @@ ion-icon {
 .bottom-div-text{
   text-align: center;
   margin-right: 20px;
-  font-size: 70px;
+  font-size: 85px;
 
 }
 .upr-text{
@@ -137,23 +111,23 @@ ion-icon {
   font-weight: 700;
   text-align: center;
   padding-right: 20px;
-  padding-bottom: 15px;
+  padding-bottom: 9px;
 }
 .cen-div{
   font-size: 21px;
     text-align: center;
     padding-right: 20px;
-    padding-bottom: 15px;
+    padding-bottom: 9px;
 }
 .cen-div-text{
   text-align: center;
   margin-right: 20px;
-  font-size: 80px;
-  padding-top: 60px;
+  font-size: 85px;
+  padding-top: 40px;
   padding-bottom: 40px;
 }
 i{
-  font-size: 15px;
-font-weight: 100;
-color: #0000007a;
+  font-size: 16px;
+  font-weight: 100;
+  color: #696363c4;
 }

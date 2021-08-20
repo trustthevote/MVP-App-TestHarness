@@ -1,25 +1,21 @@
 <ion-content>
   <p>
-    Sorry, your authorization code did not work. Please try again, or click the
-    link below for help.
+    {{results.auth_p_1}}
   </p>
   <p>
-    You can also click the print button below to proceed with a physical return
-    instead.
+    {{results.auth_p_2}}
   </p>
-  <p>www.linktosite.go!</p>
+  <p>{{results.www_link}}</p>
 </ion-content>
 <ion-footer class="ion-no-border">
   <ion-toolbar>
     <ion-row>
       <ion-col size="6" class="back-btn">
         <ion-button color="dark" (click)="backbtn()">
-          Try again
-          <ion-icon
-            slot="start"
-            name="chevron-back-outline"
-          ></ion-icon> </ion-button
-      ></ion-col>
+          {{results.try_again}}
+          <ion-icon slot="start" name="chevron-back-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
       <!-- <ion-col size="6" class="next-btn">
         <ion-button color="dark" (click)="printbtn()">
           print

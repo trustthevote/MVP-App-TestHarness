@@ -31,3 +31,33 @@
   --background: #2d2d2d;
   --border-radius: 4px;
 }
+.alert-button.sc-ion-alert-ios:last-child {
+  color: #333;
+  border-right: 0;
+  font-weight: bold;
+}
+.alert-message.sc-ion-alert-ios, .alert-input-group.sc-ion-alert-ios {
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 0;
+  padding-bottom: 21px;
+  color: var(--ion-text-color, #000);
+  font-size: 14px;
+  text-align: center;
+  //text-transform: capitalize;
+}
+.alert-button.sc-ion-alert-md:last-child {
+  color: #333;
+  border-right: 0;
+  font-weight: bold;
+}
+.alert-message.sc-ion-alert-md, .alert-input-group.alert-message.sc-ion-alert-md {
+padding-left: 16px;
+padding-right: 16px;
+padding-top: 0;
+padding-bottom: 21px;
+color: var(--ion-text-color, #000);
+font-size: 14px;
+text-align: center;
+// text-transform: capitalize;
+}

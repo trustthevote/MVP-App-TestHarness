@@ -105,8 +105,12 @@ __webpack_require__.r(__webpack_exports__);
 let SendingPage = class SendingPage {
     constructor(route) {
         this.route = route;
+        this.results = [];
     }
     ngOnInit() {
+        fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
+            this.results = json[0]['sending_page'];
+        });
     }
     confirm() {
         this.route.navigate(['/check']);
@@ -156,7 +160,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("\r\n\r\n\r\n\r\n<ion-content>\r\n  <div class=\"print-div\">\r\n\r\n    <!-- <ion-icon name=\"rocket-outline\" (click)=\"confirm()\" style=\"  font-size: 70px;\"></ion-icon> -->\r\n    <ion-icon name=\"navigate-outline\"  (click)=\"confirm()\" style=\"  font-size: 70px;\"></ion-icon>\r\n    <p>Sending....</p>\r\n    </div>\r\n  <!-- <ion-button  color=\"dark\" >\r\n    print\r\n      <ion-icon slot=\"end\" name=\"chevron-forward-outline\"></ion-icon>\r\n    </ion-button> -->\r\n</ion-content>\r\n<ion-footer class=\"ion-no-border\">\r\n  <ion-toolbar>\r\n    <ion-row>\r\n      <ion-col size=\"6\" class=\"back-btn\">\r\n        <ion-button color=\"dark\" (click)=\" backbtn()\">\r\n          Back\r\n          <ion-icon\r\n            slot=\"start\"\r\n            name=\"chevron-back-outline\"\r\n          ></ion-icon> </ion-button\r\n      ></ion-col>\r\n      <ion-col size=\"6\" class=\"next-btn\">\r\n        <ion-button color=\"dark\" (click)=\"confirm()\">\r\n          next\r\n         \r\n          <ion-icon slot=\"end\" name=\"chevron-forward-outline\"></ion-icon> </ion-button\r\n      ></ion-col>\r\n    </ion-row>\r\n  </ion-toolbar>\r\n</ion-footer>\r\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n  <div class=\"print-div\">\r\n\r\n    <!-- <ion-icon name=\"rocket-outline\" (click)=\"confirm()\" style=\"  font-size: 70px;\"></ion-icon> -->\r\n    <ion-icon name=\"navigate-outline\" (click)=\"confirm()\" style=\"  font-size: 70px;\"></ion-icon>\r\n    <p>{{results.sending}}</p>\r\n  </div>\r\n  <!-- <ion-button  color=\"dark\" >\r\n    print\r\n      <ion-icon slot=\"end\" name=\"chevron-forward-outline\"></ion-icon>\r\n    </ion-button> -->\r\n</ion-content>\r\n<ion-footer class=\"ion-no-border\">\r\n  <ion-toolbar>\r\n    <ion-row>\r\n      <ion-col size=\"6\" class=\"back-btn\">\r\n        <ion-button color=\"dark\" (click)=\" backbtn()\">\r\n          {{results.back}}\r\n          <ion-icon slot=\"start\" name=\"chevron-back-outline\"></ion-icon>\r\n        </ion-button>\r\n      </ion-col>\r\n      <ion-col size=\"6\" class=\"next-btn\">\r\n        <ion-button color=\"dark\" (click)=\"confirm()\">\r\n          {{results.next}}\r\n\r\n          <ion-icon slot=\"end\" name=\"chevron-forward-outline\"></ion-icon>\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-toolbar>\r\n</ion-footer>\r\n");
 
 /***/ })
 

@@ -12,7 +12,7 @@ import { ToastController } from '@ionic/angular';
 export class BallotPage {
   signupForm: FormGroup;
   isSubmitted = false;
-
+  results = []
   constructor(
     public formBuilder: FormBuilder,
     public toastController: ToastController,
@@ -36,9 +36,18 @@ export class BallotPage {
           Validators.pattern('^[a-zA-Z-( )][\x20-\x7F]+$') // allow only letters, spaces, hyphens and PrintableASCII chars
         ]
       ],
-   });
+    });
   }
 
+  ngOnInit() {
+    // localStorage.clear();
+    fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
+      // console.log("json", json);
+      this.results = json[0]['ballot'];
+      console.log("results: ", this.results);
+
+    });
+  }
   get errorControl() {
     return this.signupForm.controls;
   }
@@ -57,12 +66,15 @@ export class BallotPage {
     this.isSubmitted = true;
 
     if (!this.signupForm.valid) {
-      this.presentToast('Please provide all the required values!');
+      this.presentToast(this.results['tm']);
       return false;
     } else {
       const naviExtras: NavigationExtras = {
-        state: { user: this.signupForm.value }
+        state: {
+          user: this.signupForm.value
+        }
       };
+      localStorage.setItem('userNameInfo', JSON.stringify(this.signupForm.value));
       this.router.navigate(['ballot-form'], naviExtras);
       this.signupForm.reset();
     }

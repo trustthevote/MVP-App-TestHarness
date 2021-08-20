@@ -7,15 +7,22 @@ import { Router } from '@angular/router';
   styleUrls: ['./tobecontinue.page.scss'],
 })
 export class TobecontinuePage implements OnInit {
-
-  constructor(private route: Router) { }
+  results = [];
+  constructor(private route: Router) {}
 
   ngOnInit() {
+    fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
+     
+      this.results = json[0]['tobe_continue_page'];
+      
+    });
   }
-  reloadCurrentPage(){
+  reloadCurrentPage() {
+    localStorage.clear();
+    console.log("clean");
     this.route.navigate(['/intro']);
   }
-  backbtn(){
+  backbtn() {
 
     this.route.navigate(['/print-return']);
   }

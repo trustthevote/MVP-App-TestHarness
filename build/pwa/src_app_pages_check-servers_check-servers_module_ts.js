@@ -105,8 +105,12 @@ __webpack_require__.r(__webpack_exports__);
 let CheckServersPage = class CheckServersPage {
     constructor(route) {
         this.route = route;
+        this.results = [];
     }
     ngOnInit() {
+        fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
+            this.results = json[0]['check_server_page'];
+        });
     }
     confirm() {
         this.route.navigate(['/check']);
@@ -153,7 +157,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("\r\n\r\n<ion-content>\r\n  <div class=\"Required-div\">\r\n    <p>\r\n      Sorry, it seems we are have some network connection issues on our end. Please try again. \r\n      <br>\r\n      <br>\r\n      If the issue persists, please click the link below to check the status of our servers.\r\n      <br>\r\n      <br>\r\n      We are Sorry for the inconvenience!\r\n      <br>\r\n    </p>\r\n  </div>\r\n  <p class=\"link\">\r\n    www.linktosite.gov \r\n  </p>\r\n</ion-content>\r\n\r\n<ion-footer class=\"ion-no-border\">\r\n  <ion-toolbar>\r\n    <ion-button color=\"dark\" (click)=\"confirm()\">\r\n       Try again\r\n      <ion-icon slot=\"start\" name=\"chevron-back-outline\"></ion-icon>\r\n    </ion-button>\r\n  </ion-toolbar>\r\n</ion-footer>");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n  <div class=\"Required-div\">\r\n    <p>\r\n      {{results.text}}\r\n      <br>\r\n      <br>\r\n      {{results.text1}}\r\n      <br>\r\n      <br>\r\n      {{results.text2}}\r\n      <br>\r\n    </p>\r\n  </div>\r\n  <p class=\"link\">\r\n    {{results.link}}\r\n  </p>\r\n</ion-content>\r\n\r\n<ion-footer class=\"ion-no-border\">\r\n  <ion-toolbar>\r\n    <ion-button color=\"dark\" (click)=\"confirm()\">\r\n      {{results.try_again}}\r\n      <ion-icon slot=\"start\" name=\"chevron-back-outline\"></ion-icon>\r\n    </ion-button>\r\n  </ion-toolbar>\r\n</ion-footer>\r\n");
 
 /***/ })
 

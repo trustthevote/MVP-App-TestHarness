@@ -12,6 +12,36 @@ ion-content {
     padding-bottom: 12px;
       }
   }
+  .alert-button.sc-ion-alert-ios:last-child {
+    color: #333;
+    border-right: 0;
+    font-weight: bold;
+}
+.alert-message.sc-ion-alert-ios, .alert-input-group.sc-ion-alert-ios {
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 0;
+  padding-bottom: 21px;
+  color: var(--ion-text-color, #000);
+  font-size: 14px;
+  text-align: center;
+  // text-transform: capitalize;
+}
+.alert-button.sc-ion-alert-md:last-child {
+  color: #333;
+  border-right: 0;
+  font-weight: bold;
+}
+.alert-message.sc-ion-alert-md, .alert-input-group.alert-message.sc-ion-alert-md {
+padding-left: 16px;
+padding-right: 16px;
+padding-top: 0;
+padding-bottom: 21px;
+color: var(--ion-text-color, #000);
+font-size: 14px;
+text-align: center;
+// text-transform: capitalize;
+}
   ion-label{
     
     font-weight: 500;
@@ -48,13 +78,10 @@ ion-content {
  border: none; 
 }
   .opt-box-area {
-    // display: flex;
     justify-content: left;
     align-items: center;
-    // margin-top: 24vw;
     margin-left: 0%;
-    // margin-top: 25%;
-
+    
     .nk-otp-box {
       height: 50px;
       width: 11vw;
@@ -68,7 +95,6 @@ ion-content {
       border-radius: 0px;
       opacity: 1;
     }
-
     .nk-otp-box-first {
       height: 50px;
       width: 11vw;
@@ -82,14 +108,12 @@ ion-content {
       border-radius: 0px;
       opacity: 1;
     }
-
-    .nk-otp-box:focus {
+   .nk-otp-box:focus {
         border: 1px solid #8a6ddc;
         outline: none;
         box-shadow: 0px 1px 2px;
     }
 }
-
 .incorrect-otp{
     text-align: left;
     font-family: 'Roboto';
@@ -98,7 +122,6 @@ ion-content {
     color: #D92212;
     opacity: 1;
 }
-
 .time{
     margin-top: 5vh;
     text-align: left;
@@ -109,7 +132,6 @@ ion-content {
     font-size: 16px;
     height: 20px;
 }
-
 .receive-otp{
     text-align: left;
     font-family: 'Roboto';
@@ -118,7 +140,6 @@ ion-content {
     opacity: 1;
     font-size: 16px;
 }
-
 .resend{
     text-align: left;
     text-decoration: underline;

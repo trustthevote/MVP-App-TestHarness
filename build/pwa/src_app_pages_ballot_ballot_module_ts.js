@@ -116,6 +116,7 @@ let BallotPage = class BallotPage {
         this.toastController = toastController;
         this.router = router;
         this.isSubmitted = false;
+        this.results = [];
         this.signupForm = this.formBuilder.group({
             firstname: [
                 '',
@@ -137,6 +138,14 @@ let BallotPage = class BallotPage {
             ],
         });
     }
+    ngOnInit() {
+        // localStorage.clear();
+        fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
+            // console.log("json", json);
+            this.results = json[0]['ballot'];
+            console.log("results: ", this.results);
+        });
+    }
     get errorControl() {
         return this.signupForm.controls;
     }
@@ -154,13 +163,16 @@ let BallotPage = class BallotPage {
     submitForm() {
         this.isSubmitted = true;
         if (!this.signupForm.valid) {
-            this.presentToast('Please provide all the required values!');
+            this.presentToast(this.results['tm']);
             return false;
         }
         else {
             const naviExtras = {
-                state: { user: this.signupForm.value }
+                state: {
+                    user: this.signupForm.value
+                }
             };
+            localStorage.setItem('userNameInfo', JSON.stringify(this.signupForm.value));
             this.router.navigate(['ballot-form'], naviExtras);
             this.signupForm.reset();
         }
@@ -209,7 +221,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content class=\"ion-padding\">\r\n  <div class=\"ion-text-center mt60\">\r\n    <ion-card-title>Welcome to Jetsons Ballot</ion-card-title>\r\n  </div>\r\n  <div class=\"ion-text-center\">\r\n    <p>To get started, please provide your name.</p>\r\n  </div>\r\n\r\n  <ion-grid class=\"ion-no-padding mt60\">\r\n    <form [formGroup]=\"signupForm\" (ngSubmit)=\"submitForm()\" novalidate>\r\n      <ion-row>\r\n        <ion-col size=\"6\">\r\n          <ion-item lines=\"none\">\r\n            <ion-label position=\"stacked\">First Name</ion-label>\r\n            <ion-input formControlName=\"firstname\" type=\"text\" placeholder=\"First Name\" required clearInput></ion-input>\r\n          </ion-item>\r\n          <!-- Error messages -->\r\n          <div class=\"err-messages\">\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.firstname.errors?.required\">\r\n              <p class=\"error\">\r\n                First Name is required.\r\n              </p>\r\n            </ng-container>\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.firstname.errors?.minlength\">\r\n              <p class=\"error\">\r\n                Name should be a minimum of 2 characters long.\r\n              </p>\r\n            </ng-container>\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.firstname.errors?.maxlength\">\r\n              <p class=\"error\">\r\n                Name should be a minimum of 50 characters long.\r\n              </p>\r\n            </ng-container>\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.firstname.errors?.pattern\">\r\n              <p class=\"error\">\r\n                Please provide: Name that consists of letters, space and hyphen.\r\n              </p>\r\n            </ng-container>\r\n          </div>\r\n        </ion-col>\r\n        <ion-col size=\"6\">\r\n          <ion-item lines=\"none\">\r\n            <ion-label position=\"stacked\">Last Name</ion-label>\r\n            <ion-input formControlName=\"lastname\" type=\"text\" placeholder=\"Last Name\" required clearInput></ion-input>\r\n          </ion-item>\r\n          <!-- Error messages -->\r\n          <div class=\"err-messages\">\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.lastname.errors?.required\">\r\n              <p class=\"error\">\r\n                Last Name is required.\r\n              </p>\r\n            </ng-container>\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.lastname.errors?.minlength\">\r\n              <p class=\"error\">\r\n                Name should be a minimum of 2 characters long.\r\n              </p>\r\n            </ng-container>\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.lastname.errors?.maxlength\">\r\n              <p class=\"error\">\r\n                Name should be a minimum of 50 characters long.\r\n              </p>\r\n            </ng-container>\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.lastname.errors?.pattern\">\r\n              <p class=\"error\">\r\n                Please provide: Name that consists of letters, space and hyphen.\r\n              </p>\r\n            </ng-container>\r\n          </div>\r\n        </ion-col>\r\n      </ion-row>\r\n      <ion-row class=\"mt100 ion-text-center\">\r\n        <ion-col size=\"12\">\r\n          <ion-button type=\"submit\" class=\"main-btn-style\" color=\"primary\">Next</ion-button>\r\n        </ion-col>\r\n      </ion-row>\r\n    </form>\r\n  </ion-grid>\r\n\r\n  <div class=\"mt30 ion-text-center\">\r\n    <ion-button href=\"https://trustthevote.org/about_abc/\" color=\"primary\" fill=\"clear\">About This App</ion-button>\r\n  </div>\r\n</ion-content>\r\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content class=\"ion-padding\">\r\n  <div class=\"ion-text-center mt60\">\r\n    <ion-card-title>{{results.welcome_to_jetsons_ballot}}</ion-card-title>\r\n  </div> \r\n  \r\n  <div class=\"ion-text-center\">\r\n    <p>{{results.to_get_started}}</p>\r\n  </div>\r\n\r\n  <ion-grid class=\"ion-no-padding mt60\">\r\n    <form [formGroup]=\"signupForm\" (ngSubmit)=\"submitForm()\" novalidate>\r\n      <ion-row>\r\n        <ion-col size=\"6\">\r\n          <ion-item lines=\"none\">\r\n            <ion-label position=\"stacked\">{{results.first_name}}</ion-label>\r\n            <ion-input formControlName=\"firstname\" type=\"text\" placeholder=\"{{results.first_name}}\" required clearInput></ion-input>\r\n          </ion-item>\r\n          <!-- Error messages -->\r\n          <div class=\"err-messages\">\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.firstname.errors?.required\">\r\n              <p class=\"error\">\r\n                {{results.firstname_errors}}\r\n              </p>\r\n            </ng-container>\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.firstname.errors?.minlength\">\r\n              <p class=\"error\">\r\n                {{results.firstname_errors1}}\r\n              </p>\r\n            </ng-container>\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.firstname.errors?.maxlength\">\r\n              <p class=\"error\">\r\n                {{results.firstname_errors2}}\r\n              </p>\r\n            </ng-container>\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.firstname.errors?.pattern\">\r\n              <p class=\"error\">\r\n                {{results.firstname_errors3}}\r\n              </p>\r\n            </ng-container>\r\n          </div>\r\n        </ion-col>\r\n        <ion-col size=\"6\">\r\n          <ion-item lines=\"none\">\r\n            <ion-label position=\"stacked\">{{results.last_name}}</ion-label>\r\n            <ion-input formControlName=\"lastname\" type=\"text\" placeholder=\"{{results.last_name}}\" required clearInput></ion-input>\r\n          </ion-item>\r\n          <!-- Error messages -->\r\n          <div class=\"err-messages\">\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.lastname.errors?.required\">\r\n              <p class=\"error\">\r\n                 {{results.last_name_errors}}\r\n              </p>\r\n            </ng-container>\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.lastname.errors?.minlength\">\r\n              <p class=\"error\">\r\n                {{results.last_name_errors1}}\r\n              </p>\r\n            </ng-container>\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.lastname.errors?.maxlength\">\r\n              <p class=\"error\">\r\n                {{results.last_name_errors2}}\r\n              </p>\r\n            </ng-container>\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.lastname.errors?.pattern\">\r\n              <p class=\"error\">\r\n                {{results.please_provide}}\r\n              </p>\r\n            </ng-container>\r\n          </div>\r\n        </ion-col>\r\n      </ion-row>\r\n      <ion-row class=\"mt100 ion-text-center\">\r\n        <ion-col size=\"12\">\r\n          <ion-button type=\"submit\" class=\"main-btn-style\" color=\"primary\">{{results.next}}</ion-button>\r\n        </ion-col>\r\n      </ion-row>\r\n    </form>\r\n  </ion-grid>\r\n\r\n  <div class=\"mt30 ion-text-center\">\r\n    <ion-button href=\"https://trustthevote.org/about_abc/\" color=\"primary\" fill=\"clear\">{{results.about_this_app}}</ion-button>\r\n  </div>\r\n</ion-content>\r\n");
 
 /***/ })
 

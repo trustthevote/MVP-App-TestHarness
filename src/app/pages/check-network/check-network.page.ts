@@ -7,12 +7,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./check-network.page.scss'],
 })
 export class CheckNetworkPage implements OnInit {
-
-  constructor( private route:Router) { }
+  results = [];
+  constructor(private route: Router) {}
 
   ngOnInit() {
+    fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
+
+      this.results = json[0]['check_network_page'];
+      
+    });
   }
-  confirm(){
+  confirm() {
     this.route.navigate(['/check']);
   }
 

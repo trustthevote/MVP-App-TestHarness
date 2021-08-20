@@ -1,15 +1,14 @@
 <ion-content>
   <div class="Required-div">
     <p>
-      Sorry, it seems you have been inactive for too long. Please go back and start a new ballot.
+      {{results.d_text}}
+    </p>
+    <p>
+      {{results.d_text1}}
     </p>
 
     <p>
-      For more information on this, please follow the link below.
-    </p>
-
-    <p>
-      www.linktosite.gov
+     {{results.link}}
     </p>
   </div>
 </ion-content>
@@ -17,7 +16,7 @@
 <ion-footer class="ion-no-border">
   <ion-toolbar>
     <ion-button color="dark" (click)="backbtn()">
-      Back
+      {{results.back}}
       <ion-icon slot="start" name="chevron-back-outline"></ion-icon>
     </ion-button>
   </ion-toolbar>

@@ -1,20 +1,21 @@
 <ion-content>
   <div class="list-question">
-    <p>Urgent Next Steps!</p>
+    <p>{{results.header}}</p>
   </div>
   <p>
-    Congrats on finishing your ballot! There are still a few more important
-    steps that you need to complete. Please click the link below to begin.
+    {{results.textD}}
   </p>
-  <p>www.linktosite.gov</p>
- 
+  <p>{{results.link_www}}</p>
+
 
 </ion-content>
 <ion-footer class="ion-no-border">
   <ion-toolbar>
-    <p>Thank you for using ABC!</p>
-    <ion-col style="text-align: end;" class="back-btn"><ion-button color="dark" (click)="  goToFinish()">
-        Finish
-       </ion-button></ion-col>
+    <p>{{results.tyABC}}</p>
+    <ion-col style="text-align: end;" class="back-btn">
+      <ion-button color="dark" (click)="  goToFinish()">
+        {{results.finish}}
+      </ion-button>
+    </ion-col>
   </ion-toolbar>
 </ion-footer>

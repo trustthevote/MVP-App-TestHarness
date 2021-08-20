@@ -105,8 +105,12 @@ __webpack_require__.r(__webpack_exports__);
 let TestResultsPage = class TestResultsPage {
     constructor(route) {
         this.route = route;
+        this.results = [];
     }
     ngOnInit() {
+        fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
+            this.results = json[0]['test_result_page'];
+        });
     }
     nextbtn() {
         this.route.navigate(['/new-ballot-fingerprint']);
@@ -156,7 +160,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n  <div class=\"list-question\">\r\n    <p>Test-Results</p>\r\n  </div>\r\n  <div class=\"Required-div\" style=\"text-align: center;\">\r\n    <p>Did your ballot pass or fail?</p>\r\n    <div style=\"text-align: center;\">\r\n    <div class=\"div-two\" >\r\n  <div class=\"div-upr-text\" >\r\n   <p>Passed</p>\r\n   <ion-icon name=\"checkmark-circle-outline\"></ion-icon>\r\n      </div>\r\n    </div>\r\n    </div>\r\n    <div class=\"div-text-mid\" >\r\n      \r\n       <p>Failed</p>\r\n       <ion-icon name=\"close-circle-outline\" style=\"font-size: 65px;\"></ion-icon>\r\n          \r\n        </div>\r\n  </div>\r\n</ion-content>\r\n<ion-footer class=\"ion-no-border\">\r\n  <ion-toolbar>\r\n    <ion-row>\r\n      <ion-col size=\"6\" class=\"back-btn\">\r\n        <ion-button color=\"dark\" (click)=\"passbtn()\">\r\n          Back\r\n          <ion-icon\r\n            slot=\"start\"\r\n            name=\"chevron-back-outline\"\r\n          ></ion-icon> </ion-button\r\n      ></ion-col>\r\n      <ion-col size=\"6\" class=\"next-btn\">\r\n        <ion-button color=\"dark\" (click)=\"nextbtn()\">\r\n          Next\r\n          <ion-icon\r\n            slot=\"end\"\r\n            name=\"chevron-forward-outline\"\r\n          ></ion-icon> </ion-button\r\n      ></ion-col>\r\n    </ion-row>\r\n  </ion-toolbar>\r\n</ion-footer>\r\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n  <div class=\"list-question\">\r\n    <p>{{results.test_results}}</p>\r\n  </div>\r\n  <div class=\"Required-div\" style=\"text-align: center;\">\r\n    <p>{{results.dbf}}</p>\r\n    <div style=\"text-align: center;\">\r\n      <div class=\"div-two\">\r\n        <div class=\"div-upr-text\">\r\n          <p>{{results.passed}}</p>\r\n          <ion-icon name=\"checkmark-circle-outline\"></ion-icon>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"div-text-mid\">\r\n\r\n      <p>{{results.failed}}</p>\r\n      <ion-icon name=\"close-circle-outline\" style=\"font-size: 65px;\"></ion-icon>\r\n\r\n    </div>\r\n  </div>\r\n</ion-content>\r\n<ion-footer class=\"ion-no-border\">\r\n  <ion-toolbar>\r\n    <ion-row>\r\n      <ion-col size=\"6\" class=\"back-btn\">\r\n        <ion-button color=\"dark\" (click)=\"passbtn()\">\r\n          {{results.back}}\r\n          <ion-icon slot=\"start\" name=\"chevron-back-outline\"></ion-icon>\r\n        </ion-button>\r\n      </ion-col>\r\n      <ion-col size=\"6\" class=\"next-btn\">\r\n        <ion-button color=\"dark\" (click)=\"nextbtn()\">\r\n          {{results.next}}\r\n          <ion-icon slot=\"end\" name=\"chevron-forward-outline\"></ion-icon>\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-toolbar>\r\n</ion-footer>\r\n");
 
 /***/ })
 

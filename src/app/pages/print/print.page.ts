@@ -7,10 +7,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./print.page.scss'],
 })
 export class PrintPage implements OnInit {
-
-  constructor(private router: Router) { }
+  results = [];
+  constructor(private router: Router) {}
 
   ngOnInit() {
+    fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
+      // console.log("json", json);
+      this.results = json[0]['printing_page'];
+      // console.log("results: ", this.results); 
+    });
   }
 
   goToRetry() {

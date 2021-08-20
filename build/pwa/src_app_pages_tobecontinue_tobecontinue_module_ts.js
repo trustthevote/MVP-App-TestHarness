@@ -105,10 +105,16 @@ __webpack_require__.r(__webpack_exports__);
 let TobecontinuePage = class TobecontinuePage {
     constructor(route) {
         this.route = route;
+        this.results = [];
     }
     ngOnInit() {
+        fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
+            this.results = json[0]['tobe_continue_page'];
+        });
     }
     reloadCurrentPage() {
+        localStorage.clear();
+        console.log("clean");
         this.route.navigate(['/intro']);
     }
     backbtn() {
@@ -156,7 +162,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n  <div class=\"list-question\">\r\n    <p>To Be Continued..</p>\r\n  </div>\r\n<p>Thank you for testing the app!</p>\r\n<p>You have reached the end of the app's current development. Reset to begin a new test,</p>\r\n</ion-content>\r\n<ion-footer class=\"ion-no-border\">\r\n  <ion-toolbar>\r\n    <ion-row>\r\n      <ion-col size=\"6\" class=\"back-btn\">\r\n        <ion-button color=\"dark\" (click)=\"backbtn()\">\r\n          Back\r\n          <ion-icon slot=\"start\" name=\"chevron-back-outline\"></ion-icon>\r\n          <!-- <ion-icon  name=\"pencil-outline\"></ion-icon>  -->\r\n          </ion-button\r\n      ></ion-col>\r\n      <ion-col size=\"6\" class=\"next-btn\">\r\n        <ion-button color=\"dark\" (click)=\"reloadCurrentPage()\">\r\n          Reset\r\n          <ion-icon slot=\"end\" name=\"chevron-forward-outline\"></ion-icon>\r\n          <!-- <ion-icon slot=\"end\" name=\"checkmark-outline\"></ion-icon> -->\r\n           </ion-button\r\n      ></ion-col>\r\n    </ion-row>\r\n  </ion-toolbar>\r\n</ion-footer>\r\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n  <div class=\"list-question\">\r\n    <p>{{results.tbc}}</p>\r\n  </div>\r\n  <p>{{results.ty_ta}}</p>\r\n  <p>{{results.detail}}</p>\r\n</ion-content>\r\n<ion-footer class=\"ion-no-border\">\r\n  <ion-toolbar>\r\n    <ion-row>\r\n      <ion-col size=\"6\" class=\"back-btn\">\r\n        <ion-button color=\"dark\" (click)=\"backbtn()\">\r\n          {{results.back}}\r\n          <ion-icon slot=\"start\" name=\"chevron-back-outline\"></ion-icon>\r\n          <!-- <ion-icon  name=\"pencil-outline\"></ion-icon>  -->\r\n        </ion-button>\r\n      </ion-col>\r\n      <ion-col size=\"6\" class=\"next-btn\">\r\n        <ion-button color=\"dark\" (click)=\"reloadCurrentPage()\">\r\n          {{results.reset}}\r\n          <ion-icon slot=\"end\" name=\"chevron-forward-outline\"></ion-icon>\r\n          <!-- <ion-icon slot=\"end\" name=\"checkmark-outline\"></ion-icon> -->\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-toolbar>\r\n</ion-footer>\r\n");
 
 /***/ })
 

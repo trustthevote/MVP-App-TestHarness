@@ -1,6 +1,6 @@
 <ion-content>
   <div class="list-question">
-    <p>Enter Access Code</p>
+    <p>{{results.enter_access_code}}</p>
   </div>
 
   <div class="opt-box-area" [formGroup]="otpForm" style="text-align: center">
@@ -56,10 +56,10 @@
         placeholder=""
       />
     </div>
-    <ion-row style="padding-top: 58vh">
+    <ion-row style="padding-top: 56vh">
       <ion-col size="6" class="back-btn" style="text-align: start">
         <ion-button color="dark" (click)="backbtn()">
-          Back
+          {{results.back}}
           <ion-icon
             slot="start"
             name="chevron-back-outline"
@@ -67,7 +67,7 @@
       ></ion-col>
       <ion-col size="6" class="next-btn">
         <ion-button color="dark" (click)="nextbtn()">
-          Next
+          {{results.next}}
           <ion-icon
             slot="end"
             name="chevron-forward-outline"

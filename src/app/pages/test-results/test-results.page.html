@@ -1,23 +1,23 @@
 <ion-content>
   <div class="list-question">
-    <p>Test-Results</p>
+    <p>{{results.test_results}}</p>
   </div>
   <div class="Required-div" style="text-align: center;">
-    <p>Did your ballot pass or fail?</p>
+    <p>{{results.dbf}}</p>
     <div style="text-align: center;">
-    <div class="div-two" >
-  <div class="div-upr-text" >
-   <p>Passed</p>
-   <ion-icon name="checkmark-circle-outline"></ion-icon>
+      <div class="div-two">
+        <div class="div-upr-text">
+          <p>{{results.passed}}</p>
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+        </div>
       </div>
     </div>
+    <div class="div-text-mid">
+
+      <p>{{results.failed}}</p>
+      <ion-icon name="close-circle-outline" style="font-size: 65px;"></ion-icon>
+
     </div>
-    <div class="div-text-mid" >
-      
-       <p>Failed</p>
-       <ion-icon name="close-circle-outline" style="font-size: 65px;"></ion-icon>
-          
-        </div>
   </div>
 </ion-content>
 <ion-footer class="ion-no-border">
@@ -25,20 +25,16 @@
     <ion-row>
       <ion-col size="6" class="back-btn">
         <ion-button color="dark" (click)="passbtn()">
-          Back
-          <ion-icon
-            slot="start"
-            name="chevron-back-outline"
-          ></ion-icon> </ion-button
-      ></ion-col>
+          {{results.back}}
+          <ion-icon slot="start" name="chevron-back-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
       <ion-col size="6" class="next-btn">
         <ion-button color="dark" (click)="nextbtn()">
-          Next
-          <ion-icon
-            slot="end"
-            name="chevron-forward-outline"
-          ></ion-icon> </ion-button
-      ></ion-col>
+          {{results.next}}
+          <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
     </ion-row>
   </ion-toolbar>
 </ion-footer>

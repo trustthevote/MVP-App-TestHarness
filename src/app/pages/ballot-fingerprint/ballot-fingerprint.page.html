@@ -1,22 +1,22 @@
 <ion-content>
   <div class="list-question">
-    <p>Your Ballot Is Ready</p>
+    <p>
+      {{results.ybr}}
+    </p>
   </div>
   <div class="cen-div-text">
-    <p>You can send it digitally now.</p>
+    <p>{{results.ydn}}</p>
     <ion-button color="dark" (click)="sendbtn()">
-      send
+      {{results.send}}
       <ion-icon slot="end" name="paper-plane-outline"></ion-icon>
     </ion-button>
   </div>
   <div class="bottom-div-text">
     <p>
-      Or if you like, you may perform a technical test to verify your ballot
-      fingerprint. To do so, copy the ballot fingerprint below, and paste into
-      your external validator of choice.
+      {{results.tv_fp}}
     </p>
     <ion-button color="dark" (click)="copybtn()">
-      Copy
+      {{results.copy}}
 
       <ion-icon slot="end" name="copy-outline"></ion-icon>
     </ion-button>
@@ -25,7 +25,7 @@
 <ion-footer class="ion-no-border">
   <ion-toolbar>
     <ion-row>
-      <p>Ballot Fingerprint:<br> zyx098-wvu765-tsr432-1234</p>
+      <p>{{results.bfp}}<br> {{results.zyx098}}</p>
     </ion-row>
   </ion-toolbar>
 </ion-footer>

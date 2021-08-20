@@ -6,16 +6,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./failed-authorization.page.scss'],
 })
 export class FailedAuthorizationPage implements OnInit {
-
-  constructor(private route: Router) { }
+  results = [];
+  constructor(private route: Router) {}
 
 
   ngOnInit() {
+    fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
+    
+      this.results = json[0]['failed_auth'];
+     
+    });
   }
-  backbtn(){
+  backbtn() {
     this.route.navigate(['/ballot-complete'])
   }
-  printbtn(){
+  printbtn() {
     this.route.navigate(['/print-return-digital']);
   }
 }
