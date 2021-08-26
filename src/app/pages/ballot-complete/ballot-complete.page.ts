@@ -118,7 +118,9 @@ export class BallotCompletePage implements OnInit {
     this.router.navigate(['/print-return']);
   }
   Digitalret() {
-    this.router.navigate(['/access-code']);
+    this.router.navigate(['/access-code',{
+      t: new Date().getTime()
+    }]);
   }
 
 }

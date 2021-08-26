@@ -24,6 +24,7 @@ ion-content {
 }
 p{
     padding-bottom: 0px;
+    
 }
 .Required-div{
     font-size: 24px;
@@ -36,23 +37,28 @@ p{
     text-align: center;
 
     .div-upr-text{
-        border: 2px solid #000;
-        margin: 0 35% 0 35%;
+        // border: 2px solid #000;
+        // margin: 0 35% 0 35%;
        
-        border-radius: 5px;
+        // border-radius: 5px;
         p{
             font-size: 14px;
             font-weight: 600;
         }
         ion-icon{
-            font-size: 57px;
+            font-size: 65px;
         }
     }
 }
 .div-text-mid{
     text-align: center;
-    padding-top: 20%;
+    padding-bottom: 20%;
     font-size: 20px;
-   
+   ion-icon{
+    font-size: 11vh;
+   }
 
+}
+ion-toolbar{
+    height: 100px;
 }

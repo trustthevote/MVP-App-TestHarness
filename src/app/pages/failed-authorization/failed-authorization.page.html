@@ -1,13 +1,14 @@
 <ion-content>
-  <p>
-    {{results.auth_p_1}}
-  </p>
-  <p>
-    {{results.auth_p_2}}
-  </p>
+  <p>{{results.auth_p_1}}</p>
+  <p>{{results.auth_p_2}}</p>
   <p>{{results.www_link}}</p>
+  
+  <ion-button color="dark" (click)="backbtn()">
+    {{results.btn_report}}
+    <ion-icon slot="end" name="help-outline"></ion-icon>
+  </ion-button>
 </ion-content>
-<ion-footer class="ion-no-border">
+<ion-footer>
   <ion-toolbar>
     <ion-row>
       <ion-col size="6" class="back-btn">
@@ -16,15 +17,12 @@
           <ion-icon slot="start" name="chevron-back-outline"></ion-icon>
         </ion-button>
       </ion-col>
-      <!-- <ion-col size="6" class="next-btn">
-        <ion-button color="dark" (click)="printbtn()">
-          print
-         
-          <ion-icon
-            slot="end"
-            name="print-outline"
-          ></ion-icon> </ion-button
-      ></ion-col> -->
+      <ion-col size="6" class="next-btn">
+        <ion-button color="dark" (click)="backbtn()">
+          {{results.print}}
+          <ion-icon slot="end" name="print-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
     </ion-row>
   </ion-toolbar>
 </ion-footer>

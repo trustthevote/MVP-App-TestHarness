@@ -1,6 +1,6 @@
 {
 	"appId": "org.osetfoundation.abcprototype",
-	"appName": "abc-prototype",
+	"appName": "mvp-test-harness",
 	"webDir": "www",
 	"bundledWebRuntime": false
 }

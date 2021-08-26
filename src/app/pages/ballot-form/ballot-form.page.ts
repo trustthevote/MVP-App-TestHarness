@@ -29,7 +29,7 @@ export class BallotFormPage implements OnInit {
     //   this.precinct = 'Your Ballot is for Precinct #4';
     // }
     fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-      // console.log("json", json);
+  
       this.results = json[0]['ballot_form'];
       console.log("results: ", this.results);
     });

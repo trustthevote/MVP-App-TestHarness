@@ -12,9 +12,7 @@ export class PrintPage implements OnInit {
 
   ngOnInit() {
     fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-      // console.log("json", json);
-      this.results = json[0]['printing_page'];
-      // console.log("results: ", this.results); 
+     this.results = json[0]['printing_page'];
     });
   }
 

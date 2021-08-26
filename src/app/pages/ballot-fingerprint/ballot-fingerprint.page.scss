@@ -37,6 +37,10 @@ ion-content {
     color: black;
     line-height: 50px;
   }
+  .text-p{
+    font-size: 18px;
+    color: #00000066;
+  }
   ion-label {
       margin-top: 0px;
       margin-bottom: 0px;
@@ -44,13 +48,18 @@ ion-content {
       font-weight: 600;
   }
   p {
-    font-size: 28px;
-    font-weight: 700;
+    font-size: 23px;
+    padding-right: 12px;
+    font-weight: 600;
     color: #000000;
     margin-bottom: 5vw;
   
   }
-
+ion-toolbar{
+  height: 85px;
+  padding-top: 35px;
+  padding-right: 20px;
+}
   .ic-col{
       padding: 10px 0 1px;
       font-size: 26px;
@@ -79,5 +88,11 @@ ion-toolbar{
     color: #00000080;
     font-weight: 700;
     }
+}
+ion-row{
+  font-size: 23px;
+  font-weight: 100;
+  color: #0000006e;
+  margin-bottom: 5vw;
 }
   

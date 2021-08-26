@@ -13,16 +13,14 @@ export class TestResultsPage implements OnInit {
 
   ngOnInit() {
     fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-
-      this.results = json[0]['test_result_page'];
-    
+    this.results = json[0]['test_result_page'];
     });
   }
   nextbtn() {
-    this.route.navigate(['/new-ballot-fingerprint']);
+    this.route.navigate(['/ballot-fingerprint']);
   }
   passbtn() {
-    this.route.navigate(['/copy-confirmed']);
+    this.route.navigate(['/ballot-test-failed']);
   }
 
 }

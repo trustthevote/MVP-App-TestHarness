@@ -123,11 +123,18 @@ export class AccessCodePage implements OnInit {
           this.route.navigate(['/failed-authorization']);
         } else if (this.data === '00001') {
           loading.dismiss();
-          this.presentToast(this.results['tm_ev']);
-          this.route.navigate(['/ballot-fingerprint']);
-          this.otpError = "";
+          // this.presentToast(this.results['tm_ev']);
+          this.route.navigate(['/expired-code']);
+          // this.otpError = "";
 
-        } else {
+        }else if (this.data === '00002') {
+          loading.dismiss();
+          // this.presentToast(this.results['tm_ev']);
+          this.route.navigate(['/check-network']);
+          // this.otpError = "";
+
+        }
+         else {
           loading.dismiss();
           this.route.navigate(['/ballot-fingerprint']);
           this.otpError = "";

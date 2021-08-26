@@ -1,8 +1,6 @@
 <ion-content>
   <div class="list-question">
-    <p>
-      {{results.ybr}}
-    </p>
+    <p>{{results.ybr}}</p>
   </div>
   <div class="cen-div-text">
     <p>{{results.ydn}}</p>
@@ -12,20 +10,43 @@
     </ion-button>
   </div>
   <div class="bottom-div-text">
-    <p>
-      {{results.tv_fp}}
-    </p>
+    <p>{{results.tv_fp}}</p>
+  </div>
+  <div *ngIf="IsVisible == true">
+    <p>{{results.tv1_fp}}</p>
+    <p>{{results.link}}</p>
+    <p>{{results.tv2_fb}}</p>
+    <ion-row>
+      {{results.bfp}}<br />
+      {{results.zyx098}}
+    </ion-row>
     <ion-button color="dark" (click)="copybtn()">
       {{results.copy}}
-
-      <ion-icon slot="end" name="copy-outline"></ion-icon>
+      <ion-icon slot="end" name="settings-outline"></ion-icon>
     </ion-button>
+    <p>{{results.tv3_fb}}</p>
+    <p>{{results.link}}</p>
+  </div>
+  <div class="text-p">
+    {{results.shmd}}
+    <ion-icon
+      name="chevron-down-outline"
+      *ngIf="fsticon"
+      (click)="PolicyDetails()"
+    ></ion-icon>
+    <ion-icon
+      name="chevron-up-outline"
+      *ngIf="scndicons"
+      (click)="PolicyDetailshide()"
+    ></ion-icon>
   </div>
 </ion-content>
-<ion-footer class="ion-no-border">
-  <ion-toolbar>
-    <ion-row>
-      <p>{{results.bfp}}<br> {{results.zyx098}}</p>
-    </ion-row>
+<ion-footer >
+  <ion-toolbar >
+
+      <!-- <div class="text-p" style="text-align: center;">
+    {{results.mp}}  <ion-icon name="chevron-down-outline"></ion-icon>
+        </div> -->
+
   </ion-toolbar>
 </ion-footer>

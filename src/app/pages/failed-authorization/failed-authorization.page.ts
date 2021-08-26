@@ -12,13 +12,13 @@ export class FailedAuthorizationPage implements OnInit {
 
   ngOnInit() {
     fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-    
-      this.results = json[0]['failed_auth'];
-     
+      this.results = json[0]['failed_auth']; 
     });
   }
   backbtn() {
-    this.route.navigate(['/ballot-complete'])
+    this.route.navigate(['/access-code',{
+      t: new Date().getTime()
+    }]);
   }
   printbtn() {
     this.route.navigate(['/print-return-digital']);

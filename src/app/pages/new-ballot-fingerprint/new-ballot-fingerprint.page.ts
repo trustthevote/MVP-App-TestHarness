@@ -13,9 +13,7 @@ export class NewBallotFingerprintPage implements OnInit {
 
   ngOnInit() {
     fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-    
       this.results = json[0]['new_ballot_finger_print'];
-    
     });
   }
   sendbtn() {

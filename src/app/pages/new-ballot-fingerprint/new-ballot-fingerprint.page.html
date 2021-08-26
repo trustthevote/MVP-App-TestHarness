@@ -1,6 +1,6 @@
 <ion-content>
   <div class="list-question">
-    <p> {{results.heading}} </p>
+    <p>{{results.heading}}</p>
   </div>
   <div class="cen-div-text">
     <p>{{results.text}}</p>
@@ -10,12 +10,9 @@
     </ion-button>
   </div>
   <div class="bottom-div-text">
-    <p>
-      {{results.text_detail}}
-    </p>
+    <p>{{results.text_detail}}</p>
     <ion-button color="dark" (click)="copybtn()">
       {{results.copy}}
-
       <ion-icon slot="end" name="copy-outline"></ion-icon>
     </ion-button>
   </div>

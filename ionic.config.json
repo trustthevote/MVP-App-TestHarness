@@ -1,5 +1,5 @@
 {
-  "name": "abc-prototype",
+  "name": "mvp-test-harness",
   "integrations": {
     "capacitor": {}
   },

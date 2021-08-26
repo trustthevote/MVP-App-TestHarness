@@ -85,6 +85,14 @@ const routes: Routes = [
   },  {
     path: 'tobecontinue',
     loadChildren: () => import('./pages/tobecontinue/tobecontinue.module').then( m => m.TobecontinuePageModule)
+  },
+  {
+    path: 'ballot-test-failed',
+    loadChildren: () => import('./pages/ballot-test-failed/ballot-test-failed.module').then( m => m.BallotTestFailedPageModule)
+  },
+  {
+    path: 'expired-code',
+    loadChildren: () => import('./pages/expired-code/expired-code.module').then( m => m.ExpiredCodePageModule)
   }
 
 ];

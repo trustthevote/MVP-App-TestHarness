@@ -44,9 +44,17 @@
     "ydn": "You can send it digitally now.",
     "bfp": "Ballot Fingerprint:",
     "zyx098": "zyx098-wvu765-tsr432-1234",
-    "tv_fp": " Or if you like, you may perform a technical test to verify your ballot fingerprint. To do so, copy the ballot fingerprint below, and paste into your external validator of choice.",
-    "send": "send",
-    "copy": "Copy"
+    "tv_fp": "Or you can perform a test to verify it will be cast correctly to the digital ballot box.",
+    "send": "Cast Ballot Now",
+    "copy": "Input Test Results ",
+    "tv1_fp":" On a computer or other device,go to",
+    "link":"www.linkto.site.org",
+    "tv2_fb":"and enter  the  following code to review your ballot",
+    "tv3_fb":"For more information on testing. click the link below.",
+    "shmd":"Show more details",
+    "mp":"My Progress"
+
+
   },
   "copy_confirm": {
     "copy_confirmed": "Copy-Confirmed",
@@ -58,16 +66,18 @@
   },
   "test_result_page": {
     "test_results": "Test-Results",
-    "dbf": "Did your ballot pass or fail?",
-    "passed": "Passed",
-    "failed": "Failed",
+    "dbf": "Is your ballot correct?",
+    "passed": "Yes",
+    "failed": "No",
     "next": "Next",
     "back": "Back"
   },
   "failed_auth": {
     "try_again": "Try again",
-    "www_link": "www.linktosite.go!",
-    "auth_p_1": " Sorry, your authorization code did not work. Please try again, or click the link below for help.",
+    "btn_report":"Report A problem",
+    "print":"Print",
+    "www_link": "www.linktosite.org",
+    "auth_p_1": " Sorry, your access code did not work. Please try again, or click the link below for help. ",
     "auth_p_2": "You can also click the print button below to proceed with a physical return instead."
   },
   "sending_page": {
@@ -92,7 +102,11 @@
   },
   "check_network_page": {
     "text": " Sorry, it seems there was a network error. Please check your connection and try again.",
-    "try_again": "Try again"
+    "try_again": "Try again",
+    "first_para":" Sorry, it seems there was a network error. Please check your connection and try again.",
+    "sec_para":"gain. You can also click the print button below to proceed with a physical return instead.",
+    "rbtn":"report a problem",
+    "print":"Print"
   },
   "check_server_page": {
     "text": " Sorry, it seems we are have some network connection issues on our end. Please try again. ",
@@ -141,6 +155,22 @@
      "link": " www.linktosite.gov",
      "back": "Back"
   },
+
+  "BallotTestFailedPage": {
+    "upr_para" : "Your local election office has been notified to issue you a replacement ballot by mail. For more information, you may contact your election office through the link below. ",
+    "link":"www.linktosite.org",
+    "back": "Report  A Problem",
+    "print":"Print"
+ },
+ "ExpiredCodePage":{
+  "upr_para" : " Sorry, your access code has expired. Please request another access code. Or click the link below for help.. ",
+  "link":"www.linktosite.org",
+  "sec_para": "You can also click the print button below to proceed with a physical return instead.",
+  "print":"Print",
+  "rbtn":"report a problem",
+  "btn":"Request"
+ },
+  
 
   "provide_information": "Provide Information",
   "required": "Required",

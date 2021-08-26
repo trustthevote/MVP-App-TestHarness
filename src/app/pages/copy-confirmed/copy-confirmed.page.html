@@ -3,8 +3,9 @@
     <p>{{results.copy_confirmed}}</p>
   </div>
   <div class="Required-div">
-    <p>{{results.yccm}} </p>
-    <p>{{results.yccm1}}</p>{{results.yccm2}}
+    <p>{{results.yccm}}</p>
+    <p>{{results.yccm1}}</p>
+    {{results.yccm2}}
   </div>
 </ion-content>
 <ion-footer class="ion-no-border">
@@ -15,7 +16,7 @@
           {{results.back}}
           <ion-icon slot="start" name="chevron-back-outline"></ion-icon>
         </ion-button>
-      </ion-col>
+      </ion-col>  
       <ion-col size="6" class="next-btn">
         <ion-button color="dark" (click)="nextbtn()">
           {{results.next}}

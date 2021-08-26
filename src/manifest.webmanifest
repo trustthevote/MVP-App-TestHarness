@@ -1,6 +1,6 @@
 {
-  "name": "abc-prototype",
-  "short_name": "abc-prototype",
+  "name": "mvp-test-harness",
+  "short_name": "mvp-test-harness",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",

@@ -7,12 +7,29 @@ import { Router } from '@angular/router';
 })
 export class BallotFingerprintPage implements OnInit {
   results = [];
-
+  IsVisible:boolean=false;
+  Ishowmore:boolean=false;
+  Ishowmoredetails:boolean=false;
+  icon: boolean=true;
+  scndicons= false;
+  fsticon= true;
   constructor(private route: Router) {}
+ 
+   PolicyDetails()
+  {
+    this.IsVisible=true;
+    this.fsticon = false
+    this.scndicons = true;
+ }
+ PolicyDetailshide(){
+  this.IsVisible=false;
+  this.scndicons = false;
+  this.fsticon = true
+ }
 
   ngOnInit() {
     fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-      // console.log("json", json);
+ 
       this.results = json[0]['ballot_fingerp'];
       console.log("results: ", this.results);
     });

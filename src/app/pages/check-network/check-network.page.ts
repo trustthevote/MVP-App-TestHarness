@@ -12,13 +12,13 @@ export class CheckNetworkPage implements OnInit {
 
   ngOnInit() {
     fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-
-      this.results = json[0]['check_network_page'];
-      
+    this.results = json[0]['check_network_page'];
     });
   }
   confirm() {
-    this.route.navigate(['/check']);
+    this.route.navigate(['/access-code',{
+      t: new Date().getTime()
+    }]);
   }
 
 }

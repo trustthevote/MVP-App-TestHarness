@@ -24,7 +24,7 @@ export class TobecontinuePage implements OnInit {
   }
   backbtn() {
 
-    this.route.navigate(['/print-return']);
+    this.route.navigate(['/ballot-complete']);
   }
 
 }
