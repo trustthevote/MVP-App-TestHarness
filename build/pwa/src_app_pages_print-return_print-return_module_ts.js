@@ -1,4 +1,4 @@
-(self["webpackChunkabc_prototype"] = self["webpackChunkabc_prototype"] || []).push([["src_app_pages_print-return_print-return_module_ts"],{
+(self["webpackChunkmvp_test_harness"] = self["webpackChunkmvp_test_harness"] || []).push([["src_app_pages_print-return_print-return_module_ts"],{
 
 /***/ 978:
 /*!*******************************************************************!*\
@@ -155,28 +155,32 @@ let PrintReturnPage = class PrintReturnPage {
                 console.log(precinctNum);
                 // await Browser.open({ url: 'https://drive.google.com/file/d/1Wrk9xhJkMFVEqtBBJgw2qZOTS9nqFxwk/view?usp=sharing' });
                 yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
-                    url: 'https://drive.google.com/file/d/1NjMf2sUwjTPH20jN4ajnWRZDvkobq9hR/view?usp=sharing'
+                    // url: 'https://drive.google.com/file/d/1NjMf2sUwjTPH20jN4ajnWRZDvkobq9hR/view?usp=sharing'
+                    url: 'https://drive.google.com/file/d/1NjMf2sUwjTPH20jN4ajnWRZDvkobq9hR/view?usp=sharing '
                 });
             }
             else if (precinctNum === 2) {
                 console.log(precinctNum);
                 // await Browser.open({ url: 'https://drive.google.com/file/d/1cV-4autG5EmSzThK82-0WWbFRv2RnkuR/view?usp=sharing' });
                 yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
-                    url: 'https://drive.google.com/file/d/1cV-4autG5EmSzThK82-0WWbFRv2RnkuR/view?usp=sharing'
+                    // url: 'https://drive.google.com/file/d/1cV-4autG5EmSzThK82-0WWbFRv2RnkuR/view?usp=sharing'
+                    url: 'https://drive.google.com/file/d/1FtiAIYsOdGoLSqXBEymGatkpR7heuSfI/view?usp=sharing  '
                 });
             }
             else if (precinctNum === 3) {
                 console.log(precinctNum);
                 // await Browser.open({ url: 'https://drive.google.com/file/d/16A2tzWcmvLQzXBdHordJ0OZbT2li2I8j/view?usp=sharing' });
                 yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
-                    url: 'https://drive.google.com/file/d/16A2tzWcmvLQzXBdHordJ0OZbT2li2I8j/view?usp=sharing'
+                    // url: 'https://drive.google.com/file/d/16A2tzWcmvLQzXBdHordJ0OZbT2li2I8j/view?usp=sharing'
+                    url: 'https://drive.google.com/file/d/1hKmtHmpJ2qP1atsDWfU2qtzDOn6kZ1ra/view?usp=sharing '
                 });
             }
             else {
                 console.log(precinctNum);
                 // await Browser.open({ url: 'https://drive.google.com/file/d/1C6TO44gUkkljSyNLXdV_e1X7wPvEc3eA/view?usp=sharing' });
                 yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
-                    url: 'https://drive.google.com/file/d/1C6TO44gUkkljSyNLXdV_e1X7wPvEc3eA/view?usp=sharing'
+                    // url: 'https://drive.google.com/file/d/1C6TO44gUkkljSyNLXdV_e1X7wPvEc3eA/view?usp=sharing'
+                    url: 'https://drive.google.com/file/d/1KyESAe8iVuA61zEKhpN3DENtNOE6M8Lr/view?usp=sharing'
                 });
             }
         });
@@ -187,6 +191,7 @@ let PrintReturnPage = class PrintReturnPage {
                 console.log(precinctNum);
                 // await Browser.open({ url: 'https://drive.google.com/file/d/1kn2xt5WxYzTn-NsbPc1X3BMqI47rjHDP/view?usp=sharing' });
                 yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
+                    // url: 'https://drive.google.com/file/d/1A8v82etRnePtdF_IZDQmVb34Ss2tZu-f/view?usp=sharing'
                     url: 'https://drive.google.com/file/d/1A8v82etRnePtdF_IZDQmVb34Ss2tZu-f/view?usp=sharing'
                 });
             }
@@ -194,13 +199,15 @@ let PrintReturnPage = class PrintReturnPage {
                 console.log(precinctNum);
                 // await Browser.open({ url: 'https://drive.google.com/file/d/1BSmmTchFQ3X8MD4wEmsIStA2hV97nRS1/view?usp=sharing' });
                 yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
-                    url: 'https://drive.google.com/file/d/1cV-4autG5EmSzThK82-0WWbFRv2RnkuR/view?usp=sharing'
+                    // url: 'https://drive.google.com/file/d/1cV-4autG5EmSzThK82-0WWbFRv2RnkuR/view?usp=sharing'
+                    url: 'https://drive.google.com/file/d/1Qbc4jLYFkDoljpR4g5NFJ4Wfc_S5--kc/view?usp=sharing'
                 });
             }
             else if (precinctNum === 3) {
                 console.log(precinctNum);
                 // await Browser.open({ url: 'https://drive.google.com/file/d/1oB_xaVUPwK6oE_9Np_iTymAU-lV2urJT/view?usp=sharing' });
                 yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
+                    // url: 'https://drive.google.com/file/d/1j3wzbIfH8Sm4UAyij6N5pjHJVXTGWliJ/view?usp=sharing'
                     url: 'https://drive.google.com/file/d/1j3wzbIfH8Sm4UAyij6N5pjHJVXTGWliJ/view?usp=sharing'
                 });
             }
@@ -208,6 +215,7 @@ let PrintReturnPage = class PrintReturnPage {
                 console.log(precinctNum);
                 // await Browser.open({ url: 'https://drive.google.com/file/d/160p-8lKOlIWXffnXZGR3Pf1gXf6mQYQW/view?usp=sharing' });
                 yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
+                    // url: 'https://drive.google.com/file/d/1n3iNq1KVvr8YjKllMO6znArKtlDvvK-k/view?usp=sharing'
                     url: 'https://drive.google.com/file/d/1n3iNq1KVvr8YjKllMO6znArKtlDvvK-k/view?usp=sharing'
                 });
             }
@@ -282,7 +290,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n  \r\n  <!-- <ion-grid class=\"ion-no-padding mt60\">\r\n    <ion-row class=\"mt100 ion-text-center\">\r\n      <ion-col size=\"12\">\r\n        <ion-button (click)=\"openPDF(precinctNum)\" class=\"main-btn-style\" color=\"primary\">Print Ballot</ion-button>\r\n        <ion-button (click)=\"openPDF2(precinctNum)\" class=\"main-btn-style\" color=\"primary\">Print Affidavit</ion-button>\r\n        <ion-button (click)=\"openXML(precinctNum)\" class=\"main-btn-style\" color=\"secondary\">Print Xml</ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid> -->\r\n  <div class=\"list-question\">\r\n    <p>{{results.print_return}}</p>\r\n  </div>\r\n  <div class=\"cen-div-text\" (click)=\"openPDF(precinctNum)\">\r\n    <p>{{results.bpp}}</p>\r\n\r\n    <ion-icon name=\"documents-outline\"></ion-icon>\r\n  </div>\r\n  <div class=\"bottom-div-text\" (click)=\"openPDF2(precinctNum)\">\r\n    <p>{{results.app}}</p>\r\n    <ion-icon name=\"document-outline\"></ion-icon>\r\n  </div>\r\n</ion-content>\r\n<ion-footer class=\"ion-no-border\">\r\n  <ion-toolbar>\r\n    <ion-row>\r\n      <ion-col size=\"6\" class=\"back-btn\">\r\n        <ion-button color=\"dark\" (click)=\" backbtn()\">\r\n          {{results.back}}\r\n          <ion-icon\r\n            slot=\"start\"\r\n            name=\"chevron-back-outline\"\r\n          ></ion-icon> </ion-button\r\n      ></ion-col>\r\n      <ion-col size=\"6\" class=\"next-btn\">\r\n        <ion-button color=\"dark\" (click)=\"goToFinish()\">\r\n          {{results.print}}\r\n        \r\n          <ion-icon slot=\"end\" name=\"print-outline\"></ion-icon>\r\n          </ion-button \r\n      ></ion-col>\r\n    </ion-row>\r\n  </ion-toolbar>\r\n</ion-footer>\r\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n  <!-- <ion-grid class=\"ion-no-padding mt60\">\r\n    <ion-row class=\"mt100 ion-text-center\">\r\n      <ion-col size=\"12\">\r\n        <ion-button (click)=\"openPDF(precinctNum)\" class=\"main-btn-style\" color=\"primary\">Print Ballot</ion-button>\r\n        <ion-button (click)=\"openPDF2(precinctNum)\" class=\"main-btn-style\" color=\"primary\">Print Affidavit</ion-button>\r\n        <ion-button (click)=\"openXML(precinctNum)\" class=\"main-btn-style\" color=\"secondary\">Print Xml</ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid> -->\r\n  <div class=\"list-question\">\r\n    <p>{{results.print_return}}</p>\r\n  </div>\r\n  <div class=\"cen-div-text\" (click)=\"openPDF(precinctNum)\">\r\n    <p>{{results.bpp}}</p>\r\n\r\n    <ion-icon name=\"documents-outline\"></ion-icon>\r\n  </div>\r\n  <div class=\"bottom-div-text\" (click)=\"openPDF2(precinctNum)\">\r\n    <p>{{results.app}}</p>\r\n    <ion-icon name=\"document-outline\"></ion-icon>\r\n  </div>\r\n</ion-content>\r\n<ion-footer class=\"ion-no-border\">\r\n  <ion-toolbar>\r\n    <ion-row>\r\n      <ion-col size=\"6\" class=\"back-btn\">\r\n        <ion-button color=\"dark\" (click)=\" backbtn()\">\r\n          {{results.back}}\r\n          <ion-icon\r\n            slot=\"start\"\r\n            name=\"chevron-back-outline\"\r\n          ></ion-icon> </ion-button\r\n      ></ion-col>\r\n      <ion-col size=\"6\" class=\"next-btn\">\r\n        <ion-button color=\"dark\" (click)=\"goToFinish()\">\r\n          {{results.print}}\r\n\r\n          <ion-icon slot=\"end\" name=\"print-outline\"></ion-icon> </ion-button\r\n      ></ion-col>\r\n    </ion-row>\r\n  </ion-toolbar>\r\n</ion-footer>\r\n");
 
 /***/ })
 

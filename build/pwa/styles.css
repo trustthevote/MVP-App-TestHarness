@@ -1131,5 +1131,19 @@ sub {
   font-size: 14px;
   text-align: center;
 }
+ion-button {
+  text-transform: capitalize;
+  --border-radius: 5px;
+}
+ion-toolbar {
+  height: 100px;
+}
+a {
+  /* background-color: #ec0000; */
+  color: #222428;
+  border: none;
+  font-size: 22px;
+  font-weight: 700;
+}
 
 /*# sourceMappingURL=styles.css.map*/

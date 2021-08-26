@@ -1,4 +1,4 @@
-(self["webpackChunkabc_prototype"] = self["webpackChunkabc_prototype"] || []).push([["src_app_pages_ballot-form_ballot-form_module_ts"],{
+(self["webpackChunkmvp_test_harness"] = self["webpackChunkmvp_test_harness"] || []).push([["src_app_pages_ballot-form_ballot-form_module_ts"],{
 
 /***/ 3238:
 /*!*****************************************************************!*\
@@ -122,7 +122,6 @@ let BallotFormPage = class BallotFormPage {
         //   this.precinct = 'Your Ballot is for Precinct #4';
         // }
         fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-            // console.log("json", json);
             this.results = json[0]['ballot_form'];
             console.log("results: ", this.results);
         });
@@ -165,7 +164,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (".mt30 {\n  margin-top: 30px;\n}\n\n.mt60 {\n  margin-top: 60px;\n}\n\n.mt100 {\n  margin-top: 100px;\n}\n\n.sub-title {\n  font-size: 20px;\n}\n\nion-card-title, p {\n  color: #464648;\n}\n\n.main-btn-style {\n  --border-radius: 0;\n  height: 50px;\n  width: 180px;\n  font-size: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJhbGxvdC1mb3JtLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFBO0FBQ0Y7O0FBQ0E7RUFDRSxnQkFBQTtBQUVGOztBQUFBO0VBQ0UsaUJBQUE7QUFHRjs7QUFEQTtFQUNFLGVBQUE7QUFJRjs7QUFGQTtFQUNFLGNBQUE7QUFLRjs7QUFIQTtFQUNFLGtCQUFBO0VBQ0EsWUFBQTtFQUNBLFlBQUE7RUFDQSxlQUFBO0FBTUYiLCJmaWxlIjoiYmFsbG90LWZvcm0ucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm10MzAge1xyXG4gIG1hcmdpbi10b3A6IDMwcHg7XHJcbn1cclxuLm10NjAge1xyXG4gIG1hcmdpbi10b3A6IDYwcHg7XHJcbn1cclxuLm10MTAwIHtcclxuICBtYXJnaW4tdG9wOiAxMDBweDtcclxufVxyXG4uc3ViLXRpdGxlIHtcclxuICBmb250LXNpemU6IDIwcHg7XHJcbn1cclxuaW9uLWNhcmQtdGl0bGUsIHAge1xyXG4gIGNvbG9yOiAjNDY0NjQ4O1xyXG59XHJcbi5tYWluLWJ0bi1zdHlsZSB7XHJcbiAgLS1ib3JkZXItcmFkaXVzOiAwO1xyXG4gIGhlaWdodDogNTBweDtcclxuICB3aWR0aDogMTgwcHg7XHJcbiAgZm9udC1zaXplOiAyMHB4O1xyXG59XHJcbiJdfQ== */");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (".mt30 {\n  margin-top: 30px;\n}\n\n.mt60 {\n  margin-top: 60px;\n}\n\n.mt100 {\n  margin-top: 100px;\n}\n\n.sub-title {\n  font-size: 20px;\n}\n\nion-card-title, p {\n  color: #464648;\n}\n\n.main-btn-style {\n  --border-radius: 0;\n  height: 50px;\n  width: 180px;\n  font-size: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJhbGxvdC1mb3JtLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFBO0FBQ0Y7O0FBQ0E7RUFDRSxnQkFBQTtBQUVGOztBQUFBO0VBQ0UsaUJBQUE7QUFHRjs7QUFBQTtFQUNFLGVBQUE7QUFHRjs7QUFEQTtFQUNFLGNBQUE7QUFJRjs7QUFGQTtFQUNFLGtCQUFBO0VBQ0EsWUFBQTtFQUNBLFlBQUE7RUFDQSxlQUFBO0FBS0YiLCJmaWxlIjoiYmFsbG90LWZvcm0ucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm10MzAge1xyXG4gIG1hcmdpbi10b3A6IDMwcHg7XHJcbn1cclxuLm10NjAge1xyXG4gIG1hcmdpbi10b3A6IDYwcHg7XHJcbn1cclxuLm10MTAwIHtcclxuICBtYXJnaW4tdG9wOiAxMDBweDtcclxufVxyXG5cclxuLnN1Yi10aXRsZSB7XHJcbiAgZm9udC1zaXplOiAyMHB4O1xyXG59XHJcbmlvbi1jYXJkLXRpdGxlLCBwIHtcclxuICBjb2xvcjogIzQ2NDY0ODtcclxufVxyXG4ubWFpbi1idG4tc3R5bGUge1xyXG4gIC0tYm9yZGVyLXJhZGl1czogMDtcclxuICBoZWlnaHQ6IDUwcHg7XHJcbiAgd2lkdGg6IDE4MHB4O1xyXG4gIGZvbnQtc2l6ZTogMjBweDtcclxufVxyXG4iXX0= */");
 
 /***/ }),
 
@@ -180,7 +179,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content class=\"ion-padding\">\r\n  <div class=\"ion-text-center mt60\">\r\n    <ion-card-title>{{results.welcome}} {{ paramData?.firstname }}!</ion-card-title>\r\n  </div>\r\n\r\n  <div class=\"ion-text-center sub-title\">\r\n    <p>{{ precinct }}</p>\r\n  </div>\r\n\r\n  <div class=\"ion-text-center mt60\">\r\n    <p>{{results.please}} <b>{{results.start}}</b> {{results.your_ballot_marking}}</p>\r\n  </div>\r\n\r\n  <ion-grid class=\"ion-no-padding mt60\">\r\n    <ion-row class=\"mt100 ion-text-center\">\r\n      <ion-col size=\"12\">\r\n        <ion-button (click)=\"goToComplete()\" class=\"main-btn-style\" color=\"primary\">{{results.start}}</ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n\r\n  <div class=\"mt30 ion-text-center\">\r\n    <ion-button (click)=\"goBack()\" class=\"main-btn-style\" color=\"primary\" fill=\"clear\"> {{results.cancel}}</ion-button>\r\n  </div>\r\n</ion-content>\r\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content class=\"ion-padding\">\r\n  <div class=\"ion-text-center mt60\">\r\n    <ion-card-title\r\n      >{{results.welcome}} {{ paramData?.firstname }}!</ion-card-title\r\n    >\r\n  </div>\r\n\r\n  <div class=\"ion-text-center sub-title\">\r\n    <p>{{ precinct }}</p>\r\n  </div>\r\n\r\n  <div class=\"ion-text-center mt60\">\r\n    <p>\r\n      {{results.please}}\r\n      <b>{{results.start}}</b> {{results.your_ballot_marking}}\r\n    </p>\r\n  </div>\r\n\r\n  <ion-grid class=\"ion-no-padding mt60\">\r\n    <ion-row class=\"mt100 ion-text-center\">\r\n      <ion-col size=\"12\">\r\n        <ion-button\r\n          (click)=\"goToComplete()\"\r\n          class=\"main-btn-style\"\r\n          color=\"primary\"\r\n          >{{results.start}}</ion-button\r\n        >\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n\r\n  <div class=\"mt30 ion-text-center\">\r\n    <ion-button\r\n      (click)=\"goBack()\"\r\n      class=\"main-btn-style\"\r\n      color=\"primary\"\r\n      fill=\"clear\"\r\n    >\r\n      {{results.cancel}}</ion-button\r\n    >\r\n  </div>\r\n</ion-content>\r\n");
 
 /***/ })
 
