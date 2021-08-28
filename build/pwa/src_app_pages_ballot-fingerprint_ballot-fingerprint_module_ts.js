@@ -1,4 +1,4 @@
-(self["webpackChunkmvp_test_harness"] = self["webpackChunkmvp_test_harness"] || []).push([["src_app_pages_ballot-fingerprint_ballot-fingerprint_module_ts"],{
+(self["webpackChunkMVP_Test_Harness"] = self["webpackChunkMVP_Test_Harness"] || []).push([["src_app_pages_ballot-fingerprint_ballot-fingerprint_module_ts"],{
 
 /***/ 223:
 /*!*******************************************************************************!*\
@@ -130,7 +130,7 @@ let BallotFingerprintPage = class BallotFingerprintPage {
         });
     }
     copybtn() {
-        this.route.navigate(['/copy-confirmed']);
+        this.route.navigate(['/test-results']);
     }
     sendbtn() {
         this.route.navigate(['/sending']);
@@ -177,7 +177,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n  <div class=\"list-question\">\r\n    <p>{{results.ybr}}</p>\r\n  </div>\r\n  <div class=\"cen-div-text\">\r\n    <p>{{results.ydn}}</p>\r\n    <ion-button color=\"dark\" (click)=\"sendbtn()\">\r\n      {{results.send}}\r\n      <ion-icon slot=\"end\" name=\"paper-plane-outline\"></ion-icon>\r\n    </ion-button>\r\n  </div>\r\n  <div class=\"bottom-div-text\">\r\n    <p>{{results.tv_fp}}</p>\r\n  </div>\r\n  <div *ngIf=\"IsVisible == true\">\r\n    <p>{{results.tv1_fp}}</p>\r\n    <p>{{results.link}}</p>\r\n    <p>{{results.tv2_fb}}</p>\r\n    <ion-row>\r\n      {{results.bfp}}<br />\r\n      {{results.zyx098}}\r\n    </ion-row>\r\n    <ion-button color=\"dark\" (click)=\"copybtn()\">\r\n      {{results.copy}}\r\n      <ion-icon slot=\"end\" name=\"settings-outline\"></ion-icon>\r\n    </ion-button>\r\n    <p>{{results.tv3_fb}}</p>\r\n    <p>{{results.link}}</p>\r\n  </div>\r\n  <div class=\"text-p\">\r\n    {{results.shmd}}\r\n    <ion-icon\r\n      name=\"chevron-down-outline\"\r\n      *ngIf=\"fsticon\"\r\n      (click)=\"PolicyDetails()\"\r\n    ></ion-icon>\r\n    <ion-icon\r\n      name=\"chevron-up-outline\"\r\n      *ngIf=\"scndicons\"\r\n      (click)=\"PolicyDetailshide()\"\r\n    ></ion-icon>\r\n  </div>\r\n</ion-content>\r\n<ion-footer >\r\n  <ion-toolbar >\r\n\r\n      <!-- <div class=\"text-p\" style=\"text-align: center;\">\r\n    {{results.mp}}  <ion-icon name=\"chevron-down-outline\"></ion-icon>\r\n        </div> -->\r\n\r\n  </ion-toolbar>\r\n</ion-footer>\r\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n  <div class=\"list-question\">\r\n    <p>{{results.ybr}}</p>\r\n  </div>\r\n  <div class=\"cen-div-text\">\r\n    <p>{{results.ydn}}</p>\r\n    <ion-button color=\"dark\" (click)=\"sendbtn()\">\r\n      {{results.send}}\r\n      <ion-icon slot=\"end\" name=\"paper-plane-outline\"></ion-icon>\r\n    </ion-button>\r\n  </div>\r\n  <div class=\"bottom-div-text\">\r\n    <p>{{results.tv_fp}}</p>\r\n  </div>\r\n  <div *ngIf=\"IsVisible == true\">\r\n    <p>{{results.tv1_fp}}</p>\r\n    <p>{{results.link}}</p>\r\n    <p>{{results.tv2_fb}}</p>\r\n    <ion-row>\r\n      {{results.bfp}}<br />\r\n      {{results.zyx098}}\r\n    </ion-row>\r\n    <ion-button color=\"dark\" (click)=\"copybtn()\">\r\n      {{results.copy}}\r\n      <ion-icon slot=\"end\" name=\"settings-outline\"></ion-icon>\r\n    </ion-button>\r\n    <p>{{results.tv3_fb}}</p>\r\n    <p>{{results.link}}</p>\r\n  </div>\r\n  <div class=\"text-p\"  *ngIf=\"fsticon\" (click)=\"PolicyDetails()\">\r\n    {{results.shmd}}\r\n    <ion-icon\r\n      name=\"chevron-down-outline\"\r\n      *ngIf=\"fsticon\"\r\n     \r\n    ></ion-icon>\r\n    <!-- <ion-icon\r\n      name=\"chevron-up-outline\"\r\n      *ngIf=\"scndicons\"\r\n      (click)=\"PolicyDetailshide()\"\r\n    ></ion-icon> -->\r\n  </div>\r\n  <div class=\"text-p\"  *ngIf=\"scndicons\"  (click)=\"PolicyDetailshide()\">\r\n    {{results.shmd}}\r\n    <!-- <ion-icon\r\n      name=\"chevron-down-outline\"\r\n      *ngIf=\"fsticon\"\r\n      (click)=\"PolicyDetails()\"\r\n    ></ion-icon> -->\r\n    <ion-icon  name=\"chevron-up-outline\"  *ngIf=\"scndicons\"  ></ion-icon>\r\n  </div>\r\n</ion-content>\r\n<ion-footer >\r\n  <ion-toolbar >\r\n\r\n      <!-- <div class=\"text-p\" style=\"text-align: center;\">\r\n    {{results.mp}}  <ion-icon name=\"chevron-down-outline\"></ion-icon>\r\n        </div> -->\r\n\r\n  </ion-toolbar>\r\n</ion-footer>\r\n");
 
 /***/ })
 

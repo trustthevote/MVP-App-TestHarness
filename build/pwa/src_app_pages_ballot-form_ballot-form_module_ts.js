@@ -1,4 +1,4 @@
-(self["webpackChunkmvp_test_harness"] = self["webpackChunkmvp_test_harness"] || []).push([["src_app_pages_ballot-form_ballot-form_module_ts"],{
+(self["webpackChunkMVP_Test_Harness"] = self["webpackChunkMVP_Test_Harness"] || []).push([["src_app_pages_ballot-form_ballot-form_module_ts"],{
 
 /***/ 3238:
 /*!*****************************************************************!*\
@@ -121,10 +121,27 @@ let BallotFormPage = class BallotFormPage {
         // } else {
         //   this.precinct = 'Your Ballot is for Precinct #4';
         // }
+        this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
         fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
             this.results = json[0]['ballot_form'];
             console.log("results: ", this.results);
         });
+        if (this.userObject.lastname != undefined) {
+            // const lastName = this.paramData.lastname.charAt(0).toUpperCase() + this.paramData.lastname.slice(1);
+            const lastName = this.userObject.lastname.charAt(0).toUpperCase() + this.userObject.lastname.slice(1);
+            if (lastName.includes('A', 0)) {
+                this.precinctNum = 1;
+            }
+            else if (lastName.includes('B', 0)) {
+                this.precinctNum = 2;
+            }
+            else if (lastName.includes('C', 0)) {
+                this.precinctNum = 3;
+            }
+            else {
+                this.precinctNum = 4;
+            }
+        }
     }
     goToComplete() {
         const naviExtras = {
@@ -179,7 +196,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content class=\"ion-padding\">\r\n  <div class=\"ion-text-center mt60\">\r\n    <ion-card-title\r\n      >{{results.welcome}} {{ paramData?.firstname }}!</ion-card-title\r\n    >\r\n  </div>\r\n\r\n  <div class=\"ion-text-center sub-title\">\r\n    <p>{{ precinct }}</p>\r\n  </div>\r\n\r\n  <div class=\"ion-text-center mt60\">\r\n    <p>\r\n      {{results.please}}\r\n      <b>{{results.start}}</b> {{results.your_ballot_marking}}\r\n    </p>\r\n  </div>\r\n\r\n  <ion-grid class=\"ion-no-padding mt60\">\r\n    <ion-row class=\"mt100 ion-text-center\">\r\n      <ion-col size=\"12\">\r\n        <ion-button\r\n          (click)=\"goToComplete()\"\r\n          class=\"main-btn-style\"\r\n          color=\"primary\"\r\n          >{{results.start}}</ion-button\r\n        >\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n\r\n  <div class=\"mt30 ion-text-center\">\r\n    <ion-button\r\n      (click)=\"goBack()\"\r\n      class=\"main-btn-style\"\r\n      color=\"primary\"\r\n      fill=\"clear\"\r\n    >\r\n      {{results.cancel}}</ion-button\r\n    >\r\n  </div>\r\n</ion-content>\r\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content class=\"ion-padding\">\r\n  <div class=\"ion-text-center mt60\">\r\n    <ion-card-title\r\n      >{{results.welcome}} {{ paramData?.firstname }}!</ion-card-title\r\n    >\r\n  </div>\r\n\r\n  <div class=\"ion-text-center sub-title\">\r\n    <p>{{ precinct }}</p>\r\n  </div>\r\n\r\n  <div class=\"ion-text-center mt60\">\r\n    <p>\r\n      {{results.precinct_no}}{{precinctNum}}\r\n      <br>\r\n      {{results.please}}\r\n      <b>{{results.start}}</b> {{results.your_ballot_marking}}\r\n    </p>\r\n  </div>\r\n\r\n  <ion-grid class=\"ion-no-padding mt60\">\r\n    <ion-row class=\"mt100 ion-text-center\">\r\n      <ion-col size=\"12\">\r\n        <ion-button\r\n          (click)=\"goToComplete()\"\r\n          class=\"main-btn-style\"\r\n          color=\"primary\"\r\n          >{{results.start}}</ion-button\r\n        >\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n\r\n  <div class=\"mt30 ion-text-center\">\r\n    <ion-button\r\n      (click)=\"goBack()\"\r\n      class=\"main-btn-style\"\r\n      color=\"primary\"\r\n      fill=\"clear\"\r\n    >\r\n      {{results.cancel}}</ion-button\r\n    >\r\n  </div>\r\n</ion-content>\r\n");
 
 /***/ })
 

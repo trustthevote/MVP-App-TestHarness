@@ -17,13 +17,16 @@ export class ExpiredCodePage implements OnInit {
      
     });
   }
-  backbtn(){
+  backbtn() {
     this.route.navigate(['/access-code',{
       t: new Date().getTime()
     }]);
   }
+  rpbtn() {
+    this.route.navigate(['/tobecontinue']);
+  }
   printbtn() {
-    this.route.navigate(['/print-return-digital']);
+    this.route.navigate(['/print-return']);
   }
 
 }

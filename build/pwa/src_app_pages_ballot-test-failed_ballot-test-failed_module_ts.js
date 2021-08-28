@@ -1,4 +1,4 @@
-(self["webpackChunkmvp_test_harness"] = self["webpackChunkmvp_test_harness"] || []).push([["src_app_pages_ballot-test-failed_ballot-test-failed_module_ts"],{
+(self["webpackChunkMVP_Test_Harness"] = self["webpackChunkMVP_Test_Harness"] || []).push([["src_app_pages_ballot-test-failed_ballot-test-failed_module_ts"],{
 
 /***/ 278:
 /*!*******************************************************************************!*\
@@ -92,22 +92,39 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "BallotTestFailedPage": () => (/* binding */ BallotTestFailedPage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 4762);
 /* harmony import */ var _raw_loader_ballot_test_failed_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./ballot-test-failed.page.html */ 6564);
 /* harmony import */ var _ballot_test_failed_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ballot-test-failed.page.scss */ 4214);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 9895);
 
 
 
 
+
+// import { Router } from '@angular/router';
 let BallotTestFailedPage = class BallotTestFailedPage {
-    constructor() { }
+    constructor(route) {
+        this.route = route;
+        this.results = [];
+    }
     ngOnInit() {
+        fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
+            this.results = json[0]['BallotTestFailedPage'];
+        });
+    }
+    rpbtn() {
+        this.route.navigate(['/tobecontinue']);
+    }
+    printbtn() {
+        this.route.navigate(['/print-return']);
     }
 };
-BallotTestFailedPage.ctorParameters = () => [];
-BallotTestFailedPage = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.Component)({
+BallotTestFailedPage.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__.Router }
+];
+BallotTestFailedPage = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.Component)({
         selector: 'app-ballot-test-failed',
         template: _raw_loader_ballot_test_failed_page_html__WEBPACK_IMPORTED_MODULE_0__.default,
         styles: [_ballot_test_failed_page_scss__WEBPACK_IMPORTED_MODULE_1__.default]
@@ -144,7 +161,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n  <div class=\"upr-text\">\r\n    <p>\r\n      Your local election office has been notified to issue you a replacement\r\n      ballot by mail. For more information, you may contact your election office\r\n      through the link below. \r\n    </p>\r\n    <a href=\"www.linktosite.org\">www.linktosite.org</a>\r\n  </div>\r\n  <ion-button color=\"dark\" (click)=\"copybtn()\">\r\n Report  A Problem\r\n <ion-icon  slot=\"end\" name=\"help-outline\"></ion-icon>\r\n    <!-- <ion-icon slot=\"end\" name=\"settings-outline\"></ion-icon> -->\r\n  </ion-button>\r\n</ion-content>\r\n<ion-footer>\r\n  <ion-toolbar>\r\n    <ion-button color=\"dark\" slot=\"end\" (click)=\"copybtn()\">\r\n      Print\r\n      <ion-icon  slot=\"end\" name=\"print-outline\"></ion-icon>\r\n         <!-- <ion-icon slot=\"end\" name=\"settings-outline\"></ion-icon> -->\r\n       </ion-button>\r\n  </ion-toolbar>\r\n  </ion-footer>\r\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\n  <div class=\"upr-text\">\n    <p>\n      {{results.upr_para}}\n    </p>\n    <a href=\"{{results.link}}\">{{results.link}}</a>\n  </div>\n  <ion-button color=\"dark\" (click)=\"rpbtn()\">\n {{results.back}}\n <ion-icon  slot=\"end\" name=\"help-outline\"></ion-icon>\n    <!-- <ion-icon slot=\"end\" name=\"settings-outline\"></ion-icon> -->\n  </ion-button>\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n    <ion-button color=\"dark\" slot=\"end\" (click)=\"printbtn()\">\n     {{results.print}}\n      <ion-icon  slot=\"end\" name=\"print-outline\"></ion-icon>\n         <!-- <ion-icon slot=\"end\" name=\"settings-outline\"></ion-icon> -->\n       </ion-button>\n  </ion-toolbar>\n  </ion-footer>\n");
 
 /***/ })
 

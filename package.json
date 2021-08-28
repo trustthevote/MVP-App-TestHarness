@@ -1,5 +1,5 @@
 {
-  "name": "mvp-test-harness",
+  "name": "MVP Test Harness",
   "version": "0.0.1",
   "author": "OSET Foundation",
   "homepage": "https://www.osetfoundation.org/",
@@ -24,7 +24,7 @@
     "@capacitor/android": "3.1.2",
     "@capacitor/app": "1.0.0",
     "@capacitor/browser": "^1.0.2",
-    "@capacitor/core": "3.0.0",
+    "@capacitor/core": "^3.1.2",
     "@capacitor/haptics": "1.0.0",
     "@capacitor/ios": "3.0.2",
     "@capacitor/keyboard": "1.0.0",

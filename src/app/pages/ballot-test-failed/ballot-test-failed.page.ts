@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 // import { Router } from '@angular/router';
 
 @Component({
@@ -9,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class BallotTestFailedPage implements OnInit {
 
   results = [];
-  constructor() {}
+  constructor(private route: Router) {}
 
   ngOnInit() {
     fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
@@ -17,5 +18,11 @@ export class BallotTestFailedPage implements OnInit {
       this.results = json[0]['BallotTestFailedPage'];
       
     });
+}
+rpbtn() {
+  this.route.navigate(['/tobecontinue']);
+}
+printbtn() {
+  this.route.navigate(['/print-return']);
 }
 }

@@ -1,4 +1,4 @@
-(self["webpackChunkmvp_test_harness"] = self["webpackChunkmvp_test_harness"] || []).push([["src_app_pages_failed-authorization_failed-authorization_module_ts"],{
+(self["webpackChunkMVP_Test_Harness"] = self["webpackChunkMVP_Test_Harness"] || []).push([["src_app_pages_failed-authorization_failed-authorization_module_ts"],{
 
 /***/ 8416:
 /*!***********************************************************************************!*\
@@ -113,10 +113,15 @@ let FailedAuthorizationPage = class FailedAuthorizationPage {
         });
     }
     backbtn() {
-        this.route.navigate(['/access-code']);
+        this.route.navigate(['/access-code', {
+                t: new Date().getTime()
+            }]);
+    }
+    rpbtn() {
+        this.route.navigate(['/tobecontinue']);
     }
     printbtn() {
-        this.route.navigate(['/print-return-digital']);
+        this.route.navigate(['/print-return']);
     }
 };
 FailedAuthorizationPage.ctorParameters = () => [
@@ -160,7 +165,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n  <p>{{results.auth_p_1}}</p>\r\n  <p>{{results.auth_p_2}}</p>\r\n  <p>{{results.www_link}}</p>\r\n  \r\n  <ion-button color=\"dark\" (click)=\"backbtn()\">\r\n    {{results.btn_report}}\r\n    <ion-icon slot=\"end\" name=\"help-outline\"></ion-icon>\r\n  </ion-button>\r\n</ion-content>\r\n<ion-footer>\r\n  <ion-toolbar>\r\n    <ion-row>\r\n      <ion-col size=\"6\" class=\"back-btn\">\r\n        <ion-button color=\"dark\" (click)=\"backbtn()\">\r\n          {{results.try_again}}\r\n          <ion-icon slot=\"start\" name=\"chevron-back-outline\"></ion-icon>\r\n        </ion-button>\r\n      </ion-col>\r\n      <ion-col size=\"6\" class=\"next-btn\">\r\n        <ion-button color=\"dark\" (click)=\"backbtn()\">\r\n          {{results.print}}\r\n          <ion-icon slot=\"end\" name=\"print-outline\"></ion-icon>\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-toolbar>\r\n</ion-footer>\r\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n  <p>{{results.auth_p_1}}</p>\r\n  <p>{{results.auth_p_2}}</p>\r\n  <p>{{results.www_link}}</p>\r\n  \r\n  <ion-button color=\"dark\" (click)=\"rpbtn()\">\r\n    {{results.btn_report}}\r\n    <ion-icon slot=\"end\" name=\"help-outline\"></ion-icon>\r\n  </ion-button>\r\n</ion-content>\r\n<ion-footer>\r\n  <ion-toolbar>\r\n    <ion-row>\r\n      <ion-col size=\"6\" class=\"back-btn\">\r\n        <ion-button color=\"dark\" (click)=\"backbtn()\">\r\n          {{results.try_again}}\r\n          <ion-icon slot=\"start\" name=\"chevron-back-outline\"></ion-icon>\r\n        </ion-button>\r\n      </ion-col>\r\n      <ion-col size=\"6\" class=\"next-btn\">\r\n        <ion-button color=\"dark\" (click)=\"backbtn()\">\r\n          {{results.print}}\r\n          <ion-icon slot=\"end\" name=\"print-outline\"></ion-icon>\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-toolbar>\r\n</ion-footer>\r\n");
 
 /***/ })
 

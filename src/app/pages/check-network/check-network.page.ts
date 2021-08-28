@@ -20,5 +20,12 @@ export class CheckNetworkPage implements OnInit {
       t: new Date().getTime()
     }]);
   }
+ 
+  rpbtn() {
+    this.route.navigate(['/tobecontinue']);
+  }
+  printbtn() {
+    this.route.navigate(['/print-return']);
+  }
 
 }

@@ -40,7 +40,7 @@ export class BallotPage {
   }
 
   ngOnInit() {
-    // localStorage.clear();
+    localStorage.clear();
     fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
       // console.log("json", json);
       this.results = json[0]['ballot'];
@@ -75,7 +75,7 @@ export class BallotPage {
         }
       };
       localStorage.setItem('userNameInfo', JSON.stringify(this.signupForm.value));
-      this.router.navigate(['ballot-form'], naviExtras);
+      this.router.navigate(['ballot-form',{t: new Date().getTime()}], naviExtras);
       this.signupForm.reset();
     }
   }

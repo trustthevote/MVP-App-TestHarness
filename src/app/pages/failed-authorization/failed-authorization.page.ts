@@ -20,7 +20,10 @@ export class FailedAuthorizationPage implements OnInit {
       t: new Date().getTime()
     }]);
   }
+  rpbtn() {
+    this.route.navigate(['/tobecontinue']);
+  }
   printbtn() {
-    this.route.navigate(['/print-return-digital']);
+    this.route.navigate(['/print-return']);
   }
 }

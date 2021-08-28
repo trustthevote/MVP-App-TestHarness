@@ -1,4 +1,4 @@
-(self["webpackChunkmvp_test_harness"] = self["webpackChunkmvp_test_harness"] || []).push([["src_app_pages_expired-code_expired-code_module_ts"],{
+(self["webpackChunkMVP_Test_Harness"] = self["webpackChunkMVP_Test_Harness"] || []).push([["src_app_pages_expired-code_expired-code_module_ts"],{
 
 /***/ 8580:
 /*!*******************************************************************!*\
@@ -105,14 +105,23 @@ __webpack_require__.r(__webpack_exports__);
 let ExpiredCodePage = class ExpiredCodePage {
     constructor(route) {
         this.route = route;
+        this.results = [];
     }
     ngOnInit() {
+        fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
+            this.results = json[0]['ExpiredCodePage'];
+        });
     }
     backbtn() {
-        this.route.navigate(['/access-code']);
+        this.route.navigate(['/access-code', {
+                t: new Date().getTime()
+            }]);
+    }
+    rpbtn() {
+        this.route.navigate(['/tobecontinue']);
     }
     printbtn() {
-        this.route.navigate(['/print-return-digital']);
+        this.route.navigate(['/print-return']);
     }
 };
 ExpiredCodePage.ctorParameters = () => [
@@ -156,7 +165,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n  <p>\r\n    Sorry, your access code has expired. Please request another access code. Or\r\n    click the link below for help.\r\n  </p>\r\n  <a href=\"\">www.linktosite.org</a>\r\n  <p>\r\n    You can also click the print button below to proceed with a physical return\r\n    instea\r\n  </p>\r\n\r\n  <ion-button color=\"dark\" (click)=\"backbtn()\">\r\n    report a problem\r\n    <ion-icon slot=\"end\" name=\"help-outline\"></ion-icon>\r\n  </ion-button>\r\n</ion-content>\r\n<ion-footer>\r\n  <ion-toolbar>\r\n    <ion-row>\r\n      <ion-col size=\"6\" class=\"back-btn\">\r\n        <ion-button color=\"dark\" (click)=\"backbtn()\">\r\n        Request\r\n        <ion-icon slot=\"end\" name=\"sync-outline\"></ion-icon>\r\n          <!-- <ion-icon  name=\"chevron-back-outline\"></ion-icon> -->\r\n        </ion-button>\r\n      </ion-col>\r\n      <ion-col size=\"6\" class=\"next-btn\">\r\n        <ion-button color=\"dark\" (click)=\"backbtn()\">\r\n         print\r\n          <ion-icon slot=\"end\" name=\"print-outline\"></ion-icon>\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-toolbar>\r\n</ion-footer>\r\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\n  <p>\n   {{results.upr_para}}\n  </p>\n  <a href=\"\">{{results.link}}</a>\n  <p>\n   {{results.sec_para}}\n  </p>\n\n  <ion-button color=\"dark\" (click)=\"rpbtn()\">\n    {{results.rbtn}}\n    <ion-icon slot=\"end\" name=\"help-outline\"></ion-icon>\n  </ion-button>\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n    <ion-row>\n      <ion-col size=\"6\" class=\"back-btn\">\n        <ion-button color=\"dark\" (click)=\"backbtn()\">\n        {{results.btn}}\n        <ion-icon slot=\"end\" name=\"sync-outline\"></ion-icon>\n          <!-- <ion-icon  name=\"chevron-back-outline\"></ion-icon> -->\n        </ion-button>\n      </ion-col>\n      <ion-col size=\"6\" class=\"next-btn\">\n        <ion-button color=\"dark\" (click)=\"printbtn()\">\n         {{results.print}}\n          <ion-icon slot=\"end\" name=\"print-outline\"></ion-icon>\n        </ion-button>\n      </ion-col>\n    </ion-row>\n  </ion-toolbar>\n</ion-footer>\n");
 
 /***/ })
 

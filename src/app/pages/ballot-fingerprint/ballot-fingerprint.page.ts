@@ -35,7 +35,7 @@ export class BallotFingerprintPage implements OnInit {
     });
   }
   copybtn() {
-    this.route.navigate(['/copy-confirmed']);
+    this.route.navigate(['/test-results']);
   }
   sendbtn() {
     this.route.navigate(['/sending']);

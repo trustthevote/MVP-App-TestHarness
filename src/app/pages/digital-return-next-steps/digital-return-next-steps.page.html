@@ -4,14 +4,19 @@
   </div>
   <p>{{results.textD}}</p>
   <p>{{results.link_www}}</p>
+  <ion-row><p>{{results.tyABC}}</p></ion-row>
 </ion-content>
 <ion-footer class="ion-no-border">
   <ion-toolbar>
-    <p>{{results.tyABC}}</p>
-    <ion-col style="text-align: end" class="back-btn">
-      <ion-button color="dark" (click)="  goToFinish()">
-        {{results.finish}}
-      </ion-button>
-    </ion-col>
+    <!-- <p>{{results.tyABC}}</p> -->
+    
+    <ion-row>
+      <ion-col style="text-align: start" class="back-btn">
+        <ion-button color="dark" (click)="  goToFinish()">
+       {{results.finish}}
+        </ion-button>
+      </ion-col>
+    </ion-row>
+   
   </ion-toolbar>
 </ion-footer>

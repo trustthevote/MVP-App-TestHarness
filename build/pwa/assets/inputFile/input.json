@@ -21,7 +21,8 @@
     "start": "Start",
     "cancel": "Cancel",
     "please": "Please",
-    "your_ballot_marking": "to being your ballot marking process with a screen that shows your first ballot item."
+    "your_ballot_marking": "to being your ballot marking process with a screen that shows your first ballot item.",
+    "precinct_no": "Your precinct is # "
   },
   "ballot_comp": {
     "thank_you": "Thank you",
@@ -46,7 +47,7 @@
     "zyx098": "zyx098-wvu765-tsr432-1234",
     "tv_fp": "Or you can perform a test to verify it will be cast correctly to the digital ballot box.",
     "send": "Cast Ballot Now",
-    "copy": "Input Test Results ",
+    "copy": "Copy Confirm ",
     "tv1_fp":" On a computer or other device,go to",
     "link":"www.linkto.site.org",
     "tv2_fb":"and enter  the  following code to review your ballot",
@@ -102,7 +103,11 @@
   },
   "check_network_page": {
     "text": " Sorry, it seems there was a network error. Please check your connection and try again.",
-    "try_again": "Try again"
+    "try_again": "Try again",
+    "first_para":" Sorry, it seems there was a network error. Please check your connection and try again.",
+    "sec_para":"gain. You can also click the print button below to proceed with a physical return instead.",
+    "rbtn":"report a problem",
+    "print":"Print"
   },
   "check_server_page": {
     "text": " Sorry, it seems we are have some network connection issues on our end. Please try again. ",
@@ -120,7 +125,7 @@
     "textD": "Congrats on finishing your ballot! There are still a few more important steps that you need to complete. Please click the link below to begin.",
     "link_www": "www.linktosite.gov",
     "tyABC": "Thank you for using ABC!",
-    "finish": "Finish"
+    "finish": "back"
   },
   "tobe_continue_page": {
     "tbc": "To Be Continued...",
@@ -151,6 +156,22 @@
      "link": " www.linktosite.gov",
      "back": "Back"
   },
+
+  "BallotTestFailedPage": {
+    "upr_para" : "Your local election office has been notified to issue you a replacement ballot by mail. For more information, you may contact your election office through the link below. ",
+    "link":"www.linktosite.org",
+    "back": "Report  A Problem",
+    "print":"Print"
+ },
+ "ExpiredCodePage":{
+  "upr_para" : " Sorry, your access code has expired. Please request another access code. Or click the link below for help.. ",
+  "link":"www.linktosite.org",
+  "sec_para": "You can also click the print button below to proceed with a physical return instead.",
+  "print":"Print",
+  "rbtn":"report a problem",
+  "btn":"Request"
+ },
+  
 
   "provide_information": "Provide Information",
   "required": "Required",

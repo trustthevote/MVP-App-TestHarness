@@ -27,18 +27,27 @@
     <p>{{results.tv3_fb}}</p>
     <p>{{results.link}}</p>
   </div>
-  <div class="text-p">
+  <div class="text-p"  *ngIf="fsticon" (click)="PolicyDetails()">
     {{results.shmd}}
     <ion-icon
       name="chevron-down-outline"
       *ngIf="fsticon"
-      (click)="PolicyDetails()"
+     
     ></ion-icon>
-    <ion-icon
+    <!-- <ion-icon
       name="chevron-up-outline"
       *ngIf="scndicons"
       (click)="PolicyDetailshide()"
-    ></ion-icon>
+    ></ion-icon> -->
+  </div>
+  <div class="text-p"  *ngIf="scndicons"  (click)="PolicyDetailshide()">
+    {{results.shmd}}
+    <!-- <ion-icon
+      name="chevron-down-outline"
+      *ngIf="fsticon"
+      (click)="PolicyDetails()"
+    ></ion-icon> -->
+    <ion-icon  name="chevron-up-outline"  *ngIf="scndicons"  ></ion-icon>
   </div>
 </ion-content>
 <ion-footer >
