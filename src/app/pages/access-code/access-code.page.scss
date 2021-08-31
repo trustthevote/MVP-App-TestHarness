@@ -64,7 +64,6 @@ ion-item {
 // }
 .next-btn {
   text-align: end;
-  // padding-right: 10px;
 }
 
 .x {
@@ -75,11 +74,11 @@ ion-item {
   margin: 6px;
   --padding-start: 14px;
 }
-
 ion-row {
   padding-top: 10px;
   padding-bottom: 20px;
-  padding-right: 0;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 
 input {
@@ -167,4 +166,7 @@ input {
   color: #C4C4C4;
   opacity: 1;
   font-size: 16px;
+}
+ion-toolbar{
+  height: 100%;
 }

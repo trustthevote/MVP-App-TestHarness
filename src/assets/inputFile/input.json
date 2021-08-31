@@ -120,6 +120,7 @@
     "heading": "Congrats, your ballot has been sent! Please proceed for your next steps!",
     "next": "Next"
   },
+  
   "digital_return_next_step_page": {
     "header": "Urgent Next Steps!",
     "textD": "Congrats on finishing your ballot! There are still a few more important steps that you need to complete. Please click the link below to begin.",
@@ -127,6 +128,7 @@
     "tyABC": "Thank you for using ABC!",
     "finish": "back"
   },
+
   "tobe_continue_page": {
     "tbc": "To Be Continued...",
     "ty_ta": "Thank you for testing the app!",
@@ -134,6 +136,7 @@
     "back": "Back",
     "reset": "Reset"
   },
+
   "print_return_page": {
     "print_return": "Print Return",
     "bpp": "Ballot Print Preview",
@@ -141,6 +144,7 @@
     "back": "Back",
     "print": "print"
   },
+
   "printing_page": {
     "printing": "Printing",
     "ydp": "Your Documents have been sent to your printer.",
@@ -150,6 +154,7 @@
     "re_try": "Re-Try",
     "pa": "to print again."
   },
+
   "user_time_out_page": {
      "d_text": "Sorry, it seems you have been inactive for too long. Please go back and start a new ballot.",
      "d_text1": "For more information on this, please follow the link below.",
@@ -163,6 +168,7 @@
     "back": "Report  A Problem",
     "print":"Print"
  },
+
  "ExpiredCodePage":{
   "upr_para" : " Sorry, your access code has expired. Please request another access code. Or click the link below for help.. ",
   "link":"www.linktosite.org",
