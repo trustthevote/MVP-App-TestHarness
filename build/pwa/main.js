@@ -228,7 +228,7 @@ AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
             _angular_service_worker__WEBPACK_IMPORTED_MODULE_7__.ServiceWorkerModule.register('ngsw-worker.js', {
                 enabled: _environments_environment__WEBPACK_IMPORTED_MODULE_2__.environment.production,
                 // Register the ServiceWorker as soon as the app is stable
-                // or after 30 seconds (whichever comes first).
+                // or after 30 seconds (whichever comes first).....
                 registrationStrategy: 'registerWhenStable:30000'
             })
         ],
@@ -558,7 +558,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-app>\r\n  <ion-router-outlet></ion-router-outlet>\r\n</ion-app>\r\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-app>\n  <ion-router-outlet></ion-router-outlet>\n</ion-app>\n");
 
 /***/ })
 
