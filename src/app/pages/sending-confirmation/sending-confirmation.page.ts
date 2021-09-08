@@ -17,6 +17,6 @@ export class SendingConfirmationPage implements OnInit {
     });
   }
   Continuebtn() {
-    this.route.navigate(['/digital-return-next-steps'])
+    this.route.navigate(['/howditgo']);
   }
 }

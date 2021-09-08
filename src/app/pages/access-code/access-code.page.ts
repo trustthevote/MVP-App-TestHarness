@@ -127,14 +127,13 @@ export class AccessCodePage implements OnInit {
           this.route.navigate(['/expired-code']);
           // this.otpError = "";
 
-        }else if (this.data === '00002') {
+        } else if (this.data === '00002') {
           loading.dismiss();
           // this.presentToast(this.results['tm_ev']);
           this.route.navigate(['/check-network']);
           // this.otpError = "";
 
-        }
-         else {
+        } else {
           loading.dismiss();
           this.route.navigate(['/ballot-fingerprint']);
           this.otpError = "";
@@ -149,24 +148,24 @@ export class AccessCodePage implements OnInit {
   }
 
   async presentAlertEmpty() {
-		const alert = await this.alertctrl.create({
-			// header: 'Confirm!',
-			message: this.results['alert_msg'],
-			buttons: [{
-				text: 'Retry',
-				role: 'cancel',
-				cssClass: 'secondary',
-				handler: (blah) => {}
-			}
-      // , {
-			// 	text: 'Close App',
-			// 	handler: () => {
-			// 	}
-			// }
-    ]
-		});
-		await alert.present();
-	}
+    const alert = await this.alertctrl.create({
+      // header: 'Confirm!',
+      message: this.results['alert_msg'],
+      buttons: [{
+          text: 'Retry',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {}
+        }
+        // , {
+        // 	text: 'Close App',
+        // 	handler: () => {
+        // 	}
+        // }
+      ]
+    });
+    await alert.present();
+  }
 
 
   async presentToast(a) {

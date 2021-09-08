@@ -82,7 +82,8 @@ const routes: Routes = [
   {
     path: 'user-time-out',
     loadChildren: () => import('./pages/user-time-out/user-time-out.module').then( m => m.UserTimeOutPageModule)
-  },  {
+  },
+  {
     path: 'tobecontinue',
     loadChildren: () => import('./pages/tobecontinue/tobecontinue.module').then( m => m.TobecontinuePageModule)
   },
@@ -93,7 +94,12 @@ const routes: Routes = [
   {
     path: 'expired-code',
     loadChildren: () => import('./pages/expired-code/expired-code.module').then( m => m.ExpiredCodePageModule)
-  }
+  },  {
+    path: 'howditgo',
+    loadChildren: () => import('./pages/howditgo/howditgo.module').then( m => m.HowditgoPageModule)
+  },
+
+  
 
 ];
 

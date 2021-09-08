@@ -117,10 +117,23 @@
     "try_again": "Try again"
   },
   "sending_confirmation_page": {
-    "heading": "Congrats, your ballot has been sent! Please proceed for your next steps!",
-    "next": "Next"
+    "heading": "Congrats! your ballot has been cast!",
+    "para_center":"To track your ballot and confirm it was received correctly, touch the code below to copy it to your clipboard. then click the link and follow the steps to confirm your ballot was received.",
+    "next": "how was your experience?",
+    "heading_link":"Ballot Tracking Receipt:",
+    "btr":"zyx098-wvu765-tsr432-1234",
+    "link":"www.linktosite.org",
+    "thanks":"Thank you for using ABC!"
   },
-  
+  "howitdo_page": {
+    "heading":"How'd it Go Next",
+    "para": "Please tell us how your experience was, using the ABC App.",
+    "para_center":"Your feedback will be greatly appreciated, and will be used to further enhance our app for future users.",
+    "next": "Exit ABC?",
+    "heading_link":"Follow the link below to let us know!",
+    "link":"www.linktosite.org",
+    "thanks":"Thank you for using ABC!"
+  },
   "digital_return_next_step_page": {
     "header": "Urgent Next Steps!",
     "textD": "Congrats on finishing your ballot! There are still a few more important steps that you need to complete. Please click the link below to begin.",

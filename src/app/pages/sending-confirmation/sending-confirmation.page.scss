@@ -1,27 +1,72 @@
 ion-content {
     --padding-bottom: 20px;
-    --padding-end: 20px;
+    // --padding-end: 20px;
     --padding-start: 20px;
     --padding-top: 20px;
   }
   
 p{
-    padding-left: 14px;
-    padding-right: 14px;
-    font-size: 27px;
+    font-size: 30px;
     font-weight: 700;
-    padding-top: 10px;
-    text-align: start;
-    margin-top: 0;
+    border-bottom: 1px solid;
+    padding-bottom: 12px;
+    margin-bottom: 0px;
+    margin-top: 10px;
+    color: black;
 }
+.mid{
+    font-size: 23px;
+    font-weight: 600;
+    text-align: start;
+    padding-top: 20px;
+  }
 ion-button{
-    margin-right: 25px;
-    margin-bottom: 25px;
+    
+    margin-top: 20px;
 }
 .cir-icon{
     font-size: 65px;
-    padding-top: 50%;
+    padding-top: 10%;
+    padding-bottom: 30px;
 }
 ion-toolbar{
-    text-align: end;
+    text-align: center;
 }
+.para-center{
+    font-size: 23px;
+    text-align: start;
+    font-weight: 600;
+    padding-right: 20px;
+}
+.dov-div {
+    background: white;
+    border: 1px solid black;
+    width: 93%;
+    // margin-bottom: 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    // font-weight: 600;
+    color: #000000;
+  }
+  .sec-para{
+    text-align: start;
+    font-size: 23px;
+    color: gray;
+    font-weight: 600;
+    padding-top: 20px;
+  }
+  .link-last-para{
+      text-align: start;
+      padding-top: 20px;
+      padding-bottom: 20px;
+  }
+  .thanks-sec{
+      text-align: start;
+      font-size: 23px;
+      padding-top: 20px;
+      font-weight: 600;
+  }
+  ion-bitton{
+    font-size: 18px;
+  }

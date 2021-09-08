@@ -132,7 +132,11 @@ const routes = [
     {
         path: 'expired-code',
         loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_expired-code_expired-code_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/expired-code/expired-code.module */ 28)).then(m => m.ExpiredCodePageModule)
-    }
+    },
+    {
+        path: 'howditgo',
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_howditgo_howditgo_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/howditgo/howditgo.module */ 1086)).then(m => m.HowditgoPageModule)
+    },
 ];
 let AppRoutingModule = class AppRoutingModule {
 };
