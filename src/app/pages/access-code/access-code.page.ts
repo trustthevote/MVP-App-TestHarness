@@ -76,6 +76,7 @@ export class AccessCodePage implements OnInit {
         console.log(this.second);
         this.second.nativeElement.focus();
       }
+      index="";
     } else if (index === 2) {
       if (event.which !== 8) {
         console.log(this.second);
@@ -83,6 +84,7 @@ export class AccessCodePage implements OnInit {
       } else if (event.target.value.length <= 0) {
         this.first.nativeElement.focus();
       }
+      index="";
     } else if (index === 3) {
       if (event.which !== 8) {
         console.log(this.second);
@@ -90,17 +92,20 @@ export class AccessCodePage implements OnInit {
       } else if (event.target.value.length <= 0) {
         this.second.nativeElement.focus();
       }
+      index="";
     } else if (index === 4) {
       if (event.which !== 8) {
         console.log(this.second);
         this.five.nativeElement.focus();
       } else if (event.target.value.length <= 0) {
         this.third.nativeElement.focus();
+        index="";
       }
     } else {
       if (event.which === 8 && event.target.value.length <= 0) {
         this.four.nativeElement.focus();
       }
+      index="";
     }
   }
   async nextbtn() {

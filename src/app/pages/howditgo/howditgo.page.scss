@@ -15,18 +15,14 @@ p{
     color: black;
 }
 
-ion-button{
-    
-    margin-top: 20px;
-    margin-right: 20px;
-}
+
 .cir-icon{
     font-size: 65px;
     padding-top: 10%;
 }
 ion-toolbar{
-    text-align: end;
- 
+    // text-align: end;
+ padding: 10px;
 }
 .para-center{
     font-size: 23px;
@@ -68,7 +64,4 @@ ion-toolbar{
     font-weight: 600;
     text-align: start;
     padding-top: 20px;
-  }
-  ion-bitton{
-    font-size: 18px;
   }

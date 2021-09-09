@@ -2,38 +2,33 @@
   <div class="list-question">
     <p>{{results.enter_access_code}}</p>
   </div>
-
+  <div class="opt-box-area" [formGroup]="otpForm" style="text-align: center">
+    <div>
+      <input class="nk-otp-box-first" tabindex="1" (keyup)="focusNext($event,1)" maxlength="1" formControlName="first"
+        type="tel" placeholder="" #first />
+      <input class="nk-otp-box" tabindex="2" (keyup)="focusNext($event,2)" maxlength="1" formControlName="second"
+        #second type="tel" placeholder="" />
+      <input class="nk-otp-box" tabindex="3" (keyup)="focusNext($event,3)" maxlength="1" formControlName="third" #third
+        type="tel" placeholder="" />
+      <input class="nk-otp-box" tabindex="4" (keyup)="focusNext($event,4)" maxlength="1" formControlName="four" #four
+        type="tel" placeholder="" />
+      <input class="nk-otp-box" tabindex="5" (keyup)="focusNext($event,5)" maxlength="1" formControlName="five" #five
+        type="tel" placeholder="" />
+    </div>
+    <ion-row>
+      <ion-col size="6" class="back-btn" style="text-align: start">
+        <ion-button color="dark" (click)="backbtn()">
+          {{results.back}}
+          <ion-icon slot="start" name="chevron-back-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col size="6" class="next-btn">
+        <ion-button color="dark" (click)="nextbtn()">
+          {{results.next}}
+          <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
  
 </ion-content>
-<ion-footer class="ion-no-border">
-  <ion-toolbar>
-    <div class="opt-box-area" [formGroup]="otpForm" style="text-align: center">
-      <div>
-        <input class="nk-otp-box-first" tabindex="1" (keyup)="focusNext($event,1)" maxlength="1" formControlName="first"
-          type="tel" placeholder="" #first />
-        <input class="nk-otp-box" tabindex="2" (keyup)="focusNext($event,2)" maxlength="1" formControlName="second"
-          #second type="tel" placeholder="" />
-        <input class="nk-otp-box" tabindex="3" (keyup)="focusNext($event,3)" maxlength="1" formControlName="third" #third
-          type="tel" placeholder="" />
-        <input class="nk-otp-box" tabindex="4" (keyup)="focusNext($event,4)" maxlength="1" formControlName="four" #four
-          type="tel" placeholder="" />
-        <input class="nk-otp-box" tabindex="5" (keyup)="focusNext($event,5)" maxlength="1" formControlName="five" #five
-          type="tel" placeholder="" />
-      </div>
-      <ion-row style="padding-top: 50vh">
-        <ion-col size="6" class="back-btn" style="text-align: start">
-          <ion-button color="dark" (click)="backbtn()">
-            {{results.back}}
-            <ion-icon slot="start" name="chevron-back-outline"></ion-icon>
-          </ion-button>
-        </ion-col>
-        <ion-col size="6" class="next-btn">
-          <ion-button color="dark" (click)="nextbtn()">
-            {{results.next}}
-            <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
-          </ion-button>
-        </ion-col>
-      </ion-row>
-    </div>
-  </ion-toolbar>
-</ion-footer>

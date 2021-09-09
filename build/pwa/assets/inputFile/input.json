@@ -130,9 +130,18 @@
     "para": "Please tell us how your experience was, using the ABC App.",
     "para_center":"Your feedback will be greatly appreciated, and will be used to further enhance our app for future users.",
     "next": "Exit ABC?",
+    "back":"Back",
     "heading_link":"Follow the link below to let us know!",
     "link":"www.linktosite.org",
     "thanks":"Thank you for using ABC!"
+  },
+  "rap_page": {
+    
+    "para": "To use digital return, touch  Next to request a one-time access code to be sent to your email address.",
+    "para_center":"If you did not receive a code upon requesting, please check the email we have on file by following the link below..",
+    "next": "Next",
+    "link":"www.linktosite.org"
+   
   },
   "digital_return_next_step_page": {
     "header": "Urgent Next Steps!",

@@ -98,6 +98,10 @@ const routes: Routes = [
     path: 'howditgo',
     loadChildren: () => import('./pages/howditgo/howditgo.module').then( m => m.HowditgoPageModule)
   },
+  {
+    path: 'request-access-code',
+    loadChildren: () => import('./pages/request-access-code/request-access-code.module').then( m => m.RequestAccessCodePageModule)
+  },
 
   
 

@@ -216,7 +216,7 @@ let BallotCompletePage = class BallotCompletePage {
         this.router.navigate(['/print-return']);
     }
     Digitalret() {
-        this.router.navigate(['/access-code', {
+        this.router.navigate(['/request-access-code', {
                 t: new Date().getTime()
             }]);
     }

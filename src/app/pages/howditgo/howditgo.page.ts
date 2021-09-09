@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-howditgo',
@@ -7,12 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HowditgoPage implements OnInit {
   results = [];
-  constructor() { }
+  constructor(private route: Router) {}
+
 
   ngOnInit() {
     fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
       this.results = json[0]['howitdo_page']; 
     });
+  }
+
+  Continuebtn(){
+this.route.navigate(['/ballot-complete']);
+  }
+  backbtn(){
+    this.route.navigate(['/ballot-fingerprint']);
   }
 
 }

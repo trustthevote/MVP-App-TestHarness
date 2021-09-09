@@ -137,6 +137,10 @@ const routes = [
         path: 'howditgo',
         loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_howditgo_howditgo_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/howditgo/howditgo.module */ 1086)).then(m => m.HowditgoPageModule)
     },
+    {
+        path: 'request-access-code',
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_request-access-code_request-access-code_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/request-access-code/request-access-code.module */ 8554)).then(m => m.RequestAccessCodePageModule)
+    },
 ];
 let AppRoutingModule = class AppRoutingModule {
 };
