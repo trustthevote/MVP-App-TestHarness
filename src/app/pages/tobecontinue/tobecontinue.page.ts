@@ -12,9 +12,7 @@ export class TobecontinuePage implements OnInit {
 
   ngOnInit() {
     fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-     
       this.results = json[0]['tobe_continue_page'];
-      
     });
   }
   reloadCurrentPage() {
@@ -22,8 +20,8 @@ export class TobecontinuePage implements OnInit {
     console.log("clean");
     this.route.navigate(['/intro']);
   }
+  
   backbtn() {
-
     this.route.navigate(['/ballot-complete']);
   }
 

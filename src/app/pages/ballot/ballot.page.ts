@@ -75,7 +75,7 @@ export class BallotPage {
         }
       };
       localStorage.setItem('userNameInfo', JSON.stringify(this.signupForm.value));
-      this.router.navigate(['ballot-form',{t: new Date().getTime()}], naviExtras);
+      this.router.navigate(['ballot-form', { t: new Date().getTime() }], naviExtras);
       this.signupForm.reset();
     }
   }

@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { ToastController,AlertController,LoadingController ,NavController} from "@ionic/angular";
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { invalid } from '@angular/compiler/src/render3/view/util';
+import { StatuscodeService } from 'src/app/api/statuscode.service';
+import { AvclientService } from 'src/app/api/avclient.service';
 
 @Component({
   selector: 'app-access-code',
@@ -38,18 +40,19 @@ export class AccessCodePage implements OnInit {
   results = [];
   constructor(private route: Router, public fb: FormBuilder, private toastctrl: ToastController,
     private alertctrl: AlertController,
-    private loadingctrl: LoadingController, ) {
+    private loadingctrl: LoadingController, 
+    public statuscodeService: StatuscodeService,
+    public avclientService: AvclientService) {
     this.createOTPForm();
   }
 
   ngOnInit() {
     fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-      // console.log("json", json);
       this.results = json[0]['access_code'];
-      // console.log("results: ", this.results); 
     });
   }
-  getOtpValue() {
+
+getOtpValue() {
     return (
       this.otpForm.controls.first.value +
       this.otpForm.controls.second.value +
@@ -58,6 +61,7 @@ export class AccessCodePage implements OnInit {
       this.otpForm.controls.five.value
     );
   }
+
   createOTPForm() {
     this.otpForm = this.fb.group({
       first: [null, Validators.required],
@@ -108,6 +112,7 @@ export class AccessCodePage implements OnInit {
       index="";
     }
   }
+
   async nextbtn() {
     let enteredOtp: string;
     enteredOtp = this.getOtpValue()
@@ -123,22 +128,53 @@ export class AccessCodePage implements OnInit {
       await loading.present();
 
       return new Promise(resolve => {
-        if (this.data === '00000') {
-          loading.dismiss();
-          this.route.navigate(['/failed-authorization']);
-        } else if (this.data === '00001') {
+        // if (this.data === 'T0000') {
+        //   loading.dismiss();
+        //   // this.route.navigate(['/failed-authorization']);
+        //   // this.avclientService.requestAccessCode(this.data);
+        //   this.avclientService.validateAccessCode(this.data, '');
+        // } else if (this.data === 'T0001') {
+        //   loading.dismiss();
+        //   // this.presentToast(this.results['tm_ev']);
+        //   // this.avclientService.requestAccessCode(this.data)
+        //   // this.route.navigate(['/expired-code']);
+        //   // this.otpError = "";
+        //   this.avclientService.validateAccessCode(this.data, '');
+
+        // } 
+         if (this.data === 'T0002') {
           loading.dismiss();
           // this.presentToast(this.results['tm_ev']);
-          this.route.navigate(['/expired-code']);
+          // this.route.navigate(['/check-network']);
+          this.avclientService.validateAccessCode(this.data, '');
           // this.otpError = "";
 
-        } else if (this.data === '00002') {
+        } else if (this.data === 'T0003') {
           loading.dismiss();
           // this.presentToast(this.results['tm_ev']);
-          this.route.navigate(['/check-network']);
+          // this.avclientService.requestAccessCode(this.data)
+          // this.route.navigate(['/expired-code']);
           // this.otpError = "";
+          this.avclientService.validateAccessCode(this.data, '');
 
-        } else {
+        } else if (this.data === 'T0004') {
+          loading.dismiss();
+          // this.presentToast(this.results['tm_ev']);
+          // this.avclientService.requestAccessCode(this.data)
+          // this.route.navigate(['/expired-code']);
+          // this.otpError = "";
+          this.avclientService.validateAccessCode(this.data, '');
+
+        } else if (this.data === 'T0005') {
+          loading.dismiss();
+          // this.presentToast(this.results['tm_ev']);
+          // this.avclientService.requestAccessCode(this.data)
+          // this.route.navigate(['/expired-code']);
+          // this.otpError = "";
+          this.avclientService.validateAccessCode(this.data, '');
+
+        }
+         else {
           loading.dismiss();
           this.route.navigate(['/ballot-fingerprint']);
           this.otpError = "";
@@ -152,9 +188,9 @@ export class AccessCodePage implements OnInit {
     }
   }
 
+
   async presentAlertEmpty() {
     const alert = await this.alertctrl.create({
-      // header: 'Confirm!',
       message: this.results['alert_msg'],
       buttons: [{
           text: 'Retry',
@@ -162,16 +198,10 @@ export class AccessCodePage implements OnInit {
           cssClass: 'secondary',
           handler: (blah) => {}
         }
-        // , {
-        // 	text: 'Close App',
-        // 	handler: () => {
-        // 	}
-        // }
       ]
     });
     await alert.present();
   }
-
 
   async presentToast(a) {
     const toast = await this.toastctrl.create({
@@ -184,24 +214,20 @@ export class AccessCodePage implements OnInit {
 
   async presentAlertConfirm(a) {
     const alert = await this.alertController.create({
-
       header: a,
       backdropDissmiss: false,
       buttons: [{
         text: 'Cancel',
-
         handler: (blah) => {
           console.log('Confirm Cancel: blah');
         }
       }, {
         text: 'Okay',
         handler: () => {
-
           console.log('Confirm Okay');
         }
       }]
     });
-
     await alert.present();
   }
   backbtn() {

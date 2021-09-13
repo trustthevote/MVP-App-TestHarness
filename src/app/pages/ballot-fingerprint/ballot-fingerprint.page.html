@@ -27,35 +27,29 @@
     <p>{{results.tv3_fb}}</p>
     <p>{{results.link}}</p>
   </div>
-  <div class="text-p"  *ngIf="fsticon" (click)="PolicyDetails()">
+  <div class="text-p" *ngIf="fsticon" (click)="PolicyDetails()">
     {{results.shmd}}
-    <ion-icon
-      name="chevron-down-outline"
-      *ngIf="fsticon"
-     
-    ></ion-icon>
+    <ion-icon name="chevron-down-outline" *ngIf="fsticon"></ion-icon>
     <!-- <ion-icon
       name="chevron-up-outline"
       *ngIf="scndicons"
       (click)="PolicyDetailshide()"
     ></ion-icon> -->
   </div>
-  <div class="text-p"  *ngIf="scndicons"  (click)="PolicyDetailshide()">
+  <div class="text-p" *ngIf="scndicons" (click)="PolicyDetailshide()">
     {{results.shmd}}
     <!-- <ion-icon
       name="chevron-down-outline"
       *ngIf="fsticon"
       (click)="PolicyDetails()"
     ></ion-icon> -->
-    <ion-icon  name="chevron-up-outline"  *ngIf="scndicons"  ></ion-icon>
+    <ion-icon name="chevron-up-outline" *ngIf="scndicons"></ion-icon>
   </div>
 </ion-content>
-<ion-footer >
-  <ion-toolbar >
-
-      <!-- <div class="text-p" style="text-align: center;">
+<ion-footer>
+  <ion-toolbar>
+    <!-- <div class="text-p" style="text-align: center;">
     {{results.mp}}  <ion-icon name="chevron-down-outline"></ion-icon>
         </div> -->
-
   </ion-toolbar>
 </ion-footer>

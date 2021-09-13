@@ -105,7 +105,7 @@
     "text": " Sorry, it seems there was a network error. Please check your connection and try again.",
     "try_again": "Try again",
     "first_para":" Sorry, it seems there was a network error. Please check your connection and try again.",
-    "sec_para":"gain. You can also click the print button below to proceed with a physical return instead.",
+    "sec_para":" You can also click the print button below to proceed with a physical return instead.",
     "rbtn":"report a problem",
     "print":"Print"
   },
@@ -116,6 +116,7 @@
     "link": "www.linktosite.gov ",
     "try_again": "Try again"
   },
+
   "sending_confirmation_page": {
     "heading": "Congrats! your ballot has been cast!",
     "para_center":"To track your ballot and confirm it was received correctly, touch the code below to copy it to your clipboard. then click the link and follow the steps to confirm your ballot was received.",
@@ -125,6 +126,7 @@
     "link":"www.linktosite.org",
     "thanks":"Thank you for using ABC!"
   },
+  
   "howitdo_page": {
     "heading":"How'd it Go Next",
     "para": "Please tell us how your experience was, using the ABC App.",

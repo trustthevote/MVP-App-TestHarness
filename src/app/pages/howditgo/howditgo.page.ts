@@ -8,19 +8,19 @@ import { Router } from '@angular/router';
 })
 export class HowditgoPage implements OnInit {
   results = [];
-  constructor(private route: Router) {}
+  constructor(private route: Router) { }
 
 
   ngOnInit() {
     fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-      this.results = json[0]['howitdo_page']; 
+      this.results = json[0]['howitdo_page'];
     });
   }
 
-  Continuebtn(){
-this.route.navigate(['/ballot-complete']);
+  Continuebtn() {
+    this.route.navigate(['/ballot-complete']);
   }
-  backbtn(){
+  backbtn() {
     this.route.navigate(['/ballot-fingerprint']);
   }
 

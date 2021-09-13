@@ -32,16 +32,16 @@
     <div class="cen-div">{{results.your_ballot_is_complete}}</div>
     <p>{{results.choose_a_return}}</p>
   </div>
-  <div class="cen-div-text" (click)="Physicalret()">
+  <div class="cen-div-text" (click)="Physicalret(); ballotReturnChoice ('physical')">
     <p>
-      {{results.physical_return}} <br />
+     {{results.physical_return}} <br />
       <i>{{results.requires_printer}}</i>
     </p>
 
     <ion-icon name="archive-outline"></ion-icon>
   </div>
-  <div class="bottom-div-text" (click)="Digitalret()">
-    <p>{{results.online_ballot_return}}</p>
+  <div class="bottom-div-text" (click)="Digitalret(); ballotReturnChoice ('digital')">
+    <p >{{results.online_ballot_return}}</p>
     <ion-icon name="tv-outline"></ion-icon>
   </div>
 </ion-content>

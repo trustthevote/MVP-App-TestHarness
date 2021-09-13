@@ -1,22 +1,20 @@
 <ion-content>
   <div class="upr-text">
-    <p>
-      {{results.upr_para}}
-    </p>
+    <p>{{results.upr_para}}</p>
     <a href="{{results.link}}">{{results.link}}</a>
   </div>
   <ion-button color="dark" (click)="rpbtn()">
- {{results.back}}
- <ion-icon  slot="end" name="help-outline"></ion-icon>
+    {{results.back}}
+    <ion-icon slot="end" name="help-outline"></ion-icon>
     <!-- <ion-icon slot="end" name="settings-outline"></ion-icon> -->
   </ion-button>
 </ion-content>
 <ion-footer>
   <ion-toolbar>
     <ion-button color="dark" slot="end" (click)="printbtn()">
-     {{results.print}}
-      <ion-icon  slot="end" name="print-outline"></ion-icon>
-         <!-- <ion-icon slot="end" name="settings-outline"></ion-icon> -->
-       </ion-button>
+      {{results.print}}
+      <ion-icon slot="end" name="print-outline"></ion-icon>
+      <!-- <ion-icon slot="end" name="settings-outline"></ion-icon> -->
+    </ion-button>
   </ion-toolbar>
-  </ion-footer>
+</ion-footer>

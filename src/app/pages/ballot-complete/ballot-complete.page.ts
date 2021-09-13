@@ -118,9 +118,15 @@ export class BallotCompletePage implements OnInit {
     this.router.navigate(['/print-return']);
   }
   Digitalret() {
-    this.router.navigate(['/request-access-code',{
+    this.router.navigate(['/request-access-code', {
       t: new Date().getTime()
     }]);
   }
 
+  ballotReturnChoice(event){
+    // event.target.value
+    // alert(typeof(chooseVal))
+    let chooseVal = event;
+    console.log('this. chooseVal', chooseVal);
+  }
 }

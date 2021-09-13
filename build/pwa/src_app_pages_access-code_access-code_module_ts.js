@@ -1,5 +1,267 @@
 (self["webpackChunkMVP_Test_Harness"] = self["webpackChunkMVP_Test_Harness"] || []).push([["src_app_pages_access-code_access-code_module_ts"],{
 
+/***/ 5913:
+/*!*****************************************!*\
+  !*** ./src/app/api/avclient.service.ts ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "AvclientService": () => (/* binding */ AvclientService)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var src_app_api_statuscode_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/api/statuscode.service */ 2413);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ 476);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 9895);
+
+
+
+
+
+let AvclientService = class AvclientService {
+    constructor(statuscodeService, alertctrl, route) {
+        this.statuscodeService = statuscodeService;
+        this.alertctrl = alertctrl;
+        this.route = route;
+    }
+    purgeData() {
+        delete this.cachedAccessCode;
+    }
+    requestAccessCode(opaqueVoterId) {
+        console.log("opaqueVoterId", opaqueVoterId);
+        return new Promise((resolve, reject) => {
+            switch (opaqueVoterId) {
+                case 'T0000':
+                    reject(new Error(this.statuscodeService.statusCode('VoterRecordNotFound')));
+                    if (opaqueVoterId == 'T0000') {
+                        // this.presentAlertEmpty(this.statuscodeService.statusCode('VoterRecordNotFound'))
+                    }
+                case 'T0001':
+                    reject(new Error(this.statuscodeService.statusCode('NetworkError')));
+                    if (opaqueVoterId == 'T0001') {
+                        // this.presentAlertEmpty(this.statuscodeService.statusCode('NetworkError'))
+                    }
+                default:
+                    resolve(true);
+            }
+        });
+    }
+    validateAccessCode(code, email) {
+        return new Promise((resolve, reject) => {
+            // this.cachedAccessCode = code
+            switch (code) {
+                // case 'T0000':
+                //   reject(new Error(this.statuscodeService.statusCode('VoterRecordNotFound')));
+                //   if (code == 'T0000') {
+                //     this.presentAlertEmpty(this.statuscodeService.statusCode('VoterRecordNotFound'))
+                //   }
+                //   case 'T0001':
+                //     reject(new Error(this.statuscodeService.statusCode('NetworkError')));
+                //     if (code == 'T0001') {
+                //       // this.presentAlertEmpty(this.statuscodeService.statusCode('NetworkError'))
+                //       this.route.navigate(['/check-network']);
+                //     }
+                case 'T0002':
+                    reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));
+                    if (code == 'T0002') {
+                        // this.presentAlertEmpty(this.statuscodeService.statusCode('CallOutOfOrderError'))
+                        this.route.navigate(['/ballot-test-failed']);
+                    }
+                case 'T0003':
+                    reject(new Error(this.statuscodeService.statusCode('AccessCodeExpired')));
+                    if (code == 'T0003') {
+                        // this.presentAlertEmpty(this.statuscodeService.statusCode('AccessCodeExpired'))
+                        this.route.navigate(['/expired-code']);
+                    }
+                case 'T0004':
+                    reject(new Error(this.statuscodeService.statusCode('AccessCodeInvalid')));
+                    if (code == 'T0004') {
+                        // this.presentAlertEmpty(this.statuscodeService.statusCode('AccessCodeInvalid'))
+                        this.route.navigate(['/failed-authorization']);
+                    }
+                case 'T0005':
+                    reject(new Error(this.statuscodeService.statusCode('NetworkError')));
+                    if (code == 'T0005') {
+                        // this.presentAlertEmpty(this.statuscodeService.statusCode('NetworkError'))
+                        this.route.navigate(['/check-network']);
+                    }
+                default:
+                    resolve(true);
+            }
+        });
+    }
+    // Should not be idempotent.  Instead, permute one of
+    // john's sample strings.
+    constructBallotCryptograms(cvr) {
+        return new Promise((resolve, reject) => {
+            switch (this.cachedAccessCode) {
+                case 'T0006':
+                    reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));
+                case 'T0007':
+                    reject(new Error(this.statuscodeService.statusCode('NetworkError')));
+                case 'T0008':
+                    reject(new Error(this.statuscodeService.statusCode('CorruptCVRError')));
+                default:
+                    resolve('zyx098-wvu765-tsr432-1234');
+            }
+        });
+    }
+    spoilBallotCryptograms() {
+        return new Promise((resolve, reject) => {
+            switch (this.cachedAccessCode) {
+                case 'T0009':
+                    reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));
+                case 'T0010':
+                    reject(new Error(this.statuscodeService.statusCode('NetworkError')));
+                case 'T0011':
+                    reject(new Error(this.statuscodeService.statusCode('ServerCommitmentError')));
+                default:
+                    resolve(true);
+            }
+        });
+    }
+    submitBallotCryptograms() {
+        return new Promise((resolve, reject) => {
+            switch (this.cachedAccessCode) {
+                case 'T0012':
+                    reject(new Error(this.statuscodeService.statusCode('NetworkError')));
+                default:
+                    resolve({
+                        previousBoardHash: 'tsr432-wvu765-zyx098-4321',
+                        boardHash: 'zyx098-wvu765-tsr432-1234',
+                        registeredAt: '2020-03-01T10:00:00.000+01:00',
+                        serverSignature: 'dbcce518142b8740a5c911f727f3c02829211a8ddfccabeb89297877e4198bc1,46826ddfccaac9ca105e39c8a2d015098479624c411b4783ca1a3600daf4e8fa',
+                        voteSubmissionId: 6
+                    });
+            }
+        });
+    }
+    test(code) {
+        this.purgeData();
+        this.requestAccessCode(code);
+        this.validateAccessCode(code, '');
+        this.constructBallotCryptograms(code);
+        this.spoilBallotCryptograms();
+        this.constructBallotCryptograms(code);
+        this.submitBallotCryptograms().then(receipt => {
+            console.log(receipt);
+        });
+    }
+    presentAlertEmpty(Error) {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__awaiter)(this, void 0, void 0, function* () {
+            const alert = yield this.alertctrl.create({
+                // header: 'Confirm!',
+                message: Error,
+                buttons: [{
+                        text: 'Okay',
+                        role: 'cancel',
+                        cssClass: 'secondary',
+                        handler: (blah) => { }
+                    }
+                    // , {
+                    // 	text: 'Close App',
+                    // 	handler: () => {
+                    // 	}
+                    // }
+                ]
+            });
+            yield alert.present();
+        });
+    }
+};
+AvclientService.ctorParameters = () => [
+    { type: src_app_api_statuscode_service__WEBPACK_IMPORTED_MODULE_0__.StatuscodeService },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__.AlertController },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__.Router }
+];
+AvclientService = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.Injectable)({
+        providedIn: 'root'
+    })
+], AvclientService);
+
+
+
+/***/ }),
+
+/***/ 2413:
+/*!*******************************************!*\
+  !*** ./src/app/api/statuscode.service.ts ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "StatuscodeService": () => (/* binding */ StatuscodeService)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 7716);
+
+
+let StatuscodeService = class StatuscodeService {
+    constructor() { }
+    statusCode(statusCode) {
+        const statusCodes = {
+            VoterRecordNotFound: 'voter record not found',
+            NetworkError: 'network code',
+            CallOutOfOrderError: 'call out of order error',
+            AccessCodeExpired: 'access code expired',
+            AccessCodeInvalid: 'access code invalid',
+            CorruptCVRError: 'corrupt CVR',
+            ServerCommitmentError: 'server commitment error',
+        };
+        if (statusCode == 'VoterRecordNotFound') {
+            console.log("statusCode", statusCode);
+            const errorCode = 'voter record not found';
+            return errorCode;
+        }
+        else if (statusCode == 'NetworkError') {
+            console.log("statusCode", statusCode);
+            const errorCode = 'network code';
+            return errorCode;
+        }
+        else if (statusCode == 'CallOutOfOrderError') {
+            console.log("statusCode", statusCode);
+            const errorCode = 'call out of order error';
+            return errorCode;
+        }
+        else if (statusCode == 'AccessCodeExpired') {
+            console.log("statusCode", statusCode);
+            const errorCode = 'access code expired';
+            return errorCode;
+        }
+        else if (statusCode == 'AccessCodeInvalid') {
+            console.log("statusCode", statusCode);
+            const errorCode = 'access code invalid';
+            return errorCode;
+        }
+        else if (statusCode == 'CorruptCVRError') {
+            console.log("statusCode", statusCode);
+            const errorCode = 'corrupt CVR';
+            return errorCode;
+        }
+        else if (statusCode == 'ServerCommitmentError') {
+            console.log("statusCode", statusCode);
+            const errorCode = 'server commitment error';
+            return errorCode;
+        }
+    }
+};
+StatuscodeService.ctorParameters = () => [];
+StatuscodeService = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.Injectable)({
+        providedIn: 'root'
+    })
+], StatuscodeService);
+
+
+
+/***/ }),
+
 /***/ 4627:
 /*!*****************************************************************!*\
   !*** ./src/app/pages/access-code/access-code-routing.module.ts ***!
@@ -93,13 +355,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AccessCodePage": () => (/* binding */ AccessCodePage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 4762);
 /* harmony import */ var _raw_loader_access_code_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./access-code.page.html */ 4800);
 /* harmony import */ var _access_code_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./access-code.page.scss */ 9745);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 9895);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ 3679);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ 9895);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic/angular */ 476);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ 3679);
+/* harmony import */ var src_app_api_statuscode_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/api/statuscode.service */ 2413);
+/* harmony import */ var src_app_api_avclient_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/api/avclient.service */ 5913);
+
+
 
 
 
@@ -108,12 +374,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let AccessCodePage = class AccessCodePage {
-    constructor(route, fb, toastctrl, alertctrl, loadingctrl) {
+    constructor(route, fb, toastctrl, alertctrl, loadingctrl, statuscodeService, avclientService) {
         this.route = route;
         this.fb = fb;
         this.toastctrl = toastctrl;
         this.alertctrl = alertctrl;
         this.loadingctrl = loadingctrl;
+        this.statuscodeService = statuscodeService;
+        this.avclientService = avclientService;
         this.OTP = '';
         this.otp = '';
         this.otpError = '';
@@ -122,9 +390,7 @@ let AccessCodePage = class AccessCodePage {
     }
     ngOnInit() {
         fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-            // console.log("json", json);
             this.results = json[0]['access_code'];
-            // console.log("results: ", this.results); 
         });
     }
     getOtpValue() {
@@ -136,11 +402,11 @@ let AccessCodePage = class AccessCodePage {
     }
     createOTPForm() {
         this.otpForm = this.fb.group({
-            first: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.Validators.required],
-            second: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.Validators.required],
-            third: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.Validators.required],
-            four: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.Validators.required],
-            five: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.Validators.required],
+            first: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
+            second: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
+            third: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
+            four: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
+            five: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
         });
     }
     focusNext(event, index) {
@@ -192,7 +458,7 @@ let AccessCodePage = class AccessCodePage {
         }
     }
     nextbtn() {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
             let enteredOtp;
             enteredOtp = this.getOtpValue();
             this.data = enteredOtp;
@@ -207,21 +473,49 @@ let AccessCodePage = class AccessCodePage {
                 });
                 yield loading.present();
                 return new Promise(resolve => {
-                    if (this.data === '00000') {
-                        loading.dismiss();
-                        this.route.navigate(['/failed-authorization']);
-                    }
-                    else if (this.data === '00001') {
+                    // if (this.data === 'T0000') {
+                    //   loading.dismiss();
+                    //   // this.route.navigate(['/failed-authorization']);
+                    //   // this.avclientService.requestAccessCode(this.data);
+                    //   this.avclientService.validateAccessCode(this.data, '');
+                    // } else if (this.data === 'T0001') {
+                    //   loading.dismiss();
+                    //   // this.presentToast(this.results['tm_ev']);
+                    //   // this.avclientService.requestAccessCode(this.data)
+                    //   // this.route.navigate(['/expired-code']);
+                    //   // this.otpError = "";
+                    //   this.avclientService.validateAccessCode(this.data, '');
+                    // } 
+                    if (this.data === 'T0002') {
                         loading.dismiss();
                         // this.presentToast(this.results['tm_ev']);
-                        this.route.navigate(['/expired-code']);
+                        // this.route.navigate(['/check-network']);
+                        this.avclientService.validateAccessCode(this.data, '');
                         // this.otpError = "";
                     }
-                    else if (this.data === '00002') {
+                    else if (this.data === 'T0003') {
                         loading.dismiss();
                         // this.presentToast(this.results['tm_ev']);
-                        this.route.navigate(['/check-network']);
+                        // this.avclientService.requestAccessCode(this.data)
+                        // this.route.navigate(['/expired-code']);
                         // this.otpError = "";
+                        this.avclientService.validateAccessCode(this.data, '');
+                    }
+                    else if (this.data === 'T0004') {
+                        loading.dismiss();
+                        // this.presentToast(this.results['tm_ev']);
+                        // this.avclientService.requestAccessCode(this.data)
+                        // this.route.navigate(['/expired-code']);
+                        // this.otpError = "";
+                        this.avclientService.validateAccessCode(this.data, '');
+                    }
+                    else if (this.data === 'T0005') {
+                        loading.dismiss();
+                        // this.presentToast(this.results['tm_ev']);
+                        // this.avclientService.requestAccessCode(this.data)
+                        // this.route.navigate(['/expired-code']);
+                        // this.otpError = "";
+                        this.avclientService.validateAccessCode(this.data, '');
                     }
                     else {
                         loading.dismiss();
@@ -238,9 +532,8 @@ let AccessCodePage = class AccessCodePage {
         });
     }
     presentAlertEmpty() {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
             const alert = yield this.alertctrl.create({
-                // header: 'Confirm!',
                 message: this.results['alert_msg'],
                 buttons: [{
                         text: 'Retry',
@@ -248,18 +541,13 @@ let AccessCodePage = class AccessCodePage {
                         cssClass: 'secondary',
                         handler: (blah) => { }
                     }
-                    // , {
-                    // 	text: 'Close App',
-                    // 	handler: () => {
-                    // 	}
-                    // }
                 ]
             });
             yield alert.present();
         });
     }
     presentToast(a) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
             const toast = yield this.toastctrl.create({
                 message: a,
                 duration: 3000,
@@ -269,7 +557,7 @@ let AccessCodePage = class AccessCodePage {
         });
     }
     presentAlertConfirm(a) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
             const alert = yield this.alertController.create({
                 header: a,
                 backdropDissmiss: false,
@@ -293,34 +581,36 @@ let AccessCodePage = class AccessCodePage {
     }
 };
 AccessCodePage.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__.Router },
-    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormBuilder },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__.ToastController },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__.AlertController },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__.LoadingController }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__.Router },
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormBuilder },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.ToastController },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.AlertController },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.LoadingController },
+    { type: src_app_api_statuscode_service__WEBPACK_IMPORTED_MODULE_2__.StatuscodeService },
+    { type: src_app_api_avclient_service__WEBPACK_IMPORTED_MODULE_3__.AvclientService }
 ];
 AccessCodePage.propDecorators = {
-    first: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__.ViewChild, args: ["first", {
+    first: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_8__.ViewChild, args: ["first", {
                     static: false
                 },] }],
-    second: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__.ViewChild, args: ["second", {
+    second: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_8__.ViewChild, args: ["second", {
                     static: false
                 },] }],
-    third: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__.ViewChild, args: ["third", {
+    third: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_8__.ViewChild, args: ["third", {
                     static: false
                 },] }],
-    four: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__.ViewChild, args: ["four", {
+    four: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_8__.ViewChild, args: ["four", {
                     static: false
                 },] }],
-    five: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__.ViewChild, args: ["five", {
+    five: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_8__.ViewChild, args: ["five", {
                     static: false
                 },] }],
-    singUp: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__.ViewChild, args: ["singUp", {
+    singUp: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_8__.ViewChild, args: ["singUp", {
                     static: false
                 },] }]
 };
-AccessCodePage = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.Component)({
+AccessCodePage = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_8__.Component)({
         selector: 'app-access-code',
         template: _raw_loader_access_code_page_html__WEBPACK_IMPORTED_MODULE_0__.default,
         styles: [_access_code_page_scss__WEBPACK_IMPORTED_MODULE_1__.default]
@@ -342,7 +632,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("ion-content {\n  --padding-bottom: 10px;\n  --padding-end: 20px;\n  --padding-start: 20px;\n  --padding-top: 20px;\n}\n\n.list-question p {\n  font-size: 30px;\n  font-weight: 700;\n  border-bottom: 1px solid;\n  padding-bottom: 12px;\n}\n\n.alert-button.sc-ion-alert-ios:last-child {\n  color: #333;\n  border-right: 0;\n  font-weight: bold;\n}\n\n.alert-message.sc-ion-alert-ios,\n.alert-input-group.sc-ion-alert-ios {\n  padding-left: 16px;\n  padding-right: 16px;\n  padding-top: 0;\n  padding-bottom: 21px;\n  color: var(--ion-text-color, #000);\n  font-size: 14px;\n  text-align: center;\n}\n\n.alert-button.sc-ion-alert-md:last-child {\n  color: #333;\n  border-right: 0;\n  font-weight: bold;\n}\n\n.alert-message.sc-ion-alert-md,\n.alert-input-group.alert-message.sc-ion-alert-md {\n  padding-left: 16px;\n  padding-right: 16px;\n  padding-top: 0;\n  padding-bottom: 21px;\n  color: var(--ion-text-color, #000);\n  font-size: 14px;\n  text-align: center;\n}\n\nion-label {\n  font-weight: 500;\n}\n\nion-item {\n  margin-top: 15px;\n}\n\n.next-btn {\n  text-align: end;\n}\n\n.x {\n  display: inline-block;\n  width: 47px;\n  border-bottom: 1.5px solid #000;\n  height: 43px;\n  margin: 6px;\n  --padding-start: 14px;\n}\n\nion-row {\n  padding-top: 280px;\n  padding-bottom: 20px;\n}\n\ninput {\n  background: none;\n  outline: none;\n  -webkit-appearance: none;\n  box-shadow: none !important;\n  border: none;\n}\n\n.opt-box-area {\n  justify-content: left;\n  align-items: center;\n  margin-left: 0%;\n}\n\n.opt-box-area .nk-otp-box {\n  height: 50px;\n  width: 11vw;\n  margin: 9px;\n  font-size: 18px;\n  color: #000000;\n  font-family: \"Roboto Regular\";\n  text-align: center;\n  background: #FFFFFF 0% 0% no-repeat padding-box;\n  border-bottom: 1px solid #040404;\n  border-radius: 0px;\n  opacity: 1;\n}\n\n.opt-box-area .nk-otp-box-first {\n  height: 50px;\n  width: 11vw;\n  margin: 9px 9px 9px 0px;\n  font-size: 18px;\n  color: #000000;\n  font-family: \"Roboto Regular\";\n  text-align: center;\n  background: #FFFFFF 0% 0% no-repeat padding-box;\n  border-bottom: 1px solid #111213d1;\n  border-radius: 0px;\n  opacity: 1;\n}\n\n.opt-box-area .nk-otp-box:focus {\n  border: 1px solid #8a6ddc;\n  outline: none;\n  box-shadow: 0px 1px 2px;\n}\n\n.incorrect-otp {\n  text-align: left;\n  font-family: \"Roboto\";\n  font-size: 14px;\n  letter-spacing: 0px;\n  color: #D92212;\n  opacity: 1;\n}\n\n.time {\n  margin-top: 5vh;\n  text-align: left;\n  font-family: \"Roboto\";\n  letter-spacing: 0px;\n  color: #000000;\n  opacity: 1;\n  font-size: 16px;\n  height: 20px;\n}\n\n.receive-otp {\n  text-align: left;\n  font-family: \"Roboto\";\n  letter-spacing: 0px;\n  color: #8B94B4;\n  opacity: 1;\n  font-size: 16px;\n}\n\n.resend {\n  text-align: left;\n  text-decoration: underline;\n  font-family: \"Roboto\";\n  letter-spacing: 0px;\n  color: #C4C4C4;\n  opacity: 1;\n  font-size: 16px;\n}\n\nion-toolbar {\n  height: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFjY2Vzcy1jb2RlLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLHNCQUFBO0VBQ0EsbUJBQUE7RUFDQSxxQkFBQTtFQUNBLG1CQUFBO0FBQ0Y7O0FBR0U7RUFDRSxlQUFBO0VBQ0EsZ0JBQUE7RUFDQSx3QkFBQTtFQUNBLG9CQUFBO0FBQUo7O0FBSUE7RUFDRSxXQUFBO0VBQ0EsZUFBQTtFQUNBLGlCQUFBO0FBREY7O0FBSUE7O0VBRUUsa0JBQUE7RUFDQSxtQkFBQTtFQUNBLGNBQUE7RUFDQSxvQkFBQTtFQUNBLGtDQUFBO0VBQ0EsZUFBQTtFQUNBLGtCQUFBO0FBREY7O0FBS0E7RUFDRSxXQUFBO0VBQ0EsZUFBQTtFQUNBLGlCQUFBO0FBRkY7O0FBS0E7O0VBRUUsa0JBQUE7RUFDQSxtQkFBQTtFQUNBLGNBQUE7RUFDQSxvQkFBQTtFQUNBLGtDQUFBO0VBQ0EsZUFBQTtFQUNBLGtCQUFBO0FBRkY7O0FBTUE7RUFFRSxnQkFBQTtBQUpGOztBQU9BO0VBQ0UsZ0JBQUE7QUFKRjs7QUFVQTtFQUNFLGVBQUE7QUFQRjs7QUFVQTtFQUNFLHFCQUFBO0VBQ0EsV0FBQTtFQUNBLCtCQUFBO0VBQ0EsWUFBQTtFQUNBLFdBQUE7RUFDQSxxQkFBQTtBQVBGOztBQVNBO0VBQ0Usa0JBQUE7RUFDQSxvQkFBQTtBQU5GOztBQVVBO0VBQ0UsZ0JBQUE7RUFDQSxhQUFBO0VBQ0Esd0JBQUE7RUFDQSwyQkFBQTtFQUNBLFlBQUE7QUFQRjs7QUFVQTtFQUNFLHFCQUFBO0VBQ0EsbUJBQUE7RUFDQSxlQUFBO0FBUEY7O0FBU0U7RUFDRSxZQUFBO0VBQ0EsV0FBQTtFQUNBLFdBQUE7RUFDQSxlQUFBO0VBQ0EsY0FBQTtFQUNBLDZCQUFBO0VBQ0Esa0JBQUE7RUFDQSwrQ0FBQTtFQUNBLGdDQUFBO0VBQ0Esa0JBQUE7RUFDQSxVQUFBO0FBUEo7O0FBVUU7RUFDRSxZQUFBO0VBQ0EsV0FBQTtFQUNBLHVCQUFBO0VBQ0EsZUFBQTtFQUNBLGNBQUE7RUFDQSw2QkFBQTtFQUNBLGtCQUFBO0VBQ0EsK0NBQUE7RUFDQSxrQ0FBQTtFQUNBLGtCQUFBO0VBQ0EsVUFBQTtBQVJKOztBQVdFO0VBQ0UseUJBQUE7RUFDQSxhQUFBO0VBQ0EsdUJBQUE7QUFUSjs7QUFhQTtFQUNFLGdCQUFBO0VBQ0EscUJBQUE7RUFDQSxlQUFBO0VBQ0EsbUJBQUE7RUFDQSxjQUFBO0VBQ0EsVUFBQTtBQVZGOztBQWFBO0VBQ0UsZUFBQTtFQUNBLGdCQUFBO0VBQ0EscUJBQUE7RUFDQSxtQkFBQTtFQUNBLGNBQUE7RUFDQSxVQUFBO0VBQ0EsZUFBQTtFQUNBLFlBQUE7QUFWRjs7QUFhQTtFQUNFLGdCQUFBO0VBQ0EscUJBQUE7RUFDQSxtQkFBQTtFQUNBLGNBQUE7RUFDQSxVQUFBO0VBQ0EsZUFBQTtBQVZGOztBQWFBO0VBQ0UsZ0JBQUE7RUFDQSwwQkFBQTtFQUNBLHFCQUFBO0VBQ0EsbUJBQUE7RUFDQSxjQUFBO0VBQ0EsVUFBQTtFQUNBLGVBQUE7QUFWRjs7QUFZQTtFQUNFLFlBQUE7QUFURiIsImZpbGUiOiJhY2Nlc3MtY29kZS5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24tY29udGVudCB7XHJcbiAgLS1wYWRkaW5nLWJvdHRvbTogMTBweDtcclxuICAtLXBhZGRpbmctZW5kOiAyMHB4O1xyXG4gIC0tcGFkZGluZy1zdGFydDogMjBweDtcclxuICAtLXBhZGRpbmctdG9wOiAyMHB4O1xyXG59XHJcblxyXG4ubGlzdC1xdWVzdGlvbiB7XHJcbiAgcCB7XHJcbiAgICBmb250LXNpemU6IDMwcHg7XHJcbiAgICBmb250LXdlaWdodDogNzAwO1xyXG4gICAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkO1xyXG4gICAgcGFkZGluZy1ib3R0b206IDEycHg7XHJcbiAgfVxyXG59XHJcblxyXG4uYWxlcnQtYnV0dG9uLnNjLWlvbi1hbGVydC1pb3M6bGFzdC1jaGlsZCB7XHJcbiAgY29sb3I6ICMzMzM7XHJcbiAgYm9yZGVyLXJpZ2h0OiAwO1xyXG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG59XHJcblxyXG4uYWxlcnQtbWVzc2FnZS5zYy1pb24tYWxlcnQtaW9zLFxyXG4uYWxlcnQtaW5wdXQtZ3JvdXAuc2MtaW9uLWFsZXJ0LWlvcyB7XHJcbiAgcGFkZGluZy1sZWZ0OiAxNnB4O1xyXG4gIHBhZGRpbmctcmlnaHQ6IDE2cHg7XHJcbiAgcGFkZGluZy10b3A6IDA7XHJcbiAgcGFkZGluZy1ib3R0b206IDIxcHg7XHJcbiAgY29sb3I6IHZhcigtLWlvbi10ZXh0LWNvbG9yLCAjMDAwKTtcclxuICBmb250LXNpemU6IDE0cHg7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gIC8vIHRleHQtdHJhbnNmb3JtOiBjYXBpdGFsaXplO1xyXG59XHJcblxyXG4uYWxlcnQtYnV0dG9uLnNjLWlvbi1hbGVydC1tZDpsYXN0LWNoaWxkIHtcclxuICBjb2xvcjogIzMzMztcclxuICBib3JkZXItcmlnaHQ6IDA7XHJcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbn1cclxuXHJcbi5hbGVydC1tZXNzYWdlLnNjLWlvbi1hbGVydC1tZCxcclxuLmFsZXJ0LWlucHV0LWdyb3VwLmFsZXJ0LW1lc3NhZ2Uuc2MtaW9uLWFsZXJ0LW1kIHtcclxuICBwYWRkaW5nLWxlZnQ6IDE2cHg7XHJcbiAgcGFkZGluZy1yaWdodDogMTZweDtcclxuICBwYWRkaW5nLXRvcDogMDtcclxuICBwYWRkaW5nLWJvdHRvbTogMjFweDtcclxuICBjb2xvcjogdmFyKC0taW9uLXRleHQtY29sb3IsICMwMDApO1xyXG4gIGZvbnQtc2l6ZTogMTRweDtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgLy8gdGV4dC10cmFuc2Zvcm06IGNhcGl0YWxpemU7XHJcbn1cclxuXHJcbmlvbi1sYWJlbCB7XHJcblxyXG4gIGZvbnQtd2VpZ2h0OiA1MDA7XHJcbn1cclxuXHJcbmlvbi1pdGVtIHtcclxuICBtYXJnaW4tdG9wOiAxNXB4O1xyXG59XHJcblxyXG4vLyAgIC5iYWNrLWJ0bntcclxuLy8gICAgIHBhZGRpbmctbGVmdDogMjRweDtcclxuLy8gfVxyXG4ubmV4dC1idG4ge1xyXG4gIHRleHQtYWxpZ246IGVuZDtcclxufVxyXG5cclxuLngge1xyXG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICB3aWR0aDogNDdweDtcclxuICBib3JkZXItYm90dG9tOiAxLjVweCBzb2xpZCAjMDAwO1xyXG4gIGhlaWdodDogNDNweDtcclxuICBtYXJnaW46IDZweDtcclxuICAtLXBhZGRpbmctc3RhcnQ6IDE0cHg7XHJcbn1cclxuaW9uLXJvdyB7XHJcbiAgcGFkZGluZy10b3A6IDI4MHB4O1xyXG4gIHBhZGRpbmctYm90dG9tOiAyMHB4O1xyXG5cclxufVxyXG5cclxuaW5wdXQge1xyXG4gIGJhY2tncm91bmQ6IG5vbmU7XHJcbiAgb3V0bGluZTogbm9uZTtcclxuICAtd2Via2l0LWFwcGVhcmFuY2U6IG5vbmU7XHJcbiAgYm94LXNoYWRvdzogbm9uZSAhaW1wb3J0YW50O1xyXG4gIGJvcmRlcjogbm9uZTtcclxufVxyXG5cclxuLm9wdC1ib3gtYXJlYSB7XHJcbiAganVzdGlmeS1jb250ZW50OiBsZWZ0O1xyXG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgbWFyZ2luLWxlZnQ6IDAlO1xyXG5cclxuICAubmstb3RwLWJveCB7XHJcbiAgICBoZWlnaHQ6IDUwcHg7XHJcbiAgICB3aWR0aDogMTF2dztcclxuICAgIG1hcmdpbjogOXB4O1xyXG4gICAgZm9udC1zaXplOiAxOHB4O1xyXG4gICAgY29sb3I6ICMwMDAwMDA7XHJcbiAgICBmb250LWZhbWlseTogXCJSb2JvdG8gUmVndWxhclwiO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgYmFja2dyb3VuZDogI0ZGRkZGRiAwJSAwJSBuby1yZXBlYXQgcGFkZGluZy1ib3g7XHJcbiAgICBib3JkZXItYm90dG9tOiAxcHggc29saWQgIzA0MDQwNDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDBweDtcclxuICAgIG9wYWNpdHk6IDE7XHJcbiAgfVxyXG5cclxuICAubmstb3RwLWJveC1maXJzdCB7XHJcbiAgICBoZWlnaHQ6IDUwcHg7XHJcbiAgICB3aWR0aDogMTF2dztcclxuICAgIG1hcmdpbjogOXB4IDlweCA5cHggMHB4O1xyXG4gICAgZm9udC1zaXplOiAxOHB4O1xyXG4gICAgY29sb3I6ICMwMDAwMDA7XHJcbiAgICBmb250LWZhbWlseTogXCJSb2JvdG8gUmVndWxhclwiO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgYmFja2dyb3VuZDogI0ZGRkZGRiAwJSAwJSBuby1yZXBlYXQgcGFkZGluZy1ib3g7XHJcbiAgICBib3JkZXItYm90dG9tOiAxcHggc29saWQgIzExMTIxM2QxO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMHB4O1xyXG4gICAgb3BhY2l0eTogMTtcclxuICB9XHJcblxyXG4gIC5uay1vdHAtYm94OmZvY3VzIHtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkICM4YTZkZGM7XHJcbiAgICBvdXRsaW5lOiBub25lO1xyXG4gICAgYm94LXNoYWRvdzogMHB4IDFweCAycHg7XHJcbiAgfVxyXG59XHJcblxyXG4uaW5jb3JyZWN0LW90cCB7XHJcbiAgdGV4dC1hbGlnbjogbGVmdDtcclxuICBmb250LWZhbWlseTogJ1JvYm90byc7XHJcbiAgZm9udC1zaXplOiAxNHB4O1xyXG4gIGxldHRlci1zcGFjaW5nOiAwcHg7XHJcbiAgY29sb3I6ICNEOTIyMTI7XHJcbiAgb3BhY2l0eTogMTtcclxufVxyXG5cclxuLnRpbWUge1xyXG4gIG1hcmdpbi10b3A6IDV2aDtcclxuICB0ZXh0LWFsaWduOiBsZWZ0O1xyXG4gIGZvbnQtZmFtaWx5OiAnUm9ib3RvJztcclxuICBsZXR0ZXItc3BhY2luZzogMHB4O1xyXG4gIGNvbG9yOiAjMDAwMDAwO1xyXG4gIG9wYWNpdHk6IDE7XHJcbiAgZm9udC1zaXplOiAxNnB4O1xyXG4gIGhlaWdodDogMjBweDtcclxufVxyXG5cclxuLnJlY2VpdmUtb3RwIHtcclxuICB0ZXh0LWFsaWduOiBsZWZ0O1xyXG4gIGZvbnQtZmFtaWx5OiAnUm9ib3RvJztcclxuICBsZXR0ZXItc3BhY2luZzogMHB4O1xyXG4gIGNvbG9yOiAjOEI5NEI0O1xyXG4gIG9wYWNpdHk6IDE7XHJcbiAgZm9udC1zaXplOiAxNnB4O1xyXG59XHJcblxyXG4ucmVzZW5kIHtcclxuICB0ZXh0LWFsaWduOiBsZWZ0O1xyXG4gIHRleHQtZGVjb3JhdGlvbjogdW5kZXJsaW5lO1xyXG4gIGZvbnQtZmFtaWx5OiAnUm9ib3RvJztcclxuICBsZXR0ZXItc3BhY2luZzogMHB4O1xyXG4gIGNvbG9yOiAjQzRDNEM0O1xyXG4gIG9wYWNpdHk6IDE7XHJcbiAgZm9udC1zaXplOiAxNnB4O1xyXG59XHJcbmlvbi10b29sYmFye1xyXG4gIGhlaWdodDogMTAwJTtcclxufVxyXG4iXX0= */");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("ion-content {\n  --padding-bottom: 10px;\n  --padding-end: 20px;\n  --padding-start: 20px;\n  --padding-top: 20px;\n}\n\n.list-question p {\n  font-size: 30px;\n  font-weight: 700;\n  border-bottom: 1px solid;\n  padding-bottom: 12px;\n}\n\n.alert-button.sc-ion-alert-ios:last-child {\n  color: #333;\n  border-right: 0;\n  font-weight: bold;\n}\n\n.alert-message.sc-ion-alert-ios,\n.alert-input-group.sc-ion-alert-ios {\n  padding-left: 16px;\n  padding-right: 16px;\n  padding-top: 0;\n  padding-bottom: 21px;\n  color: var(--ion-text-color, #000);\n  font-size: 14px;\n  text-align: center;\n}\n\n.alert-button.sc-ion-alert-md:last-child {\n  color: #333;\n  border-right: 0;\n  font-weight: bold;\n}\n\n.alert-message.sc-ion-alert-md,\n.alert-input-group.alert-message.sc-ion-alert-md {\n  padding-left: 16px;\n  padding-right: 16px;\n  padding-top: 0;\n  padding-bottom: 21px;\n  color: var(--ion-text-color, #000);\n  font-size: 14px;\n  text-align: center;\n}\n\nion-label {\n  font-weight: 500;\n}\n\nion-item {\n  margin-top: 15px;\n}\n\n.next-btn {\n  text-align: end;\n}\n\n.x {\n  display: inline-block;\n  width: 47px;\n  border-bottom: 1.5px solid #000;\n  height: 43px;\n  margin: 6px;\n  --padding-start: 14px;\n}\n\nion-row {\n  padding-top: 280px;\n  padding-bottom: 20px;\n}\n\ninput {\n  background: none;\n  outline: none;\n  -webkit-appearance: none;\n  box-shadow: none !important;\n  border: none;\n}\n\n.opt-box-area {\n  justify-content: left;\n  align-items: center;\n  margin-left: 0%;\n}\n\n.opt-box-area .nk-otp-box {\n  height: 50px;\n  width: 11vw;\n  margin: 9px;\n  font-size: 18px;\n  color: #000000;\n  font-family: \"Roboto Regular\";\n  text-align: center;\n  background: #FFFFFF 0% 0% no-repeat padding-box;\n  border-bottom: 1px solid #040404;\n  border-radius: 0px;\n  opacity: 1;\n}\n\n.opt-box-area .nk-otp-box-first {\n  height: 50px;\n  width: 11vw;\n  margin: 9px 9px 9px 0px;\n  font-size: 18px;\n  color: #000000;\n  font-family: \"Roboto Regular\";\n  text-align: center;\n  background: #FFFFFF 0% 0% no-repeat padding-box;\n  border-bottom: 1px solid #111213d1;\n  border-radius: 0px;\n  opacity: 1;\n}\n\n.opt-box-area .nk-otp-box:focus {\n  border: 1px solid #8a6ddc;\n  outline: none;\n  box-shadow: 0px 1px 2px;\n}\n\n.incorrect-otp {\n  text-align: left;\n  font-family: \"Roboto\";\n  font-size: 14px;\n  letter-spacing: 0px;\n  color: #D92212;\n  opacity: 1;\n}\n\n.time {\n  margin-top: 5vh;\n  text-align: left;\n  font-family: \"Roboto\";\n  letter-spacing: 0px;\n  color: #000000;\n  opacity: 1;\n  font-size: 16px;\n  height: 20px;\n}\n\n.receive-otp {\n  text-align: left;\n  font-family: \"Roboto\";\n  letter-spacing: 0px;\n  color: #8B94B4;\n  opacity: 1;\n  font-size: 16px;\n}\n\n.resend {\n  text-align: left;\n  text-decoration: underline;\n  font-family: \"Roboto\";\n  letter-spacing: 0px;\n  color: #C4C4C4;\n  opacity: 1;\n  font-size: 16px;\n}\n\nion-toolbar {\n  height: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFjY2Vzcy1jb2RlLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLHNCQUFBO0VBQ0EsbUJBQUE7RUFDQSxxQkFBQTtFQUNBLG1CQUFBO0FBQ0Y7O0FBRUU7RUFDRSxlQUFBO0VBQ0EsZ0JBQUE7RUFDQSx3QkFBQTtFQUNBLG9CQUFBO0FBQ0o7O0FBRUE7RUFDRSxXQUFBO0VBQ0EsZUFBQTtFQUNBLGlCQUFBO0FBQ0Y7O0FBQ0E7O0VBRUUsa0JBQUE7RUFDQSxtQkFBQTtFQUNBLGNBQUE7RUFDQSxvQkFBQTtFQUNBLGtDQUFBO0VBQ0EsZUFBQTtFQUNBLGtCQUFBO0FBRUY7O0FBQUE7RUFDRSxXQUFBO0VBQ0EsZUFBQTtFQUNBLGlCQUFBO0FBR0Y7O0FBREE7O0VBRUUsa0JBQUE7RUFDQSxtQkFBQTtFQUNBLGNBQUE7RUFDQSxvQkFBQTtFQUNBLGtDQUFBO0VBQ0EsZUFBQTtFQUNBLGtCQUFBO0FBSUY7O0FBRkE7RUFDRSxnQkFBQTtBQUtGOztBQUhBO0VBQ0UsZ0JBQUE7QUFNRjs7QUFKQTtFQUNFLGVBQUE7QUFPRjs7QUFMQTtFQUNFLHFCQUFBO0VBQ0EsV0FBQTtFQUNBLCtCQUFBO0VBQ0EsWUFBQTtFQUNBLFdBQUE7RUFDQSxxQkFBQTtBQVFGOztBQU5BO0VBQ0Usa0JBQUE7RUFDQSxvQkFBQTtBQVNGOztBQVBBO0VBQ0UsZ0JBQUE7RUFDQSxhQUFBO0VBQ0Esd0JBQUE7RUFDQSwyQkFBQTtFQUNBLFlBQUE7QUFVRjs7QUFSQTtFQUNFLHFCQUFBO0VBQ0EsbUJBQUE7RUFDQSxlQUFBO0FBV0Y7O0FBVkU7RUFDRSxZQUFBO0VBQ0EsV0FBQTtFQUNBLFdBQUE7RUFDQSxlQUFBO0VBQ0EsY0FBQTtFQUNBLDZCQUFBO0VBQ0Esa0JBQUE7RUFDQSwrQ0FBQTtFQUNBLGdDQUFBO0VBQ0Esa0JBQUE7RUFDQSxVQUFBO0FBWUo7O0FBVkU7RUFDRSxZQUFBO0VBQ0EsV0FBQTtFQUNBLHVCQUFBO0VBQ0EsZUFBQTtFQUNBLGNBQUE7RUFDQSw2QkFBQTtFQUNBLGtCQUFBO0VBQ0EsK0NBQUE7RUFDQSxrQ0FBQTtFQUNBLGtCQUFBO0VBQ0EsVUFBQTtBQVlKOztBQVZFO0VBQ0UseUJBQUE7RUFDQSxhQUFBO0VBQ0EsdUJBQUE7QUFZSjs7QUFUQTtFQUNFLGdCQUFBO0VBQ0EscUJBQUE7RUFDQSxlQUFBO0VBQ0EsbUJBQUE7RUFDQSxjQUFBO0VBQ0EsVUFBQTtBQVlGOztBQVZBO0VBQ0UsZUFBQTtFQUNBLGdCQUFBO0VBQ0EscUJBQUE7RUFDQSxtQkFBQTtFQUNBLGNBQUE7RUFDQSxVQUFBO0VBQ0EsZUFBQTtFQUNBLFlBQUE7QUFhRjs7QUFYQTtFQUNFLGdCQUFBO0VBQ0EscUJBQUE7RUFDQSxtQkFBQTtFQUNBLGNBQUE7RUFDQSxVQUFBO0VBQ0EsZUFBQTtBQWNGOztBQVpBO0VBQ0UsZ0JBQUE7RUFDQSwwQkFBQTtFQUNBLHFCQUFBO0VBQ0EsbUJBQUE7RUFDQSxjQUFBO0VBQ0EsVUFBQTtFQUNBLGVBQUE7QUFlRjs7QUFiQTtFQUNFLFlBQUE7QUFnQkYiLCJmaWxlIjoiYWNjZXNzLWNvZGUucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLWNvbnRlbnQge1xyXG4gIC0tcGFkZGluZy1ib3R0b206IDEwcHg7XHJcbiAgLS1wYWRkaW5nLWVuZDogMjBweDtcclxuICAtLXBhZGRpbmctc3RhcnQ6IDIwcHg7XHJcbiAgLS1wYWRkaW5nLXRvcDogMjBweDtcclxufVxyXG4ubGlzdC1xdWVzdGlvbiB7XHJcbiAgcCB7XHJcbiAgICBmb250LXNpemU6IDMwcHg7XHJcbiAgICBmb250LXdlaWdodDogNzAwO1xyXG4gICAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkO1xyXG4gICAgcGFkZGluZy1ib3R0b206IDEycHg7XHJcbiAgfVxyXG59XHJcbi5hbGVydC1idXR0b24uc2MtaW9uLWFsZXJ0LWlvczpsYXN0LWNoaWxkIHtcclxuICBjb2xvcjogIzMzMztcclxuICBib3JkZXItcmlnaHQ6IDA7XHJcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbn1cclxuLmFsZXJ0LW1lc3NhZ2Uuc2MtaW9uLWFsZXJ0LWlvcyxcclxuLmFsZXJ0LWlucHV0LWdyb3VwLnNjLWlvbi1hbGVydC1pb3Mge1xyXG4gIHBhZGRpbmctbGVmdDogMTZweDtcclxuICBwYWRkaW5nLXJpZ2h0OiAxNnB4O1xyXG4gIHBhZGRpbmctdG9wOiAwO1xyXG4gIHBhZGRpbmctYm90dG9tOiAyMXB4O1xyXG4gIGNvbG9yOiB2YXIoLS1pb24tdGV4dC1jb2xvciwgIzAwMCk7XHJcbiAgZm9udC1zaXplOiAxNHB4O1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG4uYWxlcnQtYnV0dG9uLnNjLWlvbi1hbGVydC1tZDpsYXN0LWNoaWxkIHtcclxuICBjb2xvcjogIzMzMztcclxuICBib3JkZXItcmlnaHQ6IDA7XHJcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbn1cclxuLmFsZXJ0LW1lc3NhZ2Uuc2MtaW9uLWFsZXJ0LW1kLFxyXG4uYWxlcnQtaW5wdXQtZ3JvdXAuYWxlcnQtbWVzc2FnZS5zYy1pb24tYWxlcnQtbWQge1xyXG4gIHBhZGRpbmctbGVmdDogMTZweDtcclxuICBwYWRkaW5nLXJpZ2h0OiAxNnB4O1xyXG4gIHBhZGRpbmctdG9wOiAwO1xyXG4gIHBhZGRpbmctYm90dG9tOiAyMXB4O1xyXG4gIGNvbG9yOiB2YXIoLS1pb24tdGV4dC1jb2xvciwgIzAwMCk7XHJcbiAgZm9udC1zaXplOiAxNHB4O1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG5pb24tbGFiZWwge1xyXG4gIGZvbnQtd2VpZ2h0OiA1MDA7XHJcbn1cclxuaW9uLWl0ZW0ge1xyXG4gIG1hcmdpbi10b3A6IDE1cHg7XHJcbn1cclxuLm5leHQtYnRuIHtcclxuICB0ZXh0LWFsaWduOiBlbmQ7XHJcbn1cclxuLngge1xyXG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICB3aWR0aDogNDdweDtcclxuICBib3JkZXItYm90dG9tOiAxLjVweCBzb2xpZCAjMDAwO1xyXG4gIGhlaWdodDogNDNweDtcclxuICBtYXJnaW46IDZweDtcclxuICAtLXBhZGRpbmctc3RhcnQ6IDE0cHg7XHJcbn1cclxuaW9uLXJvdyB7XHJcbiAgcGFkZGluZy10b3A6IDI4MHB4O1xyXG4gIHBhZGRpbmctYm90dG9tOiAyMHB4O1xyXG59XHJcbmlucHV0IHtcclxuICBiYWNrZ3JvdW5kOiBub25lO1xyXG4gIG91dGxpbmU6IG5vbmU7XHJcbiAgLXdlYmtpdC1hcHBlYXJhbmNlOiBub25lO1xyXG4gIGJveC1zaGFkb3c6IG5vbmUgIWltcG9ydGFudDtcclxuICBib3JkZXI6IG5vbmU7XHJcbn1cclxuLm9wdC1ib3gtYXJlYSB7XHJcbiAganVzdGlmeS1jb250ZW50OiBsZWZ0O1xyXG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgbWFyZ2luLWxlZnQ6IDAlO1xyXG4gIC5uay1vdHAtYm94IHtcclxuICAgIGhlaWdodDogNTBweDtcclxuICAgIHdpZHRoOiAxMXZ3O1xyXG4gICAgbWFyZ2luOiA5cHg7XHJcbiAgICBmb250LXNpemU6IDE4cHg7XHJcbiAgICBjb2xvcjogIzAwMDAwMDtcclxuICAgIGZvbnQtZmFtaWx5OiBcIlJvYm90byBSZWd1bGFyXCI7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBiYWNrZ3JvdW5kOiAjRkZGRkZGIDAlIDAlIG5vLXJlcGVhdCBwYWRkaW5nLWJveDtcclxuICAgIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjMDQwNDA0O1xyXG4gICAgYm9yZGVyLXJhZGl1czogMHB4O1xyXG4gICAgb3BhY2l0eTogMTtcclxuICB9XHJcbiAgLm5rLW90cC1ib3gtZmlyc3Qge1xyXG4gICAgaGVpZ2h0OiA1MHB4O1xyXG4gICAgd2lkdGg6IDExdnc7XHJcbiAgICBtYXJnaW46IDlweCA5cHggOXB4IDBweDtcclxuICAgIGZvbnQtc2l6ZTogMThweDtcclxuICAgIGNvbG9yOiAjMDAwMDAwO1xyXG4gICAgZm9udC1mYW1pbHk6IFwiUm9ib3RvIFJlZ3VsYXJcIjtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIGJhY2tncm91bmQ6ICNGRkZGRkYgMCUgMCUgbm8tcmVwZWF0IHBhZGRpbmctYm94O1xyXG4gICAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICMxMTEyMTNkMTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDBweDtcclxuICAgIG9wYWNpdHk6IDE7XHJcbiAgfVxyXG4gIC5uay1vdHAtYm94OmZvY3VzIHtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkICM4YTZkZGM7XHJcbiAgICBvdXRsaW5lOiBub25lO1xyXG4gICAgYm94LXNoYWRvdzogMHB4IDFweCAycHg7XHJcbiAgfVxyXG59XHJcbi5pbmNvcnJlY3Qtb3RwIHtcclxuICB0ZXh0LWFsaWduOiBsZWZ0O1xyXG4gIGZvbnQtZmFtaWx5OiAnUm9ib3RvJztcclxuICBmb250LXNpemU6IDE0cHg7XHJcbiAgbGV0dGVyLXNwYWNpbmc6IDBweDtcclxuICBjb2xvcjogI0Q5MjIxMjtcclxuICBvcGFjaXR5OiAxO1xyXG59XHJcbi50aW1lIHtcclxuICBtYXJnaW4tdG9wOiA1dmg7XHJcbiAgdGV4dC1hbGlnbjogbGVmdDtcclxuICBmb250LWZhbWlseTogJ1JvYm90byc7XHJcbiAgbGV0dGVyLXNwYWNpbmc6IDBweDtcclxuICBjb2xvcjogIzAwMDAwMDtcclxuICBvcGFjaXR5OiAxO1xyXG4gIGZvbnQtc2l6ZTogMTZweDtcclxuICBoZWlnaHQ6IDIwcHg7XHJcbn1cclxuLnJlY2VpdmUtb3RwIHtcclxuICB0ZXh0LWFsaWduOiBsZWZ0O1xyXG4gIGZvbnQtZmFtaWx5OiAnUm9ib3RvJztcclxuICBsZXR0ZXItc3BhY2luZzogMHB4O1xyXG4gIGNvbG9yOiAjOEI5NEI0O1xyXG4gIG9wYWNpdHk6IDE7XHJcbiAgZm9udC1zaXplOiAxNnB4O1xyXG59XHJcbi5yZXNlbmQge1xyXG4gIHRleHQtYWxpZ246IGxlZnQ7XHJcbiAgdGV4dC1kZWNvcmF0aW9uOiB1bmRlcmxpbmU7XHJcbiAgZm9udC1mYW1pbHk6ICdSb2JvdG8nO1xyXG4gIGxldHRlci1zcGFjaW5nOiAwcHg7XHJcbiAgY29sb3I6ICNDNEM0QzQ7XHJcbiAgb3BhY2l0eTogMTtcclxuICBmb250LXNpemU6IDE2cHg7XHJcbn1cclxuaW9uLXRvb2xiYXJ7XHJcbiAgaGVpZ2h0OiAxMDAlO1xyXG59XHJcbiJdfQ== */");
 
 /***/ }),
 
@@ -357,7 +647,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n  <div class=\"list-question\">\r\n    <p>{{results.enter_access_code}}</p>\r\n  </div>\r\n  <div class=\"opt-box-area\" [formGroup]=\"otpForm\" style=\"text-align: center\">\r\n    <div>\r\n      <input class=\"nk-otp-box-first\" tabindex=\"1\" (keyup)=\"focusNext($event,1)\" maxlength=\"1\" formControlName=\"first\"\r\n        type=\"tel\" placeholder=\"\" #first />\r\n      <input class=\"nk-otp-box\" tabindex=\"2\" (keyup)=\"focusNext($event,2)\" maxlength=\"1\" formControlName=\"second\"\r\n        #second type=\"tel\" placeholder=\"\" />\r\n      <input class=\"nk-otp-box\" tabindex=\"3\" (keyup)=\"focusNext($event,3)\" maxlength=\"1\" formControlName=\"third\" #third\r\n        type=\"tel\" placeholder=\"\" />\r\n      <input class=\"nk-otp-box\" tabindex=\"4\" (keyup)=\"focusNext($event,4)\" maxlength=\"1\" formControlName=\"four\" #four\r\n        type=\"tel\" placeholder=\"\" />\r\n      <input class=\"nk-otp-box\" tabindex=\"5\" (keyup)=\"focusNext($event,5)\" maxlength=\"1\" formControlName=\"five\" #five\r\n        type=\"tel\" placeholder=\"\" />\r\n    </div>\r\n    <ion-row>\r\n      <ion-col size=\"6\" class=\"back-btn\" style=\"text-align: start\">\r\n        <ion-button color=\"dark\" (click)=\"backbtn()\">\r\n          {{results.back}}\r\n          <ion-icon slot=\"start\" name=\"chevron-back-outline\"></ion-icon>\r\n        </ion-button>\r\n      </ion-col>\r\n      <ion-col size=\"6\" class=\"next-btn\">\r\n        <ion-button color=\"dark\" (click)=\"nextbtn()\">\r\n          {{results.next}}\r\n          <ion-icon slot=\"end\" name=\"chevron-forward-outline\"></ion-icon>\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </div>\r\n \r\n</ion-content>\r\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n  <div class=\"list-question\">\r\n    <p>{{results.enter_access_code}}</p>\r\n  </div>\r\n  <div class=\"opt-box-area\" [formGroup]=\"otpForm\" style=\"text-align: center\">\r\n    <div>\r\n      <input\r\n        class=\"nk-otp-box-first\"\r\n        tabindex=\"1\"\r\n        (keyup)=\"focusNext($event,1)\"\r\n        maxlength=\"1\"\r\n        formControlName=\"first\"\r\n        type=\"text\"\r\n        placeholder=\"\"\r\n        #first\r\n      />\r\n      <input\r\n        class=\"nk-otp-box\"\r\n        tabindex=\"2\"\r\n        (keyup)=\"focusNext($event,2)\"\r\n        maxlength=\"1\"\r\n        formControlName=\"second\"\r\n        #second\r\n        type=\"text\"\r\n        placeholder=\"\"\r\n      />\r\n      <input\r\n        class=\"nk-otp-box\"\r\n        tabindex=\"3\"\r\n        (keyup)=\"focusNext($event,3)\"\r\n        maxlength=\"1\"\r\n        formControlName=\"third\"\r\n        #third\r\n        type=\"text\"\r\n        placeholder=\"\"\r\n      />\r\n      <input\r\n        class=\"nk-otp-box\"\r\n        tabindex=\"4\"\r\n        (keyup)=\"focusNext($event,4)\"\r\n        maxlength=\"1\"\r\n        formControlName=\"four\"\r\n        #four\r\n        type=\"text\"\r\n        placeholder=\"\"\r\n      />\r\n      <input\r\n        class=\"nk-otp-box\"\r\n        tabindex=\"5\"\r\n        (keyup)=\"focusNext($event,5)\"\r\n        maxlength=\"1\"\r\n        formControlName=\"five\"\r\n        #five\r\n        type=\"text\"\r\n        placeholder=\"\"\r\n      />\r\n    </div>\r\n    <ion-row>\r\n      <ion-col size=\"6\" class=\"back-btn\" style=\"text-align: start\">\r\n        <ion-button color=\"dark\" (click)=\"backbtn()\">\r\n          {{results.back}}\r\n          <ion-icon slot=\"start\" name=\"chevron-back-outline\"></ion-icon>\r\n        </ion-button>\r\n      </ion-col>\r\n      <ion-col size=\"6\" class=\"next-btn\">\r\n        <ion-button color=\"dark\" (click)=\"nextbtn()\">\r\n          {{results.next}}\r\n          <ion-icon slot=\"end\" name=\"chevron-forward-outline\"></ion-icon>\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </div>\r\n</ion-content>\r\n");
 
 /***/ })
 
