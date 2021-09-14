@@ -126,7 +126,6 @@ let BallotFingerprintPage = class BallotFingerprintPage {
     ngOnInit() {
         fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
             this.results = json[0]['ballot_fingerp'];
-            console.log("results: ", this.results);
         });
     }
     copybtn() {

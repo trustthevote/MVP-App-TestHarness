@@ -17,38 +17,31 @@ export class StatuscodeService {
       CorruptCVRError: 'corrupt CVR',
       ServerCommitmentError: 'server commitment error',
   }
-  if(statusCode == 'VoterRecordNotFound'){
-    console.log("statusCode", statusCode);   
+  if(statusCode == 'VoterRecordNotFound'){ 
      const errorCode = 'voter record not found';
      return errorCode
   }
-  else if(statusCode == 'NetworkError'){
-    console.log("statusCode", statusCode);   
+  else if(statusCode == 'NetworkError'){ 
      const errorCode = 'network code';
      return errorCode
   }
   else if(statusCode == 'CallOutOfOrderError'){
-    console.log("statusCode", statusCode);   
      const errorCode = 'call out of order error';
      return errorCode
   }
-  else if(statusCode == 'AccessCodeExpired'){
-    console.log("statusCode", statusCode);   
+  else if(statusCode == 'AccessCodeExpired'){  
      const errorCode = 'access code expired';
      return errorCode
   }
-  else if(statusCode == 'AccessCodeInvalid'){
-    console.log("statusCode", statusCode);   
+  else if(statusCode == 'AccessCodeInvalid'){  
      const errorCode = 'access code invalid';
      return errorCode
   } 
-   else if(statusCode == 'CorruptCVRError'){
-    console.log("statusCode", statusCode);   
+   else if(statusCode == 'CorruptCVRError'){ 
      const errorCode = 'corrupt CVR';
      return errorCode
   }
-  else if(statusCode == 'ServerCommitmentError'){
-    console.log("statusCode", statusCode);   
+  else if(statusCode == 'ServerCommitmentError'){  
      const errorCode = 'server commitment error';
      return errorCode
   }

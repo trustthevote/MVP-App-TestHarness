@@ -127,9 +127,7 @@ let BallotCompletePage = class BallotCompletePage {
     }
     ngOnInit() {
         fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-            // console.log("json", json);
             this.results = json[0]['ballot_comp'];
-            // console.log("results: ", this.results); 
         });
         // const lastName = this.paramData.lastname.charAt(0).toUpperCase() + this.paramData.lastname.slice(1);
         // if (lastName.includes('A', 0)) {

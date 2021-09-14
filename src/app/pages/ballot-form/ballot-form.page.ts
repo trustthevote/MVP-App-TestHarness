@@ -32,9 +32,7 @@ export class BallotFormPage implements OnInit {
     // }
     this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
     fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-
       this.results = json[0]['ballot_form'];
-      console.log("results: ", this.results);
     });
     if (this.userObject.lastname != undefined) {
       // const lastName = this.paramData.lastname.charAt(0).toUpperCase() + this.paramData.lastname.slice(1);

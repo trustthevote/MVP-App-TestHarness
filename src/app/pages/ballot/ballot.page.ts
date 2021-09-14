@@ -2,7 +2,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NavigationExtras, Router } from '@angular/router';
-import { ToastController } from '@ionic/angular';
+import { ToastController,AlertController,LoadingController ,NavController} from "@ionic/angular";
+
 
 @Component({
   selector: 'app-ballot',
@@ -16,7 +17,8 @@ export class BallotPage {
   constructor(
     public formBuilder: FormBuilder,
     public toastController: ToastController,
-    private router: Router) {
+    private router: Router,
+    private alertctrl: AlertController,) {
     this.signupForm = this.formBuilder.group({
       firstname: [
         '',
@@ -42,10 +44,7 @@ export class BallotPage {
   ngOnInit() {
     localStorage.clear();
     fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-      // console.log("json", json);
       this.results = json[0]['ballot'];
-      console.log("results: ", this.results);
-
     });
   }
   get errorControl() {
@@ -61,12 +60,26 @@ export class BallotPage {
     });
     toast.present();
   }
+  async presentAlertEmpty(msg) {
+    const alert = await this.alertctrl.create({
+      message: msg,
+      buttons: [{
+          text: this.results['try_again'],
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {}
+        }
+      ]
+    });
+    await alert.present();
+  }
 
   submitForm() {
     this.isSubmitted = true;
 
     if (!this.signupForm.valid) {
-      this.presentToast(this.results['tm']);
+      // this.presentToast(this.results['tm']);
+      this.presentAlertEmpty(this.results['alert_msg']);
       return false;
     } else {
       const naviExtras: NavigationExtras = {

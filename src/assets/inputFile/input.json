@@ -14,7 +14,9 @@
     "please_provide": "Please provide: Name that consists of letters, space and hyphen.",
     "about_this_app": "About This App",
     "next": "Next",
-    "tm": "Please provide all the required values!"
+    "tm": "Please provide all the required values!",
+    "alert_msg": "Please provide name that consists of 2 or more letters, spaces and hyphens.",
+    "try_again": "Try Again"
   },
   "ballot_form": {
     "welcome": "Welcome",

@@ -111,10 +111,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let BallotPage = class BallotPage {
-    constructor(formBuilder, toastController, router) {
+    constructor(formBuilder, toastController, router, alertctrl) {
         this.formBuilder = formBuilder;
         this.toastController = toastController;
         this.router = router;
+        this.alertctrl = alertctrl;
         this.isSubmitted = false;
         this.results = [];
         this.signupForm = this.formBuilder.group({
@@ -141,9 +142,7 @@ let BallotPage = class BallotPage {
     ngOnInit() {
         localStorage.clear();
         fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-            // console.log("json", json);
             this.results = json[0]['ballot'];
-            console.log("results: ", this.results);
         });
     }
     get errorControl() {
@@ -160,10 +159,26 @@ let BallotPage = class BallotPage {
             toast.present();
         });
     }
+    presentAlertEmpty(msg) {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__awaiter)(this, void 0, void 0, function* () {
+            const alert = yield this.alertctrl.create({
+                message: msg,
+                buttons: [{
+                        text: this.results['try_again'],
+                        role: 'cancel',
+                        cssClass: 'secondary',
+                        handler: (blah) => { }
+                    }
+                ]
+            });
+            yield alert.present();
+        });
+    }
     submitForm() {
         this.isSubmitted = true;
         if (!this.signupForm.valid) {
-            this.presentToast(this.results['tm']);
+            // this.presentToast(this.results['tm']);
+            this.presentAlertEmpty(this.results['alert_msg']);
             return false;
         }
         else {
@@ -181,7 +196,8 @@ let BallotPage = class BallotPage {
 BallotPage.ctorParameters = () => [
     { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormBuilder },
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__.ToastController },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__.Router }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__.Router },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__.AlertController }
 ];
 BallotPage = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.Component)({
@@ -221,7 +237,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content class=\"ion-padding\">\r\n  <div class=\"ion-text-center mt60\">\r\n    <ion-card-title>{{results.welcome_to_jetsons_ballot}}</ion-card-title>\r\n  </div>\r\n  <div class=\"ion-text-center\">\r\n    <p>{{results.to_get_started}}</p>\r\n  </div>\r\n  <ion-grid class=\"ion-no-padding mt60\">\r\n    <form [formGroup]=\"signupForm\" (ngSubmit)=\"submitForm()\" novalidate>\r\n      <ion-row>\r\n        <ion-col size=\"6\">\r\n          <ion-item lines=\"none\">\r\n            <ion-label position=\"stacked\">{{results.first_name}}</ion-label>\r\n            <ion-input formControlName=\"firstname\" type=\"text\" placeholder=\"{{results.first_name}}\" required clearInput>\r\n            </ion-input>\r\n          </ion-item>\r\n          <!-- Error messages -->\r\n          <div class=\"err-messages\">\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.firstname.errors?.required\">\r\n              <p class=\"error\">{{results.firstname_errors}}</p>\r\n            </ng-container>\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.firstname.errors?.minlength\" >\r\n              <p class=\"error\">{{results.firstname_errors1}}</p>\r\n            </ng-container>\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.firstname.errors?.maxlength\">\r\n              <p class=\"error\">{{results.firstname_errors2}}</p>\r\n            </ng-container>\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.firstname.errors?.pattern\">\r\n              <p class=\"error\">{{results.firstname_errors3}}</p>\r\n            </ng-container>\r\n          </div>\r\n        </ion-col>\r\n        <ion-col size=\"6\">\r\n          <ion-item lines=\"none\">\r\n            <ion-label position=\"stacked\">{{results.last_name}}</ion-label>\r\n            <ion-input formControlName=\"lastname\" type=\"text\" placeholder=\"{{results.last_name}}\" required clearInput>\r\n            </ion-input>\r\n          </ion-item>\r\n          <!-- Error messages -->\r\n          <div class=\"err-messages\">\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.lastname.errors?.required\">\r\n              <p class=\"error\">{{results.last_name_errors}}</p>\r\n            </ng-container>\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.lastname.errors?.minlength\">\r\n              <p class=\"error\">{{results.last_name_errors1}}</p>\r\n            </ng-container>\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.lastname.errors?.maxlength\">\r\n              <p class=\"error\">{{results.last_name_errors2}}</p>\r\n            </ng-container>\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.lastname.errors?.pattern\" >\r\n              <p class=\"error\">{{results.please_provide}}</p>\r\n            </ng-container>\r\n          </div>\r\n        </ion-col>\r\n      </ion-row>\r\n      <ion-row class=\"mt100 ion-text-center\">\r\n        <ion-col size=\"12\">\r\n          <ion-button type=\"submit\" class=\"main-btn-style\" color=\"primary\">\r\n            {{results.next}}</ion-button>\r\n        </ion-col>\r\n      </ion-row>\r\n    </form>\r\n  </ion-grid>\r\n  <div class=\"mt30 ion-text-center\">\r\n    <ion-button href=\"https://trustthevote.org/about_abc/\" color=\"primary\" fill=\"clear\">{{results.about_this_app}}\r\n    </ion-button>\r\n  </div>\r\n</ion-content>\r\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content class=\"ion-padding\">\r\n  <div class=\"ion-text-center mt60\">\r\n    <ion-card-title>{{results.welcome_to_jetsons_ballot}}</ion-card-title>\r\n  </div>\r\n  <div class=\"ion-text-center\">\r\n    <p>{{results.to_get_started}}</p>\r\n  </div>\r\n  <ion-grid class=\"ion-no-padding mt60\">\r\n    <form [formGroup]=\"signupForm\" (ngSubmit)=\"submitForm()\" novalidate>\r\n      <ion-row>\r\n        <ion-col size=\"6\">\r\n          <ion-item lines=\"none\">\r\n            <ion-label position=\"stacked\">{{results.first_name}}</ion-label>\r\n            <ion-input formControlName=\"firstname\" type=\"text\" placeholder=\"{{results.first_name}}\" required clearInput>\r\n            </ion-input>\r\n          </ion-item>\r\n          <!-- Error messages -->\r\n          <div class=\"err-messages\">\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.firstname.errors?.required\">\r\n              <!-- <p class=\"error\">{{results.firstname_errors}}</p> -->\r\n            </ng-container>\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.firstname.errors?.minlength\" >\r\n              <!-- <p class=\"error\">{{results.firstname_errors1}}</p> -->\r\n            </ng-container>\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.firstname.errors?.maxlength\">\r\n              <!-- <p class=\"error\">{{results.firstname_errors2}}</p> -->\r\n            </ng-container>\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.firstname.errors?.pattern\">\r\n              <!-- <p class=\"error\">{{results.firstname_errors3}}</p> -->\r\n            </ng-container>\r\n          </div>\r\n        </ion-col>\r\n        <ion-col size=\"6\">\r\n          <ion-item lines=\"none\">\r\n            <ion-label position=\"stacked\">{{results.last_name}}</ion-label>\r\n            <ion-input formControlName=\"lastname\" type=\"text\" placeholder=\"{{results.last_name}}\" required clearInput>\r\n            </ion-input>\r\n          </ion-item>\r\n          <!-- Error messages -->\r\n          <div class=\"err-messages\">\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.lastname.errors?.required\">\r\n              <!-- <p class=\"error\">{{results.last_name_errors}}</p> -->\r\n            </ng-container>\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.lastname.errors?.minlength\">\r\n              <!-- <p class=\"error\">{{results.last_name_errors1}}</p> -->\r\n            </ng-container>\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.lastname.errors?.maxlength\">\r\n              <!-- <p class=\"error\">{{results.last_name_errors2}}</p> -->\r\n            </ng-container>\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.lastname.errors?.pattern\" >\r\n              <!-- <p class=\"error\">{{results.please_provide}}</p> -->\r\n            </ng-container>\r\n          </div>\r\n        </ion-col>\r\n      </ion-row>\r\n      <ion-row class=\"mt100 ion-text-center\">\r\n        <ion-col size=\"12\">\r\n          <ion-button type=\"submit\" class=\"main-btn-style\" color=\"primary\">\r\n            {{results.next}}</ion-button>\r\n        </ion-col>\r\n      </ion-row>\r\n    </form>\r\n  </ion-grid>\r\n  <div class=\"mt30 ion-text-center\">\r\n    <ion-button href=\"https://trustthevote.org/about_abc/\" color=\"primary\" fill=\"clear\">{{results.about_this_app}}\r\n    </ion-button>\r\n  </div>\r\n</ion-content>\r\n");
 
 /***/ })
 

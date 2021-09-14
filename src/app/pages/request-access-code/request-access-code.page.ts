@@ -34,7 +34,6 @@ export class RequestAccessCodePage implements OnInit {
       else if(opaqueVoterId == 'OOOO') {
               opaqueVoterId = 'T0001';
       }
-      console.log("opaqueVoterId", opaqueVoterId);
       this.avclientService.requestAccessCode(opaqueVoterId);
     }
   }

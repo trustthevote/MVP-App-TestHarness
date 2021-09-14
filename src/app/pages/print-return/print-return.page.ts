@@ -29,18 +29,14 @@ export class PrintReturnPage implements OnInit {
   constructor(private router: Router) {
     if (this.router.getCurrentNavigation().extras.state) {
       this.paramData = this.router.getCurrentNavigation().extras.state.user;
-      console.log(this.paramData);
     }
   }
 
   ngOnInit() {
     this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
-    console.log("this.userObject", this.userObject);
 
     fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-      // console.log("json", json);
       this.results = json[0]['print_return_page'];
-      // console.log("results: ", this.results); 
     });
     if (this.userObject.lastname != undefined) {
       // const lastName = this.paramData.lastname.charAt(0).toUpperCase() + this.paramData.lastname.slice(1);

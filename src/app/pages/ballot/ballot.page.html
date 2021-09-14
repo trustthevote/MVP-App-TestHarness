@@ -17,16 +17,16 @@
           <!-- Error messages -->
           <div class="err-messages">
             <ng-container *ngIf="isSubmitted && errorControl.firstname.errors?.required">
-              <p class="error">{{results.firstname_errors}}</p>
+              <!-- <p class="error">{{results.firstname_errors}}</p> -->
             </ng-container>
             <ng-container *ngIf="isSubmitted && errorControl.firstname.errors?.minlength" >
-              <p class="error">{{results.firstname_errors1}}</p>
+              <!-- <p class="error">{{results.firstname_errors1}}</p> -->
             </ng-container>
             <ng-container *ngIf="isSubmitted && errorControl.firstname.errors?.maxlength">
-              <p class="error">{{results.firstname_errors2}}</p>
+              <!-- <p class="error">{{results.firstname_errors2}}</p> -->
             </ng-container>
             <ng-container *ngIf="isSubmitted && errorControl.firstname.errors?.pattern">
-              <p class="error">{{results.firstname_errors3}}</p>
+              <!-- <p class="error">{{results.firstname_errors3}}</p> -->
             </ng-container>
           </div>
         </ion-col>
@@ -39,16 +39,16 @@
           <!-- Error messages -->
           <div class="err-messages">
             <ng-container *ngIf="isSubmitted && errorControl.lastname.errors?.required">
-              <p class="error">{{results.last_name_errors}}</p>
+              <!-- <p class="error">{{results.last_name_errors}}</p> -->
             </ng-container>
             <ng-container *ngIf="isSubmitted && errorControl.lastname.errors?.minlength">
-              <p class="error">{{results.last_name_errors1}}</p>
+              <!-- <p class="error">{{results.last_name_errors1}}</p> -->
             </ng-container>
             <ng-container *ngIf="isSubmitted && errorControl.lastname.errors?.maxlength">
-              <p class="error">{{results.last_name_errors2}}</p>
+              <!-- <p class="error">{{results.last_name_errors2}}</p> -->
             </ng-container>
             <ng-container *ngIf="isSubmitted && errorControl.lastname.errors?.pattern" >
-              <p class="error">{{results.please_provide}}</p>
+              <!-- <p class="error">{{results.please_provide}}</p> -->
             </ng-container>
           </div>
         </ion-col>
