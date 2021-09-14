@@ -4,6 +4,7 @@ ion-content {
     --padding-start: 20px;
     --padding-top: 20px;
   }
+
   .list-question {
     p {
       font-size: 30px;
@@ -18,16 +19,20 @@ ion-content {
   ion-label {
     font-weight: 500;
   }
+
   ion-item {
     margin-top: 15px;
   }
+
   .ftr-tp-text {
     padding-left: 15px;
     padding-right: 15px;
   }
+
   .back-btn {
     padding-left: 24px;
   }
+  
   .next-btn {
     text-align: end;
     padding-right: 20px;
@@ -74,6 +79,7 @@ ion-content {
     margin-right: 22px;
     border-radius: 10px;
     margin-top: 0px;
+
     .div1 {
       height: 70%;
       width: 30%;
@@ -83,6 +89,7 @@ ion-content {
       border-radius: 10px;
     }
   }
+
   .camera-div {
     text-align: center;
     border: 1px solid #00000069;
@@ -96,12 +103,13 @@ ion-content {
       color: #00000085;
     }
   }
+
   .bottom-div-text{
     text-align: center;
     margin-right: 20px;
     font-size: 70px;
- 
   }
+
   .cen-div-text{
     text-align: center;
     margin-right: 20px;
@@ -109,8 +117,9 @@ ion-content {
     padding-top: 60px;
     padding-bottom: 40px;
   }
-  i{
-    font-size: 13px;
+
+ i{
+font-size: 13px;
 font-weight: 100;
 color: #0000007a;
 }

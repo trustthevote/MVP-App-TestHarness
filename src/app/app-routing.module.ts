@@ -102,6 +102,10 @@ const routes: Routes = [
     path: 'request-access-code',
     loadChildren: () => import('./pages/request-access-code/request-access-code.module').then( m => m.RequestAccessCodePageModule)
   },
+  {
+    path: 'test',
+    loadChildren: () => import('./pages/test/test.module').then( m => m.TestPageModule)
+  },
 
   
 

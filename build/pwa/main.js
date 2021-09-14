@@ -59,7 +59,7 @@ const routes = [
     },
     {
         path: 'ballot-complete',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_capacitor_browser_dist_esm_index_js"), __webpack_require__.e("src_app_pages_ballot-complete_ballot-complete_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-complete/ballot-complete.module */ 5919)).then(m => m.BallotCompletePageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_capacitor_browser_dist_esm_index_js"), __webpack_require__.e("common"), __webpack_require__.e("src_app_pages_ballot-complete_ballot-complete_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-complete/ballot-complete.module */ 5919)).then(m => m.BallotCompletePageModule)
     },
     {
         path: 'print',
@@ -67,7 +67,7 @@ const routes = [
     },
     {
         path: 'access-code',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_access-code_access-code_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/access-code/access-code.module */ 1055)).then(m => m.AccessCodePageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_pages_access-code_access-code_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/access-code/access-code.module */ 1055)).then(m => m.AccessCodePageModule)
     },
     {
         path: 'ballot-fingerprint',
@@ -139,7 +139,11 @@ const routes = [
     },
     {
         path: 'request-access-code',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_request-access-code_request-access-code_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/request-access-code/request-access-code.module */ 8554)).then(m => m.RequestAccessCodePageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_pages_request-access-code_request-access-code_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/request-access-code/request-access-code.module */ 8554)).then(m => m.RequestAccessCodePageModule)
+    },
+    {
+        path: 'test',
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_pages_test_test_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/test/test.module */ 5011)).then(m => m.TestPageModule)
     },
 ];
 let AppRoutingModule = class AppRoutingModule {
@@ -266,7 +270,8 @@ __webpack_require__.r(__webpack_exports__);
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 const environment = {
-    production: false
+    production: false,
+    url: 'http://voterreg.tbd.com/'
 };
 /*
  * For easier debugging in development mode, you can import the following file

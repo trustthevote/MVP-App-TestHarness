@@ -1,267 +1,5 @@
 (self["webpackChunkMVP_Test_Harness"] = self["webpackChunkMVP_Test_Harness"] || []).push([["src_app_pages_access-code_access-code_module_ts"],{
 
-/***/ 5913:
-/*!*****************************************!*\
-  !*** ./src/app/api/avclient.service.ts ***!
-  \*****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "AvclientService": () => (/* binding */ AvclientService)
-/* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var src_app_api_statuscode_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/api/statuscode.service */ 2413);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 9895);
-
-
-
-
-
-let AvclientService = class AvclientService {
-    constructor(statuscodeService, alertctrl, route) {
-        this.statuscodeService = statuscodeService;
-        this.alertctrl = alertctrl;
-        this.route = route;
-    }
-    purgeData() {
-        delete this.cachedAccessCode;
-    }
-    requestAccessCode(opaqueVoterId) {
-        console.log("opaqueVoterId", opaqueVoterId);
-        return new Promise((resolve, reject) => {
-            switch (opaqueVoterId) {
-                case 'T0000':
-                    reject(new Error(this.statuscodeService.statusCode('VoterRecordNotFound')));
-                    if (opaqueVoterId == 'T0000') {
-                        // this.presentAlertEmpty(this.statuscodeService.statusCode('VoterRecordNotFound'))
-                    }
-                case 'T0001':
-                    reject(new Error(this.statuscodeService.statusCode('NetworkError')));
-                    if (opaqueVoterId == 'T0001') {
-                        // this.presentAlertEmpty(this.statuscodeService.statusCode('NetworkError'))
-                    }
-                default:
-                    resolve(true);
-            }
-        });
-    }
-    validateAccessCode(code, email) {
-        return new Promise((resolve, reject) => {
-            // this.cachedAccessCode = code
-            switch (code) {
-                // case 'T0000':
-                //   reject(new Error(this.statuscodeService.statusCode('VoterRecordNotFound')));
-                //   if (code == 'T0000') {
-                //     this.presentAlertEmpty(this.statuscodeService.statusCode('VoterRecordNotFound'))
-                //   }
-                //   case 'T0001':
-                //     reject(new Error(this.statuscodeService.statusCode('NetworkError')));
-                //     if (code == 'T0001') {
-                //       // this.presentAlertEmpty(this.statuscodeService.statusCode('NetworkError'))
-                //       this.route.navigate(['/check-network']);
-                //     }
-                case 'T0002':
-                    reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));
-                    if (code == 'T0002') {
-                        // this.presentAlertEmpty(this.statuscodeService.statusCode('CallOutOfOrderError'))
-                        this.route.navigate(['/ballot-test-failed']);
-                    }
-                case 'T0003':
-                    reject(new Error(this.statuscodeService.statusCode('AccessCodeExpired')));
-                    if (code == 'T0003') {
-                        // this.presentAlertEmpty(this.statuscodeService.statusCode('AccessCodeExpired'))
-                        this.route.navigate(['/expired-code']);
-                    }
-                case 'T0004':
-                    reject(new Error(this.statuscodeService.statusCode('AccessCodeInvalid')));
-                    if (code == 'T0004') {
-                        // this.presentAlertEmpty(this.statuscodeService.statusCode('AccessCodeInvalid'))
-                        this.route.navigate(['/failed-authorization']);
-                    }
-                case 'T0005':
-                    reject(new Error(this.statuscodeService.statusCode('NetworkError')));
-                    if (code == 'T0005') {
-                        // this.presentAlertEmpty(this.statuscodeService.statusCode('NetworkError'))
-                        this.route.navigate(['/check-network']);
-                    }
-                default:
-                    resolve(true);
-            }
-        });
-    }
-    // Should not be idempotent.  Instead, permute one of
-    // john's sample strings.
-    constructBallotCryptograms(cvr) {
-        return new Promise((resolve, reject) => {
-            switch (this.cachedAccessCode) {
-                case 'T0006':
-                    reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));
-                case 'T0007':
-                    reject(new Error(this.statuscodeService.statusCode('NetworkError')));
-                case 'T0008':
-                    reject(new Error(this.statuscodeService.statusCode('CorruptCVRError')));
-                default:
-                    resolve('zyx098-wvu765-tsr432-1234');
-            }
-        });
-    }
-    spoilBallotCryptograms() {
-        return new Promise((resolve, reject) => {
-            switch (this.cachedAccessCode) {
-                case 'T0009':
-                    reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));
-                case 'T0010':
-                    reject(new Error(this.statuscodeService.statusCode('NetworkError')));
-                case 'T0011':
-                    reject(new Error(this.statuscodeService.statusCode('ServerCommitmentError')));
-                default:
-                    resolve(true);
-            }
-        });
-    }
-    submitBallotCryptograms() {
-        return new Promise((resolve, reject) => {
-            switch (this.cachedAccessCode) {
-                case 'T0012':
-                    reject(new Error(this.statuscodeService.statusCode('NetworkError')));
-                default:
-                    resolve({
-                        previousBoardHash: 'tsr432-wvu765-zyx098-4321',
-                        boardHash: 'zyx098-wvu765-tsr432-1234',
-                        registeredAt: '2020-03-01T10:00:00.000+01:00',
-                        serverSignature: 'dbcce518142b8740a5c911f727f3c02829211a8ddfccabeb89297877e4198bc1,46826ddfccaac9ca105e39c8a2d015098479624c411b4783ca1a3600daf4e8fa',
-                        voteSubmissionId: 6
-                    });
-            }
-        });
-    }
-    test(code) {
-        this.purgeData();
-        this.requestAccessCode(code);
-        this.validateAccessCode(code, '');
-        this.constructBallotCryptograms(code);
-        this.spoilBallotCryptograms();
-        this.constructBallotCryptograms(code);
-        this.submitBallotCryptograms().then(receipt => {
-            console.log(receipt);
-        });
-    }
-    presentAlertEmpty(Error) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__awaiter)(this, void 0, void 0, function* () {
-            const alert = yield this.alertctrl.create({
-                // header: 'Confirm!',
-                message: Error,
-                buttons: [{
-                        text: 'Okay',
-                        role: 'cancel',
-                        cssClass: 'secondary',
-                        handler: (blah) => { }
-                    }
-                    // , {
-                    // 	text: 'Close App',
-                    // 	handler: () => {
-                    // 	}
-                    // }
-                ]
-            });
-            yield alert.present();
-        });
-    }
-};
-AvclientService.ctorParameters = () => [
-    { type: src_app_api_statuscode_service__WEBPACK_IMPORTED_MODULE_0__.StatuscodeService },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__.AlertController },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__.Router }
-];
-AvclientService = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.Injectable)({
-        providedIn: 'root'
-    })
-], AvclientService);
-
-
-
-/***/ }),
-
-/***/ 2413:
-/*!*******************************************!*\
-  !*** ./src/app/api/statuscode.service.ts ***!
-  \*******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "StatuscodeService": () => (/* binding */ StatuscodeService)
-/* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 7716);
-
-
-let StatuscodeService = class StatuscodeService {
-    constructor() { }
-    statusCode(statusCode) {
-        const statusCodes = {
-            VoterRecordNotFound: 'voter record not found',
-            NetworkError: 'network code',
-            CallOutOfOrderError: 'call out of order error',
-            AccessCodeExpired: 'access code expired',
-            AccessCodeInvalid: 'access code invalid',
-            CorruptCVRError: 'corrupt CVR',
-            ServerCommitmentError: 'server commitment error',
-        };
-        if (statusCode == 'VoterRecordNotFound') {
-            console.log("statusCode", statusCode);
-            const errorCode = 'voter record not found';
-            return errorCode;
-        }
-        else if (statusCode == 'NetworkError') {
-            console.log("statusCode", statusCode);
-            const errorCode = 'network code';
-            return errorCode;
-        }
-        else if (statusCode == 'CallOutOfOrderError') {
-            console.log("statusCode", statusCode);
-            const errorCode = 'call out of order error';
-            return errorCode;
-        }
-        else if (statusCode == 'AccessCodeExpired') {
-            console.log("statusCode", statusCode);
-            const errorCode = 'access code expired';
-            return errorCode;
-        }
-        else if (statusCode == 'AccessCodeInvalid') {
-            console.log("statusCode", statusCode);
-            const errorCode = 'access code invalid';
-            return errorCode;
-        }
-        else if (statusCode == 'CorruptCVRError') {
-            console.log("statusCode", statusCode);
-            const errorCode = 'corrupt CVR';
-            return errorCode;
-        }
-        else if (statusCode == 'ServerCommitmentError') {
-            console.log("statusCode", statusCode);
-            const errorCode = 'server commitment error';
-            return errorCode;
-        }
-    }
-};
-StatuscodeService.ctorParameters = () => [];
-StatuscodeService = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.Injectable)({
-        providedIn: 'root'
-    })
-], StatuscodeService);
-
-
-
-/***/ }),
-
 /***/ 4627:
 /*!*****************************************************************!*\
   !*** ./src/app/pages/access-code/access-code-routing.module.ts ***!
@@ -463,7 +201,6 @@ let AccessCodePage = class AccessCodePage {
             enteredOtp = this.getOtpValue();
             this.data = enteredOtp;
             if (this.data == '') {
-                // this.presentToast(this.results['tm_ee']);
                 this.presentAlertEmpty();
             }
             else {
@@ -473,55 +210,8 @@ let AccessCodePage = class AccessCodePage {
                 });
                 yield loading.present();
                 return new Promise(resolve => {
-                    // if (this.data === 'T0000') {
-                    //   loading.dismiss();
-                    //   // this.route.navigate(['/failed-authorization']);
-                    //   // this.avclientService.requestAccessCode(this.data);
-                    //   this.avclientService.validateAccessCode(this.data, '');
-                    // } else if (this.data === 'T0001') {
-                    //   loading.dismiss();
-                    //   // this.presentToast(this.results['tm_ev']);
-                    //   // this.avclientService.requestAccessCode(this.data)
-                    //   // this.route.navigate(['/expired-code']);
-                    //   // this.otpError = "";
-                    //   this.avclientService.validateAccessCode(this.data, '');
-                    // } 
-                    if (this.data === 'T0002') {
-                        loading.dismiss();
-                        // this.presentToast(this.results['tm_ev']);
-                        // this.route.navigate(['/check-network']);
-                        this.avclientService.validateAccessCode(this.data, '');
-                        // this.otpError = "";
-                    }
-                    else if (this.data === 'T0003') {
-                        loading.dismiss();
-                        // this.presentToast(this.results['tm_ev']);
-                        // this.avclientService.requestAccessCode(this.data)
-                        // this.route.navigate(['/expired-code']);
-                        // this.otpError = "";
-                        this.avclientService.validateAccessCode(this.data, '');
-                    }
-                    else if (this.data === 'T0004') {
-                        loading.dismiss();
-                        // this.presentToast(this.results['tm_ev']);
-                        // this.avclientService.requestAccessCode(this.data)
-                        // this.route.navigate(['/expired-code']);
-                        // this.otpError = "";
-                        this.avclientService.validateAccessCode(this.data, '');
-                    }
-                    else if (this.data === 'T0005') {
-                        loading.dismiss();
-                        // this.presentToast(this.results['tm_ev']);
-                        // this.avclientService.requestAccessCode(this.data)
-                        // this.route.navigate(['/expired-code']);
-                        // this.otpError = "";
-                        this.avclientService.validateAccessCode(this.data, '');
-                    }
-                    else {
-                        loading.dismiss();
-                        this.route.navigate(['/ballot-fingerprint']);
-                        this.otpError = "";
-                    }
+                    loading.dismiss();
+                    this.avclientService.validateAccessCode(this.data, '');
                     (err) => {
                         loading.dismiss();
                         this.disabledbutton = false;
@@ -540,8 +230,7 @@ let AccessCodePage = class AccessCodePage {
                         role: 'cancel',
                         cssClass: 'secondary',
                         handler: (blah) => { }
-                    }
-                ]
+                    }]
             });
             yield alert.present();
         });
@@ -647,7 +336,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n  <div class=\"list-question\">\r\n    <p>{{results.enter_access_code}}</p>\r\n  </div>\r\n  <div class=\"opt-box-area\" [formGroup]=\"otpForm\" style=\"text-align: center\">\r\n    <div>\r\n      <input\r\n        class=\"nk-otp-box-first\"\r\n        tabindex=\"1\"\r\n        (keyup)=\"focusNext($event,1)\"\r\n        maxlength=\"1\"\r\n        formControlName=\"first\"\r\n        type=\"text\"\r\n        placeholder=\"\"\r\n        #first\r\n      />\r\n      <input\r\n        class=\"nk-otp-box\"\r\n        tabindex=\"2\"\r\n        (keyup)=\"focusNext($event,2)\"\r\n        maxlength=\"1\"\r\n        formControlName=\"second\"\r\n        #second\r\n        type=\"text\"\r\n        placeholder=\"\"\r\n      />\r\n      <input\r\n        class=\"nk-otp-box\"\r\n        tabindex=\"3\"\r\n        (keyup)=\"focusNext($event,3)\"\r\n        maxlength=\"1\"\r\n        formControlName=\"third\"\r\n        #third\r\n        type=\"text\"\r\n        placeholder=\"\"\r\n      />\r\n      <input\r\n        class=\"nk-otp-box\"\r\n        tabindex=\"4\"\r\n        (keyup)=\"focusNext($event,4)\"\r\n        maxlength=\"1\"\r\n        formControlName=\"four\"\r\n        #four\r\n        type=\"text\"\r\n        placeholder=\"\"\r\n      />\r\n      <input\r\n        class=\"nk-otp-box\"\r\n        tabindex=\"5\"\r\n        (keyup)=\"focusNext($event,5)\"\r\n        maxlength=\"1\"\r\n        formControlName=\"five\"\r\n        #five\r\n        type=\"text\"\r\n        placeholder=\"\"\r\n      />\r\n    </div>\r\n    <ion-row>\r\n      <ion-col size=\"6\" class=\"back-btn\" style=\"text-align: start\">\r\n        <ion-button color=\"dark\" (click)=\"backbtn()\">\r\n          {{results.back}}\r\n          <ion-icon slot=\"start\" name=\"chevron-back-outline\"></ion-icon>\r\n        </ion-button>\r\n      </ion-col>\r\n      <ion-col size=\"6\" class=\"next-btn\">\r\n        <ion-button color=\"dark\" (click)=\"nextbtn()\">\r\n          {{results.next}}\r\n          <ion-icon slot=\"end\" name=\"chevron-forward-outline\"></ion-icon>\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </div>\r\n</ion-content>\r\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n  <div class=\"list-question\">\r\n    <p>{{results.enter_access_code}}</p>\r\n  </div>\r\n  <div class=\"opt-box-area\" [formGroup]=\"otpForm\" style=\"text-align: center\">\r\n    <div>\r\n      <input\r\n        class=\"nk-otp-box-first\"\r\n        tabindex=\"1\"\r\n        (keyup)=\"focusNext($event,1)\"\r\n        maxlength=\"1\"\r\n        formControlName=\"first\"\r\n        type=\"tel\"\r\n        placeholder=\"\"\r\n        #first\r\n      />\r\n      <input\r\n        class=\"nk-otp-box\"\r\n        tabindex=\"2\"\r\n        (keyup)=\"focusNext($event,2)\"\r\n        maxlength=\"1\"\r\n        formControlName=\"second\"\r\n        #second\r\n        type=\"tel\"\r\n        placeholder=\"\"\r\n      />\r\n      <input\r\n        class=\"nk-otp-box\"\r\n        tabindex=\"3\"\r\n        (keyup)=\"focusNext($event,3)\"\r\n        maxlength=\"1\"\r\n        formControlName=\"third\"\r\n        #third\r\n        type=\"tel\"\r\n        placeholder=\"\"\r\n      />\r\n      <input\r\n        class=\"nk-otp-box\"\r\n        tabindex=\"4\"\r\n        (keyup)=\"focusNext($event,4)\"\r\n        maxlength=\"1\"\r\n        formControlName=\"four\"\r\n        #four\r\n        type=\"tel\"\r\n        placeholder=\"\"\r\n      />\r\n      <input\r\n        class=\"nk-otp-box\"\r\n        tabindex=\"5\"\r\n        (keyup)=\"focusNext($event,5)\"\r\n        maxlength=\"1\"\r\n        formControlName=\"five\"\r\n        #five\r\n        type=\"tel\"\r\n        placeholder=\"\"\r\n      />\r\n    </div>\r\n    <ion-row>\r\n      <ion-col size=\"6\" class=\"back-btn\" style=\"text-align: start\">\r\n        <ion-button color=\"dark\" (click)=\"backbtn()\">\r\n          {{results.back}}\r\n          <ion-icon slot=\"start\" name=\"chevron-back-outline\"></ion-icon>\r\n        </ion-button>\r\n      </ion-col>\r\n      <ion-col size=\"6\" class=\"next-btn\">\r\n        <ion-button color=\"dark\" (click)=\"nextbtn()\">\r\n          {{results.next}}\r\n          <ion-icon slot=\"end\" name=\"chevron-forward-outline\"></ion-icon>\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </div>\r\n \r\n</ion-content>\r\n");
 
 /***/ })
 

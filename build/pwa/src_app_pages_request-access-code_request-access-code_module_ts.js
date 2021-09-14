@@ -92,35 +92,57 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "RequestAccessCodePage": () => (/* binding */ RequestAccessCodePage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 4762);
 /* harmony import */ var _raw_loader_request_access_code_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./request-access-code.page.html */ 3205);
 /* harmony import */ var _request_access_code_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./request-access-code.page.scss */ 7069);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 9895);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 9895);
+/* harmony import */ var src_app_api_statuscode_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/api/statuscode.service */ 2413);
+/* harmony import */ var src_app_api_avclient_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/api/avclient.service */ 5913);
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/environments/environment */ 2340);
+
+
+
 
 
 
 
 
 let RequestAccessCodePage = class RequestAccessCodePage {
-    constructor(route) {
+    constructor(route, statuscodeService, avclientService) {
         this.route = route;
+        this.statuscodeService = statuscodeService;
+        this.avclientService = avclientService;
         this.results = [];
     }
     ngOnInit() {
+        this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
         fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
             this.results = json[0]['rap_page'];
         });
     }
     Continuebtn() {
-        this.route.navigate(['/access-code']);
+        this.avclientService.assignServerUrl(src_environments_environment__WEBPACK_IMPORTED_MODULE_4__.environment.url);
+        if (this.userObject.lastname != undefined) {
+            let opaqueVoterId = this.userObject.lastname;
+            if (opaqueVoterId == 'OOOOO') {
+                opaqueVoterId = 'T0000';
+            }
+            else if (opaqueVoterId == 'OOOO') {
+                opaqueVoterId = 'T0001';
+            }
+            console.log("opaqueVoterId", opaqueVoterId);
+            this.avclientService.requestAccessCode(opaqueVoterId);
+        }
     }
 };
 RequestAccessCodePage.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__.Router }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__.Router },
+    { type: src_app_api_statuscode_service__WEBPACK_IMPORTED_MODULE_2__.StatuscodeService },
+    { type: src_app_api_avclient_service__WEBPACK_IMPORTED_MODULE_3__.AvclientService }
 ];
-RequestAccessCodePage = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.Component)({
+RequestAccessCodePage = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_7__.Component)({
         selector: 'app-request-access-code',
         template: _raw_loader_request_access_code_page_html__WEBPACK_IMPORTED_MODULE_0__.default,
         styles: [_request_access_code_page_scss__WEBPACK_IMPORTED_MODULE_1__.default]

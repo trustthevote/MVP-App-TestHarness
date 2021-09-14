@@ -9,76 +9,61 @@ import { Router } from '@angular/router';
 })
 export class AvclientService {
   cachedAccessCode: any;
+  serverURL: any;
   constructor(public statuscodeService: StatuscodeService,
     private alertctrl: AlertController,
-    private route: Router, ) {}
+    private route: Router, ) { }
 
   purgeData() {
     delete this.cachedAccessCode;
   }
+  assignServerUrl(bulletinBoardURL){
+    this.serverURL = bulletinBoardURL;
+  }
 
   requestAccessCode(opaqueVoterId) {
-    console.log("opaqueVoterId", opaqueVoterId);
-
     return new Promise((resolve, reject) => {
       switch (opaqueVoterId) {
         case 'T0000':
           reject(new Error(this.statuscodeService.statusCode('VoterRecordNotFound')));
-          if (opaqueVoterId == 'T0000') {
-            // this.presentAlertEmpty(this.statuscodeService.statusCode('VoterRecordNotFound'))
-          }
-          case 'T0001':
-            reject(new Error(this.statuscodeService.statusCode('NetworkError')));
-            if (opaqueVoterId == 'T0001') {
-              // this.presentAlertEmpty(this.statuscodeService.statusCode('NetworkError'))
-            }
-            default:
-              resolve(true);
+          this.route.navigate(['/ballot-test-failed']);
+          break;
+        case 'T0001':
+          reject(new Error(this.statuscodeService.statusCode('NetworkError')));
+          this.route.navigate(['/check-network']);
+          break;
+        default:
+          resolve(true);
+          this.route.navigate(['/access-code']);
+          break;
       }
     })
   }
 
   validateAccessCode(code, email) {
     return new Promise((resolve, reject) => {
-      // this.cachedAccessCode = code
+      this.cachedAccessCode = code   
       switch (code) {
-        // case 'T0000':
-        //   reject(new Error(this.statuscodeService.statusCode('VoterRecordNotFound')));
-        //   if (code == 'T0000') {
-        //     this.presentAlertEmpty(this.statuscodeService.statusCode('VoterRecordNotFound'))
-        //   }
-        //   case 'T0001':
-        //     reject(new Error(this.statuscodeService.statusCode('NetworkError')));
-        //     if (code == 'T0001') {
-        //       // this.presentAlertEmpty(this.statuscodeService.statusCode('NetworkError'))
-        //       this.route.navigate(['/check-network']);
-        //     }
-        case 'T0002':
-          reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));
-          if (code == 'T0002') {
-            // this.presentAlertEmpty(this.statuscodeService.statusCode('CallOutOfOrderError'))
-            this.route.navigate(['/ballot-test-failed']);
-          }
-          case 'T0003':
-            reject(new Error(this.statuscodeService.statusCode('AccessCodeExpired')));
-            if (code == 'T0003') {
-              // this.presentAlertEmpty(this.statuscodeService.statusCode('AccessCodeExpired'))
-              this.route.navigate(['/expired-code']);
-            }
-            case 'T0004':
-              reject(new Error(this.statuscodeService.statusCode('AccessCodeInvalid')));
-              if (code == 'T0004') {
-                // this.presentAlertEmpty(this.statuscodeService.statusCode('AccessCodeInvalid'))
-                this.route.navigate(['/failed-authorization']);
-              }
-              case 'T0005':
-                reject(new Error(this.statuscodeService.statusCode('NetworkError')));
-                if (code == 'T0005') {
-                  // this.presentAlertEmpty(this.statuscodeService.statusCode('NetworkError'))
-                  this.route.navigate(['/check-network']);
-                }
-                default:
-                  resolve(true);
+        case '00002':
+          reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));         
+          this.route.navigate(['/ballot-test-failed']);
+          break;
+        case '00003':
+          reject(new Error(this.statuscodeService.statusCode('AccessCodeExpired')));
+          this.route.navigate(['/expired-code']);
+          break;
+        case '00004':
+          reject(new Error(this.statuscodeService.statusCode('AccessCodeInvalid')));
+          this.route.navigate(['/failed-authorization']);
+          break;
+        case '00005':
+          reject(new Error(this.statuscodeService.statusCode('NetworkError')));         
+          this.route.navigate(['/check-network']);
+          break;
+        default:
+          resolve(true);
+          this.route.navigate(['/ballot-fingerprint']);
+          break;
       }
     })
   }
@@ -144,7 +129,6 @@ export class AvclientService {
   }
   async presentAlertEmpty(Error) {
     const alert = await this.alertctrl.create({
-      // header: 'Confirm!',
       message: Error,
       buttons: [{
           text: 'Okay',
@@ -152,11 +136,6 @@ export class AvclientService {
           cssClass: 'secondary',
           handler: (blah) => {}
         }
-        // , {
-        // 	text: 'Close App',
-        // 	handler: () => {
-        // 	}
-        // }
       ]
     });
     await alert.present();

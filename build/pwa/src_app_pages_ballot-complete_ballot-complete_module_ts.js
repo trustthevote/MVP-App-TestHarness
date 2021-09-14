@@ -92,12 +92,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "BallotCompletePage": () => (/* binding */ BallotCompletePage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 4762);
 /* harmony import */ var _raw_loader_ballot_complete_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./ballot-complete.page.html */ 6418);
 /* harmony import */ var _ballot_complete_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ballot-complete.page.scss */ 2415);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 9895);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ 9895);
 /* harmony import */ var _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @capacitor/browser */ 8427);
+/* harmony import */ var src_app_api_avclient_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/api/avclient.service */ 5913);
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/environments/environment */ 2340);
+
+
 
 
 
@@ -113,8 +117,9 @@ let BallotCompletePage = class BallotCompletePage {
     // P3 aff - https://drive.google.com/file/d/1j3wzbIfH8Sm4UAyij6N5pjHJVXTGWliJ/view?usp=sharing
     // P4 ballot - https://drive.google.com/file/d/1KyESAe8iVuA61zEKhpN3DENtNOE6M8Lr/view?usp=sharing
     // P4 aff - https://drive.google.com/file/d/1n3iNq1KVvr8YjKllMO6znArKtlDvvK-k/view?usp=sharing
-    constructor(router) {
+    constructor(router, avclientService) {
         this.router = router;
+        this.avclientService = avclientService;
         this.results = [];
         if (this.router.getCurrentNavigation().extras.state) {
             this.paramData = this.router.getCurrentNavigation().extras.state.user;
@@ -141,7 +146,7 @@ let BallotCompletePage = class BallotCompletePage {
         this.router.navigate(['print']);
     }
     openPDF(precinctNum) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
             if (precinctNum === 1) {
                 yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
                     url: 'https://drive.google.com/file/d/1Wrk9xhJkMFVEqtBBJgw2qZOTS9nqFxwk/view?usp=sharing'
@@ -165,7 +170,7 @@ let BallotCompletePage = class BallotCompletePage {
         });
     }
     openPDF2(precinctNum) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
             if (precinctNum === 1) {
                 yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
                     url: 'https://drive.google.com/file/d/1kn2xt5WxYzTn-NsbPc1X3BMqI47rjHDP/view?usp=sharing'
@@ -189,7 +194,7 @@ let BallotCompletePage = class BallotCompletePage {
         });
     }
     openXML(precinctNum) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
             if (precinctNum === 1) {
                 yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
                     url: 'https://drive.google.com/file/d/1pIe31DRlAtmcdsTeCc1HrAHKQ82N6wYL/view?usp=sharing'
@@ -216,22 +221,22 @@ let BallotCompletePage = class BallotCompletePage {
         this.router.navigate(['/print-return']);
     }
     Digitalret() {
+        this.avclientService.assignServerUrl(src_environments_environment__WEBPACK_IMPORTED_MODULE_4__.environment.url);
         this.router.navigate(['/request-access-code', {
                 t: new Date().getTime()
             }]);
     }
     ballotReturnChoice(event) {
-        // event.target.value
-        // alert(typeof(chooseVal))
         let chooseVal = event;
         console.log('this. chooseVal', chooseVal);
     }
 };
 BallotCompletePage.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__.Router }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__.Router },
+    { type: src_app_api_avclient_service__WEBPACK_IMPORTED_MODULE_3__.AvclientService }
 ];
-BallotCompletePage = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_5__.Component)({
+BallotCompletePage = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_7__.Component)({
         selector: 'app-ballot-complete',
         template: _raw_loader_ballot_complete_page_html__WEBPACK_IMPORTED_MODULE_0__.default,
         styles: [_ballot_complete_page_scss__WEBPACK_IMPORTED_MODULE_1__.default]
@@ -268,7 +273,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<!-- <ion-content class=\"ion-padding\">\r\n  <div class=\"ion-text-center mt60\">\r\n    <ion-card-title>Thank you {{ paramData?.firstname }}</ion-card-title>\r\n  </div>\r\n\r\n  <div class=\"ion-text-center sub-title\">\r\n    <p>Your Ballot is Complete</p>\r\n  </div>\r\n\r\n  <div class=\"ion-text-center mt60\">\r\n    <p>Your absentee ballot and voter statement documents are ready\r\n      for printing.</p>\r\n  </div>\r\n\r\n  <ion-grid class=\"ion-no-padding mt60\">\r\n    <ion-row class=\"mt100 ion-text-center\">\r\n      <ion-col size=\"12\">\r\n        <ion-button (click)=\"openPDF(precinctNum)\" class=\"main-btn-style\" color=\"primary\">Print Ballot</ion-button>\r\n        <ion-button (click)=\"openPDF2(precinctNum)\" class=\"main-btn-style\" color=\"primary\">Print Affidavit</ion-button>\r\n        <ion-button (click)=\"openXML(precinctNum)\" class=\"main-btn-style\" color=\"secondary\">Print Xml</ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n\r\n  <div class=\"mt30 ion-text-center\">\r\n    <ion-button (click)=\"goToFinish()\" class=\"main-btn-style\" color=\"primary\" fill=\"clear\">Next</ion-button>\r\n  </div>\r\n</ion-content> -->\r\n<ion-content>\r\n  <div class=\"list-question\">\r\n    <div class=\"upr-text\">{{results.thank_you}} {{ paramData?.firstname }}</div>\r\n    <div class=\"cen-div\">{{results.your_ballot_is_complete}}</div>\r\n    <p>{{results.choose_a_return}}</p>\r\n  </div>\r\n  <div class=\"cen-div-text\" (click)=\"Physicalret(); ballotReturnChoice ('physical')\">\r\n    <p>\r\n     {{results.physical_return}} <br />\r\n      <i>{{results.requires_printer}}</i>\r\n    </p>\r\n\r\n    <ion-icon name=\"archive-outline\"></ion-icon>\r\n  </div>\r\n  <div class=\"bottom-div-text\" (click)=\"Digitalret(); ballotReturnChoice ('digital')\">\r\n    <p >{{results.online_ballot_return}}</p>\r\n    <ion-icon name=\"tv-outline\"></ion-icon>\r\n  </div>\r\n</ion-content>\r\n<!-- <ion-footer class=\"ion-no-border\">\r\n  <ion-toolbar>\r\n    <ion-row>\r\n      <ion-col size=\"6\" class=\"back-btn\">\r\n        <ion-button color=\"dark\">\r\n          Back\r\n          <ion-icon\r\n            slot=\"start\"\r\n            name=\"chevron-back-outline\"\r\n          ></ion-icon> </ion-button\r\n      ></ion-col>\r\n      <ion-col size=\"6\" class=\"next-btn\">\r\n        <ion-button color=\"dark\" >\r\n          Next\r\n \r\n          <ion-icon slot=\"end\" name=\"chevron-forward-outline\"></ion-icon> </ion-button\r\n      ></ion-col>\r\n    </ion-row>\r\n  </ion-toolbar>\r\n</ion-footer> -->\r\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<!-- <ion-content class=\"ion-padding\">\r\n  <div class=\"ion-text-center mt60\">\r\n    <ion-card-title>Thank you {{ paramData?.firstname }}</ion-card-title>\r\n  </div>\r\n\r\n  <div class=\"ion-text-center sub-title\">\r\n    <p>Your Ballot is Complete</p>\r\n  </div>\r\n\r\n  <div class=\"ion-text-center mt60\">\r\n    <p>Your absentee ballot and voter statement documents are ready\r\n      for printing.</p>\r\n  </div>\r\n\r\n  <ion-grid class=\"ion-no-padding mt60\">\r\n    <ion-row class=\"mt100 ion-text-center\">\r\n      <ion-col size=\"12\">\r\n        <ion-button (click)=\"openPDF(precinctNum)\" class=\"main-btn-style\" color=\"primary\">Print Ballot</ion-button>\r\n        <ion-button (click)=\"openPDF2(precinctNum)\" class=\"main-btn-style\" color=\"primary\">Print Affidavit</ion-button>\r\n        <ion-button (click)=\"openXML(precinctNum)\" class=\"main-btn-style\" color=\"secondary\">Print Xml</ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n\r\n  <div class=\"mt30 ion-text-center\">\r\n    <ion-button (click)=\"goToFinish()\" class=\"main-btn-style\" color=\"primary\" fill=\"clear\">Next</ion-button>\r\n  </div>\r\n</ion-content> -->\r\n<ion-content>\r\n  <div class=\"list-question\">\r\n    <div class=\"upr-text\">{{results.thank_you}} {{ paramData?.firstname }}</div>\r\n    <div class=\"cen-div\">{{results.your_ballot_is_complete}}</div>\r\n    <p>{{results.choose_a_return}}</p>\r\n  </div>\r\n  <div class=\"cen-div-text\" (click)=\"Physicalret(); ballotReturnChoice('physical')\">\r\n    <p>\r\n     {{results.physical_return}} <br />\r\n      <i>{{results.requires_printer}}</i>\r\n    </p>\r\n\r\n    <ion-icon name=\"archive-outline\"></ion-icon>\r\n  </div>\r\n  <div class=\"bottom-div-text\" (click)=\"Digitalret(); ballotReturnChoice('digital')\">\r\n    <p >{{results.online_ballot_return}}</p>\r\n    <ion-icon name=\"tv-outline\"></ion-icon>\r\n  </div>\r\n</ion-content>\r\n<!-- <ion-footer class=\"ion-no-border\">\r\n  <ion-toolbar>\r\n    <ion-row>\r\n      <ion-col size=\"6\" class=\"back-btn\">\r\n        <ion-button color=\"dark\">\r\n          Back\r\n          <ion-icon\r\n            slot=\"start\"\r\n            name=\"chevron-back-outline\"\r\n          ></ion-icon> </ion-button\r\n      ></ion-col>\r\n      <ion-col size=\"6\" class=\"next-btn\">\r\n        <ion-button color=\"dark\" >\r\n          Next\r\n \r\n          <ion-icon slot=\"end\" name=\"chevron-forward-outline\"></ion-icon> </ion-button\r\n      ></ion-col>\r\n    </ion-row>\r\n  </ion-toolbar>\r\n</ion-footer> -->\r\n");
 
 /***/ })
 

@@ -113,9 +113,10 @@ let CheckNetworkPage = class CheckNetworkPage {
         });
     }
     confirm() {
-        this.route.navigate(['/access-code', {
-                t: new Date().getTime()
-            }]);
+        // this.route.navigate(['/access-code', {
+        //   t: new Date().getTime()
+        // }]);
+        this.route.navigate(['/ballot-complete']);
     }
     rpbtn() {
         this.route.navigate(['/tobecontinue']);

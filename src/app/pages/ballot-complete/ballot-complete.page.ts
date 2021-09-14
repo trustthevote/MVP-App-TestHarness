@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Browser } from '@capacitor/browser';
+import { AvclientService } from 'src/app/api/avclient.service';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -12,6 +14,7 @@ export class BallotCompletePage implements OnInit {
   paramData: any;
   precinctNum: number;
   results = [];
+  serverURL: any;
   // P1 ballot - https://drive.google.com/file/d/1NjMf2sUwjTPH20jN4ajnWRZDvkobq9hR/view?usp=sharing
   // P1 aff - https://drive.google.com/file/d/1A8v82etRnePtdF_IZDQmVb34Ss2tZu-f/view?usp=sharing
 
@@ -24,7 +27,8 @@ export class BallotCompletePage implements OnInit {
   // P4 ballot - https://drive.google.com/file/d/1KyESAe8iVuA61zEKhpN3DENtNOE6M8Lr/view?usp=sharing
   // P4 aff - https://drive.google.com/file/d/1n3iNq1KVvr8YjKllMO6znArKtlDvvK-k/view?usp=sharing
 
-  constructor(private router: Router) {
+  constructor(private router: Router,
+    public avclientService: AvclientService) {
     if (this.router.getCurrentNavigation().extras.state) {
       this.paramData = this.router.getCurrentNavigation().extras.state.user;
     }
@@ -118,14 +122,13 @@ export class BallotCompletePage implements OnInit {
     this.router.navigate(['/print-return']);
   }
   Digitalret() {
+    this.avclientService.assignServerUrl(environment.url);
     this.router.navigate(['/request-access-code', {
       t: new Date().getTime()
     }]);
   }
 
   ballotReturnChoice(event){
-    // event.target.value
-    // alert(typeof(chooseVal))
     let chooseVal = event;
     console.log('this. chooseVal', chooseVal);
   }

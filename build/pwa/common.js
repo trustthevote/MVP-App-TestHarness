@@ -438,6 +438,247 @@ const openURL = async (url, ev, direction, animation) => {
 
 
 
+/***/ }),
+
+/***/ 5913:
+/*!*****************************************!*\
+  !*** ./src/app/api/avclient.service.ts ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "AvclientService": () => (/* binding */ AvclientService)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var src_app_api_statuscode_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/api/statuscode.service */ 2413);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ 476);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 9895);
+
+
+
+
+
+let AvclientService = class AvclientService {
+    constructor(statuscodeService, alertctrl, route) {
+        this.statuscodeService = statuscodeService;
+        this.alertctrl = alertctrl;
+        this.route = route;
+    }
+    purgeData() {
+        delete this.cachedAccessCode;
+    }
+    assignServerUrl(bulletinBoardURL) {
+        this.serverURL = bulletinBoardURL;
+    }
+    requestAccessCode(opaqueVoterId) {
+        return new Promise((resolve, reject) => {
+            switch (opaqueVoterId) {
+                case 'T0000':
+                    reject(new Error(this.statuscodeService.statusCode('VoterRecordNotFound')));
+                    this.route.navigate(['/ballot-test-failed']);
+                    break;
+                case 'T0001':
+                    reject(new Error(this.statuscodeService.statusCode('NetworkError')));
+                    this.route.navigate(['/check-network']);
+                    break;
+                default:
+                    resolve(true);
+                    this.route.navigate(['/access-code']);
+                    break;
+            }
+        });
+    }
+    validateAccessCode(code, email) {
+        return new Promise((resolve, reject) => {
+            this.cachedAccessCode = code;
+            switch (code) {
+                case '00002':
+                    reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));
+                    this.route.navigate(['/ballot-test-failed']);
+                    break;
+                case '00003':
+                    reject(new Error(this.statuscodeService.statusCode('AccessCodeExpired')));
+                    this.route.navigate(['/expired-code']);
+                    break;
+                case '00004':
+                    reject(new Error(this.statuscodeService.statusCode('AccessCodeInvalid')));
+                    this.route.navigate(['/failed-authorization']);
+                    break;
+                case '00005':
+                    reject(new Error(this.statuscodeService.statusCode('NetworkError')));
+                    this.route.navigate(['/check-network']);
+                    break;
+                default:
+                    resolve(true);
+                    this.route.navigate(['/ballot-fingerprint']);
+                    break;
+            }
+        });
+    }
+    // Should not be idempotent.  Instead, permute one of
+    // john's sample strings.
+    constructBallotCryptograms(cvr) {
+        return new Promise((resolve, reject) => {
+            switch (this.cachedAccessCode) {
+                case 'T0006':
+                    reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));
+                case 'T0007':
+                    reject(new Error(this.statuscodeService.statusCode('NetworkError')));
+                case 'T0008':
+                    reject(new Error(this.statuscodeService.statusCode('CorruptCVRError')));
+                default:
+                    resolve('zyx098-wvu765-tsr432-1234');
+            }
+        });
+    }
+    spoilBallotCryptograms() {
+        return new Promise((resolve, reject) => {
+            switch (this.cachedAccessCode) {
+                case 'T0009':
+                    reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));
+                case 'T0010':
+                    reject(new Error(this.statuscodeService.statusCode('NetworkError')));
+                case 'T0011':
+                    reject(new Error(this.statuscodeService.statusCode('ServerCommitmentError')));
+                default:
+                    resolve(true);
+            }
+        });
+    }
+    submitBallotCryptograms() {
+        return new Promise((resolve, reject) => {
+            switch (this.cachedAccessCode) {
+                case 'T0012':
+                    reject(new Error(this.statuscodeService.statusCode('NetworkError')));
+                default:
+                    resolve({
+                        previousBoardHash: 'tsr432-wvu765-zyx098-4321',
+                        boardHash: 'zyx098-wvu765-tsr432-1234',
+                        registeredAt: '2020-03-01T10:00:00.000+01:00',
+                        serverSignature: 'dbcce518142b8740a5c911f727f3c02829211a8ddfccabeb89297877e4198bc1,46826ddfccaac9ca105e39c8a2d015098479624c411b4783ca1a3600daf4e8fa',
+                        voteSubmissionId: 6
+                    });
+            }
+        });
+    }
+    test(code) {
+        this.purgeData();
+        this.requestAccessCode(code);
+        this.validateAccessCode(code, '');
+        this.constructBallotCryptograms(code);
+        this.spoilBallotCryptograms();
+        this.constructBallotCryptograms(code);
+        this.submitBallotCryptograms().then(receipt => {
+            console.log(receipt);
+        });
+    }
+    presentAlertEmpty(Error) {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__awaiter)(this, void 0, void 0, function* () {
+            const alert = yield this.alertctrl.create({
+                message: Error,
+                buttons: [{
+                        text: 'Okay',
+                        role: 'cancel',
+                        cssClass: 'secondary',
+                        handler: (blah) => { }
+                    }
+                ]
+            });
+            yield alert.present();
+        });
+    }
+};
+AvclientService.ctorParameters = () => [
+    { type: src_app_api_statuscode_service__WEBPACK_IMPORTED_MODULE_0__.StatuscodeService },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__.AlertController },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__.Router }
+];
+AvclientService = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.Injectable)({
+        providedIn: 'root'
+    })
+], AvclientService);
+
+
+
+/***/ }),
+
+/***/ 2413:
+/*!*******************************************!*\
+  !*** ./src/app/api/statuscode.service.ts ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "StatuscodeService": () => (/* binding */ StatuscodeService)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 7716);
+
+
+let StatuscodeService = class StatuscodeService {
+    constructor() { }
+    statusCode(statusCode) {
+        const statusCodes = {
+            VoterRecordNotFound: 'voter record not found',
+            NetworkError: 'network code',
+            CallOutOfOrderError: 'call out of order error',
+            AccessCodeExpired: 'access code expired',
+            AccessCodeInvalid: 'access code invalid',
+            CorruptCVRError: 'corrupt CVR',
+            ServerCommitmentError: 'server commitment error',
+        };
+        if (statusCode == 'VoterRecordNotFound') {
+            console.log("statusCode", statusCode);
+            const errorCode = 'voter record not found';
+            return errorCode;
+        }
+        else if (statusCode == 'NetworkError') {
+            console.log("statusCode", statusCode);
+            const errorCode = 'network code';
+            return errorCode;
+        }
+        else if (statusCode == 'CallOutOfOrderError') {
+            console.log("statusCode", statusCode);
+            const errorCode = 'call out of order error';
+            return errorCode;
+        }
+        else if (statusCode == 'AccessCodeExpired') {
+            console.log("statusCode", statusCode);
+            const errorCode = 'access code expired';
+            return errorCode;
+        }
+        else if (statusCode == 'AccessCodeInvalid') {
+            console.log("statusCode", statusCode);
+            const errorCode = 'access code invalid';
+            return errorCode;
+        }
+        else if (statusCode == 'CorruptCVRError') {
+            console.log("statusCode", statusCode);
+            const errorCode = 'corrupt CVR';
+            return errorCode;
+        }
+        else if (statusCode == 'ServerCommitmentError') {
+            console.log("statusCode", statusCode);
+            const errorCode = 'server commitment error';
+            return errorCode;
+        }
+    }
+};
+StatuscodeService.ctorParameters = () => [];
+StatuscodeService = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.Injectable)({
+        providedIn: 'root'
+    })
+], StatuscodeService);
+
+
+
 /***/ })
 
 }]);

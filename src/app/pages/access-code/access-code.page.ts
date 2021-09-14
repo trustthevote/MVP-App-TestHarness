@@ -40,7 +40,7 @@ export class AccessCodePage implements OnInit {
   results = [];
   constructor(private route: Router, public fb: FormBuilder, private toastctrl: ToastController,
     private alertctrl: AlertController,
-    private loadingctrl: LoadingController, 
+    private loadingctrl: LoadingController,
     public statuscodeService: StatuscodeService,
     public avclientService: AvclientService) {
     this.createOTPForm();
@@ -52,7 +52,7 @@ export class AccessCodePage implements OnInit {
     });
   }
 
-getOtpValue() {
+  getOtpValue() {
     return (
       this.otpForm.controls.first.value +
       this.otpForm.controls.second.value +
@@ -80,7 +80,7 @@ getOtpValue() {
         console.log(this.second);
         this.second.nativeElement.focus();
       }
-      index="";
+      index = "";
     } else if (index === 2) {
       if (event.which !== 8) {
         console.log(this.second);
@@ -88,7 +88,7 @@ getOtpValue() {
       } else if (event.target.value.length <= 0) {
         this.first.nativeElement.focus();
       }
-      index="";
+      index = "";
     } else if (index === 3) {
       if (event.which !== 8) {
         console.log(this.second);
@@ -96,20 +96,20 @@ getOtpValue() {
       } else if (event.target.value.length <= 0) {
         this.second.nativeElement.focus();
       }
-      index="";
+      index = "";
     } else if (index === 4) {
       if (event.which !== 8) {
         console.log(this.second);
         this.five.nativeElement.focus();
       } else if (event.target.value.length <= 0) {
         this.third.nativeElement.focus();
-        index="";
+        index = "";
       }
     } else {
       if (event.which === 8 && event.target.value.length <= 0) {
         this.four.nativeElement.focus();
       }
-      index="";
+      index = "";
     }
   }
 
@@ -118,7 +118,6 @@ getOtpValue() {
     enteredOtp = this.getOtpValue()
     this.data = enteredOtp;
     if (this.data == '') {
-      // this.presentToast(this.results['tm_ee']);
       this.presentAlertEmpty();
     } else {
       this.disabledbutton = true;
@@ -128,57 +127,9 @@ getOtpValue() {
       await loading.present();
 
       return new Promise(resolve => {
-        // if (this.data === 'T0000') {
-        //   loading.dismiss();
-        //   // this.route.navigate(['/failed-authorization']);
-        //   // this.avclientService.requestAccessCode(this.data);
-        //   this.avclientService.validateAccessCode(this.data, '');
-        // } else if (this.data === 'T0001') {
-        //   loading.dismiss();
-        //   // this.presentToast(this.results['tm_ev']);
-        //   // this.avclientService.requestAccessCode(this.data)
-        //   // this.route.navigate(['/expired-code']);
-        //   // this.otpError = "";
-        //   this.avclientService.validateAccessCode(this.data, '');
+        loading.dismiss();
+        this.avclientService.validateAccessCode(this.data, '');
 
-        // } 
-         if (this.data === 'T0002') {
-          loading.dismiss();
-          // this.presentToast(this.results['tm_ev']);
-          // this.route.navigate(['/check-network']);
-          this.avclientService.validateAccessCode(this.data, '');
-          // this.otpError = "";
-
-        } else if (this.data === 'T0003') {
-          loading.dismiss();
-          // this.presentToast(this.results['tm_ev']);
-          // this.avclientService.requestAccessCode(this.data)
-          // this.route.navigate(['/expired-code']);
-          // this.otpError = "";
-          this.avclientService.validateAccessCode(this.data, '');
-
-        } else if (this.data === 'T0004') {
-          loading.dismiss();
-          // this.presentToast(this.results['tm_ev']);
-          // this.avclientService.requestAccessCode(this.data)
-          // this.route.navigate(['/expired-code']);
-          // this.otpError = "";
-          this.avclientService.validateAccessCode(this.data, '');
-
-        } else if (this.data === 'T0005') {
-          loading.dismiss();
-          // this.presentToast(this.results['tm_ev']);
-          // this.avclientService.requestAccessCode(this.data)
-          // this.route.navigate(['/expired-code']);
-          // this.otpError = "";
-          this.avclientService.validateAccessCode(this.data, '');
-
-        }
-         else {
-          loading.dismiss();
-          this.route.navigate(['/ballot-fingerprint']);
-          this.otpError = "";
-        }
         (err) => {
           loading.dismiss();
           this.disabledbutton = false;
@@ -193,12 +144,11 @@ getOtpValue() {
     const alert = await this.alertctrl.create({
       message: this.results['alert_msg'],
       buttons: [{
-          text: 'Retry',
-          role: 'cancel',
-          cssClass: 'secondary',
-          handler: (blah) => {}
-        }
-      ]
+        text: 'Retry',
+        role: 'cancel',
+        cssClass: 'secondary',
+        handler: (blah) => {}
+      }]
     });
     await alert.present();
   }
