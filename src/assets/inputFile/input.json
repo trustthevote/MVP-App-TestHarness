@@ -6,16 +6,16 @@
     "to_get_started": "To get started, please provide your name.",
     "firstname_errors": "First Name is required.",
     "firstname_errors1": "Name should be a minimum of 2 characters long.",
-    "firstname_errors2": "Name should be a minimum of 50 characters long.",
+    "firstname_errors2": "Name should be a maximum of 50 characters long.",
     "firstname_errors3": "Please provide: Name that consists of letters, space and hyphen.",
     "last_name_errors": "Last Name is required.",
     "last_name_errors1": "Name should be a minimum of 2 characters long.",
-    "last_name_errors2": "Name should be a minimum of 50 characters long.",
+    "last_name_errors2": "Name should be a maximum of 50 characters long.",
     "please_provide": "Please provide: Name that consists of letters, space and hyphen.",
     "about_this_app": "About This App",
     "next": "Next",
     "tm": "Please provide all the required values!",
-    "alert_msg": "Please provide name that consists of 2 or more letters, spaces and hyphens.",
+    "alert_msg": "Please provide a first name and last name that consists of 2 or more letters, spaces and hyphens.",
     "try_again": "Try Again"
   },
   "ballot_form": {
@@ -23,16 +23,16 @@
     "start": "Start",
     "cancel": "Cancel",
     "please": "Please",
-    "your_ballot_marking": "to being your ballot marking process with a screen that shows your first ballot item.",
+    "your_ballot_marking": "to begin your ballot marking process.",
     "precinct_no": "Your precinct is # "
   },
   "ballot_comp": {
     "thank_you": "Thank you",
-    "your_ballot_is_complete": "Your ballot is Complete",
+    "your_ballot_is_complete": "Your ballot is complete",
     "choose_a_return": "Choose A Return",
     "physical_return": "Physical Return",
     "requires_printer": "Requires a Printer",
-    "online_ballot_return": "Online Ballot Return"
+    "online_ballot_return": "Digital Return"
   },
   "access_code": {
     "enter_access_code": "Enter Access Code",
@@ -40,16 +40,16 @@
     "back": "Back",
     "tm_ee": "Enter your Election code",
     "tm_ev": "your Access code valid but expired",
-    "alert_msg": "Enter a 5 digit Election Access code"
+    "alert_msg": "Enter an Access code that is exactly 5 numbers."
   },
   "ballot_fingerp": {
-    "ybr": "Your Ballot Is Ready",
-    "ydn": "You can send it digitally now.",
+    "ybr": "Your Ballot Has Been Sealed and Is Ready To Cast",
+    "ydn": "You can perform a test to verify it will be cast correctly to the digital ballot box.",
     "bfp": "Ballot Fingerprint:",
     "zyx098": "zyx098-wvu765-tsr432-1234",
-    "tv_fp": "Or you can perform a test to verify it will be cast correctly to the digital ballot box.",
+    "tv_fp": "Or,you can cast your ballot digitally now.",
     "send": "Cast Ballot Now",
-    "copy": "Copy Confirm ",
+    "copy": "Start Ballot Test ",
     "tv1_fp":" On a computer or other device,go to",
     "link":"www.linkto.site.org",
     "tv2_fb":"and enter  the  following code to review your ballot",
@@ -68,7 +68,7 @@
     "back": "Back"
   },
   "test_result_page": {
-    "test_results": "Test-Results",
+    "test_results": "Test Results",
     "dbf": "Is your ballot correct?",
     "passed": "Yes",
     "failed": "No",
@@ -126,23 +126,23 @@
     "heading_link":"Ballot Tracking Receipt:",
     "btr":"zyx098-wvu765-tsr432-1234",
     "link":"www.linktosite.org",
-    "thanks":"Thank you for using ABC!"
+    "thanks":"Thank you for using Markit!"
   },
   
   "howitdo_page": {
     "heading":"How'd it Go Next",
-    "para": "Please tell us how your experience was, using the ABC App.",
+    "para": "Please tell us how your experience was, using the Markit App.",
     "para_center":"Your feedback will be greatly appreciated, and will be used to further enhance our app for future users.",
-    "next": "Exit ABC?",
+    "next": "Exit Markit App ",
     "back":"Back",
     "heading_link":"Follow the link below to let us know!",
     "link":"www.linktosite.org",
-    "thanks":"Thank you for using ABC!"
+    "thanks":"Thank you for using Markit!"
   },
   "rap_page": {
     
     "para": "To use digital return, touch  Next to request a one-time access code to be sent to your email address.",
-    "para_center":"If you did not receive a code upon requesting, please check the email we have on file by following the link below..",
+    "para_center":"If you did not receive a code upon requesting, please check the email we have on file by following the link below.",
     "next": "Next",
     "link":"www.linktosite.org"
    
@@ -189,14 +189,14 @@
   },
 
   "BallotTestFailedPage": {
-    "upr_para" : "Your local election office has been notified to issue you a replacement ballot by mail. For more information, you may contact your election office through the link below. ",
+    "upr_para" : "Your local election office has been notified to issue you a replacement ballot by mail. For more information, you may contact your election office through the link below.",
     "link":"www.linktosite.org",
     "back": "Report  A Problem",
     "print":"Print"
  },
 
  "ExpiredCodePage":{
-  "upr_para" : " Sorry, your access code has expired. Please request another access code. Or click the link below for help.. ",
+  "upr_para" : " Sorry, your access code has expired. Please request another access code. Or click the link below for help.",
   "link":"www.linktosite.org",
   "sec_para": "You can also click the print button below to proceed with a physical return instead.",
   "print":"Print",
