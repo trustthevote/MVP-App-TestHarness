@@ -10,31 +10,41 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./request-access-code.page.scss'],
 })
 export class RequestAccessCodePage implements OnInit {
+results = [];
+userObject: any;
+constructor(private route: Router,
+  public statuscodeService: StatuscodeService,
+  public avclientService: AvclientService) {}
 
-  results = [];
-  userObject: any;
-  constructor(private route: Router,
-    public statuscodeService: StatuscodeService,
-    public avclientService: AvclientService) {}
 
-
-  ngOnInit() {
-    this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
-    fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-      this.results = json[0]['rap_page']; 
+ngOnInit() {
+  this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
+  fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
+    this.results = json[0]['rap_page'];
+  });
+}
+Continuebtn() {
+  this.avclientService.assignServerUrl(environment.url);
+  if (this.userObject.lastname != undefined) {
+    let opaqueVoterId = this.userObject.lastname
+    if (opaqueVoterId == 'OOOOO') {
+      opaqueVoterId = '00000';
+    } else if (opaqueVoterId == 'OOOO') {
+      opaqueVoterId = '00001';
+    } else {
+      this.route.navigate(['/access-code']);
+    }
+    this.avclientService.requestAccessCode(opaqueVoterId).catch(res => {
+      console.log("res", res);
+      if (res == 'Error: voter record not found') {
+        this.route.navigate(['/ballot-test-failed']);
+      } else if (res == 'Error: network code') {
+        this.route.navigate(['/network-error-request-code']);
+      }
     });
   }
-  Continuebtn(){
-    this.avclientService.assignServerUrl(environment.url);
-    if (this.userObject.lastname != undefined) {
-      let opaqueVoterId = this.userObject.lastname
-      if (opaqueVoterId == 'OOOOO') {
-          opaqueVoterId = 'T0000';
-      }
-      else if(opaqueVoterId == 'OOOO') {
-              opaqueVoterId = 'T0001';
-      }
-      this.avclientService.requestAccessCode(opaqueVoterId);
-    }
-  }
+}
+backbtn() {
+  this.route.navigate(['/ballot-complete']);
+}
 }

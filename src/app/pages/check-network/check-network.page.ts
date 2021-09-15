@@ -19,7 +19,7 @@ export class CheckNetworkPage implements OnInit {
     // this.route.navigate(['/access-code', {
     //   t: new Date().getTime()
     // }]);
-    this.route.navigate(['/ballot-complete']);
+    this.route.navigate(['/access-code']);
   }
 
   rpbtn() {

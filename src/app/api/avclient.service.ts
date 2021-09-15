@@ -12,29 +12,26 @@ export class AvclientService {
   serverURL: any;
   constructor(public statuscodeService: StatuscodeService,
     private alertctrl: AlertController,
-    private route: Router, ) { }
+    private route: Router, ) {}
 
   purgeData() {
     delete this.cachedAccessCode;
   }
-  assignServerUrl(bulletinBoardURL){
+  assignServerUrl(bulletinBoardURL) {
     this.serverURL = bulletinBoardURL;
   }
 
   requestAccessCode(opaqueVoterId) {
     return new Promise((resolve, reject) => {
       switch (opaqueVoterId) {
-        case 'T0000':
+        case '00000':
           reject(new Error(this.statuscodeService.statusCode('VoterRecordNotFound')));
-          this.route.navigate(['/ballot-test-failed']);
           break;
-        case 'T0001':
+        case '00001':
           reject(new Error(this.statuscodeService.statusCode('NetworkError')));
-          this.route.navigate(['/check-network']);
           break;
         default:
           resolve(true);
-          this.route.navigate(['/access-code']);
           break;
       }
     })
@@ -42,27 +39,22 @@ export class AvclientService {
 
   validateAccessCode(code, email) {
     return new Promise((resolve, reject) => {
-      this.cachedAccessCode = code   
+      this.cachedAccessCode = code
       switch (code) {
         case '00002':
-          reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));         
-          this.route.navigate(['/ballot-test-failed']);
+          reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));
           break;
         case '00003':
           reject(new Error(this.statuscodeService.statusCode('AccessCodeExpired')));
-          this.route.navigate(['/expired-code']);
           break;
         case '00004':
           reject(new Error(this.statuscodeService.statusCode('AccessCodeInvalid')));
-          this.route.navigate(['/failed-authorization']);
           break;
         case '00005':
-          reject(new Error(this.statuscodeService.statusCode('NetworkError')));         
-          this.route.navigate(['/check-network']);
+          reject(new Error(this.statuscodeService.statusCode('NetworkError')));
           break;
         default:
           resolve(true);
-          this.route.navigate(['/ballot-fingerprint']);
           break;
       }
     })
@@ -72,14 +64,17 @@ export class AvclientService {
   constructBallotCryptograms(cvr) {
     return new Promise((resolve, reject) => {
       switch (this.cachedAccessCode) {
-        case 'T0006':
+        case '00006':
           reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));
-        case 'T0007':
+          break;
+        case '00007':
           reject(new Error(this.statuscodeService.statusCode('NetworkError')));
-        case 'T0008':
+          break;
+        case '00008':
           reject(new Error(this.statuscodeService.statusCode('CorruptCVRError')));
         default:
           resolve('zyx098-wvu765-tsr432-1234');
+          break;
       }
     })
   }
@@ -87,11 +82,11 @@ export class AvclientService {
   spoilBallotCryptograms() {
     return new Promise((resolve, reject) => {
       switch (this.cachedAccessCode) {
-        case 'T0009':
+        case '00009':
           reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));
-        case 'T0010':
+        case '00010':
           reject(new Error(this.statuscodeService.statusCode('NetworkError')));
-        case 'T0011':
+        case '00011':
           reject(new Error(this.statuscodeService.statusCode('ServerCommitmentError')));
         default:
           resolve(true);
@@ -102,8 +97,10 @@ export class AvclientService {
   submitBallotCryptograms() {
     return new Promise((resolve, reject) => {
       switch (this.cachedAccessCode) {
-        case 'T0012':
+        case '00012':
           reject(new Error(this.statuscodeService.statusCode('NetworkError')));
+        case '00013':
+          reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));
         default:
           resolve({
             previousBoardHash: 'tsr432-wvu765-zyx098-4321',
@@ -131,12 +128,11 @@ export class AvclientService {
     const alert = await this.alertctrl.create({
       message: Error,
       buttons: [{
-          text: 'Okay',
-          role: 'cancel',
-          cssClass: 'secondary',
-          handler: (blah) => {}
-        }
-      ]
+        text: 'Okay',
+        role: 'cancel',
+        cssClass: 'secondary',
+        handler: (blah) => {}
+      }]
     });
     await alert.present();
   }

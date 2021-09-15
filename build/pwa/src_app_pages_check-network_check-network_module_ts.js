@@ -116,7 +116,7 @@ let CheckNetworkPage = class CheckNetworkPage {
         // this.route.navigate(['/access-code', {
         //   t: new Date().getTime()
         // }]);
-        this.route.navigate(['/ballot-complete']);
+        this.route.navigate(['/access-code']);
     }
     rpbtn() {
         this.route.navigate(['/tobecontinue']);

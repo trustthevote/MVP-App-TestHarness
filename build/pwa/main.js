@@ -145,6 +145,46 @@ const routes = [
         path: 'test',
         loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_pages_test_test_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/test/test.module */ 5011)).then(m => m.TestPageModule)
     },
+    {
+        path: 'network-error-access-code',
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_network-error-access-code_network-error-access-code_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/network-error-access-code/network-error-access-code.module */ 5731)).then(m => m.NetworkErrorAccessCodePageModule)
+    },
+    {
+        path: 'ballot-test-error',
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_ballot-test-error_ballot-test-error_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-test-error/ballot-test-error.module */ 7376)).then(m => m.BallotTestErrorPageModule)
+    },
+    {
+        path: 'ballot-prep-error',
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_ballot-prep-error_ballot-prep-error_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-prep-error/ballot-prep-error.module */ 2208)).then(m => m.BallotPrepErrorPageModule)
+    },
+    {
+        path: 'before-you-finish',
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_before-you-finish_before-you-finish_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/before-you-finish/before-you-finish.module */ 6362)).then(m => m.BeforeYouFinishPageModule)
+    },
+    {
+        path: 'ballot-oops-screen',
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_ballot-oops-screen_ballot-oops-screen_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-oops-screen/ballot-oops-screen.module */ 7414)).then(m => m.BallotOopsScreenPageModule)
+    },
+    {
+        path: 'check-network-oooo-error',
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_check-network-oooo-error_check-network-oooo-error_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/check-network-oooo-error/check-network-oooo-error.module */ 8738)).then(m => m.CheckNetworkOOOOErrorPageModule)
+    },
+    {
+        path: 'test-results-faild-error',
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_test-results-faild-error_test-results-faild-error_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/test-results-faild-error/test-results-faild-error.module */ 2446)).then(m => m.TestResultsFaildErrorPageModule)
+    },
+    {
+        path: 'check-network-access00005-error',
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_check-network-access00005-error_check-network-access00005-error_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/check-network-access00005-error/check-network-access00005-error.module */ 3083)).then(m => m.CheckNetworkAccess00005ErrorPageModule)
+    },
+    {
+        path: 'test-results-ballot-prep-error',
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_test-results-ballot-prep-error_test-results-ballot-prep-error_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/test-results-ballot-prep-error/test-results-ballot-prep-error.module */ 4020)).then(m => m.TestResultsBallotPrepErrorPageModule)
+    },
+    {
+        path: 'network-error-request-code',
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_network-error-request-code_network-error-request-code_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/network-error-request-code/network-error-request-code.module */ 6667)).then(m => m.NetworkErrorRequestCodePageModule)
+    }
 ];
 let AppRoutingModule = class AppRoutingModule {
 };

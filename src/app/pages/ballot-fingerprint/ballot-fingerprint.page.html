@@ -3,48 +3,44 @@
     <p>{{results.ybr}}</p>
   </div>
   <div class="cen-div-text">
-    <p>{{results.ydn}}</p>
-    <ion-button color="dark" (click)="sendbtn()">
-      {{results.send}}
-      <ion-icon slot="end" name="paper-plane-outline"></ion-icon>
-    </ion-button>
-  </div>
-  <div class="bottom-div-text">
-    <p>{{results.tv_fp}}</p>
-  </div>
-  <div *ngIf="IsVisible == true">
-    <p>{{results.tv1_fp}}</p>
-    <p>{{results.link}}</p>
-    <p>{{results.tv2_fb}}</p>
-    <ion-row>
+    <ion-row >
       {{results.bfp}}<br />
       {{results.zyx098}}
     </ion-row>
+    <p>{{results.ydn}}</p>
     <ion-button color="dark" (click)="copybtn()">
-      {{results.copy}}
+      {{results.send}}
       <ion-icon slot="end" name="settings-outline"></ion-icon>
     </ion-button>
     <p>{{results.tv3_fb}}</p>
     <p>{{results.link}}</p>
+
+  </div>
+  <div class="bottom-div-text">
+    <p>{{results.tv_fp}}</p>
+    <ion-button color="dark" (click)="sendbtn()">
+      {{results.copy}}
+      <ion-icon slot="end" name="paper-plane-outline"></ion-icon>
+      
+    </ion-button>
+  </div>
+  <!-- <div *ngIf="IsVisible == true">
+    <p>{{results.tv1_fp}}</p>
+    <p>{{results.link}}</p>
+    <p>{{results.tv2_fb}}</p>
+ 
+  
+   
   </div>
   <div class="text-p" *ngIf="fsticon" (click)="PolicyDetails()">
     {{results.shmd}}
     <ion-icon name="chevron-down-outline" *ngIf="fsticon"></ion-icon>
-    <!-- <ion-icon
-      name="chevron-up-outline"
-      *ngIf="scndicons"
-      (click)="PolicyDetailshide()"
-    ></ion-icon> -->
   </div>
   <div class="text-p" *ngIf="scndicons" (click)="PolicyDetailshide()">
     {{results.shmd}}
-    <!-- <ion-icon
-      name="chevron-down-outline"
-      *ngIf="fsticon"
-      (click)="PolicyDetails()"
-    ></ion-icon> -->
+
     <ion-icon name="chevron-up-outline" *ngIf="scndicons"></ion-icon>
-  </div>
+  </div> -->
 </ion-content>
 <ion-footer>
   <ion-toolbar>

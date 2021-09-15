@@ -18,7 +18,7 @@ export class HowditgoPage implements OnInit {
   }
 
   Continuebtn() {
-    this.route.navigate(['/ballot-complete']);
+    this.route.navigate(['/intro']);
   }
   backbtn() {
     this.route.navigate(['/ballot-fingerprint']);

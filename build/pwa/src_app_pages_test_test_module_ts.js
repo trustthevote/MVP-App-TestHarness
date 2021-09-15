@@ -143,14 +143,14 @@ let TestPage = class TestPage {
     }
     requestAccessCodeStatic() {
         return new Promise((resolve, reject) => {
-            let code = 'T0000';
+            let code = '00000';
             this.presentAlertEmpty(code, this.statuscodeService.statusCode('VoterRecordNotFound'));
             resolve(true);
         });
     }
     requestAccessCodeStaticT1() {
         return new Promise((resolve, reject) => {
-            let code = 'T0001';
+            let code = '00001';
             this.presentAlertEmpty(code, this.statuscodeService.statusCode('NetworkError'));
             resolve(true);
         });

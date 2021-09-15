@@ -128,7 +128,29 @@ export class AccessCodePage implements OnInit {
 
       return new Promise(resolve => {
         loading.dismiss();
-        this.avclientService.validateAccessCode(this.data, '');
+        this.avclientService.validateAccessCode(this.data, '').catch(res => {
+          console.log("res", res);
+        });
+        this.avclientService.constructBallotCryptograms(this.data).catch(res => {
+          console.log("res", res);
+        });
+        if (this.data == '00002') {
+          this.route.navigate(['/ballot-prep-error']);
+        } else if (this.data == '00003') {
+          this.route.navigate(['/expired-code']);
+        } else if (this.data == '00004') {
+          this.route.navigate(['/failed-authorization']);
+        } else if (this.data == '00005') {
+          this.route.navigate(['/check-network-access00005-error']);
+        } else if (this.data == '00006') {
+          this.route.navigate(['/ballot-test-error']);
+        } else if (this.data == '00007') {
+          this.route.navigate(['/network-error-access-code']);
+        } else if (this.data == '00008') {
+          this.route.navigate(['/ballot-oops-screen']);
+        } else {
+          this.route.navigate(['/before-you-finish']);
+        }
 
         (err) => {
           loading.dismiss();
@@ -181,6 +203,6 @@ export class AccessCodePage implements OnInit {
     await alert.present();
   }
   backbtn() {
-    this.route.navigate(['/ballot-complete']);
+    this.route.navigate(['/request-access-code']);
   }
 }

@@ -94,7 +94,8 @@ const routes: Routes = [
   {
     path: 'expired-code',
     loadChildren: () => import('./pages/expired-code/expired-code.module').then( m => m.ExpiredCodePageModule)
-  },  {
+  },
+  {
     path: 'howditgo',
     loadChildren: () => import('./pages/howditgo/howditgo.module').then( m => m.HowditgoPageModule)
   },
@@ -106,6 +107,48 @@ const routes: Routes = [
     path: 'test',
     loadChildren: () => import('./pages/test/test.module').then( m => m.TestPageModule)
   },
+  {
+    path: 'network-error-access-code',
+    loadChildren: () => import('./pages/network-error-access-code/network-error-access-code.module').then( m => m.NetworkErrorAccessCodePageModule)
+  },
+  {
+    path: 'ballot-test-error',
+    loadChildren: () => import('./pages/ballot-test-error/ballot-test-error.module').then( m => m.BallotTestErrorPageModule)
+  },
+{
+  path: 'ballot-prep-error',
+  loadChildren: () => import('./pages/ballot-prep-error/ballot-prep-error.module').then( m => m.BallotPrepErrorPageModule)
+},
+{
+  path: 'before-you-finish',
+  loadChildren: () => import('./pages/before-you-finish/before-you-finish.module').then( m => m.BeforeYouFinishPageModule)
+},
+  {
+    path: 'ballot-oops-screen',
+    loadChildren: () => import('./pages/ballot-oops-screen/ballot-oops-screen.module').then( m => m.BallotOopsScreenPageModule)
+  },
+  {
+    path: 'check-network-oooo-error',
+    loadChildren: () => import('./pages/check-network-oooo-error/check-network-oooo-error.module').then( m => m.CheckNetworkOOOOErrorPageModule)
+  },
+  {
+    path: 'test-results-faild-error',
+    loadChildren: () => import('./pages/test-results-faild-error/test-results-faild-error.module').then( m => m.TestResultsFaildErrorPageModule)
+  },
+  {
+    path: 'check-network-access00005-error',
+    loadChildren: () => import('./pages/check-network-access00005-error/check-network-access00005-error.module').then( m => m.CheckNetworkAccess00005ErrorPageModule)
+  },
+  {
+    path: 'test-results-ballot-prep-error',
+    loadChildren: () => import('./pages/test-results-ballot-prep-error/test-results-ballot-prep-error.module').then( m => m.TestResultsBallotPrepErrorPageModule)
+
+  },
+  {
+    path: 'network-error-request-code',
+    loadChildren: () => import('./pages/network-error-request-code/network-error-request-code.module').then( m => m.NetworkErrorRequestCodePageModule)
+  }
+
 
   
 

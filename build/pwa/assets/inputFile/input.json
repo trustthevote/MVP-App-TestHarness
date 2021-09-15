@@ -4,17 +4,10 @@
     "last_name": "Last Name",
     "welcome_to_jetsons_ballot": "Welcome to Jetsons Ballot",
     "to_get_started": "To get started, please provide your name.",
-    "firstname_errors": "First Name is required.",
-    "firstname_errors1": "Name should be a minimum of 2 characters long.",
-    "firstname_errors2": "Name should be a minimum of 50 characters long.",
-    "firstname_errors3": "Please provide: Name that consists of letters, space and hyphen.",
-    "last_name_errors": "Last Name is required.",
-    "last_name_errors1": "Name should be a minimum of 2 characters long.",
-    "last_name_errors2": "Name should be a minimum of 50 characters long.",
-    "please_provide": "Please provide: Name that consists of letters, space and hyphen.",
+
     "about_this_app": "About This App",
     "next": "Next",
-    "tm": "Please provide all the required values!",
+
     "alert_msg": "Please provide name that consists of 2 or more letters, spaces and hyphens.",
     "try_again": "Try Again"
   },
@@ -42,20 +35,29 @@
     "tm_ev": "your Access code valid but expired",
     "alert_msg": "Enter a 5 digit Election Access code"
   },
+  "beforeyoufinish_page": {
+    "beforeyoufinish": " Before You Finish",
+    "para": "Your ballot is almost ready, but before you finish, you have two options.",
+    "para_center": "On the next screen you'll have  the option to send your ballot immediately, and also the option to test your ballot using the ",
+    "btc": "Ballot test code ",
+    "next": "Next",
+    "bck": "that you will see at the top of the screen.",
+    "link": "The ballot test process is ..."
+  },
   "ballot_fingerp": {
     "ybr": "Your Ballot Is Ready",
-    "ydn": "You can send it digitally now.",
+    "ydn": "You can  Perform a test to verify it will be cast Correctly to the digital ballot box .",
     "bfp": "Ballot Fingerprint:",
     "zyx098": "zyx098-wvu765-tsr432-1234",
-    "tv_fp": "Or you can perform a test to verify it will be cast correctly to the digital ballot box.",
-    "send": "Cast Ballot Now",
-    "copy": "Copy Confirm ",
-    "tv1_fp":" On a computer or other device,go to",
-    "link":"www.linkto.site.org",
-    "tv2_fb":"and enter  the  following code to review your ballot",
-    "tv3_fb":"For more information on testing. click the link below.",
-    "shmd":"Show more details",
-    "mp":"My Progress"
+    "tv_fp": "Or you can cast your ballot digitally  now.",
+    "send": "Start Ballot test",
+    "copy": "Cast ballot now ",
+    "tv1_fp": " On a computer or other device,go to",
+    "link": "www.linkto.site.org",
+    "tv2_fb": "and enter  the  following code to review your ballot",
+    "tv3_fb": "For more information on testing. click the link below.",
+    "shmd": "Show more details",
+    "mp": "My Progress"
 
 
   },
@@ -77,8 +79,8 @@
   },
   "failed_auth": {
     "try_again": "Try again",
-    "btn_report":"Report A problem",
-    "print":"Print",
+    "btn_report": "Report A problem",
+    "print": "Print",
     "www_link": "www.linktosite.org",
     "auth_p_1": " Sorry, your access code did not work. Please try again, or click the link below for help. ",
     "auth_p_2": "You can also click the print button below to proceed with a physical return instead."
@@ -106,10 +108,10 @@
   "check_network_page": {
     "text": " Sorry, it seems there was a network error. Please check your connection and try again.",
     "try_again": "Try again",
-    "first_para":" Sorry, it seems there was a network error. Please check your connection and try again.",
-    "sec_para":" You can also click the print button below to proceed with a physical return instead.",
-    "rbtn":"report a problem",
-    "print":"Print"
+    "first_para": " Sorry, it seems there was a network error. Please check your connection and try again.",
+    "sec_para": " You can also click the print button below to proceed with a physical return instead.",
+    "rbtn": "report a problem",
+    "print": "Print"
   },
   "check_server_page": {
     "text": " Sorry, it seems we are have some network connection issues on our end. Please try again. ",
@@ -118,34 +120,58 @@
     "link": "www.linktosite.gov ",
     "try_again": "Try again"
   },
-
+  "check_network_oooo_error_page": {
+    "text": " Sorry, it seems there was a network error. Please check your connection and try again.",
+    "try_again": "Try again",
+    "first_para": " Sorry, it seems there was a network error. Please check your connection and try again.",
+    "sec_para": " You can also click the print button below to proceed with a physical return instead.",
+    "rbtn": "report a problem",
+    "print": "Print"
+  },
+  "check_network_access00005_error": {
+    "text": " Sorry, it seems there was a network error. Please check your connection and try again.",
+    "try_again": "Try again",
+    "first_para": " Sorry, it seems there was a network error. Please check your connection and try again.",
+    "sec_para": " You can also click the print button below to proceed with a physical return instead.",
+    "rbtn": "report a problem",
+    "print": "Print"
+  },
   "sending_confirmation_page": {
     "heading": "Congrats! your ballot has been cast!",
-    "para_center":"To track your ballot and confirm it was received correctly, touch the code below to copy it to your clipboard. then click the link and follow the steps to confirm your ballot was received.",
+    "para_center": "To track your ballot and confirm it was received correctly, touch the code below to copy it to your clipboard. then click the link and follow the steps to confirm your ballot was received.",
     "next": "how was your experience?",
-    "heading_link":"Ballot Tracking Receipt:",
-    "btr":"zyx098-wvu765-tsr432-1234",
-    "link":"www.linktosite.org",
-    "thanks":"Thank you for using ABC!"
+    "heading_link": "Ballot Tracking Receipt:",
+    "btr": "zyx098-wvu765-tsr432-1234",
+    "link": "www.linktosite.org",
+    "thanks": "Thank you for using ABC!"
   },
-  
+
   "howitdo_page": {
-    "heading":"How'd it Go Next",
+    "heading": "How'd it Go Next",
     "para": "Please tell us how your experience was, using the ABC App.",
-    "para_center":"Your feedback will be greatly appreciated, and will be used to further enhance our app for future users.",
-    "next": "Exit ABC?",
-    "back":"Back",
-    "heading_link":"Follow the link below to let us know!",
-    "link":"www.linktosite.org",
-    "thanks":"Thank you for using ABC!"
+    "para_center": "Your feedback will be greatly appreciated, and will be used to further enhance our app for future users.",
+    "next": "Exit Market ?",
+    "back": "Back",
+    "heading_link": "Follow the link below to let us know!",
+    "link": "www.linktosite.org",
+    "thanks": "Thank you for using ABC!"
   },
   "rap_page": {
-    
+
     "para": "To use digital return, touch  Next to request a one-time access code to be sent to your email address.",
-    "para_center":"If you did not receive a code upon requesting, please check the email we have on file by following the link below..",
+    "para_center": "If you did not receive a code upon requesting, please check the email we have on file by following the link below..",
     "next": "Next",
-    "link":"www.linktosite.org"
-   
+    "back": "Back",
+    "link": "www.linktosite.org"
+
+  },
+  "ballotpreperror": {
+    "upr_para": "Something went wrong, and we can't complete the preparation of your digital ballot. ",
+    "mid_para": "You can report a problem, and you have the option of using the Print button below to print your ballot and affidavit for postal return. ",
+    "link": "www.linktosite.org",
+    "back": "Report  A Problem",
+    "print": "Print",
+    "try_again":"Try Again"
   },
   "digital_return_next_step_page": {
     "header": "Urgent Next Steps!",
@@ -182,28 +208,58 @@
   },
 
   "user_time_out_page": {
-     "d_text": "Sorry, it seems you have been inactive for too long. Please go back and start a new ballot.",
-     "d_text1": "For more information on this, please follow the link below.",
-     "link": " www.linktosite.gov",
-     "back": "Back"
+    "d_text": "Sorry, it seems you have been inactive for too long. Please go back and start a new ballot.",
+    "d_text1": "For more information on this, please follow the link below.",
+    "link": " www.linktosite.gov",
+    "back": "Back"
   },
 
   "BallotTestFailedPage": {
-    "upr_para" : "Your local election office has been notified to issue you a replacement ballot by mail. For more information, you may contact your election office through the link below. ",
-    "link":"www.linktosite.org",
+    "upr_para": "Your local election office has been notified to issue you a replacement ballot by mail. For more information, you may contact your election office through the link below. ",
+    "link": "www.linktosite.org",
     "back": "Report  A Problem",
-    "print":"Print"
- },
+    "print": "Print"
+  },
 
- "ExpiredCodePage":{
-  "upr_para" : " Sorry, your access code has expired. Please request another access code. Or click the link below for help.. ",
-  "link":"www.linktosite.org",
-  "sec_para": "You can also click the print button below to proceed with a physical return instead.",
-  "print":"Print",
-  "rbtn":"report a problem",
-  "btn":"Request"
- },
-  
+  "ExpiredCodePage": {
+    "upr_para": " Sorry, your access code has expired. Please request another access code. Or click the link below for help.. ",
+    "link": "www.linktosite.org",
+    "sec_para": "You can also click the print button below to proceed with a physical return instead.",
+    "print": "Print",
+    "rbtn": "report a problem",
+    "btn": "Request"
+  },
+  "ballot_test_error_page": {
+    "upr_para": "Your local election office has been notified to issue you a replacement ballot by mail. For more information, you may contact your election office through the link below. ",
+    "link": "www.linktosite.org",
+    "back": "Report  A Problem",
+    "print": "Print",
+    "try_again":"Try Again"
+  },
+  "network_error_page": {
+    "text": " Sorry, it seems there was a network error. Please check your connection and try again.",
+    "try_again": "Try again",
+    "first_para": " Sorry, it seems there was a network error. Please check your connection and try again.",
+    "sec_para": " You can also click the print button below to proceed with a physical return instead.",
+    "rbtn": "report a problem",
+    "print": "Print"
+  },
+  "ballot_oops_screen_page": {
+    "upr_para": "Your local election office has been notified to issue you a replacement ballot by mail. For more information, you may contact your election office through the link below. ",
+    "link": "www.linktosite.org",
+    "back": "Report  A Problem",
+    "print": "Print",
+    "try_again":"Try Again"
+  },
+  "network_error_request_code_page": {
+    "text": " Sorry, it seems there was a network error. Please check your connection and try again.",
+    "try_again": "Try again",
+    "first_para": " Sorry, it seems there was a network error. Please check your connection and try again.",
+    "sec_para": " You can also click the print button below to proceed with a physical return instead.",
+    "rbtn": "report a problem",
+    "print": "Print"
+  },
+
 
   "provide_information": "Provide Information",
   "required": "Required",
