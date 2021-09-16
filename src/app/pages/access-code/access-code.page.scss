@@ -51,6 +51,10 @@ ion-item {
 .next-btn {
   text-align: end;
 }
+ion-toolbar {
+  padding-right: 15px;
+  padding-left: 15px;
+}
 .x {
   display: inline-block;
   width: 47px;
@@ -60,7 +64,6 @@ ion-item {
   --padding-start: 14px;
 }
 ion-row {
-  padding-top: 280px;
   padding-bottom: 20px;
 }
 input {
@@ -82,7 +85,7 @@ input {
     color: #000000;
     font-family: "Roboto Regular";
     text-align: center;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
+    background: #ffffff 0% 0% no-repeat padding-box;
     border-bottom: 1px solid #040404;
     border-radius: 0px;
     opacity: 1;
@@ -95,7 +98,7 @@ input {
     color: #000000;
     font-family: "Roboto Regular";
     text-align: center;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
+    background: #ffffff 0% 0% no-repeat padding-box;
     border-bottom: 1px solid #111213d1;
     border-radius: 0px;
     opacity: 1;
@@ -108,16 +111,16 @@ input {
 }
 .incorrect-otp {
   text-align: left;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-size: 14px;
   letter-spacing: 0px;
-  color: #D92212;
+  color: #d92212;
   opacity: 1;
 }
 .time {
   margin-top: 5vh;
   text-align: left;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   letter-spacing: 0px;
   color: #000000;
   opacity: 1;
@@ -126,21 +129,21 @@ input {
 }
 .receive-otp {
   text-align: left;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   letter-spacing: 0px;
-  color: #8B94B4;
+  color: #8b94b4;
   opacity: 1;
   font-size: 16px;
 }
 .resend {
   text-align: left;
   text-decoration: underline;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   letter-spacing: 0px;
-  color: #C4C4C4;
+  color: #c4c4c4;
   opacity: 1;
   font-size: 16px;
 }
-ion-toolbar{
+ion-toolbar {
   height: 100%;
 }

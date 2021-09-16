@@ -27,12 +27,14 @@ Continuebtn() {
   this.avclientService.assignServerUrl(environment.url);
   if (this.userObject.lastname != undefined) {
     let opaqueVoterId = this.userObject.lastname
-    if (opaqueVoterId == 'OOOOO') {
+    if (opaqueVoterId == 'OOOOO' || opaqueVoterId == 'T0000') {
       opaqueVoterId = '00000';
-    } else if (opaqueVoterId == 'OOOO') {
+    } else if (opaqueVoterId == 'OOOO' || opaqueVoterId == 'T0001') {
       opaqueVoterId = '00001';
     } else {
-      this.route.navigate(['/access-code']);
+      this.route.navigate(['/access-code', {
+        t: new Date().getTime()
+      }]);
     }
     this.avclientService.requestAccessCode(opaqueVoterId).catch(res => {
       console.log("res", res);

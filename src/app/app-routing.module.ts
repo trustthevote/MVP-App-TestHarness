@@ -147,10 +147,33 @@ const routes: Routes = [
   {
     path: 'network-error-request-code',
     loadChildren: () => import('./pages/network-error-request-code/network-error-request-code.module').then( m => m.NetworkErrorRequestCodePageModule)
+  },
+  {
+    path: 'ballot-ready-prep-error',
+    loadChildren: () => import('./pages/ballot-ready-prep-error/ballot-ready-prep-error.module').then( m => m.BallotReadyPrepErrorPageModule)
+ 
+  },
+  {
+    path: 'network-error-access-ten',
+    loadChildren: () => import('./pages/network-error-access-ten/network-error-access-ten.module').then( m => m.NetworkErrorAccessTenPageModule)
+  },
+  {
+    path: 'ballot-test-fail-err',
+    loadChildren: () => import('./pages/ballot-test-fail-err/ballot-test-fail-err.module').then( m => m.BallotTestFailErrPageModule)
+  },
+  {
+    path: 'server-commit-network-error-access',
+    loadChildren: () => import('./pages/server-commit-network-error-access/server-commit-network-error-access.module').then( m => m.ServerCommitNetworkErrorAccessPageModule)
+  },
+  {
+    path: 'network-error-access12',
+    loadChildren: () => import('./pages/network-error-access12/network-error-access12.module').then( m => m.NetworkErrorAccess12PageModule)
+  },  {
+    path: 'ballot-access-error13',
+    loadChildren: () => import('./pages/ballot-access-error13/ballot-access-error13.module').then( m => m.BallotAccessError13PageModule)
   }
 
 
-  
 
 ];
 

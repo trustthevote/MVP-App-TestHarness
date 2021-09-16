@@ -65,8 +65,6 @@
     "tv3_fb":"For more information on testing. click the link below.",
     "shmd":"Show more details",
     "mp":"My Progress"
-
-
   },
   "copy_confirm": {
     "copy_confirmed": "Copy-Confirmed",
@@ -92,11 +90,13 @@
     "auth_p_1": " Sorry, your access code did not work. Please try again, or click the link below for help. ",
     "auth_p_2": "You can also click the print button below to proceed with a physical return instead."
   },
+
   "sending_page": {
     "sending": "Sending....",
     "next": "Next",
     "back": "Back"
   },
+
   "new_ballot_finger_print": {
     "heading": "Your Ballot Is Ready",
     "text": "You can send it digitally now.",
@@ -180,6 +180,16 @@
     "print": "Print",
     "try_again":"Try Again"
   },
+
+  "ballotballotpreperror":{
+    "upr_para": "Something went wrong, and we can't complete the preparation of your digital ballot. ",
+    "mid_para": "You can report a problem, and you have the option of using the Print button below to print your ballot and affidavit for postal return. ",
+    "link": "www.linktosite.org",
+    "back": "Report  A Problem",
+    "print": "Print",
+    "try_again":"Try Again"
+  },
+
   "digital_return_next_step_page": {
     "header": "Urgent Next Steps!",
     "textD": "Congrats on finishing your ballot! There are still a few more important steps that you need to complete. Please click the link below to begin.",
@@ -265,6 +275,48 @@
     "sec_para": " You can also click the print button below to proceed with a physical return instead.",
     "rbtn": "report a problem",
     "print": "Print"
+  },
+  "network_error_access_ten_page": {
+    "text": " Sorry, it seems there was a network error. Please check your connection and try again.",
+    "try_again": "Try again",
+    "first_para": " Sorry, it seems there was a network error. Please check your connection and try again.",
+    "sec_para": " You can also click the print button below to proceed with a physical return instead.",
+    "rbtn": "report a problem",
+    "print": "Print"
+  },
+  "ballot_test_fail_err_page": {
+    "upr_para": "Something went wrong, and we can't complete the preparation of your digital ballot. ",
+    "mid_para": "You can report a problem, and you have the option of using the Print button below to print your ballot and affidavit for postal return. ",
+    "link": "www.linktosite.org",
+    "back": "Report  A Problem",
+    "print": "Print",
+    "try_again":"Try Again"
+  },
+  "server_commit_network_error_access_page": {
+    "text": " Sorry, it seems we are having some network connection issues on our end. Please try again. ",
+    "text1": "If the issue persists, please click the link below to check the status of our servers.",
+    "text2": " We are Sorry for the inconvenience!",
+    "test_pr": "You can also click the proint button below to proceed with a physical return instead.",
+    "link": "www.linktosite.gov ",
+    "try_again": "Try again",
+    "report_prob": "Report  A Problem",
+    "print": "Print"
+  },
+  "network_error_access_12_page": {
+    "text": " Sorry, it seems there was a network error. Please check your connection and try again.",
+    "try_again": "Try again",
+    "first_para": " Sorry, it seems there was a network error. Please check your connection and try again.",
+    "sec_para": " You can also click the print button below to proceed with a physical return instead.",
+    "rbtn": "report a problem",
+    "print": "Print"
+  },
+  "ballot_access_err13_page": {
+    "upr_para": "Something went wrong, and we can't complete the preparation of your digital ballot. ",
+    "mid_para": "You can report a problem, and you have the option of using the Print button below to print your ballot and affidavit for postal return. ",
+    "link": "www.linktosite.org",
+    "back": "Report  A Problem",
+    "print": "Print",
+    "try_again":"Try Again"
   },
 
 

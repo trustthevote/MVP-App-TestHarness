@@ -44,7 +44,6 @@
   color: var(--ion-text-color, #000);
   font-size: 14px;
   text-align: center;
-  //text-transform: capitalize;
 }
 .alert-button.sc-ion-alert-md:last-child {
   color: #333;
@@ -59,7 +58,6 @@ padding-bottom: 21px;
 color: var(--ion-text-color, #000);
 font-size: 14px;
 text-align: center;
-// text-transform: capitalize;
 }
 ion-button{
   text-transform: capitalize;
@@ -68,9 +66,16 @@ ion-button{
 }
 ion-toolbar{
   height: 100px;
+  padding-right: 15px;
+  padding-left: 15px;
 }
+
+ion-col{
+  padding-left: 0;
+  padding-right: 0;
+}
+
 a {
-  /* background-color: #ec0000; */
   color: #222428;
   border: none;
   font-size: 22px;

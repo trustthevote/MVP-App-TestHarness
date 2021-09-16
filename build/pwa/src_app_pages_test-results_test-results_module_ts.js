@@ -116,7 +116,7 @@ let TestResultsPage = class TestResultsPage {
         this.route.navigate(['/ballot-fingerprint']);
     }
     passbtn() {
-        this.route.navigate(['/ballot-prep-error']);
+        this.route.navigate(['/ballot-ready-prep-error']);
     }
 };
 TestResultsPage.ctorParameters = () => [

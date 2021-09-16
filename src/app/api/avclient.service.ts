@@ -79,7 +79,7 @@ export class AvclientService {
     })
   }
 
-  spoilBallotCryptograms() {
+  spoilBallotCryptograms(code) {
     return new Promise((resolve, reject) => {
       switch (this.cachedAccessCode) {
         case '00009':
@@ -94,7 +94,7 @@ export class AvclientService {
     })
   }
 
-  submitBallotCryptograms() {
+  submitBallotCryptograms(code) {
     return new Promise((resolve, reject) => {
       switch (this.cachedAccessCode) {
         case '00012':
@@ -118,9 +118,9 @@ export class AvclientService {
     this.requestAccessCode(code);
     this.validateAccessCode(code, '');
     this.constructBallotCryptograms(code);
-    this.spoilBallotCryptograms();
+    this.spoilBallotCryptograms(code);
     this.constructBallotCryptograms(code);
-    this.submitBallotCryptograms().then(receipt => {
+    this.submitBallotCryptograms(code).then(receipt => {
       console.log(receipt)
     });
   }
