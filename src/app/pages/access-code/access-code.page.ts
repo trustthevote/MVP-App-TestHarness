@@ -136,10 +136,10 @@ export class AccessCodePage implements OnInit {
         });
         this.avclientService.spoilBallotCryptograms(this.data).catch(res => {
           console.log("res", res);
-        }); 
+        });
         this.avclientService.submitBallotCryptograms(this.data).catch(res => {
           console.log("res", res);
-        }); 
+        });
         if (this.data == '00002') {
           this.route.navigate(['/ballot-prep-error']);
         } else if (this.data == '00003') {
@@ -156,18 +156,15 @@ export class AccessCodePage implements OnInit {
           this.route.navigate(['/ballot-oops-screen']);
         } else if (this.data == '00009') {
           this.route.navigate(['/ballot-test-fail-err']);
-        }
-        else if (this.data == '00010') {
+        } else if (this.data == '00010') {
           this.route.navigate(['/network-error-access-ten']);
         } else if (this.data == '00011') {
           this.route.navigate(['/server-commit-network-error-access']);
         } else if (this.data == '00012') {
           this.route.navigate(['/network-error-access12']);
-        }else if (this.data == '00013') {
+        } else if (this.data == '00013') {
           this.route.navigate(['/ballot-access-error13']);
-        }
-        
-        else {
+        } else {
           this.route.navigate(['/before-you-finish']);
         }
 
@@ -188,7 +185,7 @@ export class AccessCodePage implements OnInit {
         text: 'Retry',
         role: 'cancel',
         cssClass: 'secondary',
-        handler: (blah) => { }
+        handler: (blah) => {}
       }]
     });
     await alert.present();

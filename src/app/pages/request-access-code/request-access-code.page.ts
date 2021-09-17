@@ -39,9 +39,9 @@ Continuebtn() {
     this.avclientService.requestAccessCode(opaqueVoterId).catch(res => {
       console.log("res", res);
       if (res == 'Error: voter record not found') {
-        this.route.navigate(['/ballot-test-failed']);
+        this.route.navigate(['/access-code-error']);
       } else if (res == 'Error: network code') {
-        this.route.navigate(['/network-error-request-code']);
+        this.route.navigate(['/check-network']);
       }
     });
   }

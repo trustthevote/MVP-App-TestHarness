@@ -11,9 +11,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "c": () => (/* binding */ createButtonActiveGesture)
 /* harmony export */ });
-/* harmony import */ var _index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-7a8b7a1c.js */ 3150);
-/* harmony import */ var _haptic_27b3f981_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./haptic-27b3f981.js */ 2954);
-/* harmony import */ var _index_f49d994d_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index-f49d994d.js */ 7279);
+/* harmony import */ var _index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-7a8b7a1c.js */ 23150);
+/* harmony import */ var _haptic_27b3f981_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./haptic-27b3f981.js */ 52954);
+/* harmony import */ var _index_f49d994d_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index-f49d994d.js */ 97279);
 
 
 
@@ -82,7 +82,7 @@ const createButtonActiveGesture = (el, isButton) => {
 
 /***/ }),
 
-/***/ 7330:
+/***/ 77330:
 /*!**************************************************************************!*\
   !*** ./node_modules/@ionic/core/dist/esm/framework-delegate-4392cd63.js ***!
   \**************************************************************************/
@@ -94,7 +94,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "a": () => (/* binding */ attachComponent),
 /* harmony export */   "d": () => (/* binding */ detachComponent)
 /* harmony export */ });
-/* harmony import */ var _helpers_dd7e4b7b_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helpers-dd7e4b7b.js */ 2377);
+/* harmony import */ var _helpers_dd7e4b7b_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helpers-dd7e4b7b.js */ 52377);
 
 
 const attachComponent = async (delegate, container, component, cssClasses, componentProps) => {
@@ -133,7 +133,7 @@ const detachComponent = (delegate, element) => {
 
 /***/ }),
 
-/***/ 2954:
+/***/ 52954:
 /*!**************************************************************!*\
   !*** ./node_modules/@ionic/core/dist/esm/haptic-27b3f981.js ***!
   \**************************************************************/
@@ -258,7 +258,7 @@ const hapticImpact = (options) => {
 
 /***/ }),
 
-/***/ 408:
+/***/ 60408:
 /*!***********************************************************************!*\
   !*** ./node_modules/@ionic/core/dist/esm/spinner-configs-cd7845af.js ***!
   \***********************************************************************/
@@ -383,7 +383,7 @@ const SPINNERS = spinners;
 
 /***/ }),
 
-/***/ 1269:
+/***/ 61269:
 /*!*************************************************************!*\
   !*** ./node_modules/@ionic/core/dist/esm/theme-ff3fc52f.js ***!
   \*************************************************************/
@@ -440,7 +440,7 @@ const openURL = async (url, ev, direction, animation) => {
 
 /***/ }),
 
-/***/ 5913:
+/***/ 55913:
 /*!*****************************************!*\
   !*** ./src/app/api/avclient.service.ts ***!
   \*****************************************/
@@ -451,11 +451,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AvclientService": () => (/* binding */ AvclientService)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var src_app_api_statuscode_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/api/statuscode.service */ 2413);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 9895);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var src_app_api_statuscode_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/api/statuscode.service */ 52413);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 39895);
 
 
 
@@ -602,7 +602,7 @@ AvclientService = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
 
 /***/ }),
 
-/***/ 2413:
+/***/ 52413:
 /*!*******************************************!*\
   !*** ./src/app/api/statuscode.service.ts ***!
   \*******************************************/
@@ -613,8 +613,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "StatuscodeService": () => (/* binding */ StatuscodeService)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 37716);
 
 
 let StatuscodeService = class StatuscodeService {

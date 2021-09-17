@@ -2,6 +2,7 @@
   <div class="list-question">
     <p>{{results.enter_access_code}}</p>
   </div>
+  <p>{{results.text_ac}}</p>
   <div class="opt-box-area" [formGroup]="otpForm" style="text-align: center">
     <div>
       <input
@@ -66,8 +67,8 @@
           <ion-icon slot="start" name="chevron-back-outline"></ion-icon>
         </ion-button>
       </ion-col>
-      <ion-col size="6" class="next-btn">
-        <ion-button color="dark" (click)="nextbtn()">
+      <ion-col size="6" class="next-btn"> 
+        <ion-button color="dark" (click)="nextbtn()" [disabled]="!otpForm.valid">
           {{results.next}}
           <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
         </ion-button>

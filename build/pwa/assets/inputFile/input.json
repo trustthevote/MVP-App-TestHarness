@@ -4,17 +4,9 @@
     "last_name": "Last Name",
     "welcome_to_jetsons_ballot": "Welcome to Jetsons Ballot",
     "to_get_started": "To get started, please provide your name.",
-    "firstname_errors": "First Name is required.",
-    "firstname_errors1": "Name should be a minimum of 2 characters long.",
-    "firstname_errors2": "Name should be a maximum of 50 characters long.",
-    "firstname_errors3": "Please provide: Name that consists of letters, space and hyphen.",
-    "last_name_errors": "Last Name is required.",
-    "last_name_errors1": "Name should be a minimum of 2 characters long.",
-    "last_name_errors2": "Name should be a maximum of 50 characters long.",
-    "please_provide": "Please provide: Name that consists of letters, space and hyphen.",
+  
     "about_this_app": "About This App",
     "next": "Next",
-    "tm": "Please provide all the required values!",
     "alert_msg": "Please provide a first name and last name that consists of 2 or more letters, spaces and hyphens.",
     "try_again": "Try Again"
   },
@@ -40,7 +32,8 @@
     "back": "Back",
     "tm_ee": "Enter your Election code",
     "tm_ev": "your Access code valid but expired",
-    "alert_msg": "Enter an Access code that is exactly 5 numbers."
+    "alert_msg": "Enter an Access code that is exactly 5 numbers.",
+    "text_ac": "Enter the code sent to your email below. The code expires in _ minutes."
   },
   "beforeyoufinish_page": {
     "beforeyoufinish": " Before You Finish",
@@ -162,6 +155,12 @@
     "heading_link":"Follow the link below to let us know!",
     "link":"www.linktosite.org",
     "thanks":"Thank you for using Markit!"
+  },
+  "access_code_error_page":{
+    "first_para": " Something went wrong,and we can't send the access code reuired to finish your digital ballot.",
+    "sec_para": " You can report a problem,and you have the option of using the Print button below to print your ballot and affidavit for postal return.",
+    "rbtn": "report a problem",
+    "print": "Print"
   },
   "rap_page": {
     

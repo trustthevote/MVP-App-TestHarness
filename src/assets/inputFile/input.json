@@ -163,6 +163,12 @@
     "link":"www.linktosite.org",
     "thanks":"Thank you for using Markit!"
   },
+  "access_code_error_page":{
+    "first_para": " Something went wrong,and we can't send the access code reuired to finish your digital ballot.",
+    "sec_para": " You can report a problem,and you have the option of using the Print button below to print your ballot and affidavit for postal return.",
+    "rbtn": "report a problem",
+    "print": "Print"
+  },
   "rap_page": {
     
     "para": "To use digital return, touch  Next to request a one-time access code to be sent to your email address.",

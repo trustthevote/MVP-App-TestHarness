@@ -31,6 +31,7 @@ export class BallotFormPage implements OnInit {
     //   this.precinct = 'Your Ballot is for Precinct #4';
     // }
     this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
+    //console.log(this.userObject);
     fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
       this.results = json[0]['ballot_form'];
     });

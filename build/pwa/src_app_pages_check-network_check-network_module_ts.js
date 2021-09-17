@@ -1,6 +1,6 @@
 (self["webpackChunkMVP_Test_Harness"] = self["webpackChunkMVP_Test_Harness"] || []).push([["src_app_pages_check-network_check-network_module_ts"],{
 
-/***/ 8435:
+/***/ 68435:
 /*!*********************************************************************!*\
   !*** ./src/app/pages/check-network/check-network-routing.module.ts ***!
   \*********************************************************************/
@@ -11,10 +11,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "CheckNetworkPageRoutingModule": () => (/* binding */ CheckNetworkPageRoutingModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 9895);
-/* harmony import */ var _check_network_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./check-network.page */ 8058);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 39895);
+/* harmony import */ var _check_network_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./check-network.page */ 48058);
 
 
 
@@ -38,7 +38,7 @@ CheckNetworkPageRoutingModule = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate
 
 /***/ }),
 
-/***/ 5888:
+/***/ 15888:
 /*!*************************************************************!*\
   !*** ./src/app/pages/check-network/check-network.module.ts ***!
   \*************************************************************/
@@ -49,13 +49,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "CheckNetworkPageModule": () => (/* binding */ CheckNetworkPageModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 8583);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 38583);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 3679);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var _check_network_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./check-network-routing.module */ 8435);
-/* harmony import */ var _check_network_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./check-network.page */ 8058);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var _check_network_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./check-network-routing.module */ 68435);
+/* harmony import */ var _check_network_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./check-network.page */ 48058);
 
 
 
@@ -81,7 +81,7 @@ CheckNetworkPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
 
 /***/ }),
 
-/***/ 8058:
+/***/ 48058:
 /*!***********************************************************!*\
   !*** ./src/app/pages/check-network/check-network.page.ts ***!
   \***********************************************************/
@@ -92,11 +92,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "CheckNetworkPage": () => (/* binding */ CheckNetworkPage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_check_network_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./check-network.page.html */ 6942);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_check_network_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./check-network.page.html */ 86942);
 /* harmony import */ var _check_network_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./check-network.page.scss */ 4280);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 9895);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 39895);
 
 
 
@@ -108,9 +108,19 @@ let CheckNetworkPage = class CheckNetworkPage {
         this.results = [];
     }
     ngOnInit() {
+        this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
         fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
             this.results = json[0]['check_network_page'];
         });
+        if (this.userObject.lastname != undefined) {
+            const lastName = this.userObject.lastname.charAt(0).toUpperCase() + this.userObject.lastname.slice(1);
+            if (lastName == 'OOOO') {
+                console.log('00001 Error');
+            }
+            else {
+                console.log(' last name undefined Error');
+            }
+        }
     }
     confirm() {
         // this.route.navigate(['/access-code', {
@@ -155,7 +165,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 6942:
+/***/ 86942:
 /*!***************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/pages/check-network/check-network.page.html ***!
   \***************************************************************************************************/

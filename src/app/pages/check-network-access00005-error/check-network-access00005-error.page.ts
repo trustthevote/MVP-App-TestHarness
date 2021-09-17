@@ -19,7 +19,6 @@ export class CheckNetworkAccess00005ErrorPage implements OnInit {
     this.route.navigate(['/access-code', {
       t: new Date().getTime()
     }]);
-    // this.route.navigate(['/request-access-code']);
   }
 
   rpbtn() {

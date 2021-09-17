@@ -1,6 +1,6 @@
 (self["webpackChunkMVP_Test_Harness"] = self["webpackChunkMVP_Test_Harness"] || []).push([["src_app_pages_before-you-finish_before-you-finish_module_ts"],{
 
-/***/ 9949:
+/***/ 49949:
 /*!*****************************************************************************!*\
   !*** ./src/app/pages/before-you-finish/before-you-finish-routing.module.ts ***!
   \*****************************************************************************/
@@ -11,10 +11,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "BeforeYouFinishPageRoutingModule": () => (/* binding */ BeforeYouFinishPageRoutingModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 9895);
-/* harmony import */ var _before_you_finish_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./before-you-finish.page */ 4547);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 39895);
+/* harmony import */ var _before_you_finish_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./before-you-finish.page */ 96268);
 
 
 
@@ -38,7 +38,7 @@ BeforeYouFinishPageRoutingModule = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decor
 
 /***/ }),
 
-/***/ 6362:
+/***/ 66362:
 /*!*********************************************************************!*\
   !*** ./src/app/pages/before-you-finish/before-you-finish.module.ts ***!
   \*********************************************************************/
@@ -49,13 +49,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "BeforeYouFinishPageModule": () => (/* binding */ BeforeYouFinishPageModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 8583);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 38583);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 3679);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var _before_you_finish_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./before-you-finish-routing.module */ 9949);
-/* harmony import */ var _before_you_finish_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./before-you-finish.page */ 4547);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var _before_you_finish_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./before-you-finish-routing.module */ 49949);
+/* harmony import */ var _before_you_finish_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./before-you-finish.page */ 96268);
 
 
 
@@ -81,7 +81,7 @@ BeforeYouFinishPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
 
 /***/ }),
 
-/***/ 4547:
+/***/ 96268:
 /*!*******************************************************************!*\
   !*** ./src/app/pages/before-you-finish/before-you-finish.page.ts ***!
   \*******************************************************************/
@@ -92,11 +92,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "BeforeYouFinishPage": () => (/* binding */ BeforeYouFinishPage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_before_you_finish_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./before-you-finish.page.html */ 4193);
-/* harmony import */ var _before_you_finish_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./before-you-finish.page.scss */ 7844);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 9895);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_before_you_finish_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./before-you-finish.page.html */ 24193);
+/* harmony import */ var _before_you_finish_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./before-you-finish.page.scss */ 97844);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 39895);
 
 
 
@@ -131,7 +131,7 @@ BeforeYouFinishPage = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
 
 /***/ }),
 
-/***/ 7844:
+/***/ 97844:
 /*!*********************************************************************!*\
   !*** ./src/app/pages/before-you-finish/before-you-finish.page.scss ***!
   \*********************************************************************/
@@ -146,7 +146,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 4193:
+/***/ 24193:
 /*!***********************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/pages/before-you-finish/before-you-finish.page.html ***!
   \***********************************************************************************************************/
@@ -157,7 +157,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content padding>\n  <div class=\"list-question\">\n    <p>{{results.beforeyoufinish}}</p>\n  </div>\n  <div style=\"text-align: center;padding-top: 25px;\">\n    <div class=\"para-center\">{{results.para}}</div>\n    <div class=\"mid\">{{results.para_center}}\"{{results.btc}}\" {{results.bck}}</div>\n    <div class=\"mid\"> {{results.link}}</div>\n  \n  </div>\n</ion-content>\n<ion-footer>\n  <ion-toolbar style=\"text-align: end;\">\n    <ion-row>\n      <ion-col size=\"6\" class=\"back-btn\" style=\"text-align: start\">\n        <!-- <ion-button color=\"dark\" (click)=\"backbtn()\">\n          {{results.back}}\n          <ion-icon slot=\"start\" name=\"chevron-back-outline\"></ion-icon>\n        </ion-button> -->\n      </ion-col>\n      <ion-col size=\"6\" class=\"next-btn\">\n        <ion-button color=\"dark\" (click)=\"nextbtn()\">\n          {{results.next}}\n          <ion-icon slot=\"end\" name=\"chevron-forward-outline\"></ion-icon>\n        </ion-button>\n      </ion-col>\n    </ion-row>\n\n  </ion-toolbar>\n</ion-footer>");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content padding>\r\n  <div class=\"list-question\">\r\n    <p>{{results.beforeyoufinish}}</p>\r\n  </div>\r\n  <div style=\"text-align: center;padding-top: 25px;\">\r\n    <div class=\"para-center\">{{results.para}}</div>\r\n    <div class=\"mid\">{{results.para_center}}\"{{results.btc}}\" {{results.bck}}</div>\r\n    <div class=\"mid\"> {{results.link}}</div>\r\n  \r\n  </div>\r\n</ion-content>\r\n<ion-footer>\r\n  <ion-toolbar style=\"text-align: end;\">\r\n    <ion-row>\r\n      <ion-col size=\"6\" class=\"back-btn\" style=\"text-align: start\">\r\n        <!-- <ion-button color=\"dark\" (click)=\"backbtn()\">\r\n          {{results.back}}\r\n          <ion-icon slot=\"start\" name=\"chevron-back-outline\"></ion-icon>\r\n        </ion-button> -->\r\n      </ion-col>\r\n      <ion-col size=\"6\" class=\"next-btn\">\r\n        <ion-button color=\"dark\" (click)=\"nextbtn()\">\r\n          {{results.next}}\r\n          <ion-icon slot=\"end\" name=\"chevron-forward-outline\"></ion-icon>\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n\r\n  </ion-toolbar>\r\n</ion-footer>");
 
 /***/ })
 

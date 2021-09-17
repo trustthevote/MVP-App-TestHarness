@@ -16,10 +16,9 @@ export class NetworkErrorAccessCodePage implements OnInit {
     });
   }
   confirm() {
-    // this.route.navigate(['/access-code', {
-    //   t: new Date().getTime()
-    // }]);
-    this.route.navigate(['/access-code']);
+    this.route.navigate(['/access-code', {
+      t: new Date().getTime()
+    }]);
   }
 
   rpbtn() {

@@ -171,6 +171,10 @@ const routes: Routes = [
   },  {
     path: 'ballot-access-error13',
     loadChildren: () => import('./pages/ballot-access-error13/ballot-access-error13.module').then( m => m.BallotAccessError13PageModule)
+  },
+  {
+    path: 'access-code-error',
+    loadChildren: () => import('./pages/access-code-error/access-code-error.module').then( m => m.AccessCodeErrorPageModule)
   }
 
 
