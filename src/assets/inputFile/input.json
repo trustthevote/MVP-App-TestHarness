@@ -56,13 +56,13 @@
     "ydn": "You can perform a test to verify it will be cast correctly to the digital ballot box.",
     "bfp": "Ballot Fingerprint:",
     "zyx098": "zyx098-wvu765-tsr432-1234",
-    "tv_fp": "Or,you can cast your ballot digitally now.",
+    "tv_fp": "Or, you can cast your ballot digitally now.",
     "send": "Cast Ballot Now",
     "copy": "Start Ballot Test ",
     "tv1_fp":" On a computer or other device,go to",
     "link":"www.linkto.site.org",
     "tv2_fb":"and enter  the  following code to review your ballot",
-    "tv3_fb":"For more information on testing. click the link below.",
+    "tv3_fb":"For more information on testing, click the link below.",
     "shmd":"Show more details",
     "mp":"My Progress"
   },
@@ -144,17 +144,17 @@
     "print": "Print"
   },
   "sending_confirmation_page": {
-    "heading": "Congrats! your ballot has been cast!",
-    "para_center":"To track your ballot and confirm it was received correctly, touch the code below to copy it to your clipboard. then click the link and follow the steps to confirm your ballot was received.",
+    "heading": "Congrats! Your ballot has been cast!",
+    "para_center":"To track your ballot and confirm it was received correctly, touch the code below to copy it to your clipboard. Then click the link and follow the steps to confirm your ballot was received.",
     "next": "how was your experience?",
-    "heading_link":"Ballot Tracking Receipt:",
+    "heading_link":"Ballot Tracking Code:",
     "btr":"zyx098-wvu765-tsr432-1234",
     "link":"www.linktosite.org",
     "thanks":"Thank you for using Markit!"
   },
   
   "howitdo_page": {
-    "heading":"How'd it Go Next",
+    "heading":"How'd it Go?",
     "para": "Please tell us how your experience was, using the Markit App.",
     "para_center":"Your feedback will be greatly appreciated, and will be used to further enhance our app for future users.",
     "next": "Exit Markit App ",
