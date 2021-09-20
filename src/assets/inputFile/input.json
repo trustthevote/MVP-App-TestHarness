@@ -40,7 +40,8 @@
     "back": "Back",
     "tm_ee": "Enter your Election code",
     "tm_ev": "your Access code valid but expired",
-    "alert_msg": "Enter an Access code that is exactly 5 numbers."
+    "alert_msg": "Enter an Access code that is exactly 5 numbers.",
+    "text_ac": "Enter the code sent to your email below. The code expires in _ minutes."
   },
   "beforeyoufinish_page": {
     "beforeyoufinish": " Before You Finish",
@@ -77,11 +78,27 @@
   "test_result_page": {
     "test_results": "Test Results",
     "dbf": "Is your ballot correct?",
+    "bfp": "Ballot Test Code:",
+    "zyx098": "zyx098-wvu765-tsr432-1234",
+    "ydn": "By now you should have used your choice of a Verify My Ballot site to provide your Ballot Test Code and view the contents of your ballot. ",
+    "tv2_fb": "If you did first use a Verify  My Ballot site, before you  selected  ",
+    "str": "Start Ballot Test",
+    "tv2_fb1": "then you should re-try the  test using the Re-Try option below.",
+    "tv3": "Otherwise, please indicate  whether this test of your ballot showed that the  contents of your ballot were correct.",
     "passed": "Yes",
     "failed": "No",
     "next": "Next",
     "back": "Back"
   },
+  "ballot_resealed_page": {
+    "test_results": "Ballot Resealed!",
+    "ydn": "Great! Your ballot has been resealed and is ready to cast. Please continue!. ",
+
+    "next": "Continue"
+
+  },
+
+
   "failed_auth": {
     "try_again": "Try again",
     "btn_report":"Report A problem",

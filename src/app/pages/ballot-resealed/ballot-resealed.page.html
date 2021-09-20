@@ -1,0 +1,34 @@
+<ion-content>
+  <div class="list-question">
+    <p>{{results.test_results}}</p>
+  </div>
+  <div class="cen-div-text">
+  
+    <p>{{results.ydn}}</p>
+  
+  
+  </div>
+  <div class="Required-div" style="text-align: center">
+    <!-- <p style="text-align: start;">{{results.dbf}}</p> -->
+   
+  </div>
+</ion-content>
+<ion-footer >
+  <ion-toolbar>
+    <ion-row>
+      <ion-col size="6" class="back-btn">
+        <!-- <ion-button color="dark" (click)="passbtn()">
+          {{results.back}}
+          <ion-icon slot="start" name="refresh-outline"></ion-icon>
+        
+        </ion-button> -->
+      </ion-col>
+      <ion-col size="6" class="next-btn">
+        <ion-button color="dark" (click)="nextbtn()">
+          {{results.next}}
+          <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

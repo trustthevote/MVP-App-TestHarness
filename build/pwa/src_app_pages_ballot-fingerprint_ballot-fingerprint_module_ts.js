@@ -92,19 +92,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "BallotFingerprintPage": () => (/* binding */ BallotFingerprintPage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 64762);
 /* harmony import */ var _raw_loader_ballot_fingerprint_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./ballot-fingerprint.page.html */ 66184);
 /* harmony import */ var _ballot_fingerprint_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ballot-fingerprint.page.scss */ 66945);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 37716);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 39895);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 39895);
+/* harmony import */ var src_app_api_avclient_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/api/avclient.service */ 55913);
+
 
 
 
 
 
 let BallotFingerprintPage = class BallotFingerprintPage {
-    constructor(route) {
+    constructor(route, avclientService, activatedRoute) {
         this.route = route;
+        this.avclientService = avclientService;
+        this.activatedRoute = activatedRoute;
         this.results = [];
         this.IsVisible = false;
         this.Ishowmore = false;
@@ -124,22 +128,50 @@ let BallotFingerprintPage = class BallotFingerprintPage {
         this.fsticon = true;
     }
     ngOnInit() {
+        this.getCode = this.activatedRoute.snapshot.paramMap.get('code');
         fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
             this.results = json[0]['ballot_fingerp'];
         });
     }
-    copybtn() {
-        this.route.navigate(['/test-results']);
-    }
     sendbtn() {
-        this.route.navigate(['/sending']);
+        this.avclientService.submitBallotCryptograms(this.getCode).catch(res => {
+            console.log("res", res);
+        });
+        if (this.getCode == '00012') {
+            this.route.navigate(['/network-error-access12']);
+        }
+        else if (this.getCode == '00013') {
+            this.route.navigate(['/ballot-access-error13']);
+        }
+        else {
+            this.route.navigate(['/test-results']);
+        }
+    }
+    copybtn() {
+        this.avclientService.spoilBallotCryptograms(this.getCode).catch(res => {
+            console.log("res", res);
+        });
+        if (this.getCode == '00009') {
+            this.route.navigate(['/ballot-test-fail-err']);
+        }
+        else if (this.getCode == '00010') {
+            this.route.navigate(['/network-error-access-ten']);
+        }
+        else if (this.getCode == '00011') {
+            this.route.navigate(['/server-commit-network-error-access']);
+        }
+        else {
+            this.route.navigate(['/access-code-error']);
+        }
     }
 };
 BallotFingerprintPage.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__.Router }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__.Router },
+    { type: src_app_api_avclient_service__WEBPACK_IMPORTED_MODULE_2__.AvclientService },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__.ActivatedRoute }
 ];
-BallotFingerprintPage = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.Component)({
+BallotFingerprintPage = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_5__.Component)({
         selector: 'app-ballot-fingerprint',
         template: _raw_loader_ballot_fingerprint_page_html__WEBPACK_IMPORTED_MODULE_0__.default,
         styles: [_ballot_fingerprint_page_scss__WEBPACK_IMPORTED_MODULE_1__.default]
@@ -176,7 +208,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n  <div class=\"list-question\">\r\n    <p>{{results.ybr}}</p>\r\n  </div>\r\n  <div class=\"cen-div-text\">\r\n    <ion-row>\r\n      {{results.bfp}}<br />\r\n      {{results.zyx098}}\r\n    </ion-row>\r\n    <p>{{results.ydn}}</p>\r\n    <ion-button color=\"dark\" (click)=\"copybtn()\">\r\n      {{results.send}}\r\n      <ion-icon slot=\"end\" name=\"settings-outline\"></ion-icon>\r\n    </ion-button>\r\n    <p>{{results.tv3_fb}}</p>\r\n    <p>{{results.link}}</p>\r\n  </div>\r\n  <div class=\"bottom-div-text\">\r\n    <p>{{results.tv_fp}}</p>\r\n    <ion-button color=\"dark\" (click)=\"sendbtn()\">\r\n      {{results.copy}}\r\n      <ion-icon slot=\"end\" name=\"paper-plane-outline\"></ion-icon>\r\n    </ion-button>\r\n  </div>\r\n  <!-- <div *ngIf=\"IsVisible == true\">\r\n    <p>{{results.tv1_fp}}</p>\r\n    <p>{{results.link}}</p>\r\n    <p>{{results.tv2_fb}}</p>\r\n \r\n  \r\n   \r\n  </div>\r\n  <div class=\"text-p\" *ngIf=\"fsticon\" (click)=\"PolicyDetails()\">\r\n    {{results.shmd}}\r\n    <ion-icon name=\"chevron-down-outline\" *ngIf=\"fsticon\"></ion-icon>\r\n  </div>\r\n  <div class=\"text-p\" *ngIf=\"scndicons\" (click)=\"PolicyDetailshide()\">\r\n    {{results.shmd}}\r\n\r\n    <ion-icon name=\"chevron-up-outline\" *ngIf=\"scndicons\"></ion-icon>\r\n  </div> -->\r\n</ion-content>\r\n<ion-footer>\r\n  <ion-toolbar>\r\n    <!-- <div class=\"text-p\" style=\"text-align: center;\">\r\n    {{results.mp}}  <ion-icon name=\"chevron-down-outline\"></ion-icon>\r\n        </div> -->\r\n  </ion-toolbar>\r\n</ion-footer>\r\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n  <div class=\"list-question\">\r\n    <p>{{results.ybr}}</p>\r\n  </div>\r\n  <div class=\"cen-div-text\">\r\n    <ion-row>\r\n      {{results.bfp}}<br />\r\n      {{results.zyx098}}\r\n    </ion-row>\r\n    <p>{{results.ydn}}</p>\r\n    <ion-button color=\"dark\"(click)=\"copybtn()\" >\r\n      {{results.copy}}\r\n      <ion-icon slot=\"end\" name=\"settings-outline\"></ion-icon>\r\n    </ion-button>\r\n    <p>{{results.tv3_fb}}</p>\r\n    <p>{{results.link}}</p>\r\n  </div>\r\n  <div class=\"bottom-div-text\">\r\n    <p>{{results.tv_fp}}</p>\r\n    <ion-button color=\"dark\" (click)=\"sendbtn()\">\r\n      {{results.send}}\r\n      <ion-icon slot=\"end\" name=\"paper-plane-outline\"></ion-icon>\r\n    </ion-button>\r\n  </div>\r\n  <!-- <div *ngIf=\"IsVisible == true\">\r\n    <p>{{results.tv1_fp}}</p>\r\n    <p>{{results.link}}</p>\r\n    <p>{{results.tv2_fb}}</p>\r\n \r\n  \r\n   \r\n  </div>\r\n  <div class=\"text-p\" *ngIf=\"fsticon\" (click)=\"PolicyDetails()\">\r\n    {{results.shmd}}\r\n    <ion-icon name=\"chevron-down-outline\" *ngIf=\"fsticon\"></ion-icon>\r\n  </div>\r\n  <div class=\"text-p\" *ngIf=\"scndicons\" (click)=\"PolicyDetailshide()\">\r\n    {{results.shmd}}\r\n\r\n    <ion-icon name=\"chevron-up-outline\" *ngIf=\"scndicons\"></ion-icon>\r\n  </div> -->\r\n</ion-content>\r\n<ion-footer>\r\n  <ion-toolbar>\r\n    <!-- <div class=\"text-p\" style=\"text-align: center;\">\r\n    {{results.mp}}  <ion-icon name=\"chevron-down-outline\"></ion-icon>\r\n        </div> -->\r\n  </ion-toolbar>\r\n</ion-footer>\r\n");
 
 /***/ })
 

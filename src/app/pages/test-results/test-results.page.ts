@@ -16,12 +16,12 @@ export class TestResultsPage implements OnInit {
     this.results = json[0]['test_result_page'];
     });
   }
-  nextbtn() {
-    this.route.navigate(['/ballot-fingerprint']);
+  passbtn() {
+    this.route.navigate(['/ballot-resealed']);
   }
 
-  passbtn() {
-    this.route.navigate(['/ballot-ready-prep-error']);
+  failbtn() {
+    this.route.navigate(['/ballot-test-failed-test']);
   }
 
 }

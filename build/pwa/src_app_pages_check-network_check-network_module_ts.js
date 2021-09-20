@@ -117,16 +117,14 @@ let CheckNetworkPage = class CheckNetworkPage {
             if (lastName == 'OOOO') {
                 console.log('00001 Error');
             }
-            else {
-                console.log(' last name undefined Error');
-            }
         }
     }
     confirm() {
-        // this.route.navigate(['/access-code', {
-        //   t: new Date().getTime()
-        // }]);
-        this.route.navigate(['/access-code']);
+        this.route.navigate(['/request-access-code'
+            // , {
+            //   t: new Date().getTime()
+            // }
+        ]);
     }
     rpbtn() {
         this.route.navigate(['/tobecontinue']);

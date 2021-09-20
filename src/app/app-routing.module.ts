@@ -168,16 +168,27 @@ const routes: Routes = [
   {
     path: 'network-error-access12',
     loadChildren: () => import('./pages/network-error-access12/network-error-access12.module').then( m => m.NetworkErrorAccess12PageModule)
-  },  {
+  },
+  {
     path: 'ballot-access-error13',
     loadChildren: () => import('./pages/ballot-access-error13/ballot-access-error13.module').then( m => m.BallotAccessError13PageModule)
   },
   {
     path: 'access-code-error',
     loadChildren: () => import('./pages/access-code-error/access-code-error.module').then( m => m.AccessCodeErrorPageModule)
-  }
-
-
+  },
+  {
+    path: 'ballot-test-failed-test',
+    loadChildren: () => import('./pages/ballot-test-failed-test/ballot-test-failed-test.module').then( m => m.BallotTestFailedTestPageModule)
+  },
+  {
+    path: 'ballot-resealed',
+    loadChildren: () => import('./pages/ballot-resealed/ballot-resealed.module').then( m => m.BallotResealedPageModule)
+  },
+  {
+    path: 'ballot-ready-two',
+    loadChildren: () => import('./pages/ballot-ready-two/ballot-ready-two.module').then( m => m.BallotReadyTwoPageModule)
+  },
 
 ];
 

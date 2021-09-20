@@ -20,9 +20,7 @@ export class AccessCodeErrorPage implements OnInit {
       const lastName = this.userObject.lastname.charAt(0).toUpperCase() + this.userObject.lastname.slice(1);
       if (lastName == 'OOOOO') {
       console.log('00000 Error')
-      } else{
-        console.log('last name undefined Error')
-      }
+      } 
     }
   }
   confirm() {

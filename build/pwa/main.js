@@ -71,7 +71,7 @@ const routes = [
     },
     {
         path: 'ballot-fingerprint',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_ballot-fingerprint_ballot-fingerprint_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-fingerprint/ballot-fingerprint.module */ 32168)).then(m => m.BallotFingerprintPageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_pages_ballot-fingerprint_ballot-fingerprint_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-fingerprint/ballot-fingerprint.module */ 32168)).then(m => m.BallotFingerprintPageModule)
     },
     {
         path: 'failed-authorization',
@@ -159,7 +159,7 @@ const routes = [
     },
     {
         path: 'before-you-finish',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_before-you-finish_before-you-finish_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/before-you-finish/before-you-finish.module */ 66362)).then(m => m.BeforeYouFinishPageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_pages_before-you-finish_before-you-finish_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/before-you-finish/before-you-finish.module */ 66362)).then(m => m.BeforeYouFinishPageModule)
     },
     {
         path: 'ballot-oops-screen',
@@ -212,7 +212,19 @@ const routes = [
     {
         path: 'access-code-error',
         loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_access-code-error_access-code-error_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/access-code-error/access-code-error.module */ 6741)).then(m => m.AccessCodeErrorPageModule)
-    }
+    },
+    {
+        path: 'ballot-test-failed-test',
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_ballot-test-failed-test_ballot-test-failed-test_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-test-failed-test/ballot-test-failed-test.module */ 9436)).then(m => m.BallotTestFailedTestPageModule)
+    },
+    {
+        path: 'ballot-resealed',
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_ballot-resealed_ballot-resealed_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-resealed/ballot-resealed.module */ 41857)).then(m => m.BallotResealedPageModule)
+    },
+    {
+        path: 'ballot-ready-two',
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_pages_ballot-ready-two_ballot-ready-two_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-ready-two/ballot-ready-two.module */ 65411)).then(m => m.BallotReadyTwoPageModule)
+    },
 ];
 let AppRoutingModule = class AppRoutingModule {
 };

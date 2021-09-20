@@ -12,20 +12,20 @@ export class BallotAccessError13Page implements OnInit {
 
   ngOnInit() {
     fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-     
+
       this.results = json[0]['ballot_access_err13_page'];
-      
+
     });
-}
-rpbtn() {
-  this.route.navigate(['/tobecontinue']);
-}
-printbtn() {
-  this.route.navigate(['/print-return']);
-}
-backbtn() {
-  this.route.navigate(['/access-code', {
-    t: new Date().getTime()
-  }]);
-}
+  }
+  rpbtn() {
+    this.route.navigate(['/tobecontinue']);
+  }
+  printbtn() {
+    this.route.navigate(['/print-return']);
+  }
+  backbtn() {
+    this.route.navigate(['/access-code', {
+      t: new Date().getTime()
+    }]);
+  }
 }
