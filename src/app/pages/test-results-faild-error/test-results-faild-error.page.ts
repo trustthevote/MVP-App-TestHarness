@@ -10,6 +10,7 @@ export class TestResultsFaildErrorPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  
   }
 
 }

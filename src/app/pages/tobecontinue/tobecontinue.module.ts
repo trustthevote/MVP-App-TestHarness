@@ -1,11 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
-
 import { TobecontinuePageRoutingModule } from './tobecontinue-routing.module';
-
 import { TobecontinuePage } from './tobecontinue.page';
 
 @NgModule({
@@ -17,4 +14,4 @@ import { TobecontinuePage } from './tobecontinue.page';
   ],
   declarations: [TobecontinuePage]
 })
-export class TobecontinuePageModule {}
+export class TobecontinuePageModule { }

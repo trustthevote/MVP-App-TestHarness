@@ -4,20 +4,12 @@
     "last_name": "Last Name",
     "welcome_to_jetsons_ballot": "Welcome to Jetsons Ballot",
     "to_get_started": "To get started, please provide your name.",
-    "firstname_errors": "First Name is required.",
-    "firstname_errors1": "Name should be a minimum of 2 characters long.",
-    "firstname_errors2": "Name should be a maximum of 50 characters long.",
-    "firstname_errors3": "Please provide: Name that consists of letters, space and hyphen.",
-    "last_name_errors": "Last Name is required.",
-    "last_name_errors1": "Name should be a minimum of 2 characters long.",
-    "last_name_errors2": "Name should be a maximum of 50 characters long.",
-    "please_provide": "Please provide: Name that consists of letters, space and hyphen.",
     "about_this_app": "About This App",
     "next": "Next",
-    "tm": "Please provide all the required values!",
     "alert_msg": "Please provide a first name and last name that consists of 2 or more letters, spaces and hyphens.",
     "try_again": "Try Again"
   },
+
   "ballot_form": {
     "welcome": "Welcome",
     "start": "Start",
@@ -26,6 +18,7 @@
     "your_ballot_marking": "to begin your ballot marking process.",
     "precinct_no": "Your precinct is # "
   },
+
   "ballot_comp": {
     "thank_you": "Thank you",
     "your_ballot_is_complete": "Your ballot is complete",
@@ -34,6 +27,7 @@
     "requires_printer": "Requires a Printer",
     "online_ballot_return": "Digital Return"
   },
+
   "access_code": {
     "enter_access_code": "Enter Access Code",
     "next": "Next",
@@ -43,6 +37,7 @@
     "alert_msg": "Enter an Access code that is exactly 5 numbers.",
     "text_ac": "Enter the code sent to your email below. The code expires in _ minutes."
   },
+
   "beforeyoufinish_page": {
     "beforeyoufinish": " Before You Finish",
     "para": "Your ballot is almost ready, but before you finish, you have two options.",
@@ -52,6 +47,7 @@
     "bck": "that you will see at the top of the screen.",
     "link": "The ballot test process is ..."
   },
+
   "ballot_fingerp": {
     "ybr": "Your Ballot Has Been Sealed and Is Ready To Cast",
     "ydn": "You can perform a test to verify it will be cast correctly to the digital ballot box.",
@@ -67,6 +63,7 @@
     "shmd":"Show more details",
     "mp":"My Progress"
   },
+
   "copy_confirm": {
     "copy_confirmed": "Copy-Confirmed",
     "yccm": "Your code has been copied to memory.",
@@ -75,10 +72,11 @@
     "next": "Next",
     "back": "Back"
   },
+
   "test_result_page": {
     "test_results": "Test Results",
     "dbf": "Is your ballot correct?",
-    "bfp": "Ballot Test Code:",
+    "bfp": "Ballot Checking Code:",
     "zyx098": "zyx098-wvu765-tsr432-1234",
     "ydn": "By now you should have used your choice of a Verify My Ballot site to provide your Ballot Test Code and view the contents of your ballot. ",
     "tv2_fb": "If you did first use a Verify  My Ballot site, before you  selected  ",
@@ -90,14 +88,12 @@
     "next": "Next",
     "back": "Back"
   },
+
   "ballot_resealed_page": {
     "test_results": "Ballot Resealed!",
     "ydn": "Great! Your ballot has been resealed and is ready to cast. Please continue!. ",
-
     "next": "Continue"
-
   },
-
 
   "failed_auth": {
     "try_again": "Try again",
@@ -123,12 +119,14 @@
     "nbf": "New Ballot Fingerprint:",
     "tsr432": "tsr432-wvu765-zyx098-4321"
   },
+
   "check_page": {
     "header": "Check",
     "fail_check_network": "fail-check-network",
     "fail_check_server": "fail-check-server",
     "pass": "pass"
   },
+
   "check_network_page": {
     "text": " Sorry, it seems there was a network error. Please check your connection and try again.",
     "try_again": "Try again",
@@ -144,6 +142,7 @@
     "link": "www.linktosite.gov ",
     "try_again": "Try again"
   },
+
   "check_network_oooo_error_page": {
     "text": " Sorry, it seems there was a network error. Please check your connection and try again.",
     "try_again": "Try again",
@@ -152,6 +151,7 @@
     "rbtn": "report a problem",
     "print": "Print"
   },
+
   "check_network_access00005_error": {
     "text": " Sorry, it seems there was a network error. Please check your connection and try again.",
     "try_again": "Try again",
@@ -160,14 +160,16 @@
     "rbtn": "report a problem",
     "print": "Print"
   },
+
   "sending_confirmation_page": {
     "heading": "Congrats! Your ballot has been cast!",
     "para_center":"To track your ballot and confirm it was received correctly, touch the code below to copy it to your clipboard. Then click the link and follow the steps to confirm your ballot was received.",
     "next": "how was your experience?",
-    "heading_link":"Ballot Tracking Code:",
+    "heading_link":"Ballot Tracking Code :",
     "btr":"zyx098-wvu765-tsr432-1234",
     "link":"www.linktosite.org",
-    "thanks":"Thank you for using Markit!"
+    "thanks":"Thank you for using Markit!",
+    "WhatNext":"What’s Next?"
   },
   
   "howitdo_page": {
@@ -180,21 +182,22 @@
     "link":"www.linktosite.org",
     "thanks":"Thank you for using Markit!"
   },
+
   "access_code_error_page":{
     "first_para": " Something went wrong,and we can't send the access code required to finish your digital ballot.",
     "sec_para": " You can report a problem, and you have the option of using the Print button below to print your ballot and affidavit for postal return.",
     "rbtn": "report a problem",
     "print": "Print"
   },
+
   "rap_page": {
-    
     "para": "To use digital return, touch  Next to request a one-time access code to be sent to your email address.",
     "para_center":"If you did not receive a code upon requesting, please check the email we have on file by following the link below.",
     "next": "Next",
     "back": "Back",
     "link":"www.linktosite.org"
-
   },
+
   "ballotpreperror": {
     "upr_para": "Something went wrong, and we can't complete the preparation of your digital ballot. ",
     "mid_para": "You can report a problem, and you have the option of using the Print button below to print your ballot and affidavit for postal return. ",
@@ -269,13 +272,16 @@
   "rbtn":"report a problem",
   "btn":"Request"
  },
+ 
   "ballot_test_error_page": {
-    "upr_para": "Your local election office has been notified to issue you a replacement ballot by mail. For more information, you may contact your election office through the link below. ",
+    "upr_para": "Something went wrong, and we can't complete your digital ballot test. ",
+    "mid_para": "You can report a problem, and you have the option of using the Print button below to print your ballot and affidavit for postal return. ", 
     "link": "www.linktosite.org",
     "back": "Report  A Problem",
     "print": "Print",
     "try_again":"Try Again"
   },
+
   "network_error_page": {
     "text": " Sorry, it seems there was a network error. Please check your connection and try again.",
     "try_again": "Try again",
@@ -284,6 +290,7 @@
     "rbtn": "report a problem",
     "print": "Print"
   },
+
   "ballot_oops_screen_page": {
     "upr_para": "Your local election office has been notified to issue you a replacement ballot by mail. For more information, you may contact your election office through the link below. ",
     "link": "www.linktosite.org",
@@ -291,6 +298,7 @@
     "print": "Print",
     "try_again":"Try Again"
   },
+
   "network_error_request_code_page": {
     "text": " Sorry, it seems there was a network error. Please check your connection and try again.",
     "try_again": "Try again",
@@ -299,6 +307,7 @@
     "rbtn": "report a problem",
     "print": "Print"
   },
+
   "network_error_access_ten_page": {
     "text": " Sorry, it seems there was a network error. Please check your connection and try again.",
     "try_again": "Try again",
@@ -307,6 +316,7 @@
     "rbtn": "report a problem",
     "print": "Print"
   },
+
   "ballot_test_fail_err_page": {
     "upr_para": "Something went wrong, and we can't complete the preparation of your digital ballot. ",
     "mid_para": "You can report a problem, and you have the option of using the Print button below to print your ballot and affidavit for postal return. ",
@@ -315,6 +325,7 @@
     "print": "Print",
     "try_again":"Try Again"
   },
+
   "server_commit_network_error_access_page": {
     "text": " Sorry, it seems we are having some network connection issues on our end. Please try again. ",
     "text1": "If the issue persists, please click the link below to check the status of our servers.",
@@ -325,6 +336,7 @@
     "report_prob": "Report  A Problem",
     "print": "Print"
   },
+
   "network_error_access_12_page": {
     "text": " Sorry, it seems there was a network error. Please check your connection and try again.",
     "try_again": "Try again",
@@ -333,6 +345,7 @@
     "rbtn": "report a problem",
     "print": "Print"
   },
+
   "ballot_access_err13_page": {
     "upr_para": "Something went wrong, and we can't complete the preparation of your digital ballot. ",
     "mid_para": "You can report a problem, and you have the option of using the Print button below to print your ballot and affidavit for postal return. ",
@@ -341,7 +354,6 @@
     "print": "Print",
     "try_again":"Try Again"
   },
-
 
   "provide_information": "Provide Information",
   "required": "Required",

@@ -113,7 +113,7 @@ let BallotResealedPage = class BallotResealedPage {
         });
     }
     nextbtn() {
-        this.route.navigate(['/ballot-ready-two']);
+        this.route.navigate(['/ballot-fingerprint']);
     }
 };
 BallotResealedPage.ctorParameters = () => [
@@ -157,7 +157,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\n  <div class=\"list-question\">\n    <p>{{results.test_results}}</p>\n  </div>\n  <div class=\"cen-div-text\">\n  \n    <p>{{results.ydn}}</p>\n  \n  \n  </div>\n  <div class=\"Required-div\" style=\"text-align: center\">\n    <!-- <p style=\"text-align: start;\">{{results.dbf}}</p> -->\n   \n  </div>\n</ion-content>\n<ion-footer >\n  <ion-toolbar>\n    <ion-row>\n      <ion-col size=\"6\" class=\"back-btn\">\n        <!-- <ion-button color=\"dark\" (click)=\"passbtn()\">\n          {{results.back}}\n          <ion-icon slot=\"start\" name=\"refresh-outline\"></ion-icon>\n        \n        </ion-button> -->\n      </ion-col>\n      <ion-col size=\"6\" class=\"next-btn\">\n        <ion-button color=\"dark\" (click)=\"nextbtn()\">\n          {{results.next}}\n          <ion-icon slot=\"end\" name=\"chevron-forward-outline\"></ion-icon>\n        </ion-button>\n      </ion-col>\n    </ion-row>\n  </ion-toolbar>\n</ion-footer>\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n  <div class=\"list-question\">\r\n    <p>{{results.test_results}}</p>\r\n  </div>\r\n  <div class=\"cen-div-text\">\r\n  \r\n    <p>{{results.ydn}}</p>\r\n  \r\n  \r\n  </div>\r\n  <div class=\"Required-div\" style=\"text-align: center\">\r\n    <!-- <p style=\"text-align: start;\">{{results.dbf}}</p> -->\r\n   \r\n  </div>\r\n</ion-content>\r\n<ion-footer >\r\n  <ion-toolbar>\r\n    <ion-row>\r\n      <ion-col size=\"6\" class=\"back-btn\">\r\n        <!-- <ion-button color=\"dark\" (click)=\"passbtn()\">\r\n          {{results.back}}\r\n          <ion-icon slot=\"start\" name=\"refresh-outline\"></ion-icon>\r\n        \r\n        </ion-button> -->\r\n      </ion-col>\r\n      <ion-col size=\"6\" class=\"next-btn\">\r\n        <ion-button color=\"dark\" (click)=\"nextbtn()\">\r\n          {{results.next}}\r\n          <ion-icon slot=\"end\" name=\"chevron-forward-outline\"></ion-icon>\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-toolbar>\r\n</ion-footer>\r\n");
 
 /***/ })
 

@@ -157,7 +157,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n  <div class=\"Required-div\">\r\n    <p>\r\n      {{results.text}}\r\n      <br />\r\n      <br />\r\n      {{results.text1}}\r\n      <br />\r\n      <br />\r\n      {{results.test_pr}}\r\n      <br>\r\n      <br>\r\n      {{results.text2}}\r\n      <br />\r\n    </p>\r\n  </div>\r\n  <p class=\"link\">{{results.link}}</p>\r\n</ion-content>\r\n<ion-footer class=\"ion-no-border\">\r\n  <ion-toolbar>\r\n    <ion-button color=\"dark\" (click)=\"tryBtn()\">\r\n      {{results.try_again}}\r\n      <ion-icon slot=\"start\" name=\"chevron-back-outline\"></ion-icon>\r\n    </ion-button>\r\n  </ion-toolbar>\r\n</ion-footer>\r\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n<div class=\"Required-div\">\r\n    <p>{{results.text}}<br/><br/>\r\n      {{results.text1}}<br/> <br/>\r\n      {{results.test_pr}}<br><br>\r\n      {{results.text2}} <br/></p>\r\n</div>\r\n<p class=\"link\">{{results.link}}</p>\r\n</ion-content>\r\n<ion-footer class=\"ion-no-border\">\r\n  <ion-toolbar>\r\n    <ion-button color=\"dark\" (click)=\"tryBtn()\">\r\n      {{results.try_again}}\r\n      <ion-icon slot=\"start\" name=\"chevron-back-outline\"></ion-icon>\r\n    </ion-button>\r\n  </ion-toolbar>\r\n</ion-footer>\r\n");
 
 /***/ })
 

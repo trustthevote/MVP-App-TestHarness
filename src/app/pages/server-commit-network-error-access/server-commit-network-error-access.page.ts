@@ -15,6 +15,7 @@ export class ServerCommitNetworkErrorAccessPage implements OnInit {
       this.results = json[0]['server_commit_network_error_access_page'];
     });
   }
+  
   tryBtn() {
     this.route.navigate(['/access-code']);
   }

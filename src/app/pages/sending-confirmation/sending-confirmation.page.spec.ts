@@ -9,7 +9,7 @@ describe('SendingConfirmationPage', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ SendingConfirmationPage ],
+      declarations: [SendingConfirmationPage],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 

@@ -144,7 +144,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("\n\n<ion-content>\n<div class=\"upr-text\">\n  Sorry to hear that. Your \n  ballot will be discarded. \n</div>\n<br><br>\n<div class=\"upr-text\">\n  Would you like to mark a \nnew ballot or request a \nballot be mailed to you?\n\n</div>\n<br><br><br>\n<ion-button color=\"dark\" (click)=\"passbtn()\">\n  Mark a new ballot <ion-icon slot=\"end\" name=\"reader-outline\"></ion-icon>\n  </ion-button><br><br><br>\n  <ion-button color=\"dark\" (click)=\"passbtn()\">\n    request new ballot\n    <ion-icon slot=\"end\" name=\"mail-outline\"></ion-icon>\n    </ion-button>\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n\n  </ion-toolbar>\n</ion-footer>\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("\r\n\r\n<ion-content>\r\n<div class=\"upr-text\">\r\n  Sorry to hear that. Your \r\n  ballot will be discarded. \r\n</div>\r\n<br><br>\r\n<div class=\"upr-text\">\r\n  Would you like to mark a \r\nnew ballot or request a \r\nballot be mailed to you?\r\n\r\n</div>\r\n<br><br><br>\r\n<ion-button color=\"dark\" (click)=\"passbtn()\">\r\n  Mark a new ballot <ion-icon slot=\"end\" name=\"reader-outline\"></ion-icon>\r\n  </ion-button><br><br><br>\r\n  <ion-button color=\"dark\" (click)=\"passbtn()\">\r\n    request new ballot\r\n    <ion-icon slot=\"end\" name=\"mail-outline\"></ion-icon>\r\n    </ion-button>\r\n</ion-content>\r\n<ion-footer>\r\n  <ion-toolbar>\r\n\r\n  </ion-toolbar>\r\n</ion-footer>\r\n");
 
 /***/ })
 

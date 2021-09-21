@@ -46,7 +46,7 @@ export class BallotFingerprintPage implements OnInit {
       this.route.navigate(['/ballot-access-error13']);
     }
     else{
-      this.route.navigate(['/test-results']);
+      this.route.navigate(['/sending-confirmation']);
     }
   }
   copybtn() {
@@ -61,7 +61,7 @@ export class BallotFingerprintPage implements OnInit {
       this.route.navigate(['/server-commit-network-error-access']);
     }
     else{
-    this.route.navigate(['/access-code-error']);
+    this.route.navigate(['/test-results']);
   }
   }
 }

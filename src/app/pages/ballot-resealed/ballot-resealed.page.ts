@@ -16,7 +16,7 @@ export class BallotResealedPage implements OnInit {
     });
   }
   nextbtn() {
-    this.route.navigate(['/ballot-ready-two']);
+    this.route.navigate(['/ballot-fingerprint']);
   }
 
  
