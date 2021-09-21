@@ -51,7 +51,7 @@
   "ballot_fingerp": {
     "ybr": "Your Ballot Has Been Sealed and Is Ready To Cast",
     "ydn": "You can perform a test to verify it will be cast correctly to the digital ballot box.",
-    "bfp": "Ballot Fingerprint:",
+    "bfp": "Ballot Checking Code:",
     "zyx098": "zyx098-wvu765-tsr432-1234",
     "tv_fp": "Or, you can cast your ballot digitally now.",
     "send": "Cast Ballot Now",
