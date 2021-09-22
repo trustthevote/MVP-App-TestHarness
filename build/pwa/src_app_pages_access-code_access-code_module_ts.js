@@ -224,13 +224,14 @@ let AccessCodePage = class AccessCodePage {
                     //   console.log("res", res);
                     // });
                     if (this.data == '00002') {
-                        this.route.navigate(['/ballot-prep-error']);
+                        // this.route.navigate(['/ballot-prep-error']);
+                        this.route.navigate(['/calloutoforder-access00002-error']);
                     }
                     else if (this.data == '00003') {
-                        this.route.navigate(['/expired-code']);
+                        this.route.navigate(['/code_expired_access00003_error']);
                     }
                     else if (this.data == '00004') {
-                        this.route.navigate(['/failed-authorization']);
+                        this.route.navigate(['/code_invalid_access00004_error']);
                     }
                     else if (this.data == '00005') {
                         this.route.navigate(['/check-network-access00005-error']);

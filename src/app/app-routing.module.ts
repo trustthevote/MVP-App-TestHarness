@@ -36,8 +36,8 @@ const routes: Routes = [
     loadChildren: () => import('./pages/ballot-fingerprint/ballot-fingerprint.module').then( m => m.BallotFingerprintPageModule)
   },
   {
-    path: 'failed-authorization',
-    loadChildren: () => import('./pages/failed-authorization/failed-authorization.module').then( m => m.FailedAuthorizationPageModule)
+    path: 'code_invalid_access00004_error',
+    loadChildren: () => import('./pages/code_invalid_access00004_error/failed-authorization.module').then( m => m.FailedAuthorizationPageModule)
   },
   {
     path: 'copy-confirmed',
@@ -56,8 +56,8 @@ const routes: Routes = [
     loadChildren: () => import('./pages/new-ballot-fingerprint/new-ballot-fingerprint.module').then( m => m.NewBallotFingerprintPageModule)
   },
   {
-    path: 'check-network',
-    loadChildren: () => import('./pages/check-network/check-network.module').then( m => m.CheckNetworkPageModule)
+    path: 'check_network_request00001_error',
+    loadChildren: () => import('./pages/check_network_request00001_error/check-network.module').then( m => m.CheckNetworkPageModule)
   },
   {
     path: 'check',
@@ -92,8 +92,8 @@ const routes: Routes = [
     loadChildren: () => import('./pages/ballot-test-failed/ballot-test-failed.module').then( m => m.BallotTestFailedPageModule)
   },
   {
-    path: 'expired-code',
-    loadChildren: () => import('./pages/expired-code/expired-code.module').then( m => m.ExpiredCodePageModule)
+    path: 'code_expired_access00003_error',
+    loadChildren: () => import('./pages/code_expired_access00003_error/expired-code.module').then( m => m.ExpiredCodePageModule)
   },
   {
     path: 'howditgo',
@@ -108,12 +108,12 @@ const routes: Routes = [
     loadChildren: () => import('./pages/test/test.module').then( m => m.TestPageModule)
   },
   {
-    path: 'network-error-access-code',
-    loadChildren: () => import('./pages/network-error-access-code/network-error-access-code.module').then( m => m.NetworkErrorAccessCodePageModule)
+    path: 'check_network_construct00007_error',
+    loadChildren: () => import('./pages/check_network_construct00007_error/network-error-access-code.module').then( m => m.NetworkErrorAccessCodePageModule)
   },
   {
-    path: 'ballot-test-error',
-    loadChildren: () => import('./pages/ballot-test-error/ballot-test-error.module').then( m => m.BallotTestErrorPageModule)
+    path: 'calloutoforder_construct00006_error',
+    loadChildren: () => import('./pages/calloutoforder_construct00006_error/ballot-test-error.module').then( m => m.BallotTestErrorPageModule)
   },
 {
   path: 'ballot-prep-error',
@@ -124,8 +124,8 @@ const routes: Routes = [
   loadChildren: () => import('./pages/before-you-finish/before-you-finish.module').then( m => m.BeforeYouFinishPageModule)
 },
   {
-    path: 'ballot-oops-screen',
-    loadChildren: () => import('./pages/ballot-oops-screen/ballot-oops-screen.module').then( m => m.BallotOopsScreenPageModule)
+    path: 'corrupt_cv_construct00008_error',
+    loadChildren: () => import('./pages/corrupt_cv_construct00008_error/ballot-oops-screen.module').then( m => m.BallotOopsScreenPageModule)
   },
   {
     path: 'check-network-oooo-error',
@@ -154,28 +154,28 @@ const routes: Routes = [
  
   },
   {
-    path: 'network-error-access-ten',
-    loadChildren: () => import('./pages/network-error-access-ten/network-error-access-ten.module').then( m => m.NetworkErrorAccessTenPageModule)
+    path: 'check_network_spoil00010_error',
+    loadChildren: () => import('./pages/check_network_spoil00010_error/network-error-access-ten.module').then( m => m.NetworkErrorAccessTenPageModule)
   },
   {
-    path: 'ballot-test-fail-err',
-    loadChildren: () => import('./pages/ballot-test-fail-err/ballot-test-fail-err.module').then( m => m.BallotTestFailErrPageModule)
+    path: 'calloutoforder_spoil00009_error',
+    loadChildren: () => import('./pages/calloutoforder_spoil00009_error/ballot-test-fail-err.module').then( m => m.BallotTestFailErrPageModule)
   },
   {
-    path: 'server-commit-network-error-access',
-    loadChildren: () => import('./pages/server-commit-network-error-access/server-commit-network-error-access.module').then( m => m.ServerCommitNetworkErrorAccessPageModule)
+    path: 'check_server_spoil00011_error',
+    loadChildren: () => import('./pages/check_server_spoil00011_error/server-commit-network-error-access.module').then( m => m.ServerCommitNetworkErrorAccessPageModule)
   },
   {
-    path: 'network-error-access12',
-    loadChildren: () => import('./pages/network-error-access12/network-error-access12.module').then( m => m.NetworkErrorAccess12PageModule)
+    path: 'check_network_submit00012_error',
+    loadChildren: () => import('./pages/check_network_submit00012_error/network-error-access12.module').then( m => m.NetworkErrorAccess12PageModule)
   },
   {
-    path: 'ballot-access-error13',
-    loadChildren: () => import('./pages/ballot-access-error13/ballot-access-error13.module').then( m => m.BallotAccessError13PageModule)
+    path: 'calloutoforder_submit00013_error',
+    loadChildren: () => import('./pages/calloutoforder_submit00013_error/ballot-access-error13.module').then( m => m.BallotAccessError13PageModule)
   },
   {
-    path: 'access-code-error',
-    loadChildren: () => import('./pages/access-code-error/access-code-error.module').then( m => m.AccessCodeErrorPageModule)
+    path: 'voter_record_notfound00000_error',
+    loadChildren: () => import('./pages/voter_record_notfound00000_error/access-code-error.module').then( m => m.AccessCodeErrorPageModule)
   },
   {
     path: 'ballot-test-failed-test',
@@ -189,6 +189,19 @@ const routes: Routes = [
     path: 'ballot-ready-two',
     loadChildren: () => import('./pages/ballot-ready-two/ballot-ready-two.module').then( m => m.BallotReadyTwoPageModule)
   },
+  {
+    path: 'calloutoforder-access00002-error',
+    loadChildren: () => import('./pages/calloutoforder-access00002-error/calloutoforder-access00002-error.module').then( m => m.CalloutoforderAccess00002ErrorPageModule)
+  },
+  {
+    path: 'ballot-test-failed-test',
+    loadChildren: () => import('./pages/ballot-test-failed-test/ballot-test-failed-test.module').then( m => m.BallotTestFailedTestPageModule)
+  },
+
+
+ 
+  
+
 
 ];
 

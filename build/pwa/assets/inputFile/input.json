@@ -103,6 +103,12 @@
     "auth_p_1": " Sorry, your access code did not work. Please try again, or click the link below for help. ",
     "auth_p_2": "You can also click the print button below to proceed with a physical return instead."
   },
+  "ballot_test_faild_test_page":{
+    "first_para":"Sorry to hear that. Your  ballot will be discarded. ",
+    "sec_para":"  Would you like to mark a new ballot or request a ballot be mailed to you?",
+    "fist_btn":"Mark a new ballot",
+    "sec_btn":" request new ballot"
+  },
 
   "sending_page": {
     "sending": "Sending....",
@@ -184,6 +190,14 @@
   },
 
   "access_code_error_page":{
+    "first_para": " Something went wrong,and we can't send the access code required to finish your digital ballot.",
+    "sec_para": " You can report a problem, and you have the option of using the Print button below to print your ballot and affidavit for postal return.",
+    "rbtn": "report a problem",
+    "print": "Print"
+  },
+
+  
+  "calloutoforder_access00002_error":{
     "first_para": " Something went wrong,and we can't send the access code required to finish your digital ballot.",
     "sec_para": " You can report a problem, and you have the option of using the Print button below to print your ballot and affidavit for postal return.",
     "rbtn": "report a problem",

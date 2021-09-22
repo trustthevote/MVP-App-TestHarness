@@ -30,11 +30,11 @@ nextbtn() {
     });
   }
   if (this.getCode == '00006') {
-    this.route.navigate(['/ballot-test-error']);
+    this.route.navigate(['/calloutoforder_construct00006_error']);
   } else if (this.getCode == '00007') {
-    this.route.navigate(['/network-error-access-code']);
+    this.route.navigate(['/check_network_construct00007_error']);
   } else if (this.getCode == '00008') {
-    this.route.navigate(['/ballot-oops-screen']);
+    this.route.navigate(['/corrupt_cv_construct00008_error']);
   } else {
     this.route.navigate(['/ballot-fingerprint', {
       code: this.getCode

@@ -92,22 +92,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "BallotTestFailedTestPage": () => (/* binding */ BallotTestFailedTestPage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 64762);
 /* harmony import */ var _raw_loader_ballot_test_failed_test_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./ballot-test-failed-test.page.html */ 28879);
 /* harmony import */ var _ballot_test_failed_test_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ballot-test-failed-test.page.scss */ 48634);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 39895);
+
 
 
 
 
 let BallotTestFailedTestPage = class BallotTestFailedTestPage {
-    constructor() { }
+    constructor(route) {
+        this.route = route;
+        this.results = [];
+    }
     ngOnInit() {
+        fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
+            this.results = json[0]['ballot_test_faild_test_page'];
+        });
+    }
+    newballot() {
+        this.route.navigate(['/tobecontinue']);
+    }
+    requestballot() {
+        this.route.navigate(['/tobecontinue']);
     }
 };
-BallotTestFailedTestPage.ctorParameters = () => [];
-BallotTestFailedTestPage = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.Component)({
+BallotTestFailedTestPage.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__.Router }
+];
+BallotTestFailedTestPage = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.Component)({
         selector: 'app-ballot-test-failed-test',
         template: _raw_loader_ballot_test_failed_test_page_html__WEBPACK_IMPORTED_MODULE_0__.default,
         styles: [_ballot_test_failed_test_page_scss__WEBPACK_IMPORTED_MODULE_1__.default]
@@ -144,7 +160,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("\r\n\r\n<ion-content>\r\n<div class=\"upr-text\">\r\n  Sorry to hear that. Your \r\n  ballot will be discarded. \r\n</div>\r\n<br><br>\r\n<div class=\"upr-text\">\r\n  Would you like to mark a \r\nnew ballot or request a \r\nballot be mailed to you?\r\n\r\n</div>\r\n<br><br><br>\r\n<ion-button color=\"dark\" (click)=\"passbtn()\">\r\n  Mark a new ballot <ion-icon slot=\"end\" name=\"reader-outline\"></ion-icon>\r\n  </ion-button><br><br><br>\r\n  <ion-button color=\"dark\" (click)=\"passbtn()\">\r\n    request new ballot\r\n    <ion-icon slot=\"end\" name=\"mail-outline\"></ion-icon>\r\n    </ion-button>\r\n</ion-content>\r\n<ion-footer>\r\n  <ion-toolbar>\r\n\r\n  </ion-toolbar>\r\n</ion-footer>\r\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\n  <div class=\"upr-text\">{{results.first_para}}</div>\n  <br /><br />\n  <div class=\"upr-text\">{{results.sec_para}}</div>\n  <br /><br /><br />\n  <ion-button color=\"dark\" (click)=\"newballot()\">\n    {{results.fist_btn}}\n    <ion-icon slot=\"end\" name=\"reader-outline\"></ion-icon> </ion-button\n  ><br /><br /><br />\n  <ion-button color=\"dark\" (click)=\"requestballot()\">\n    {{results.sec_btn}}\n    <ion-icon slot=\"end\" name=\"mail-outline\"></ion-icon>\n  </ion-button>\n</ion-content>\n<ion-footer>\n  <ion-toolbar> </ion-toolbar>\n</ion-footer>\n");
 
 /***/ })
 

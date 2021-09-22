@@ -138,13 +138,15 @@ let BallotFingerprintPage = class BallotFingerprintPage {
             console.log("res", res);
         });
         if (this.getCode == '00012') {
-            this.route.navigate(['/network-error-access12']);
+            this.route.navigate(['/check_network_submit00012_error']);
         }
         else if (this.getCode == '00013') {
-            this.route.navigate(['/ballot-access-error13']);
+            this.route.navigate(['/calloutoforder_submit00013_error']);
         }
         else {
-            this.route.navigate(['/sending-confirmation']);
+            this.route.navigate(['/sending-confirmation', {
+                    code: this.getCode
+                }]);
         }
     }
     copybtn() {
@@ -152,16 +154,18 @@ let BallotFingerprintPage = class BallotFingerprintPage {
             console.log("res", res);
         });
         if (this.getCode == '00009') {
-            this.route.navigate(['/ballot-test-fail-err']);
+            this.route.navigate(['/calloutoforder_spoil00009_error']);
         }
         else if (this.getCode == '00010') {
-            this.route.navigate(['/network-error-access-ten']);
+            this.route.navigate(['/check_network_spoil00010_error']);
         }
         else if (this.getCode == '00011') {
-            this.route.navigate(['/server-commit-network-error-access']);
+            this.route.navigate(['/check_server_spoil00011_error']);
         }
         else {
-            this.route.navigate(['/test-results']);
+            this.route.navigate(['/test-results', {
+                    code: this.getCode
+                }]);
         }
     }
 };

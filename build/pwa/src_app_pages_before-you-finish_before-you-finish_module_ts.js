@@ -124,13 +124,13 @@ let BeforeYouFinishPage = class BeforeYouFinishPage {
             });
         }
         if (this.getCode == '00006') {
-            this.route.navigate(['/ballot-test-error']);
+            this.route.navigate(['/calloutoforder_construct00006_error']);
         }
         else if (this.getCode == '00007') {
-            this.route.navigate(['/network-error-access-code']);
+            this.route.navigate(['/check_network_construct00007_error']);
         }
         else if (this.getCode == '00008') {
-            this.route.navigate(['/ballot-oops-screen']);
+            this.route.navigate(['/corrupt_cv_construct00008_error']);
         }
         else {
             this.route.navigate(['/ballot-fingerprint', {
@@ -182,7 +182,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content padding>\r\n  <div class=\"list-question\">\r\n    <p>{{results.beforeyoufinish}}</p>\r\n  </div>\r\n  <div style=\"text-align: center;padding-top: 25px;\">\r\n    <div class=\"para-center\">{{results.para}}</div>\r\n    <div class=\"mid\">{{results.para_center}}\"{{results.btc}}\" {{results.bck}}</div>\r\n    <div class=\"mid\"> {{results.link}}</div>\r\n  \r\n  </div>\r\n</ion-content>\r\n<ion-footer>\r\n  <ion-toolbar style=\"text-align: end;\">\r\n    <ion-row>\r\n      <ion-col size=\"6\" class=\"back-btn\" style=\"text-align: start\">\r\n        <!-- <ion-button color=\"dark\" (click)=\"backbtn()\">\r\n          {{results.back}}\r\n          <ion-icon slot=\"start\" name=\"chevron-back-outline\"></ion-icon>\r\n        </ion-button> -->\r\n      </ion-col>\r\n      <ion-col size=\"6\" class=\"next-btn\">\r\n        <ion-button color=\"dark\" (click)=\"nextbtn()\">\r\n          {{results.next}}\r\n          <ion-icon slot=\"end\" name=\"chevron-forward-outline\"></ion-icon>\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n\r\n  </ion-toolbar>\r\n</ion-footer>");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content padding>\n  <div class=\"list-question\">\n    <p>{{results.beforeyoufinish}}</p>\n  </div>\n  <div style=\"text-align: center;padding-top: 25px;\">\n    <div class=\"para-center\">{{results.para}}</div>\n    <div class=\"mid\">{{results.para_center}}\"{{results.btc}}\" {{results.bck}}</div>\n    <div class=\"mid\"> {{results.link}}</div>\n  \n  </div>\n</ion-content>\n<ion-footer>\n  <ion-toolbar style=\"text-align: end;\">\n    <ion-row>\n      <ion-col size=\"6\" class=\"back-btn\" style=\"text-align: start\">\n        <!-- <ion-button color=\"dark\" (click)=\"backbtn()\">\n          {{results.back}}\n          <ion-icon slot=\"start\" name=\"chevron-back-outline\"></ion-icon>\n        </ion-button> -->\n      </ion-col>\n      <ion-col size=\"6\" class=\"next-btn\">\n        <ion-button color=\"dark\" (click)=\"nextbtn()\">\n          {{results.next}}\n          <ion-icon slot=\"end\" name=\"chevron-forward-outline\"></ion-icon>\n        </ion-button>\n      </ion-col>\n    </ion-row>\n\n  </ion-toolbar>\n</ion-footer>");
 
 /***/ })
 
