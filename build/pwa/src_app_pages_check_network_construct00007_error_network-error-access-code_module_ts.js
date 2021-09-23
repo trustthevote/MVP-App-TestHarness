@@ -109,7 +109,7 @@ let NetworkErrorAccessCodePage = class NetworkErrorAccessCodePage {
     }
     ngOnInit() {
         fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-            this.results = json[0]['network_error_page'];
+            this.results = json[0]['check_network_construct00007_error'];
         });
     }
     confirm() {

@@ -11,7 +11,7 @@ export class FailedAuthorizationPage implements OnInit {
 
   ngOnInit() {
     fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-      this.results = json[0]['failed_auth'];
+      this.results = json[0]['code_invalid_access00004_error'];
     });
   }
   backbtn() {

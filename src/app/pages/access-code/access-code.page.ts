@@ -140,7 +140,9 @@ export class AccessCodePage implements OnInit {
         // this.avclientService.submitBallotCryptograms(this.data).catch(res => {
         //   console.log("res", res);
         // });
+        console.log(this.data);
         if (this.data == '00002') {
+          
           // this.route.navigate(['/ballot-prep-error']);
           this.route.navigate(['/calloutoforder-access00002-error']);
         } else if (this.data == '00003') {

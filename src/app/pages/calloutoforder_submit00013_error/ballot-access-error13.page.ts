@@ -13,7 +13,7 @@ export class BallotAccessError13Page implements OnInit {
   ngOnInit() {
     fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
 
-      this.results = json[0]['ballot_access_err13_page'];
+      this.results = json[0]['calloutoforder_submit00013_error'];
 
     });
   }

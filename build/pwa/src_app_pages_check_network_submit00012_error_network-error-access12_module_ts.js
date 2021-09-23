@@ -109,7 +109,7 @@ let NetworkErrorAccess12Page = class NetworkErrorAccess12Page {
     }
     ngOnInit() {
         fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-            this.results = json[0]['network_error_access_12_page'];
+            this.results = json[0]['check_network_submit00012_error'];
         });
     }
     confirm() {

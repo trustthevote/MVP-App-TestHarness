@@ -13,7 +13,7 @@ export class BallotTestFailErrPage implements OnInit {
   ngOnInit() {
     fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
      
-      this.results = json[0]['ballot_test_fail_err_page'];
+      this.results = json[0]['calloutoforder_spoil00009_error'];
       
     });
 }

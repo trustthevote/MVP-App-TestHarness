@@ -13,7 +13,7 @@ export class BallotOopsScreenPage implements OnInit {
   ngOnInit() {
     fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
      
-      this.results = json[0]['ballot_oops_screen_page'];
+      this.results = json[0]['corrupt_cv_construct00008_error'];
       
     });
 }

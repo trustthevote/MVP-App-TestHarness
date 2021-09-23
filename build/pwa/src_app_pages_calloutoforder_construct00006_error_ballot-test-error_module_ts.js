@@ -109,7 +109,7 @@ let BallotTestErrorPage = class BallotTestErrorPage {
     }
     ngOnInit() {
         fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-            this.results = json[0]['ballot_test_error_page'];
+            this.results = json[0]['calloutoforder_construct00006_error'];
         });
     }
     rpbtn() {

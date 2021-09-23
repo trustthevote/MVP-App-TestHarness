@@ -13,7 +13,7 @@ export class ExpiredCodePage implements OnInit {
   ngOnInit() {
     fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
 
-      this.results = json[0]['ExpiredCodePage'];
+      this.results = json[0]['code_expired_access00003_error'];
 
     });
   }

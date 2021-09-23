@@ -8,7 +8,6 @@
       {{results.zyx098}}
     </ion-row>
     <p>{{results.ydn}}</p>
-   
     <p>{{results.tv2_fb}}"{{results.str}}"{{results.tv2_fb1}}</p>
     <p>{{results.tv3}}</p>
   </div>
@@ -24,18 +23,18 @@
     </div>
     <div class="div-text-mid" (click)="failbtn()">
       <p>{{results.failed}}</p>
-      <ion-icon name="close-circle-outline" ></ion-icon>
+      <ion-icon name="close-circle-outline"></ion-icon>
     </div>
   </div>
 </ion-content>
-<ion-footer >
+<ion-footer>
   <ion-toolbar>
     <ion-row>
       <ion-col size="6" class="back-btn">
         <ion-button color="dark" (click)="passbtn()">
           {{results.back}}
-          <ion-icon slot="start" name="refresh-outline"></ion-icon>
-        
+          <!-- <ion-icon slot="start" name="refresh-outline"></ion-icon> -->
+          <ion-icon slot="start" name="chevron-back-outline"></ion-icon>
         </ion-button>
       </ion-col>
       <ion-col size="6" class="next-btn">

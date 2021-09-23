@@ -109,11 +109,17 @@ let ServerCommitNetworkErrorAccessPage = class ServerCommitNetworkErrorAccessPag
     }
     ngOnInit() {
         fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-            this.results = json[0]['server_commit_network_error_access_page'];
+            this.results = json[0]['check_server_spoil00011_error'];
         });
     }
     tryBtn() {
         this.route.navigate(['/access-code']);
+    }
+    nextprint() {
+        this.route.navigate(['/print-return']);
+    }
+    reportbtn() {
+        this.route.navigate(['/tobecontinue']);
     }
 };
 ServerCommitNetworkErrorAccessPage.ctorParameters = () => [
@@ -142,7 +148,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (".Required-div {\n  font-size: 24px;\n  font-weight: 600;\n  padding: 20px;\n}\n\nion-toolbar {\n  padding-left: 20px;\n  --padding-bottom: 20px;\n}\n\n.link {\n  font-size: 20px;\n  font-weight: 600;\n  padding: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNlcnZlci1jb21taXQtbmV0d29yay1lcnJvci1hY2Nlc3MucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksZUFBQTtFQUNBLGdCQUFBO0VBQ0EsYUFBQTtBQUNKOztBQUNFO0VBQ0Usa0JBQUE7RUFDQSxzQkFBQTtBQUVKOztBQUFFO0VBQ0UsZUFBQTtFQUNBLGdCQUFBO0VBQ0EsYUFBQTtBQUdKIiwiZmlsZSI6InNlcnZlci1jb21taXQtbmV0d29yay1lcnJvci1hY2Nlc3MucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLlJlcXVpcmVkLWRpdiB7XHJcbiAgICBmb250LXNpemU6IDI0cHg7XHJcbiAgICBmb250LXdlaWdodDogNjAwO1xyXG4gICAgcGFkZGluZzogMjBweDtcclxuICB9XHJcbiAgaW9uLXRvb2xiYXIge1xyXG4gICAgcGFkZGluZy1sZWZ0OiAyMHB4O1xyXG4gICAgLS1wYWRkaW5nLWJvdHRvbTogMjBweDtcclxuICB9XHJcbiAgLmxpbmsge1xyXG4gICAgZm9udC1zaXplOiAyMHB4O1xyXG4gICAgZm9udC13ZWlnaHQ6IDYwMDtcclxuICAgIHBhZGRpbmc6IDIwcHg7XHJcbiAgfVxyXG4gICJdfQ== */");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (".Required-div {\n  font-size: 24px;\n  font-weight: 600;\n  padding: 40px 20px 20px 20px;\n}\n\nion-toolbar {\n  padding-left: 15px;\n  --padding-bottom: 20px;\n}\n\n.link {\n  font-size: 20px;\n  font-weight: 600;\n  padding: 20px;\n  margin: 0;\n}\n\np {\n  margin: 0;\n}\n\n.next-btn {\n  text-align: end;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNlcnZlci1jb21taXQtbmV0d29yay1lcnJvci1hY2Nlc3MucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksZUFBQTtFQUNBLGdCQUFBO0VBQ0EsNEJBQUE7QUFDSjs7QUFDRTtFQUNFLGtCQUFBO0VBQ0Esc0JBQUE7QUFFSjs7QUFBRTtFQUNFLGVBQUE7RUFDQSxnQkFBQTtFQUNBLGFBQUE7RUFDQSxTQUFBO0FBR0o7O0FBREU7RUFDRSxTQUFBO0FBSUo7O0FBRkU7RUFDRSxlQUFBO0FBS0oiLCJmaWxlIjoic2VydmVyLWNvbW1pdC1uZXR3b3JrLWVycm9yLWFjY2Vzcy5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuUmVxdWlyZWQtZGl2IHtcclxuICAgIGZvbnQtc2l6ZTogMjRweDtcclxuICAgIGZvbnQtd2VpZ2h0OiA2MDA7XHJcbiAgICBwYWRkaW5nOiA0MHB4IDIwcHggMjBweCAyMHB4O1xyXG4gIH1cclxuICBpb24tdG9vbGJhciB7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDE1cHg7XHJcbiAgICAtLXBhZGRpbmctYm90dG9tOiAyMHB4O1xyXG4gIH1cclxuICAubGluayB7XHJcbiAgICBmb250LXNpemU6IDIwcHg7XHJcbiAgICBmb250LXdlaWdodDogNjAwO1xyXG4gICAgcGFkZGluZzogMjBweDtcclxuICAgIG1hcmdpbjogMDtcclxuICB9XHJcbiAgcHtcclxuICAgIG1hcmdpbjogMDtcclxuICB9XHJcbiAgLm5leHQtYnRue1xyXG4gICAgdGV4dC1hbGlnbjogZW5kO1xyXG4gIH1cclxuXHJcbiAgXHJcbiAgIl19 */");
 
 /***/ }),
 
@@ -157,7 +163,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n<div class=\"Required-div\">\r\n    <p>{{results.text}}<br/><br/>\r\n      {{results.text1}}<br/> <br/>\r\n      {{results.test_pr}}<br><br>\r\n      {{results.text2}} <br/></p>\r\n</div>\r\n<p class=\"link\">{{results.link}}</p>\r\n</ion-content>\r\n<ion-footer class=\"ion-no-border\">\r\n  <ion-toolbar>\r\n    <ion-button color=\"dark\" (click)=\"tryBtn()\">\r\n      {{results.try_again}}\r\n      <ion-icon slot=\"start\" name=\"chevron-back-outline\"></ion-icon>\r\n    </ion-button>\r\n  </ion-toolbar>\r\n</ion-footer>\r\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n<div class=\"Required-div\">\r\n    <p>{{results.text}}<br/><br/>\r\n      {{results.text1}}<br/> <br/>\r\n      {{results.test_pr}}<br><br>\r\n      {{results.text2}} <br/></p>\r\n</div>\r\n<!-- <p class=\"link\">{{results.link}}</p> -->\r\n<ion-button style=\"padding-left: 20px;\" color=\"dark\" (click)=\"reportbtn()\">\r\n  {{results.report_prob}}\r\n  <ion-icon slot=\"end\" name=\"help-outline\"></ion-icon>\r\n</ion-button>\r\n</ion-content>\r\n\r\n<ion-footer>\r\n  <ion-toolbar>\r\n    <ion-row>\r\n      <ion-col size=\"6\" class=\"back-btn\" style=\"text-align: start\">\r\n        <ion-button color=\"dark\" (click)=\"tryBtn()\">\r\n          {{results.try_again}}\r\n          <ion-icon slot=\"start\" name=\"chevron-back-outline\"></ion-icon>\r\n        </ion-button>\r\n      </ion-col>\r\n      <ion-col size=\"6\" class=\"next-btn\"> \r\n        <ion-button color=\"dark\" (click)=\"nextprint()\">\r\n          {{results.print}}\r\n          <ion-icon slot=\"end\" name=\"print-outline\"></ion-icon>\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-toolbar>\r\n</ion-footer>\r\n");
 
 /***/ })
 

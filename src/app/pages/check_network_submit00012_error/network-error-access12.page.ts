@@ -8,13 +8,14 @@ import { Router } from '@angular/router';
 })
 export class NetworkErrorAccess12Page implements OnInit {
   results = [];
-  constructor(private route: Router) {}
+  constructor(private route: Router) { }
 
   ngOnInit() {
     fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-      this.results = json[0]['network_error_access_12_page'];
+      this.results = json[0]['check_network_submit00012_error'];
     });
   }
+  
   confirm() {
     this.route.navigate(['/access-code', {
       t: new Date().getTime()

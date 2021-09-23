@@ -12,7 +12,7 @@ export class NetworkErrorAccessTenPage implements OnInit {
 
   ngOnInit() {
     fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-      this.results = json[0]['network_error_access_ten_page'];
+      this.results = json[0]['check_network_spoil00010_error'];
     });
   }
   confirm() {

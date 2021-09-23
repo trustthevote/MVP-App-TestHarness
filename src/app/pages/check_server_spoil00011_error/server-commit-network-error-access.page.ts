@@ -12,11 +12,17 @@ export class ServerCommitNetworkErrorAccessPage implements OnInit {
 
   ngOnInit() {
     fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-      this.results = json[0]['server_commit_network_error_access_page'];
+      this.results = json[0]['check_server_spoil00011_error'];
     });
   }
   
   tryBtn() {
     this.route.navigate(['/access-code']);
+  }
+  nextprint(){
+    this.route.navigate(['/print-return']);
+  }
+  reportbtn(){
+    this.route.navigate(['/tobecontinue']);
   }
 }
