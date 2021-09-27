@@ -20,7 +20,7 @@ export class TestResultsPage implements OnInit {
     });
   }
   passbtn() {
-    this.route.navigate(['/ballot-resealed', {
+    this.route.navigate(['/ballot-fingerprint', {
       code: this.getCode
     }]);
   }

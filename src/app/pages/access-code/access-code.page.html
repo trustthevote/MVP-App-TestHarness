@@ -5,56 +5,11 @@
   <p>{{results.text_ac}}</p>
   <div class="opt-box-area" [formGroup]="otpForm" style="text-align: center">
     <div>
-      <input
-        class="nk-otp-box-first"
-        tabindex="1"
-        (keyup)="focusNext($event,1)"
-        maxlength="1"
-        formControlName="first"
-        type="tel"
-        placeholder=""
-        #first
-      />
-      <input
-        class="nk-otp-box"
-        tabindex="2"
-        (keyup)="focusNext($event,2)"
-        maxlength="1"
-        formControlName="second"
-        #second
-        type="tel"
-        placeholder=""
-      />
-      <input
-        class="nk-otp-box"
-        tabindex="3"
-        (keyup)="focusNext($event,3)"
-        maxlength="1"
-        formControlName="third"
-        #third
-        type="tel"
-        placeholder=""
-      />
-      <input
-        class="nk-otp-box"
-        tabindex="4"
-        (keyup)="focusNext($event,4)"
-        maxlength="1"
-        formControlName="four"
-        #four
-        type="tel"
-        placeholder=""
-      />
-      <input
-        class="nk-otp-box"
-        tabindex="5"
-        (keyup)="focusNext($event,5)"
-        maxlength="1"
-        formControlName="five"
-        #five
-        type="tel"
-        placeholder=""
-      />
+      <input  class="nk-otp-box-first" tabindex="1" (keyup)="focusNext($event,1)" maxlength="1" formControlName="first" pattern="[0-9]*" inputmode="numeric"  type="tel" (keypress)="numberOnlyValidation($event)" digitOnly #first/>
+      <input class="nk-otp-box" tabindex="2"   (keyup)="focusNext($event,2)"  maxlength="1" formControlName="second" #second pattern="[0-9]*"  inputmode="numeric" type="tel" (keypress)="numberOnlyValidation($event)" digitOnly/>
+      <input class="nk-otp-box" tabindex="3"   (keyup)="focusNext($event,3)" maxlength="1" formControlName="third" #third  pattern="[0-9]*" inputmode="numeric" type="tel" (keypress)="numberOnlyValidation($event)" digitOnly/>
+      <input class="nk-otp-box" tabindex="4"   (keyup)="focusNext($event,4)" maxlength="1" formControlName="four" #four  pattern="[0-9]*" inputmode="numeric" type="tel" (keypress)="numberOnlyValidation($event)" digitOnly/>
+      <input class="nk-otp-box" tabindex="5"   (keyup)="focusNext($event,5)" maxlength="1" formControlName="five" #five  pattern="[0-9]*" inputmode="numeric"  type="tel" (keypress)="numberOnlyValidation($event)" digitOnly/>
     </div>
   </div>
 </ion-content>
