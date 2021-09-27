@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
-
+import { RouterTestingModule } from '@angular/router/testing';
 import { BallotReadyPrepErrorPage } from './ballot-ready-prep-error.page';
 
 describe('BallotReadyPrepErrorPage', () => {
@@ -10,7 +10,8 @@ describe('BallotReadyPrepErrorPage', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ BallotReadyPrepErrorPage ],
-      imports: [IonicModule.forRoot()]
+	imports: [IonicModule.forRoot(),
+		 RouterTestingModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(BallotReadyPrepErrorPage);

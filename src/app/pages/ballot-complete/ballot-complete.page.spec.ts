@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
-
+import { RouterTestingModule } from '@angular/router/testing';
 import { BallotCompletePage } from './ballot-complete.page';
 
 describe('BallotCompletePage', () => {
@@ -10,7 +10,8 @@ describe('BallotCompletePage', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ BallotCompletePage ],
-      imports: [IonicModule.forRoot()]
+	imports: [IonicModule.forRoot(),
+		 RouterTestingModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(BallotCompletePage);

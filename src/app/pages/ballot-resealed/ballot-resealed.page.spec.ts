@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
-
+import { RouterTestingModule } from '@angular/router/testing';
 import { BallotResealedPage } from './ballot-resealed.page';
 
 describe('BallotResealedPage', () => {
@@ -10,7 +10,8 @@ describe('BallotResealedPage', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ BallotResealedPage ],
-      imports: [IonicModule.forRoot()]
+	imports: [IonicModule.forRoot(),
+		 RouterTestingModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(BallotResealedPage);

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
-
+import { RouterTestingModule } from '@angular/router/testing';
 import { DigitalReturnNextStepsPage } from './digital-return-next-steps.page';
 
 describe('DigitalReturnNextStepsPage', () => {
@@ -10,7 +10,8 @@ describe('DigitalReturnNextStepsPage', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ DigitalReturnNextStepsPage ],
-      imports: [IonicModule.forRoot()]
+	imports: [IonicModule.forRoot(),
+		 RouterTestingModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(DigitalReturnNextStepsPage);

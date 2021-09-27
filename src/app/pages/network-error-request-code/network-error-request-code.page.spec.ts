@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
-
+import { RouterTestingModule } from '@angular/router/testing';
 import { NetworkErrorRequestCodePage } from './network-error-request-code.page';
 
 describe('NetworkErrorRequestCodePage', () => {
@@ -10,7 +10,8 @@ describe('NetworkErrorRequestCodePage', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ NetworkErrorRequestCodePage ],
-      imports: [IonicModule.forRoot()]
+	imports: [IonicModule.forRoot(),
+		 RouterTestingModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(NetworkErrorRequestCodePage);

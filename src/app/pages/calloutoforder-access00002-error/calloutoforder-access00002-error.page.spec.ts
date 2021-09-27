@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
-
+import { RouterTestingModule } from '@angular/router/testing';
 import { CalloutoforderAccess00002ErrorPage } from './calloutoforder-access00002-error.page';
 
 describe('CalloutoforderAccess00002ErrorPage', () => {
@@ -10,7 +10,8 @@ describe('CalloutoforderAccess00002ErrorPage', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ CalloutoforderAccess00002ErrorPage ],
-      imports: [IonicModule.forRoot()]
+	imports: [IonicModule.forRoot(),
+		 RouterTestingModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(CalloutoforderAccess00002ErrorPage);

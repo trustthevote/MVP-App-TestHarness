@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { IonicModule } from '@ionic/angular';
 import { RequestAccessCodePage } from './request-access-code.page';
 
@@ -9,7 +10,8 @@ describe('RequestAccessCodePage', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ RequestAccessCodePage ],
-      imports: [IonicModule.forRoot()]
+	imports: [IonicModule.forRoot(),
+		  RouterTestingModule]
     }).compileComponents();
     
     fixture = TestBed.createComponent(RequestAccessCodePage);

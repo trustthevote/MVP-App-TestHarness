@@ -24,7 +24,7 @@ ngOnInit() {
   });
 }
 Continuebtn() {
-  this.avclientService.assignServerUrl(environment.url);
+//  this.avclientService.assignServerUrl(environment.url);
   if (this.userObject.lastname != undefined) {
     let opaqueVoterId = this.userObject.lastname
     if (opaqueVoterId == 'OOOOO' || opaqueVoterId == 'T0000') {

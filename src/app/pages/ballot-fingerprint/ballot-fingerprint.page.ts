@@ -37,7 +37,7 @@ export class BallotFingerprintPage implements OnInit {
     });
   }
  sendbtn() {
-    this.avclientService.submitBallotCryptograms(this.getCode).catch(res => {
+    this.avclientService.submitBallotCryptograms().catch(res => {
       console.log("res", res);
     });
    if (this.getCode == '00012') {
@@ -52,7 +52,7 @@ export class BallotFingerprintPage implements OnInit {
     }
   }
   copybtn() {
-    this.avclientService.spoilBallotCryptograms(this.getCode).catch(res => {
+    this.avclientService.spoilBallotCryptograms().catch(res => {
       console.log("res", res);
     });
     if (this.getCode == '00009') {

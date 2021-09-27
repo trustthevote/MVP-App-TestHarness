@@ -150,7 +150,7 @@ let BallotFingerprintPage = class BallotFingerprintPage {
         }
     }
     copybtn() {
-        this.avclientService.spoilBallotCryptograms(this.getCode).catch(res => {
+        this.avclientService.spoilBallotCryptograms().catch(res => {
             console.log("res", res);
         });
         if (this.getCode == '00009') {
