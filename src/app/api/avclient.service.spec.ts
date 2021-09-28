@@ -44,33 +44,33 @@ describe('AvclientService', () => {
     });
 
     describe('validateAccessCode', function() {
-	it('throws CallOutOfOrder if OTP code is 00002', function() {
+	it('throws CallOutOfOrderError if OTP code is 00002', function() {
 	    let code = '00002';
-	    return service.validateAccessCode(code, '').catch(e => {
+	    return service.validateAccessCode(code).catch(e => {
 		expect(e.message).toEqual(StatusCode.CallOutOfOrderError);
 	    });
 	});
 	it('throws AccessCodeExpired if OTP code is 00003', function() {
 	    let code = '00003';
-	    return service.validateAccessCode(code, '').catch(e => {
+	    return service.validateAccessCode(code).catch(e => {
 		expect(e.message).toEqual(StatusCode.AccessCodeExpired);
 	    });
 	});
 	it('throws AccessCodeInvalid if OTP code is 00004', function() {
 	    let code = '00004';
-	    return service.validateAccessCode(code, '').catch(e => {
+	    return service.validateAccessCode(code).catch(e => {
 		expect(e.message).toEqual(StatusCode.AccessCodeInvalid);
 	    });
 	});
 	it('throws NetworkError if OTP code is 00005', function() {
 	    let code = '00005';
-	    return service.validateAccessCode(code, '').catch(e => {
+	    return service.validateAccessCode(code).catch(e => {
 		expect(e.message).toEqual(StatusCode.NetworkError);
 	    });
 	});
 	it('returns undefined otherwise', function() {
 	    let code = '12345';
-	    return service.validateAccessCode(code, '').then(r => {
+	    return service.validateAccessCode(code).then(r => {
 		expect(r).not.toBeDefined();
 		expect(service._cachedAccessCode).toEqual('12345');
 	    });
@@ -82,7 +82,7 @@ describe('AvclientService', () => {
 
 	it('throws CallOutOfOrderError if prior code was 00006', function() {
 	    let code = '00006';
-	    service.validateAccessCode(code, '');
+	    service.validateAccessCode(code);
 	    return service.constructBallotCryptograms(cvr).catch(e => {
 		expect(e.message).toEqual(StatusCode.CallOutOfOrderError);
 	    });
@@ -90,7 +90,7 @@ describe('AvclientService', () => {
 
 	it('throws NetworkError if prior code was 00007', function() {
 	    let code = '00007';
-	    service.validateAccessCode(code, '');
+	    service.validateAccessCode(code);
 	    return service.constructBallotCryptograms(cvr).catch(e => {
 		expect(e.message).toEqual(StatusCode.NetworkError);
 	    });
@@ -98,7 +98,7 @@ describe('AvclientService', () => {
 
 	it('throws CorruptCVRError if prior code was 00008', function() {
 	    let code = '00008';
-	    service.validateAccessCode(code, '');
+	    service.validateAccessCode(code);
 	    return service.constructBallotCryptograms(cvr).catch(e => {
 		expect(e.message).toEqual(StatusCode.CorruptCVRError);
 	    });
@@ -106,7 +106,7 @@ describe('AvclientService', () => {
 
 	it('returns a fingerprint otherwise', function() {
 	    let code = '12345';
-	    service.validateAccessCode(code, '');
+	    service.validateAccessCode(code);
 	    return service.constructBallotCryptograms(cvr).then(fingerprint => {
 		expect(fingerprint).toEqual('zyx098-wvu765-tsr432-1234');
 	    });
@@ -114,9 +114,9 @@ describe('AvclientService', () => {
     });
 
     describe('spoilBallotCryptograms', function() {
-	it('throws CallOutOfOrder if prior code was 00009 and returns undefined', function() {
+	it('throws CallOutOfOrderError if prior code was 00009 and returns undefined', function() {
 	    let code = '00009';
-	    service.validateAccessCode(code, '');
+	    service.validateAccessCode(code);
 	    return service.spoilBallotCryptograms().then(r => {
 		expect(r).not.toBeDefined(); }).catch(e => {
 		expect(e.message).toEqual(StatusCode.CallOutOfOrderError);
@@ -125,7 +125,7 @@ describe('AvclientService', () => {
 
 	it('throws NetworkError if prior code was 00010 and returns undefined', function() {
 	    let code = '00010';
-	    service.validateAccessCode(code, '');
+	    service.validateAccessCode(code);
 	    return service.spoilBallotCryptograms().then(r => {
 		expect(r).not.toBeDefined(); }).catch(e => {
 		expect(e.message).toEqual(StatusCode.NetworkError);
@@ -134,7 +134,7 @@ describe('AvclientService', () => {
 
 	it('throws ServerCommitmentError if prior code was 00011 and returns undefined', function() {
 	    let code = '00011';
-	    service.validateAccessCode(code, '');
+	    service.validateAccessCode(code);
 	    return service.spoilBallotCryptograms().then(r => {
 		expect(r).not.toBeDefined(); }).catch(e => {
 		expect(e.message).toEqual(StatusCode.ServerCommitmentError);
@@ -143,7 +143,7 @@ describe('AvclientService', () => {
 
 	it('returns undefined otherwise', function() {
 	    let code = '12345';
-	    service.validateAccessCode(code, '');
+	    service.validateAccessCode(code);
 	    return service.spoilBallotCryptograms().then(r => {
 		expect(r).not.toBeDefined();
 	    });
@@ -153,15 +153,23 @@ describe('AvclientService', () => {
     describe('submitBallotCryptograms', function() {
 	it('throws NetworkError if prior code was 00012', function() {
 	    let code = '00012';
-	    service.validateAccessCode(code, '');
+	    service.validateAccessCode(code);
 	    return service.submitBallotCryptograms().catch(e => {
 		expect(e.message).toEqual(StatusCode.NetworkError);
+	    });
+	});
+	
+	it('throws CallOutOfOrderError if prior code was 00013', function() {
+	    let code = '00013';
+	    service.validateAccessCode(code);
+	    return service.submitBallotCryptograms().catch(e => {
+		expect(e.message).toEqual(StatusCode.CallOutOfOrderError);
 	    });
 	});
 
 	it('returns a vote receipt otherwise', function() {
 	    let code = '12345';
-	    service.validateAccessCode(code, '');
+	    service.validateAccessCode(code);
 	    return service.submitBallotCryptograms().then(r => {
 		expect(r.boardHash).toEqual('zyx098-wvu765-tsr432-1234');
 	    });
@@ -171,7 +179,7 @@ describe('AvclientService', () => {
     describe('purgeData', function() {
 	it('deletes the serverURL and cachedAccessCode properties of the stub', function() {
 	    let code = '12345';
-	    service.validateAccessCode(code, '');
+	    service.validateAccessCode(code);
 	    expect(service._cachedAccessCode).toEqual('12345');
 	    service.purgeData();
 	    expect(service._cachedAccessCode).not.toBeDefined();

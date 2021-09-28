@@ -128,7 +128,7 @@ export class AccessCodePage implements OnInit {
 
       return new Promise(resolve => {
         loading.dismiss();
-        this.avclientService.validateAccessCode(this.data, '').catch(res => {
+        this.avclientService.validateAccessCode(this.data).catch(res => {
           console.log("res", res);
         });
         // this.avclientService.constructBallotCryptograms(this.data).catch(res => {

@@ -58,15 +58,14 @@ export class AvclientService {
 	delete this._cachedAccessCode;
     }
 
-    registerVoter() {}
 
     requestAccessCode(opaqueVoterId: string): Promise<void> {
 	return new Promise((resolve, reject) => {
 	    switch(opaqueVoterId) {
-		case '00000':
+		case '00000' || 'T0000':
 		    reject(new Error(StatusCode.VoterRecordNotFound));
 		    break;
-		case '00001':
+		case '0000' || 'T0001':
 		    reject(new Error(StatusCode.NetworkError))
 		    break;
 		default:
@@ -100,6 +99,9 @@ export class AvclientService {
 		case '00012':
 		    reject(new Error(StatusCode.NetworkError));
 		    break;
+		case '0013':
+		    reject(new Error(StatusCode.CallOutOfOrderError));
+		    break;
 		default:
 		    resolve({
 			previousBoardHash: 'tsr432-wvu765-zyx098-4321',
@@ -112,7 +114,7 @@ export class AvclientService {
 	});
     }
 
-    validateAccessCode(code: string | string[], email: string): Promise<void> {
+    validateAccessCode(code: string): Promise<void> {
 	return new Promise((resolve, reject) => {
 	    this._cachedAccessCode = code;
 	    switch(code) {
