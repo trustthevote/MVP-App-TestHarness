@@ -2,7 +2,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NavigationExtras, Router } from '@angular/router';
-import { ToastController,AlertController,LoadingController ,NavController} from "@ionic/angular";
+import { ToastController, AlertController, LoadingController, NavController } from "@ionic/angular";
 
 
 @Component({
@@ -64,11 +64,11 @@ export class BallotPage {
     const alert = await this.alertctrl.create({
       message: msg,
       buttons: [{
-          text: this.results['try_again'],
-          role: 'cancel',
-          cssClass: 'secondary',
-          handler: (blah) => {}
-        }
+        text: this.results['try_again'],
+        role: 'cancel',
+        cssClass: 'secondary',
+        handler: (blah) => { }
+      }
       ]
     });
     await alert.present();

@@ -16,6 +16,7 @@ export class ExpiredCodePage implements OnInit {
       this.results = json[0]['code_expired_access00003_error'];
 
     });
+
   }
   backbtn() {
     this.route.navigate(['/access-code', {

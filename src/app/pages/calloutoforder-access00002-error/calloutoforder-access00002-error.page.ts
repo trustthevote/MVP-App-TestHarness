@@ -10,7 +10,7 @@ export class CalloutoforderAccess00002ErrorPage implements OnInit {
 
   results = [];
   userObject: any;
-  constructor(private route: Router) {}
+  constructor(private route: Router) { }
 
   ngOnInit() {
     this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
@@ -20,8 +20,8 @@ export class CalloutoforderAccess00002ErrorPage implements OnInit {
     if (this.userObject.lastname != undefined) {
       const lastName = this.userObject.lastname.charAt(0).toUpperCase() + this.userObject.lastname.slice(1);
       if (lastName == 'OOOOO') {
-      console.log('00000 Error')
-      } 
+        console.log('00000 Error')
+      }
     }
   }
   confirm() {

@@ -17,7 +17,7 @@ export class BallotResealedPage implements OnInit {
   ngOnInit() {
     this.getCode = this.activatedRoute.snapshot.paramMap.get('code');
     fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-    this.results = json[0]['ballot_resealed_page'];
+      this.results = json[0]['ballot_resealed_page'];
     });
   }
   nextbtn() {
@@ -26,6 +26,6 @@ export class BallotResealedPage implements OnInit {
     }]);
   }
 
- 
+
 
 }

@@ -19,16 +19,16 @@ export class CheckNetworkPage implements OnInit {
     if (this.userObject.lastname != undefined) {
       const lastName = this.userObject.lastname.charAt(0).toUpperCase() + this.userObject.lastname.slice(1);
       if (lastName == 'OOOO') {
-      console.log('00001 Error')
-      } 
+        console.log('00001 Error')
+      }
     }
   }
   confirm() {
     this.route.navigate(['/request-access-code'
-    // , {
-    //   t: new Date().getTime()
-    // }
-  ]);
+      // , {
+      //   t: new Date().getTime()
+      // }
+    ]);
   }
 
   rpbtn() {

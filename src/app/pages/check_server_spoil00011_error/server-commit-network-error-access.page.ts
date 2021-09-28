@@ -15,14 +15,14 @@ export class ServerCommitNetworkErrorAccessPage implements OnInit {
       this.results = json[0]['check_server_spoil00011_error'];
     });
   }
-  
+
   tryBtn() {
     this.route.navigate(['/access-code']);
   }
-  nextprint(){
+  nextprint() {
     this.route.navigate(['/print-return']);
   }
-  reportbtn(){
+  reportbtn() {
     this.route.navigate(['/tobecontinue']);
   }
 }

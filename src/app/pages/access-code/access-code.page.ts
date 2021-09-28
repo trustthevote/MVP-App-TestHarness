@@ -131,19 +131,8 @@ export class AccessCodePage implements OnInit {
         this.avclientService.validateAccessCode(this.data, '').catch(res => {
           console.log("res", res);
         });
-        // this.avclientService.constructBallotCryptograms(this.data).catch(res => {
-        //   console.log("res", res);
-        // });
-        // this.avclientService.spoilBallotCryptograms(this.data).catch(res => {
-        //   console.log("res", res);
-        // });
-        // this.avclientService.submitBallotCryptograms(this.data).catch(res => {
-        //   console.log("res", res);
-        // });
         console.log(this.data);
         if (this.data == '00002') {
-          
-          // this.route.navigate(['/ballot-prep-error']);
           this.route.navigate(['/calloutoforder-access00002-error']);
         } else if (this.data == '00003') {
           this.route.navigate(['/code_expired_access00003_error']);
@@ -151,27 +140,8 @@ export class AccessCodePage implements OnInit {
           this.route.navigate(['/code_invalid_access00004_error']);
         } else if (this.data == '00005') {
           this.route.navigate(['/check-network-access00005-error']);
-        } 
-        // else if (this.data == '00006') {
-        //   this.route.navigate(['/ballot-test-error']);
-        // } else if (this.data == '00007') {
-        //   this.route.navigate(['/network-error-access-code']);
-        // } else if (this.data == '00008') {
-        //   this.route.navigate(['/ballot-oops-screen']);
-        // } 
-        // else if (this.data == '00009') {
-        //   this.route.navigate(['/ballot-test-fail-err']);
-        // } else if (this.data == '00010') {
-        //   this.route.navigate(['/network-error-access-ten']);
-        // } else if (this.data == '00011') {
-        //   this.route.navigate(['/server-commit-network-error-access']);
-        // }
-        //  else if (this.data == '00012') {
-        //   this.route.navigate(['/network-error-access12']);
-        // } else if (this.data == '00013') {
-        //   this.route.navigate(['/ballot-access-error13']);
-        // }
-         else {
+        }
+        else {
           this.route.navigate(['/before-you-finish', {
             code: this.data
           }]);
@@ -194,7 +164,7 @@ export class AccessCodePage implements OnInit {
         text: 'Retry',
         role: 'cancel',
         cssClass: 'secondary',
-        handler: (blah) => {}
+        handler: (blah) => { }
       }]
     });
     await alert.present();
@@ -239,5 +209,5 @@ export class AccessCodePage implements OnInit {
       event.preventDefault();
     }
   }
-  
+
 }

@@ -15,7 +15,7 @@ export class NetworkErrorAccess12Page implements OnInit {
       this.results = json[0]['check_network_submit00012_error'];
     });
   }
-  
+
   confirm() {
     this.route.navigate(['/access-code', {
       t: new Date().getTime()

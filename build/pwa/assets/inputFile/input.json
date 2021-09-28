@@ -137,7 +137,7 @@
   "check_server_page": {
     "text": " Sorry, it seems we are have some network connection issues on our end. Please try again. ",
     "text1": "If the issue persists, please click the link below to check the status of our servers.",
-    "text2": " We are Sorry for the inconvenience!",
+    "text2": " We are sorry for the inconvenience!",
     "link": "www.linktosite.gov ",
     "try_again": "Try again"
   },
@@ -335,8 +335,8 @@
   "check_server_spoil00011_error": {
     "text": " Sorry, it seems we are having some network connection issues on our end. Please try again. ",
     "text1": "If the issue persists, please click the link below to check the status of our servers.",
-    "text2": " We are Sorry for the inconvenience!",
-    "test_pr": "You can also click the proint button below to proceed with a physical return instead.",
+    "text2": " We are sorry for the inconvenience!",
+    "test_pr": "You can also click the print button below to proceed with a physical return instead.",
     "link": "www.linktosite.gov ",
     "try_again": "Try again",
     "report_prob": "Report  A Problem",

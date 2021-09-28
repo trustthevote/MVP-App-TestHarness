@@ -1,15 +1,18 @@
 <ion-content>
-<div class="Required-div">
-    <p>{{results.text}}<br/><br/>
-      {{results.text1}}<br/> <br/>
-      {{results.test_pr}}<br><br>
-      {{results.text2}} <br/></p>
-</div>
-<!-- <p class="link">{{results.link}}</p> -->
-<ion-button style="padding-left: 20px;" color="dark" (click)="reportbtn()">
-  {{results.report_prob}}
-  <ion-icon slot="end" name="help-outline"></ion-icon>
-</ion-button>
+  <div class="Required-div">
+    <p>
+      {{results.text}}<br/><br/>
+      {{results.text1}}<br/>
+      <br/>
+      {{results.test_pr}}<br/><br/>
+      {{results.text2}} <br/>
+    </p>
+  </div>
+
+  <ion-button style="padding-left: 20px" color="dark" (click)="reportbtn()">
+    {{results.report_prob}}
+    <ion-icon slot="end" name="help-outline"></ion-icon>
+  </ion-button>
 </ion-content>
 
 <ion-footer>
@@ -21,7 +24,7 @@
           <ion-icon slot="start" name="chevron-back-outline"></ion-icon>
         </ion-button>
       </ion-col>
-      <ion-col size="6" class="next-btn"> 
+      <ion-col size="6" class="next-btn">
         <ion-button color="dark" (click)="nextprint()">
           {{results.print}}
           <ion-icon slot="end" name="print-outline"></ion-icon>

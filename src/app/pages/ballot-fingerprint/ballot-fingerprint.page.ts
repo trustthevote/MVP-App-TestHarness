@@ -36,16 +36,16 @@ export class BallotFingerprintPage implements OnInit {
       this.results = json[0]['ballot_fingerp'];
     });
   }
- sendbtn() {
+  sendbtn() {
     this.avclientService.submitBallotCryptograms(this.getCode).catch(res => {
       console.log("res", res);
     });
-   if (this.getCode == '00012') {
+    if (this.getCode == '00012') {
       this.route.navigate(['/check_network_submit00012_error']);
     } else if (this.getCode == '00013') {
       this.route.navigate(['/calloutoforder_submit00013_error']);
     }
-    else{
+    else {
       this.route.navigate(['/sending-confirmation', {
         code: this.getCode
       }]);
@@ -62,10 +62,10 @@ export class BallotFingerprintPage implements OnInit {
     } else if (this.getCode == '00011') {
       this.route.navigate(['/check_server_spoil00011_error']);
     }
-    else{
-    this.route.navigate(['/test-results', {
-      code: this.getCode
-    }]);
-  }
+    else {
+      this.route.navigate(['/test-results', {
+        code: this.getCode
+      }]);
+    }
   }
 }

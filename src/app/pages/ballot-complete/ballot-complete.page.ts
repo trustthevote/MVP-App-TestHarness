@@ -36,7 +36,7 @@ export class BallotCompletePage implements OnInit {
 
   ngOnInit() {
     fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-      this.results = json[0]['ballot_comp']; 
+      this.results = json[0]['ballot_comp'];
     });
     // const lastName = this.paramData.lastname.charAt(0).toUpperCase() + this.paramData.lastname.slice(1);
     // if (lastName.includes('A', 0)) {
@@ -126,7 +126,7 @@ export class BallotCompletePage implements OnInit {
     }]);
   }
 
-  ballotReturnChoice(event){
+  ballotReturnChoice(event) {
     let chooseVal = event;
     console.log('this. chooseVal', chooseVal);
   }
