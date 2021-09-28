@@ -13,11 +13,8 @@ export class AvclientService {
     _status: StatusCode = StatusCode.Uninitialized;
     _cachedAccessCode: any;
 
-    constructor() { }
+    constructor() {}
 
-    initialize(): void {
-	this._status = StatusCode.Initialized
-    }
 
     get serverURL() {
 	return this._serverURL;
