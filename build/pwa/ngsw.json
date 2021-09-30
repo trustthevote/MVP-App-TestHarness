@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1632835532275,
+  "timestamp": 1633012815769,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -188,10 +188,10 @@
     "/assets/images/slides/slide-2.png": "87e08cd6844caf28e1e2bc9213a80b9a41d4e3ad",
     "/assets/inputFile/input.json": "641a3342e81910abfd5e2bada101f2a643159b7d",
     "/assets/shapes.svg": "5413e95adabcb2cb639970051f55e0ddb64ace53",
-    "/common.js": "7e4713f0ce8382089765514410b69ff719982b53",
+    "/common.js": "1e95285cbfba6dc88843bd0a616dbcc57d3284fb",
     "/default-node_modules_capacitor_browser_dist_esm_index_js.js": "eecac010a4a09af6b70e58799f14b148bf77a3da",
     "/index.html": "f107a6e0ff7a0c530cb0adf5184cac88ae6a316e",
-    "/main.js": "76c3f8ac2729e63624d84ebb3de5e0c8a63fa25f",
+    "/main.js": "a8f8c1930bb9e4aa7a50c24a4e4ac48393b47ae1",
     "/manifest.webmanifest": "c2e7642d1249388df5d5a8b2acd21bf08f0eeeec",
     "/node_modules_capacitor_browser_dist_esm_web_js.js": "257a2d932fdb764231aeeb0e704ac73027a6f600",
     "/node_modules_ionic_core_dist_esm_focus-visible-f4ad4f1a_js.js": "6de8a603721eb69060d75c62c394949a25f1239c",
@@ -284,7 +284,7 @@
     "/src_app_pages_intro_intro_module_ts.js": "7046ca61dddb587b30e31a8d4d36ea724e115e74",
     "/src_app_pages_network-error-request-code_network-error-request-code_module_ts.js": "ebf39d95dc1273486e612b3e0034b27bf85eee14",
     "/src_app_pages_new-ballot-fingerprint_new-ballot-fingerprint_module_ts.js": "054c39ce90560522cf485debaae1441622d7217d",
-    "/src_app_pages_print-return_print-return_module_ts.js": "d9893e8ab4cdd6cbc10371d138ced10a562aa00c",
+    "/src_app_pages_print-return_print-return_module_ts.js": "11e4612a5c25e19a9c2addeaa981390ebe3760c5",
     "/src_app_pages_print_print_module_ts.js": "288de2635ef8fcd5c3166cb9eb07480f7e5eebd6",
     "/src_app_pages_request-access-code_request-access-code_module_ts.js": "71479005540f2a740cf63023ee04d411d674df8f",
     "/src_app_pages_sending-confirmation_sending-confirmation_module_ts.js": "85a7085806f4a3bae6782ec7d8fbef4b11667929",
@@ -297,7 +297,7 @@
     "/src_app_pages_user-time-out_user-time-out_module_ts.js": "f4b778a029b7c74e519a09cbaa87bf66d96e4ae2",
     "/src_app_pages_voter_record_notfound00000_error_access-code-error_module_ts.js": "3499ec243a07636fb40cea35d8614729c7bd2be5",
     "/styles.css": "fea4922683e042b60232f469e789dde780de8a67",
-    "/vendor.js": "f6b02a9f1ed7299c8de006196363846ec3af919d"
+    "/vendor.js": "460c410716c8987d0b83cda8875ae2152b74352c"
   },
   "navigationUrls": [
     {

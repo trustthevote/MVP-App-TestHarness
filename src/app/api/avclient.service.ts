@@ -10,6 +10,9 @@ import { Router } from '@angular/router';
 export class AvclientService {
   cachedAccessCode: any;
   serverURL: any;
+  // _serverURL: any;
+  // _status: StatusCode = StatusCode.Uninitialized;
+  _cachedAccessCode: any;
   constructor(public statuscodeService: StatuscodeService,
     private alertctrl: AlertController,
     private route: Router, ) {}
@@ -19,6 +22,17 @@ export class AvclientService {
   }
   assignServerUrl(bulletinBoardURL) {
     this.serverURL = bulletinBoardURL;
+  }
+  get serverurl() {
+    return this.serverURL;
+  }
+
+  set serverurl(value) {
+    this.serverURL = value;
+  }
+
+  status() {
+    return this.statuscodeService.statusCode('Uninitialized');
   }
 
   requestAccessCode(opaqueVoterId) {
@@ -36,6 +50,20 @@ export class AvclientService {
       }
     })
   }
+  // requestAccessCode(opaqueVoterId: string): Promise<void> {
+  //   return new Promise((resolve, reject) => {
+  //       switch(opaqueVoterId) {
+  //     case '00000' || 'T0000':
+  //         reject(new Error(this.statuscodeService.statusCode('VoterRecordNotFound')));
+  //         break;
+  //     case '0000' || 'T0001':
+  //         reject(new Error(this.statuscodeService.statusCode('NetworkError')))
+  //         break;
+  //     default:
+  //         resolve();
+  //       }
+  //   })
+  // }
 
   validateAccessCode(code, email) {
     return new Promise((resolve, reject) => {
@@ -112,6 +140,10 @@ export class AvclientService {
       }
     });
   }
+  generateTestCode(): string {
+    return '5e4d8fe41fa3819cc064e2ace0eda8a847fe322594a6fd5a9a51c699e63804b7'
+  }
+
 
   test(code) {
     this.purgeData();

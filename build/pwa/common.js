@@ -473,6 +473,15 @@ let AvclientService = class AvclientService {
     assignServerUrl(bulletinBoardURL) {
         this.serverURL = bulletinBoardURL;
     }
+    get serverurl() {
+        return this.serverURL;
+    }
+    set serverurl(value) {
+        this.serverURL = value;
+    }
+    status() {
+        return this.statuscodeService.statusCode('Uninitialized');
+    }
     requestAccessCode(opaqueVoterId) {
         return new Promise((resolve, reject) => {
             switch (opaqueVoterId) {
@@ -488,6 +497,20 @@ let AvclientService = class AvclientService {
             }
         });
     }
+    // requestAccessCode(opaqueVoterId: string): Promise<void> {
+    //   return new Promise((resolve, reject) => {
+    //       switch(opaqueVoterId) {
+    //     case '00000' || 'T0000':
+    //         reject(new Error(this.statuscodeService.statusCode('VoterRecordNotFound')));
+    //         break;
+    //     case '0000' || 'T0001':
+    //         reject(new Error(this.statuscodeService.statusCode('NetworkError')))
+    //         break;
+    //     default:
+    //         resolve();
+    //       }
+    //   })
+    // }
     validateAccessCode(code, email) {
         return new Promise((resolve, reject) => {
             this.cachedAccessCode = code;
@@ -561,6 +584,9 @@ let AvclientService = class AvclientService {
             }
         });
     }
+    generateTestCode() {
+        return '5e4d8fe41fa3819cc064e2ace0eda8a847fe322594a6fd5a9a51c699e63804b7';
+    }
     test(code) {
         this.purgeData();
         this.requestAccessCode(code);
@@ -628,6 +654,9 @@ let StatuscodeService = class StatuscodeService {
             AccessCodeInvalid: 'access code invalid',
             CorruptCVRError: 'corrupt CVR',
             ServerCommitmentError: 'server commitment error',
+            Initialized: 'initialized',
+            Uninitialized: 'uninitialized',
+            OK: 'ok',
         };
         if (statusCode == 'VoterRecordNotFound') {
             const errorCode = 'voter record not found';
@@ -655,6 +684,18 @@ let StatuscodeService = class StatuscodeService {
         }
         else if (statusCode == 'ServerCommitmentError') {
             const errorCode = 'server commitment error';
+            return errorCode;
+        }
+        else if (statusCode == 'Initialized') {
+            const errorCode = 'initialized';
+            return errorCode;
+        }
+        else if (statusCode == 'Uninitialized') {
+            const errorCode = 'uninitialized';
+            return errorCode;
+        }
+        else if (statusCode == 'OK') {
+            const errorCode = 'ok';
             return errorCode;
         }
     }

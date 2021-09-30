@@ -1,5 +1,72 @@
 (self["webpackChunkMVP_Test_Harness"] = self["webpackChunkMVP_Test_Harness"] || []).push([["src_app_pages_print-return_print-return_module_ts"],{
 
+/***/ 22130:
+/*!***********************************************!*\
+  !*** ./src/app/api/voterartifacts.service.ts ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "VoterartifactsService": () => (/* binding */ VoterartifactsService)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 37716);
+
+
+let VoterartifactsService = class VoterartifactsService {
+    constructor() { }
+    openPreFile(lastName) {
+        console.log("lastName", lastName);
+        let key = lastName.substring(0, 1).toUpperCase();
+        console.log("key", key);
+        switch (key) {
+            case 'A':
+                this.precinctId = "precinct_1";
+                this.precinct = "Precinct 1 Spaceport";
+                break;
+            case 'B':
+                this.precinctId = "precinct_2";
+                this.precinct = "Precinct 2 Bedrock";
+                break;
+            case 'C':
+                this.precinctId = "precinct_3";
+                this.precinct = "Precinct 3 Downtown";
+                break;
+            default:
+                this.precinctId = "precinct_4";
+                this.precinct = "Precinct 4 Spacetown";
+                break;
+        }
+        ;
+        let valPrecinct = {
+            preId: this.precinctId,
+            preVal: this.precinct
+        };
+        return valPrecinct;
+    }
+    get cvr() {
+        return "this is a cvr";
+    }
+    get affidavit() {
+        return "this is an affidavit";
+    }
+    get ballot() {
+        return "this is a ballot";
+    }
+};
+VoterartifactsService.ctorParameters = () => [];
+VoterartifactsService = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.Injectable)({
+        providedIn: 'root'
+    })
+], VoterartifactsService);
+
+
+
+/***/ }),
+
 /***/ 40978:
 /*!*******************************************************************!*\
   !*** ./src/app/pages/print-return/print-return-routing.module.ts ***!
@@ -92,18 +159,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "PrintReturnPage": () => (/* binding */ PrintReturnPage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 64762);
 /* harmony import */ var _raw_loader_print_return_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./print-return.page.html */ 41290);
 /* harmony import */ var _print_return_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./print-return.page.scss */ 21795);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37716);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 39895);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 39895);
 /* harmony import */ var _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @capacitor/browser */ 28427);
+/* harmony import */ var src_app_api_voterartifacts_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/api/voterartifacts.service */ 22130);
 
 
 
 
 
 
+
+// import { DocumentViewer } from '@ionic-native/document-viewer/ngx';
 let PrintReturnPage = class PrintReturnPage {
     // P1 ballot - https://drive.google.com/file/d/1NjMf2sUwjTPH20jN4ajnWRZDvkobq9hR/view?usp=sharing
     // P1 aff - https://drive.google.com/file/d/1A8v82etRnePtdF_IZDQmVb34Ss2tZu-f/view?usp=sharing
@@ -113,8 +183,9 @@ let PrintReturnPage = class PrintReturnPage {
     // P3 aff - https://drive.google.com/file/d/1j3wzbIfH8Sm4UAyij6N5pjHJVXTGWliJ/view?usp=sharing
     // P4 ballot - https://drive.google.com/file/d/1KyESAe8iVuA61zEKhpN3DENtNOE6M8Lr/view?usp=sharing
     // P4 aff - https://drive.google.com/file/d/1n3iNq1KVvr8YjKllMO6znArKtlDvvK-k/view?usp=sharing
-    constructor(router) {
+    constructor(router, voterartifactsService) {
         this.router = router;
+        this.voterartifactsService = voterartifactsService;
         this.results = [];
         if (this.router.getCurrentNavigation().extras.state) {
             this.paramData = this.router.getCurrentNavigation().extras.state.user;
@@ -146,7 +217,7 @@ let PrintReturnPage = class PrintReturnPage {
         this.router.navigate(['tobecontinue']);
     }
     openPDF(precinctNum) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
             if (precinctNum === 1) {
                 console.log(precinctNum);
                 // await Browser.open({ url: 'https://drive.google.com/file/d/1Wrk9xhJkMFVEqtBBJgw2qZOTS9nqFxwk/view?usp=sharing' });
@@ -182,43 +253,68 @@ let PrintReturnPage = class PrintReturnPage {
         });
     }
     openPDF2(precinctNum) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__awaiter)(this, void 0, void 0, function* () {
-            if (precinctNum === 1) {
-                console.log(precinctNum);
-                // await Browser.open({ url: 'https://drive.google.com/file/d/1kn2xt5WxYzTn-NsbPc1X3BMqI47rjHDP/view?usp=sharing' });
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
+            let getVoterArt = this.voterartifactsService.openPreFile(this.userObject.lastname);
+            console.log("getVoterArt", getVoterArt);
+            // const options: DocumentViewerOptions = {
+            //   title: 'My PDF'
+            // }
+            if (getVoterArt.preId === "precinct_1") {
                 yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
-                    // url: 'https://drive.google.com/file/d/1A8v82etRnePtdF_IZDQmVb34Ss2tZu-f/view?usp=sharing'
-                    url: 'https://drive.google.com/file/d/1A8v82etRnePtdF_IZDQmVb34Ss2tZu-f/view?usp=sharing'
+                    url: '/assets/files/port_precinct1/precinct1_voter_affidavit.pdf'
+                });
+                // this.document.viewDocument('/assets/files/port_precinct1/precinct1_voter_affidavit.pdf', 'application/pdf', options)
+            }
+            else if (getVoterArt.preId === "precinct_2") {
+                yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
+                    url: '/assets/files/bedrock_precinct2/precinct2_voter_affidavit.pdf'
                 });
             }
-            else if (precinctNum === 2) {
-                console.log(precinctNum);
-                // await Browser.open({ url: 'https://drive.google.com/file/d/1BSmmTchFQ3X8MD4wEmsIStA2hV97nRS1/view?usp=sharing' });
+            else if (getVoterArt.preId === "precinct_3") {
                 yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
-                    // url: 'https://drive.google.com/file/d/1cV-4autG5EmSzThK82-0WWbFRv2RnkuR/view?usp=sharing'
-                    url: 'https://drive.google.com/file/d/1Qbc4jLYFkDoljpR4g5NFJ4Wfc_S5--kc/view?usp=sharing'
+                    url: '/assets/files/downtown_precinct3/precinct3_voter_affidavit.pdf'
                 });
             }
-            else if (precinctNum === 3) {
-                console.log(precinctNum);
-                // await Browser.open({ url: 'https://drive.google.com/file/d/1oB_xaVUPwK6oE_9Np_iTymAU-lV2urJT/view?usp=sharing' });
+            else if (getVoterArt.preId === "precinct_4") {
                 yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
-                    // url: 'https://drive.google.com/file/d/1j3wzbIfH8Sm4UAyij6N5pjHJVXTGWliJ/view?usp=sharing'
-                    url: 'https://drive.google.com/file/d/1j3wzbIfH8Sm4UAyij6N5pjHJVXTGWliJ/view?usp=sharing'
-                });
-            }
-            else {
-                console.log(precinctNum);
-                // await Browser.open({ url: 'https://drive.google.com/file/d/160p-8lKOlIWXffnXZGR3Pf1gXf6mQYQW/view?usp=sharing' });
-                yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
-                    // url: 'https://drive.google.com/file/d/1n3iNq1KVvr8YjKllMO6znArKtlDvvK-k/view?usp=sharing'
-                    url: 'https://drive.google.com/file/d/1n3iNq1KVvr8YjKllMO6znArKtlDvvK-k/view?usp=sharing'
+                    url: '/assets/files/spacetown_precinct4/precinct4_voter_affidavit.pdf'
                 });
             }
         });
     }
+    // async openPDF2(precinctNum) {
+    //   if (precinctNum === 1) {
+    //     console.log(precinctNum);
+    //     // await Browser.open({ url: 'https://drive.google.com/file/d/1kn2xt5WxYzTn-NsbPc1X3BMqI47rjHDP/view?usp=sharing' });
+    //     await Browser.open({
+    //       // url: 'https://drive.google.com/file/d/1A8v82etRnePtdF_IZDQmVb34Ss2tZu-f/view?usp=sharing'
+    //       url: 'https://drive.google.com/file/d/1A8v82etRnePtdF_IZDQmVb34Ss2tZu-f/view?usp=sharing'
+    //     });
+    //   } else if (precinctNum === 2) {
+    //     console.log(precinctNum);
+    //     // await Browser.open({ url: 'https://drive.google.com/file/d/1BSmmTchFQ3X8MD4wEmsIStA2hV97nRS1/view?usp=sharing' });
+    //     await Browser.open({
+    //       // url: 'https://drive.google.com/file/d/1cV-4autG5EmSzThK82-0WWbFRv2RnkuR/view?usp=sharing'
+    //       url: 'https://drive.google.com/file/d/1Qbc4jLYFkDoljpR4g5NFJ4Wfc_S5--kc/view?usp=sharing'
+    //     });
+    //   } else if (precinctNum === 3) {
+    //     console.log(precinctNum);
+    //     // await Browser.open({ url: 'https://drive.google.com/file/d/1oB_xaVUPwK6oE_9Np_iTymAU-lV2urJT/view?usp=sharing' });
+    //     await Browser.open({
+    //       // url: 'https://drive.google.com/file/d/1j3wzbIfH8Sm4UAyij6N5pjHJVXTGWliJ/view?usp=sharing'
+    //       url: 'https://drive.google.com/file/d/1j3wzbIfH8Sm4UAyij6N5pjHJVXTGWliJ/view?usp=sharing'
+    //     });
+    //   } else {
+    //     console.log(precinctNum);
+    //     // await Browser.open({ url: 'https://drive.google.com/file/d/160p-8lKOlIWXffnXZGR3Pf1gXf6mQYQW/view?usp=sharing' });
+    //     await Browser.open({
+    //       // url: 'https://drive.google.com/file/d/1n3iNq1KVvr8YjKllMO6znArKtlDvvK-k/view?usp=sharing'
+    //       url: 'https://drive.google.com/file/d/1n3iNq1KVvr8YjKllMO6znArKtlDvvK-k/view?usp=sharing'
+    //     });
+    //   }
+    // }
     openXML(precinctNum) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
             if (precinctNum === 1) {
                 yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
                     url: 'https://drive.google.com/file/d/1pIe31DRlAtmcdsTeCc1HrAHKQ82N6wYL/view?usp=sharing'
@@ -246,10 +342,11 @@ let PrintReturnPage = class PrintReturnPage {
     }
 };
 PrintReturnPage.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__.Router }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__.Router },
+    { type: src_app_api_voterartifacts_service__WEBPACK_IMPORTED_MODULE_3__.VoterartifactsService }
 ];
-PrintReturnPage = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_5__.Component)({
+PrintReturnPage = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.Component)({
         selector: 'app-print-return',
         template: _raw_loader_print_return_page_html__WEBPACK_IMPORTED_MODULE_0__.default,
         styles: [_print_return_page_scss__WEBPACK_IMPORTED_MODULE_1__.default]
