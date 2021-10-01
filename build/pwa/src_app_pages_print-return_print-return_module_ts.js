@@ -174,6 +174,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // import { DocumentViewer } from '@ionic-native/document-viewer/ngx';
+// import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 let PrintReturnPage = class PrintReturnPage {
     // P1 ballot - https://drive.google.com/file/d/1NjMf2sUwjTPH20jN4ajnWRZDvkobq9hR/view?usp=sharing
     // P1 aff - https://drive.google.com/file/d/1A8v82etRnePtdF_IZDQmVb34Ss2tZu-f/view?usp=sharing
@@ -183,7 +184,9 @@ let PrintReturnPage = class PrintReturnPage {
     // P3 aff - https://drive.google.com/file/d/1j3wzbIfH8Sm4UAyij6N5pjHJVXTGWliJ/view?usp=sharing
     // P4 ballot - https://drive.google.com/file/d/1KyESAe8iVuA61zEKhpN3DENtNOE6M8Lr/view?usp=sharing
     // P4 aff - https://drive.google.com/file/d/1n3iNq1KVvr8YjKllMO6znArKtlDvvK-k/view?usp=sharing
-    constructor(router, voterartifactsService) {
+    constructor(router, 
+    // private iab: InAppBrowser,
+    voterartifactsService) {
         this.router = router;
         this.voterartifactsService = voterartifactsService;
         this.results = [];
@@ -260,24 +263,29 @@ let PrintReturnPage = class PrintReturnPage {
             //   title: 'My PDF'
             // }
             if (getVoterArt.preId === "precinct_1") {
+                // let browser = this.iab.create('/assets/files/port_precinct1/precinct1_voter_affidavit.pdf');
                 yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
-                    url: '/assets/files/port_precinct1/precinct1_voter_affidavit.pdf'
+                    url: 'https://drive.google.com/file/d/1A8v82etRnePtdF_IZDQmVb34Ss2tZu-f/view?usp=sharing'
                 });
+                // url: '/assets/files/port_precinct1/precinct1_voter_affidavit.pdf'
                 // this.document.viewDocument('/assets/files/port_precinct1/precinct1_voter_affidavit.pdf', 'application/pdf', options)
             }
             else if (getVoterArt.preId === "precinct_2") {
                 yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
-                    url: '/assets/files/bedrock_precinct2/precinct2_voter_affidavit.pdf'
+                    url: 'https://drive.google.com/file/d/1Qbc4jLYFkDoljpR4g5NFJ4Wfc_S5--kc/view?usp=sharing'
+                    // url: '/assets/files/bedrock_precinct2/precinct2_voter_affidavit.pdf'
                 });
             }
             else if (getVoterArt.preId === "precinct_3") {
                 yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
-                    url: '/assets/files/downtown_precinct3/precinct3_voter_affidavit.pdf'
+                    url: 'https://drive.google.com/file/d/1j3wzbIfH8Sm4UAyij6N5pjHJVXTGWliJ/view?usp=sharing'
+                    // url: '/assets/files/downtown_precinct3/precinct3_voter_affidavit.pdf'
                 });
             }
             else if (getVoterArt.preId === "precinct_4") {
                 yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
-                    url: '/assets/files/spacetown_precinct4/precinct4_voter_affidavit.pdf'
+                    url: 'https://drive.google.com/file/d/1n3iNq1KVvr8YjKllMO6znArKtlDvvK-k/view?usp=sharing'
+                    // url: '/assets/files/spacetown_precinct4/precinct4_voter_affidavit.pdf'
                 });
             }
         });
