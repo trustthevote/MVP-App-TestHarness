@@ -36,14 +36,6 @@ Continuebtn() {
         t: new Date().getTime()
       }]);
     }
-    this.avclientService.requestAccessCode(opaqueVoterId).catch(res => {
-      console.log("res", res);
-      if (res == 'Error: voter record not found') {
-        this.route.navigate(['/voter_record_notfound00000_error']);
-      } else if (res == 'Error: network code') {
-        this.route.navigate(['/check_network_request00001_error']);
-      }
-    });
   }
 }
 backbtn() {

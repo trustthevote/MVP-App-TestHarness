@@ -128,6 +128,14 @@ export class AccessCodePage implements OnInit {
 
       return new Promise(resolve => {
         loading.dismiss();
+        this.avclientService.requestAccessCode(this.data).catch(res => {
+          console.log("res", res);
+          if (res == 'Error: voter record not found') {
+            this.route.navigate(['/voter_record_notfound00000_error']);
+          } else if (res == 'Error: network code') {
+            this.route.navigate(['/check_network_request00001_error']);
+          }
+        });
         this.avclientService.validateAccessCode(this.data).catch(res => {
           console.log("res", res);
         });
