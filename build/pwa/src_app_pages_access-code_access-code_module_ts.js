@@ -211,7 +211,7 @@ let AccessCodePage = class AccessCodePage {
                 yield loading.present();
                 return new Promise(resolve => {
                     loading.dismiss();
-                    this.avclientService.validateAccessCode(this.data, '').catch(res => {
+                    this.avclientService.validateAccessCode(this.data).catch(res => {
                         console.log("res", res);
                     });
                     console.log(this.data);

@@ -120,11 +120,7 @@ let CheckNetworkPage = class CheckNetworkPage {
         }
     }
     confirm() {
-        this.route.navigate(['/request-access-code'
-            // , {
-            //   t: new Date().getTime()
-            // }
-        ]);
+        this.route.navigate(['/request-access-code']);
     }
     rpbtn() {
         this.route.navigate(['/tobecontinue']);

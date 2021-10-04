@@ -1,6 +1,5 @@
 ion-content {
   --padding-bottom: 20px;
-  // --padding-end: 20px;
   --padding-start: 20px;
   --padding-top: 20px;
 }
@@ -20,7 +19,6 @@ p {
   padding-top: 10%;
 }
 ion-toolbar {
-  // text-align: end;
   padding: 10px;
 }
 .para-center {
@@ -33,11 +31,9 @@ ion-toolbar {
   background: white;
   border: 1px solid black;
   width: 93%;
-  // margin-bottom: 15px;
   margin-top: 15px;
   border-radius: 5px;
   font-size: 14px;
-  // font-weight: 600;
   color: #000000;
 }
 .sec-para {
