@@ -70,8 +70,6 @@ export class AvclientService {
       }
     })
   }
-  // Should not be idempotent.  Instead, permute one of
-  // john's sample strings.
   constructBallotCryptograms(cvr: CastVoteRecord): Promise<string> {
     return new Promise((resolve, reject) => {
       switch (this._cachedAccessCode) {
@@ -142,16 +140,5 @@ export class AvclientService {
       console.log(receipt)
     });
   }
-  async presentAlertEmpty(Error) {
-    const alert = await this.alertctrl.create({
-      message: Error,
-      buttons: [{
-        text: 'Okay',
-        role: 'cancel',
-        cssClass: 'secondary',
-        handler: (blah) => {}
-      }]
-    });
-    await alert.present();
-  }
+
 }

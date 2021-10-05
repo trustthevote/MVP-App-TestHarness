@@ -16,10 +16,9 @@ export class PrintReturnPage implements OnInit {
   results = [];
   userObject: any;
 
-
   constructor(private router: Router,
-    private voterartifactsService: VoterartifactsService, 
-    ) {
+    private voterartifactsService: VoterartifactsService,
+  ) {
     if (this.router.getCurrentNavigation().extras.state) {
       this.paramData = this.router.getCurrentNavigation().extras.state.user;
     }
@@ -89,36 +88,36 @@ export class PrintReturnPage implements OnInit {
     // const options: DocumentViewerOptions = {
     //   title: 'My PDF'
     // }
-    
+
     if (getVoterArt.preId === "precinct_1") {
       // let browser = this.iab.create('/assets/files/port_precinct1/precinct1_voter_affidavit.pdf');
-  
+
       await Browser.open({
-              url: 'https://drive.google.com/file/d/1A8v82etRnePtdF_IZDQmVb34Ss2tZu-f/view?usp=sharing'
-        
+        url: 'https://drive.google.com/file/d/1A8v82etRnePtdF_IZDQmVb34Ss2tZu-f/view?usp=sharing'
+
       });
       // url: '/assets/files/port_precinct1/precinct1_voter_affidavit.pdf'
       // this.document.viewDocument('/assets/files/port_precinct1/precinct1_voter_affidavit.pdf', 'application/pdf', options)
 
     } else if (getVoterArt.preId === "precinct_2") {
       await Browser.open({
-                url: 'https://drive.google.com/file/d/1Qbc4jLYFkDoljpR4g5NFJ4Wfc_S5--kc/view?usp=sharing'
-              // url: '/assets/files/bedrock_precinct2/precinct2_voter_affidavit.pdf'
+        url: 'https://drive.google.com/file/d/1Qbc4jLYFkDoljpR4g5NFJ4Wfc_S5--kc/view?usp=sharing'
+        // url: '/assets/files/bedrock_precinct2/precinct2_voter_affidavit.pdf'
       });
     } else if (getVoterArt.preId === "precinct_3") {
       await Browser.open({
-                url: 'https://drive.google.com/file/d/1j3wzbIfH8Sm4UAyij6N5pjHJVXTGWliJ/view?usp=sharing'
-              // url: '/assets/files/downtown_precinct3/precinct3_voter_affidavit.pdf'
+        url: 'https://drive.google.com/file/d/1j3wzbIfH8Sm4UAyij6N5pjHJVXTGWliJ/view?usp=sharing'
+        // url: '/assets/files/downtown_precinct3/precinct3_voter_affidavit.pdf'
       });
     } else if (getVoterArt.preId === "precinct_4") {
       await Browser.open({
-                url: 'https://drive.google.com/file/d/1n3iNq1KVvr8YjKllMO6znArKtlDvvK-k/view?usp=sharing'
-               // url: '/assets/files/spacetown_precinct4/precinct4_voter_affidavit.pdf'
+        url: 'https://drive.google.com/file/d/1n3iNq1KVvr8YjKllMO6znArKtlDvvK-k/view?usp=sharing'
+        // url: '/assets/files/spacetown_precinct4/precinct4_voter_affidavit.pdf'
       });
     }
   }
 
- 
+
 
   async openXML(precinctNum) {
     if (precinctNum === 1) {
@@ -143,5 +142,5 @@ export class PrintReturnPage implements OnInit {
     this.router.navigate(['/ballot-complete']);
   }
 
- 
-  }
+
+}

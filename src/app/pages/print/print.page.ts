@@ -8,11 +8,11 @@ import { Router } from '@angular/router';
 })
 export class PrintPage implements OnInit {
   results = [];
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   ngOnInit() {
     fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-     this.results = json[0]['printing_page'];
+      this.results = json[0]['printing_page'];
     });
   }
 

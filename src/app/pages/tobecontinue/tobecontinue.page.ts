@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class TobecontinuePage implements OnInit {
   results = [];
-  constructor(private route: Router) {}
+  constructor(private route: Router) { }
 
   ngOnInit() {
     fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
@@ -20,7 +20,7 @@ export class TobecontinuePage implements OnInit {
     console.log("clean");
     this.route.navigate(['/intro']);
   }
-  
+
   backbtn() {
     this.route.navigate(['/ballot-complete']);
   }

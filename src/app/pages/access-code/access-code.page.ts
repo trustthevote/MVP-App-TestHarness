@@ -12,6 +12,7 @@ import { AvclientService } from 'src/app/api/avclient.service';
   styleUrls: ['./access-code.page.scss'],
 })
 export class AccessCodePage implements OnInit {
+ 
   OTP: string = '';
   otp: string = '';
   disabledbutton;
@@ -155,8 +156,6 @@ export class AccessCodePage implements OnInit {
       });
     }
   }
-
-
   async presentAlertEmpty() {
     const alert = await this.alertctrl.create({
       message: this.results['alert_msg'],
@@ -205,7 +204,7 @@ export class AccessCodePage implements OnInit {
     let inputChar = String.fromCharCode(event.charCode);
 
     if (!pattern.test(inputChar)) {
-      // invalid character, prevent input
+    
       event.preventDefault();
     }
   }

@@ -451,11 +451,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AvclientService": () => (/* binding */ AvclientService)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 64762);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 37716);
 /* harmony import */ var src_app_api_statuscode_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/api/statuscode.service */ 52413);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ 80476);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 39895);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 39895);
 
 
 
@@ -515,8 +515,6 @@ let AvclientService = class AvclientService {
             }
         });
     }
-    // Should not be idempotent.  Instead, permute one of
-    // john's sample strings.
     constructBallotCryptograms(cvr) {
         return new Promise((resolve, reject) => {
             switch (this._cachedAccessCode) {
@@ -583,27 +581,13 @@ let AvclientService = class AvclientService {
             console.log(receipt);
         });
     }
-    presentAlertEmpty(Error) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__awaiter)(this, void 0, void 0, function* () {
-            const alert = yield this.alertctrl.create({
-                message: Error,
-                buttons: [{
-                        text: 'Okay',
-                        role: 'cancel',
-                        cssClass: 'secondary',
-                        handler: (blah) => { }
-                    }]
-            });
-            yield alert.present();
-        });
-    }
 };
 AvclientService.ctorParameters = () => [
     { type: src_app_api_statuscode_service__WEBPACK_IMPORTED_MODULE_0__.StatuscodeService },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__.AlertController },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__.Router }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_1__.AlertController },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__.Router }
 ];
-AvclientService = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
+AvclientService = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.Injectable)({
         providedIn: 'root'
     })

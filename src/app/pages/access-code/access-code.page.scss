@@ -127,6 +127,7 @@ input {
   font-size: 16px;
   height: 20px;
 }
+
 .receive-otp {
   text-align: left;
   font-family: "Roboto";
@@ -135,6 +136,7 @@ input {
   opacity: 1;
   font-size: 16px;
 }
+
 .resend {
   text-align: left;
   text-decoration: underline;
@@ -144,9 +146,11 @@ input {
   opacity: 1;
   font-size: 16px;
 }
+
 ion-toolbar {
   height: 100%;
 }
+
 p {
   font-size: 25px;
   font-weight: 700;
