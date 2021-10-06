@@ -208,7 +208,6 @@ let BallotCompletePage = class BallotCompletePage {
     }
     ballotReturnChoice(event) {
         let chooseVal = event;
-        console.log('this. chooseVal', chooseVal);
     }
 };
 BallotCompletePage.ctorParameters = () => [

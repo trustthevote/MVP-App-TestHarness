@@ -107,6 +107,5 @@ export class BallotCompletePage implements OnInit {
 
   ballotReturnChoice(event) {
     let chooseVal = event;
-    console.log('this. chooseVal', chooseVal);
   }
 }

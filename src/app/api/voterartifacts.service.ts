@@ -9,10 +9,7 @@ precinct: string;
 constructor() {}
 
 openPreFile(lastName: string) {
-  console.log("lastName", lastName);
-
   let key = lastName.substring(0, 1).toUpperCase();
-  console.log("key", key);
   switch (key) {
     case 'A':
       this.precinctId = "precinct_1";

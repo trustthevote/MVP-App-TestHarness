@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AvclientService } from 'src/app/api/avclient.service';
+import { VoterartifactsService } from 'src/app/api/voterartifacts.service';
+
 
 
 @Component({
@@ -11,9 +13,11 @@ import { AvclientService } from 'src/app/api/avclient.service';
 export class BeforeYouFinishPage implements OnInit {
   results = [];
   getCode: any;
+  cvr: any;
   constructor(private route: Router,
     private activatedRoute: ActivatedRoute,
-    public avclientService: AvclientService
+    public avclientService: AvclientService,
+    public voterartifactsService: VoterartifactsService
   ) { }
 
 
@@ -24,11 +28,9 @@ export class BeforeYouFinishPage implements OnInit {
     });
   }
   nextbtn() {
-    if (this.getCode != null) {
-      this.avclientService.constructBallotCryptograms(this.getCode).catch(res => {
-        console.log("res", res);
-      });
-    }
+    this.cvr = this.voterartifactsService.cvr
+    this.avclientService.constructBallotCryptograms(this.cvr).catch(res => {
+    });
     if (this.getCode == '00006') {
       this.route.navigate(['/calloutoforder_construct00006_error']);
     } else if (this.getCode == '00007') {

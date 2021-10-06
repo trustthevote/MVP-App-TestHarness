@@ -115,7 +115,6 @@ let CheckNetworkPage = class CheckNetworkPage {
         if (this.userObject.lastname != undefined) {
             const lastName = this.userObject.lastname.charAt(0).toUpperCase() + this.userObject.lastname.slice(1);
             if (lastName == 'OOOO') {
-                console.log('00001 Error');
             }
         }
     }

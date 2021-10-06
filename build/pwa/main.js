@@ -115,7 +115,7 @@ const routes = [
     },
     {
         path: 'print-return',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_capacitor_browser_dist_esm_index_js"), __webpack_require__.e("src_app_pages_print-return_print-return_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/print-return/print-return.module */ 69249)).then(m => m.PrintReturnPageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_capacitor_browser_dist_esm_index_js"), __webpack_require__.e("common"), __webpack_require__.e("src_app_pages_print-return_print-return_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/print-return/print-return.module */ 69249)).then(m => m.PrintReturnPageModule)
     },
     {
         path: 'user-time-out',

@@ -118,7 +118,6 @@ let BallotReadyTwoPage = class BallotReadyTwoPage {
     }
     copybtn() {
         this.avclientService.spoilBallotCryptograms(this.getCode).catch(res => {
-            console.log("res", res);
         });
         if (this.getCode == '00009') {
             this.route.navigate(['/ballot-test-fail-err']);

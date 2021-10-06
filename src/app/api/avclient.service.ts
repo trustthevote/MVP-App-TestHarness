@@ -28,11 +28,6 @@ export class AvclientService {
     this._serverURL = value;
   }
 
-  status() {
-    return this.statuscodeService.statusCode('Uninitialized');
-  }
-
-
   requestAccessCode(opaqueVoterId: string): Promise<void> {
     return new Promise((resolve, reject) => {
         switch(opaqueVoterId) {
@@ -121,24 +116,9 @@ export class AvclientService {
       }
     });
   }
-  generateTestCode(): string {
-    return '5e4d8fe41fa3819cc064e2ace0eda8a847fe322594a6fd5a9a51c699e63804b7'
-  }
+
   purgeData() {
     delete this._cachedAccessCode;
-  }
-
-
-  test(code) {
-    this.purgeData();
-    this.requestAccessCode(code);
-    this.validateAccessCode(code);
-    this.constructBallotCryptograms(code);
-    this.spoilBallotCryptograms(code);
-    this.constructBallotCryptograms(code);
-    this.submitBallotCryptograms(code).then(receipt => {
-      console.log(receipt)
-    });
   }
 
 }

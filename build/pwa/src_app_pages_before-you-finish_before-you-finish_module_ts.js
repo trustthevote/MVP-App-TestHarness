@@ -92,12 +92,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "BeforeYouFinishPage": () => (/* binding */ BeforeYouFinishPage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 64762);
 /* harmony import */ var _raw_loader_before_you_finish_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./before-you-finish.page.html */ 24193);
 /* harmony import */ var _before_you_finish_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./before-you-finish.page.scss */ 97844);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37716);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 39895);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 39895);
 /* harmony import */ var src_app_api_avclient_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/api/avclient.service */ 55913);
+/* harmony import */ var src_app_api_voterartifacts_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/api/voterartifacts.service */ 22130);
+
 
 
 
@@ -105,10 +107,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let BeforeYouFinishPage = class BeforeYouFinishPage {
-    constructor(route, activatedRoute, avclientService) {
+    constructor(route, activatedRoute, avclientService, voterartifactsService) {
         this.route = route;
         this.activatedRoute = activatedRoute;
         this.avclientService = avclientService;
+        this.voterartifactsService = voterartifactsService;
         this.results = [];
     }
     ngOnInit() {
@@ -118,11 +121,9 @@ let BeforeYouFinishPage = class BeforeYouFinishPage {
         });
     }
     nextbtn() {
-        if (this.getCode != null) {
-            this.avclientService.constructBallotCryptograms(this.getCode).catch(res => {
-                console.log("res", res);
-            });
-        }
+        this.cvr = this.voterartifactsService.cvr;
+        this.avclientService.constructBallotCryptograms(this.cvr).catch(res => {
+        });
         if (this.getCode == '00006') {
             this.route.navigate(['/calloutoforder_construct00006_error']);
         }
@@ -140,12 +141,13 @@ let BeforeYouFinishPage = class BeforeYouFinishPage {
     }
 };
 BeforeYouFinishPage.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__.Router },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__.ActivatedRoute },
-    { type: src_app_api_avclient_service__WEBPACK_IMPORTED_MODULE_2__.AvclientService }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__.Router },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__.ActivatedRoute },
+    { type: src_app_api_avclient_service__WEBPACK_IMPORTED_MODULE_2__.AvclientService },
+    { type: src_app_api_voterartifacts_service__WEBPACK_IMPORTED_MODULE_3__.VoterartifactsService }
 ];
-BeforeYouFinishPage = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_5__.Component)({
+BeforeYouFinishPage = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.Component)({
         selector: 'app-before-you-finish',
         template: _raw_loader_before_you_finish_page_html__WEBPACK_IMPORTED_MODULE_0__.default,
         styles: [_before_you_finish_page_scss__WEBPACK_IMPORTED_MODULE_1__.default]

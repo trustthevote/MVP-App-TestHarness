@@ -114,7 +114,6 @@ let TobecontinuePage = class TobecontinuePage {
     }
     reloadCurrentPage() {
         localStorage.clear();
-        console.log("clean");
         this.route.navigate(['/intro']);
     }
     backbtn() {

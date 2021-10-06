@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AvclientService } from 'src/app/api/avclient.service';
+import { VoterartifactsService } from 'src/app/api/voterartifacts.service';
+
 @Component({
   selector: 'app-ballot-fingerprint',
   templateUrl: './ballot-fingerprint.page.html',
@@ -15,9 +17,11 @@ export class BallotFingerprintPage implements OnInit {
   scndicons = false;
   fsticon = true;
   getCode: any;
+  affidavit: any;
   constructor(private route: Router,
     public avclientService: AvclientService,
-    private activatedRoute: ActivatedRoute,) { }
+    private activatedRoute: ActivatedRoute,
+    public voterartifactsService: VoterartifactsService) { }
 
   PolicyDetails() {
     this.IsVisible = true;
@@ -37,8 +41,8 @@ export class BallotFingerprintPage implements OnInit {
     });
   }
   sendbtn() {
-    this.avclientService.submitBallotCryptograms(this.getCode).catch(res => {
-      console.log("res", res);
+    this.affidavit = this.voterartifactsService.affidavit
+    this.avclientService.submitBallotCryptograms(this.affidavit).catch(res => {
     });
     if (this.getCode == '00012') {
       this.route.navigate(['/check_network_submit00012_error']);
@@ -53,7 +57,6 @@ export class BallotFingerprintPage implements OnInit {
   }
   copybtn() {
     this.avclientService.spoilBallotCryptograms(this.getCode).catch(res => {
-      console.log("res", res);
     });
     if (this.getCode == '00009') {
       this.route.navigate(['/calloutoforder_spoil00009_error']);

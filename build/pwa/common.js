@@ -476,9 +476,6 @@ let AvclientService = class AvclientService {
     set serverURL(value) {
         this._serverURL = value;
     }
-    status() {
-        return this.statuscodeService.statusCode('Uninitialized');
-    }
     requestAccessCode(opaqueVoterId) {
         return new Promise((resolve, reject) => {
             switch (opaqueVoterId) {
@@ -564,22 +561,8 @@ let AvclientService = class AvclientService {
             }
         });
     }
-    generateTestCode() {
-        return '5e4d8fe41fa3819cc064e2ace0eda8a847fe322594a6fd5a9a51c699e63804b7';
-    }
     purgeData() {
         delete this._cachedAccessCode;
-    }
-    test(code) {
-        this.purgeData();
-        this.requestAccessCode(code);
-        this.validateAccessCode(code);
-        this.constructBallotCryptograms(code);
-        this.spoilBallotCryptograms(code);
-        this.constructBallotCryptograms(code);
-        this.submitBallotCryptograms(code).then(receipt => {
-            console.log(receipt);
-        });
     }
 };
 AvclientService.ctorParameters = () => [
@@ -675,6 +658,71 @@ StatuscodeService = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
         providedIn: 'root'
     })
 ], StatuscodeService);
+
+
+
+/***/ }),
+
+/***/ 22130:
+/*!***********************************************!*\
+  !*** ./src/app/api/voterartifacts.service.ts ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "VoterartifactsService": () => (/* binding */ VoterartifactsService)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 37716);
+
+
+let VoterartifactsService = class VoterartifactsService {
+    constructor() { }
+    openPreFile(lastName) {
+        let key = lastName.substring(0, 1).toUpperCase();
+        switch (key) {
+            case 'A':
+                this.precinctId = "precinct_1";
+                this.precinct = "Precinct 1 Spaceport";
+                break;
+            case 'B':
+                this.precinctId = "precinct_2";
+                this.precinct = "Precinct 2 Bedrock";
+                break;
+            case 'C':
+                this.precinctId = "precinct_3";
+                this.precinct = "Precinct 3 Downtown";
+                break;
+            default:
+                this.precinctId = "precinct_4";
+                this.precinct = "Precinct 4 Spacetown";
+                break;
+        }
+        ;
+        let valPrecinct = {
+            preId: this.precinctId,
+            preVal: this.precinct
+        };
+        return valPrecinct;
+    }
+    get cvr() {
+        return "this is a cvr";
+    }
+    get affidavit() {
+        return "this is an affidavit";
+    }
+    get ballot() {
+        return "this is a ballot";
+    }
+};
+VoterartifactsService.ctorParameters = () => [];
+VoterartifactsService = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.Injectable)({
+        providedIn: 'root'
+    })
+], VoterartifactsService);
 
 
 

@@ -17,7 +17,6 @@ export class TobecontinuePage implements OnInit {
   }
   reloadCurrentPage() {
     localStorage.clear();
-    console.log("clean");
     this.route.navigate(['/intro']);
   }
 

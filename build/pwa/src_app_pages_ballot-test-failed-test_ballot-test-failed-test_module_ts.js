@@ -160,7 +160,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\n  <div class=\"upr-text\">{{results.first_para}}</div>\n  <br /><br />\n  <div class=\"upr-text\">{{results.sec_para}}</div>\n  <br /><br /><br />\n  <ion-button color=\"dark\" (click)=\"newballot()\">\n    {{results.fist_btn}}\n    <ion-icon slot=\"end\" name=\"reader-outline\"></ion-icon> </ion-button\n  ><br /><br /><br />\n  <ion-button color=\"dark\" (click)=\"requestballot()\">\n    {{results.sec_btn}}\n    <ion-icon slot=\"end\" name=\"mail-outline\"></ion-icon>\n  </ion-button>\n</ion-content>\n<ion-footer>\n  <ion-toolbar> </ion-toolbar>\n</ion-footer>\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n  <div class=\"upr-text\">{{results.first_para}}</div>\r\n  <br /><br />\r\n  <div class=\"upr-text\">{{results.sec_para}}</div>\r\n  <br /><br /><br />\r\n  <ion-button color=\"dark\" (click)=\"newballot()\">\r\n    {{results.fist_btn}}\r\n    <ion-icon slot=\"end\" name=\"reader-outline\"></ion-icon> </ion-button\r\n  ><br /><br /><br />\r\n  <ion-button color=\"dark\" (click)=\"requestballot()\">\r\n    {{results.sec_btn}}\r\n    <ion-icon slot=\"end\" name=\"mail-outline\"></ion-icon>\r\n  </ion-button>\r\n</ion-content>\r\n<ion-footer>\r\n  <ion-toolbar> </ion-toolbar>\r\n</ion-footer>\r\n");
 
 /***/ })
 

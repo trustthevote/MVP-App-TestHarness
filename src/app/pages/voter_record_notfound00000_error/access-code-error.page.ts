@@ -19,7 +19,6 @@ export class AccessCodeErrorPage implements OnInit {
     if (this.userObject.lastname != undefined) {
       const lastName = this.userObject.lastname.charAt(0).toUpperCase() + this.userObject.lastname.slice(1);
       if (lastName == 'OOOOO') {
-      console.log('00000 Error')
       } 
     }
   }
