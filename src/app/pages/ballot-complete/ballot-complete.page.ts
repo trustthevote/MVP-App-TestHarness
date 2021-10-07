@@ -22,6 +22,7 @@ export class BallotCompletePage implements OnInit {
     if (this.router.getCurrentNavigation().extras.state) {
       this.paramData = this.router.getCurrentNavigation().extras.state.user;
     }
+    this.avclientService.assignServerUrl(environment.url);
   }
 
   ngOnInit() {
@@ -99,7 +100,6 @@ export class BallotCompletePage implements OnInit {
     this.router.navigate(['/print-return']);
   }
   Digitalret() {
-    this.avclientService.assignServerUrl(environment.url);
     this.router.navigate(['/request-access-code', {
       t: new Date().getTime()
     }]);

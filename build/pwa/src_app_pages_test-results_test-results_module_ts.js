@@ -92,12 +92,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "TestResultsPage": () => (/* binding */ TestResultsPage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 64762);
 /* harmony import */ var _raw_loader_test_results_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./test-results.page.html */ 25356);
 /* harmony import */ var _test_results_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./test-results.page.scss */ 60866);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37716);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 39895);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 39895);
 /* harmony import */ var src_app_api_avclient_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/api/avclient.service */ 55913);
+/* harmony import */ var src_app_api_voterartifacts_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/api/voterartifacts.service */ 22130);
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/environments/environment */ 92340);
+
+
 
 
 
@@ -105,11 +109,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let TestResultsPage = class TestResultsPage {
-    constructor(route, avclientService, activatedRoute) {
+    constructor(route, avclientService, activatedRoute, voterartifactsService) {
         this.route = route;
         this.avclientService = avclientService;
         this.activatedRoute = activatedRoute;
+        this.voterartifactsService = voterartifactsService;
         this.results = [];
+        this.avclientService.assignServerUrl(src_environments_environment__WEBPACK_IMPORTED_MODULE_4__.environment.url);
+        this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
+        let getVoterArt = this.voterartifactsService.Initialize(this.userObject.lastname);
     }
     ngOnInit() {
         this.getCode = this.activatedRoute.snapshot.paramMap.get('code');
@@ -118,6 +126,9 @@ let TestResultsPage = class TestResultsPage {
         });
     }
     passbtn() {
+        this.cvr = this.voterartifactsService.cvr;
+        this.avclientService.constructBallotCryptograms(this.cvr).catch(res => {
+        });
         this.route.navigate(['/ballot-fingerprint', {
                 code: this.getCode
             }]);
@@ -127,12 +138,13 @@ let TestResultsPage = class TestResultsPage {
     }
 };
 TestResultsPage.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__.Router },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__.Router },
     { type: src_app_api_avclient_service__WEBPACK_IMPORTED_MODULE_2__.AvclientService },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__.ActivatedRoute }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__.ActivatedRoute },
+    { type: src_app_api_voterartifacts_service__WEBPACK_IMPORTED_MODULE_3__.VoterartifactsService }
 ];
-TestResultsPage = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_5__.Component)({
+TestResultsPage = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_7__.Component)({
         selector: 'app-test-results',
         template: _raw_loader_test_results_page_html__WEBPACK_IMPORTED_MODULE_0__.default,
         styles: [_test_results_page_scss__WEBPACK_IMPORTED_MODULE_1__.default]

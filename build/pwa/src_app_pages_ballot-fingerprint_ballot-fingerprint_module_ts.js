@@ -92,13 +92,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "BallotFingerprintPage": () => (/* binding */ BallotFingerprintPage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 64762);
 /* harmony import */ var _raw_loader_ballot_fingerprint_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./ballot-fingerprint.page.html */ 66184);
 /* harmony import */ var _ballot_fingerprint_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ballot-fingerprint.page.scss */ 66945);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 37716);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 39895);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 39895);
 /* harmony import */ var src_app_api_avclient_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/api/avclient.service */ 55913);
 /* harmony import */ var src_app_api_voterartifacts_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/api/voterartifacts.service */ 22130);
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/environments/environment */ 92340);
+
 
 
 
@@ -119,6 +121,9 @@ let BallotFingerprintPage = class BallotFingerprintPage {
         this.icon = true;
         this.scndicons = false;
         this.fsticon = true;
+        this.avclientService.assignServerUrl(src_environments_environment__WEBPACK_IMPORTED_MODULE_4__.environment.url);
+        this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
+        let getVoterArt = this.voterartifactsService.Initialize(this.userObject.lastname);
     }
     PolicyDetails() {
         this.IsVisible = true;
@@ -138,47 +143,45 @@ let BallotFingerprintPage = class BallotFingerprintPage {
     }
     sendbtn() {
         this.affidavit = this.voterartifactsService.affidavit;
-        this.avclientService.submitBallotCryptograms(this.affidavit).catch(res => {
-        });
-        if (this.getCode == '00012') {
-            this.route.navigate(['/check_network_submit00012_error']);
-        }
-        else if (this.getCode == '00013') {
-            this.route.navigate(['/calloutoforder_submit00013_error']);
-        }
-        else {
+        this.avclientService.submitBallotCryptograms(this.affidavit).then(res => {
             this.route.navigate(['/sending-confirmation', {
                     code: this.getCode
                 }]);
-        }
+        }).catch(res => {
+            if (res == 'Error: network code') {
+                this.route.navigate(['/check_network_submit00012_error']);
+            }
+            else if (res == 'Error: call out of order error') {
+                this.route.navigate(['/calloutoforder_submit00013_error']);
+            }
+        });
     }
     copybtn() {
-        this.avclientService.spoilBallotCryptograms(this.getCode).catch(res => {
-        });
-        if (this.getCode == '00009') {
-            this.route.navigate(['/calloutoforder_spoil00009_error']);
-        }
-        else if (this.getCode == '00010') {
-            this.route.navigate(['/check_network_spoil00010_error']);
-        }
-        else if (this.getCode == '00011') {
-            this.route.navigate(['/check_server_spoil00011_error']);
-        }
-        else {
+        this.avclientService.spoilBallotCryptograms().then(res => {
             this.route.navigate(['/test-results', {
                     code: this.getCode
                 }]);
-        }
+        }).catch(res => {
+            if (res == 'Error: call out of order error') {
+                this.route.navigate(['/calloutoforder_spoil00009_error']);
+            }
+            else if (res == 'Error: network code') {
+                this.route.navigate(['/check_network_spoil00010_error']);
+            }
+            else if (res == 'Error: server commitment error') {
+                this.route.navigate(['/check_server_spoil00011_error']);
+            }
+        });
     }
 };
 BallotFingerprintPage.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__.Router },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__.Router },
     { type: src_app_api_avclient_service__WEBPACK_IMPORTED_MODULE_2__.AvclientService },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__.ActivatedRoute },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__.ActivatedRoute },
     { type: src_app_api_voterartifacts_service__WEBPACK_IMPORTED_MODULE_3__.VoterartifactsService }
 ];
-BallotFingerprintPage = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.Component)({
+BallotFingerprintPage = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_7__.Component)({
         selector: 'app-ballot-fingerprint',
         template: _raw_loader_ballot_fingerprint_page_html__WEBPACK_IMPORTED_MODULE_0__.default,
         styles: [_ballot_fingerprint_page_scss__WEBPACK_IMPORTED_MODULE_1__.default]

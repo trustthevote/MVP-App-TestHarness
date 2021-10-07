@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AvclientService } from 'src/app/api/avclient.service';
 import { VoterartifactsService } from 'src/app/api/voterartifacts.service';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -14,11 +15,16 @@ export class BeforeYouFinishPage implements OnInit {
   results = [];
   getCode: any;
   cvr: any;
+  userObject: any;
   constructor(private route: Router,
     private activatedRoute: ActivatedRoute,
     public avclientService: AvclientService,
     public voterartifactsService: VoterartifactsService
-  ) { }
+  ) { 
+    this.avclientService.assignServerUrl(environment.url);
+    this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
+    let getVoterArt = this.voterartifactsService.Initialize(this.userObject.lastname);
+  }
 
 
   ngOnInit() {
@@ -29,19 +35,19 @@ export class BeforeYouFinishPage implements OnInit {
   }
   nextbtn() {
     this.cvr = this.voterartifactsService.cvr
-    this.avclientService.constructBallotCryptograms(this.cvr).catch(res => {
-    });
-    if (this.getCode == '00006') {
-      this.route.navigate(['/calloutoforder_construct00006_error']);
-    } else if (this.getCode == '00007') {
-      this.route.navigate(['/check_network_construct00007_error']);
-    } else if (this.getCode == '00008') {
-      this.route.navigate(['/corrupt_cv_construct00008_error']);
-    } else {
+    this.avclientService.constructBallotCryptograms(this.cvr).then(res => {
       this.route.navigate(['/ballot-fingerprint', {
         code: this.getCode
       }]);
-    }
+    }).catch(res => {
+      if (res == 'Error: call out of order error') {
+        this.route.navigate(['/calloutoforder_construct00006_error']);
+      } else if (res == 'Error: network code') {
+        this.route.navigate(['/check_network_construct00007_error']);
+      } else if (res == 'Error: corrupt CVR') {
+        this.route.navigate(['/corrupt_cv_construct00008_error']);
+      }
+    });
   }
 
 }

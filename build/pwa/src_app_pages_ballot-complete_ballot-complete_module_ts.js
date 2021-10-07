@@ -116,6 +116,7 @@ let BallotCompletePage = class BallotCompletePage {
         if (this.router.getCurrentNavigation().extras.state) {
             this.paramData = this.router.getCurrentNavigation().extras.state.user;
         }
+        this.avclientService.assignServerUrl(src_environments_environment__WEBPACK_IMPORTED_MODULE_4__.environment.url);
     }
     ngOnInit() {
         fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
@@ -201,7 +202,6 @@ let BallotCompletePage = class BallotCompletePage {
         this.router.navigate(['/print-return']);
     }
     Digitalret() {
-        this.avclientService.assignServerUrl(src_environments_environment__WEBPACK_IMPORTED_MODULE_4__.environment.url);
         this.router.navigate(['/request-access-code', {
                 t: new Date().getTime()
             }]);

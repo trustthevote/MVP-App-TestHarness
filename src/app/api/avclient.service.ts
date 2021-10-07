@@ -20,23 +20,18 @@ export class AvclientService {
   assignServerUrl(bulletinBoardURL) {
     this._serverURL = bulletinBoardURL;
   }
-  get serverURL() {
-    return this._serverURL;
-  }
-
-  set serverURL(value) {
-    this._serverURL = value;
-  }
 
   requestAccessCode(opaqueVoterId: string): Promise<void> {
     return new Promise((resolve, reject) => {
         switch(opaqueVoterId) {
-      case '00000' || 'T0000':
-          reject(new Error(this.statuscodeService.statusCode('VoterRecordNotFound')));
-          break;
-      case '00001' || 'T0001':
-          reject(new Error(this.statuscodeService.statusCode('NetworkError')))
-          break;
+      case '00000':
+      case 'T0000':
+            reject(new Error(this.statuscodeService.statusCode('VoterRecordNotFound')));
+            break;    
+      case '00001':
+      case  'T0001':
+            reject(new Error(this.statuscodeService.statusCode('NetworkError')))
+            break;
       default:
           resolve();
         }
@@ -83,7 +78,7 @@ export class AvclientService {
     })
   }
 
-  spoilBallotCryptograms(code): Promise<void>  {
+  spoilBallotCryptograms(): Promise<void>  {
     return new Promise((resolve, reject) => {
       switch (this._cachedAccessCode) {
         case '00009':
@@ -98,7 +93,7 @@ export class AvclientService {
     })
   }
 
-  submitBallotCryptograms(code): Promise<Receipt> {
+  submitBallotCryptograms(affidavit): Promise<Receipt> {
     return new Promise((resolve, reject) => {
       switch (this._cachedAccessCode) {
         case '00012':

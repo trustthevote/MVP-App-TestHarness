@@ -92,13 +92,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "BeforeYouFinishPage": () => (/* binding */ BeforeYouFinishPage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 64762);
 /* harmony import */ var _raw_loader_before_you_finish_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./before-you-finish.page.html */ 24193);
 /* harmony import */ var _before_you_finish_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./before-you-finish.page.scss */ 97844);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 37716);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 39895);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 39895);
 /* harmony import */ var src_app_api_avclient_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/api/avclient.service */ 55913);
 /* harmony import */ var src_app_api_voterartifacts_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/api/voterartifacts.service */ 22130);
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/environments/environment */ 92340);
+
 
 
 
@@ -113,6 +115,9 @@ let BeforeYouFinishPage = class BeforeYouFinishPage {
         this.avclientService = avclientService;
         this.voterartifactsService = voterartifactsService;
         this.results = [];
+        this.avclientService.assignServerUrl(src_environments_environment__WEBPACK_IMPORTED_MODULE_4__.environment.url);
+        this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
+        let getVoterArt = this.voterartifactsService.Initialize(this.userObject.lastname);
     }
     ngOnInit() {
         this.getCode = this.activatedRoute.snapshot.paramMap.get('code');
@@ -122,32 +127,31 @@ let BeforeYouFinishPage = class BeforeYouFinishPage {
     }
     nextbtn() {
         this.cvr = this.voterartifactsService.cvr;
-        this.avclientService.constructBallotCryptograms(this.cvr).catch(res => {
-        });
-        if (this.getCode == '00006') {
-            this.route.navigate(['/calloutoforder_construct00006_error']);
-        }
-        else if (this.getCode == '00007') {
-            this.route.navigate(['/check_network_construct00007_error']);
-        }
-        else if (this.getCode == '00008') {
-            this.route.navigate(['/corrupt_cv_construct00008_error']);
-        }
-        else {
+        this.avclientService.constructBallotCryptograms(this.cvr).then(res => {
             this.route.navigate(['/ballot-fingerprint', {
                     code: this.getCode
                 }]);
-        }
+        }).catch(res => {
+            if (res == 'Error: call out of order error') {
+                this.route.navigate(['/calloutoforder_construct00006_error']);
+            }
+            else if (res == 'Error: network code') {
+                this.route.navigate(['/check_network_construct00007_error']);
+            }
+            else if (res == 'Error: corrupt CVR') {
+                this.route.navigate(['/corrupt_cv_construct00008_error']);
+            }
+        });
     }
 };
 BeforeYouFinishPage.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__.Router },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__.ActivatedRoute },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__.Router },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__.ActivatedRoute },
     { type: src_app_api_avclient_service__WEBPACK_IMPORTED_MODULE_2__.AvclientService },
     { type: src_app_api_voterartifacts_service__WEBPACK_IMPORTED_MODULE_3__.VoterartifactsService }
 ];
-BeforeYouFinishPage = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.Component)({
+BeforeYouFinishPage = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_7__.Component)({
         selector: 'app-before-you-finish',
         template: _raw_loader_before_you_finish_page_html__WEBPACK_IMPORTED_MODULE_0__.default,
         styles: [_before_you_finish_page_scss__WEBPACK_IMPORTED_MODULE_1__.default]

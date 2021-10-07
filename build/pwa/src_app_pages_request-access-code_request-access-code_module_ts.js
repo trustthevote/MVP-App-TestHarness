@@ -114,6 +114,7 @@ let RequestAccessCodePage = class RequestAccessCodePage {
         this.statuscodeService = statuscodeService;
         this.avclientService = avclientService;
         this.results = [];
+        this.avclientService.assignServerUrl(src_environments_environment__WEBPACK_IMPORTED_MODULE_4__.environment.url);
     }
     ngOnInit() {
         this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
@@ -122,21 +123,13 @@ let RequestAccessCodePage = class RequestAccessCodePage {
         });
     }
     Continuebtn() {
-        this.avclientService.assignServerUrl(src_environments_environment__WEBPACK_IMPORTED_MODULE_4__.environment.url);
         if (this.userObject.lastname != undefined) {
             let opaqueVoterId = this.userObject.lastname;
-            if (opaqueVoterId == 'OOOOO' || opaqueVoterId == 'T0000') {
-                opaqueVoterId = '00000';
-            }
-            else if (opaqueVoterId == 'OOOO' || opaqueVoterId == 'T0001') {
-                opaqueVoterId = '00001';
-            }
-            else {
+            this.avclientService.requestAccessCode(opaqueVoterId).then(res => {
                 this.route.navigate(['/access-code', {
                         t: new Date().getTime()
                     }]);
-            }
-            this.avclientService.requestAccessCode(opaqueVoterId).catch(res => {
+            }).catch(res => {
                 if (res == 'Error: voter record not found') {
                     this.route.navigate(['/voter_record_notfound00000_error']);
                 }

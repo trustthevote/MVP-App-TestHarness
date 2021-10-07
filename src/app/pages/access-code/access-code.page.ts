@@ -5,6 +5,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { invalid } from '@angular/compiler/src/render3/view/util';
 import { StatuscodeService } from 'src/app/api/statuscode.service';
 import { AvclientService } from 'src/app/api/avclient.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-access-code',
@@ -45,6 +46,7 @@ export class AccessCodePage implements OnInit {
     public statuscodeService: StatuscodeService,
     public avclientService: AvclientService) {
     this.createOTPForm();
+    this.avclientService.assignServerUrl(environment.url);
   }
 
   ngOnInit() {

@@ -186,10 +186,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/ballot-resealed/ballot-resealed.module').then( m => m.BallotResealedPageModule)
   },
   {
-    path: 'ballot-ready-two',
-    loadChildren: () => import('./pages/ballot-ready-two/ballot-ready-two.module').then( m => m.BallotReadyTwoPageModule)
-  },
-  {
     path: 'calloutoforder-access00002-error',
     loadChildren: () => import('./pages/calloutoforder-access00002-error/calloutoforder-access00002-error.module').then( m => m.CalloutoforderAccess00002ErrorPageModule)
   },

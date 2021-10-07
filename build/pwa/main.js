@@ -222,10 +222,6 @@ const routes = [
         loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_pages_ballot-resealed_ballot-resealed_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-resealed/ballot-resealed.module */ 41857)).then(m => m.BallotResealedPageModule)
     },
     {
-        path: 'ballot-ready-two',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_pages_ballot-ready-two_ballot-ready-two_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-ready-two/ballot-ready-two.module */ 65411)).then(m => m.BallotReadyTwoPageModule)
-    },
-    {
         path: 'calloutoforder-access00002-error',
         loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_calloutoforder-access00002-error_calloutoforder-access00002-error_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/calloutoforder-access00002-error/calloutoforder-access00002-error.module */ 77433)).then(m => m.CalloutoforderAccess00002ErrorPageModule)
     },

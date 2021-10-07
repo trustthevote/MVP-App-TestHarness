@@ -114,9 +114,10 @@ let PrintReturnPage = class PrintReturnPage {
         if (this.router.getCurrentNavigation().extras.state) {
             this.paramData = this.router.getCurrentNavigation().extras.state.user;
         }
+        this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
+        let getVoterArt = this.voterartifactsService.Initialize(this.userObject.lastname);
     }
     ngOnInit() {
-        this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
         fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
             this.results = json[0]['print_return_page'];
         });
@@ -143,33 +144,25 @@ let PrintReturnPage = class PrintReturnPage {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
             if (precinctNum === 1) {
                 console.log(precinctNum);
-                // await Browser.open({ url: 'https://drive.google.com/file/d/1Wrk9xhJkMFVEqtBBJgw2qZOTS9nqFxwk/view?usp=sharing' });
                 yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
-                    // url: 'https://drive.google.com/file/d/1NjMf2sUwjTPH20jN4ajnWRZDvkobq9hR/view?usp=sharing'
                     url: 'https://drive.google.com/file/d/1NjMf2sUwjTPH20jN4ajnWRZDvkobq9hR/view?usp=sharing '
                 });
             }
             else if (precinctNum === 2) {
                 console.log(precinctNum);
-                // await Browser.open({ url: 'https://drive.google.com/file/d/1cV-4autG5EmSzThK82-0WWbFRv2RnkuR/view?usp=sharing' });
                 yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
-                    // url: 'https://drive.google.com/file/d/1cV-4autG5EmSzThK82-0WWbFRv2RnkuR/view?usp=sharing'
                     url: 'https://drive.google.com/file/d/1FtiAIYsOdGoLSqXBEymGatkpR7heuSfI/view?usp=sharing  '
                 });
             }
             else if (precinctNum === 3) {
                 console.log(precinctNum);
-                // await Browser.open({ url: 'https://drive.google.com/file/d/16A2tzWcmvLQzXBdHordJ0OZbT2li2I8j/view?usp=sharing' });
                 yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
-                    // url: 'https://drive.google.com/file/d/16A2tzWcmvLQzXBdHordJ0OZbT2li2I8j/view?usp=sharing'
                     url: 'https://drive.google.com/file/d/1hKmtHmpJ2qP1atsDWfU2qtzDOn6kZ1ra/view?usp=sharing '
                 });
             }
             else {
                 console.log(precinctNum);
-                // await Browser.open({ url: 'https://drive.google.com/file/d/1C6TO44gUkkljSyNLXdV_e1X7wPvEc3eA/view?usp=sharing' });
                 yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
-                    // url: 'https://drive.google.com/file/d/1C6TO44gUkkljSyNLXdV_e1X7wPvEc3eA/view?usp=sharing'
                     url: 'https://drive.google.com/file/d/1KyESAe8iVuA61zEKhpN3DENtNOE6M8Lr/view?usp=sharing'
                 });
             }
@@ -177,59 +170,24 @@ let PrintReturnPage = class PrintReturnPage {
     }
     openPDF2(precinctNum) {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
-            let getVoterArt = this.voterartifactsService.openPreFile(this.userObject.lastname);
-            console.log("getVoterArt", getVoterArt);
-            // const options: DocumentViewerOptions = {
-            //   title: 'My PDF'
-            // }
-            if (getVoterArt.preId === "precinct_1") {
-                // let browser = this.iab.create('/assets/files/port_precinct1/precinct1_voter_affidavit.pdf');
-                yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
-                    url: 'https://drive.google.com/file/d/1A8v82etRnePtdF_IZDQmVb34Ss2tZu-f/view?usp=sharing'
-                });
-                // url: '/assets/files/port_precinct1/precinct1_voter_affidavit.pdf'
-                // this.document.viewDocument('/assets/files/port_precinct1/precinct1_voter_affidavit.pdf', 'application/pdf', options)
-            }
-            else if (getVoterArt.preId === "precinct_2") {
-                yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
-                    url: 'https://drive.google.com/file/d/1Qbc4jLYFkDoljpR4g5NFJ4Wfc_S5--kc/view?usp=sharing'
-                    // url: '/assets/files/bedrock_precinct2/precinct2_voter_affidavit.pdf'
-                });
-            }
-            else if (getVoterArt.preId === "precinct_3") {
-                yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
-                    url: 'https://drive.google.com/file/d/1j3wzbIfH8Sm4UAyij6N5pjHJVXTGWliJ/view?usp=sharing'
-                    // url: '/assets/files/downtown_precinct3/precinct3_voter_affidavit.pdf'
-                });
-            }
-            else if (getVoterArt.preId === "precinct_4") {
-                yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
-                    url: 'https://drive.google.com/file/d/1n3iNq1KVvr8YjKllMO6znArKtlDvvK-k/view?usp=sharing'
-                    // url: '/assets/files/spacetown_precinct4/precinct4_voter_affidavit.pdf'
-                });
-            }
-        });
-    }
-    openXML(precinctNum) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
             if (precinctNum === 1) {
                 yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
-                    url: 'https://drive.google.com/file/d/1pIe31DRlAtmcdsTeCc1HrAHKQ82N6wYL/view?usp=sharing'
+                    url: 'https://drive.google.com/file/d/1A8v82etRnePtdF_IZDQmVb34Ss2tZu-f/view?usp=sharing'
                 });
             }
             else if (precinctNum === 2) {
                 yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
-                    url: 'https://drive.google.com/file/d/1WUl5lTFPDYB8FJYdxq5FKhJGPaQgyy1Y/view?usp=sharing'
+                    url: 'https://drive.google.com/file/d/1Qbc4jLYFkDoljpR4g5NFJ4Wfc_S5--kc/view?usp=sharing'
                 });
             }
             else if (precinctNum === 3) {
                 yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
-                    url: 'https://drive.google.com/file/d/1A_NWcXXqOLzr8OHnzmEEnCNcrYyBiViz/view?usp=sharing'
+                    url: 'https://drive.google.com/file/d/1j3wzbIfH8Sm4UAyij6N5pjHJVXTGWliJ/view?usp=sharing'
                 });
             }
             else {
                 yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
-                    url: 'https://drive.google.com/file/d/1FBLU2ZGeVOO71zwqnPiWtOH_ibgCosId/view?usp=sharing'
+                    url: 'https://drive.google.com/file/d/1n3iNq1KVvr8YjKllMO6znArKtlDvvK-k/view?usp=sharing'
                 });
             }
         });

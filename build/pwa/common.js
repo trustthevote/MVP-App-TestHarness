@@ -470,19 +470,15 @@ let AvclientService = class AvclientService {
     assignServerUrl(bulletinBoardURL) {
         this._serverURL = bulletinBoardURL;
     }
-    get serverURL() {
-        return this._serverURL;
-    }
-    set serverURL(value) {
-        this._serverURL = value;
-    }
     requestAccessCode(opaqueVoterId) {
         return new Promise((resolve, reject) => {
             switch (opaqueVoterId) {
-                case '00000' || 0:
+                case '00000':
+                case 'T0000':
                     reject(new Error(this.statuscodeService.statusCode('VoterRecordNotFound')));
                     break;
-                case '00001' || 0:
+                case '00001':
+                case 'T0001':
                     reject(new Error(this.statuscodeService.statusCode('NetworkError')));
                     break;
                 default:
@@ -529,7 +525,7 @@ let AvclientService = class AvclientService {
             }
         });
     }
-    spoilBallotCryptograms(code) {
+    spoilBallotCryptograms() {
         return new Promise((resolve, reject) => {
             switch (this._cachedAccessCode) {
                 case '00009':
@@ -543,7 +539,7 @@ let AvclientService = class AvclientService {
             }
         });
     }
-    submitBallotCryptograms(code) {
+    submitBallotCryptograms(affidavit) {
         return new Promise((resolve, reject) => {
             switch (this._cachedAccessCode) {
                 case '00012':
@@ -680,41 +676,52 @@ __webpack_require__.r(__webpack_exports__);
 
 let VoterartifactsService = class VoterartifactsService {
     constructor() { }
-    openPreFile(lastName) {
+    Initialize(lastName) {
         let key = lastName.substring(0, 1).toUpperCase();
         switch (key) {
             case 'A':
                 this.precinctId = "precinct_1";
                 this.precinct = "Precinct 1 Spaceport";
+                this.cvrfile = "src/assets/files/port_precinct1/jetsons_port_precinct1_cvr.xml";
+                this.affidavitfile = "src/assets/files/port_precinct1/precinct1_voter_affidavit.pdf";
+                this.ballotfile = "src/assets/files/port_precinct1/jetsons_port-precinct1_ballot_marked.pdf";
                 break;
             case 'B':
                 this.precinctId = "precinct_2";
                 this.precinct = "Precinct 2 Bedrock";
+                this.cvrfile = "src/assets/files/bedrock_precinct2/jetsons_bedrock-precinct2_cvr.xml";
+                this.affidavitfile = "src/assets/files/bedrock_precinct2/precinct2_voter_affidavit.pdf";
+                this.ballotfile = "src/assets/files/bedrock_precinct2/jetsons_bedrock-precinct2_ballot_marked.pdf";
                 break;
             case 'C':
                 this.precinctId = "precinct_3";
                 this.precinct = "Precinct 3 Downtown";
+                this.cvrfile = "src/assets/files/downtown_precinct3/jetsons_downtown-precinct3_cvr.xml";
+                this.affidavitfile = "src/assets/files/downtown_precinct3/precinct3_voter_affidavit.pdf";
+                this.ballotfile = "src/assets/files/downtown_precinct3/jetsons_downtown-precinct3_ballot_marked.pdf";
                 break;
             default:
                 this.precinctId = "precinct_4";
                 this.precinct = "Precinct 4 Spacetown";
+                this.cvrfile = "src/assets/files/spacetown_precinct4/jetsons_spacetown_precinct4_cvr.xml";
+                this.affidavitfile = "src/assets/files/spacetown_precinct4/jetsons_spacetown-precinct4_ballot_marked.pdf";
+                this.ballotfile = "src/assets/files/spacetown_precinct4/precinct4_voter_affidavit.pdf";
                 break;
         }
         ;
-        let valPrecinct = {
-            preId: this.precinctId,
-            preVal: this.precinct
-        };
-        return valPrecinct;
+        return this.precinct;
+    }
+    get precinctName() {
+        return this.precinct;
     }
     get cvr() {
-        return "this is a cvr";
+        return this.cvrfile; // Instead, open the file, and return the contents
     }
     get affidavit() {
-        return "this is an affidavit";
+        return this.affidavitfile; // Instead, open the file, and return the contents
     }
     get ballot() {
-        return "this is a ballot";
+        return this.ballotfile; // Instead, open the file, and return the contents
     }
 };
 VoterartifactsService.ctorParameters = () => [];

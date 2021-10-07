@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AvclientService } from 'src/app/api/avclient.service';
 import { VoterartifactsService } from 'src/app/api/voterartifacts.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-ballot-fingerprint',
@@ -18,10 +19,15 @@ export class BallotFingerprintPage implements OnInit {
   fsticon = true;
   getCode: any;
   affidavit: any;
+  userObject: any;
   constructor(private route: Router,
     public avclientService: AvclientService,
     private activatedRoute: ActivatedRoute,
-    public voterartifactsService: VoterartifactsService) { }
+    public voterartifactsService: VoterartifactsService) { 
+      this.avclientService.assignServerUrl(environment.url);
+      this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
+      let getVoterArt = this.voterartifactsService.Initialize(this.userObject.lastname);
+    }
 
   PolicyDetails() {
     this.IsVisible = true;
@@ -42,33 +48,31 @@ export class BallotFingerprintPage implements OnInit {
   }
   sendbtn() {
     this.affidavit = this.voterartifactsService.affidavit
-    this.avclientService.submitBallotCryptograms(this.affidavit).catch(res => {
-    });
-    if (this.getCode == '00012') {
-      this.route.navigate(['/check_network_submit00012_error']);
-    } else if (this.getCode == '00013') {
-      this.route.navigate(['/calloutoforder_submit00013_error']);
-    }
-    else {
+    this.avclientService.submitBallotCryptograms(this.affidavit).then(res => {
       this.route.navigate(['/sending-confirmation', {
         code: this.getCode
       }]);
-    }
+    }).catch(res => {     
+      if (res == 'Error: network code') {
+        this.route.navigate(['/check_network_submit00012_error']);
+      } else if (res == 'Error: call out of order error') {
+        this.route.navigate(['/calloutoforder_submit00013_error']);
+      }
+    });
   }
   copybtn() {
-    this.avclientService.spoilBallotCryptograms(this.getCode).catch(res => {
-    });
-    if (this.getCode == '00009') {
-      this.route.navigate(['/calloutoforder_spoil00009_error']);
-    } else if (this.getCode == '00010') {
-      this.route.navigate(['/check_network_spoil00010_error']);
-    } else if (this.getCode == '00011') {
-      this.route.navigate(['/check_server_spoil00011_error']);
-    }
-    else {
+    this.avclientService.spoilBallotCryptograms().then(res => {
       this.route.navigate(['/test-results', {
         code: this.getCode
       }]);
-    }
+    }).catch(res => {
+      if (res == 'Error: call out of order error') {
+        this.route.navigate(['/calloutoforder_spoil00009_error']);
+      } else if (res == 'Error: network code') {
+        this.route.navigate(['/check_network_spoil00010_error']);
+      } else if (res == 'Error: server commitment error') {
+        this.route.navigate(['/check_server_spoil00011_error']);
+      }
+    });
   }
 }
