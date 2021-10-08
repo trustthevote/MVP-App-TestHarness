@@ -92,14 +92,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "BallotResealedPage": () => (/* binding */ BallotResealedPage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 64762);
 /* harmony import */ var _raw_loader_ballot_resealed_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./ballot-resealed.page.html */ 4905);
 /* harmony import */ var _ballot_resealed_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ballot-resealed.page.scss */ 82873);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 37716);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 39895);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 39895);
 /* harmony import */ var src_app_api_avclient_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/api/avclient.service */ 55913);
-/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/environments/environment */ 92340);
-
 
 
 
@@ -112,7 +110,6 @@ let BallotResealedPage = class BallotResealedPage {
         this.avclientService = avclientService;
         this.activatedRoute = activatedRoute;
         this.results = [];
-        this.avclientService.assignServerUrl(src_environments_environment__WEBPACK_IMPORTED_MODULE_3__.environment.url);
     }
     ngOnInit() {
         this.getCode = this.activatedRoute.snapshot.paramMap.get('code');
@@ -127,12 +124,12 @@ let BallotResealedPage = class BallotResealedPage {
     }
 };
 BallotResealedPage.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__.Router },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__.Router },
     { type: src_app_api_avclient_service__WEBPACK_IMPORTED_MODULE_2__.AvclientService },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__.ActivatedRoute }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__.ActivatedRoute }
 ];
-BallotResealedPage = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.Component)({
+BallotResealedPage = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_5__.Component)({
         selector: 'app-ballot-resealed',
         template: _raw_loader_ballot_resealed_page_html__WEBPACK_IMPORTED_MODULE_0__.default,
         styles: [_ballot_resealed_page_scss__WEBPACK_IMPORTED_MODULE_1__.default]

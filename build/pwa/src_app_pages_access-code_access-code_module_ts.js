@@ -93,17 +93,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AccessCodePage": () => (/* binding */ AccessCodePage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 64762);
 /* harmony import */ var _raw_loader_access_code_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./access-code.page.html */ 64800);
 /* harmony import */ var _access_code_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./access-code.page.scss */ 9745);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/core */ 37716);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ 39895);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ionic/angular */ 80476);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 3679);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ 39895);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ 3679);
 /* harmony import */ var src_app_api_statuscode_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/api/statuscode.service */ 52413);
 /* harmony import */ var src_app_api_avclient_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/api/avclient.service */ 55913);
-/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/environments/environment */ 92340);
-
 
 
 
@@ -127,7 +125,6 @@ let AccessCodePage = class AccessCodePage {
         this.otpError = '';
         this.results = [];
         this.createOTPForm();
-        this.avclientService.assignServerUrl(src_environments_environment__WEBPACK_IMPORTED_MODULE_4__.environment.url);
     }
     ngOnInit() {
         fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
@@ -143,11 +140,11 @@ let AccessCodePage = class AccessCodePage {
     }
     createOTPForm() {
         this.otpForm = this.fb.group({
-            first: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required],
-            second: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required],
-            third: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required],
-            four: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required],
-            five: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required],
+            first: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
+            second: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
+            third: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
+            four: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
+            five: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
         });
     }
     focusNext(event, index) {
@@ -199,7 +196,7 @@ let AccessCodePage = class AccessCodePage {
         }
     }
     nextbtn() {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
             let enteredOtp;
             enteredOtp = this.getOtpValue();
             this.data = enteredOtp;
@@ -214,27 +211,26 @@ let AccessCodePage = class AccessCodePage {
                 yield loading.present();
                 return new Promise(resolve => {
                     loading.dismiss();
-                    this.avclientService.validateAccessCode(this.data).catch(res => {
-                        console.log("res", res);
-                    });
-                    console.log(this.data);
-                    if (this.data == '00002') {
-                        this.route.navigate(['/calloutoforder-access00002-error']);
-                    }
-                    else if (this.data == '00003') {
-                        this.route.navigate(['/code_expired_access00003_error']);
-                    }
-                    else if (this.data == '00004') {
-                        this.route.navigate(['/code_invalid_access00004_error']);
-                    }
-                    else if (this.data == '00005') {
-                        this.route.navigate(['/check-network-access00005-error']);
-                    }
-                    else {
+                    this.avclientService.validateAccessCode(this.data).then(res => {
                         this.route.navigate(['/before-you-finish', {
                                 code: this.data
                             }]);
-                    }
+                    })
+                        .catch(res => {
+                        console.log("res", res);
+                        if (res == 'Error: call out of order error') {
+                            this.route.navigate(['/calloutoforder-access00002-error']);
+                        }
+                        else if (res == 'Error: access code expired') {
+                            this.route.navigate(['/code_expired_access00003_error']);
+                        }
+                        else if (res == 'Error: access code invalid') {
+                            this.route.navigate(['/code_invalid_access00004_error']);
+                        }
+                        else if (res == 'Error: network code') {
+                            this.route.navigate(['/check-network-access00005-error']);
+                        }
+                    });
                     (err) => {
                         loading.dismiss();
                         this.disabledbutton = false;
@@ -245,7 +241,7 @@ let AccessCodePage = class AccessCodePage {
         });
     }
     presentAlertEmpty() {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
             const alert = yield this.alertctrl.create({
                 message: this.results['alert_msg'],
                 buttons: [{
@@ -259,7 +255,7 @@ let AccessCodePage = class AccessCodePage {
         });
     }
     presentToast(a) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
             const toast = yield this.toastctrl.create({
                 message: a,
                 duration: 3000,
@@ -269,7 +265,7 @@ let AccessCodePage = class AccessCodePage {
         });
     }
     presentAlertConfirm(a) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
             const alert = yield this.alertController.create({
                 header: a,
                 backdropDissmiss: false,
@@ -300,36 +296,36 @@ let AccessCodePage = class AccessCodePage {
     }
 };
 AccessCodePage.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_7__.Router },
-    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormBuilder },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_8__.ToastController },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_8__.AlertController },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_8__.LoadingController },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__.Router },
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormBuilder },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.ToastController },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.AlertController },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.LoadingController },
     { type: src_app_api_statuscode_service__WEBPACK_IMPORTED_MODULE_2__.StatuscodeService },
     { type: src_app_api_avclient_service__WEBPACK_IMPORTED_MODULE_3__.AvclientService }
 ];
 AccessCodePage.propDecorators = {
-    first: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_9__.ViewChild, args: ["first", {
+    first: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_8__.ViewChild, args: ["first", {
                     static: false
                 },] }],
-    second: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_9__.ViewChild, args: ["second", {
+    second: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_8__.ViewChild, args: ["second", {
                     static: false
                 },] }],
-    third: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_9__.ViewChild, args: ["third", {
+    third: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_8__.ViewChild, args: ["third", {
                     static: false
                 },] }],
-    four: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_9__.ViewChild, args: ["four", {
+    four: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_8__.ViewChild, args: ["four", {
                     static: false
                 },] }],
-    five: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_9__.ViewChild, args: ["five", {
+    five: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_8__.ViewChild, args: ["five", {
                     static: false
                 },] }],
-    singUp: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_9__.ViewChild, args: ["singUp", {
+    singUp: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_8__.ViewChild, args: ["singUp", {
                     static: false
                 },] }]
 };
-AccessCodePage = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_9__.Component)({
+AccessCodePage = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_8__.Component)({
         selector: 'app-access-code',
         template: _raw_loader_access_code_page_html__WEBPACK_IMPORTED_MODULE_0__.default,
         styles: [_access_code_page_scss__WEBPACK_IMPORTED_MODULE_1__.default]

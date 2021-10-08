@@ -92,15 +92,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "TestResultsPage": () => (/* binding */ TestResultsPage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 64762);
 /* harmony import */ var _raw_loader_test_results_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./test-results.page.html */ 25356);
 /* harmony import */ var _test_results_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./test-results.page.scss */ 60866);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 37716);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 39895);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 39895);
 /* harmony import */ var src_app_api_avclient_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/api/avclient.service */ 55913);
 /* harmony import */ var src_app_api_voterartifacts_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/api/voterartifacts.service */ 22130);
-/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/environments/environment */ 92340);
-
 
 
 
@@ -115,11 +113,9 @@ let TestResultsPage = class TestResultsPage {
         this.activatedRoute = activatedRoute;
         this.voterartifactsService = voterartifactsService;
         this.results = [];
-        this.avclientService.assignServerUrl(src_environments_environment__WEBPACK_IMPORTED_MODULE_4__.environment.url);
-        this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
-        let getVoterArt = this.voterartifactsService.Initialize(this.userObject.lastname);
     }
     ngOnInit() {
+        this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
         this.getCode = this.activatedRoute.snapshot.paramMap.get('code');
         fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
             this.results = json[0]['test_result_page'];
@@ -127,24 +123,39 @@ let TestResultsPage = class TestResultsPage {
     }
     passbtn() {
         this.cvr = this.voterartifactsService.cvr;
-        this.avclientService.constructBallotCryptograms(this.cvr).catch(res => {
+        this.avclientService.constructBallotCryptograms(this.cvr).then(res => {
+            this.route.navigate(['/ballot-resealed', {
+                    code: this.getCode
+                }]);
+        }).catch(res => {
+            if (res == 'Error: call out of order error') {
+                this.route.navigate(['/calloutoforder_construct00006_error']);
+            }
+            else if (res == 'Error: network code') {
+                this.route.navigate(['/check_network_construct00007_error']);
+            }
+            else if (res == 'Error: corrupt CVR') {
+                this.route.navigate(['/corrupt_cv_construct00008_error']);
+            }
         });
-        this.route.navigate(['/ballot-fingerprint', {
-                code: this.getCode
-            }]);
     }
     failbtn() {
         this.route.navigate(['/ballot-test-failed-test']);
     }
+    backbtn() {
+        this.route.navigate(['/ballot-fingerprint', {
+                code: this.getCode
+            }]);
+    }
 };
 TestResultsPage.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__.Router },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__.Router },
     { type: src_app_api_avclient_service__WEBPACK_IMPORTED_MODULE_2__.AvclientService },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__.ActivatedRoute },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__.ActivatedRoute },
     { type: src_app_api_voterartifacts_service__WEBPACK_IMPORTED_MODULE_3__.VoterartifactsService }
 ];
-TestResultsPage = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_7__.Component)({
+TestResultsPage = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.Component)({
         selector: 'app-test-results',
         template: _raw_loader_test_results_page_html__WEBPACK_IMPORTED_MODULE_0__.default,
         styles: [_test_results_page_scss__WEBPACK_IMPORTED_MODULE_1__.default]
@@ -181,7 +192,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n  <div class=\"list-question\">\r\n    <p>{{results.test_results}}</p>\r\n  </div>\r\n  <div class=\"cen-div-text\">\r\n    <ion-row>\r\n      {{results.bfp}}<br />\r\n      {{results.zyx098}}\r\n    </ion-row>\r\n    <p>{{results.ydn}}</p>\r\n    <p>{{results.tv2_fb}}\"{{results.str}}\"{{results.tv2_fb1}}</p>\r\n    <p>{{results.tv3}}</p>\r\n  </div>\r\n  <div class=\"Required-div\" style=\"text-align: center\">\r\n    <div style=\"text-align: center\">\r\n      <div class=\"div-two\">\r\n        <div class=\"div-text-mid\" (click)=\"passbtn()\">\r\n          <p>{{results.passed}}</p>\r\n          <ion-icon name=\"checkmark-circle-outline\"></ion-icon>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"div-text-mid\" (click)=\"failbtn()\">\r\n      <p>{{results.failed}}</p>\r\n      <ion-icon name=\"close-circle-outline\"></ion-icon>\r\n    </div>\r\n  </div>\r\n</ion-content>\r\n<ion-footer>\r\n  <ion-toolbar>\r\n    <ion-row>\r\n      <ion-col size=\"6\" class=\"back-btn\">\r\n        <ion-button color=\"dark\" (click)=\"passbtn()\">\r\n          {{results.back}}\r\n          <ion-icon slot=\"start\" name=\"chevron-back-outline\"></ion-icon>\r\n        </ion-button>\r\n      </ion-col>\r\n      <ion-col size=\"6\" class=\"next-btn\"> </ion-col>\r\n    </ion-row>\r\n  </ion-toolbar>\r\n</ion-footer>\r\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n  <div class=\"list-question\">\r\n    <p>{{results.test_results}}</p>\r\n  </div>\r\n  <div class=\"cen-div-text\">\r\n    <ion-row>\r\n      {{results.bfp}}<br />\r\n      {{results.zyx098}}\r\n    </ion-row>\r\n    <p>{{results.ydn}}</p>\r\n    <p>{{results.tv2_fb}}\"{{results.str}}\"{{results.tv2_fb1}}</p>\r\n    <p>{{results.tv3}}</p>\r\n  </div>\r\n  <div class=\"Required-div\" style=\"text-align: center\">\r\n    <div style=\"text-align: center\">\r\n      <div class=\"div-two\">\r\n        <div class=\"div-text-mid\" (click)=\"passbtn()\">\r\n          <p>{{results.passed}}</p>\r\n          <ion-icon name=\"checkmark-circle-outline\"></ion-icon>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"div-text-mid\" (click)=\"failbtn()\">\r\n      <p>{{results.failed}}</p>\r\n      <ion-icon name=\"close-circle-outline\"></ion-icon>\r\n    </div>\r\n  </div>\r\n</ion-content>\r\n<ion-footer>\r\n  <ion-toolbar>\r\n    <ion-row>\r\n      <ion-col size=\"6\" class=\"back-btn\">\r\n        <ion-button color=\"dark\" (click)=\"backbtn()\">\r\n          {{results.back}}\r\n          <ion-icon slot=\"start\" name=\"chevron-back-outline\"></ion-icon>\r\n        </ion-button>\r\n      </ion-col>\r\n      <ion-col size=\"6\" class=\"next-btn\"> </ion-col>\r\n    </ion-row>\r\n  </ion-toolbar>\r\n</ion-footer>\r\n");
 
 /***/ })
 

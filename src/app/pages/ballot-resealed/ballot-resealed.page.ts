@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AvclientService } from 'src/app/api/avclient.service';
-import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-ballot-resealed',
@@ -14,7 +13,6 @@ export class BallotResealedPage implements OnInit {
   constructor(private route: Router,
     public avclientService: AvclientService,
     private activatedRoute: ActivatedRoute,) {
-      this.avclientService.assignServerUrl(environment.url);
      }
 
   ngOnInit() {

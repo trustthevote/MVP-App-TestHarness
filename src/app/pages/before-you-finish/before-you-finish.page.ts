@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AvclientService } from 'src/app/api/avclient.service';
 import { VoterartifactsService } from 'src/app/api/voterartifacts.service';
-import { environment } from 'src/environments/environment';
 
 
 
@@ -21,13 +20,11 @@ export class BeforeYouFinishPage implements OnInit {
     public avclientService: AvclientService,
     public voterartifactsService: VoterartifactsService
   ) { 
-    this.avclientService.assignServerUrl(environment.url);
-    this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
-    let getVoterArt = this.voterartifactsService.Initialize(this.userObject.lastname);
   }
 
 
   ngOnInit() {
+    this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
     this.getCode = this.activatedRoute.snapshot.paramMap.get('code');
     fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
       this.results = json[0]['beforeyoufinish_page'];

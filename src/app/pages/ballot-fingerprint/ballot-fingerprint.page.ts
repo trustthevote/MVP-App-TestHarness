@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AvclientService } from 'src/app/api/avclient.service';
 import { VoterartifactsService } from 'src/app/api/voterartifacts.service';
-import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-ballot-fingerprint',
@@ -24,9 +23,7 @@ export class BallotFingerprintPage implements OnInit {
     public avclientService: AvclientService,
     private activatedRoute: ActivatedRoute,
     public voterartifactsService: VoterartifactsService) { 
-      this.avclientService.assignServerUrl(environment.url);
       this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
-      let getVoterArt = this.voterartifactsService.Initialize(this.userObject.lastname);
     }
 
   PolicyDetails() {

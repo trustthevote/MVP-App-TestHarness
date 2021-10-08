@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Browser } from '@capacitor/browser';
 import { AvclientService } from 'src/app/api/avclient.service';
-import { environment } from 'src/environments/environment';
+
 
 
 @Component({
@@ -22,7 +22,6 @@ export class BallotCompletePage implements OnInit {
     if (this.router.getCurrentNavigation().extras.state) {
       this.paramData = this.router.getCurrentNavigation().extras.state.user;
     }
-    this.avclientService.assignServerUrl(environment.url);
   }
 
   ngOnInit() {

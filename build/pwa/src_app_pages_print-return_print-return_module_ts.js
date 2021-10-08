@@ -114,10 +114,9 @@ let PrintReturnPage = class PrintReturnPage {
         if (this.router.getCurrentNavigation().extras.state) {
             this.paramData = this.router.getCurrentNavigation().extras.state.user;
         }
-        this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
-        let getVoterArt = this.voterartifactsService.Initialize(this.userObject.lastname);
     }
     ngOnInit() {
+        this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
         fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
             this.results = json[0]['print_return_page'];
         });

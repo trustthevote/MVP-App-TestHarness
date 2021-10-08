@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { StatuscodeService } from 'src/app/api/statuscode.service';
 import { AvclientService } from 'src/app/api/avclient.service';
 import { environment } from 'src/environments/environment';
+import { VoterartifactsService } from 'src/app/api/voterartifacts.service';
+
 
 @Component({
   selector: 'app-request-access-code',
@@ -14,13 +16,15 @@ results = [];
 userObject: any;
 constructor(private route: Router,
   public statuscodeService: StatuscodeService,
-  public avclientService: AvclientService) {
+  public avclientService: AvclientService,
+  private voterartifactsService: VoterartifactsService,) {
     this.avclientService.assignServerUrl(environment.url);
+    this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
+    let getVoterArt = this.voterartifactsService.Initialize(this.userObject.lastname); 
   }
 
 
 ngOnInit() {
-  this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
   fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
     this.results = json[0]['rap_page'];
   });
