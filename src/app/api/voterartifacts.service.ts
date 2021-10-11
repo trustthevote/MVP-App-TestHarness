@@ -52,14 +52,14 @@ public get precinctName(): string {
 }
 
 public get cvr(): string {
-  return this.cvrfile; // Instead, open the file, and return the contents
+  return this.cvrfile; 
 }
 
 public get affidavit(): string {
-  return this.affidavitfile; // Instead, open the file, and return the contents
+  return this.affidavitfile; 
 }
 
 public get ballot(): string {
-  return this.ballotfile; // Instead, open the file, and return the contents
+  return this.ballotfile; 
 }
 }
