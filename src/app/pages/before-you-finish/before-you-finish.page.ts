@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AvclientService } from 'src/app/api/avclient.service';
+import { VoterartifactsService } from 'src/app/api/voterartifacts.service';
+
 
 
 @Component({
@@ -11,35 +13,38 @@ import { AvclientService } from 'src/app/api/avclient.service';
 export class BeforeYouFinishPage implements OnInit {
   results = [];
   getCode: any;
+  cvr: any;
+  userObject: any;
   constructor(private route: Router,
     private activatedRoute: ActivatedRoute,
-    public avclientService: AvclientService
-  ) { }
+    public avclientService: AvclientService,
+    public voterartifactsService: VoterartifactsService
+  ) { 
+  }
 
 
   ngOnInit() {
+    this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
     this.getCode = this.activatedRoute.snapshot.paramMap.get('code');
     fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
       this.results = json[0]['beforeyoufinish_page'];
     });
   }
   nextbtn() {
-    if (this.getCode != null) {
-      this.avclientService.constructBallotCryptograms(this.getCode).catch(res => {
-        console.log("res", res);
-      });
-    }
-    if (this.getCode == '00006') {
-      this.route.navigate(['/calloutoforder_construct00006_error']);
-    } else if (this.getCode == '00007') {
-      this.route.navigate(['/check_network_construct00007_error']);
-    } else if (this.getCode == '00008') {
-      this.route.navigate(['/corrupt_cv_construct00008_error']);
-    } else {
+    this.cvr = this.voterartifactsService.cvr
+    this.avclientService.constructBallotCryptograms(this.cvr).then(res => {
       this.route.navigate(['/ballot-fingerprint', {
         code: this.getCode
       }]);
-    }
+    }).catch(res => {
+      if (res == 'Error: call out of order error') {
+        this.route.navigate(['/calloutoforder_construct00006_error']);
+      } else if (res == 'Error: network code') {
+        this.route.navigate(['/check_network_construct00007_error']);
+      } else if (res == 'Error: corrupt CVR') {
+        this.route.navigate(['/corrupt_cv_construct00008_error']);
+      }
+    });
   }
 
 }

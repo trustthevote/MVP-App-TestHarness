@@ -16,7 +16,7 @@ export class HowditgoPage implements OnInit {
       this.results = json[0]['howitdo_page'];
     });
   }
-
+  
   Continuebtn() {
     this.route.navigate(['/intro']);
   }

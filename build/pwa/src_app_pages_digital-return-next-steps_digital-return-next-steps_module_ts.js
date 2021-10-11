@@ -157,7 +157,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n  <div class=\"list-question\">\r\n    <p>{{results.header}}</p>\r\n  </div>\r\n  <p>{{results.textD}}</p>\r\n  <p>{{results.link_www}}</p>\r\n  <ion-row><p>{{results.tyABC}}</p></ion-row>\r\n</ion-content>\r\n<ion-footer class=\"ion-no-border\">\r\n  <ion-toolbar>\r\n    <!-- <p>{{results.tyABC}}</p> -->\r\n    \r\n    <ion-row>\r\n      <ion-col style=\"text-align: start\" class=\"back-btn\">\r\n        <ion-button color=\"dark\" (click)=\"  goToFinish()\">\r\n       {{results.finish}}\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n   \r\n  </ion-toolbar>\r\n</ion-footer>\r\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n  <div class=\"list-question\">\r\n    <p>{{results.header}}</p>\r\n  </div>\r\n  <p>{{results.textD}}</p>\r\n  <p>{{results.link_www}}</p>\r\n  <ion-row><p>{{results.tyABC}}</p></ion-row>\r\n</ion-content>\r\n<ion-footer class=\"ion-no-border\">\r\n  <ion-toolbar>\r\n    \r\n    <ion-row>\r\n      <ion-col style=\"text-align: start\" class=\"back-btn\">\r\n        <ion-button color=\"dark\" (click)=\"  goToFinish()\">\r\n       {{results.finish}}\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n   \r\n  </ion-toolbar>\r\n</ion-footer>\r\n");
 
 /***/ })
 

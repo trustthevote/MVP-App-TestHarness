@@ -17,9 +17,6 @@ export class CheckNetworkOOOOErrorPage implements OnInit {
     });
   }
   confirm() {
-    // this.route.navigate(['/access-code', {
-    //   t: new Date().getTime()
-    // }]);
     this.route.navigate(['/request-access-code']);
   }
 

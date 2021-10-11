@@ -9,22 +9,22 @@ import { Router } from '@angular/router';
 export class BallotTestFailedTestPage implements OnInit {
 
   results = [];
-  constructor(private route: Router) {}
+  constructor(private route: Router) { }
 
   ngOnInit() {
     fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-     
-      this.results = json[0]['ballot_test_faild_test_page'];
-      
-    });
-}
 
-newballot(){
-  this.route.navigate(['/tobecontinue']);
-}
-requestballot(){
-  this.route.navigate(['/tobecontinue']);
-}
+      this.results = json[0]['ballot_test_faild_test_page'];
+
+    });
+  }
+
+  newballot() {
+    this.route.navigate(['/tobecontinue']);
+  }
+  requestballot() {
+    this.route.navigate(['/tobecontinue']);
+  }
 
 
 }

@@ -451,11 +451,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AvclientService": () => (/* binding */ AvclientService)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 64762);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 37716);
 /* harmony import */ var src_app_api_statuscode_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/api/statuscode.service */ 52413);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ 80476);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 39895);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 39895);
 
 
 
@@ -467,53 +467,28 @@ let AvclientService = class AvclientService {
         this.alertctrl = alertctrl;
         this.route = route;
     }
-    purgeData() {
-        delete this.cachedAccessCode;
-    }
     assignServerUrl(bulletinBoardURL) {
-        this.serverURL = bulletinBoardURL;
-    }
-    get serverurl() {
-        return this.serverURL;
-    }
-    set serverurl(value) {
-        this.serverURL = value;
-    }
-    status() {
-        return this.statuscodeService.statusCode('Uninitialized');
+        this._serverURL = bulletinBoardURL;
     }
     requestAccessCode(opaqueVoterId) {
         return new Promise((resolve, reject) => {
             switch (opaqueVoterId) {
                 case '00000':
+                case 'T0000':
                     reject(new Error(this.statuscodeService.statusCode('VoterRecordNotFound')));
                     break;
                 case '00001':
+                case 'T0001':
                     reject(new Error(this.statuscodeService.statusCode('NetworkError')));
                     break;
                 default:
-                    resolve(true);
-                    break;
+                    resolve();
             }
         });
     }
-    // requestAccessCode(opaqueVoterId: string): Promise<void> {
-    //   return new Promise((resolve, reject) => {
-    //       switch(opaqueVoterId) {
-    //     case '00000' || 'T0000':
-    //         reject(new Error(this.statuscodeService.statusCode('VoterRecordNotFound')));
-    //         break;
-    //     case '0000' || 'T0001':
-    //         reject(new Error(this.statuscodeService.statusCode('NetworkError')))
-    //         break;
-    //     default:
-    //         resolve();
-    //       }
-    //   })
-    // }
-    validateAccessCode(code, email) {
+    validateAccessCode(code) {
         return new Promise((resolve, reject) => {
-            this.cachedAccessCode = code;
+            this._cachedAccessCode = code;
             switch (code) {
                 case '00002':
                     reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));
@@ -528,16 +503,14 @@ let AvclientService = class AvclientService {
                     reject(new Error(this.statuscodeService.statusCode('NetworkError')));
                     break;
                 default:
-                    resolve(true);
+                    resolve();
                     break;
             }
         });
     }
-    // Should not be idempotent.  Instead, permute one of
-    // john's sample strings.
     constructBallotCryptograms(cvr) {
         return new Promise((resolve, reject) => {
-            switch (this.cachedAccessCode) {
+            switch (this._cachedAccessCode) {
                 case '00006':
                     reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));
                     break;
@@ -552,9 +525,9 @@ let AvclientService = class AvclientService {
             }
         });
     }
-    spoilBallotCryptograms(code) {
+    spoilBallotCryptograms() {
         return new Promise((resolve, reject) => {
-            switch (this.cachedAccessCode) {
+            switch (this._cachedAccessCode) {
                 case '00009':
                     reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));
                 case '00010':
@@ -562,13 +535,13 @@ let AvclientService = class AvclientService {
                 case '00011':
                     reject(new Error(this.statuscodeService.statusCode('ServerCommitmentError')));
                 default:
-                    resolve(true);
+                    resolve();
             }
         });
     }
-    submitBallotCryptograms(code) {
+    submitBallotCryptograms(affidavit) {
         return new Promise((resolve, reject) => {
-            switch (this.cachedAccessCode) {
+            switch (this._cachedAccessCode) {
                 case '00012':
                     reject(new Error(this.statuscodeService.statusCode('NetworkError')));
                 case '00013':
@@ -584,41 +557,16 @@ let AvclientService = class AvclientService {
             }
         });
     }
-    generateTestCode() {
-        return '5e4d8fe41fa3819cc064e2ace0eda8a847fe322594a6fd5a9a51c699e63804b7';
-    }
-    test(code) {
-        this.purgeData();
-        this.requestAccessCode(code);
-        this.validateAccessCode(code, '');
-        this.constructBallotCryptograms(code);
-        this.spoilBallotCryptograms(code);
-        this.constructBallotCryptograms(code);
-        this.submitBallotCryptograms(code).then(receipt => {
-            console.log(receipt);
-        });
-    }
-    presentAlertEmpty(Error) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__awaiter)(this, void 0, void 0, function* () {
-            const alert = yield this.alertctrl.create({
-                message: Error,
-                buttons: [{
-                        text: 'Okay',
-                        role: 'cancel',
-                        cssClass: 'secondary',
-                        handler: (blah) => { }
-                    }]
-            });
-            yield alert.present();
-        });
+    purgeData() {
+        delete this._cachedAccessCode;
     }
 };
 AvclientService.ctorParameters = () => [
     { type: src_app_api_statuscode_service__WEBPACK_IMPORTED_MODULE_0__.StatuscodeService },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__.AlertController },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__.Router }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_1__.AlertController },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__.Router }
 ];
-AvclientService = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
+AvclientService = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.Injectable)({
         providedIn: 'root'
     })
@@ -706,6 +654,82 @@ StatuscodeService = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
         providedIn: 'root'
     })
 ], StatuscodeService);
+
+
+
+/***/ }),
+
+/***/ 22130:
+/*!***********************************************!*\
+  !*** ./src/app/api/voterartifacts.service.ts ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "VoterartifactsService": () => (/* binding */ VoterartifactsService)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 37716);
+
+
+let VoterartifactsService = class VoterartifactsService {
+    constructor() { }
+    Initialize(lastName) {
+        let key = lastName.substring(0, 1).toUpperCase();
+        switch (key) {
+            case 'A':
+                this.precinctId = "precinct_1";
+                this.precinct = "Precinct 1 Spaceport";
+                this.cvrfile = "src/assets/files/port_precinct1/jetsons_port_precinct1_cvr.xml";
+                this.affidavitfile = "src/assets/files/port_precinct1/precinct1_voter_affidavit.pdf";
+                this.ballotfile = "src/assets/files/port_precinct1/jetsons_port-precinct1_ballot_marked.pdf";
+                break;
+            case 'B':
+                this.precinctId = "precinct_2";
+                this.precinct = "Precinct 2 Bedrock";
+                this.cvrfile = "src/assets/files/bedrock_precinct2/jetsons_bedrock-precinct2_cvr.xml";
+                this.affidavitfile = "src/assets/files/bedrock_precinct2/precinct2_voter_affidavit.pdf";
+                this.ballotfile = "src/assets/files/bedrock_precinct2/jetsons_bedrock-precinct2_ballot_marked.pdf";
+                break;
+            case 'C':
+                this.precinctId = "precinct_3";
+                this.precinct = "Precinct 3 Downtown";
+                this.cvrfile = "src/assets/files/downtown_precinct3/jetsons_downtown-precinct3_cvr.xml";
+                this.affidavitfile = "src/assets/files/downtown_precinct3/precinct3_voter_affidavit.pdf";
+                this.ballotfile = "src/assets/files/downtown_precinct3/jetsons_downtown-precinct3_ballot_marked.pdf";
+                break;
+            default:
+                this.precinctId = "precinct_4";
+                this.precinct = "Precinct 4 Spacetown";
+                this.cvrfile = "src/assets/files/spacetown_precinct4/jetsons_spacetown_precinct4_cvr.xml";
+                this.affidavitfile = "src/assets/files/spacetown_precinct4/jetsons_spacetown-precinct4_ballot_marked.pdf";
+                this.ballotfile = "src/assets/files/spacetown_precinct4/precinct4_voter_affidavit.pdf";
+                break;
+        }
+        ;
+        return this.precinct;
+    }
+    get precinctName() {
+        return this.precinct;
+    }
+    get cvr() {
+        return this.cvrfile; // Instead, open the file, and return the contents
+    }
+    get affidavit() {
+        return this.affidavitfile; // Instead, open the file, and return the contents
+    }
+    get ballot() {
+        return this.ballotfile; // Instead, open the file, and return the contents
+    }
+};
+VoterartifactsService.ctorParameters = () => [];
+VoterartifactsService = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.Injectable)({
+        providedIn: 'root'
+    })
+], VoterartifactsService);
 
 
 

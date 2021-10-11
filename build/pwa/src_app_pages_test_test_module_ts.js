@@ -244,7 +244,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("\r\n<ion-content>\r\n  <ion-row>\r\n    <ion-col size=\"4\" class=\"back-btn\">\r\n      <ion-button color=\"dark\" (click)=\"backbtn()\">\r\n        Back\r\n        <ion-icon slot=\"start\" name=\"chevron-back-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-col>\r\n    </ion-row>\r\n</ion-content>\r\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n  <ion-row>\r\n    <ion-col size=\"4\" class=\"back-btn\">\r\n      <ion-button color=\"dark\" (click)=\"backbtn()\">\r\n        Back\r\n        <ion-icon slot=\"start\" name=\"chevron-back-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-col>\r\n  </ion-row>\r\n</ion-content>\r\n");
 
 /***/ })
 

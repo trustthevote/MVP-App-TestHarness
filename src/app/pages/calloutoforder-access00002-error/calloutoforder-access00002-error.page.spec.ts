@@ -9,7 +9,7 @@ describe('CalloutoforderAccess00002ErrorPage', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ CalloutoforderAccess00002ErrorPage ],
+      declarations: [CalloutoforderAccess00002ErrorPage],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 

@@ -78,7 +78,6 @@ export class BallotPage {
     this.isSubmitted = true;
 
     if (!this.signupForm.valid) {
-      // this.presentToast(this.results['tm']);
       this.presentAlertEmpty(this.results['alert_msg']);
       return false;
     } else {

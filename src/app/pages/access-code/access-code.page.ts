@@ -12,6 +12,7 @@ import { AvclientService } from 'src/app/api/avclient.service';
   styleUrls: ['./access-code.page.scss'],
 })
 export class AccessCodePage implements OnInit {
+ 
   OTP: string = '';
   otp: string = '';
   disabledbutton;
@@ -128,25 +129,23 @@ export class AccessCodePage implements OnInit {
 
       return new Promise(resolve => {
         loading.dismiss();
-        this.avclientService.validateAccessCode(this.data, '').catch(res => {
-          console.log("res", res);
-        });
-        console.log(this.data);
-        if (this.data == '00002') {
-          this.route.navigate(['/calloutoforder-access00002-error']);
-        } else if (this.data == '00003') {
-          this.route.navigate(['/code_expired_access00003_error']);
-        } else if (this.data == '00004') {
-          this.route.navigate(['/code_invalid_access00004_error']);
-        } else if (this.data == '00005') {
-          this.route.navigate(['/check-network-access00005-error']);
-        }
-        else {
+        this.avclientService.validateAccessCode(this.data).then(res => {
           this.route.navigate(['/before-you-finish', {
             code: this.data
           }]);
-        }
-
+        })
+        .catch(res => {
+          console.log("res", res);
+          if (res == 'Error: call out of order error') {
+            this.route.navigate(['/calloutoforder-access00002-error']);
+          } else if (res == 'Error: access code expired') {
+            this.route.navigate(['/code_expired_access00003_error']);
+          } else if (res == 'Error: access code invalid') {
+            this.route.navigate(['/code_invalid_access00004_error']);
+          } else if (res == 'Error: network code') {
+            this.route.navigate(['/check-network-access00005-error']);
+          }
+        });
         (err) => {
           loading.dismiss();
           this.disabledbutton = false;
@@ -155,8 +154,6 @@ export class AccessCodePage implements OnInit {
       });
     }
   }
-
-
   async presentAlertEmpty() {
     const alert = await this.alertctrl.create({
       message: this.results['alert_msg'],
@@ -205,7 +202,7 @@ export class AccessCodePage implements OnInit {
     let inputChar = String.fromCharCode(event.charCode);
 
     if (!pattern.test(inputChar)) {
-      // invalid character, prevent input
+    
       event.preventDefault();
     }
   }

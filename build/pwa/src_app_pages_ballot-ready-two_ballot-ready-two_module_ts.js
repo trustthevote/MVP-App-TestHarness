@@ -118,7 +118,6 @@ let BallotReadyTwoPage = class BallotReadyTwoPage {
     }
     copybtn() {
         this.avclientService.spoilBallotCryptograms(this.getCode).catch(res => {
-            console.log("res", res);
         });
         if (this.getCode == '00009') {
             this.route.navigate(['/ballot-test-fail-err']);
@@ -180,7 +179,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\n  <div class=\"list-question\">\n    <p>{{results.ybr}}</p>\n  </div>\n  <div class=\"cen-div-text\">\n    <ion-row>\n      {{results.bfp}}<br />\n      {{results.zyx098}}\n    </ion-row>\n    <p>{{results.ydn}}</p>\n    <ion-button color=\"dark\"(click)=\"copybtn()\" >\n      {{results.copy}}\n      <ion-icon slot=\"end\" name=\"settings-outline\"></ion-icon>\n    </ion-button>\n    <p>{{results.tv3_fb}}</p>\n    <p>{{results.link}}</p>\n  </div>\n  <div class=\"bottom-div-text\">\n    <p>{{results.tv_fp}}</p>\n    <ion-button color=\"dark\" (click)=\"sendbtn()\">\n      {{results.send}}\n      <ion-icon slot=\"end\" name=\"paper-plane-outline\"></ion-icon>\n    </ion-button>\n  </div>\n  <!-- <div *ngIf=\"IsVisible == true\">\n    <p>{{results.tv1_fp}}</p>\n    <p>{{results.link}}</p>\n    <p>{{results.tv2_fb}}</p>\n \n  \n   \n  </div>\n  <div class=\"text-p\" *ngIf=\"fsticon\" (click)=\"PolicyDetails()\">\n    {{results.shmd}}\n    <ion-icon name=\"chevron-down-outline\" *ngIf=\"fsticon\"></ion-icon>\n  </div>\n  <div class=\"text-p\" *ngIf=\"scndicons\" (click)=\"PolicyDetailshide()\">\n    {{results.shmd}}\n\n    <ion-icon name=\"chevron-up-outline\" *ngIf=\"scndicons\"></ion-icon>\n  </div> -->\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n    <!-- <div class=\"text-p\" style=\"text-align: center;\">\n    {{results.mp}}  <ion-icon name=\"chevron-down-outline\"></ion-icon>\n        </div> -->\n  </ion-toolbar>\n</ion-footer>\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n  <div class=\"list-question\">\r\n    <p>{{results.ybr}}</p>\r\n  </div>\r\n  <div class=\"cen-div-text\">\r\n    <ion-row>\r\n      {{results.bfp}}<br />\r\n      {{results.zyx098}}\r\n    </ion-row>\r\n    <p>{{results.ydn}}</p>\r\n    <ion-button color=\"dark\" (click)=\"copybtn()\">\r\n      {{results.copy}}\r\n      <ion-icon slot=\"end\" name=\"settings-outline\"></ion-icon>\r\n    </ion-button>\r\n    <p>{{results.tv3_fb}}</p>\r\n    <p>{{results.link}}</p>\r\n  </div>\r\n  <div class=\"bottom-div-text\">\r\n    <p>{{results.tv_fp}}</p>\r\n    <ion-button color=\"dark\" (click)=\"sendbtn()\">\r\n      {{results.send}}\r\n      <ion-icon slot=\"end\" name=\"paper-plane-outline\"></ion-icon>\r\n    </ion-button>\r\n  </div>\r\n\r\n</ion-content>\r\n<ion-footer>\r\n  <ion-toolbar>\r\n\r\n  </ion-toolbar>\r\n</ion-footer>\r\n");
 
 /***/ })
 

@@ -12,7 +12,8 @@ export class BallotResealedPage implements OnInit {
   getCode: any;
   constructor(private route: Router,
     public avclientService: AvclientService,
-    private activatedRoute: ActivatedRoute,) { }
+    private activatedRoute: ActivatedRoute,) {
+     }
 
   ngOnInit() {
     this.getCode = this.activatedRoute.snapshot.paramMap.get('code');
