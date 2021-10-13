@@ -1,7 +1,22 @@
 import { Injectable } from '@angular/core';
 
+import {
+  PRECINCT_1_CVR,
+  PRECINCT_1_BALLOT,
+  PRECINCT_1_AFFIDAVIT,
+  PRECINCT_2_CVR,
+  PRECINCT_2_BALLOT,
+  PRECINCT_2_AFFIDAVIT,
+  PRECINCT_3_CVR,
+  PRECINCT_3_BALLOT,
+  PRECINCT_3_AFFIDAVIT,
+  PRECINCT_4_CVR,
+  PRECINCT_4_BALLOT,
+  PRECINCT_4_AFFIDAVIT,
+} from './artifacts';
+
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class VoterartifactsService {
   precinctId: string;
@@ -12,62 +27,38 @@ export class VoterartifactsService {
 
   constructor() {}
 
-  Initialize(lastName: string) {
+  Initialize(lastName: string): string {
     let key = lastName.substring(0, 1).toUpperCase();
     switch (key) {
       case 'A':
-        this.precinctId = "precinct_1";
-        this.precinct = "Precinct 1 Spaceport";
-        fetch('./assets/files/port_precinct1/jetsons_downtown-precinct1_cvr.xml')
-          .then(res => res.text())
-          .then(file => this.cvrfile = file);
-        fetch('./assets/files/port_precinct1/precinct1_voter_affidavit.pdf')
-          .then(res => res.text())
-          .then(file => this.affidavitfile = btoa(unescape(encodeURIComponent(file))));
-        fetch('./assets/files/port_precinct1/jetsons_port-precinct1_ballot_marked.pdf')
-          .then(res => res.text())
-          .then(file => this.ballotfile = btoa(unescape(encodeURIComponent(file))));
+        this.precinctId = 'precinct_1';
+        this.precinct = 'Precinct 1 Spaceport';
+        this.cvrfile = PRECINCT_1_CVR;
+        this.affidavitfile = PRECINCT_1_AFFIDAVIT;
+        this.ballotfile = PRECINCT_1_BALLOT;
         break;
       case 'B':
-        this.precinctId = "precinct_2";
-        this.precinct = "Precinct 2 Bedrock";
-        fetch('./assets/files/bedrock_precinct2/jetsons_bedrock-precinct2_cvr.xml')
-          .then(res => res.text())
-          .then(file => this.cvrfile = file);
-        fetch('./assets/files/bedrock_precinct2/precinct2_voter_affidavit.pdf')
-          .then(res => res.text())
-          .then(file => this.affidavitfile = btoa(unescape(encodeURIComponent(file))));
-        fetch('./assets/files/bedrock_precinct2/jetsons_bedrock-precinct2_ballot_marked.pdf')
-          .then(res => res.text())
-          .then(file => this.ballotfile = btoa(unescape(encodeURIComponent(file))));
+        this.precinctId = 'precinct_2';
+        this.precinct = 'Precinct 2 Bedrock';
+        this.cvrfile = PRECINCT_2_CVR;
+        this.affidavitfile = PRECINCT_2_AFFIDAVIT;
+        this.ballotfile = PRECINCT_2_BALLOT;
         break;
       case 'C':
-        this.precinctId = "precinct_3";
-        this.precinct = "Precinct 3 Downtown";
-        fetch('./assets/files/downtown_precinct3/jetsons_downtown-precinct3_cvr.xml')
-          .then(res => res.text())
-          .then(file => this.cvrfile = file);
-        fetch('./assets/files/downtown_precinct3/precinct3_voter_affidavit.pdf')
-          .then(res => res.text())
-          .then(file => this.affidavitfile = btoa(unescape(encodeURIComponent(file))));
-        fetch('./assets/files/downtown_precinct3/jetsons_downtown-precinct3_ballot_marked.pdf')
-          .then(res => res.text())
-          .then(file => this.ballotfile = btoa(unescape(encodeURIComponent(file))));
+        this.precinctId = 'precinct_3';
+        this.precinct = 'Precinct 3 Downtown';
+        this.cvrfile = PRECINCT_3_CVR;
+        this.affidavitfile = PRECINCT_3_AFFIDAVIT;
+        this.ballotfile = PRECINCT_3_BALLOT;
         break;
       default:
-        this.precinctId = "precinct_4";
-        this.precinct = "Precinct 4 Spacetown";
-        fetch('./assets/files/spacetown_precinct4/jetsons_spacetown_precinct4_cvr.xml')
-          .then(res => res.text())
-          .then(file => this.cvrfile = file);
-        fetch('./assets/files/spacetown_precinct4/jetsons_spacetown-precinct4_ballot_marked.pdf')
-          .then(res => res.text())
-          .then(file => this.affidavitfile = btoa(unescape(encodeURIComponent(file))));
-        fetch('./assets/files/spacetown_precinct4/precinct4_voter_affidavit.pdf')
-          .then(res => res.text())
-          .then(file => this.ballotfile = btoa(unescape(encodeURIComponent(file))));
-        break
-    };
+        this.precinctId = 'precinct_4';
+        this.precinct = 'Precinct 4 Spacetown';
+        this.cvrfile = PRECINCT_4_CVR;
+        this.affidavitfile = PRECINCT_4_AFFIDAVIT;
+        this.ballotfile = PRECINCT_4_BALLOT;
+        break;
+    }
     return this.precinct;
   }
 
@@ -80,10 +71,10 @@ export class VoterartifactsService {
   }
 
   public get affidavit(): string {
-    return this.affidavitfile; 
+    return this.affidavitfile;
   }
 
   public get ballot(): string {
-    return this.ballotfile; 
+    return this.ballotfile;
   }
 }
