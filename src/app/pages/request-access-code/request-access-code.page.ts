@@ -29,10 +29,10 @@ ngOnInit() {
     this.results = json[0]['rap_page'];
   });
 }
-Continuebtn() {
+async Continuebtn() {
   if (this.userObject.lastname != undefined) {
-    let opaqueVoterId = this.userObject.lastname      
-    this.avclientService.requestAccessCode(opaqueVoterId).then(res => {
+    let opaqueVoterId = this.userObject.lastname;
+    await this.avclientService.requestAccessCode(opaqueVoterId).then(res => {
         this.route.navigate(['/access-code', {
           t: new Date().getTime()
         }]);
