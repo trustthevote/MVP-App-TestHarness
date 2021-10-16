@@ -7,14 +7,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./expired-code.page.scss'],
 })
 export class ExpiredCodePage implements OnInit {
-  results = [];
+  results: any;
   constructor(private route: Router) {}
 
   ngOnInit() {
     fetch('./assets/inputFile/input.json')
       .then((res) => res.json())
       .then((json) => {
-        this.results = json[0]['code_expired_access00003_error'];
+        this.results = json[0].code_expired_access00003_error;
       });
   }
   backbtn() {

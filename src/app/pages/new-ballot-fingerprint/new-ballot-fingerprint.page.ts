@@ -7,14 +7,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./new-ballot-fingerprint.page.scss'],
 })
 export class NewBallotFingerprintPage implements OnInit {
-  results = [];
+  results: any;
   constructor(private route: Router) {}
 
   ngOnInit() {
     fetch('./assets/inputFile/input.json')
       .then((res) => res.json())
       .then((json) => {
-        this.results = json[0]['new_ballot_finger_print'];
+        this.results = json[0].new_ballot_finger_print;
       });
   }
   sendbtn() {

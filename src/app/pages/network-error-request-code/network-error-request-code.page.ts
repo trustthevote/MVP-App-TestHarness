@@ -7,14 +7,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./network-error-request-code.page.scss'],
 })
 export class NetworkErrorRequestCodePage implements OnInit {
-  results = [];
+  results: any;
   constructor(private route: Router) {}
 
   ngOnInit() {
     fetch('./assets/inputFile/input.json')
       .then((res) => res.json())
       .then((json) => {
-        this.results = json[0]['network_error_request_code_page'];
+        this.results = json[0].network_error_request_code_page;
       });
   }
 

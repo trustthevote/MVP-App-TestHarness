@@ -7,14 +7,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./ballot-test-failed.page.scss'],
 })
 export class BallotTestFailedPage implements OnInit {
-  results = [];
+  results: any;
   constructor(private route: Router) {}
 
   ngOnInit() {
     fetch('./assets/inputFile/input.json')
       .then((res) => res.json())
       .then((json) => {
-        this.results = json[0]['BallotTestFailedPage'];
+        this.results = json[0].BallotTestFailedPage;
       });
   }
   rpbtn() {

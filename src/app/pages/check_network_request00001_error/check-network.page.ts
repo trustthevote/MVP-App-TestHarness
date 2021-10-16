@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./check-network.page.scss'],
 })
 export class CheckNetworkPage implements OnInit {
-  results = [];
+  results: any;
   userObject: any;
   constructor(private route: Router) {}
 
@@ -16,11 +16,11 @@ export class CheckNetworkPage implements OnInit {
     fetch('./assets/inputFile/input.json')
       .then((res) => res.json())
       .then((json) => {
-        this.results = json[0]['check_network_request00001_error'];
+        this.results = json[0].check_network_request00001_error;
       });
-    if (this.userObject.lastname != undefined) {
+    if (this.userObject.lastname !== undefined) {
       const lastName = this.userObject.lastname.charAt(0).toUpperCase() + this.userObject.lastname.slice(1);
-      if (lastName == 'OOOO') {
+      if (lastName === 'OOOO') {
       }
     }
   }

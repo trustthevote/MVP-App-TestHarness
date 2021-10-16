@@ -7,14 +7,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./copy-confirmed.page.scss'],
 })
 export class CopyConfirmedPage implements OnInit {
-  results = [];
+  results: any;
   constructor(private route: Router) {}
 
   ngOnInit() {
     fetch('./assets/inputFile/input.json')
       .then((res) => res.json())
       .then((json) => {
-        this.results = json[0]['copy_confirm'];
+        this.results = json[0].copy_confirm;
       });
   }
   nextbtn() {

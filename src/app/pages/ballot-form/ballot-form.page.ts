@@ -9,7 +9,7 @@ import { NavigationExtras, Router } from '@angular/router';
 export class BallotFormPage implements OnInit {
   paramData: any;
   precinct: any;
-  results = [];
+  results: any;
   userObject: any;
   precinctNum: number;
 
@@ -24,9 +24,9 @@ export class BallotFormPage implements OnInit {
     fetch('./assets/inputFile/input.json')
       .then((res) => res.json())
       .then((json) => {
-        this.results = json[0]['ballot_form'];
+        this.results = json[0].ballot_form;
       });
-    if (this.userObject.lastname != undefined) {
+    if (this.userObject.lastname !== undefined) {
       const lastName = this.userObject.lastname.charAt(0).toUpperCase() + this.userObject.lastname.slice(1);
       if (lastName.includes('A', 0)) {
         this.precinctNum = 1;

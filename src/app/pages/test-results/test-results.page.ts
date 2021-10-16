@@ -8,7 +8,7 @@ import { VoterartifactsService } from 'src/app/api/voterartifacts.service';
   styleUrls: ['./test-results.page.scss'],
 })
 export class TestResultsPage implements OnInit {
-  results = [];
+  results: any;
   getCode: any;
   cvr: any;
   userObject: any;
@@ -25,7 +25,7 @@ export class TestResultsPage implements OnInit {
     fetch('./assets/inputFile/input.json')
       .then((res) => res.json())
       .then((json) => {
-        this.results = json[0]['test_result_page'];
+        this.results = json[0].test_result_page;
       });
   }
   passbtn() {
@@ -41,11 +41,11 @@ export class TestResultsPage implements OnInit {
         ]);
       })
       .catch((res) => {
-        if (res == 'Error: call out of order error') {
+        if (res === 'Error: call out of order error') {
           this.route.navigate(['/calloutoforder_construct00006_error']);
-        } else if (res == 'Error: network code') {
+        } else if (res === 'Error: network code') {
           this.route.navigate(['/check_network_construct00007_error']);
-        } else if (res == 'Error: corrupt CVR') {
+        } else if (res === 'Error: corrupt CVR') {
           this.route.navigate(['/corrupt_cv_construct00008_error']);
         }
       });

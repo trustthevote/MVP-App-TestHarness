@@ -7,14 +7,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./ballot-oops-screen.page.scss'],
 })
 export class BallotOopsScreenPage implements OnInit {
-  results = [];
+  results: any;
   constructor(private route: Router) {}
 
   ngOnInit() {
     fetch('./assets/inputFile/input.json')
       .then((res) => res.json())
       .then((json) => {
-        this.results = json[0]['corrupt_cv_construct00008_error'];
+        this.results = json[0].corrupt_cv_construct00008_error;
       });
   }
   rpbtn() {

@@ -6,14 +6,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./failed-authorization.page.scss'],
 })
 export class FailedAuthorizationPage implements OnInit {
-  results = [];
+  results: any;
   constructor(private route: Router) {}
 
   ngOnInit() {
     fetch('./assets/inputFile/input.json')
       .then((res) => res.json())
       .then((json) => {
-        this.results = json[0]['code_invalid_access00004_error'];
+        this.results = json[0].code_invalid_access00004_error;
       });
   }
   backbtn() {

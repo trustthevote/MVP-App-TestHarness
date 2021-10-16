@@ -7,14 +7,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./print.page.scss'],
 })
 export class PrintPage implements OnInit {
-  results = [];
+  results: any;
   constructor(private router: Router) {}
 
   ngOnInit() {
     fetch('./assets/inputFile/input.json')
       .then((res) => res.json())
       .then((json) => {
-        this.results = json[0]['printing_page'];
+        this.results = json[0].printing_page;
       });
   }
 

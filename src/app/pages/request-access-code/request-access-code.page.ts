@@ -11,7 +11,7 @@ import { VoterartifactsService } from 'src/app/api/voterartifacts.service';
   styleUrls: ['./request-access-code.page.scss'],
 })
 export class RequestAccessCodePage implements OnInit {
-  results = [];
+  results: any;
   userObject: any;
   constructor(
     private route: Router,
@@ -21,19 +21,19 @@ export class RequestAccessCodePage implements OnInit {
   ) {
     this.avclientService.assignServerUrl(environment.url);
     this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
-    let getVoterArt = this.voterartifactsService.Initialize(this.userObject.lastname);
+    const getVoterArt = this.voterartifactsService.initialize(this.userObject.lastname);
   }
 
   ngOnInit() {
     fetch('./assets/inputFile/input.json')
       .then((res) => res.json())
       .then((json) => {
-        this.results = json[0]['rap_page'];
+        this.results = json[0].rap_page;
       });
   }
-  async Continuebtn() {
-    if (this.userObject.lastname != undefined) {
-      let opaqueVoterId = this.userObject.lastname;
+  async continuebtn() {
+    if (this.userObject.lastname !== undefined) {
+      const opaqueVoterId = this.userObject.lastname;
       await this.avclientService
         .requestAccessCode(opaqueVoterId)
         .then((res) => {
@@ -45,9 +45,9 @@ export class RequestAccessCodePage implements OnInit {
           ]);
         })
         .catch((res) => {
-          if (res == 'Error: voter record not found') {
+          if (res === 'Error: voter record not found') {
             this.route.navigate(['/voter_record_notfound00000_error']);
-          } else if (res == 'Error: network code') {
+          } else if (res === 'Error: network code') {
             this.route.navigate(['/check_network_request00001_error']);
           }
         });

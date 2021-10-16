@@ -7,14 +7,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./check-network-access00005-error.page.scss'],
 })
 export class CheckNetworkAccess00005ErrorPage implements OnInit {
-  results = [];
+  results: any;
   constructor(private route: Router) {}
 
   ngOnInit() {
     fetch('./assets/inputFile/input.json')
       .then((res) => res.json())
       .then((json) => {
-        this.results = json[0]['check_network_access00005_error'];
+        this.results = json[0].check_network_access00005_error;
       });
   }
   confirm() {

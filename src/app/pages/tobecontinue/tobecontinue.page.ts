@@ -6,14 +6,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./tobecontinue.page.scss'],
 })
 export class TobecontinuePage implements OnInit {
-  results = [];
+  results: any;
   constructor(private route: Router) {}
 
   ngOnInit() {
     fetch('./assets/inputFile/input.json')
       .then((res) => res.json())
       .then((json) => {
-        this.results = json[0]['tobe_continue_page'];
+        this.results = json[0].tobe_continue_page;
       });
   }
   reloadCurrentPage() {

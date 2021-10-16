@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./access-code-error.page.scss'],
 })
 export class AccessCodeErrorPage implements OnInit {
-  results = [];
+  results: any;
   userObject: any;
   constructor(private route: Router) {}
 
@@ -16,11 +16,11 @@ export class AccessCodeErrorPage implements OnInit {
     fetch('./assets/inputFile/input.json')
       .then((res) => res.json())
       .then((json) => {
-        this.results = json[0]['voter_record_notfound00000_error'];
+        this.results = json[0].voter_record_notfound00000_error;
       });
-    if (this.userObject.lastname != undefined) {
+    if (this.userObject.lastname !== undefined) {
       const lastName = this.userObject.lastname.charAt(0).toUpperCase() + this.userObject.lastname.slice(1);
-      if (lastName == 'OOOOO') {
+      if (lastName === 'OOOOO') {
       }
     }
   }

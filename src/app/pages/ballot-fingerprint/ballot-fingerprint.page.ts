@@ -9,11 +9,9 @@ import { VoterartifactsService } from 'src/app/api/voterartifacts.service';
   styleUrls: ['./ballot-fingerprint.page.scss'],
 })
 export class BallotFingerprintPage implements OnInit {
-  results = [];
-  IsVisible: boolean = false;
-  Ishowmore: boolean = false;
-  Ishowmoredetails: boolean = false;
-  icon: boolean = true;
+  results: any;
+  isVisible = false;
+  icon = true;
   scndicons = false;
   fsticon = true;
   getCode: any;
@@ -28,13 +26,13 @@ export class BallotFingerprintPage implements OnInit {
     this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
   }
 
-  PolicyDetails() {
-    this.IsVisible = true;
+  policyDetails() {
+    this.isVisible = true;
     this.fsticon = false;
     this.scndicons = true;
   }
-  PolicyDetailshide() {
-    this.IsVisible = false;
+  policyDetailsHide() {
+    this.isVisible = false;
     this.scndicons = false;
     this.fsticon = true;
   }
@@ -44,7 +42,7 @@ export class BallotFingerprintPage implements OnInit {
     fetch('./assets/inputFile/input.json')
       .then((res) => res.json())
       .then((json) => {
-        this.results = json[0]['ballot_fingerp'];
+        this.results = json[0].ballot_fingerp;
       });
   }
   sendbtn() {
@@ -60,9 +58,9 @@ export class BallotFingerprintPage implements OnInit {
         ]);
       })
       .catch((res) => {
-        if (res == 'Error: network code') {
+        if (res === 'Error: network code') {
           this.route.navigate(['/check_network_submit00012_error']);
-        } else if (res == 'Error: call out of order error') {
+        } else if (res === 'Error: call out of order error') {
           this.route.navigate(['/calloutoforder_submit00013_error']);
         }
       });
@@ -79,11 +77,11 @@ export class BallotFingerprintPage implements OnInit {
         ]);
       })
       .catch((res) => {
-        if (res == 'Error: call out of order error') {
+        if (res === 'Error: call out of order error') {
           this.route.navigate(['/calloutoforder_spoil00009_error']);
-        } else if (res == 'Error: network code') {
+        } else if (res === 'Error: network code') {
           this.route.navigate(['/check_network_spoil00010_error']);
-        } else if (res == 'Error: server commitment error') {
+        } else if (res === 'Error: server commitment error') {
           this.route.navigate(['/check_server_spoil00011_error']);
         }
       });

@@ -6,17 +6,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./sending-confirmation.page.scss'],
 })
 export class SendingConfirmationPage implements OnInit {
-  results = [];
+  results: any;
   constructor(private route: Router) {}
 
   ngOnInit() {
     fetch('./assets/inputFile/input.json')
       .then((res) => res.json())
       .then((json) => {
-        this.results = json[0]['sending_confirmation_page'];
+        this.results = json[0].sending_confirmation_page;
       });
   }
-  Continuebtn() {
+  continuebtn() {
     this.route.navigate(['/howditgo']);
   }
 }

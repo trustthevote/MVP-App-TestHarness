@@ -8,7 +8,7 @@ import { AvclientService } from 'src/app/api/avclient.service';
   styleUrls: ['./ballot-resealed.page.scss'],
 })
 export class BallotResealedPage implements OnInit {
-  results = [];
+  results: any;
   getCode: any;
   constructor(private route: Router, public avclientService: AvclientService, private activatedRoute: ActivatedRoute) {}
 
@@ -17,7 +17,7 @@ export class BallotResealedPage implements OnInit {
     fetch('./assets/inputFile/input.json')
       .then((res) => res.json())
       .then((json) => {
-        this.results = json[0]['ballot_resealed_page'];
+        this.results = json[0].ballot_resealed_page;
       });
   }
   nextbtn() {

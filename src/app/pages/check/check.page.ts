@@ -7,14 +7,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./check.page.scss'],
 })
 export class CheckPage implements OnInit {
-  results = [];
+  results: any;
   constructor(private route: Router) {}
 
   ngOnInit() {
     fetch('./assets/inputFile/input.json')
       .then((res) => res.json())
       .then((json) => {
-        this.results = json[0]['check_page'];
+        this.results = json[0].check_page;
       });
   }
   confirm() {

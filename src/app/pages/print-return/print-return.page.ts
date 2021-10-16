@@ -13,7 +13,7 @@ export class PrintReturnPage implements OnInit {
   precinct: any;
 
   precinctNum: number;
-  results = [];
+  results: any;
   userObject: any;
 
   constructor(private router: Router, private voterartifactsService: VoterartifactsService) {
@@ -27,9 +27,9 @@ export class PrintReturnPage implements OnInit {
     fetch('./assets/inputFile/input.json')
       .then((res) => res.json())
       .then((json) => {
-        this.results = json[0]['print_return_page'];
+        this.results = json[0].print_return_page;
       });
-    if (this.userObject.lastname != undefined) {
+    if (this.userObject.lastname !== undefined) {
       const lastName = this.userObject.lastname.charAt(0).toUpperCase() + this.userObject.lastname.slice(1);
       if (lastName.includes('A', 0)) {
         this.precinctNum = 1;

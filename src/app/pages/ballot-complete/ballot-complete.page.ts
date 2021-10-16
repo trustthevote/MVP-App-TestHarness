@@ -11,7 +11,7 @@ import { AvclientService } from 'src/app/api/avclient.service';
 export class BallotCompletePage implements OnInit {
   paramData: any;
   precinctNum: number;
-  results = [];
+  results: any;
   serverURL: any;
 
   constructor(private router: Router, public avclientService: AvclientService) {
@@ -24,7 +24,7 @@ export class BallotCompletePage implements OnInit {
     fetch('./assets/inputFile/input.json')
       .then((res) => res.json())
       .then((json) => {
-        this.results = json[0]['ballot_comp'];
+        this.results = json[0].ballot_comp;
       });
   }
 
@@ -92,10 +92,10 @@ export class BallotCompletePage implements OnInit {
     }
   }
 
-  Physicalret() {
+  physicalret() {
     this.router.navigate(['/print-return']);
   }
-  Digitalret() {
+  digitalret() {
     this.router.navigate([
       '/request-access-code',
       {
@@ -105,6 +105,6 @@ export class BallotCompletePage implements OnInit {
   }
 
   ballotReturnChoice(event) {
-    let chooseVal = event;
+    const chooseVal = event;
   }
 }

@@ -1,18 +1,17 @@
-/* eslint-disable max-len */
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NavigationExtras, Router } from '@angular/router';
-import { ToastController, AlertController, LoadingController, NavController } from '@ionic/angular';
+import { ToastController, AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-ballot',
   templateUrl: './ballot.page.html',
   styleUrls: ['./ballot.page.scss'],
 })
-export class BallotPage {
+export class BallotPage implements OnInit {
   signupForm: FormGroup;
   isSubmitted = false;
-  results = [];
+  results: any;
   constructor(
     public formBuilder: FormBuilder,
     public toastController: ToastController,
@@ -46,7 +45,7 @@ export class BallotPage {
     fetch('./assets/inputFile/input.json')
       .then((res) => res.json())
       .then((json) => {
-        this.results = json[0]['ballot'];
+        this.results = json[0].ballot;
       });
   }
   get errorControl() {
@@ -67,7 +66,7 @@ export class BallotPage {
       message: msg,
       buttons: [
         {
-          text: this.results['try_again'],
+          text: this.results.try_again,
           role: 'cancel',
           cssClass: 'secondary',
           handler: (blah) => {},
@@ -81,7 +80,7 @@ export class BallotPage {
     this.isSubmitted = true;
 
     if (!this.signupForm.valid) {
-      this.presentAlertEmpty(this.results['alert_msg']);
+      this.presentAlertEmpty(this.results.alert_msg);
       return false;
     } else {
       const naviExtras: NavigationExtras = {

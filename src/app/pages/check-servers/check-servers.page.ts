@@ -7,14 +7,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./check-servers.page.scss'],
 })
 export class CheckServersPage implements OnInit {
-  results = [];
+  results: any;
   constructor(private route: Router) {}
 
   ngOnInit() {
     fetch('./assets/inputFile/input.json')
       .then((res) => res.json())
       .then((json) => {
-        this.results = json[0]['check_server_page'];
+        this.results = json[0].check_server_page;
       });
   }
   confirm() {

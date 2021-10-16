@@ -7,14 +7,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./network-error-access12.page.scss'],
 })
 export class NetworkErrorAccess12Page implements OnInit {
-  results = [];
+  results: any;
   constructor(private route: Router) {}
 
   ngOnInit() {
     fetch('./assets/inputFile/input.json')
       .then((res) => res.json())
       .then((json) => {
-        this.results = json[0]['check_network_submit00012_error'];
+        this.results = json[0].check_network_submit00012_error;
       });
   }
 

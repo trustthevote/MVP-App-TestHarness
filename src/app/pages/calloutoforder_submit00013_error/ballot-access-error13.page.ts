@@ -7,14 +7,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./ballot-access-error13.page.scss'],
 })
 export class BallotAccessError13Page implements OnInit {
-  results = [];
+  results: any;
   constructor(private route: Router) {}
 
   ngOnInit() {
     fetch('./assets/inputFile/input.json')
       .then((res) => res.json())
       .then((json) => {
-        this.results = json[0]['calloutoforder_submit00013_error'];
+        this.results = json[0].calloutoforder_submit00013_error;
       });
   }
   rpbtn() {

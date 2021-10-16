@@ -7,14 +7,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./network-error-access-code.page.scss'],
 })
 export class NetworkErrorAccessCodePage implements OnInit {
-  results = [];
+  results: any;
   constructor(private route: Router) {}
 
   ngOnInit() {
     fetch('./assets/inputFile/input.json')
       .then((res) => res.json())
       .then((json) => {
-        this.results = json[0]['check_network_construct00007_error'];
+        this.results = json[0].check_network_construct00007_error;
       });
   }
   confirm() {

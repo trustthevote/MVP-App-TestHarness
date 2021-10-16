@@ -27,8 +27,8 @@ export class VoterartifactsService {
 
   constructor() {}
 
-  Initialize(lastName: string): string {
-    let key = lastName.substring(0, 1).toUpperCase();
+  initialize(lastName: string): string {
+    const key = lastName.substring(0, 1).toUpperCase();
     switch (key) {
       case 'A':
         this.precinctId = 'precinct_1';

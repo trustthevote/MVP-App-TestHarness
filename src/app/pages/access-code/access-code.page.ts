@@ -1,8 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
-import { ToastController, AlertController, LoadingController, NavController } from '@ionic/angular';
+import { ToastController, AlertController, LoadingController } from '@ionic/angular';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { invalid } from '@angular/compiler/src/render3/view/util';
 import { StatuscodeService } from 'src/app/api/statuscode.service';
 import { AvclientService } from 'src/app/api/avclient.service';
 
@@ -12,38 +11,19 @@ import { AvclientService } from 'src/app/api/avclient.service';
   styleUrls: ['./access-code.page.scss'],
 })
 export class AccessCodePage implements OnInit {
-  OTP: string = '';
-  otp: string = '';
   disabledbutton;
-  otpError: string = '';
+  otpError = '';
   alertController: any;
   otpForm: FormGroup;
-  @ViewChild('first', {
-    static: false,
-  })
   first: ElementRef;
-  @ViewChild('second', {
-    static: false,
-  })
   second: ElementRef;
-  @ViewChild('third', {
-    static: false,
-  })
   third: ElementRef;
-  @ViewChild('four', {
-    static: false,
-  })
   four: ElementRef;
-  @ViewChild('five', {
-    static: false,
-  })
   five: ElementRef;
-  @ViewChild('singUp', {
-    static: false,
-  })
   singUp: ElementRef;
   data: string;
-  results = [];
+  results: any;
+
   constructor(
     private route: Router,
     public fb: FormBuilder,
@@ -56,11 +36,29 @@ export class AccessCodePage implements OnInit {
     this.createOTPForm();
   }
 
+  @ViewChild('first', {
+    static: false,
+  })
+  @ViewChild('second', {
+    static: false,
+  })
+  @ViewChild('third', {
+    static: false,
+  })
+  @ViewChild('four', {
+    static: false,
+  })
+  @ViewChild('five', {
+    static: false,
+  })
+  @ViewChild('singUp', {
+    static: false,
+  })
   ngOnInit() {
     fetch('./assets/inputFile/input.json')
       .then((res) => res.json())
       .then((json) => {
-        this.results = json[0]['access_code'];
+        this.results = json[0].access_code;
       });
   }
 
@@ -126,10 +124,9 @@ export class AccessCodePage implements OnInit {
   }
 
   async nextbtn() {
-    let enteredOtp: string;
-    enteredOtp = this.getOtpValue();
+    const enteredOtp: string = this.getOtpValue();
     this.data = enteredOtp;
-    if (this.data == '') {
+    if (this.data === '') {
       this.presentAlertEmpty();
     } else {
       this.disabledbutton = true;
@@ -152,16 +149,19 @@ export class AccessCodePage implements OnInit {
           })
           .catch((res) => {
             console.log('res', res);
-            if (res == 'Error: call out of order error') {
+            if (res === 'Error: call out of order error') {
               this.route.navigate(['/calloutoforder-access00002-error']);
-            } else if (res == 'Error: access code expired') {
+            } else if (res === 'Error: access code expired') {
               this.route.navigate(['/code_expired_access00003_error']);
-            } else if (res == 'Error: access code invalid') {
+            } else if (res === 'Error: access code invalid') {
               this.route.navigate(['/code_invalid_access00004_error']);
-            } else if (res == 'Error: network code') {
+            } else if (res === 'Error: network code') {
               this.route.navigate(['/check-network-access00005-error']);
             }
           });
+        // this appears to be a function declaration, so I'm not entirely sure what it does
+        // todo: figure out the original intent, implement accordingly, and remove the eslint disable
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         (err) => {
           loading.dismiss();
           this.disabledbutton = false;
@@ -172,7 +172,7 @@ export class AccessCodePage implements OnInit {
   }
   async presentAlertEmpty() {
     const alert = await this.alertctrl.create({
-      message: this.results['alert_msg'],
+      message: this.results.alert_msg,
       buttons: [
         {
           text: 'Retry',
@@ -220,7 +220,7 @@ export class AccessCodePage implements OnInit {
   }
   numberOnlyValidation(event: any) {
     const pattern = /[0-9]/;
-    let inputChar = String.fromCharCode(event.charCode);
+    const inputChar = String.fromCharCode(event.charCode);
 
     if (!pattern.test(inputChar)) {
       event.preventDefault();
