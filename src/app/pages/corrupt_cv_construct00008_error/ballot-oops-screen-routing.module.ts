@@ -6,8 +6,8 @@ import { BallotOopsScreenPage } from './ballot-oops-screen.page';
 const routes: Routes = [
   {
     path: '',
-    component: BallotOopsScreenPage
-  }
+    component: BallotOopsScreenPage,
+  },
 ];
 
 @NgModule({

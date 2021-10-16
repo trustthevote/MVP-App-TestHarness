@@ -1,4 +1,3 @@
-
-import {  Contestindexed } from 'src/app/class/contestindexed';
+import { Contestindexed } from 'src/app/class/contestindexed';
 
 export type CastVoteRecord = Contestindexed<string>;

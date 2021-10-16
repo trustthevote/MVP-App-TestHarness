@@ -8,16 +8,18 @@ describe('NetworkErrorAccess12Page', () => {
   let component: NetworkErrorAccess12Page;
   let fixture: ComponentFixture<NetworkErrorAccess12Page>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [ NetworkErrorAccess12Page ],
-      imports: [IonicModule.forRoot(), RouterTestingModule]
-    }).compileComponents();
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [NetworkErrorAccess12Page],
+        imports: [IonicModule.forRoot(), RouterTestingModule],
+      }).compileComponents();
 
-    fixture = TestBed.createComponent(NetworkErrorAccess12Page);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  }));
+      fixture = TestBed.createComponent(NetworkErrorAccess12Page);
+      component = fixture.componentInstance;
+      fixture.detectChanges();
+    })
+  );
 
   it('should create', () => {
     expect(component).toBeTruthy();

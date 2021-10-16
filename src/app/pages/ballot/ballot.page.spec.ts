@@ -9,17 +9,19 @@ describe('BallotPage', () => {
   let component: BallotPage;
   let fixture: ComponentFixture<BallotPage>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [BallotPage],
-      imports: [IonicModule.forRoot(), RouterTestingModule],
-      providers: [FormBuilder]
-    }).compileComponents();
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [BallotPage],
+        imports: [IonicModule.forRoot(), RouterTestingModule],
+        providers: [FormBuilder],
+      }).compileComponents();
 
-    fixture = TestBed.createComponent(BallotPage);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  }));
+      fixture = TestBed.createComponent(BallotPage);
+      component = fixture.componentInstance;
+      fixture.detectChanges();
+    })
+  );
 
   it('should create', () => {
     expect(component).toBeTruthy();

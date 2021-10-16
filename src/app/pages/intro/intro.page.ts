@@ -5,15 +5,15 @@ import { Router } from '@angular/router';
   selector: 'app-intro',
   styleUrls: ['./intro.page.scss'],
   template: `<ion-content scroll-y="false">
-                <ion-slides (ionSlideReachEnd)="onSlideEnd()" [options]="slideOpts">
-                  <ion-slide>
-                    <img src="../../../assets/images/slides/slide-1.png">
-                  </ion-slide>
-                  <ion-slide (click)="next()">
-                    <img src="../../../assets/images/slides/slide-2.png">
-                  </ion-slide>
-                </ion-slides>
-              </ion-content>`
+    <ion-slides (ionSlideReachEnd)="onSlideEnd()" [options]="slideOpts">
+      <ion-slide>
+        <img src="../../../assets/images/slides/slide-1.png" />
+      </ion-slide>
+      <ion-slide (click)="next()">
+        <img src="../../../assets/images/slides/slide-2.png" />
+      </ion-slide>
+    </ion-slides>
+  </ion-content>`,
 })
 export class IntroPage implements OnInit {
   slideOpts = {
@@ -22,14 +22,14 @@ export class IntroPage implements OnInit {
     centeredSlides: true,
     autoplay: {
       delay: 2000,
-      stopOnLastSlide: true
+      stopOnLastSlide: true,
     },
-    pagination: false
+    pagination: false,
   };
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   next() {
     this.router.navigate(['/ballot']);

@@ -6,8 +6,8 @@ import { RequestAccessCodePage } from './request-access-code.page';
 const routes: Routes = [
   {
     path: '',
-    component: RequestAccessCodePage
-  }
+    component: RequestAccessCodePage,
+  },
 ];
 
 @NgModule({

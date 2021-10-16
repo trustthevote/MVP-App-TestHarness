@@ -11,9 +11,9 @@ class RouterStub {
       extras: {
         state: {
           user: 'foo',
-        }
-      }
-    }
+        },
+      },
+    };
   }
 }
 
@@ -21,18 +21,20 @@ describe('PrintReturnPage', () => {
   let component: PrintReturnPage;
   let fixture: ComponentFixture<PrintReturnPage>;
 
-  beforeEach(waitForAsync(() => {
-    localStorage.setItem('userNameInfo', JSON.stringify({lastname: 'foo'}));
-    TestBed.configureTestingModule({
-      declarations: [ PrintReturnPage ],
-      imports: [IonicModule.forRoot(), RouterTestingModule],
-      providers: [ { provide: Router, useClass: RouterStub } ]
-    }).compileComponents();
+  beforeEach(
+    waitForAsync(() => {
+      localStorage.setItem('userNameInfo', JSON.stringify({ lastname: 'foo' }));
+      TestBed.configureTestingModule({
+        declarations: [PrintReturnPage],
+        imports: [IonicModule.forRoot(), RouterTestingModule],
+        providers: [{ provide: Router, useClass: RouterStub }],
+      }).compileComponents();
 
-    fixture = TestBed.createComponent(PrintReturnPage);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  }));
+      fixture = TestBed.createComponent(PrintReturnPage);
+      component = fixture.componentInstance;
+      fixture.detectChanges();
+    })
+  );
 
   it('should create', () => {
     expect(component).toBeTruthy();

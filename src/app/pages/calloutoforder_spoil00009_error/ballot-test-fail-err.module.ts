@@ -9,12 +9,7 @@ import { BallotTestFailErrPageRoutingModule } from './ballot-test-fail-err-routi
 import { BallotTestFailErrPage } from './ballot-test-fail-err.page';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    BallotTestFailErrPageRoutingModule
-  ],
-  declarations: [BallotTestFailErrPage]
+  imports: [CommonModule, FormsModule, IonicModule, BallotTestFailErrPageRoutingModule],
+  declarations: [BallotTestFailErrPage],
 })
 export class BallotTestFailErrPageModule {}

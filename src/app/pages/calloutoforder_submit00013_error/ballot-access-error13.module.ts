@@ -9,12 +9,7 @@ import { BallotAccessError13PageRoutingModule } from './ballot-access-error13-ro
 import { BallotAccessError13Page } from './ballot-access-error13.page';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    BallotAccessError13PageRoutingModule
-  ],
-  declarations: [BallotAccessError13Page]
+  imports: [CommonModule, FormsModule, IonicModule, BallotAccessError13PageRoutingModule],
+  declarations: [BallotAccessError13Page],
 })
 export class BallotAccessError13PageModule {}

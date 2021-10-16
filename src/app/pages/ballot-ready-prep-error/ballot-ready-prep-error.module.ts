@@ -9,12 +9,7 @@ import { BallotReadyPrepErrorPageRoutingModule } from './ballot-ready-prep-error
 import { BallotReadyPrepErrorPage } from './ballot-ready-prep-error.page';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    BallotReadyPrepErrorPageRoutingModule
-  ],
-  declarations: [BallotReadyPrepErrorPage]
+  imports: [CommonModule, FormsModule, IonicModule, BallotReadyPrepErrorPageRoutingModule],
+  declarations: [BallotReadyPrepErrorPage],
 })
 export class BallotReadyPrepErrorPageModule {}

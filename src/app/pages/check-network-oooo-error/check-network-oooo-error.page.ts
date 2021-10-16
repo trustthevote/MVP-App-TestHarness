@@ -7,14 +7,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./check-network-oooo-error.page.scss'],
 })
 export class CheckNetworkOOOOErrorPage implements OnInit {
-
   results = [];
-  constructor(private route: Router) { }
+  constructor(private route: Router) {}
 
   ngOnInit() {
-    fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-      this.results = json[0]['check_network_oooo_error_page'];
-    });
+    fetch('./assets/inputFile/input.json')
+      .then((res) => res.json())
+      .then((json) => {
+        this.results = json[0]['check_network_oooo_error_page'];
+      });
   }
   confirm() {
     this.route.navigate(['/request-access-code']);
@@ -26,5 +27,4 @@ export class CheckNetworkOOOOErrorPage implements OnInit {
   printbtn() {
     this.route.navigate(['/print-return']);
   }
-
 }

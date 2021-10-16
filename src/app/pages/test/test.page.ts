@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AvclientService } from 'src/app/api/avclient.service';
-import { ToastController, AlertController, LoadingController, NavController } from "@ionic/angular";
-import { Router } from '@angular/router'
+import { ToastController, AlertController, LoadingController, NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
 import { StatuscodeService } from 'src/app/api/statuscode.service';
 import { environment } from 'src/environments/environment';
-
 
 @Component({
   selector: 'app-test',
@@ -14,10 +13,12 @@ import { environment } from 'src/environments/environment';
 export class TestPage implements OnInit {
   serverURL: any;
   results = [];
-  constructor(private alertctrl: AlertController,
+  constructor(
+    private alertctrl: AlertController,
     private router: Router,
     private avclientService: AvclientService,
-    public statuscodeService: StatuscodeService,) { }
+    public statuscodeService: StatuscodeService
+  ) {}
 
   ngOnInit() {
     this.autoCall();
@@ -27,7 +28,7 @@ export class TestPage implements OnInit {
     this.router.navigate(['tobecontinue']);
   }
   async autoCall() {
-    await this.assignServerUrl(environment.url)
+    await this.assignServerUrl(environment.url);
     await this.requestAccessCodeStatic();
     await this.requestAccessCodeStaticT1();
     await this.validateAccessCodeStatic();
@@ -42,61 +43,61 @@ export class TestPage implements OnInit {
 
   requestAccessCodeStatic() {
     return new Promise((resolve, reject) => {
-      let code = '00000'
-      this.presentAlertEmpty(code, this.statuscodeService.statusCode('VoterRecordNotFound'))
+      let code = '00000';
+      this.presentAlertEmpty(code, this.statuscodeService.statusCode('VoterRecordNotFound'));
       resolve(true);
-    })
+    });
   }
   requestAccessCodeStaticT1() {
     return new Promise((resolve, reject) => {
-      let code = '00001'
-      this.presentAlertEmpty(code, this.statuscodeService.statusCode('NetworkError'))
+      let code = '00001';
+      this.presentAlertEmpty(code, this.statuscodeService.statusCode('NetworkError'));
       resolve(true);
-    })
+    });
   }
 
   validateAccessCodeStatic() {
     return new Promise((resolve, reject) => {
-      let code = '00002'
-      this.presentAlertEmpty(code, this.statuscodeService.statusCode('CallOutOfOrderError'))
+      let code = '00002';
+      this.presentAlertEmpty(code, this.statuscodeService.statusCode('CallOutOfOrderError'));
       resolve(true);
-    })
+    });
   }
   validateAccessCodeStatic3() {
     return new Promise((resolve, reject) => {
-      let code = '00003'
-      this.presentAlertEmpty(code, this.statuscodeService.statusCode('AccessCodeExpired'))
+      let code = '00003';
+      this.presentAlertEmpty(code, this.statuscodeService.statusCode('AccessCodeExpired'));
       resolve(true);
-    })
+    });
   }
   validateAccessCodeStatic4() {
     return new Promise((resolve, reject) => {
-      let code = '00004'
-      this.presentAlertEmpty(code, this.statuscodeService.statusCode('AccessCodeInvalid'))
+      let code = '00004';
+      this.presentAlertEmpty(code, this.statuscodeService.statusCode('AccessCodeInvalid'));
       resolve(true);
-    })
+    });
   }
   validateAccessCodeStatic5() {
     return new Promise((resolve, reject) => {
-      let code = '00005'
-      this.presentAlertEmpty(code, this.statuscodeService.statusCode('NetworkError'))
+      let code = '00005';
+      this.presentAlertEmpty(code, this.statuscodeService.statusCode('NetworkError'));
       resolve(true);
-    })
+    });
   }
 
   async presentAlertEmpty(code, Error) {
     const alert = await this.alertctrl.create({
       header: code,
       message: Error,
-      buttons: [{
-        text: 'Okay',
-        role: 'cancel',
-        cssClass: 'secondary',
-        handler: (blah) => { }
-      }
-      ]
+      buttons: [
+        {
+          text: 'Okay',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {},
+        },
+      ],
     });
     await alert.present();
   }
-
 }

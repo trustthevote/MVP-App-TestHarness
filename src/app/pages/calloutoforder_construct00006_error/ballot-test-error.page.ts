@@ -8,14 +8,14 @@ import { Router } from '@angular/router';
 })
 export class BallotTestErrorPage implements OnInit {
   results = [];
-  constructor(private route: Router) { }
+  constructor(private route: Router) {}
 
   ngOnInit() {
-    fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-
-      this.results = json[0]['calloutoforder_construct00006_error'];
-
-    });
+    fetch('./assets/inputFile/input.json')
+      .then((res) => res.json())
+      .then((json) => {
+        this.results = json[0]['calloutoforder_construct00006_error'];
+      });
   }
   rpbtn() {
     this.route.navigate(['/tobecontinue']);
@@ -24,8 +24,11 @@ export class BallotTestErrorPage implements OnInit {
     this.route.navigate(['/print-return']);
   }
   backbtn() {
-    this.route.navigate(['/access-code', {
-      t: new Date().getTime()
-    }]);
+    this.route.navigate([
+      '/access-code',
+      {
+        t: new Date().getTime(),
+      },
+    ]);
   }
 }

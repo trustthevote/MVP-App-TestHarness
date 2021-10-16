@@ -10,26 +10,26 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 // import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
-
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
     IonicModule.forRoot({
-      mode: 'ios'
+      mode: 'ios',
     }),
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable
       // or after 30 seconds (whichever comes first).....
-      registrationStrategy: 'registerWhenStable:30000'
-    })],
+      registrationStrategy: 'registerWhenStable:30000',
+    }),
+  ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     // InAppBrowser
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

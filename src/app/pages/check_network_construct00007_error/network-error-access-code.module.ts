@@ -9,12 +9,7 @@ import { NetworkErrorAccessCodePageRoutingModule } from './network-error-access-
 import { NetworkErrorAccessCodePage } from './network-error-access-code.page';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    NetworkErrorAccessCodePageRoutingModule
-  ],
-  declarations: [NetworkErrorAccessCodePage]
+  imports: [CommonModule, FormsModule, IonicModule, NetworkErrorAccessCodePageRoutingModule],
+  declarations: [NetworkErrorAccessCodePage],
 })
 export class NetworkErrorAccessCodePageModule {}

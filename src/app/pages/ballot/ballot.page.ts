@@ -2,8 +2,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NavigationExtras, Router } from '@angular/router';
-import { ToastController, AlertController, LoadingController, NavController } from "@ionic/angular";
-
+import { ToastController, AlertController, LoadingController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-ballot',
@@ -13,12 +12,13 @@ import { ToastController, AlertController, LoadingController, NavController } fr
 export class BallotPage {
   signupForm: FormGroup;
   isSubmitted = false;
-  results = []
+  results = [];
   constructor(
     public formBuilder: FormBuilder,
     public toastController: ToastController,
     private router: Router,
-    private alertctrl: AlertController,) {
+    private alertctrl: AlertController
+  ) {
     this.signupForm = this.formBuilder.group({
       firstname: [
         '',
@@ -26,8 +26,8 @@ export class BallotPage {
           Validators.required,
           Validators.minLength(2),
           Validators.maxLength(50),
-          Validators.pattern('^[a-zA-Z-( )][\x20-\x7F]+$') // allow only letters, spaces, hyphens and PrintableASCII chars
-        ]
+          Validators.pattern('^[a-zA-Z-( )][\x20-\x7F]+$'), // allow only letters, spaces, hyphens and PrintableASCII chars
+        ],
       ],
       lastname: [
         '',
@@ -35,17 +35,19 @@ export class BallotPage {
           Validators.required,
           Validators.minLength(2),
           Validators.maxLength(50),
-          Validators.pattern('^[a-zA-Z-( )][\x20-\x7F]+$') // allow only letters, spaces, hyphens and PrintableASCII chars
-        ]
+          Validators.pattern('^[a-zA-Z-( )][\x20-\x7F]+$'), // allow only letters, spaces, hyphens and PrintableASCII chars
+        ],
       ],
     });
   }
 
   ngOnInit() {
     localStorage.clear();
-    fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-      this.results = json[0]['ballot'];
-    });
+    fetch('./assets/inputFile/input.json')
+      .then((res) => res.json())
+      .then((json) => {
+        this.results = json[0]['ballot'];
+      });
   }
   get errorControl() {
     return this.signupForm.controls;
@@ -56,20 +58,21 @@ export class BallotPage {
       cssClass: 'toast',
       message: mess,
       position: 'top',
-      duration: 2000
+      duration: 2000,
     });
     toast.present();
   }
   async presentAlertEmpty(msg) {
     const alert = await this.alertctrl.create({
       message: msg,
-      buttons: [{
-        text: this.results['try_again'],
-        role: 'cancel',
-        cssClass: 'secondary',
-        handler: (blah) => { }
-      }
-      ]
+      buttons: [
+        {
+          text: this.results['try_again'],
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {},
+        },
+      ],
     });
     await alert.present();
   }
@@ -83,8 +86,8 @@ export class BallotPage {
     } else {
       const naviExtras: NavigationExtras = {
         state: {
-          user: this.signupForm.value
-        }
+          user: this.signupForm.value,
+        },
       };
       localStorage.setItem('userNameInfo', JSON.stringify(this.signupForm.value));
       this.router.navigate(['ballot-form', { t: new Date().getTime() }], naviExtras);

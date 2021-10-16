@@ -8,17 +8,22 @@ import { Router } from '@angular/router';
 })
 export class NetworkErrorAccessTenPage implements OnInit {
   results = [];
-  constructor(private route: Router) { }
+  constructor(private route: Router) {}
 
   ngOnInit() {
-    fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-      this.results = json[0]['check_network_spoil00010_error'];
-    });
+    fetch('./assets/inputFile/input.json')
+      .then((res) => res.json())
+      .then((json) => {
+        this.results = json[0]['check_network_spoil00010_error'];
+      });
   }
   confirm() {
-    this.route.navigate(['/access-code', {
-      t: new Date().getTime()
-    }]);
+    this.route.navigate([
+      '/access-code',
+      {
+        t: new Date().getTime(),
+      },
+    ]);
   }
 
   rpbtn() {
@@ -27,5 +32,4 @@ export class NetworkErrorAccessTenPage implements OnInit {
   printbtn() {
     this.route.navigate(['/print-return']);
   }
-
 }

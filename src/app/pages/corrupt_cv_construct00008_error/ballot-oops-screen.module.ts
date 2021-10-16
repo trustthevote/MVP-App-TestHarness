@@ -9,12 +9,7 @@ import { BallotOopsScreenPageRoutingModule } from './ballot-oops-screen-routing.
 import { BallotOopsScreenPage } from './ballot-oops-screen.page';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    BallotOopsScreenPageRoutingModule
-  ],
-  declarations: [BallotOopsScreenPage]
+  imports: [CommonModule, FormsModule, IonicModule, BallotOopsScreenPageRoutingModule],
+  declarations: [BallotOopsScreenPage],
 })
 export class BallotOopsScreenPageModule {}

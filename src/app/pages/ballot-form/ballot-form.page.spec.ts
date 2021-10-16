@@ -11,9 +11,9 @@ class RouterStub {
       extras: {
         state: {
           user: 'foo',
-        }
-      }
-    }
+        },
+      },
+    };
   }
 }
 
@@ -21,18 +21,20 @@ describe('BallotFormPage', () => {
   let component: BallotFormPage;
   let fixture: ComponentFixture<BallotFormPage>;
 
-  beforeEach(waitForAsync(() => {
-    localStorage.setItem('userNameInfo', JSON.stringify({lastname: 'foo'}));
-    TestBed.configureTestingModule({
-      declarations: [ BallotFormPage ],
-      imports: [IonicModule.forRoot(), RouterTestingModule],
-      providers: [ { provide: Router, useClass: RouterStub } ]
-    }).compileComponents();
+  beforeEach(
+    waitForAsync(() => {
+      localStorage.setItem('userNameInfo', JSON.stringify({ lastname: 'foo' }));
+      TestBed.configureTestingModule({
+        declarations: [BallotFormPage],
+        imports: [IonicModule.forRoot(), RouterTestingModule],
+        providers: [{ provide: Router, useClass: RouterStub }],
+      }).compileComponents();
 
-    fixture = TestBed.createComponent(BallotFormPage);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  }));
+      fixture = TestBed.createComponent(BallotFormPage);
+      component = fixture.componentInstance;
+      fixture.detectChanges();
+    })
+  );
 
   it('should create', () => {
     expect(component).toBeTruthy();

@@ -6,8 +6,8 @@ import { NetworkErrorAccessTenPage } from './network-error-access-ten.page';
 const routes: Routes = [
   {
     path: '',
-    component: NetworkErrorAccessTenPage
-  }
+    component: NetworkErrorAccessTenPage,
+  },
 ];
 
 @NgModule({

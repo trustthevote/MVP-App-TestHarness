@@ -6,8 +6,8 @@ import { ServerCommitNetworkErrorAccessPage } from './server-commit-network-erro
 const routes: Routes = [
   {
     path: '',
-    component: ServerCommitNetworkErrorAccessPage
-  }
+    component: ServerCommitNetworkErrorAccessPage,
+  },
 ];
 
 @NgModule({

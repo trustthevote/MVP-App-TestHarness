@@ -6,8 +6,8 @@ import { BallotTestFailErrPage } from './ballot-test-fail-err.page';
 const routes: Routes = [
   {
     path: '',
-    component: BallotTestFailErrPage
-  }
+    component: BallotTestFailErrPage,
+  },
 ];
 
 @NgModule({

@@ -6,8 +6,8 @@ import { PrintPage } from './print.page';
 const routes: Routes = [
   {
     path: '',
-    component: PrintPage
-  }
+    component: PrintPage,
+  },
 ];
 
 @NgModule({

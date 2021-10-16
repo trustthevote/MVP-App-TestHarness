@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-sending',
   templateUrl: './sending.page.html',
@@ -12,9 +11,11 @@ export class SendingPage implements OnInit {
   constructor(private route: Router) {}
 
   ngOnInit() {
-    fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-      this.results = json[0]['sending_page'];
-    });
+    fetch('./assets/inputFile/input.json')
+      .then((res) => res.json())
+      .then((json) => {
+        this.results = json[0]['sending_page'];
+      });
   }
   confirm() {
     this.route.navigate(['/check']);

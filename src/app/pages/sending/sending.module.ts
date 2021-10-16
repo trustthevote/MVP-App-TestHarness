@@ -9,12 +9,7 @@ import { SendingPageRoutingModule } from './sending-routing.module';
 import { SendingPage } from './sending.page';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    SendingPageRoutingModule
-  ],
-  declarations: [SendingPage]
+  imports: [CommonModule, FormsModule, IonicModule, SendingPageRoutingModule],
+  declarations: [SendingPage],
 })
 export class SendingPageModule {}

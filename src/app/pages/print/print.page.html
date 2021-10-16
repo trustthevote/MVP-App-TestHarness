@@ -6,30 +6,16 @@
     <p>{{results.ydp}}</p>
   </div>
   <div class="mt60">
-    <p>
-      {{results.dt}} <b>{{results.finish}}</b> {{results.btn}}
-      <b>{{results.re_try}}</b> {{results.pa}}
-    </p>
+    <p>{{results.dt}} <b>{{results.finish}}</b> {{results.btn}} <b>{{results.re_try}}</b> {{results.pa}}</p>
   </div>
   <ion-grid class="ion-no-padding mt60">
     <ion-row class="mt100 ion-text-center">
       <ion-col size="12">
-        <ion-button
-          (click)="goToBallot()"
-          class="main-btn-style"
-          color="primary"
-          >{{results.finish}}</ion-button
-        >
+        <ion-button (click)="goToBallot()" class="main-btn-style" color="primary">{{results.finish}}</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
   <div class="mt30 ion-text-center">
-    <ion-button
-      (click)="goToRetry()"
-      class="main-btn-style"
-      color="primary"
-      fill="clear"
-      >{{results.re_try}}
-    </ion-button>
+    <ion-button (click)="goToRetry()" class="main-btn-style" color="primary" fill="clear">{{results.re_try}} </ion-button>
   </div>
 </ion-content>

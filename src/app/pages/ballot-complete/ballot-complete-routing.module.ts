@@ -6,8 +6,8 @@ import { BallotCompletePage } from './ballot-complete.page';
 const routes: Routes = [
   {
     path: '',
-    component: BallotCompletePage
-  }
+    component: BallotCompletePage,
+  },
 ];
 
 @NgModule({

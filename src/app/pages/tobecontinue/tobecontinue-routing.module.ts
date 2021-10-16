@@ -6,8 +6,8 @@ import { TobecontinuePage } from './tobecontinue.page';
 const routes: Routes = [
   {
     path: '',
-    component: TobecontinuePage
-  }
+    component: TobecontinuePage,
+  },
 ];
 
 @NgModule({
