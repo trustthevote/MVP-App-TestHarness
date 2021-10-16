@@ -20,4 +20,5 @@ getTestBed().initTestEnvironment(BrowserDynamicTestingModule, platformBrowserDyn
 // Then we find all the tests.
 const context = require.context('./', true, /\.spec\.ts$/);
 // And load the modules.
+// eslint-disable-next-line sonarjs/no-ignored-return
 context.keys().map(context);

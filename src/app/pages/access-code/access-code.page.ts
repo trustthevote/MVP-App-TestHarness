@@ -81,9 +81,9 @@ export class AccessCodePage implements OnInit {
       five: [null, Validators.required],
     });
   }
+
+  // eslint-disable-next-line sonarjs/cognitive-complexity
   focusNext(event, index) {
-    console.log(index);
-    console.log(event);
     if (index === 1) {
       console.log(event.which !== 8);
       if (event.which !== 8) {
