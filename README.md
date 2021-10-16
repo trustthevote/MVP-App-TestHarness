@@ -13,6 +13,16 @@ iOS: Apple requires notarization. During development, each iOS revision is notar
 
 ### Linting
 
+This repo uses [ESlint](https://eslint.org/) to detect and prevent potential issues using static analysis.
+
+ESlint will run automatically as a pre-commit hook anytime you attempt to make a commit. If it detects any problems, it will prevent the commit and alert you to the issue. Once remediated, you should be able to commit cleanly.
+
+To run ESlint manually, execute the following:
+
+```bash
+npm run lint
+```
+
 ### Formatting
 
 This repo uses [Prettier](https://prettier.io/) to ensure standardized formatting rules across the entire codebase.
@@ -21,7 +31,7 @@ It's generally a good idea to configure your IDE to format whenever you make a c
 
 As an additional check, Prettier will run automatically as a pre-commit hook anytime you attempt to make a commit. Any files you have changed will be auto-formatted and added to your commit.
 
-If you want to run Prettier manually, you can run one of the following:
+To run Prettier manually, execute the following:
 
 ```bash
 npm run format:write # writes all formatting changes to disk
@@ -29,3 +39,11 @@ npm run format:write # will fail if more than one file is improperly formatted
 ```
 
 ### Unit testing
+
+This repo uses [Karma](https://angular.io/guide/testing) for unit testing.
+
+To run unit tests manually, execute the following:
+
+```bash
+npm run test
+```
