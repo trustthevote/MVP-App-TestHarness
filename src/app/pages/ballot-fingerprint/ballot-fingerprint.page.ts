@@ -9,7 +9,7 @@ import { VoterartifactsService } from 'src/app/api/voterartifacts.service';
   styleUrls: ['./ballot-fingerprint.page.scss'],
 })
 export class BallotFingerprintPage implements OnInit {
-  results: any;
+  results = [];
   isVisible = false;
   icon = true;
   scndicons = false;
@@ -59,9 +59,9 @@ export class BallotFingerprintPage implements OnInit {
         ]);
       })
       .catch((res) => {
-        if (res === 'Error: network code') {
+        if (res.message === 'network code') {
           this.route.navigate(['/check_network_submit00012_error']);
-        } else if (res === 'Error: call out of order error') {
+        } else if (res.message === 'call out of order error') {
           this.route.navigate(['/calloutoforder_submit00013_error']);
         }
       });
@@ -78,11 +78,11 @@ export class BallotFingerprintPage implements OnInit {
         ]);
       })
       .catch((res) => {
-        if (res === 'Error: call out of order error') {
+        if (res.message === 'call out of order error') {
           this.route.navigate(['/calloutoforder_spoil00009_error']);
-        } else if (res === 'Error: network code') {
+        } else if (res.message === 'network code') {
           this.route.navigate(['/check_network_spoil00010_error']);
-        } else if (res === 'Error: server commitment error') {
+        } else if (res.message === 'server commitment error') {
           this.route.navigate(['/check_server_spoil00011_error']);
         }
       });

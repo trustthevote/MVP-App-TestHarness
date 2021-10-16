@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./calloutoforder-access00002-error.page.scss'],
 })
 export class CalloutoforderAccess00002ErrorPage implements OnInit {
-  results: any;
+  results = [];
   userObject: any;
   constructor(private route: Router) {}
 

@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./server-commit-network-error-access.page.scss'],
 })
 export class ServerCommitNetworkErrorAccessPage implements OnInit {
-  results: any;
+  results = [];
   constructor(private route: Router) {}
 
   ngOnInit() {

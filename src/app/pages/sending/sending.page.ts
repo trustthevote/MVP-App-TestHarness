@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./sending.page.scss'],
 })
 export class SendingPage implements OnInit {
-  results: any;
+  results = [];
   constructor(private route: Router) {}
 
   ngOnInit() {

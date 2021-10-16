@@ -11,7 +11,7 @@ import { ToastController, AlertController } from '@ionic/angular';
 export class BallotPage implements OnInit {
   signupForm: FormGroup;
   isSubmitted = false;
-  results: any;
+  results = [];
   constructor(
     public formBuilder: FormBuilder,
     public toastController: ToastController,
@@ -66,7 +66,7 @@ export class BallotPage implements OnInit {
       message: msg,
       buttons: [
         {
-          text: this.results.try_again,
+          text: (this.results as any).try_again,
           role: 'cancel',
           cssClass: 'secondary',
           handler: () => {},
@@ -80,7 +80,7 @@ export class BallotPage implements OnInit {
     this.isSubmitted = true;
 
     if (!this.signupForm.valid) {
-      this.presentAlertEmpty(this.results.alert_msg);
+      this.presentAlertEmpty((this.results as any).alert_msg);
       return false;
     } else {
       const naviExtras: NavigationExtras = {

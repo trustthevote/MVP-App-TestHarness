@@ -10,6 +10,7 @@ describe('CheckNetworkPage', () => {
 
   beforeEach(
     waitForAsync(() => {
+      localStorage.setItem('userNameInfo', JSON.stringify({ lastname: 'foo' }));
       TestBed.configureTestingModule({
         declarations: [CheckNetworkPage],
         imports: [IonicModule.forRoot(), RouterTestingModule],

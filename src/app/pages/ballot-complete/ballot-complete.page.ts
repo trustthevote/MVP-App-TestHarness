@@ -11,7 +11,7 @@ import { AvclientService } from 'src/app/api/avclient.service';
 export class BallotCompletePage implements OnInit {
   paramData: any;
   precinctNum: number;
-  results: any;
+  results = [];
   serverURL: any;
 
   constructor(private router: Router, public avclientService: AvclientService) {

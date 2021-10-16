@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./ballot-access-error13.page.scss'],
 })
 export class BallotAccessError13Page implements OnInit {
-  results: any;
+  results = [];
   constructor(private route: Router) {}
 
   ngOnInit() {

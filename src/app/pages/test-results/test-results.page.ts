@@ -8,7 +8,7 @@ import { VoterartifactsService } from 'src/app/api/voterartifacts.service';
   styleUrls: ['./test-results.page.scss'],
 })
 export class TestResultsPage implements OnInit {
-  results: any;
+  results = [];
   getCode: any;
   cvr: any;
   userObject: any;
@@ -41,11 +41,11 @@ export class TestResultsPage implements OnInit {
         ]);
       })
       .catch((res) => {
-        if (res === 'Error: call out of order error') {
+        if (res.message === 'call out of order error') {
           this.route.navigate(['/calloutoforder_construct00006_error']);
-        } else if (res === 'Error: network code') {
+        } else if (res.message === 'network code') {
           this.route.navigate(['/check_network_construct00007_error']);
-        } else if (res === 'Error: corrupt CVR') {
+        } else if (res.message === 'corrupt CVR') {
           this.route.navigate(['/corrupt_cv_construct00008_error']);
         }
       });

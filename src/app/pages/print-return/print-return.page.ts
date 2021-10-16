@@ -13,7 +13,7 @@ export class PrintReturnPage implements OnInit {
   precinct: any;
 
   precinctNum: number;
-  results: any;
+  results = [];
   userObject: any;
 
   constructor(private router: Router, private voterartifactsService: VoterartifactsService) {

@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./ballot-test-failed-test.page.scss'],
 })
 export class BallotTestFailedTestPage implements OnInit {
-  results: any;
+  results = [];
   constructor(private route: Router) {}
 
   ngOnInit() {

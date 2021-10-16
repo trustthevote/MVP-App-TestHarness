@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./access-code-error.page.scss'],
 })
 export class AccessCodeErrorPage implements OnInit {
-  results: any;
+  results = [];
   userObject: any;
   constructor(private route: Router) {}
 

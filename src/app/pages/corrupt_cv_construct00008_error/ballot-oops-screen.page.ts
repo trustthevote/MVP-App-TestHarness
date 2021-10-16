@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./ballot-oops-screen.page.scss'],
 })
 export class BallotOopsScreenPage implements OnInit {
-  results: any;
+  results = [];
   constructor(private route: Router) {}
 
   ngOnInit() {

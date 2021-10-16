@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./network-error-access-ten.page.scss'],
 })
 export class NetworkErrorAccessTenPage implements OnInit {
-  results: any;
+  results = [];
   constructor(private route: Router) {}
 
   ngOnInit() {

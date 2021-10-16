@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./failed-authorization.page.scss'],
 })
 export class FailedAuthorizationPage implements OnInit {
-  results: any;
+  results = [];
   constructor(private route: Router) {}
 
   ngOnInit() {

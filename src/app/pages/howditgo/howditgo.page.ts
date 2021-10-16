@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./howditgo.page.scss'],
 })
 export class HowditgoPage implements OnInit {
-  results: any;
+  results = [];
   constructor(private route: Router) {}
 
   ngOnInit() {

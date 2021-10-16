@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./tobecontinue.page.scss'],
 })
 export class TobecontinuePage implements OnInit {
-  results: any;
+  results = [];
   constructor(private route: Router) {}
 
   ngOnInit() {

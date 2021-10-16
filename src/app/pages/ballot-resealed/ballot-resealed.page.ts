@@ -8,7 +8,7 @@ import { AvclientService } from 'src/app/api/avclient.service';
   styleUrls: ['./ballot-resealed.page.scss'],
 })
 export class BallotResealedPage implements OnInit {
-  results: any;
+  results = [];
   getCode: any;
   constructor(private route: Router, public avclientService: AvclientService, private activatedRoute: ActivatedRoute) {}
 

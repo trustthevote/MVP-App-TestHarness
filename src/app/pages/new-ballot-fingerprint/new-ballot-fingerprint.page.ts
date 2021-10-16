@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./new-ballot-fingerprint.page.scss'],
 })
 export class NewBallotFingerprintPage implements OnInit {
-  results: any;
+  results = [];
   constructor(private route: Router) {}
 
   ngOnInit() {

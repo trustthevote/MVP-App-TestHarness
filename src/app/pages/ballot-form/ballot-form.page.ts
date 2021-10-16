@@ -9,7 +9,7 @@ import { NavigationExtras, Router } from '@angular/router';
 export class BallotFormPage implements OnInit {
   paramData: any;
   precinct: any;
-  results: any;
+  results = [];
   userObject: any;
   precinctNum: number;
 

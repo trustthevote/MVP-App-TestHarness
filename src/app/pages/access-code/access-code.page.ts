@@ -22,7 +22,7 @@ export class AccessCodePage implements OnInit {
   five: ElementRef;
   singUp: ElementRef;
   data: string;
-  results: any;
+  results = [];
 
   constructor(
     private route: Router,
@@ -149,13 +149,13 @@ export class AccessCodePage implements OnInit {
           })
           .catch((res) => {
             console.log('res', res);
-            if (res === 'Error: call out of order error') {
+            if (res.message === 'call out of order error') {
               this.route.navigate(['/calloutoforder-access00002-error']);
-            } else if (res === 'Error: access code expired') {
+            } else if (res.message === 'access code expired') {
               this.route.navigate(['/code_expired_access00003_error']);
-            } else if (res === 'Error: access code invalid') {
+            } else if (res.message === 'access code invalid') {
               this.route.navigate(['/code_invalid_access00004_error']);
-            } else if (res === 'Error: network code') {
+            } else if (res.message === 'network code') {
               this.route.navigate(['/check-network-access00005-error']);
             }
           });
@@ -172,7 +172,7 @@ export class AccessCodePage implements OnInit {
   }
   async presentAlertEmpty() {
     const alert = await this.alertctrl.create({
-      message: this.results.alert_msg,
+      message: (this.results as any).alert_msg,
       buttons: [
         {
           text: 'Retry',

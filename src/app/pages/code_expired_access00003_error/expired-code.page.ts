@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./expired-code.page.scss'],
 })
 export class ExpiredCodePage implements OnInit {
-  results: any;
+  results = [];
   constructor(private route: Router) {}
 
   ngOnInit() {

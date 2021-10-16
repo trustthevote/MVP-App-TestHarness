@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-time-out.page.scss'],
 })
 export class UserTimeOutPage implements OnInit {
-  results: any;
+  results = [];
   constructor(private router: Router) {}
 
   ngOnInit() {

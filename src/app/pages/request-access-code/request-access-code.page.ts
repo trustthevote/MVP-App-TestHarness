@@ -11,7 +11,7 @@ import { VoterartifactsService } from 'src/app/api/voterartifacts.service';
   styleUrls: ['./request-access-code.page.scss'],
 })
 export class RequestAccessCodePage implements OnInit {
-  results: any;
+  results = [];
   userObject: any;
 
   constructor(
@@ -46,9 +46,9 @@ export class RequestAccessCodePage implements OnInit {
           ]);
         })
         .catch((res) => {
-          if (res === 'Error: voter record not found') {
+          if (res.message === 'voter record not found') {
             this.route.navigate(['/voter_record_notfound00000_error']);
-          } else if (res === 'Error: network code') {
+          } else if (res.message === 'network code') {
             this.route.navigate(['/check_network_request00001_error']);
           }
         });

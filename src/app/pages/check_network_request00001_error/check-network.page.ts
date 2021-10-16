@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./check-network.page.scss'],
 })
 export class CheckNetworkPage implements OnInit {
-  results: any;
+  results = [];
   userObject: any;
   constructor(private route: Router) {}
 

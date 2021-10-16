@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./digital-return-next-steps.page.scss'],
 })
 export class DigitalReturnNextStepsPage implements OnInit {
-  results: any;
+  results = [];
   constructor(private router: Router) {}
 
   ngOnInit() {

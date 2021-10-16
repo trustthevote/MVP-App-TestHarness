@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./print.page.scss'],
 })
 export class PrintPage implements OnInit {
-  results: any;
+  results = [];
   constructor(private router: Router) {}
 
   ngOnInit() {

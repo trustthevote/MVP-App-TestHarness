@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment';
 })
 export class TestPage implements OnInit {
   serverURL: any;
-  results: any;
+  results = [];
 
   constructor(private alertctrl: AlertController, private router: Router, public statuscodeService: StatuscodeService) {}
 

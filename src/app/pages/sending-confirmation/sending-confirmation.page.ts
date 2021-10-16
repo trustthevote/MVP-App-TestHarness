@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./sending-confirmation.page.scss'],
 })
 export class SendingConfirmationPage implements OnInit {
-  results: any;
+  results = [];
   constructor(private route: Router) {}
 
   ngOnInit() {

@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./check-network-access00005-error.page.scss'],
 })
 export class CheckNetworkAccess00005ErrorPage implements OnInit {
-  results: any;
+  results = [];
   constructor(private route: Router) {}
 
   ngOnInit() {

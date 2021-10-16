@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./check-servers.page.scss'],
 })
 export class CheckServersPage implements OnInit {
-  results: any;
+  results = [];
   constructor(private route: Router) {}
 
   ngOnInit() {

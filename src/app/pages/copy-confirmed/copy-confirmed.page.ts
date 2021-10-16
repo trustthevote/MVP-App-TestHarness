@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./copy-confirmed.page.scss'],
 })
 export class CopyConfirmedPage implements OnInit {
-  results: any;
+  results = [];
   constructor(private route: Router) {}
 
   ngOnInit() {
