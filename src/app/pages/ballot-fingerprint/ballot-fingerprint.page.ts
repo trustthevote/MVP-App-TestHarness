@@ -17,6 +17,7 @@ export class BallotFingerprintPage implements OnInit {
   getCode: any;
   affidavit: any;
   userObject: any;
+
   constructor(
     private route: Router,
     public avclientService: AvclientService,
@@ -49,7 +50,7 @@ export class BallotFingerprintPage implements OnInit {
     this.affidavit = this.voterartifactsService.affidavit;
     this.avclientService
       .submitBallotCryptograms()
-      .then((res) => {
+      .then(() => {
         this.route.navigate([
           '/sending-confirmation',
           {
@@ -68,7 +69,7 @@ export class BallotFingerprintPage implements OnInit {
   copybtn() {
     this.avclientService
       .spoilBallotCryptograms()
-      .then((res) => {
+      .then(() => {
         this.route.navigate([
           '/test-results',
           {

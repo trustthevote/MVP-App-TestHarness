@@ -13,6 +13,7 @@ export class BeforeYouFinishPage implements OnInit {
   getCode: any;
   cvr: any;
   userObject: any;
+
   constructor(
     private route: Router,
     private activatedRoute: ActivatedRoute,
@@ -33,7 +34,7 @@ export class BeforeYouFinishPage implements OnInit {
     this.cvr = this.voterartifactsService.cvr;
     this.avclientService
       .constructBallotCryptograms()
-      .then((res) => {
+      .then(() => {
         this.route.navigate([
           '/ballot-fingerprint',
           {

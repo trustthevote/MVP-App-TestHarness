@@ -135,11 +135,11 @@ export class AccessCodePage implements OnInit {
       });
       await loading.present();
 
-      return new Promise((resolve) => {
+      return new Promise(() => {
         loading.dismiss();
         this.avclientService
           .validateAccessCode(this.data)
-          .then((res) => {
+          .then(() => {
             this.route.navigate([
               '/before-you-finish',
               {
@@ -162,7 +162,7 @@ export class AccessCodePage implements OnInit {
         // this appears to be a function declaration, so I'm not entirely sure what it does
         // todo: figure out the original intent, implement accordingly, and remove the eslint disable
         // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-        (err) => {
+        () => {
           loading.dismiss();
           this.disabledbutton = false;
           this.presentAlertConfirm('Timeout');
@@ -178,7 +178,7 @@ export class AccessCodePage implements OnInit {
           text: 'Retry',
           role: 'cancel',
           cssClass: 'secondary',
-          handler: (blah) => {},
+          handler: () => {},
         },
       ],
     });
@@ -201,7 +201,7 @@ export class AccessCodePage implements OnInit {
       buttons: [
         {
           text: 'Cancel',
-          handler: (blah) => {
+          handler: () => {
             console.log('Confirm Cancel: blah');
           },
         },

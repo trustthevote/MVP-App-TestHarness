@@ -13,6 +13,7 @@ import { VoterartifactsService } from 'src/app/api/voterartifacts.service';
 export class RequestAccessCodePage implements OnInit {
   results: any;
   userObject: any;
+
   constructor(
     private route: Router,
     public statuscodeService: StatuscodeService,
@@ -21,7 +22,7 @@ export class RequestAccessCodePage implements OnInit {
   ) {
     this.avclientService.assignServerUrl(environment.url);
     this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
-    const getVoterArt = this.voterartifactsService.initialize(this.userObject.lastname);
+    this.voterartifactsService.initialize(this.userObject.lastname);
   }
 
   ngOnInit() {
@@ -36,7 +37,7 @@ export class RequestAccessCodePage implements OnInit {
       const opaqueVoterId = this.userObject.lastname;
       await this.avclientService
         .requestAccessCode(opaqueVoterId)
-        .then((res) => {
+        .then(() => {
           this.route.navigate([
             '/access-code',
             {

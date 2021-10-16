@@ -69,7 +69,7 @@ export class BallotPage implements OnInit {
           text: this.results.try_again,
           role: 'cancel',
           cssClass: 'secondary',
-          handler: (blah) => {},
+          handler: () => {},
         },
       ],
     });

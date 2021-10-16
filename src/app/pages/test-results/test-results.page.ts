@@ -32,7 +32,7 @@ export class TestResultsPage implements OnInit {
     this.cvr = this.voterartifactsService.cvr;
     this.avclientService
       .constructBallotCryptograms()
-      .then((res) => {
+      .then(() => {
         this.route.navigate([
           '/ballot-resealed',
           {

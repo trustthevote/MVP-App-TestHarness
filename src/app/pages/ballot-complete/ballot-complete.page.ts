@@ -104,7 +104,8 @@ export class BallotCompletePage implements OnInit {
     ]);
   }
 
-  ballotReturnChoice(event) {
-    const chooseVal = event;
+  ballotReturnChoice() {
+    // this method previously created a constant which was never used
+    // todo: figure out what the original intent was and implement it
   }
 }
