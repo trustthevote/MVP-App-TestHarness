@@ -1,8 +1,5 @@
 import { Injectable } from '@angular/core';
 import { StatuscodeService } from 'src/app/api/statuscode.service';
-import { ToastController,AlertController,LoadingController ,NavController} from "@ionic/angular";
-import { Router } from '@angular/router';
-import { CastVoteRecord } from 'src/app/class/castvoterecord';
 import { Receipt } from 'src/app/class/receipt';
 
 
@@ -12,9 +9,7 @@ import { Receipt } from 'src/app/class/receipt';
 export class AvclientService {
   _cachedAccessCode: any;
   _serverURL: any;
-  constructor(public statuscodeService: StatuscodeService,
-    private alertctrl: AlertController,
-    private route: Router, ) {}
+  constructor(public statuscodeService: StatuscodeService) {}
 
 
   assignServerUrl(bulletinBoardURL) {
@@ -60,7 +55,7 @@ export class AvclientService {
       }
     })
   }
-  constructBallotCryptograms(cvr: CastVoteRecord): Promise<string> {
+  constructBallotCryptograms(): Promise<string> {
     return new Promise((resolve, reject) => {
       switch (this._cachedAccessCode) {
         case '00006':
@@ -93,7 +88,7 @@ export class AvclientService {
     })
   }
 
-  submitBallotCryptograms(affidavit): Promise<Receipt> {
+  submitBallotCryptograms(): Promise<Receipt> {
     return new Promise((resolve, reject) => {
       switch (this._cachedAccessCode) {
         case '00012':

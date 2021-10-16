@@ -45,7 +45,7 @@ export class BallotFingerprintPage implements OnInit {
   }
   sendbtn() {
     this.affidavit = this.voterartifactsService.affidavit
-    this.avclientService.submitBallotCryptograms(this.affidavit).then(res => {
+    this.avclientService.submitBallotCryptograms().then(res => {
       this.route.navigate(['/sending-confirmation', {
         code: this.getCode
       }]);
