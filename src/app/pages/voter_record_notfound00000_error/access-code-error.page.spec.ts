@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { IonicModule } from '@ionic/angular';
 
 import { AccessCodeErrorPage } from './access-code-error.page';
@@ -8,9 +9,10 @@ describe('AccessCodeErrorPage', () => {
   let fixture: ComponentFixture<AccessCodeErrorPage>;
 
   beforeEach(waitForAsync(() => {
+    localStorage.setItem('userNameInfo', JSON.stringify({lastname: 'foo'}));
     TestBed.configureTestingModule({
       declarations: [ AccessCodeErrorPage ],
-      imports: [IonicModule.forRoot()]
+      imports: [IonicModule.forRoot(), RouterTestingModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(AccessCodeErrorPage);
