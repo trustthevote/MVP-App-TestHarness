@@ -22,8 +22,8 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: '',
-        component: _network_error_access_code_page__WEBPACK_IMPORTED_MODULE_0__.NetworkErrorAccessCodePage
-    }
+        component: _network_error_access_code_page__WEBPACK_IMPORTED_MODULE_0__.NetworkErrorAccessCodePage,
+    },
 ];
 let NetworkErrorAccessCodePageRoutingModule = class NetworkErrorAccessCodePageRoutingModule {
 };
@@ -67,13 +67,8 @@ let NetworkErrorAccessCodePageModule = class NetworkErrorAccessCodePageModule {
 };
 NetworkErrorAccessCodePageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.NgModule)({
-        imports: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule,
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule,
-            _network_error_access_code_routing_module__WEBPACK_IMPORTED_MODULE_0__.NetworkErrorAccessCodePageRoutingModule
-        ],
-        declarations: [_network_error_access_code_page__WEBPACK_IMPORTED_MODULE_1__.NetworkErrorAccessCodePage]
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule, _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule, _network_error_access_code_routing_module__WEBPACK_IMPORTED_MODULE_0__.NetworkErrorAccessCodePageRoutingModule],
+        declarations: [_network_error_access_code_page__WEBPACK_IMPORTED_MODULE_1__.NetworkErrorAccessCodePage],
     })
 ], NetworkErrorAccessCodePageModule);
 
@@ -108,14 +103,19 @@ let NetworkErrorAccessCodePage = class NetworkErrorAccessCodePage {
         this.results = [];
     }
     ngOnInit() {
-        fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-            this.results = json[0]['check_network_construct00007_error'];
+        fetch('./assets/inputFile/input.json')
+            .then((res) => res.json())
+            .then((json) => {
+            this.results = json[0].check_network_construct00007_error;
         });
     }
     confirm() {
-        this.route.navigate(['/access-code', {
-                t: new Date().getTime()
-            }]);
+        this.route.navigate([
+            '/access-code',
+            {
+                t: new Date().getTime(),
+            },
+        ]);
     }
     rpbtn() {
         this.route.navigate(['/tobecontinue']);

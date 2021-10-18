@@ -22,8 +22,8 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: '',
-        component: _before_you_finish_page__WEBPACK_IMPORTED_MODULE_0__.BeforeYouFinishPage
-    }
+        component: _before_you_finish_page__WEBPACK_IMPORTED_MODULE_0__.BeforeYouFinishPage,
+    },
 ];
 let BeforeYouFinishPageRoutingModule = class BeforeYouFinishPageRoutingModule {
 };
@@ -67,13 +67,8 @@ let BeforeYouFinishPageModule = class BeforeYouFinishPageModule {
 };
 BeforeYouFinishPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.NgModule)({
-        imports: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule,
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule,
-            _before_you_finish_routing_module__WEBPACK_IMPORTED_MODULE_0__.BeforeYouFinishPageRoutingModule
-        ],
-        declarations: [_before_you_finish_page__WEBPACK_IMPORTED_MODULE_1__.BeforeYouFinishPage]
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule, _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule, _before_you_finish_routing_module__WEBPACK_IMPORTED_MODULE_0__.BeforeYouFinishPageRoutingModule],
+        declarations: [_before_you_finish_page__WEBPACK_IMPORTED_MODULE_1__.BeforeYouFinishPage],
     })
 ], BeforeYouFinishPageModule);
 
@@ -117,24 +112,32 @@ let BeforeYouFinishPage = class BeforeYouFinishPage {
     ngOnInit() {
         this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
         this.getCode = this.activatedRoute.snapshot.paramMap.get('code');
-        fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-            this.results = json[0]['beforeyoufinish_page'];
+        fetch('./assets/inputFile/input.json')
+            .then((res) => res.json())
+            .then((json) => {
+            this.results = json[0].beforeyoufinish_page;
         });
     }
     nextbtn() {
         this.cvr = this.voterartifactsService.cvr;
-        this.avclientService.constructBallotCryptograms(this.cvr).then(res => {
-            this.route.navigate(['/ballot-fingerprint', {
-                    code: this.getCode
-                }]);
-        }).catch(res => {
-            if (res == 'Error: call out of order error') {
+        this.avclientService
+            .constructBallotCryptograms()
+            .then(() => {
+            this.route.navigate([
+                '/ballot-fingerprint',
+                {
+                    code: this.getCode,
+                },
+            ]);
+        })
+            .catch((res) => {
+            if (res.message === 'call out of order error') {
                 this.route.navigate(['/calloutoforder_construct00006_error']);
             }
-            else if (res == 'Error: network code') {
+            else if (res.message === 'network code') {
                 this.route.navigate(['/check_network_construct00007_error']);
             }
-            else if (res == 'Error: corrupt CVR') {
+            else if (res.message === 'corrupt CVR') {
                 this.route.navigate(['/corrupt_cv_construct00008_error']);
             }
         });
@@ -184,7 +187,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content padding>\r\n  <div class=\"list-question\">\r\n    <p>{{results.beforeyoufinish}}</p>\r\n  </div>\r\n  <div style=\"text-align: center; padding-top: 25px\">\r\n    <div class=\"para-center\">{{results.para}}</div>\r\n    <div class=\"mid\">\r\n      {{results.para_center}}\"{{results.btc}}\" {{results.bck}}\r\n    </div>\r\n    <div class=\"mid\">{{results.link}}</div>\r\n  </div>\r\n</ion-content>\r\n<ion-footer>\r\n  <ion-toolbar style=\"text-align: end\">\r\n    <ion-row>\r\n      <ion-col size=\"6\" class=\"back-btn\" style=\"text-align: start\"> </ion-col>\r\n      <ion-col size=\"6\" class=\"next-btn\">\r\n        <ion-button color=\"dark\" (click)=\"nextbtn()\">\r\n          {{results.next}}\r\n          <ion-icon slot=\"end\" name=\"chevron-forward-outline\"></ion-icon>\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-toolbar>\r\n</ion-footer>\r\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content padding>\r\n  <div class=\"list-question\">\r\n    <p>{{results.beforeyoufinish}}</p>\r\n  </div>\r\n  <div style=\"text-align: center; padding-top: 25px\">\r\n    <div class=\"para-center\">{{results.para}}</div>\r\n    <div class=\"mid\">{{results.para_center}}\"{{results.btc}}\" {{results.bck}}</div>\r\n    <div class=\"mid\">{{results.link}}</div>\r\n  </div>\r\n</ion-content>\r\n<ion-footer>\r\n  <ion-toolbar style=\"text-align: end\">\r\n    <ion-row>\r\n      <ion-col size=\"6\" class=\"back-btn\" style=\"text-align: start\"> </ion-col>\r\n      <ion-col size=\"6\" class=\"next-btn\">\r\n        <ion-button color=\"dark\" (click)=\"nextbtn()\">\r\n          {{results.next}}\r\n          <ion-icon slot=\"end\" name=\"chevron-forward-outline\"></ion-icon>\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-toolbar>\r\n</ion-footer>\r\n");
 
 /***/ })
 

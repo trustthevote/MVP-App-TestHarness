@@ -22,8 +22,8 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: '',
-        component: _ballot_access_error13_page__WEBPACK_IMPORTED_MODULE_0__.BallotAccessError13Page
-    }
+        component: _ballot_access_error13_page__WEBPACK_IMPORTED_MODULE_0__.BallotAccessError13Page,
+    },
 ];
 let BallotAccessError13PageRoutingModule = class BallotAccessError13PageRoutingModule {
 };
@@ -67,13 +67,8 @@ let BallotAccessError13PageModule = class BallotAccessError13PageModule {
 };
 BallotAccessError13PageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.NgModule)({
-        imports: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule,
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule,
-            _ballot_access_error13_routing_module__WEBPACK_IMPORTED_MODULE_0__.BallotAccessError13PageRoutingModule
-        ],
-        declarations: [_ballot_access_error13_page__WEBPACK_IMPORTED_MODULE_1__.BallotAccessError13Page]
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule, _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule, _ballot_access_error13_routing_module__WEBPACK_IMPORTED_MODULE_0__.BallotAccessError13PageRoutingModule],
+        declarations: [_ballot_access_error13_page__WEBPACK_IMPORTED_MODULE_1__.BallotAccessError13Page],
     })
 ], BallotAccessError13PageModule);
 
@@ -108,8 +103,10 @@ let BallotAccessError13Page = class BallotAccessError13Page {
         this.results = [];
     }
     ngOnInit() {
-        fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-            this.results = json[0]['calloutoforder_submit00013_error'];
+        fetch('./assets/inputFile/input.json')
+            .then((res) => res.json())
+            .then((json) => {
+            this.results = json[0].calloutoforder_submit00013_error;
         });
     }
     rpbtn() {
@@ -119,9 +116,12 @@ let BallotAccessError13Page = class BallotAccessError13Page {
         this.route.navigate(['/print-return']);
     }
     backbtn() {
-        this.route.navigate(['/access-code', {
-                t: new Date().getTime()
-            }]);
+        this.route.navigate([
+            '/access-code',
+            {
+                t: new Date().getTime(),
+            },
+        ]);
     }
 };
 BallotAccessError13Page.ctorParameters = () => [

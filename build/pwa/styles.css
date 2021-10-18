@@ -1,7 +1,7 @@
 /** Ionic CSS Variables **/
 :root {
   /** primary **/
-  --ion-color-primary: #5099DF;
+  --ion-color-primary: #5099df;
   --ion-color-primary-rgb: 56, 128, 255;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
@@ -1108,7 +1108,8 @@ sub {
   border-right: 0;
   font-weight: bold;
 }
-.alert-message.sc-ion-alert-ios, .alert-input-group.sc-ion-alert-ios {
+.alert-message.sc-ion-alert-ios,
+.alert-input-group.sc-ion-alert-ios {
   padding-left: 16px;
   padding-right: 16px;
   padding-top: 0;
@@ -1122,7 +1123,8 @@ sub {
   border-right: 0;
   font-weight: bold;
 }
-.alert-message.sc-ion-alert-md, .alert-input-group.alert-message.sc-ion-alert-md {
+.alert-message.sc-ion-alert-md,
+.alert-input-group.alert-message.sc-ion-alert-md {
   padding-left: 16px;
   padding-right: 16px;
   padding-top: 0;

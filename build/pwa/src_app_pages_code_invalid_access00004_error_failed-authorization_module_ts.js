@@ -22,8 +22,8 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: '',
-        component: _failed_authorization_page__WEBPACK_IMPORTED_MODULE_0__.FailedAuthorizationPage
-    }
+        component: _failed_authorization_page__WEBPACK_IMPORTED_MODULE_0__.FailedAuthorizationPage,
+    },
 ];
 let FailedAuthorizationPageRoutingModule = class FailedAuthorizationPageRoutingModule {
 };
@@ -67,13 +67,8 @@ let FailedAuthorizationPageModule = class FailedAuthorizationPageModule {
 };
 FailedAuthorizationPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.NgModule)({
-        imports: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule,
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule,
-            _failed_authorization_routing_module__WEBPACK_IMPORTED_MODULE_0__.FailedAuthorizationPageRoutingModule
-        ],
-        declarations: [_failed_authorization_page__WEBPACK_IMPORTED_MODULE_1__.FailedAuthorizationPage]
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule, _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule, _failed_authorization_routing_module__WEBPACK_IMPORTED_MODULE_0__.FailedAuthorizationPageRoutingModule],
+        declarations: [_failed_authorization_page__WEBPACK_IMPORTED_MODULE_1__.FailedAuthorizationPage],
     })
 ], FailedAuthorizationPageModule);
 
@@ -108,14 +103,19 @@ let FailedAuthorizationPage = class FailedAuthorizationPage {
         this.results = [];
     }
     ngOnInit() {
-        fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-            this.results = json[0]['code_invalid_access00004_error'];
+        fetch('./assets/inputFile/input.json')
+            .then((res) => res.json())
+            .then((json) => {
+            this.results = json[0].code_invalid_access00004_error;
         });
     }
     backbtn() {
-        this.route.navigate(['/access-code', {
-                t: new Date().getTime()
-            }]);
+        this.route.navigate([
+            '/access-code',
+            {
+                t: new Date().getTime(),
+            },
+        ]);
     }
     rpbtn() {
         this.route.navigate(['/tobecontinue']);

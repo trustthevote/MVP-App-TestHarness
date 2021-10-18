@@ -22,8 +22,8 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: '',
-        component: _check_network_page__WEBPACK_IMPORTED_MODULE_0__.CheckNetworkPage
-    }
+        component: _check_network_page__WEBPACK_IMPORTED_MODULE_0__.CheckNetworkPage,
+    },
 ];
 let CheckNetworkPageRoutingModule = class CheckNetworkPageRoutingModule {
 };
@@ -67,13 +67,8 @@ let CheckNetworkPageModule = class CheckNetworkPageModule {
 };
 CheckNetworkPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.NgModule)({
-        imports: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule,
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule,
-            _check_network_routing_module__WEBPACK_IMPORTED_MODULE_0__.CheckNetworkPageRoutingModule
-        ],
-        declarations: [_check_network_page__WEBPACK_IMPORTED_MODULE_1__.CheckNetworkPage]
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule, _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule, _check_network_routing_module__WEBPACK_IMPORTED_MODULE_0__.CheckNetworkPageRoutingModule],
+        declarations: [_check_network_page__WEBPACK_IMPORTED_MODULE_1__.CheckNetworkPage],
     })
 ], CheckNetworkPageModule);
 
@@ -109,12 +104,14 @@ let CheckNetworkPage = class CheckNetworkPage {
     }
     ngOnInit() {
         this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
-        fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-            this.results = json[0]['check_network_request00001_error'];
+        fetch('./assets/inputFile/input.json')
+            .then((res) => res.json())
+            .then((json) => {
+            this.results = json[0].check_network_request00001_error;
         });
-        if (this.userObject.lastname != undefined) {
+        if (this.userObject.lastname !== undefined) {
             const lastName = this.userObject.lastname.charAt(0).toUpperCase() + this.userObject.lastname.slice(1);
-            if (lastName == 'OOOO') {
+            if (lastName === 'OOOO') {
             }
         }
     }

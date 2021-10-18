@@ -22,8 +22,8 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: '',
-        component: _test_page__WEBPACK_IMPORTED_MODULE_0__.TestPage
-    }
+        component: _test_page__WEBPACK_IMPORTED_MODULE_0__.TestPage,
+    },
 ];
 let TestPageRoutingModule = class TestPageRoutingModule {
 };
@@ -67,13 +67,8 @@ let TestPageModule = class TestPageModule {
 };
 TestPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.NgModule)({
-        imports: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule,
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule,
-            _test_routing_module__WEBPACK_IMPORTED_MODULE_0__.TestPageRoutingModule
-        ],
-        declarations: [_test_page__WEBPACK_IMPORTED_MODULE_1__.TestPage]
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule, _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule, _test_routing_module__WEBPACK_IMPORTED_MODULE_0__.TestPageRoutingModule],
+        declarations: [_test_page__WEBPACK_IMPORTED_MODULE_1__.TestPage],
     })
 ], TestPageModule);
 
@@ -92,16 +87,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "TestPage": () => (/* binding */ TestPage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 64762);
 /* harmony import */ var _raw_loader_test_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./test.page.html */ 2360);
 /* harmony import */ var _test_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./test.page.scss */ 66512);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 37716);
-/* harmony import */ var src_app_api_avclient_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/api/avclient.service */ 55913);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 80476);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ 39895);
-/* harmony import */ var src_app_api_statuscode_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/api/statuscode.service */ 52413);
-/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/environments/environment */ 92340);
-
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ 39895);
+/* harmony import */ var src_app_api_statuscode_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/api/statuscode.service */ 52413);
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/environments/environment */ 92340);
 
 
 
@@ -111,10 +104,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let TestPage = class TestPage {
-    constructor(alertctrl, router, avclientService, statuscodeService) {
+    constructor(alertctrl, router, statuscodeService) {
         this.alertctrl = alertctrl;
         this.router = router;
-        this.avclientService = avclientService;
         this.statuscodeService = statuscodeService;
         this.results = [];
     }
@@ -125,8 +117,8 @@ let TestPage = class TestPage {
         this.router.navigate(['tobecontinue']);
     }
     autoCall() {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
-            yield this.assignServerUrl(src_environments_environment__WEBPACK_IMPORTED_MODULE_4__.environment.url);
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
+            yield this.assignServerUrl(src_environments_environment__WEBPACK_IMPORTED_MODULE_3__.environment.url);
             yield this.requestAccessCodeStatic();
             yield this.requestAccessCodeStaticT1();
             yield this.validateAccessCodeStatic();
@@ -136,78 +128,78 @@ let TestPage = class TestPage {
         });
     }
     assignServerUrl(bulletinBoardURL) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
             this.serverURL = bulletinBoardURL;
             this.presentAlertEmpty('bulletinBoardURL', bulletinBoardURL);
         });
     }
     requestAccessCodeStatic() {
-        return new Promise((resolve, reject) => {
-            let code = '00000';
+        return new Promise((resolve) => {
+            const code = '00000';
             this.presentAlertEmpty(code, this.statuscodeService.statusCode('VoterRecordNotFound'));
             resolve(true);
         });
     }
     requestAccessCodeStaticT1() {
-        return new Promise((resolve, reject) => {
-            let code = '00001';
+        return new Promise((resolve) => {
+            const code = '00001';
             this.presentAlertEmpty(code, this.statuscodeService.statusCode('NetworkError'));
             resolve(true);
         });
     }
     validateAccessCodeStatic() {
-        return new Promise((resolve, reject) => {
-            let code = '00002';
+        return new Promise((resolve) => {
+            const code = '00002';
             this.presentAlertEmpty(code, this.statuscodeService.statusCode('CallOutOfOrderError'));
             resolve(true);
         });
     }
     validateAccessCodeStatic3() {
-        return new Promise((resolve, reject) => {
-            let code = '00003';
+        return new Promise((resolve) => {
+            const code = '00003';
             this.presentAlertEmpty(code, this.statuscodeService.statusCode('AccessCodeExpired'));
             resolve(true);
         });
     }
     validateAccessCodeStatic4() {
-        return new Promise((resolve, reject) => {
-            let code = '00004';
+        return new Promise((resolve) => {
+            const code = '00004';
             this.presentAlertEmpty(code, this.statuscodeService.statusCode('AccessCodeInvalid'));
             resolve(true);
         });
     }
     validateAccessCodeStatic5() {
-        return new Promise((resolve, reject) => {
-            let code = '00005';
+        return new Promise((resolve) => {
+            const code = '00005';
             this.presentAlertEmpty(code, this.statuscodeService.statusCode('NetworkError'));
             resolve(true);
         });
     }
-    presentAlertEmpty(code, Error) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
+    presentAlertEmpty(code, error) {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
             const alert = yield this.alertctrl.create({
                 header: code,
-                message: Error,
-                buttons: [{
+                message: error,
+                buttons: [
+                    {
                         text: 'Okay',
                         role: 'cancel',
                         cssClass: 'secondary',
-                        handler: (blah) => { }
-                    }
-                ]
+                        handler: () => { },
+                    },
+                ],
             });
             yield alert.present();
         });
     }
 };
 TestPage.ctorParameters = () => [
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.AlertController },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_7__.Router },
-    { type: src_app_api_avclient_service__WEBPACK_IMPORTED_MODULE_2__.AvclientService },
-    { type: src_app_api_statuscode_service__WEBPACK_IMPORTED_MODULE_3__.StatuscodeService }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__.AlertController },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__.Router },
+    { type: src_app_api_statuscode_service__WEBPACK_IMPORTED_MODULE_2__.StatuscodeService }
 ];
-TestPage = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_8__.Component)({
+TestPage = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_7__.Component)({
         selector: 'app-test',
         template: _raw_loader_test_page_html__WEBPACK_IMPORTED_MODULE_0__.default,
         styles: [_test_page_scss__WEBPACK_IMPORTED_MODULE_1__.default]

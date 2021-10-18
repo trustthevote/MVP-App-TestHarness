@@ -22,8 +22,8 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: '',
-        component: _server_commit_network_error_access_page__WEBPACK_IMPORTED_MODULE_0__.ServerCommitNetworkErrorAccessPage
-    }
+        component: _server_commit_network_error_access_page__WEBPACK_IMPORTED_MODULE_0__.ServerCommitNetworkErrorAccessPage,
+    },
 ];
 let ServerCommitNetworkErrorAccessPageRoutingModule = class ServerCommitNetworkErrorAccessPageRoutingModule {
 };
@@ -67,13 +67,8 @@ let ServerCommitNetworkErrorAccessPageModule = class ServerCommitNetworkErrorAcc
 };
 ServerCommitNetworkErrorAccessPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.NgModule)({
-        imports: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule,
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule,
-            _server_commit_network_error_access_routing_module__WEBPACK_IMPORTED_MODULE_0__.ServerCommitNetworkErrorAccessPageRoutingModule
-        ],
-        declarations: [_server_commit_network_error_access_page__WEBPACK_IMPORTED_MODULE_1__.ServerCommitNetworkErrorAccessPage]
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule, _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule, _server_commit_network_error_access_routing_module__WEBPACK_IMPORTED_MODULE_0__.ServerCommitNetworkErrorAccessPageRoutingModule],
+        declarations: [_server_commit_network_error_access_page__WEBPACK_IMPORTED_MODULE_1__.ServerCommitNetworkErrorAccessPage],
     })
 ], ServerCommitNetworkErrorAccessPageModule);
 
@@ -108,8 +103,10 @@ let ServerCommitNetworkErrorAccessPage = class ServerCommitNetworkErrorAccessPag
         this.results = [];
     }
     ngOnInit() {
-        fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-            this.results = json[0]['check_server_spoil00011_error'];
+        fetch('./assets/inputFile/input.json')
+            .then((res) => res.json())
+            .then((json) => {
+            this.results = json[0].check_server_spoil00011_error;
         });
     }
     tryBtn() {
@@ -148,7 +145,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (".Required-div {\n  font-size: 24px;\n  font-weight: 600;\n  padding: 40px 20px 20px 20px;\n}\n\nion-toolbar {\n  padding-left: 15px;\n  --padding-bottom: 20px;\n}\n\n.link {\n  font-size: 20px;\n  font-weight: 600;\n  padding: 20px;\n  margin: 0;\n}\n\np {\n  margin: 0;\n}\n\n.next-btn {\n  text-align: end;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNlcnZlci1jb21taXQtbmV0d29yay1lcnJvci1hY2Nlc3MucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksZUFBQTtFQUNBLGdCQUFBO0VBQ0EsNEJBQUE7QUFDSjs7QUFDRTtFQUNFLGtCQUFBO0VBQ0Esc0JBQUE7QUFFSjs7QUFBRTtFQUNFLGVBQUE7RUFDQSxnQkFBQTtFQUNBLGFBQUE7RUFDQSxTQUFBO0FBR0o7O0FBREU7RUFDRSxTQUFBO0FBSUo7O0FBRkU7RUFDRSxlQUFBO0FBS0oiLCJmaWxlIjoic2VydmVyLWNvbW1pdC1uZXR3b3JrLWVycm9yLWFjY2Vzcy5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuUmVxdWlyZWQtZGl2IHtcclxuICAgIGZvbnQtc2l6ZTogMjRweDtcclxuICAgIGZvbnQtd2VpZ2h0OiA2MDA7XHJcbiAgICBwYWRkaW5nOiA0MHB4IDIwcHggMjBweCAyMHB4O1xyXG4gIH1cclxuICBpb24tdG9vbGJhciB7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDE1cHg7XHJcbiAgICAtLXBhZGRpbmctYm90dG9tOiAyMHB4O1xyXG4gIH1cclxuICAubGluayB7XHJcbiAgICBmb250LXNpemU6IDIwcHg7XHJcbiAgICBmb250LXdlaWdodDogNjAwO1xyXG4gICAgcGFkZGluZzogMjBweDtcclxuICAgIG1hcmdpbjogMDtcclxuICB9XHJcbiAgcHtcclxuICAgIG1hcmdpbjogMDtcclxuICB9XHJcbiAgLm5leHQtYnRue1xyXG4gICAgdGV4dC1hbGlnbjogZW5kO1xyXG4gIH1cclxuXHJcbiAgXHJcbiAgIl19 */");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (".Required-div {\n  font-size: 24px;\n  font-weight: 600;\n  padding: 40px 20px 20px 20px;\n}\n\nion-toolbar {\n  padding-left: 15px;\n  --padding-bottom: 20px;\n}\n\n.link {\n  font-size: 20px;\n  font-weight: 600;\n  padding: 20px;\n  margin: 0;\n}\n\np {\n  margin: 0;\n}\n\n.next-btn {\n  text-align: end;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNlcnZlci1jb21taXQtbmV0d29yay1lcnJvci1hY2Nlc3MucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsZUFBQTtFQUNBLGdCQUFBO0VBQ0EsNEJBQUE7QUFDRjs7QUFDQTtFQUNFLGtCQUFBO0VBQ0Esc0JBQUE7QUFFRjs7QUFBQTtFQUNFLGVBQUE7RUFDQSxnQkFBQTtFQUNBLGFBQUE7RUFDQSxTQUFBO0FBR0Y7O0FBREE7RUFDRSxTQUFBO0FBSUY7O0FBRkE7RUFDRSxlQUFBO0FBS0YiLCJmaWxlIjoic2VydmVyLWNvbW1pdC1uZXR3b3JrLWVycm9yLWFjY2Vzcy5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuUmVxdWlyZWQtZGl2IHtcclxuICBmb250LXNpemU6IDI0cHg7XHJcbiAgZm9udC13ZWlnaHQ6IDYwMDtcclxuICBwYWRkaW5nOiA0MHB4IDIwcHggMjBweCAyMHB4O1xyXG59XHJcbmlvbi10b29sYmFyIHtcclxuICBwYWRkaW5nLWxlZnQ6IDE1cHg7XHJcbiAgLS1wYWRkaW5nLWJvdHRvbTogMjBweDtcclxufVxyXG4ubGluayB7XHJcbiAgZm9udC1zaXplOiAyMHB4O1xyXG4gIGZvbnQtd2VpZ2h0OiA2MDA7XHJcbiAgcGFkZGluZzogMjBweDtcclxuICBtYXJnaW46IDA7XHJcbn1cclxucCB7XHJcbiAgbWFyZ2luOiAwO1xyXG59XHJcbi5uZXh0LWJ0biB7XHJcbiAgdGV4dC1hbGlnbjogZW5kO1xyXG59XHJcbiJdfQ== */");
 
 /***/ }),
 

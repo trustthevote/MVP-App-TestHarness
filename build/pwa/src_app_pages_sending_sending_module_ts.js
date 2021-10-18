@@ -22,8 +22,8 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: '',
-        component: _sending_page__WEBPACK_IMPORTED_MODULE_0__.SendingPage
-    }
+        component: _sending_page__WEBPACK_IMPORTED_MODULE_0__.SendingPage,
+    },
 ];
 let SendingPageRoutingModule = class SendingPageRoutingModule {
 };
@@ -67,13 +67,8 @@ let SendingPageModule = class SendingPageModule {
 };
 SendingPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.NgModule)({
-        imports: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule,
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule,
-            _sending_routing_module__WEBPACK_IMPORTED_MODULE_0__.SendingPageRoutingModule
-        ],
-        declarations: [_sending_page__WEBPACK_IMPORTED_MODULE_1__.SendingPage]
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule, _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule, _sending_routing_module__WEBPACK_IMPORTED_MODULE_0__.SendingPageRoutingModule],
+        declarations: [_sending_page__WEBPACK_IMPORTED_MODULE_1__.SendingPage],
     })
 ], SendingPageModule);
 
@@ -108,8 +103,10 @@ let SendingPage = class SendingPage {
         this.results = [];
     }
     ngOnInit() {
-        fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-            this.results = json[0]['sending_page'];
+        fetch('./assets/inputFile/input.json')
+            .then((res) => res.json())
+            .then((json) => {
+            this.results = json[0].sending_page;
         });
     }
     confirm() {
@@ -160,7 +157,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n  <div class=\"print-div\">\r\n    <ion-icon\r\n      name=\"navigate-outline\"\r\n      (click)=\"confirm()\"\r\n      style=\"font-size: 70px\"\r\n    ></ion-icon>\r\n    <p>{{results.sending}}</p>\r\n  </div>\r\n</ion-content>\r\n<ion-footer class=\"ion-no-border\">\r\n  <ion-toolbar>\r\n    <ion-row>\r\n      <ion-col size=\"6\" class=\"back-btn\">\r\n        <ion-button color=\"dark\" (click)=\" backbtn()\">\r\n          {{results.back}}\r\n          <ion-icon slot=\"start\" name=\"chevron-back-outline\"></ion-icon>\r\n        </ion-button>\r\n      </ion-col>\r\n      <ion-col size=\"6\" class=\"next-btn\">\r\n        <ion-button color=\"dark\" (click)=\"confirm()\">\r\n          {{results.next}}\r\n\r\n          <ion-icon slot=\"end\" name=\"chevron-forward-outline\"></ion-icon>\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-toolbar>\r\n</ion-footer>\r\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n  <div class=\"print-div\">\r\n    <ion-icon name=\"navigate-outline\" (click)=\"confirm()\" style=\"font-size: 70px\"></ion-icon>\r\n    <p>{{results.sending}}</p>\r\n  </div>\r\n</ion-content>\r\n<ion-footer class=\"ion-no-border\">\r\n  <ion-toolbar>\r\n    <ion-row>\r\n      <ion-col size=\"6\" class=\"back-btn\">\r\n        <ion-button color=\"dark\" (click)=\" backbtn()\">\r\n          {{results.back}}\r\n          <ion-icon slot=\"start\" name=\"chevron-back-outline\"></ion-icon>\r\n        </ion-button>\r\n      </ion-col>\r\n      <ion-col size=\"6\" class=\"next-btn\">\r\n        <ion-button color=\"dark\" (click)=\"confirm()\">\r\n          {{results.next}}\r\n\r\n          <ion-icon slot=\"end\" name=\"chevron-forward-outline\"></ion-icon>\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-toolbar>\r\n</ion-footer>\r\n");
 
 /***/ })
 

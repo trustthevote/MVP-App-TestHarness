@@ -22,8 +22,8 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: '',
-        component: _ballot_form_page__WEBPACK_IMPORTED_MODULE_0__.BallotFormPage
-    }
+        component: _ballot_form_page__WEBPACK_IMPORTED_MODULE_0__.BallotFormPage,
+    },
 ];
 let BallotFormPageRoutingModule = class BallotFormPageRoutingModule {
 };
@@ -67,13 +67,8 @@ let BallotFormPageModule = class BallotFormPageModule {
 };
 BallotFormPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.NgModule)({
-        imports: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule,
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule,
-            _ballot_form_routing_module__WEBPACK_IMPORTED_MODULE_0__.BallotFormPageRoutingModule
-        ],
-        declarations: [_ballot_form_page__WEBPACK_IMPORTED_MODULE_1__.BallotFormPage]
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule, _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule, _ballot_form_routing_module__WEBPACK_IMPORTED_MODULE_0__.BallotFormPageRoutingModule],
+        declarations: [_ballot_form_page__WEBPACK_IMPORTED_MODULE_1__.BallotFormPage],
     })
 ], BallotFormPageModule);
 
@@ -112,10 +107,12 @@ let BallotFormPage = class BallotFormPage {
     }
     ngOnInit() {
         this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
-        fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-            this.results = json[0]['ballot_form'];
+        fetch('./assets/inputFile/input.json')
+            .then((res) => res.json())
+            .then((json) => {
+            this.results = json[0].ballot_form;
         });
-        if (this.userObject.lastname != undefined) {
+        if (this.userObject.lastname !== undefined) {
             const lastName = this.userObject.lastname.charAt(0).toUpperCase() + this.userObject.lastname.slice(1);
             if (lastName.includes('A', 0)) {
                 this.precinctNum = 1;
@@ -134,8 +131,8 @@ let BallotFormPage = class BallotFormPage {
     goToComplete() {
         const naviExtras = {
             state: {
-                user: this.paramData
-            }
+                user: this.paramData,
+            },
         };
         this.router.navigate(['ballot-complete'], naviExtras);
     }
@@ -184,7 +181,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content class=\"ion-padding\">\r\n  <div class=\"ion-text-center mt60\">\r\n    <ion-card-title>{{results.welcome}} {{ paramData?.firstname }}!</ion-card-title>\r\n  </div>\r\n  <div class=\"ion-text-center sub-title\">\r\n    <p>{{ precinct }}</p>\r\n  </div>\r\n  <div class=\"ion-text-center mt60\">\r\n    <p>{{results.precinct_no}}{{precinctNum}}<br />{{results.please}}<b>{{results.start}}</b> {{results.your_ballot_marking}}</p>\r\n  </div>\r\n  <ion-grid class=\"ion-no-padding mt60\">\r\n    <ion-row class=\"mt100 ion-text-center\">\r\n      <ion-col size=\"12\">\r\n        <ion-button (click)=\"goToComplete()\" class=\"main-btn-style\" color=\"primary\">{{results.start}}</ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n\r\n  <div class=\"mt30 ion-text-center\">\r\n    <ion-button (click)=\"goBack()\"  class=\"main-btn-style\" color=\"primary\" fill=\"clear\">\r\n      {{results.cancel}}</ion-button>\r\n  </div>\r\n</ion-content>\r\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content class=\"ion-padding\">\r\n  <div class=\"ion-text-center mt60\">\r\n    <ion-card-title>{{results.welcome}} {{ paramData?.firstname }}!</ion-card-title>\r\n  </div>\r\n  <div class=\"ion-text-center sub-title\">\r\n    <p>{{ precinct }}</p>\r\n  </div>\r\n  <div class=\"ion-text-center mt60\">\r\n    <p>{{results.precinct_no}}{{precinctNum}}<br />{{results.please}}<b>{{results.start}}</b> {{results.your_ballot_marking}}</p>\r\n  </div>\r\n  <ion-grid class=\"ion-no-padding mt60\">\r\n    <ion-row class=\"mt100 ion-text-center\">\r\n      <ion-col size=\"12\">\r\n        <ion-button (click)=\"goToComplete()\" class=\"main-btn-style\" color=\"primary\">{{results.start}}</ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n\r\n  <div class=\"mt30 ion-text-center\">\r\n    <ion-button (click)=\"goBack()\" class=\"main-btn-style\" color=\"primary\" fill=\"clear\"> {{results.cancel}}</ion-button>\r\n  </div>\r\n</ion-content>\r\n");
 
 /***/ })
 

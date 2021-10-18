@@ -22,8 +22,8 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: '',
-        component: _ballot_test_failed_page__WEBPACK_IMPORTED_MODULE_0__.BallotTestFailedPage
-    }
+        component: _ballot_test_failed_page__WEBPACK_IMPORTED_MODULE_0__.BallotTestFailedPage,
+    },
 ];
 let BallotTestFailedPageRoutingModule = class BallotTestFailedPageRoutingModule {
 };
@@ -67,13 +67,8 @@ let BallotTestFailedPageModule = class BallotTestFailedPageModule {
 };
 BallotTestFailedPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.NgModule)({
-        imports: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule,
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule,
-            _ballot_test_failed_routing_module__WEBPACK_IMPORTED_MODULE_0__.BallotTestFailedPageRoutingModule
-        ],
-        declarations: [_ballot_test_failed_page__WEBPACK_IMPORTED_MODULE_1__.BallotTestFailedPage]
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule, _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule, _ballot_test_failed_routing_module__WEBPACK_IMPORTED_MODULE_0__.BallotTestFailedPageRoutingModule],
+        declarations: [_ballot_test_failed_page__WEBPACK_IMPORTED_MODULE_1__.BallotTestFailedPage],
     })
 ], BallotTestFailedPageModule);
 
@@ -108,8 +103,10 @@ let BallotTestFailedPage = class BallotTestFailedPage {
         this.results = [];
     }
     ngOnInit() {
-        fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-            this.results = json[0]['BallotTestFailedPage'];
+        fetch('./assets/inputFile/input.json')
+            .then((res) => res.json())
+            .then((json) => {
+            this.results = json[0].BallotTestFailedPage;
         });
     }
     rpbtn() {

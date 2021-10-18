@@ -22,8 +22,8 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: '',
-        component: _test_results_faild_error_page__WEBPACK_IMPORTED_MODULE_0__.TestResultsFaildErrorPage
-    }
+        component: _test_results_faild_error_page__WEBPACK_IMPORTED_MODULE_0__.TestResultsFaildErrorPage,
+    },
 ];
 let TestResultsFaildErrorPageRoutingModule = class TestResultsFaildErrorPageRoutingModule {
 };
@@ -67,13 +67,8 @@ let TestResultsFaildErrorPageModule = class TestResultsFaildErrorPageModule {
 };
 TestResultsFaildErrorPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.NgModule)({
-        imports: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule,
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule,
-            _test_results_faild_error_routing_module__WEBPACK_IMPORTED_MODULE_0__.TestResultsFaildErrorPageRoutingModule
-        ],
-        declarations: [_test_results_faild_error_page__WEBPACK_IMPORTED_MODULE_1__.TestResultsFaildErrorPage]
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule, _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule, _test_results_faild_error_routing_module__WEBPACK_IMPORTED_MODULE_0__.TestResultsFaildErrorPageRoutingModule],
+        declarations: [_test_results_faild_error_page__WEBPACK_IMPORTED_MODULE_1__.TestResultsFaildErrorPage],
     })
 ], TestResultsFaildErrorPageModule);
 
@@ -102,8 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 
 let TestResultsFaildErrorPage = class TestResultsFaildErrorPage {
     constructor() { }
-    ngOnInit() {
-    }
+    ngOnInit() { }
 };
 TestResultsFaildErrorPage.ctorParameters = () => [];
 TestResultsFaildErrorPage = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([

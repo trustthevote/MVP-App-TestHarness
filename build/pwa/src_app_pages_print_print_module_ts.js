@@ -22,8 +22,8 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: '',
-        component: _print_page__WEBPACK_IMPORTED_MODULE_0__.PrintPage
-    }
+        component: _print_page__WEBPACK_IMPORTED_MODULE_0__.PrintPage,
+    },
 ];
 let PrintPageRoutingModule = class PrintPageRoutingModule {
 };
@@ -67,13 +67,8 @@ let PrintPageModule = class PrintPageModule {
 };
 PrintPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.NgModule)({
-        imports: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule,
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule,
-            _print_routing_module__WEBPACK_IMPORTED_MODULE_0__.PrintPageRoutingModule
-        ],
-        declarations: [_print_page__WEBPACK_IMPORTED_MODULE_1__.PrintPage]
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule, _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule, _print_routing_module__WEBPACK_IMPORTED_MODULE_0__.PrintPageRoutingModule],
+        declarations: [_print_page__WEBPACK_IMPORTED_MODULE_1__.PrintPage],
     })
 ], PrintPageModule);
 
@@ -108,8 +103,10 @@ let PrintPage = class PrintPage {
         this.results = [];
     }
     ngOnInit() {
-        fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-            this.results = json[0]['printing_page'];
+        fetch('./assets/inputFile/input.json')
+            .then((res) => res.json())
+            .then((json) => {
+            this.results = json[0].printing_page;
         });
     }
     goToRetry() {
@@ -160,7 +157,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content class=\"ion-padding\">\r\n  <div class=\"ion-text-center mt60\">\r\n    <ion-card-title>{{results.printing}}</ion-card-title>\r\n  </div>\r\n  <div class=\"ion-text-center sub-title\">\r\n    <p>{{results.ydp}}</p>\r\n  </div>\r\n  <div class=\"mt60\">\r\n    <p>\r\n      {{results.dt}} <b>{{results.finish}}</b> {{results.btn}}\r\n      <b>{{results.re_try}}</b> {{results.pa}}\r\n    </p>\r\n  </div>\r\n  <ion-grid class=\"ion-no-padding mt60\">\r\n    <ion-row class=\"mt100 ion-text-center\">\r\n      <ion-col size=\"12\">\r\n        <ion-button\r\n          (click)=\"goToBallot()\"\r\n          class=\"main-btn-style\"\r\n          color=\"primary\"\r\n          >{{results.finish}}</ion-button\r\n        >\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n  <div class=\"mt30 ion-text-center\">\r\n    <ion-button\r\n      (click)=\"goToRetry()\"\r\n      class=\"main-btn-style\"\r\n      color=\"primary\"\r\n      fill=\"clear\"\r\n      >{{results.re_try}}\r\n    </ion-button>\r\n  </div>\r\n</ion-content>\r\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content class=\"ion-padding\">\r\n  <div class=\"ion-text-center mt60\">\r\n    <ion-card-title>{{results.printing}}</ion-card-title>\r\n  </div>\r\n  <div class=\"ion-text-center sub-title\">\r\n    <p>{{results.ydp}}</p>\r\n  </div>\r\n  <div class=\"mt60\">\r\n    <p>{{results.dt}} <b>{{results.finish}}</b> {{results.btn}} <b>{{results.re_try}}</b> {{results.pa}}</p>\r\n  </div>\r\n  <ion-grid class=\"ion-no-padding mt60\">\r\n    <ion-row class=\"mt100 ion-text-center\">\r\n      <ion-col size=\"12\">\r\n        <ion-button (click)=\"goToBallot()\" class=\"main-btn-style\" color=\"primary\">{{results.finish}}</ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n  <div class=\"mt30 ion-text-center\">\r\n    <ion-button (click)=\"goToRetry()\" class=\"main-btn-style\" color=\"primary\" fill=\"clear\">{{results.re_try}} </ion-button>\r\n  </div>\r\n</ion-content>\r\n");
 
 /***/ })
 

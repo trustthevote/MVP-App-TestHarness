@@ -22,8 +22,8 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: '',
-        component: _intro_page__WEBPACK_IMPORTED_MODULE_0__.IntroPage
-    }
+        component: _intro_page__WEBPACK_IMPORTED_MODULE_0__.IntroPage,
+    },
 ];
 let IntroPageRoutingModule = class IntroPageRoutingModule {
 };
@@ -67,13 +67,8 @@ let IntroPageModule = class IntroPageModule {
 };
 IntroPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.NgModule)({
-        imports: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule,
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule,
-            _intro_routing_module__WEBPACK_IMPORTED_MODULE_0__.IntroPageRoutingModule
-        ],
-        declarations: [_intro_page__WEBPACK_IMPORTED_MODULE_1__.IntroPage]
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule, _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule, _intro_routing_module__WEBPACK_IMPORTED_MODULE_0__.IntroPageRoutingModule],
+        declarations: [_intro_page__WEBPACK_IMPORTED_MODULE_1__.IntroPage],
     })
 ], IntroPageModule);
 
@@ -109,9 +104,9 @@ let IntroPage = class IntroPage {
             centeredSlides: true,
             autoplay: {
                 delay: 2000,
-                stopOnLastSlide: true
+                stopOnLastSlide: true,
             },
-            pagination: false
+            pagination: false,
         };
     }
     ngOnInit() { }
@@ -131,15 +126,15 @@ IntroPage = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.Component)({
         selector: 'app-intro',
         template: `<ion-content scroll-y="false">
-                <ion-slides (ionSlideReachEnd)="onSlideEnd()" [options]="slideOpts">
-                  <ion-slide>
-                    <img src="../../../assets/images/slides/slide-1.png">
-                  </ion-slide>
-                  <ion-slide (click)="next()">
-                    <img src="../../../assets/images/slides/slide-2.png">
-                  </ion-slide>
-                </ion-slides>
-              </ion-content>`,
+    <ion-slides (ionSlideReachEnd)="onSlideEnd()" [options]="slideOpts">
+      <ion-slide>
+        <img src="../../../assets/images/slides/slide-1.png" />
+      </ion-slide>
+      <ion-slide (click)="next()">
+        <img src="../../../assets/images/slides/slide-2.png" />
+      </ion-slide>
+    </ion-slides>
+  </ion-content>`,
         styles: [_intro_page_scss__WEBPACK_IMPORTED_MODULE_0__.default]
     })
 ], IntroPage);
@@ -159,7 +154,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("ion-slides {\n  height: 100%;\n  background: #25aae2;\n  background: linear-gradient(0deg, #25aae2 0%, #25aae2 50%, #0d76bc 100%);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImludHJvLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFlBQUE7RUFDQSxtQkFBQTtFQUNBLHdFQUFBO0FBQ0YiLCJmaWxlIjoiaW50cm8ucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLXNsaWRlcyB7XG4gIGhlaWdodDogMTAwJTtcbiAgYmFja2dyb3VuZDogcmdiKDM3LDE3MCwyMjYpO1xuICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMGRlZywgcmdiYSgzNywxNzAsMjI2LDEpIDAlLCByZ2JhKDM3LDE3MCwyMjYsMSkgNTAlLCByZ2JhKDEzLDExOCwxODgsMSkgMTAwJSk7XG59XG4iXX0= */");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("ion-slides {\n  height: 100%;\n  background: #25aae2;\n  background: linear-gradient(0deg, #25aae2 0%, #25aae2 50%, #0d76bc 100%);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImludHJvLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFlBQUE7RUFDQSxtQkFBQTtFQUNBLHdFQUFBO0FBQ0YiLCJmaWxlIjoiaW50cm8ucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLXNsaWRlcyB7XHJcbiAgaGVpZ2h0OiAxMDAlO1xyXG4gIGJhY2tncm91bmQ6IHJnYigzNywgMTcwLCAyMjYpO1xyXG4gIGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgwZGVnLCByZ2JhKDM3LCAxNzAsIDIyNiwgMSkgMCUsIHJnYmEoMzcsIDE3MCwgMjI2LCAxKSA1MCUsIHJnYmEoMTMsIDExOCwgMTg4LCAxKSAxMDAlKTtcclxufVxyXG4iXX0= */");
 
 /***/ })
 

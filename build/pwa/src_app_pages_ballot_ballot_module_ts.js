@@ -24,8 +24,8 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: '',
-        component: _ballot_page__WEBPACK_IMPORTED_MODULE_0__.BallotPage
-    }
+        component: _ballot_page__WEBPACK_IMPORTED_MODULE_0__.BallotPage,
+    },
 ];
 let BallotPageRoutingModule = class BallotPageRoutingModule {
 };
@@ -69,14 +69,8 @@ let BallotPageModule = class BallotPageModule {
 };
 BallotPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.NgModule)({
-        imports: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_5__.ReactiveFormsModule,
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule,
-            _ballot_routing_module__WEBPACK_IMPORTED_MODULE_0__.BallotPageRoutingModule,
-        ],
-        declarations: [_ballot_page__WEBPACK_IMPORTED_MODULE_1__.BallotPage]
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.ReactiveFormsModule, _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule, _ballot_routing_module__WEBPACK_IMPORTED_MODULE_0__.BallotPageRoutingModule],
+        declarations: [_ballot_page__WEBPACK_IMPORTED_MODULE_1__.BallotPage],
     })
 ], BallotPageModule);
 
@@ -105,7 +99,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-/* eslint-disable max-len */
 
 
 
@@ -125,8 +118,8 @@ let BallotPage = class BallotPage {
                     _angular_forms__WEBPACK_IMPORTED_MODULE_2__.Validators.required,
                     _angular_forms__WEBPACK_IMPORTED_MODULE_2__.Validators.minLength(2),
                     _angular_forms__WEBPACK_IMPORTED_MODULE_2__.Validators.maxLength(50),
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_2__.Validators.pattern('^[a-zA-Z-( )][\x20-\x7F]+$') // allow only letters, spaces, hyphens and PrintableASCII chars
-                ]
+                    _angular_forms__WEBPACK_IMPORTED_MODULE_2__.Validators.pattern('^[a-zA-Z-( )][\x20-\x7F]+$'), // allow only letters, spaces, hyphens and PrintableASCII chars
+                ],
             ],
             lastname: [
                 '',
@@ -134,15 +127,17 @@ let BallotPage = class BallotPage {
                     _angular_forms__WEBPACK_IMPORTED_MODULE_2__.Validators.required,
                     _angular_forms__WEBPACK_IMPORTED_MODULE_2__.Validators.minLength(2),
                     _angular_forms__WEBPACK_IMPORTED_MODULE_2__.Validators.maxLength(50),
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_2__.Validators.pattern('^[a-zA-Z-( )][\x20-\x7F]+$') // allow only letters, spaces, hyphens and PrintableASCII chars
-                ]
+                    _angular_forms__WEBPACK_IMPORTED_MODULE_2__.Validators.pattern('^[a-zA-Z-( )][\x20-\x7F]+$'), // allow only letters, spaces, hyphens and PrintableASCII chars
+                ],
             ],
         });
     }
     ngOnInit() {
         localStorage.clear();
-        fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-            this.results = json[0]['ballot'];
+        fetch('./assets/inputFile/input.json')
+            .then((res) => res.json())
+            .then((json) => {
+            this.results = json[0].ballot;
         });
     }
     get errorControl() {
@@ -154,7 +149,7 @@ let BallotPage = class BallotPage {
                 cssClass: 'toast',
                 message: mess,
                 position: 'top',
-                duration: 2000
+                duration: 2000,
             });
             toast.present();
         });
@@ -163,13 +158,14 @@ let BallotPage = class BallotPage {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__awaiter)(this, void 0, void 0, function* () {
             const alert = yield this.alertctrl.create({
                 message: msg,
-                buttons: [{
-                        text: this.results['try_again'],
+                buttons: [
+                    {
+                        text: this.results.try_again,
                         role: 'cancel',
                         cssClass: 'secondary',
-                        handler: (blah) => { }
-                    }
-                ]
+                        handler: () => { },
+                    },
+                ],
             });
             yield alert.present();
         });
@@ -177,14 +173,14 @@ let BallotPage = class BallotPage {
     submitForm() {
         this.isSubmitted = true;
         if (!this.signupForm.valid) {
-            this.presentAlertEmpty(this.results['alert_msg']);
+            this.presentAlertEmpty(this.results.alert_msg);
             return false;
         }
         else {
             const naviExtras = {
                 state: {
-                    user: this.signupForm.value
-                }
+                    user: this.signupForm.value,
+                },
             };
             localStorage.setItem('userNameInfo', JSON.stringify(this.signupForm.value));
             this.router.navigate(['ballot-form', { t: new Date().getTime() }], naviExtras);
@@ -236,7 +232,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content class=\"ion-padding\">\r\n  <div class=\"ion-text-center mt60\">\r\n    <ion-card-title>{{results.welcome_to_jetsons_ballot}}</ion-card-title>\r\n  </div>\r\n  <div class=\"ion-text-center\">\r\n    <p>{{results.to_get_started}}</p>\r\n  </div>\r\n  <ion-grid class=\"ion-no-padding mt60\">\r\n    <form [formGroup]=\"signupForm\" (ngSubmit)=\"submitForm()\" novalidate>\r\n      <ion-row>\r\n        <ion-col size=\"6\">\r\n          <ion-item lines=\"none\">\r\n            <ion-label position=\"stacked\">{{results.first_name}}</ion-label>\r\n            <ion-input formControlName=\"firstname\" type=\"text\" placeholder=\"{{results.first_name}}\" required clearInput>\r\n            </ion-input>\r\n          </ion-item>\r\n      \r\n          <div class=\"err-messages\">\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.firstname.errors?.required\">\r\n            \r\n            </ng-container>\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.firstname.errors?.minlength\" >\r\n              \r\n            </ng-container>\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.firstname.errors?.maxlength\">\r\n             \r\n            </ng-container>\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.firstname.errors?.pattern\">\r\n             \r\n            </ng-container>\r\n          </div>\r\n        </ion-col>\r\n        <ion-col size=\"6\">\r\n          <ion-item lines=\"none\">\r\n            <ion-label position=\"stacked\">{{results.last_name}}</ion-label>\r\n            <ion-input formControlName=\"lastname\" type=\"text\" placeholder=\"{{results.last_name}}\" required clearInput>\r\n            </ion-input>\r\n          </ion-item>\r\n\r\n          <div class=\"err-messages\">\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.lastname.errors?.required\">\r\n            \r\n            </ng-container>\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.lastname.errors?.minlength\">\r\n          \r\n            </ng-container>\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.lastname.errors?.maxlength\">\r\n            \r\n            </ng-container>\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.lastname.errors?.pattern\" >\r\n            \r\n            </ng-container>\r\n          </div>\r\n        </ion-col>\r\n      </ion-row>\r\n      <ion-row class=\"mt100 ion-text-center\">\r\n        <ion-col size=\"12\">\r\n          <ion-button type=\"submit\" class=\"main-btn-style\" color=\"primary\">\r\n            {{results.next}}</ion-button>\r\n        </ion-col>\r\n      </ion-row>\r\n    </form>\r\n  </ion-grid>\r\n  <div class=\"mt30 ion-text-center\">\r\n    <ion-button href=\"https://trustthevote.org/about_abc/\" color=\"primary\" fill=\"clear\">{{results.about_this_app}}\r\n    </ion-button>\r\n  </div>\r\n</ion-content>\r\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content class=\"ion-padding\">\r\n  <div class=\"ion-text-center mt60\">\r\n    <ion-card-title>{{results.welcome_to_jetsons_ballot}}</ion-card-title>\r\n  </div>\r\n  <div class=\"ion-text-center\">\r\n    <p>{{results.to_get_started}}</p>\r\n  </div>\r\n  <ion-grid class=\"ion-no-padding mt60\">\r\n    <form [formGroup]=\"signupForm\" (ngSubmit)=\"submitForm()\" novalidate>\r\n      <ion-row>\r\n        <ion-col size=\"6\">\r\n          <ion-item lines=\"none\">\r\n            <ion-label position=\"stacked\">{{results.first_name}}</ion-label>\r\n            <ion-input formControlName=\"firstname\" type=\"text\" placeholder=\"{{results.first_name}}\" required clearInput> </ion-input>\r\n          </ion-item>\r\n\r\n          <div class=\"err-messages\">\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.firstname.errors?.required\"> </ng-container>\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.firstname.errors?.minlength\"> </ng-container>\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.firstname.errors?.maxlength\"> </ng-container>\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.firstname.errors?.pattern\"> </ng-container>\r\n          </div>\r\n        </ion-col>\r\n        <ion-col size=\"6\">\r\n          <ion-item lines=\"none\">\r\n            <ion-label position=\"stacked\">{{results.last_name}}</ion-label>\r\n            <ion-input formControlName=\"lastname\" type=\"text\" placeholder=\"{{results.last_name}}\" required clearInput> </ion-input>\r\n          </ion-item>\r\n\r\n          <div class=\"err-messages\">\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.lastname.errors?.required\"> </ng-container>\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.lastname.errors?.minlength\"> </ng-container>\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.lastname.errors?.maxlength\"> </ng-container>\r\n            <ng-container *ngIf=\"isSubmitted && errorControl.lastname.errors?.pattern\"> </ng-container>\r\n          </div>\r\n        </ion-col>\r\n      </ion-row>\r\n      <ion-row class=\"mt100 ion-text-center\">\r\n        <ion-col size=\"12\">\r\n          <ion-button type=\"submit\" class=\"main-btn-style\" color=\"primary\"> {{results.next}}</ion-button>\r\n        </ion-col>\r\n      </ion-row>\r\n    </form>\r\n  </ion-grid>\r\n  <div class=\"mt30 ion-text-center\">\r\n    <ion-button href=\"https://trustthevote.org/about_abc/\" color=\"primary\" fill=\"clear\">{{results.about_this_app}} </ion-button>\r\n  </div>\r\n</ion-content>\r\n");
 
 /***/ })
 

@@ -22,8 +22,8 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: '',
-        component: _ballot_resealed_page__WEBPACK_IMPORTED_MODULE_0__.BallotResealedPage
-    }
+        component: _ballot_resealed_page__WEBPACK_IMPORTED_MODULE_0__.BallotResealedPage,
+    },
 ];
 let BallotResealedPageRoutingModule = class BallotResealedPageRoutingModule {
 };
@@ -67,13 +67,8 @@ let BallotResealedPageModule = class BallotResealedPageModule {
 };
 BallotResealedPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.NgModule)({
-        imports: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule,
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule,
-            _ballot_resealed_routing_module__WEBPACK_IMPORTED_MODULE_0__.BallotResealedPageRoutingModule
-        ],
-        declarations: [_ballot_resealed_page__WEBPACK_IMPORTED_MODULE_1__.BallotResealedPage]
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule, _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule, _ballot_resealed_routing_module__WEBPACK_IMPORTED_MODULE_0__.BallotResealedPageRoutingModule],
+        declarations: [_ballot_resealed_page__WEBPACK_IMPORTED_MODULE_1__.BallotResealedPage],
     })
 ], BallotResealedPageModule);
 
@@ -113,14 +108,19 @@ let BallotResealedPage = class BallotResealedPage {
     }
     ngOnInit() {
         this.getCode = this.activatedRoute.snapshot.paramMap.get('code');
-        fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-            this.results = json[0]['ballot_resealed_page'];
+        fetch('./assets/inputFile/input.json')
+            .then((res) => res.json())
+            .then((json) => {
+            this.results = json[0].ballot_resealed_page;
         });
     }
     nextbtn() {
-        this.route.navigate(['/ballot-fingerprint', {
-                code: this.getCode
-            }]);
+        this.route.navigate([
+            '/ballot-fingerprint',
+            {
+                code: this.getCode,
+            },
+        ]);
     }
 };
 BallotResealedPage.ctorParameters = () => [

@@ -240,7 +240,7 @@
       "back": "Back"
     },
 
-    "BallotTestFailedPage": {
+    "ballot_test_failed_page": {
       "upr_para": "Your local election office has been notified to issue you a replacement ballot by mail. For more information, you may contact your election office through the link below.",
       "link": "www.linktosite.org",
       "back": "Report  A Problem",

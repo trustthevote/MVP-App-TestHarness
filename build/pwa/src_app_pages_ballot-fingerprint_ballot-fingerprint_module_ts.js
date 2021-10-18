@@ -22,8 +22,8 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: '',
-        component: _ballot_fingerprint_page__WEBPACK_IMPORTED_MODULE_0__.BallotFingerprintPage
-    }
+        component: _ballot_fingerprint_page__WEBPACK_IMPORTED_MODULE_0__.BallotFingerprintPage,
+    },
 ];
 let BallotFingerprintPageRoutingModule = class BallotFingerprintPageRoutingModule {
 };
@@ -67,13 +67,8 @@ let BallotFingerprintPageModule = class BallotFingerprintPageModule {
 };
 BallotFingerprintPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.NgModule)({
-        imports: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule,
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule,
-            _ballot_fingerprint_routing_module__WEBPACK_IMPORTED_MODULE_0__.BallotFingerprintPageRoutingModule
-        ],
-        declarations: [_ballot_fingerprint_page__WEBPACK_IMPORTED_MODULE_1__.BallotFingerprintPage]
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule, _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule, _ballot_fingerprint_routing_module__WEBPACK_IMPORTED_MODULE_0__.BallotFingerprintPageRoutingModule],
+        declarations: [_ballot_fingerprint_page__WEBPACK_IMPORTED_MODULE_1__.BallotFingerprintPage],
     })
 ], BallotFingerprintPageModule);
 
@@ -113,58 +108,70 @@ let BallotFingerprintPage = class BallotFingerprintPage {
         this.activatedRoute = activatedRoute;
         this.voterartifactsService = voterartifactsService;
         this.results = [];
-        this.IsVisible = false;
-        this.Ishowmore = false;
-        this.Ishowmoredetails = false;
+        this.isVisible = false;
         this.icon = true;
         this.scndicons = false;
         this.fsticon = true;
         this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
     }
-    PolicyDetails() {
-        this.IsVisible = true;
+    policyDetails() {
+        this.isVisible = true;
         this.fsticon = false;
         this.scndicons = true;
     }
-    PolicyDetailshide() {
-        this.IsVisible = false;
+    policyDetailsHide() {
+        this.isVisible = false;
         this.scndicons = false;
         this.fsticon = true;
     }
     ngOnInit() {
         this.getCode = this.activatedRoute.snapshot.paramMap.get('code');
-        fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-            this.results = json[0]['ballot_fingerp'];
+        fetch('./assets/inputFile/input.json')
+            .then((res) => res.json())
+            .then((json) => {
+            this.results = json[0].ballot_fingerp;
         });
     }
     sendbtn() {
         this.affidavit = this.voterartifactsService.affidavit;
-        this.avclientService.submitBallotCryptograms(this.affidavit).then(res => {
-            this.route.navigate(['/sending-confirmation', {
-                    code: this.getCode
-                }]);
-        }).catch(res => {
-            if (res == 'Error: network code') {
+        this.avclientService
+            .submitBallotCryptograms()
+            .then(() => {
+            this.route.navigate([
+                '/sending-confirmation',
+                {
+                    code: this.getCode,
+                },
+            ]);
+        })
+            .catch((res) => {
+            if (res.message === 'network code') {
                 this.route.navigate(['/check_network_submit00012_error']);
             }
-            else if (res == 'Error: call out of order error') {
+            else if (res.message === 'call out of order error') {
                 this.route.navigate(['/calloutoforder_submit00013_error']);
             }
         });
     }
     copybtn() {
-        this.avclientService.spoilBallotCryptograms().then(res => {
-            this.route.navigate(['/test-results', {
-                    code: this.getCode
-                }]);
-        }).catch(res => {
-            if (res == 'Error: call out of order error') {
+        this.avclientService
+            .spoilBallotCryptograms()
+            .then(() => {
+            this.route.navigate([
+                '/test-results',
+                {
+                    code: this.getCode,
+                },
+            ]);
+        })
+            .catch((res) => {
+            if (res.message === 'call out of order error') {
                 this.route.navigate(['/calloutoforder_spoil00009_error']);
             }
-            else if (res == 'Error: network code') {
+            else if (res.message === 'network code') {
                 this.route.navigate(['/check_network_spoil00010_error']);
             }
-            else if (res == 'Error: server commitment error') {
+            else if (res.message === 'server commitment error') {
                 this.route.navigate(['/check_server_spoil00011_error']);
             }
         });

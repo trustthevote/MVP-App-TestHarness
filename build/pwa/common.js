@@ -451,24 +451,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AvclientService": () => (/* binding */ AvclientService)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 64762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 37716);
 /* harmony import */ var src_app_api_statuscode_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/api/statuscode.service */ 52413);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic/angular */ 80476);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 39895);
-
-
 
 
 
 let AvclientService = class AvclientService {
-    constructor(statuscodeService, alertctrl, route) {
+    constructor(statuscodeService) {
         this.statuscodeService = statuscodeService;
-        this.alertctrl = alertctrl;
-        this.route = route;
     }
     assignServerUrl(bulletinBoardURL) {
-        this._serverURL = bulletinBoardURL;
+        this.serverURL = bulletinBoardURL;
     }
     requestAccessCode(opaqueVoterId) {
         return new Promise((resolve, reject) => {
@@ -488,7 +482,7 @@ let AvclientService = class AvclientService {
     }
     validateAccessCode(code) {
         return new Promise((resolve, reject) => {
-            this._cachedAccessCode = code;
+            this.cachedAccessCode = code;
             switch (code) {
                 case '00002':
                     reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));
@@ -504,13 +498,12 @@ let AvclientService = class AvclientService {
                     break;
                 default:
                     resolve();
-                    break;
             }
         });
     }
-    constructBallotCryptograms(cvr) {
+    constructBallotCryptograms() {
         return new Promise((resolve, reject) => {
-            switch (this._cachedAccessCode) {
+            switch (this.cachedAccessCode) {
                 case '00006':
                     reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));
                     break;
@@ -519,56 +512,61 @@ let AvclientService = class AvclientService {
                     break;
                 case '00008':
                     reject(new Error(this.statuscodeService.statusCode('CorruptCVRError')));
+                    break;
                 default:
                     resolve('zyx098-wvu765-tsr432-1234');
-                    break;
             }
         });
     }
     spoilBallotCryptograms() {
         return new Promise((resolve, reject) => {
-            switch (this._cachedAccessCode) {
+            switch (this.cachedAccessCode) {
                 case '00009':
                     reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));
+                    break;
                 case '00010':
                     reject(new Error(this.statuscodeService.statusCode('NetworkError')));
+                    break;
                 case '00011':
                     reject(new Error(this.statuscodeService.statusCode('ServerCommitmentError')));
+                    break;
                 default:
                     resolve();
             }
         });
     }
-    submitBallotCryptograms(affidavit) {
+    submitBallotCryptograms() {
         return new Promise((resolve, reject) => {
-            switch (this._cachedAccessCode) {
+            switch (this.cachedAccessCode) {
                 case '00012':
                     reject(new Error(this.statuscodeService.statusCode('NetworkError')));
+                    break;
                 case '00013':
                     reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));
+                    break;
                 default:
                     resolve({
                         previousBoardHash: 'tsr432-wvu765-zyx098-4321',
                         boardHash: 'zyx098-wvu765-tsr432-1234',
                         registeredAt: '2020-03-01T10:00:00.000+01:00',
-                        serverSignature: 'dbcce518142b8740a5c911f727f3c02829211a8ddfccabeb89297877e4198bc1,46826ddfccaac9ca105e39c8a2d015098479624c411b4783ca1a3600daf4e8fa',
-                        voteSubmissionId: 6
+                        serverSignature: 
+                        // eslint-disable-next-line max-len
+                        'dbcce518142b8740a5c911f727f3c02829211a8ddfccabeb89297877e4198bc1,46826ddfccaac9ca105e39c8a2d015098479624c411b4783ca1a3600daf4e8fa',
+                        voteSubmissionId: 6,
                     });
             }
         });
     }
     purgeData() {
-        delete this._cachedAccessCode;
+        delete this.cachedAccessCode;
     }
 };
 AvclientService.ctorParameters = () => [
-    { type: src_app_api_statuscode_service__WEBPACK_IMPORTED_MODULE_0__.StatuscodeService },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_1__.AlertController },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__.Router }
+    { type: src_app_api_statuscode_service__WEBPACK_IMPORTED_MODULE_0__.StatuscodeService }
 ];
-AvclientService = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.Injectable)({
-        providedIn: 'root'
+AvclientService = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.Injectable)({
+        providedIn: 'root',
     })
 ], AvclientService);
 
@@ -594,142 +592,44 @@ __webpack_require__.r(__webpack_exports__);
 let StatuscodeService = class StatuscodeService {
     constructor() { }
     statusCode(statusCode) {
-        const statusCodes = {
-            VoterRecordNotFound: 'voter record not found',
-            NetworkError: 'network code',
-            CallOutOfOrderError: 'call out of order error',
-            AccessCodeExpired: 'access code expired',
-            AccessCodeInvalid: 'access code invalid',
-            CorruptCVRError: 'corrupt CVR',
-            ServerCommitmentError: 'server commitment error',
-            Initialized: 'initialized',
-            Uninitialized: 'uninitialized',
-            OK: 'ok',
-        };
-        if (statusCode == 'VoterRecordNotFound') {
-            const errorCode = 'voter record not found';
-            return errorCode;
+        if (statusCode === 'VoterRecordNotFound') {
+            return 'voter record not found';
         }
-        else if (statusCode == 'NetworkError') {
-            const errorCode = 'network code';
-            return errorCode;
+        else if (statusCode === 'NetworkError') {
+            return 'network code';
         }
-        else if (statusCode == 'CallOutOfOrderError') {
-            const errorCode = 'call out of order error';
-            return errorCode;
+        else if (statusCode === 'CallOutOfOrderError') {
+            return 'call out of order error';
         }
-        else if (statusCode == 'AccessCodeExpired') {
-            const errorCode = 'access code expired';
-            return errorCode;
+        else if (statusCode === 'AccessCodeExpired') {
+            return 'access code expired';
         }
-        else if (statusCode == 'AccessCodeInvalid') {
-            const errorCode = 'access code invalid';
-            return errorCode;
+        else if (statusCode === 'AccessCodeInvalid') {
+            return 'access code invalid';
         }
-        else if (statusCode == 'CorruptCVRError') {
-            const errorCode = 'corrupt CVR';
-            return errorCode;
+        else if (statusCode === 'CorruptCVRError') {
+            return 'corrupt CVR';
         }
-        else if (statusCode == 'ServerCommitmentError') {
-            const errorCode = 'server commitment error';
-            return errorCode;
+        else if (statusCode === 'ServerCommitmentError') {
+            return 'server commitment error';
         }
-        else if (statusCode == 'Initialized') {
-            const errorCode = 'initialized';
-            return errorCode;
+        else if (statusCode === 'Initialized') {
+            return 'initialized';
         }
-        else if (statusCode == 'Uninitialized') {
-            const errorCode = 'uninitialized';
-            return errorCode;
+        else if (statusCode === 'Uninitialized') {
+            return 'uninitialized';
         }
-        else if (statusCode == 'OK') {
-            const errorCode = 'ok';
-            return errorCode;
+        else if (statusCode === 'OK') {
+            return 'ok';
         }
     }
 };
 StatuscodeService.ctorParameters = () => [];
 StatuscodeService = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.Injectable)({
-        providedIn: 'root'
+        providedIn: 'root',
     })
 ], StatuscodeService);
-
-
-
-/***/ }),
-
-/***/ 22130:
-/*!***********************************************!*\
-  !*** ./src/app/api/voterartifacts.service.ts ***!
-  \***********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "VoterartifactsService": () => (/* binding */ VoterartifactsService)
-/* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 64762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 37716);
-
-
-let VoterartifactsService = class VoterartifactsService {
-    constructor() { }
-    Initialize(lastName) {
-        let key = lastName.substring(0, 1).toUpperCase();
-        switch (key) {
-            case 'A':
-                this.precinctId = "precinct_1";
-                this.precinct = "Precinct 1 Spaceport";
-                this.cvrfile = "src/assets/files/port_precinct1/jetsons_port_precinct1_cvr.xml";
-                this.affidavitfile = "src/assets/files/port_precinct1/precinct1_voter_affidavit.pdf";
-                this.ballotfile = "src/assets/files/port_precinct1/jetsons_port-precinct1_ballot_marked.pdf";
-                break;
-            case 'B':
-                this.precinctId = "precinct_2";
-                this.precinct = "Precinct 2 Bedrock";
-                this.cvrfile = "src/assets/files/bedrock_precinct2/jetsons_bedrock-precinct2_cvr.xml";
-                this.affidavitfile = "src/assets/files/bedrock_precinct2/precinct2_voter_affidavit.pdf";
-                this.ballotfile = "src/assets/files/bedrock_precinct2/jetsons_bedrock-precinct2_ballot_marked.pdf";
-                break;
-            case 'C':
-                this.precinctId = "precinct_3";
-                this.precinct = "Precinct 3 Downtown";
-                this.cvrfile = "src/assets/files/downtown_precinct3/jetsons_downtown-precinct3_cvr.xml";
-                this.affidavitfile = "src/assets/files/downtown_precinct3/precinct3_voter_affidavit.pdf";
-                this.ballotfile = "src/assets/files/downtown_precinct3/jetsons_downtown-precinct3_ballot_marked.pdf";
-                break;
-            default:
-                this.precinctId = "precinct_4";
-                this.precinct = "Precinct 4 Spacetown";
-                this.cvrfile = "src/assets/files/spacetown_precinct4/jetsons_spacetown_precinct4_cvr.xml";
-                this.affidavitfile = "src/assets/files/spacetown_precinct4/jetsons_spacetown-precinct4_ballot_marked.pdf";
-                this.ballotfile = "src/assets/files/spacetown_precinct4/precinct4_voter_affidavit.pdf";
-                break;
-        }
-        ;
-        return this.precinct;
-    }
-    get precinctName() {
-        return this.precinct;
-    }
-    get cvr() {
-        return this.cvrfile; // Instead, open the file, and return the contents
-    }
-    get affidavit() {
-        return this.affidavitfile; // Instead, open the file, and return the contents
-    }
-    get ballot() {
-        return this.ballotfile; // Instead, open the file, and return the contents
-    }
-};
-VoterartifactsService.ctorParameters = () => [];
-VoterartifactsService = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.Injectable)({
-        providedIn: 'root'
-    })
-], VoterartifactsService);
 
 
 

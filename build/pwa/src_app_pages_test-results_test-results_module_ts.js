@@ -22,8 +22,8 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: '',
-        component: _test_results_page__WEBPACK_IMPORTED_MODULE_0__.TestResultsPage
-    }
+        component: _test_results_page__WEBPACK_IMPORTED_MODULE_0__.TestResultsPage,
+    },
 ];
 let TestResultsPageRoutingModule = class TestResultsPageRoutingModule {
 };
@@ -67,13 +67,8 @@ let TestResultsPageModule = class TestResultsPageModule {
 };
 TestResultsPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.NgModule)({
-        imports: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule,
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule,
-            _test_results_routing_module__WEBPACK_IMPORTED_MODULE_0__.TestResultsPageRoutingModule
-        ],
-        declarations: [_test_results_page__WEBPACK_IMPORTED_MODULE_1__.TestResultsPage]
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule, _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule, _test_results_routing_module__WEBPACK_IMPORTED_MODULE_0__.TestResultsPageRoutingModule],
+        declarations: [_test_results_page__WEBPACK_IMPORTED_MODULE_1__.TestResultsPage],
     })
 ], TestResultsPageModule);
 
@@ -117,24 +112,32 @@ let TestResultsPage = class TestResultsPage {
     ngOnInit() {
         this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
         this.getCode = this.activatedRoute.snapshot.paramMap.get('code');
-        fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-            this.results = json[0]['test_result_page'];
+        fetch('./assets/inputFile/input.json')
+            .then((res) => res.json())
+            .then((json) => {
+            this.results = json[0].test_result_page;
         });
     }
     passbtn() {
         this.cvr = this.voterartifactsService.cvr;
-        this.avclientService.constructBallotCryptograms(this.cvr).then(res => {
-            this.route.navigate(['/ballot-resealed', {
-                    code: this.getCode
-                }]);
-        }).catch(res => {
-            if (res == 'Error: call out of order error') {
+        this.avclientService
+            .constructBallotCryptograms()
+            .then(() => {
+            this.route.navigate([
+                '/ballot-resealed',
+                {
+                    code: this.getCode,
+                },
+            ]);
+        })
+            .catch((res) => {
+            if (res.message === 'call out of order error') {
                 this.route.navigate(['/calloutoforder_construct00006_error']);
             }
-            else if (res == 'Error: network code') {
+            else if (res.message === 'network code') {
                 this.route.navigate(['/check_network_construct00007_error']);
             }
-            else if (res == 'Error: corrupt CVR') {
+            else if (res.message === 'corrupt CVR') {
                 this.route.navigate(['/corrupt_cv_construct00008_error']);
             }
         });
@@ -143,9 +146,12 @@ let TestResultsPage = class TestResultsPage {
         this.route.navigate(['/ballot-test-failed-test']);
     }
     backbtn() {
-        this.route.navigate(['/ballot-fingerprint', {
-                code: this.getCode
-            }]);
+        this.route.navigate([
+            '/ballot-fingerprint',
+            {
+                code: this.getCode,
+            },
+        ]);
     }
 };
 TestResultsPage.ctorParameters = () => [

@@ -22,8 +22,8 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: '',
-        component: _check_servers_page__WEBPACK_IMPORTED_MODULE_0__.CheckServersPage
-    }
+        component: _check_servers_page__WEBPACK_IMPORTED_MODULE_0__.CheckServersPage,
+    },
 ];
 let CheckServersPageRoutingModule = class CheckServersPageRoutingModule {
 };
@@ -67,13 +67,8 @@ let CheckServersPageModule = class CheckServersPageModule {
 };
 CheckServersPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.NgModule)({
-        imports: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule,
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule,
-            _check_servers_routing_module__WEBPACK_IMPORTED_MODULE_0__.CheckServersPageRoutingModule
-        ],
-        declarations: [_check_servers_page__WEBPACK_IMPORTED_MODULE_1__.CheckServersPage]
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule, _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule, _check_servers_routing_module__WEBPACK_IMPORTED_MODULE_0__.CheckServersPageRoutingModule],
+        declarations: [_check_servers_page__WEBPACK_IMPORTED_MODULE_1__.CheckServersPage],
     })
 ], CheckServersPageModule);
 
@@ -108,8 +103,10 @@ let CheckServersPage = class CheckServersPage {
         this.results = [];
     }
     ngOnInit() {
-        fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-            this.results = json[0]['check_server_page'];
+        fetch('./assets/inputFile/input.json')
+            .then((res) => res.json())
+            .then((json) => {
+            this.results = json[0].check_server_page;
         });
     }
     confirm() {

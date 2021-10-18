@@ -22,8 +22,8 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: '',
-        component: _ballot_test_failed_test_page__WEBPACK_IMPORTED_MODULE_0__.BallotTestFailedTestPage
-    }
+        component: _ballot_test_failed_test_page__WEBPACK_IMPORTED_MODULE_0__.BallotTestFailedTestPage,
+    },
 ];
 let BallotTestFailedTestPageRoutingModule = class BallotTestFailedTestPageRoutingModule {
 };
@@ -67,13 +67,8 @@ let BallotTestFailedTestPageModule = class BallotTestFailedTestPageModule {
 };
 BallotTestFailedTestPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.NgModule)({
-        imports: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule,
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule,
-            _ballot_test_failed_test_routing_module__WEBPACK_IMPORTED_MODULE_0__.BallotTestFailedTestPageRoutingModule
-        ],
-        declarations: [_ballot_test_failed_test_page__WEBPACK_IMPORTED_MODULE_1__.BallotTestFailedTestPage]
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule, _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule, _ballot_test_failed_test_routing_module__WEBPACK_IMPORTED_MODULE_0__.BallotTestFailedTestPageRoutingModule],
+        declarations: [_ballot_test_failed_test_page__WEBPACK_IMPORTED_MODULE_1__.BallotTestFailedTestPage],
     })
 ], BallotTestFailedTestPageModule);
 
@@ -108,8 +103,10 @@ let BallotTestFailedTestPage = class BallotTestFailedTestPage {
         this.results = [];
     }
     ngOnInit() {
-        fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-            this.results = json[0]['ballot_test_faild_test_page'];
+        fetch('./assets/inputFile/input.json')
+            .then((res) => res.json())
+            .then((json) => {
+            this.results = json[0].ballot_test_faild_test_page;
         });
     }
     newballot() {

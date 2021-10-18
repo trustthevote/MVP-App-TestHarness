@@ -22,8 +22,8 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: '',
-        component: _ballot_complete_page__WEBPACK_IMPORTED_MODULE_0__.BallotCompletePage
-    }
+        component: _ballot_complete_page__WEBPACK_IMPORTED_MODULE_0__.BallotCompletePage,
+    },
 ];
 let BallotCompletePageRoutingModule = class BallotCompletePageRoutingModule {
 };
@@ -67,13 +67,8 @@ let BallotCompletePageModule = class BallotCompletePageModule {
 };
 BallotCompletePageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.NgModule)({
-        imports: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule,
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule,
-            _ballot_complete_routing_module__WEBPACK_IMPORTED_MODULE_0__.BallotCompletePageRoutingModule
-        ],
-        declarations: [_ballot_complete_page__WEBPACK_IMPORTED_MODULE_1__.BallotCompletePage]
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule, _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule, _ballot_complete_routing_module__WEBPACK_IMPORTED_MODULE_0__.BallotCompletePageRoutingModule],
+        declarations: [_ballot_complete_page__WEBPACK_IMPORTED_MODULE_1__.BallotCompletePage],
     })
 ], BallotCompletePageModule);
 
@@ -116,8 +111,10 @@ let BallotCompletePage = class BallotCompletePage {
         }
     }
     ngOnInit() {
-        fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-            this.results = json[0]['ballot_comp'];
+        fetch('./assets/inputFile/input.json')
+            .then((res) => res.json())
+            .then((json) => {
+            this.results = json[0].ballot_comp;
         });
     }
     goToFinish() {
@@ -127,22 +124,22 @@ let BallotCompletePage = class BallotCompletePage {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
             if (precinctNum === 1) {
                 yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
-                    url: 'https://drive.google.com/file/d/1Wrk9xhJkMFVEqtBBJgw2qZOTS9nqFxwk/view?usp=sharing'
+                    url: 'https://drive.google.com/file/d/1Wrk9xhJkMFVEqtBBJgw2qZOTS9nqFxwk/view?usp=sharing',
                 });
             }
             else if (precinctNum === 2) {
                 yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
-                    url: 'https://drive.google.com/file/d/1cV-4autG5EmSzThK82-0WWbFRv2RnkuR/view?usp=sharing'
+                    url: 'https://drive.google.com/file/d/1cV-4autG5EmSzThK82-0WWbFRv2RnkuR/view?usp=sharing',
                 });
             }
             else if (precinctNum === 3) {
                 yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
-                    url: 'https://drive.google.com/file/d/16A2tzWcmvLQzXBdHordJ0OZbT2li2I8j/view?usp=sharing'
+                    url: 'https://drive.google.com/file/d/16A2tzWcmvLQzXBdHordJ0OZbT2li2I8j/view?usp=sharing',
                 });
             }
             else {
                 yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
-                    url: 'https://drive.google.com/file/d/1C6TO44gUkkljSyNLXdV_e1X7wPvEc3eA/view?usp=sharing'
+                    url: 'https://drive.google.com/file/d/1C6TO44gUkkljSyNLXdV_e1X7wPvEc3eA/view?usp=sharing',
                 });
             }
         });
@@ -151,22 +148,22 @@ let BallotCompletePage = class BallotCompletePage {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
             if (precinctNum === 1) {
                 yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
-                    url: 'https://drive.google.com/file/d/1kn2xt5WxYzTn-NsbPc1X3BMqI47rjHDP/view?usp=sharing'
+                    url: 'https://drive.google.com/file/d/1kn2xt5WxYzTn-NsbPc1X3BMqI47rjHDP/view?usp=sharing',
                 });
             }
             else if (precinctNum === 2) {
                 yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
-                    url: 'https://drive.google.com/file/d/1BSmmTchFQ3X8MD4wEmsIStA2hV97nRS1/view?usp=sharing'
+                    url: 'https://drive.google.com/file/d/1BSmmTchFQ3X8MD4wEmsIStA2hV97nRS1/view?usp=sharing',
                 });
             }
             else if (precinctNum === 3) {
                 yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
-                    url: 'https://drive.google.com/file/d/1oB_xaVUPwK6oE_9Np_iTymAU-lV2urJT/view?usp=sharing'
+                    url: 'https://drive.google.com/file/d/1oB_xaVUPwK6oE_9Np_iTymAU-lV2urJT/view?usp=sharing',
                 });
             }
             else {
                 yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
-                    url: 'https://drive.google.com/file/d/160p-8lKOlIWXffnXZGR3Pf1gXf6mQYQW/view?usp=sharing'
+                    url: 'https://drive.google.com/file/d/160p-8lKOlIWXffnXZGR3Pf1gXf6mQYQW/view?usp=sharing',
                 });
             }
         });
@@ -175,36 +172,40 @@ let BallotCompletePage = class BallotCompletePage {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
             if (precinctNum === 1) {
                 yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
-                    url: 'https://drive.google.com/file/d/1pIe31DRlAtmcdsTeCc1HrAHKQ82N6wYL/view?usp=sharing'
+                    url: 'https://drive.google.com/file/d/1pIe31DRlAtmcdsTeCc1HrAHKQ82N6wYL/view?usp=sharing',
                 });
             }
             else if (precinctNum === 2) {
                 yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
-                    url: 'https://drive.google.com/file/d/1WUl5lTFPDYB8FJYdxq5FKhJGPaQgyy1Y/view?usp=sharing'
+                    url: 'https://drive.google.com/file/d/1WUl5lTFPDYB8FJYdxq5FKhJGPaQgyy1Y/view?usp=sharing',
                 });
             }
             else if (precinctNum === 3) {
                 yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
-                    url: 'https://drive.google.com/file/d/1A_NWcXXqOLzr8OHnzmEEnCNcrYyBiViz/view?usp=sharing'
+                    url: 'https://drive.google.com/file/d/1A_NWcXXqOLzr8OHnzmEEnCNcrYyBiViz/view?usp=sharing',
                 });
             }
             else {
                 yield _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__.Browser.open({
-                    url: 'https://drive.google.com/file/d/1FBLU2ZGeVOO71zwqnPiWtOH_ibgCosId/view?usp=sharing'
+                    url: 'https://drive.google.com/file/d/1FBLU2ZGeVOO71zwqnPiWtOH_ibgCosId/view?usp=sharing',
                 });
             }
         });
     }
-    Physicalret() {
+    physicalret() {
         this.router.navigate(['/print-return']);
     }
-    Digitalret() {
-        this.router.navigate(['/request-access-code', {
-                t: new Date().getTime()
-            }]);
+    digitalret() {
+        this.router.navigate([
+            '/request-access-code',
+            {
+                t: new Date().getTime(),
+            },
+        ]);
     }
-    ballotReturnChoice(event) {
-        let chooseVal = event;
+    ballotReturnChoice() {
+        // this method previously created a constant which was never used
+        // todo: figure out what the original intent was and implement it
     }
 };
 BallotCompletePage.ctorParameters = () => [
@@ -249,7 +250,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("\r\n<ion-content>\r\n  <div class=\"list-question\">\r\n    <div class=\"upr-text\">{{results.thank_you}} {{ paramData?.firstname }}</div>\r\n    <div class=\"cen-div\">{{results.your_ballot_is_complete}}</div>\r\n    <p>{{results.choose_a_return}}</p>\r\n  </div>\r\n  <div class=\"cen-div-text\" (click)=\"Physicalret(); ballotReturnChoice('physical')\">\r\n    <p>\r\n      {{results.physical_return}} <br />\r\n      <i>{{results.requires_printer}}</i>\r\n    </p>\r\n\r\n    <ion-icon name=\"archive-outline\"></ion-icon>\r\n  </div>\r\n  <div class=\"bottom-div-text\" (click)=\"Digitalret(); ballotReturnChoice('digital')\">\r\n    <p>{{results.online_ballot_return}}</p>\r\n    <ion-icon name=\"tv-outline\"></ion-icon>\r\n  </div>\r\n</ion-content>\r\n\r\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n  <div class=\"list-question\">\r\n    <div class=\"upr-text\">{{results.thank_you}} {{ paramData?.firstname }}</div>\r\n    <div class=\"cen-div\">{{results.your_ballot_is_complete}}</div>\r\n    <p>{{results.choose_a_return}}</p>\r\n  </div>\r\n  <div class=\"cen-div-text\" (click)=\"physicalret(); ballotReturnChoice()\">\r\n    <p>\r\n      {{results.physical_return}} <br />\r\n      <i>{{results.requires_printer}}</i>\r\n    </p>\r\n\r\n    <ion-icon name=\"archive-outline\"></ion-icon>\r\n  </div>\r\n  <div class=\"bottom-div-text\" (click)=\"digitalret(); ballotReturnChoice()\">\r\n    <p>{{results.online_ballot_return}}</p>\r\n    <ion-icon name=\"tv-outline\"></ion-icon>\r\n  </div>\r\n</ion-content>\r\n");
 
 /***/ })
 

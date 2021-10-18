@@ -22,8 +22,8 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: '',
-        component: _check_network_access00005_error_page__WEBPACK_IMPORTED_MODULE_0__.CheckNetworkAccess00005ErrorPage
-    }
+        component: _check_network_access00005_error_page__WEBPACK_IMPORTED_MODULE_0__.CheckNetworkAccess00005ErrorPage,
+    },
 ];
 let CheckNetworkAccess00005ErrorPageRoutingModule = class CheckNetworkAccess00005ErrorPageRoutingModule {
 };
@@ -67,13 +67,8 @@ let CheckNetworkAccess00005ErrorPageModule = class CheckNetworkAccess00005ErrorP
 };
 CheckNetworkAccess00005ErrorPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.NgModule)({
-        imports: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule,
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule,
-            _check_network_access00005_error_routing_module__WEBPACK_IMPORTED_MODULE_0__.CheckNetworkAccess00005ErrorPageRoutingModule
-        ],
-        declarations: [_check_network_access00005_error_page__WEBPACK_IMPORTED_MODULE_1__.CheckNetworkAccess00005ErrorPage]
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule, _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule, _check_network_access00005_error_routing_module__WEBPACK_IMPORTED_MODULE_0__.CheckNetworkAccess00005ErrorPageRoutingModule],
+        declarations: [_check_network_access00005_error_page__WEBPACK_IMPORTED_MODULE_1__.CheckNetworkAccess00005ErrorPage],
     })
 ], CheckNetworkAccess00005ErrorPageModule);
 
@@ -108,14 +103,19 @@ let CheckNetworkAccess00005ErrorPage = class CheckNetworkAccess00005ErrorPage {
         this.results = [];
     }
     ngOnInit() {
-        fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-            this.results = json[0]['check_network_access00005_error'];
+        fetch('./assets/inputFile/input.json')
+            .then((res) => res.json())
+            .then((json) => {
+            this.results = json[0].check_network_access00005_error;
         });
     }
     confirm() {
-        this.route.navigate(['/access-code', {
-                t: new Date().getTime()
-            }]);
+        this.route.navigate([
+            '/access-code',
+            {
+                t: new Date().getTime(),
+            },
+        ]);
     }
     rpbtn() {
         this.route.navigate(['/tobecontinue']);

@@ -22,8 +22,8 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: '',
-        component: _ballot_test_error_page__WEBPACK_IMPORTED_MODULE_0__.BallotTestErrorPage
-    }
+        component: _ballot_test_error_page__WEBPACK_IMPORTED_MODULE_0__.BallotTestErrorPage,
+    },
 ];
 let BallotTestErrorPageRoutingModule = class BallotTestErrorPageRoutingModule {
 };
@@ -67,13 +67,8 @@ let BallotTestErrorPageModule = class BallotTestErrorPageModule {
 };
 BallotTestErrorPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.NgModule)({
-        imports: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule,
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule,
-            _ballot_test_error_routing_module__WEBPACK_IMPORTED_MODULE_0__.BallotTestErrorPageRoutingModule
-        ],
-        declarations: [_ballot_test_error_page__WEBPACK_IMPORTED_MODULE_1__.BallotTestErrorPage]
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule, _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule, _ballot_test_error_routing_module__WEBPACK_IMPORTED_MODULE_0__.BallotTestErrorPageRoutingModule],
+        declarations: [_ballot_test_error_page__WEBPACK_IMPORTED_MODULE_1__.BallotTestErrorPage],
     })
 ], BallotTestErrorPageModule);
 
@@ -108,8 +103,10 @@ let BallotTestErrorPage = class BallotTestErrorPage {
         this.results = [];
     }
     ngOnInit() {
-        fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-            this.results = json[0]['calloutoforder_construct00006_error'];
+        fetch('./assets/inputFile/input.json')
+            .then((res) => res.json())
+            .then((json) => {
+            this.results = json[0].calloutoforder_construct00006_error;
         });
     }
     rpbtn() {
@@ -119,9 +116,12 @@ let BallotTestErrorPage = class BallotTestErrorPage {
         this.route.navigate(['/print-return']);
     }
     backbtn() {
-        this.route.navigate(['/access-code', {
-                t: new Date().getTime()
-            }]);
+        this.route.navigate([
+            '/access-code',
+            {
+                t: new Date().getTime(),
+            },
+        ]);
     }
 };
 BallotTestErrorPage.ctorParameters = () => [

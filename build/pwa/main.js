@@ -43,201 +43,199 @@ const routes = [
     {
         path: '',
         redirectTo: 'intro',
-        pathMatch: 'full'
+        pathMatch: 'full',
     },
     {
         path: 'intro',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_intro_intro_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/intro/intro.module */ 88557)).then(m => m.IntroPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_intro_intro_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/intro/intro.module */ 88557)).then((m) => m.IntroPageModule),
     },
     {
         path: 'ballot',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_ballot_ballot_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot/ballot.module */ 15366)).then(m => m.BallotPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_ballot_ballot_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot/ballot.module */ 15366)).then((m) => m.BallotPageModule),
     },
     {
         path: 'ballot-form',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_ballot-form_ballot-form_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-form/ballot-form.module */ 5826)).then(m => m.BallotFormPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_ballot-form_ballot-form_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-form/ballot-form.module */ 5826)).then((m) => m.BallotFormPageModule),
     },
     {
         path: 'ballot-complete',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_capacitor_browser_dist_esm_index_js"), __webpack_require__.e("common"), __webpack_require__.e("src_app_pages_ballot-complete_ballot-complete_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-complete/ballot-complete.module */ 35919)).then(m => m.BallotCompletePageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_capacitor_browser_dist_esm_index_js"), __webpack_require__.e("common"), __webpack_require__.e("src_app_pages_ballot-complete_ballot-complete_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-complete/ballot-complete.module */ 35919)).then((m) => m.BallotCompletePageModule),
     },
     {
         path: 'print',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_print_print_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/print/print.module */ 16053)).then(m => m.PrintPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_print_print_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/print/print.module */ 16053)).then((m) => m.PrintPageModule),
     },
     {
         path: 'access-code',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_pages_access-code_access-code_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/access-code/access-code.module */ 81055)).then(m => m.AccessCodePageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_pages_access-code_access-code_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/access-code/access-code.module */ 81055)).then((m) => m.AccessCodePageModule),
     },
     {
         path: 'ballot-fingerprint',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_pages_ballot-fingerprint_ballot-fingerprint_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-fingerprint/ballot-fingerprint.module */ 32168)).then(m => m.BallotFingerprintPageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_api_voterartifacts_service_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_pages_ballot-fingerprint_ballot-fingerprint_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-fingerprint/ballot-fingerprint.module */ 32168)).then((m) => m.BallotFingerprintPageModule),
     },
     {
         path: 'code_invalid_access00004_error',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_code_invalid_access00004_error_failed-authorization_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/code_invalid_access00004_error/failed-authorization.module */ 80778)).then(m => m.FailedAuthorizationPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_code_invalid_access00004_error_failed-authorization_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/code_invalid_access00004_error/failed-authorization.module */ 80778)).then((m) => m.FailedAuthorizationPageModule),
     },
     {
         path: 'copy-confirmed',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_copy-confirmed_copy-confirmed_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/copy-confirmed/copy-confirmed.module */ 14581)).then(m => m.CopyConfirmedPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_copy-confirmed_copy-confirmed_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/copy-confirmed/copy-confirmed.module */ 14581)).then((m) => m.CopyConfirmedPageModule),
     },
     {
         path: 'sending',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_sending_sending_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/sending/sending.module */ 62410)).then(m => m.SendingPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_sending_sending_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/sending/sending.module */ 62410)).then((m) => m.SendingPageModule),
     },
     {
         path: 'test-results',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_pages_test-results_test-results_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/test-results/test-results.module */ 48530)).then(m => m.TestResultsPageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_api_voterartifacts_service_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_pages_test-results_test-results_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/test-results/test-results.module */ 48530)).then((m) => m.TestResultsPageModule),
     },
     {
         path: 'new-ballot-fingerprint',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_new-ballot-fingerprint_new-ballot-fingerprint_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/new-ballot-fingerprint/new-ballot-fingerprint.module */ 73451)).then(m => m.NewBallotFingerprintPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_new-ballot-fingerprint_new-ballot-fingerprint_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/new-ballot-fingerprint/new-ballot-fingerprint.module */ 73451)).then((m) => m.NewBallotFingerprintPageModule),
     },
     {
         path: 'check_network_request00001_error',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_check_network_request00001_error_check-network_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/check_network_request00001_error/check-network.module */ 6316)).then(m => m.CheckNetworkPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_check_network_request00001_error_check-network_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/check_network_request00001_error/check-network.module */ 6316)).then((m) => m.CheckNetworkPageModule),
     },
     {
         path: 'check',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_check_check_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/check/check.module */ 6260)).then(m => m.CheckPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_check_check_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/check/check.module */ 6260)).then((m) => m.CheckPageModule),
     },
     {
         path: 'sending-confirmation',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_sending-confirmation_sending-confirmation_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/sending-confirmation/sending-confirmation.module */ 30403)).then(m => m.SendingConfirmationPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_sending-confirmation_sending-confirmation_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/sending-confirmation/sending-confirmation.module */ 30403)).then((m) => m.SendingConfirmationPageModule),
     },
     {
         path: 'check-servers',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_check-servers_check-servers_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/check-servers/check-servers.module */ 51458)).then(m => m.CheckServersPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_check-servers_check-servers_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/check-servers/check-servers.module */ 51458)).then((m) => m.CheckServersPageModule),
     },
     {
         path: 'digital-return-next-steps',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_digital-return-next-steps_digital-return-next-steps_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/digital-return-next-steps/digital-return-next-steps.module */ 61102)).then(m => m.DigitalReturnNextStepsPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_digital-return-next-steps_digital-return-next-steps_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/digital-return-next-steps/digital-return-next-steps.module */ 61102)).then((m) => m.DigitalReturnNextStepsPageModule),
     },
     {
         path: 'print-return',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_capacitor_browser_dist_esm_index_js"), __webpack_require__.e("common"), __webpack_require__.e("src_app_pages_print-return_print-return_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/print-return/print-return.module */ 69249)).then(m => m.PrintReturnPageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_api_voterartifacts_service_ts"), __webpack_require__.e("default-node_modules_capacitor_browser_dist_esm_index_js"), __webpack_require__.e("src_app_pages_print-return_print-return_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/print-return/print-return.module */ 69249)).then((m) => m.PrintReturnPageModule),
     },
     {
         path: 'user-time-out',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_user-time-out_user-time-out_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/user-time-out/user-time-out.module */ 19728)).then(m => m.UserTimeOutPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_user-time-out_user-time-out_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/user-time-out/user-time-out.module */ 19728)).then((m) => m.UserTimeOutPageModule),
     },
     {
         path: 'tobecontinue',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_tobecontinue_tobecontinue_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/tobecontinue/tobecontinue.module */ 27121)).then(m => m.TobecontinuePageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_tobecontinue_tobecontinue_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/tobecontinue/tobecontinue.module */ 27121)).then((m) => m.TobecontinuePageModule),
     },
     {
         path: 'ballot-test-failed',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_ballot-test-failed_ballot-test-failed_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-test-failed/ballot-test-failed.module */ 24927)).then(m => m.BallotTestFailedPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_ballot-test-failed_ballot-test-failed_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-test-failed/ballot-test-failed.module */ 24927)).then((m) => m.BallotTestFailedPageModule),
     },
     {
         path: 'code_expired_access00003_error',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_code_expired_access00003_error_expired-code_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/code_expired_access00003_error/expired-code.module */ 48684)).then(m => m.ExpiredCodePageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_code_expired_access00003_error_expired-code_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/code_expired_access00003_error/expired-code.module */ 48684)).then((m) => m.ExpiredCodePageModule),
     },
     {
         path: 'howditgo',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_howditgo_howditgo_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/howditgo/howditgo.module */ 1086)).then(m => m.HowditgoPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_howditgo_howditgo_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/howditgo/howditgo.module */ 1086)).then((m) => m.HowditgoPageModule),
     },
     {
         path: 'request-access-code',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_pages_request-access-code_request-access-code_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/request-access-code/request-access-code.module */ 28554)).then(m => m.RequestAccessCodePageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_api_voterartifacts_service_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_pages_request-access-code_request-access-code_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/request-access-code/request-access-code.module */ 28554)).then((m) => m.RequestAccessCodePageModule),
     },
     {
         path: 'test',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_pages_test_test_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/test/test.module */ 95011)).then(m => m.TestPageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_pages_test_test_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/test/test.module */ 95011)).then((m) => m.TestPageModule),
     },
     {
         path: 'check_network_construct00007_error',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_check_network_construct00007_error_network-error-access-code_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/check_network_construct00007_error/network-error-access-code.module */ 46652)).then(m => m.NetworkErrorAccessCodePageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_check_network_construct00007_error_network-error-access-code_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/check_network_construct00007_error/network-error-access-code.module */ 46652)).then((m) => m.NetworkErrorAccessCodePageModule),
     },
     {
         path: 'calloutoforder_construct00006_error',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_calloutoforder_construct00006_error_ballot-test-error_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/calloutoforder_construct00006_error/ballot-test-error.module */ 5720)).then(m => m.BallotTestErrorPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_calloutoforder_construct00006_error_ballot-test-error_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/calloutoforder_construct00006_error/ballot-test-error.module */ 5720)).then((m) => m.BallotTestErrorPageModule),
     },
     {
         path: 'ballot-prep-error',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_ballot-prep-error_ballot-prep-error_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-prep-error/ballot-prep-error.module */ 62208)).then(m => m.BallotPrepErrorPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_ballot-prep-error_ballot-prep-error_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-prep-error/ballot-prep-error.module */ 62208)).then((m) => m.BallotPrepErrorPageModule),
     },
     {
         path: 'before-you-finish',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_pages_before-you-finish_before-you-finish_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/before-you-finish/before-you-finish.module */ 66362)).then(m => m.BeforeYouFinishPageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_api_voterartifacts_service_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_pages_before-you-finish_before-you-finish_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/before-you-finish/before-you-finish.module */ 66362)).then((m) => m.BeforeYouFinishPageModule),
     },
     {
         path: 'corrupt_cv_construct00008_error',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_corrupt_cv_construct00008_error_ballot-oops-screen_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/corrupt_cv_construct00008_error/ballot-oops-screen.module */ 7048)).then(m => m.BallotOopsScreenPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_corrupt_cv_construct00008_error_ballot-oops-screen_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/corrupt_cv_construct00008_error/ballot-oops-screen.module */ 7048)).then((m) => m.BallotOopsScreenPageModule),
     },
     {
         path: 'check-network-oooo-error',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_check-network-oooo-error_check-network-oooo-error_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/check-network-oooo-error/check-network-oooo-error.module */ 28738)).then(m => m.CheckNetworkOOOOErrorPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_check-network-oooo-error_check-network-oooo-error_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/check-network-oooo-error/check-network-oooo-error.module */ 28738)).then((m) => m.CheckNetworkOOOOErrorPageModule),
     },
     {
         path: 'test-results-faild-error',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_test-results-faild-error_test-results-faild-error_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/test-results-faild-error/test-results-faild-error.module */ 52446)).then(m => m.TestResultsFaildErrorPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_test-results-faild-error_test-results-faild-error_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/test-results-faild-error/test-results-faild-error.module */ 52446)).then((m) => m.TestResultsFaildErrorPageModule),
     },
     {
         path: 'check-network-access00005-error',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_check-network-access00005-error_check-network-access00005-error_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/check-network-access00005-error/check-network-access00005-error.module */ 3083)).then(m => m.CheckNetworkAccess00005ErrorPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_check-network-access00005-error_check-network-access00005-error_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/check-network-access00005-error/check-network-access00005-error.module */ 3083)).then((m) => m.CheckNetworkAccess00005ErrorPageModule),
     },
     {
         path: 'test-results-ballot-prep-error',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_test-results-ballot-prep-error_test-results-ballot-prep-error_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/test-results-ballot-prep-error/test-results-ballot-prep-error.module */ 74020)).then(m => m.TestResultsBallotPrepErrorPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_test-results-ballot-prep-error_test-results-ballot-prep-error_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/test-results-ballot-prep-error/test-results-ballot-prep-error.module */ 74020)).then((m) => m.TestResultsBallotPrepErrorPageModule),
     },
     {
         path: 'network-error-request-code',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_network-error-request-code_network-error-request-code_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/network-error-request-code/network-error-request-code.module */ 56667)).then(m => m.NetworkErrorRequestCodePageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_network-error-request-code_network-error-request-code_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/network-error-request-code/network-error-request-code.module */ 56667)).then((m) => m.NetworkErrorRequestCodePageModule),
     },
     {
         path: 'ballot-ready-prep-error',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_ballot-ready-prep-error_ballot-ready-prep-error_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-ready-prep-error/ballot-ready-prep-error.module */ 2311)).then(m => m.BallotReadyPrepErrorPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_ballot-ready-prep-error_ballot-ready-prep-error_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-ready-prep-error/ballot-ready-prep-error.module */ 2311)).then((m) => m.BallotReadyPrepErrorPageModule),
     },
     {
         path: 'check_network_spoil00010_error',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_check_network_spoil00010_error_network-error-access-ten_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/check_network_spoil00010_error/network-error-access-ten.module */ 56289)).then(m => m.NetworkErrorAccessTenPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_check_network_spoil00010_error_network-error-access-ten_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/check_network_spoil00010_error/network-error-access-ten.module */ 56289)).then((m) => m.NetworkErrorAccessTenPageModule),
     },
     {
         path: 'calloutoforder_spoil00009_error',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_calloutoforder_spoil00009_error_ballot-test-fail-err_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/calloutoforder_spoil00009_error/ballot-test-fail-err.module */ 86223)).then(m => m.BallotTestFailErrPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_calloutoforder_spoil00009_error_ballot-test-fail-err_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/calloutoforder_spoil00009_error/ballot-test-fail-err.module */ 86223)).then((m) => m.BallotTestFailErrPageModule),
     },
     {
         path: 'check_server_spoil00011_error',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_check_server_spoil00011_error_server-commit-network-error-access_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/check_server_spoil00011_error/server-commit-network-error-access.module */ 80234)).then(m => m.ServerCommitNetworkErrorAccessPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_check_server_spoil00011_error_server-commit-network-error-access_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/check_server_spoil00011_error/server-commit-network-error-access.module */ 80234)).then((m) => m.ServerCommitNetworkErrorAccessPageModule),
     },
     {
         path: 'check_network_submit00012_error',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_check_network_submit00012_error_network-error-access12_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/check_network_submit00012_error/network-error-access12.module */ 55841)).then(m => m.NetworkErrorAccess12PageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_check_network_submit00012_error_network-error-access12_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/check_network_submit00012_error/network-error-access12.module */ 55841)).then((m) => m.NetworkErrorAccess12PageModule),
     },
     {
         path: 'calloutoforder_submit00013_error',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_calloutoforder_submit00013_error_ballot-access-error13_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/calloutoforder_submit00013_error/ballot-access-error13.module */ 65481)).then(m => m.BallotAccessError13PageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_calloutoforder_submit00013_error_ballot-access-error13_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/calloutoforder_submit00013_error/ballot-access-error13.module */ 65481)).then((m) => m.BallotAccessError13PageModule),
     },
     {
         path: 'voter_record_notfound00000_error',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_voter_record_notfound00000_error_access-code-error_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/voter_record_notfound00000_error/access-code-error.module */ 90691)).then(m => m.AccessCodeErrorPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_voter_record_notfound00000_error_access-code-error_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/voter_record_notfound00000_error/access-code-error.module */ 90691)).then((m) => m.AccessCodeErrorPageModule),
     },
     {
         path: 'ballot-test-failed-test',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_ballot-test-failed-test_ballot-test-failed-test_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-test-failed-test/ballot-test-failed-test.module */ 9436)).then(m => m.BallotTestFailedTestPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_ballot-test-failed-test_ballot-test-failed-test_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-test-failed-test/ballot-test-failed-test.module */ 9436)).then((m) => m.BallotTestFailedTestPageModule),
     },
     {
         path: 'ballot-resealed',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_pages_ballot-resealed_ballot-resealed_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-resealed/ballot-resealed.module */ 41857)).then(m => m.BallotResealedPageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_pages_ballot-resealed_ballot-resealed_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-resealed/ballot-resealed.module */ 41857)).then((m) => m.BallotResealedPageModule),
     },
     {
         path: 'calloutoforder-access00002-error',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_calloutoforder-access00002-error_calloutoforder-access00002-error_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/calloutoforder-access00002-error/calloutoforder-access00002-error.module */ 77433)).then(m => m.CalloutoforderAccess00002ErrorPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_calloutoforder-access00002-error_calloutoforder-access00002-error_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/calloutoforder-access00002-error/calloutoforder-access00002-error.module */ 77433)).then((m) => m.CalloutoforderAccess00002ErrorPageModule),
     },
     {
         path: 'ballot-test-failed-test',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_ballot-test-failed-test_ballot-test-failed-test_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-test-failed-test/ballot-test-failed-test.module */ 9436)).then(m => m.BallotTestFailedTestPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_ballot-test-failed-test_ballot-test-failed-test_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-test-failed-test/ballot-test-failed-test.module */ 9436)).then((m) => m.BallotTestFailedTestPageModule),
     },
 ];
 let AppRoutingModule = class AppRoutingModule {
 };
 AppRoutingModule = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.NgModule)({
-        imports: [
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__.RouterModule.forRoot(routes, { preloadingStrategy: _angular_router__WEBPACK_IMPORTED_MODULE_2__.PreloadAllModules })
-        ],
-        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__.RouterModule]
+        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__.RouterModule.forRoot(routes, { preloadingStrategy: _angular_router__WEBPACK_IMPORTED_MODULE_2__.PreloadAllModules })],
+        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__.RouterModule],
     })
 ], AppRoutingModule);
 
@@ -291,17 +289,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppModule": () => (/* binding */ AppModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 64762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 37716);
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/platform-browser */ 39075);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/router */ 39895);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/platform-browser */ 39075);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ 39895);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 80476);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app.component */ 55041);
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app-routing.module */ 90158);
-/* harmony import */ var _angular_service_worker__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/service-worker */ 72249);
+/* harmony import */ var _angular_service_worker__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/service-worker */ 72249);
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../environments/environment */ 92340);
-/* harmony import */ var _ionic_native_file_transfer_ngx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic-native/file-transfer/ngx */ 97905);
-/* harmony import */ var _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/file/ngx */ 20138);
 
 
 
@@ -311,31 +307,28 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
+// import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 let AppModule = class AppModule {
 };
-AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.NgModule)({
+AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.NgModule)({
         declarations: [_app_component__WEBPACK_IMPORTED_MODULE_0__.AppComponent],
         entryComponents: [],
         imports: [
-            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_7__.BrowserModule,
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_8__.IonicModule.forRoot({
-                mode: 'ios'
+            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__.BrowserModule,
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule.forRoot({
+                mode: 'ios',
             }),
             _app_routing_module__WEBPACK_IMPORTED_MODULE_1__.AppRoutingModule,
-            _angular_service_worker__WEBPACK_IMPORTED_MODULE_9__.ServiceWorkerModule.register('ngsw-worker.js', {
+            _angular_service_worker__WEBPACK_IMPORTED_MODULE_7__.ServiceWorkerModule.register('ngsw-worker.js', {
                 enabled: _environments_environment__WEBPACK_IMPORTED_MODULE_2__.environment.production,
                 // Register the ServiceWorker as soon as the app is stable
                 // or after 30 seconds (whichever comes first).....
-                registrationStrategy: 'registerWhenStable:30000'
-            })
+                registrationStrategy: 'registerWhenStable:30000',
+            }),
         ],
         providers: [
-            _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_4__.File,
-            _ionic_native_file_transfer_ngx__WEBPACK_IMPORTED_MODULE_3__.FileTransfer,
-            { provide: _angular_router__WEBPACK_IMPORTED_MODULE_10__.RouteReuseStrategy, useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_8__.IonicRouteStrategy },
+            { provide: _angular_router__WEBPACK_IMPORTED_MODULE_8__.RouteReuseStrategy, useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicRouteStrategy },
             // InAppBrowser
         ],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_0__.AppComponent],
@@ -362,7 +355,7 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 const environment = {
     production: false,
-    url: 'http://voterreg.tbd.com/'
+    url: 'http://voterreg.tbd.com/',
 };
 /*
  * For easier debugging in development mode, you can import the following file
@@ -395,8 +388,9 @@ __webpack_require__.r(__webpack_exports__);
 if (_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.production) {
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.enableProdMode)();
 }
-(0,_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_3__.platformBrowserDynamic)().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_0__.AppModule)
-    .catch(err => console.log(err));
+(0,_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_3__.platformBrowserDynamic)()
+    .bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_0__.AppModule)
+    .catch((err) => console.log(err));
 
 
 /***/ }),
@@ -662,7 +656,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-app>\n  <ion-router-outlet></ion-router-outlet>\n</ion-app>\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-app>\r\n  <ion-router-outlet></ion-router-outlet>\r\n</ion-app>\r\n");
 
 /***/ })
 

@@ -22,8 +22,8 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: '',
-        component: _test_results_ballot_prep_error_page__WEBPACK_IMPORTED_MODULE_0__.TestResultsBallotPrepErrorPage
-    }
+        component: _test_results_ballot_prep_error_page__WEBPACK_IMPORTED_MODULE_0__.TestResultsBallotPrepErrorPage,
+    },
 ];
 let TestResultsBallotPrepErrorPageRoutingModule = class TestResultsBallotPrepErrorPageRoutingModule {
 };
@@ -67,13 +67,8 @@ let TestResultsBallotPrepErrorPageModule = class TestResultsBallotPrepErrorPageM
 };
 TestResultsBallotPrepErrorPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.NgModule)({
-        imports: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule,
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule,
-            _test_results_ballot_prep_error_routing_module__WEBPACK_IMPORTED_MODULE_0__.TestResultsBallotPrepErrorPageRoutingModule
-        ],
-        declarations: [_test_results_ballot_prep_error_page__WEBPACK_IMPORTED_MODULE_1__.TestResultsBallotPrepErrorPage]
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule, _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule, _test_results_ballot_prep_error_routing_module__WEBPACK_IMPORTED_MODULE_0__.TestResultsBallotPrepErrorPageRoutingModule],
+        declarations: [_test_results_ballot_prep_error_page__WEBPACK_IMPORTED_MODULE_1__.TestResultsBallotPrepErrorPage],
     })
 ], TestResultsBallotPrepErrorPageModule);
 
@@ -102,8 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 
 let TestResultsBallotPrepErrorPage = class TestResultsBallotPrepErrorPage {
     constructor() { }
-    ngOnInit() {
-    }
+    ngOnInit() { }
 };
 TestResultsBallotPrepErrorPage.ctorParameters = () => [];
 TestResultsBallotPrepErrorPage = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([

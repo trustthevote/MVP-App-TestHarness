@@ -22,8 +22,8 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: '',
-        component: _calloutoforder_access00002_error_page__WEBPACK_IMPORTED_MODULE_0__.CalloutoforderAccess00002ErrorPage
-    }
+        component: _calloutoforder_access00002_error_page__WEBPACK_IMPORTED_MODULE_0__.CalloutoforderAccess00002ErrorPage,
+    },
 ];
 let CalloutoforderAccess00002ErrorPageRoutingModule = class CalloutoforderAccess00002ErrorPageRoutingModule {
 };
@@ -67,13 +67,8 @@ let CalloutoforderAccess00002ErrorPageModule = class CalloutoforderAccess00002Er
 };
 CalloutoforderAccess00002ErrorPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.NgModule)({
-        imports: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule,
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule,
-            _calloutoforder_access00002_error_routing_module__WEBPACK_IMPORTED_MODULE_0__.CalloutoforderAccess00002ErrorPageRoutingModule
-        ],
-        declarations: [_calloutoforder_access00002_error_page__WEBPACK_IMPORTED_MODULE_1__.CalloutoforderAccess00002ErrorPage]
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule, _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule, _calloutoforder_access00002_error_routing_module__WEBPACK_IMPORTED_MODULE_0__.CalloutoforderAccess00002ErrorPageRoutingModule],
+        declarations: [_calloutoforder_access00002_error_page__WEBPACK_IMPORTED_MODULE_1__.CalloutoforderAccess00002ErrorPage],
     })
 ], CalloutoforderAccess00002ErrorPageModule);
 
@@ -109,12 +104,14 @@ let CalloutoforderAccess00002ErrorPage = class CalloutoforderAccess00002ErrorPag
     }
     ngOnInit() {
         this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
-        fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-            this.results = json[0]['calloutoforder_access00002_error'];
+        fetch('./assets/inputFile/input.json')
+            .then((res) => res.json())
+            .then((json) => {
+            this.results = json[0].calloutoforder_access00002_error;
         });
-        if (this.userObject.lastname != undefined) {
+        if (this.userObject.lastname !== undefined) {
             const lastName = this.userObject.lastname.charAt(0).toUpperCase() + this.userObject.lastname.slice(1);
-            if (lastName == 'OOOOO') {
+            if (lastName === 'OOOOO') {
             }
         }
     }
