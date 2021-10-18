@@ -8,17 +8,19 @@ describe('AccessCodeErrorPage', () => {
   let component: AccessCodeErrorPage;
   let fixture: ComponentFixture<AccessCodeErrorPage>;
 
-  beforeEach(waitForAsync(() => {
-    localStorage.setItem('userNameInfo', JSON.stringify({lastname: 'foo'}));
-    TestBed.configureTestingModule({
-      declarations: [ AccessCodeErrorPage ],
-      imports: [IonicModule.forRoot(), RouterTestingModule]
-    }).compileComponents();
+  beforeEach(
+    waitForAsync(() => {
+      localStorage.setItem('userNameInfo', JSON.stringify({ lastname: 'foo' }));
+      TestBed.configureTestingModule({
+        declarations: [AccessCodeErrorPage],
+        imports: [IonicModule.forRoot(), RouterTestingModule],
+      }).compileComponents();
 
-    fixture = TestBed.createComponent(AccessCodeErrorPage);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  }));
+      fixture = TestBed.createComponent(AccessCodeErrorPage);
+      component = fixture.componentInstance;
+      fixture.detectChanges();
+    })
+  );
 
   it('should create', () => {
     expect(component).toBeTruthy();

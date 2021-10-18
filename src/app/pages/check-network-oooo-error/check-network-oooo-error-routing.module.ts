@@ -6,8 +6,8 @@ import { CheckNetworkOOOOErrorPage } from './check-network-oooo-error.page';
 const routes: Routes = [
   {
     path: '',
-    component: CheckNetworkOOOOErrorPage
-  }
+    component: CheckNetworkOOOOErrorPage,
+  },
 ];
 
 @NgModule({

@@ -7,17 +7,22 @@ import { Router } from '@angular/router';
 })
 export class FailedAuthorizationPage implements OnInit {
   results = [];
-  constructor(private route: Router) { }
+  constructor(private route: Router) {}
 
   ngOnInit() {
-    fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-      this.results = json[0]['code_invalid_access00004_error'];
-    });
+    fetch('./assets/inputFile/input.json')
+      .then((res) => res.json())
+      .then((json) => {
+        this.results = json[0].code_invalid_access00004_error;
+      });
   }
   backbtn() {
-    this.route.navigate(['/access-code', {
-      t: new Date().getTime()
-    }]);
+    this.route.navigate([
+      '/access-code',
+      {
+        t: new Date().getTime(),
+      },
+    ]);
   }
   rpbtn() {
     this.route.navigate(['/tobecontinue']);

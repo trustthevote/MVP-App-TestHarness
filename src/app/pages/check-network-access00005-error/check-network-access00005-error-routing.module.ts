@@ -6,8 +6,8 @@ import { CheckNetworkAccess00005ErrorPage } from './check-network-access00005-er
 const routes: Routes = [
   {
     path: '',
-    component: CheckNetworkAccess00005ErrorPage
-  }
+    component: CheckNetworkAccess00005ErrorPage,
+  },
 ];
 
 @NgModule({

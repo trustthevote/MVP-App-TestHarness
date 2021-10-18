@@ -10,21 +10,20 @@
  */
 
 /* Core CSS required for Ionic components to work properly */
-@import "~@ionic/angular/css/core.css";
+@import '~@ionic/angular/css/core.css';
 
 /* Basic CSS for apps built with Ionic */
-@import "~@ionic/angular/css/normalize.css";
-@import "~@ionic/angular/css/structure.css";
-@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
 @import '~@ionic/angular/css/display.css';
 
 /* Optional CSS utils that can be commented out */
-@import "~@ionic/angular/css/padding.css";
-@import "~@ionic/angular/css/float-elements.css";
-@import "~@ionic/angular/css/text-alignment.css";
-@import "~@ionic/angular/css/text-transformation.css";
-@import "~@ionic/angular/css/flex-utils.css";
-
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
 
 .toast {
   --color: white;
@@ -36,7 +35,8 @@
   border-right: 0;
   font-weight: bold;
 }
-.alert-message.sc-ion-alert-ios, .alert-input-group.sc-ion-alert-ios {
+.alert-message.sc-ion-alert-ios,
+.alert-input-group.sc-ion-alert-ios {
   padding-left: 16px;
   padding-right: 16px;
   padding-top: 0;
@@ -50,27 +50,27 @@
   border-right: 0;
   font-weight: bold;
 }
-.alert-message.sc-ion-alert-md, .alert-input-group.alert-message.sc-ion-alert-md {
-padding-left: 16px;
-padding-right: 16px;
-padding-top: 0;
-padding-bottom: 21px;
-color: var(--ion-text-color, #000);
-font-size: 14px;
-text-align: center;
+.alert-message.sc-ion-alert-md,
+.alert-input-group.alert-message.sc-ion-alert-md {
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 0;
+  padding-bottom: 21px;
+  color: var(--ion-text-color, #000);
+  font-size: 14px;
+  text-align: center;
 }
-ion-button{
+ion-button {
   text-transform: capitalize;
   --border-radius: 5px;
-
 }
-ion-toolbar{
+ion-toolbar {
   height: 100px;
   padding-right: 15px;
   padding-left: 15px;
 }
 
-ion-col{
+ion-col {
   padding-left: 0;
   padding-right: 0;
 }

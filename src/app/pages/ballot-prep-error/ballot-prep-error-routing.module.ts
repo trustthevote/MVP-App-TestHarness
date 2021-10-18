@@ -6,8 +6,8 @@ import { BallotPrepErrorPage } from './ballot-prep-error.page';
 const routes: Routes = [
   {
     path: '',
-    component: BallotPrepErrorPage
-  }
+    component: BallotPrepErrorPage,
+  },
 ];
 
 @NgModule({

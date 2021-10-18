@@ -9,12 +9,7 @@ import { HowditgoPageRoutingModule } from './howditgo-routing.module';
 import { HowditgoPage } from './howditgo.page';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    HowditgoPageRoutingModule
-  ],
-  declarations: [HowditgoPage]
+  imports: [CommonModule, FormsModule, IonicModule, HowditgoPageRoutingModule],
+  declarations: [HowditgoPage],
 })
 export class HowditgoPageModule {}

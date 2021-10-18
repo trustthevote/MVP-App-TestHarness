@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 @Component({
@@ -8,12 +7,14 @@ import { Router } from '@angular/router';
 })
 export class TobecontinuePage implements OnInit {
   results = [];
-  constructor(private route: Router) { }
+  constructor(private route: Router) {}
 
   ngOnInit() {
-    fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-      this.results = json[0]['tobe_continue_page'];
-    });
+    fetch('./assets/inputFile/input.json')
+      .then((res) => res.json())
+      .then((json) => {
+        this.results = json[0].tobe_continue_page;
+      });
   }
   reloadCurrentPage() {
     localStorage.clear();
@@ -23,5 +24,4 @@ export class TobecontinuePage implements OnInit {
   backbtn() {
     this.route.navigate(['/ballot-complete']);
   }
-
 }

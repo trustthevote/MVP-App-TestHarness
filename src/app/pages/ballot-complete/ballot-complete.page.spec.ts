@@ -11,9 +11,9 @@ class RouterStub {
       extras: {
         state: {
           user: 'foo',
-        }
-      }
-    }
+        },
+      },
+    };
   }
 }
 
@@ -21,17 +21,19 @@ describe('BallotCompletePage', () => {
   let component: BallotCompletePage;
   let fixture: ComponentFixture<BallotCompletePage>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [ BallotCompletePage ],
-      imports: [IonicModule.forRoot(), RouterTestingModule],
-      providers: [ { provide: Router, useClass: RouterStub } ]
-    }).compileComponents();
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [BallotCompletePage],
+        imports: [IonicModule.forRoot(), RouterTestingModule],
+        providers: [{ provide: Router, useClass: RouterStub }],
+      }).compileComponents();
 
-    fixture = TestBed.createComponent(BallotCompletePage);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  }));
+      fixture = TestBed.createComponent(BallotCompletePage);
+      component = fixture.componentInstance;
+      fixture.detectChanges();
+    })
+  );
 
   it('should create', () => {
     expect(component).toBeTruthy();

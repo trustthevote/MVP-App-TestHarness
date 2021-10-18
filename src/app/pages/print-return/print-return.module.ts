@@ -9,12 +9,7 @@ import { PrintReturnPageRoutingModule } from './print-return-routing.module';
 import { PrintReturnPage } from './print-return.page';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    PrintReturnPageRoutingModule
-  ],
-  declarations: [PrintReturnPage]
+  imports: [CommonModule, FormsModule, IonicModule, PrintReturnPageRoutingModule],
+  declarations: [PrintReturnPage],
 })
 export class PrintReturnPageModule {}

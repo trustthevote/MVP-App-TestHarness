@@ -6,8 +6,8 @@ import { FailedAuthorizationPage } from './failed-authorization.page';
 const routes: Routes = [
   {
     path: '',
-    component: FailedAuthorizationPage
-  }
+    component: FailedAuthorizationPage,
+  },
 ];
 
 @NgModule({

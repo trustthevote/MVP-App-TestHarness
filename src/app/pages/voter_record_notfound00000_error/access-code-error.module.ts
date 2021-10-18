@@ -9,12 +9,7 @@ import { AccessCodeErrorPageRoutingModule } from './access-code-error-routing.mo
 import { AccessCodeErrorPage } from './access-code-error.page';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    AccessCodeErrorPageRoutingModule
-  ],
-  declarations: [AccessCodeErrorPage]
+  imports: [CommonModule, FormsModule, IonicModule, AccessCodeErrorPageRoutingModule],
+  declarations: [AccessCodeErrorPage],
 })
 export class AccessCodeErrorPageModule {}

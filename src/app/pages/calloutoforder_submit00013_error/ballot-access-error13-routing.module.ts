@@ -6,8 +6,8 @@ import { BallotAccessError13Page } from './ballot-access-error13.page';
 const routes: Routes = [
   {
     path: '',
-    component: BallotAccessError13Page
-  }
+    component: BallotAccessError13Page,
+  },
 ];
 
 @NgModule({

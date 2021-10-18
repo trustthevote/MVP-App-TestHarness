@@ -23,14 +23,14 @@ describe('RequestAccessCodePage', () => {
     })
   );
 
-  describe('Continuebtn', () => {
+  describe('continuebtn', () => {
     it('should navigate to the access code page by default', async () => {
       localStorage.setItem('userNameInfo', JSON.stringify({ lastname: 'foo' }));
       fixture = TestBed.createComponent(RequestAccessCodePage);
       component = fixture.componentInstance;
       fixture.detectChanges();
 
-      await component.Continuebtn();
+      await component.continuebtn();
       expect(router.navigate).toHaveBeenCalledWith(['/access-code', { t: jasmine.any(Number) }]);
     });
     it('should navigate to the voter record not found page if voter ID is 00000', async () => {
@@ -39,7 +39,7 @@ describe('RequestAccessCodePage', () => {
       component = fixture.componentInstance;
       fixture.detectChanges();
 
-      await component.Continuebtn();
+      await component.continuebtn();
       expect(router.navigate).toHaveBeenCalledWith(['/voter_record_notfound00000_error']);
     });
     it('should navigate to the voter record not found page if voter ID is T0000', async () => {
@@ -48,7 +48,7 @@ describe('RequestAccessCodePage', () => {
       component = fixture.componentInstance;
       fixture.detectChanges();
 
-      await component.Continuebtn();
+      await component.continuebtn();
       expect(router.navigate).toHaveBeenCalledWith(['/voter_record_notfound00000_error']);
     });
     it('should navigate to the network code page if voter ID is 00001', async () => {
@@ -57,7 +57,7 @@ describe('RequestAccessCodePage', () => {
       component = fixture.componentInstance;
       fixture.detectChanges();
 
-      await component.Continuebtn();
+      await component.continuebtn();
       expect(router.navigate).toHaveBeenCalledWith(['/check_network_request00001_error']);
     });
     it('should navigate to the network code page if voter ID is T0001', async () => {
@@ -66,7 +66,7 @@ describe('RequestAccessCodePage', () => {
       component = fixture.componentInstance;
       fixture.detectChanges();
 
-      await component.Continuebtn();
+      await component.continuebtn();
       expect(router.navigate).toHaveBeenCalledWith(['/check_network_request00001_error']);
     });
   });

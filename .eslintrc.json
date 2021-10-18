@@ -1,6 +1,7 @@
 {
   "root": true,
   "ignorePatterns": ["projects/**/*"],
+  "plugins": ["unused-imports", "sonarjs"],
   "overrides": [
     {
       "files": ["*.ts"],
@@ -11,9 +12,12 @@
       "extends": [
         "plugin:@angular-eslint/ng-cli-compat",
         "plugin:@angular-eslint/ng-cli-compat--formatting-add-on",
-        "plugin:@angular-eslint/template/process-inline-templates"
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "plugin:sonarjs/recommended"
       ],
       "rules": {
+        "unused-imports/no-unused-imports": "error",
+        "unused-imports/no-unused-vars": "error",
         "@angular-eslint/component-class-suffix": [
           "error",
           {

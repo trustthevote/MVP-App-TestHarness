@@ -6,8 +6,8 @@ import { CheckNetworkPage } from './check-network.page';
 const routes: Routes = [
   {
     path: '',
-    component: CheckNetworkPage
-  }
+    component: CheckNetworkPage,
+  },
 ];
 
 @NgModule({

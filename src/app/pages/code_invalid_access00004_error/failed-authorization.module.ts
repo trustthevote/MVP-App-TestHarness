@@ -9,12 +9,7 @@ import { FailedAuthorizationPageRoutingModule } from './failed-authorization-rou
 import { FailedAuthorizationPage } from './failed-authorization.page';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    FailedAuthorizationPageRoutingModule
-  ],
-  declarations: [FailedAuthorizationPage]
+  imports: [CommonModule, FormsModule, IonicModule, FailedAuthorizationPageRoutingModule],
+  declarations: [FailedAuthorizationPage],
 })
 export class FailedAuthorizationPageModule {}

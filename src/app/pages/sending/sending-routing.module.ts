@@ -6,8 +6,8 @@ import { SendingPage } from './sending.page';
 const routes: Routes = [
   {
     path: '',
-    component: SendingPage
-  }
+    component: SendingPage,
+  },
 ];
 
 @NgModule({

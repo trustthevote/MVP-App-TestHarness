@@ -6,11 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./test-results-faild-error.page.scss'],
 })
 export class TestResultsFaildErrorPage implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-
-  }
-
+  ngOnInit() {}
 }

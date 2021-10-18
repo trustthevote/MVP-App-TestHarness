@@ -6,8 +6,8 @@ import { BallotFormPage } from './ballot-form.page';
 const routes: Routes = [
   {
     path: '',
-    component: BallotFormPage
-  }
+    component: BallotFormPage,
+  },
 ];
 
 @NgModule({

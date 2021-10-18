@@ -9,12 +9,7 @@ import { DigitalReturnNextStepsPageRoutingModule } from './digital-return-next-s
 import { DigitalReturnNextStepsPage } from './digital-return-next-steps.page';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    DigitalReturnNextStepsPageRoutingModule
-  ],
-  declarations: [DigitalReturnNextStepsPage]
+  imports: [CommonModule, FormsModule, IonicModule, DigitalReturnNextStepsPageRoutingModule],
+  declarations: [DigitalReturnNextStepsPage],
 })
 export class DigitalReturnNextStepsPageModule {}

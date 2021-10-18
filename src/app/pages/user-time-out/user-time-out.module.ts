@@ -9,12 +9,7 @@ import { UserTimeOutPageRoutingModule } from './user-time-out-routing.module';
 import { UserTimeOutPage } from './user-time-out.page';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    UserTimeOutPageRoutingModule
-  ],
-  declarations: [UserTimeOutPage]
+  imports: [CommonModule, FormsModule, IonicModule, UserTimeOutPageRoutingModule],
+  declarations: [UserTimeOutPage],
 })
 export class UserTimeOutPageModule {}

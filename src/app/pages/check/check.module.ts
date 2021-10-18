@@ -9,12 +9,7 @@ import { CheckPageRoutingModule } from './check-routing.module';
 import { CheckPage } from './check.page';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    CheckPageRoutingModule
-  ],
-  declarations: [CheckPage]
+  imports: [CommonModule, FormsModule, IonicModule, CheckPageRoutingModule],
+  declarations: [CheckPage],
 })
 export class CheckPageModule {}

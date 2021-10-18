@@ -9,12 +9,7 @@ import { CalloutoforderAccess00002ErrorPageRoutingModule } from './calloutoforde
 import { CalloutoforderAccess00002ErrorPage } from './calloutoforder-access00002-error.page';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    CalloutoforderAccess00002ErrorPageRoutingModule
-  ],
-  declarations: [CalloutoforderAccess00002ErrorPage]
+  imports: [CommonModule, FormsModule, IonicModule, CalloutoforderAccess00002ErrorPageRoutingModule],
+  declarations: [CalloutoforderAccess00002ErrorPage],
 })
 export class CalloutoforderAccess00002ErrorPageModule {}

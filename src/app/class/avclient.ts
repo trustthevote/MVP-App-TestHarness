@@ -1,3 +1,3 @@
 export interface Avclient {
-    status: string;
+  status: string;
 }

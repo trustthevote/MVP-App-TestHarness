@@ -1,2 +1,1 @@
-export class Contestindexed {
-}
+export class Contestindexed {}

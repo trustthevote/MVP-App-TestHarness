@@ -8,16 +8,18 @@ describe('ExpiredCodePage', () => {
   let component: ExpiredCodePage;
   let fixture: ComponentFixture<ExpiredCodePage>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [ ExpiredCodePage ],
-      imports: [IonicModule.forRoot(), RouterTestingModule]
-    }).compileComponents();
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [ExpiredCodePage],
+        imports: [IonicModule.forRoot(), RouterTestingModule],
+      }).compileComponents();
 
-    fixture = TestBed.createComponent(ExpiredCodePage);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  }));
+      fixture = TestBed.createComponent(ExpiredCodePage);
+      component = fixture.componentInstance;
+      fixture.detectChanges();
+    })
+  );
 
   it('should create', () => {
     expect(component).toBeTruthy();

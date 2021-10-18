@@ -6,8 +6,8 @@ import { NetworkErrorRequestCodePage } from './network-error-request-code.page';
 const routes: Routes = [
   {
     path: '',
-    component: NetworkErrorRequestCodePage
-  }
+    component: NetworkErrorRequestCodePage,
+  },
 ];
 
 @NgModule({

@@ -8,16 +8,18 @@ describe('TestPage', () => {
   let component: TestPage;
   let fixture: ComponentFixture<TestPage>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [ TestPage ],
-      imports: [IonicModule.forRoot(), RouterTestingModule]
-    }).compileComponents();
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [TestPage],
+        imports: [IonicModule.forRoot(), RouterTestingModule],
+      }).compileComponents();
 
-    fixture = TestBed.createComponent(TestPage);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  }));
+      fixture = TestBed.createComponent(TestPage);
+      component = fixture.componentInstance;
+      fixture.detectChanges();
+    })
+  );
 
   it('should create', () => {
     expect(component).toBeTruthy();

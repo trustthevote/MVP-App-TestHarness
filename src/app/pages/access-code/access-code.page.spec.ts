@@ -9,17 +9,19 @@ describe('AccessCodePage', () => {
   let component: AccessCodePage;
   let fixture: ComponentFixture<AccessCodePage>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [ AccessCodePage ],
-      imports: [IonicModule.forRoot(), RouterTestingModule],
-      providers: [FormBuilder]
-    }).compileComponents();
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [AccessCodePage],
+        imports: [IonicModule.forRoot(), RouterTestingModule],
+        providers: [FormBuilder],
+      }).compileComponents();
 
-    fixture = TestBed.createComponent(AccessCodePage);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  }));
+      fixture = TestBed.createComponent(AccessCodePage);
+      component = fixture.componentInstance;
+      fixture.detectChanges();
+    })
+  );
 
   it('should create', () => {
     expect(component).toBeTruthy();

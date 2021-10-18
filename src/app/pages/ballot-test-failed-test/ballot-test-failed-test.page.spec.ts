@@ -8,16 +8,18 @@ describe('BallotTestFailedTestPage', () => {
   let component: BallotTestFailedTestPage;
   let fixture: ComponentFixture<BallotTestFailedTestPage>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [ BallotTestFailedTestPage ],
-      imports: [IonicModule.forRoot(), RouterTestingModule]
-    }).compileComponents();
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [BallotTestFailedTestPage],
+        imports: [IonicModule.forRoot(), RouterTestingModule],
+      }).compileComponents();
 
-    fixture = TestBed.createComponent(BallotTestFailedTestPage);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  }));
+      fixture = TestBed.createComponent(BallotTestFailedTestPage);
+      component = fixture.componentInstance;
+      fixture.detectChanges();
+    })
+  );
 
   it('should create', () => {
     expect(component).toBeTruthy();

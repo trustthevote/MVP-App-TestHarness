@@ -8,18 +8,17 @@ import { Router } from '@angular/router';
 })
 export class DigitalReturnNextStepsPage implements OnInit {
   results = [];
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
   ngOnInit() {
-    fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-
-      this.results = json[0]['digital_return_next_step_page'];
-
-    });
+    fetch('./assets/inputFile/input.json')
+      .then((res) => res.json())
+      .then((json) => {
+        this.results = json[0].digital_return_next_step_page;
+      });
   }
 
   goToFinish() {
     this.router.navigate(['tobecontinue']);
   }
-
 }

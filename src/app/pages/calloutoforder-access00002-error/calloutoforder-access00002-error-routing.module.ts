@@ -6,8 +6,8 @@ import { CalloutoforderAccess00002ErrorPage } from './calloutoforder-access00002
 const routes: Routes = [
   {
     path: '',
-    component: CalloutoforderAccess00002ErrorPage
-  }
+    component: CalloutoforderAccess00002ErrorPage,
+  },
 ];
 
 @NgModule({

@@ -6,8 +6,8 @@ import { BeforeYouFinishPage } from './before-you-finish.page';
 const routes: Routes = [
   {
     path: '',
-    component: BeforeYouFinishPage
-  }
+    component: BeforeYouFinishPage,
+  },
 ];
 
 @NgModule({

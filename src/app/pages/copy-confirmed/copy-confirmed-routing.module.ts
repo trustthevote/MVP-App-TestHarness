@@ -6,8 +6,8 @@ import { CopyConfirmedPage } from './copy-confirmed.page';
 const routes: Routes = [
   {
     path: '',
-    component: CopyConfirmedPage
-  }
+    component: CopyConfirmedPage,
+  },
 ];
 
 @NgModule({

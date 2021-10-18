@@ -1,3 +1,3 @@
-export interface Contestindexed <Type> {
-    [contestId: string]: Type;
+export interface Contestindexed<Type> {
+  [contestId: string]: Type;
 }

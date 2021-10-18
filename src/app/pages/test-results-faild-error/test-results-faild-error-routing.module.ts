@@ -6,8 +6,8 @@ import { TestResultsFaildErrorPage } from './test-results-faild-error.page';
 const routes: Routes = [
   {
     path: '',
-    component: TestResultsFaildErrorPage
-  }
+    component: TestResultsFaildErrorPage,
+  },
 ];
 
 @NgModule({

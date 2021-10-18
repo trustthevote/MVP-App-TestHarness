@@ -1,0 +1,7 @@
+# Ignore built/generated files
+build
+www
+coverage
+
+# Ignore the base64 encoded PDFs
+src/app/api/artifacts

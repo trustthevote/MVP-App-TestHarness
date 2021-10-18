@@ -6,8 +6,8 @@ import { DigitalReturnNextStepsPage } from './digital-return-next-steps.page';
 const routes: Routes = [
   {
     path: '',
-    component: DigitalReturnNextStepsPage
-  }
+    component: DigitalReturnNextStepsPage,
+  },
 ];
 
 @NgModule({

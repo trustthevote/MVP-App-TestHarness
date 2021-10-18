@@ -6,8 +6,8 @@ import { ExpiredCodePage } from './expired-code.page';
 const routes: Routes = [
   {
     path: '',
-    component: ExpiredCodePage
-  }
+    component: ExpiredCodePage,
+  },
 ];
 
 @NgModule({

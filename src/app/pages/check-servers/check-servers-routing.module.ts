@@ -6,8 +6,8 @@ import { CheckServersPage } from './check-servers.page';
 const routes: Routes = [
   {
     path: '',
-    component: CheckServersPage
-  }
+    component: CheckServersPage,
+  },
 ];
 
 @NgModule({

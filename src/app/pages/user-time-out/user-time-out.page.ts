@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationExtras, Router } from '@angular/router';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-time-out',
@@ -9,15 +8,16 @@ import { NavigationExtras, Router } from '@angular/router';
 })
 export class UserTimeOutPage implements OnInit {
   results = [];
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
   ngOnInit() {
-    fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-      this.results = json[0]['user_time_out_page'];
-    });
+    fetch('./assets/inputFile/input.json')
+      .then((res) => res.json())
+      .then((json) => {
+        this.results = json[0].user_time_out_page;
+      });
   }
-  backbtn(){
+  backbtn() {
     this.router.navigate(['/ballot']);
   }
-
 }

@@ -8,16 +8,18 @@ describe('ServerCommitNetworkErrorAccessPage', () => {
   let component: ServerCommitNetworkErrorAccessPage;
   let fixture: ComponentFixture<ServerCommitNetworkErrorAccessPage>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [ ServerCommitNetworkErrorAccessPage ],
-      imports: [IonicModule.forRoot(), RouterTestingModule]
-    }).compileComponents();
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [ServerCommitNetworkErrorAccessPage],
+        imports: [IonicModule.forRoot(), RouterTestingModule],
+      }).compileComponents();
 
-    fixture = TestBed.createComponent(ServerCommitNetworkErrorAccessPage);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  }));
+      fixture = TestBed.createComponent(ServerCommitNetworkErrorAccessPage);
+      component = fixture.componentInstance;
+      fixture.detectChanges();
+    })
+  );
 
   it('should create', () => {
     expect(component).toBeTruthy();

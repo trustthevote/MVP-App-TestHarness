@@ -7,19 +7,20 @@ import { Router } from '@angular/router';
   styleUrls: ['./calloutoforder-access00002-error.page.scss'],
 })
 export class CalloutoforderAccess00002ErrorPage implements OnInit {
-
   results = [];
   userObject: any;
-  constructor(private route: Router) { }
+  constructor(private route: Router) {}
 
   ngOnInit() {
     this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
-    fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-      this.results = json[0]['calloutoforder_access00002_error'];
-    });
-    if (this.userObject.lastname != undefined) {
+    fetch('./assets/inputFile/input.json')
+      .then((res) => res.json())
+      .then((json) => {
+        this.results = json[0].calloutoforder_access00002_error;
+      });
+    if (this.userObject.lastname !== undefined) {
       const lastName = this.userObject.lastname.charAt(0).toUpperCase() + this.userObject.lastname.slice(1);
-      if (lastName == 'OOOOO') {
+      if (lastName === 'OOOOO') {
       }
     }
   }
@@ -33,5 +34,4 @@ export class CalloutoforderAccess00002ErrorPage implements OnInit {
   printbtn() {
     this.route.navigate(['/print-return']);
   }
-
 }

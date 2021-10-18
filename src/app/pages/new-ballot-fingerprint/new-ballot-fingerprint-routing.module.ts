@@ -6,8 +6,8 @@ import { NewBallotFingerprintPage } from './new-ballot-fingerprint.page';
 const routes: Routes = [
   {
     path: '',
-    component: NewBallotFingerprintPage
-  }
+    component: NewBallotFingerprintPage,
+  },
 ];
 
 @NgModule({

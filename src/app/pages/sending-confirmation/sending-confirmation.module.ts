@@ -9,12 +9,7 @@ import { SendingConfirmationPageRoutingModule } from './sending-confirmation-rou
 import { SendingConfirmationPage } from './sending-confirmation.page';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    SendingConfirmationPageRoutingModule
-  ],
-  declarations: [SendingConfirmationPage]
+  imports: [CommonModule, FormsModule, IonicModule, SendingConfirmationPageRoutingModule],
+  declarations: [SendingConfirmationPage],
 })
 export class SendingConfirmationPageModule {}

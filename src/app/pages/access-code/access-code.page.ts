@@ -1,8 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
-import { ToastController, AlertController, LoadingController, NavController } from "@ionic/angular";
+import { ToastController, AlertController, LoadingController } from '@ionic/angular';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { invalid } from '@angular/compiler/src/render3/view/util';
 import { StatuscodeService } from 'src/app/api/statuscode.service';
 import { AvclientService } from 'src/app/api/avclient.service';
 
@@ -12,45 +11,55 @@ import { AvclientService } from 'src/app/api/avclient.service';
   styleUrls: ['./access-code.page.scss'],
 })
 export class AccessCodePage implements OnInit {
- 
-  OTP: string = '';
-  otp: string = '';
   disabledbutton;
-  otpError: string = '';
+  otpError = '';
   alertController: any;
   otpForm: FormGroup;
-  @ViewChild("first", {
-    static: false
-  }) first: ElementRef;
-  @ViewChild("second", {
-    static: false
-  }) second: ElementRef;
-  @ViewChild("third", {
-    static: false
-  }) third: ElementRef;
-  @ViewChild("four", {
-    static: false
-  }) four: ElementRef;
-  @ViewChild("five", {
-    static: false
-  }) five: ElementRef;
-  @ViewChild("singUp", {
-    static: false
-  }) singUp: ElementRef;
+  first: ElementRef;
+  second: ElementRef;
+  third: ElementRef;
+  four: ElementRef;
+  five: ElementRef;
+  singUp: ElementRef;
   data: string;
   results = [];
-  constructor(private route: Router, public fb: FormBuilder, private toastctrl: ToastController,
+
+  constructor(
+    private route: Router,
+    public fb: FormBuilder,
+    private toastctrl: ToastController,
     private alertctrl: AlertController,
     private loadingctrl: LoadingController,
     public statuscodeService: StatuscodeService,
-    public avclientService: AvclientService) {
+    public avclientService: AvclientService
+  ) {
     this.createOTPForm();
   }
 
+  @ViewChild('first', {
+    static: false,
+  })
+  @ViewChild('second', {
+    static: false,
+  })
+  @ViewChild('third', {
+    static: false,
+  })
+  @ViewChild('four', {
+    static: false,
+  })
+  @ViewChild('five', {
+    static: false,
+  })
+  @ViewChild('singUp', {
+    static: false,
+  })
   ngOnInit() {
-    fetch('./assets/inputFile/input.json').then(res => res.json()).then(json => {
-      this.results = json[0]['access_code'];
-    });
+    fetch('./assets/inputFile/input.json')
+      .then((res) => res.json())
+      .then((json) => {
+        this.results = json[0].access_code;
+      });
   }
 
   getOtpValue() {
@@ -72,16 +81,16 @@ export class AccessCodePage implements OnInit {
       five: [null, Validators.required],
     });
   }
+
+  // eslint-disable-next-line sonarjs/cognitive-complexity
   focusNext(event, index) {
-    console.log(index);
-    console.log(event);
     if (index === 1) {
       console.log(event.which !== 8);
       if (event.which !== 8) {
         console.log(this.second);
         this.second.nativeElement.focus();
       }
-      index = "";
+      index = '';
     } else if (index === 2) {
       if (event.which !== 8) {
         console.log(this.second);
@@ -89,7 +98,7 @@ export class AccessCodePage implements OnInit {
       } else if (event.target.value.length <= 0) {
         this.first.nativeElement.focus();
       }
-      index = "";
+      index = '';
     } else if (index === 3) {
       if (event.which !== 8) {
         console.log(this.second);
@@ -97,28 +106,27 @@ export class AccessCodePage implements OnInit {
       } else if (event.target.value.length <= 0) {
         this.second.nativeElement.focus();
       }
-      index = "";
+      index = '';
     } else if (index === 4) {
       if (event.which !== 8) {
         console.log(this.second);
         this.five.nativeElement.focus();
       } else if (event.target.value.length <= 0) {
         this.third.nativeElement.focus();
-        index = "";
+        index = '';
       }
     } else {
       if (event.which === 8 && event.target.value.length <= 0) {
         this.four.nativeElement.focus();
       }
-      index = "";
+      index = '';
     }
   }
 
   async nextbtn() {
-    let enteredOtp: string;
-    enteredOtp = this.getOtpValue()
+    const enteredOtp: string = this.getOtpValue();
     this.data = enteredOtp;
-    if (this.data == '') {
+    if (this.data === '') {
       this.presentAlertEmpty();
     } else {
       this.disabledbutton = true;
@@ -127,42 +135,52 @@ export class AccessCodePage implements OnInit {
       });
       await loading.present();
 
-      return new Promise(resolve => {
+      return new Promise(() => {
         loading.dismiss();
-        this.avclientService.validateAccessCode(this.data).then(res => {
-          this.route.navigate(['/before-you-finish', {
-            code: this.data
-          }]);
-        })
-        .catch(res => {
-          console.log("res", res);
-          if (res == 'Error: call out of order error') {
-            this.route.navigate(['/calloutoforder-access00002-error']);
-          } else if (res == 'Error: access code expired') {
-            this.route.navigate(['/code_expired_access00003_error']);
-          } else if (res == 'Error: access code invalid') {
-            this.route.navigate(['/code_invalid_access00004_error']);
-          } else if (res == 'Error: network code') {
-            this.route.navigate(['/check-network-access00005-error']);
-          }
-        });
-        (err) => {
+        this.avclientService
+          .validateAccessCode(this.data)
+          .then(() => {
+            this.route.navigate([
+              '/before-you-finish',
+              {
+                code: this.data,
+              },
+            ]);
+          })
+          .catch((res) => {
+            console.log('res', res);
+            if (res.message === 'call out of order error') {
+              this.route.navigate(['/calloutoforder-access00002-error']);
+            } else if (res.message === 'access code expired') {
+              this.route.navigate(['/code_expired_access00003_error']);
+            } else if (res.message === 'access code invalid') {
+              this.route.navigate(['/code_invalid_access00004_error']);
+            } else if (res.message === 'network code') {
+              this.route.navigate(['/check-network-access00005-error']);
+            }
+          });
+        // this appears to be a function declaration, so I'm not entirely sure what it does
+        // todo: figure out the original intent, implement accordingly, and remove the eslint disable
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+        () => {
           loading.dismiss();
           this.disabledbutton = false;
           this.presentAlertConfirm('Timeout');
-        }
+        };
       });
     }
   }
   async presentAlertEmpty() {
     const alert = await this.alertctrl.create({
-      message: this.results['alert_msg'],
-      buttons: [{
-        text: 'Retry',
-        role: 'cancel',
-        cssClass: 'secondary',
-        handler: (blah) => { }
-      }]
+      message: (this.results as any).alert_msg,
+      buttons: [
+        {
+          text: 'Retry',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: () => {},
+        },
+      ],
     });
     await alert.present();
   }
@@ -171,7 +189,7 @@ export class AccessCodePage implements OnInit {
     const toast = await this.toastctrl.create({
       message: a,
       duration: 3000,
-      position: 'middle'
+      position: 'middle',
     });
     toast.present();
   }
@@ -180,17 +198,20 @@ export class AccessCodePage implements OnInit {
     const alert = await this.alertController.create({
       header: a,
       backdropDissmiss: false,
-      buttons: [{
-        text: 'Cancel',
-        handler: (blah) => {
-          console.log('Confirm Cancel: blah');
-        }
-      }, {
-        text: 'Okay',
-        handler: () => {
-          console.log('Confirm Okay');
-        }
-      }]
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: () => {
+            console.log('Confirm Cancel: blah');
+          },
+        },
+        {
+          text: 'Okay',
+          handler: () => {
+            console.log('Confirm Okay');
+          },
+        },
+      ],
     });
     await alert.present();
   }
@@ -199,12 +220,10 @@ export class AccessCodePage implements OnInit {
   }
   numberOnlyValidation(event: any) {
     const pattern = /[0-9]/;
-    let inputChar = String.fromCharCode(event.charCode);
+    const inputChar = String.fromCharCode(event.charCode);
 
     if (!pattern.test(inputChar)) {
-    
       event.preventDefault();
     }
   }
-
 }

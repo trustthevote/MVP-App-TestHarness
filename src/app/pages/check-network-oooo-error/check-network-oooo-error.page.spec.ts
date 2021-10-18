@@ -8,16 +8,18 @@ describe('CheckNetworkOOOOErrorPage', () => {
   let component: CheckNetworkOOOOErrorPage;
   let fixture: ComponentFixture<CheckNetworkOOOOErrorPage>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [ CheckNetworkOOOOErrorPage ],
-      imports: [IonicModule.forRoot(), RouterTestingModule]
-    }).compileComponents();
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [CheckNetworkOOOOErrorPage],
+        imports: [IonicModule.forRoot(), RouterTestingModule],
+      }).compileComponents();
 
-    fixture = TestBed.createComponent(CheckNetworkOOOOErrorPage);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  }));
+      fixture = TestBed.createComponent(CheckNetworkOOOOErrorPage);
+      component = fixture.componentInstance;
+      fixture.detectChanges();
+    })
+  );
 
   it('should create', () => {
     expect(component).toBeTruthy();
