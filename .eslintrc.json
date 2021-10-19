@@ -2,6 +2,12 @@
   "root": true,
   "ignorePatterns": ["projects/**/*"],
   "plugins": ["unused-imports", "sonarjs"],
+  "parserOptions": {
+    "ecmaVersion": 2017
+  },
+  "env": {
+    "es6": true
+  },
   "overrides": [
     {
       "files": ["*.ts"],
