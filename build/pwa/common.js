@@ -467,11 +467,9 @@ let AvclientService = class AvclientService {
     requestAccessCode(opaqueVoterId) {
         return new Promise((resolve, reject) => {
             switch (opaqueVoterId) {
-                case '00000':
                 case 'T0000':
                     reject(new Error(this.statuscodeService.statusCode('VoterRecordNotFound')));
                     break;
-                case '00001':
                 case 'T0001':
                     reject(new Error(this.statuscodeService.statusCode('NetworkError')));
                     break;

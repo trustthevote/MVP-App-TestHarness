@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1634566905823,
+  "timestamp": 1634634210067,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -190,7 +190,7 @@
     "/assets/images/slides/slide-2.png": "87e08cd6844caf28e1e2bc9213a80b9a41d4e3ad",
     "/assets/inputFile/input.json": "d66504e3d289824fd0e9005e831a1ccfb8378779",
     "/assets/shapes.svg": "638f87e27e6fc7ddfd6e6b262ea70d690f6c7011",
-    "/common.js": "3900772276ddde1eafb5b567a40f4a1c2e9a6699",
+    "/common.js": "ac8eebe9abc1ca81e49a9469936a355be1b00696",
     "/default-node_modules_capacitor_browser_dist_esm_index_js.js": "eae91e4a1b8f4f6be8fc2f0106b5ed501cea3c71",
     "/default-src_app_api_voterartifacts_service_ts.js": "d10613d80fb9113ccfdbd06696b9db039ad70bec",
     "/index.html": "44c3ff4a7a81b800a385eca6a01accbb1105f0cf",
