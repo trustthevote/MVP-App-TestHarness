@@ -21,14 +21,8 @@ describe('AvclientService', () => {
   });
 
   describe('requestAccessCode', () => {
-    it('should reject 00000', async () => {
-      await expectAsync(service.requestAccessCode('00000')).toBeRejectedWith(new Error(voterRecordNotFound));
-    });
     it('should reject T0000', async () => {
       await expectAsync(service.requestAccessCode('T0000')).toBeRejectedWith(new Error(voterRecordNotFound));
-    });
-    it('should reject 00001', async () => {
-      await expectAsync(service.requestAccessCode('00001')).toBeRejectedWith(new Error(networkCode));
     });
     it('should reject T0001', async () => {
       await expectAsync(service.requestAccessCode('T0001')).toBeRejectedWith(new Error(networkCode));
