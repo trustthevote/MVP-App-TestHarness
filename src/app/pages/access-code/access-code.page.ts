@@ -154,7 +154,7 @@ export class AccessCodePage implements OnInit {
         text: 'Retry',
         role: 'cancel',
         cssClass: 'secondary',
-        handler: (blah) => { }
+        handler: () => { }
       }]
     });
     await alert.present();

@@ -242,7 +242,7 @@ let AccessCodePage = class AccessCodePage {
                         text: 'Retry',
                         role: 'cancel',
                         cssClass: 'secondary',
-                        handler: (blah) => { }
+                        handler: () => { }
                     }]
             });
             yield alert.present();
