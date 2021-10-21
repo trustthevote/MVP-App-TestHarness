@@ -10,9 +10,13 @@ export class AvclientService {
   serverURL: any;
   constructor(public statuscodeService: StatuscodeService) {}
 
-  assignServerUrl(bulletinBoardURL) {
+  initServerUrl(bulletinBoardURL) {
     this.serverURL = bulletinBoardURL;
   }
+  
+  initialize () {}
+  
+  registerVoter () {}
 
   requestAccessCode(opaqueVoterId: string): Promise<void> {
     return new Promise((resolve, reject) => {
@@ -50,7 +54,7 @@ export class AvclientService {
       }
     });
   }
-  constructBallotCryptograms(): Promise<string> {
+  constructBallotCryptograms(cvr: string): Promise<string> {
     return new Promise((resolve, reject) => {
       switch (this.cachedAccessCode) {
         case '00006':
@@ -86,7 +90,7 @@ export class AvclientService {
     });
   }
 
-  submitBallotCryptograms(): Promise<Receipt> {
+  submitBallotCryptograms(affidavit: string): Promise<Receipt> {
     return new Promise((resolve, reject) => {
       switch (this.cachedAccessCode) {
         case '00012':
