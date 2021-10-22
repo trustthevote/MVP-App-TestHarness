@@ -112,7 +112,7 @@ let RequestAccessCodePage = class RequestAccessCodePage {
         this.avclientService = avclientService;
         this.voterartifactsService = voterartifactsService;
         this.results = [];
-        this.avclientService.assignServerUrl(src_environments_environment__WEBPACK_IMPORTED_MODULE_4__.environment.url);
+        this.avclientService.initServerURL(src_environments_environment__WEBPACK_IMPORTED_MODULE_4__.environment.url);
         this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
         this.voterartifactsService.initialize(this.userObject.lastname);
     }

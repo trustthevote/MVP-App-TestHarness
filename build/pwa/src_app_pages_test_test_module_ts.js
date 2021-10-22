@@ -118,7 +118,7 @@ let TestPage = class TestPage {
     }
     autoCall() {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
-            yield this.assignServerUrl(src_environments_environment__WEBPACK_IMPORTED_MODULE_3__.environment.url);
+            yield this.initServerURL(src_environments_environment__WEBPACK_IMPORTED_MODULE_3__.environment.url);
             yield this.requestAccessCodeStatic();
             yield this.requestAccessCodeStaticT1();
             yield this.validateAccessCodeStatic();
@@ -127,7 +127,7 @@ let TestPage = class TestPage {
             yield this.validateAccessCodeStatic5();
         });
     }
-    assignServerUrl(bulletinBoardURL) {
+    initServerURL(bulletinBoardURL) {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
             this.serverURL = bulletinBoardURL;
             this.presentAlertEmpty('bulletinBoardURL', bulletinBoardURL);

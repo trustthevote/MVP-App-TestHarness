@@ -59,7 +59,7 @@ const routes = [
     },
     {
         path: 'ballot-complete',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_capacitor_browser_dist_esm_index_js"), __webpack_require__.e("common"), __webpack_require__.e("src_app_pages_ballot-complete_ballot-complete_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-complete/ballot-complete.module */ 35919)).then((m) => m.BallotCompletePageModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_api_voterartifacts_service_ts"), __webpack_require__.e("default-node_modules_capacitor_browser_dist_esm_index_js"), __webpack_require__.e("common"), __webpack_require__.e("src_app_pages_ballot-complete_ballot-complete_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-complete/ballot-complete.module */ 35919)).then((m) => m.BallotCompletePageModule),
     },
     {
         path: 'print',
@@ -67,7 +67,7 @@ const routes = [
     },
     {
         path: 'access-code',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_pages_access-code_access-code_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/access-code/access-code.module */ 81055)).then((m) => m.AccessCodePageModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_api_voterartifacts_service_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_pages_access-code_access-code_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/access-code/access-code.module */ 81055)).then((m) => m.AccessCodePageModule),
     },
     {
         path: 'ballot-fingerprint',
@@ -219,7 +219,7 @@ const routes = [
     },
     {
         path: 'ballot-resealed',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_pages_ballot-resealed_ballot-resealed_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-resealed/ballot-resealed.module */ 41857)).then((m) => m.BallotResealedPageModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_api_voterartifacts_service_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_pages_ballot-resealed_ballot-resealed_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-resealed/ballot-resealed.module */ 41857)).then((m) => m.BallotResealedPageModule),
     },
     {
         path: 'calloutoforder-access00002-error',

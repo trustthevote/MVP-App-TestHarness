@@ -135,7 +135,7 @@ let BallotFingerprintPage = class BallotFingerprintPage {
     sendbtn() {
         this.affidavit = this.voterartifactsService.affidavit;
         this.avclientService
-            .submitBallotCryptograms()
+            .submitBallotCryptograms(this.affidavit)
             .then(() => {
             this.route.navigate([
                 '/sending-confirmation',

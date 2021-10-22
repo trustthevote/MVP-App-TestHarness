@@ -451,18 +451,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AvclientService": () => (/* binding */ AvclientService)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 64762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 37716);
 /* harmony import */ var src_app_api_statuscode_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/api/statuscode.service */ 52413);
+/* harmony import */ var src_app_api_voterartifacts_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/api/voterartifacts.service */ 22130);
+
 
 
 
 let AvclientService = class AvclientService {
-    constructor(statuscodeService) {
+    constructor(statuscodeService, voterartifactsService) {
         this.statuscodeService = statuscodeService;
+        this.voterartifactsService = voterartifactsService;
     }
-    assignServerUrl(bulletinBoardURL) {
+    initServerURL(bulletinBoardURL) {
         this.serverURL = bulletinBoardURL;
+        this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
+        if (this.userObject !== undefined) {
+            const lastname = this.userObject.lastname;
+            this.voterartifactsService.initialize(lastname);
+        }
     }
     requestAccessCode(opaqueVoterId) {
         return new Promise((resolve, reject) => {
@@ -499,7 +507,7 @@ let AvclientService = class AvclientService {
             }
         });
     }
-    constructBallotCryptograms() {
+    constructBallotCryptograms(cvr) {
         return new Promise((resolve, reject) => {
             switch (this.cachedAccessCode) {
                 case '00006':
@@ -533,7 +541,7 @@ let AvclientService = class AvclientService {
             }
         });
     }
-    submitBallotCryptograms() {
+    submitBallotCryptograms(affidavit) {
         return new Promise((resolve, reject) => {
             switch (this.cachedAccessCode) {
                 case '00012':
@@ -558,12 +566,15 @@ let AvclientService = class AvclientService {
     purgeData() {
         delete this.cachedAccessCode;
     }
+    registerVoter() {
+    }
 };
 AvclientService.ctorParameters = () => [
-    { type: src_app_api_statuscode_service__WEBPACK_IMPORTED_MODULE_0__.StatuscodeService }
+    { type: src_app_api_statuscode_service__WEBPACK_IMPORTED_MODULE_0__.StatuscodeService },
+    { type: src_app_api_voterartifacts_service__WEBPACK_IMPORTED_MODULE_1__.VoterartifactsService }
 ];
-AvclientService = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.Injectable)({
+AvclientService = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.Injectable)({
         providedIn: 'root',
     })
 ], AvclientService);

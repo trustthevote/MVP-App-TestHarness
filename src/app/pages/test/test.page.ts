@@ -23,7 +23,7 @@ export class TestPage implements OnInit {
     this.router.navigate(['tobecontinue']);
   }
   async autoCall() {
-    await this.assignServerUrl(environment.url);
+    await this.initServerURL(environment.url);
     await this.requestAccessCodeStatic();
     await this.requestAccessCodeStaticT1();
     await this.validateAccessCodeStatic();
@@ -31,7 +31,7 @@ export class TestPage implements OnInit {
     await this.validateAccessCodeStatic4();
     await this.validateAccessCodeStatic5();
   }
-  async assignServerUrl(bulletinBoardURL) {
+  async initServerURL(bulletinBoardURL) {
     this.serverURL = bulletinBoardURL;
     this.presentAlertEmpty('bulletinBoardURL', bulletinBoardURL);
   }

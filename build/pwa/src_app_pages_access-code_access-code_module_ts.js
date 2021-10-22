@@ -209,6 +209,7 @@ let AccessCodePage = class AccessCodePage {
                         this.route.navigate(['/before-you-finish', {
                                 code: this.data
                             }]);
+                        this.avclientService.registerVoter();
                     })
                         .catch(res => {
                         console.log('res', res);

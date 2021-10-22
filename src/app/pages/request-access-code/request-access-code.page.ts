@@ -20,7 +20,7 @@ export class RequestAccessCodePage implements OnInit {
     public avclientService: AvclientService,
     private voterartifactsService: VoterartifactsService
   ) {
-    this.avclientService.assignServerUrl(environment.url);
+    this.avclientService.initServerURL(environment.url);
     this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
     this.voterartifactsService.initialize(this.userObject.lastname);
   }
