@@ -22,10 +22,10 @@ export class AvclientService {
       this.voterartifactsService.initialize(lastname);
     }
   }
-  
-  initialize () {}
-  
-  registerVoter () {}
+
+  initialize() {}
+
+  registerVoter() {}
 
   requestAccessCode(opaqueVoterId: string): Promise<void> {
     return new Promise((resolve, reject) => {

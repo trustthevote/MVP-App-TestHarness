@@ -472,6 +472,8 @@ let AvclientService = class AvclientService {
             this.voterartifactsService.initialize(lastname);
         }
     }
+    initialize() { }
+    registerVoter() { }
     requestAccessCode(opaqueVoterId) {
         return new Promise((resolve, reject) => {
             switch (opaqueVoterId) {
@@ -565,8 +567,6 @@ let AvclientService = class AvclientService {
     }
     purgeData() {
         delete this.cachedAccessCode;
-    }
-    registerVoter() {
     }
 };
 AvclientService.ctorParameters = () => [
