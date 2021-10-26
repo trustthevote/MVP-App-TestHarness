@@ -113,6 +113,7 @@ let RequestAccessCodePage = class RequestAccessCodePage {
         this.voterartifactsService = voterartifactsService;
         this.results = [];
         this.avclientService.initServerURL(src_environments_environment__WEBPACK_IMPORTED_MODULE_4__.environment.url);
+        this.avclientService.initialize();
         this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
         this.voterartifactsService.initialize(this.userObject.lastname);
     }

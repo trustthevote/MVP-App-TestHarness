@@ -21,6 +21,7 @@ export class RequestAccessCodePage implements OnInit {
     private voterartifactsService: VoterartifactsService
   ) {
     this.avclientService.initServerURL(environment.url);
+    this.avclientService.initialize();
     this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
     this.voterartifactsService.initialize(this.userObject.lastname);
   }
