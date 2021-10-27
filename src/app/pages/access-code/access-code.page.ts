@@ -29,7 +29,11 @@ export class AccessCodePage implements OnInit {
   @ViewChild('singUp', {
     static: false,
   })
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  OTP = '';
+  otp = '';
   disabledbutton;
+  otpError = '';
   alertController: any;
   otpForm: FormGroup;
   first: ElementRef;

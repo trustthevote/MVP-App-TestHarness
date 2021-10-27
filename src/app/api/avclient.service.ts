@@ -61,7 +61,10 @@ export class AvclientService {
       }
     });
   }
-  constructBallotCryptograms(): Promise<string> {
+
+  // todo: implement placeholder logic and remove the eslint-disable
+  // eslint-disable-next-line unused-imports/no-unused-vars
+  constructBallotCryptograms(cvr: string): Promise<string> {
     return new Promise((resolve, reject) => {
       switch (this.cachedAccessCode) {
         case '00006':
@@ -97,7 +100,9 @@ export class AvclientService {
     });
   }
 
-  submitBallotCryptograms(): Promise<Receipt> {
+  // todo: implement placeholder logic and remove the eslint-disable
+  // eslint-disable-next-line unused-imports/no-unused-vars
+  submitBallotCryptograms(affidavit: string): Promise<Receipt> {
     return new Promise((resolve, reject) => {
       switch (this.cachedAccessCode) {
         case '00012':
