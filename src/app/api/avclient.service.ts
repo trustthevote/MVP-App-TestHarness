@@ -3,7 +3,6 @@ import { StatuscodeService } from 'src/app/api/statuscode.service';
 import { Receipt } from 'src/app/class/receipt';
 import { VoterartifactsService } from 'src/app/api/voterartifacts.service';
 
-
 @Injectable({
   providedIn: 'root',
 })
@@ -11,13 +10,12 @@ export class AvclientService {
   cachedAccessCode: any;
   serverURL: any;
   userObject: any;
-  constructor(public statuscodeService: StatuscodeService,
-    public voterartifactsService: VoterartifactsService) {}
+  constructor(public statuscodeService: StatuscodeService, public voterartifactsService: VoterartifactsService) {}
 
   initServerURL(bulletinBoardURL) {
     this.serverURL = bulletinBoardURL;
     this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
-    if(this.userObject !== undefined){
+    if (this.userObject !== undefined) {
       const lastname = this.userObject.lastname;
       this.voterartifactsService.initialize(lastname);
     }
@@ -63,7 +61,7 @@ export class AvclientService {
       }
     });
   }
-  constructBallotCryptograms(cvr: string): Promise<string> {
+  constructBallotCryptograms(): Promise<string> {
     return new Promise((resolve, reject) => {
       switch (this.cachedAccessCode) {
         case '00006':
@@ -99,7 +97,7 @@ export class AvclientService {
     });
   }
 
-  submitBallotCryptograms(affidavit: string): Promise<Receipt> {
+  submitBallotCryptograms(): Promise<Receipt> {
     return new Promise((resolve, reject) => {
       switch (this.cachedAccessCode) {
         case '00012':
