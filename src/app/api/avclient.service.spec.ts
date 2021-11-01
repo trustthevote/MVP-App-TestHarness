@@ -1,10 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AvclientService } from './avclient.service';
-import {
-  PRECINCT_1_CVR,
-  PRECINCT_1_AFFIDAVIT,
-} from './artifacts';
+import { PRECINCT_1_CVR, PRECINCT_1_AFFIDAVIT } from './artifacts';
 
 describe('AvclientService', () => {
   let service: AvclientService;
@@ -21,6 +18,7 @@ describe('AvclientService', () => {
       imports: [RouterTestingModule],
     });
     service = TestBed.inject(AvclientService);
+    service.initServerURL('https://random.local/');
   });
 
   describe('requestAccessCode', () => {
