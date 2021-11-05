@@ -33,11 +33,11 @@ jobs:
         if: success()
         with:
           name: videos
-          path: tests/e2e/videos
+          path: cypress/videos
 
       - name: Upload screenshots
         uses: actions/upload-artifact@master
         if: failure()
         with:
           name: screenshots
-          path: tests/e2e/screenshots
+          path: cypress/screenshots
