@@ -7,6 +7,12 @@ jobs:
       - name: Checkout Rosie
         uses: actions/checkout@v2
 
+      # https://stackoverflow.com/a/61350264
+      - name: Make Github use https for node
+        run: |
+          git config --global url."https://github.com/".insteadOf git@github.com:
+          git config --global url."https://".insteadOf git://
+
       - name: Cache node modules
         uses: actions/cache@v2
         env:
