@@ -1,0 +1,41 @@
+name: End-to-end tests
+on: [push]
+jobs:
+  end-to-end-tests:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout Rosie
+        uses: actions/checkout@v2
+
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: npm-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            npm-${{ hashFiles('package-lock.json') }}
+
+      - name: Run cypress test suite
+        uses: cypress-io/github-action@v2
+        env:
+          SSH_AUTH_SOCK: /tmp/ssh_agent.sock # Required to use SSH key from the previous step of adding SSH key
+        with:
+          start: npm run start
+          browser: chrome
+          headless: true
+
+      - name: Upload videos
+        uses: actions/upload-artifact@master
+        if: success()
+        with:
+          name: videos
+          path: tests/e2e/videos
+
+      - name: Upload screenshots
+        uses: actions/upload-artifact@master
+        if: failure()
+        with:
+          name: screenshots
+          path: tests/e2e/screenshots
