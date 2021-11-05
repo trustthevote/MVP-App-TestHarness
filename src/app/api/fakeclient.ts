@@ -9,6 +9,10 @@ export class FakeClient {
     this.statuscodeService = statuscodeService;
   }
 
+  registerVoter() {}
+
+  initialize() {}
+
   requestAccessCode(opaqueVoterId: string): Promise<void> {
     return new Promise((resolve, reject) => {
       switch (opaqueVoterId) {
@@ -48,7 +52,7 @@ export class FakeClient {
   }
 
   // eslint-disable-next-line unused-imports/no-unused-vars
-  constructBallotCryptograms(_cvr: string): Promise<string> {
+  constructBallotCryptograms(_cvr: any): Promise<string> {
     return new Promise((resolve, reject) => {
       switch (this.cachedAccessCode) {
         case '00006':

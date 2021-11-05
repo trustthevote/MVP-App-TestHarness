@@ -3,6 +3,7 @@ import { StatuscodeService } from 'src/app/api/statuscode.service';
 import { Receipt } from 'src/app/class/receipt';
 import { VoterartifactsService } from 'src/app/api/voterartifacts.service';
 import { FakeClient } from './fakeclient';
+import { AVClient, CastVoteRecord } from '@aion-dk/js-client';
 import { environment } from '../../environments/environment';
 
 @Injectable({
@@ -11,9 +12,16 @@ import { environment } from '../../environments/environment';
 export class AvclientService {
   serverURL: any;
   userObject: any;
-  client: FakeClient;
+  client: FakeClient | AVClient;
 
   constructor(public statuscodeService: StatuscodeService, public voterartifactsService: VoterartifactsService) {}
+
+  // eslint-disable-next-line unused-imports/no-unused-vars
+  private static convertNIST103ToAvCvr(nistCvr: string): CastVoteRecord {
+    //console.log('Ready to parse NIST CVR', nistCvr);
+
+    return {};
+  }
 
   initServerURL(bulletinBoardURL) {
     this.serverURL = bulletinBoardURL; // to be used in other constructor/initializer calls
@@ -31,19 +39,27 @@ export class AvclientService {
     }
   }
 
-  initialize() {} // to be deprecated as an external interface
+  /**
+   * @deprecated
+   */
+  initialize() {}
 
-  registerVoter() {} // to be deprecated as an external interface
+  /**
+   * @deprecated
+   */
+  registerVoter() {}
 
   requestAccessCode(opaqueVoterId: string): Promise<void> {
-    return this.client.requestAccessCode(opaqueVoterId);
+    return this.client.requestAccessCode(opaqueVoterId, 'voter-email-address@domain.tld');
   }
 
-  validateAccessCode(code: string): Promise<void> {
-    return this.client.validateAccessCode(code);
+  async validateAccessCode(code: string): Promise<void> {
+    await this.client.validateAccessCode(code);
+    await this.client.registerVoter();
   }
 
-  constructBallotCryptograms(cvr: string): Promise<string> {
+  constructBallotCryptograms(nistCvr: string): Promise<string> {
+    const cvr = AvclientService.convertNIST103ToAvCvr(nistCvr);
     return this.client.constructBallotCryptograms(cvr);
   }
 
