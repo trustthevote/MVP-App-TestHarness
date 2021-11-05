@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { StatuscodeService } from 'src/app/api/statuscode.service';
 import { Receipt } from 'src/app/class/receipt';
 import { VoterartifactsService } from 'src/app/api/voterartifacts.service';
-import { FakeClient } from './fakeclient';
+import { FakeClient as MockClient } from './mockclient';
 import { AVClient, CastVoteRecord } from '@aion-dk/js-client';
 import { environment } from '../../environments/environment';
 
@@ -12,7 +12,7 @@ import { environment } from '../../environments/environment';
 export class AvclientService {
   serverURL: any;
   userObject: any;
-  client: FakeClient | AVClient;
+  client: MockClient | AVClient;
 
   constructor(public statuscodeService: StatuscodeService, public voterartifactsService: VoterartifactsService) {}
 
@@ -33,21 +33,11 @@ export class AvclientService {
 
     if (environment.production) {
       // TODO: Use the real AVClient
-      // this.client = new AVClient(bulletinBoardURL);
+      this.client = new AVClient(bulletinBoardURL);
     } else {
-      this.client = new FakeClient(this.statuscodeService);
+      this.client = new MockClient(this.statuscodeService);
     }
   }
-
-  /**
-   * @deprecated
-   */
-  initialize() {}
-
-  /**
-   * @deprecated
-   */
-  registerVoter() {}
 
   requestAccessCode(opaqueVoterId: string): Promise<void> {
     return this.client.requestAccessCode(opaqueVoterId, 'voter-email-address@domain.tld');
