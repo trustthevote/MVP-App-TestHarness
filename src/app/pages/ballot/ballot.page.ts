@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NavigationExtras, Router } from '@angular/router';
 import { ToastController, AlertController } from '@ionic/angular';
 
+import { LocalStorageRef } from 'src/app/class/local-storage-ref/local-storage-ref.service';
+
 @Component({
   selector: 'app-ballot',
   templateUrl: './ballot.page.html',
@@ -16,7 +18,8 @@ export class BallotPage implements OnInit {
     public formBuilder: FormBuilder,
     public toastController: ToastController,
     private router: Router,
-    private alertctrl: AlertController
+    private alertctrl: AlertController,
+    private localStorageRef: LocalStorageRef
   ) {
     this.signupForm = this.formBuilder.group({
       firstname: [
@@ -41,7 +44,7 @@ export class BallotPage implements OnInit {
   }
 
   ngOnInit() {
-    localStorage.clear();
+    this.localStorageRef.getLocalStorage().clear();
     fetch('./assets/inputFile/input.json')
       .then((res) => res.json())
       .then((json) => {
@@ -88,7 +91,7 @@ export class BallotPage implements OnInit {
           user: this.signupForm.value,
         },
       };
-      localStorage.setItem('userNameInfo', JSON.stringify(this.signupForm.value));
+      this.localStorageRef.getLocalStorage().setItem('userNameInfo', JSON.stringify(this.signupForm.value));
       this.router.navigate(['ballot-form', { t: new Date().getTime() }], naviExtras);
       this.signupForm.reset();
     }

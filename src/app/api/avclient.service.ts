@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
+
 import { StatuscodeService } from 'src/app/api/statuscode.service';
 import { Receipt } from 'src/app/class/receipt';
 import { VoterartifactsService } from 'src/app/api/voterartifacts.service';
-
+import { LocalStorageRef } from 'src/app/class/local-storage-ref.service';
 
 @Injectable({
   providedIn: 'root',
@@ -11,15 +12,18 @@ export class AvclientService {
   cachedAccessCode: any;
   serverURL: any;
   userObject: any;
-  constructor(public statuscodeService: StatuscodeService,
-    public voterartifactsService: VoterartifactsService) {}
+
+  constructor(
+    public statuscodeService: StatuscodeService,
+    public voterartifactsService: VoterartifactsService,
+    private localStorageRef: LocalStorageRef
+  ) {}
 
   initServerURL(bulletinBoardURL) {
     this.serverURL = bulletinBoardURL; // to be used in other constructor/initializer calls
-    this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
-    if(this.userObject !== undefined){
-      const lastname = this.userObject.lastname;
-      this.voterartifactsService.initialize(lastname);
+    this.userObject = JSON.parse(this.localStorageRef.getLocalStorage().getItem('userNameInfo'));
+    if (this.userObject !== undefined) {
+      this.voterartifactsService.initialize(this.userObject.lastName);
     } // to be added: other initializer calls included the one deprecated below
   }
 
@@ -58,7 +62,8 @@ export class AvclientService {
         case '00005':
           reject(new Error(this.statuscodeService.statusCode('NetworkError')));
           break;
-        default: // to be added: call(s) to other functions related to successfully validated access code
+        default:
+          // to be added: call(s) to other functions related to successfully validated access code
           resolve();
       }
     });

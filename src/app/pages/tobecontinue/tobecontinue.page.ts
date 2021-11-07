@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
+import { LocalStorageRef } from 'src/app/class/local-storage-ref/local-storage-ref.service';
+
 @Component({
   selector: 'app-tobecontinue',
   templateUrl: './tobecontinue.page.html',
@@ -7,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class TobecontinuePage implements OnInit {
   results = [];
-  constructor(private route: Router) {}
+  constructor(private route: Router, private localStorageRef: LocalStorageRef) {}
 
   ngOnInit() {
     fetch('./assets/inputFile/input.json')
@@ -17,7 +20,7 @@ export class TobecontinuePage implements OnInit {
       });
   }
   reloadCurrentPage() {
-    localStorage.clear();
+    this.localStorageRef.getLocalStorage().clear();
     this.route.navigate(['/intro']);
   }
 

@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
 import { StatuscodeService } from 'src/app/api/statuscode.service';
 import { AvclientService } from 'src/app/api/avclient.service';
 import { environment } from 'src/environments/environment';
 import { VoterartifactsService } from 'src/app/api/voterartifacts.service';
+import { LocalStorageRef } from 'src/app/class/local-storage-ref/local-storage-ref.service';
 
 @Component({
   selector: 'app-request-access-code',
@@ -16,14 +18,19 @@ export class RequestAccessCodePage implements OnInit {
 
   constructor(
     private route: Router,
+    private localStorageRef: LocalStorageRef,
     public statuscodeService: StatuscodeService,
     public avclientService: AvclientService,
     private voterartifactsService: VoterartifactsService
   ) {
+    // there's a bug here where voterartifactsService.initialize will be called twice:
+    // - once indirectly by the avclientService.initServerURL method
+    // - again directly in this constructor
+    // todo: determine the appropriate time for calling that method, and resolve the duplicate calls to a single one
     this.avclientService.initServerURL(environment.url);
     this.avclientService.initialize();
-    this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
-    this.voterartifactsService.initialize(this.userObject.lastname);
+    this.userObject = JSON.parse(this.localStorageRef.getLocalStorage().getItem('userNameInfo'));
+    this.voterartifactsService.initialize(this.userObject.lastName);
   }
 
   ngOnInit() {
@@ -33,9 +40,10 @@ export class RequestAccessCodePage implements OnInit {
         this.results = json[0].rap_page;
       });
   }
+
   async continuebtn() {
-    if (this.userObject.lastname !== undefined) {
-      const opaqueVoterId = this.userObject.lastname;
+    if (this.userObject.lastName !== undefined) {
+      const opaqueVoterId = this.userObject.lastName;
       await this.avclientService
         .requestAccessCode(opaqueVoterId)
         .then(() => {
@@ -55,6 +63,7 @@ export class RequestAccessCodePage implements OnInit {
         });
     }
   }
+
   backbtn() {
     this.route.navigate(['/ballot-complete']);
   }

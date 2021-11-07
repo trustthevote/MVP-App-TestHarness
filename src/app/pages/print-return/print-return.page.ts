@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { Browser } from '@capacitor/browser';
 import { VoterartifactsService } from 'src/app/api/voterartifacts.service';
 
+import { LocalStorageRef } from 'src/app/class/local-storage-ref/local-storage-ref.service';
+
 @Component({
   selector: 'app-print-return',
   templateUrl: './print-return.page.html',
@@ -16,21 +18,21 @@ export class PrintReturnPage implements OnInit {
   results = [];
   userObject: any;
 
-  constructor(private router: Router, private voterartifactsService: VoterartifactsService) {
+  constructor(private router: Router, private voterartifactsService: VoterartifactsService, private localStorageRef: LocalStorageRef) {
     if (this.router.getCurrentNavigation().extras.state) {
       this.paramData = this.router.getCurrentNavigation().extras.state.user;
     }
   }
 
   ngOnInit() {
-    this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
+    this.userObject = JSON.parse(this.localStorageRef.getLocalStorage().getItem('userNameInfo'));
     fetch('./assets/inputFile/input.json')
       .then((res) => res.json())
       .then((json) => {
         this.results = json[0].print_return_page;
       });
-    if (this.userObject.lastname !== undefined) {
-      const lastName = this.userObject.lastname.charAt(0).toUpperCase() + this.userObject.lastname.slice(1);
+    if (this.userObject.lastName !== undefined) {
+      const lastName = this.userObject.lastName.charAt(0).toUpperCase() + this.userObject.lastName.slice(1);
       if (lastName.includes('A', 0)) {
         this.precinctNum = 1;
       } else if (lastName.includes('B', 0)) {

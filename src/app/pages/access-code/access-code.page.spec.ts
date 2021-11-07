@@ -3,6 +3,8 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { FormBuilder } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
+import { LocalStorageRef } from 'src/app/class/local-storage-ref/local-storage-ref.service';
+import { LocalStorageRefStub } from 'src/app/class/local-storage-ref/local-storage-ref.stub';
 import { AccessCodePage } from './access-code.page';
 
 describe('AccessCodePage', () => {
@@ -14,7 +16,7 @@ describe('AccessCodePage', () => {
       TestBed.configureTestingModule({
         declarations: [AccessCodePage],
         imports: [IonicModule.forRoot(), RouterTestingModule],
-        providers: [FormBuilder],
+        providers: [FormBuilder, { provide: LocalStorageRef, useClass: LocalStorageRefStub }],
       }).compileComponents();
 
       fixture = TestBed.createComponent(AccessCodePage);

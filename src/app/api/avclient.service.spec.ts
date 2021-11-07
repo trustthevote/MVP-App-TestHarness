@@ -1,13 +1,14 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+
+import { LocalStorageRef } from '../class/local-storage-ref.service';
+import { LocalStorageRefStub } from '../class/local-storage-ref.stub';
 import { AvclientService } from './avclient.service';
-import {
-  PRECINCT_1_CVR,
-  PRECINCT_1_AFFIDAVIT,
-} from './artifacts';
+import { PRECINCT_1_CVR, PRECINCT_1_AFFIDAVIT } from './artifacts';
 
 describe('AvclientService', () => {
   let service: AvclientService;
+  let localStorageRef: LocalStorageRef;
   const networkCode = 'network code';
   const voterRecordNotFound = 'voter record not found';
   const callOutOfOrder = 'call out of order error';
@@ -19,7 +20,12 @@ describe('AvclientService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
+      providers: [{ provide: LocalStorageRef, useClass: LocalStorageRefStub }],
     });
+
+    localStorageRef = TestBed.inject(LocalStorageRef);
+    localStorageRef.getLocalStorage().setItem('userNameInfo', JSON.stringify({ lastName: 'foo' }));
+
     service = TestBed.inject(AvclientService);
   });
 
