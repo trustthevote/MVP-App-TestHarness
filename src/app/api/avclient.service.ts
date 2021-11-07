@@ -13,17 +13,17 @@ export class AvclientService {
   constructor(public statuscodeService: StatuscodeService, public voterartifactsService: VoterartifactsService) {}
 
   initServerURL(bulletinBoardURL) {
-    this.serverURL = bulletinBoardURL;
+    this.serverURL = bulletinBoardURL; // to be used in other constructor/initializer calls
     this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
     if (this.userObject !== undefined) {
       const lastname = this.userObject.lastname;
       this.voterartifactsService.initialize(lastname);
-    }
+    } // to be added: other initializer calls included the one deprecated below
   }
 
-  initialize() {}
+  initialize() {} // to be deprecated as an external interface
 
-  registerVoter() {}
+  registerVoter() {} // to be deprecated as an external interface
 
   requestAccessCode(opaqueVoterId: string): Promise<void> {
     return new Promise((resolve, reject) => {
@@ -56,7 +56,7 @@ export class AvclientService {
         case '00005':
           reject(new Error(this.statuscodeService.statusCode('NetworkError')));
           break;
-        default:
+        default: // to be added: call(s) to other functions related to successfully validated access code
           resolve();
       }
     });
