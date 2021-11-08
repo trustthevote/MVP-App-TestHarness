@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { StatuscodeService } from 'src/app/api/statuscode.service';
 import { Receipt } from 'src/app/class/receipt';
 import { VoterartifactsService } from 'src/app/api/voterartifacts.service';
-import { FakeClient as MockClient } from './mockclient';
-import { AVClient, CastVoteRecord } from '@aion-dk/js-client';
+import { MockClient as MockClient } from './mockclient';
+import { IAVClient, AVClient, CastVoteRecord } from '@aion-dk/js-client';
 import { environment } from '../../environments/environment';
 
 @Injectable({
@@ -12,7 +12,7 @@ import { environment } from '../../environments/environment';
 export class AvclientService {
   serverURL: any;
   userObject: any;
-  client: MockClient | AVClient;
+  client: IAVClient;
 
   constructor(public statuscodeService: StatuscodeService, public voterartifactsService: VoterartifactsService) {}
 

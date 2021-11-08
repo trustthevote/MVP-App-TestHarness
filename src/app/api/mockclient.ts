@@ -1,7 +1,8 @@
 import { StatuscodeService } from './statuscode.service';
 import { Receipt } from 'src/app/class/receipt';
+import { IAVClient } from '@aion-dk/js-client';
 
-export class FakeClient {
+export class MockClient implements IAVClient {
   private statuscodeService: StatuscodeService;
   private cachedAccessCode: string;
 
@@ -9,9 +10,13 @@ export class FakeClient {
     this.statuscodeService = statuscodeService;
   }
 
-  registerVoter() {}
+  registerVoter(): Promise<void> {
+    return Promise.resolve();
+  }
 
-  initialize() {}
+  initialize(): Promise<void> {
+    return Promise.resolve();
+  }
 
   requestAccessCode(opaqueVoterId: string): Promise<void> {
     return new Promise((resolve, reject) => {
