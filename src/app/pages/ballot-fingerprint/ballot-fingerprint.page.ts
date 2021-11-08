@@ -43,6 +43,7 @@ export class BallotFingerprintPage implements OnInit {
         this.results = json[0].ballot_fingerp;
       });
   }
+
   sendbtn() {
     this.affidavit = this.voterartifactsService.affidavit;
     this.avclientService
@@ -63,6 +64,7 @@ export class BallotFingerprintPage implements OnInit {
         }
       });
   }
+
   copybtn() {
     this.avclientService
       .spoilBallotCryptograms()

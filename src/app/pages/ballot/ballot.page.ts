@@ -23,7 +23,7 @@ export class BallotPage implements OnInit {
     private userService: UserService
   ) {
     this.signupForm = this.formBuilder.group({
-      firstname: [
+      firstName: [
         '',
         [
           Validators.required,
@@ -32,7 +32,7 @@ export class BallotPage implements OnInit {
           Validators.pattern('^[a-zA-Z-( )][\x20-\x7F]+$'), // allow only letters, spaces, hyphens and PrintableASCII chars
         ],
       ],
-      lastname: [
+      lastName: [
         '',
         [
           Validators.required,
