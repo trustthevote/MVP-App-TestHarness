@@ -17,7 +17,7 @@ export class AvclientService {
   constructor(public statuscodeService: StatuscodeService, public voterartifactsService: VoterartifactsService) {}
 
   // eslint-disable-next-line unused-imports/no-unused-vars
-  private static convertNIST103ToAvCvr(nistCvr: string): CastVoteRecord {
+  private static convertNIST103ToAvCvr(_nistCvr: string): CastVoteRecord {
     //console.log('Ready to parse NIST CVR', nistCvr);
 
     return {};
@@ -32,7 +32,6 @@ export class AvclientService {
     } // to be added: other initializer calls included the one deprecated below
 
     if (environment.production) {
-      // TODO: Use the real AVClient
       this.client = new AVClient(bulletinBoardURL);
     } else {
       this.client = new MockClient(this.statuscodeService);
