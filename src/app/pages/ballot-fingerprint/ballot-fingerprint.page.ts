@@ -16,16 +16,13 @@ export class BallotFingerprintPage implements OnInit {
   fsticon = true;
   getCode: any;
   affidavit: any;
-  userObject: any;
 
   constructor(
     private route: Router,
     public avclientService: AvclientService,
     private activatedRoute: ActivatedRoute,
     public voterartifactsService: VoterartifactsService
-  ) {
-    this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
-  }
+  ) {}
 
   policyDetails() {
     this.isVisible = true;

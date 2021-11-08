@@ -3,24 +3,21 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { IonicModule } from '@ionic/angular';
 import { FormBuilder } from '@angular/forms';
 
-import { LocalStorageRef } from 'src/app/class/local-storage-ref/local-storage-ref.service';
-import { LocalStorageRefStub } from 'src/app/class/local-storage-ref/local-storage-ref.stub';
+import { UserService } from 'src/app/class/user/user.service';
+import { UserServiceStub } from 'src/app/class/user/user.service.stub';
 import { BallotPage } from './ballot.page';
 
 describe('BallotPage', () => {
   let component: BallotPage;
   let fixture: ComponentFixture<BallotPage>;
-  let localStorageRef: LocalStorageRef;
 
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
         declarations: [BallotPage],
         imports: [IonicModule.forRoot(), RouterTestingModule],
-        providers: [FormBuilder, { provide: LocalStorageRef, useClass: LocalStorageRefStub }],
+        providers: [FormBuilder, { provide: UserService, useClass: UserServiceStub }],
       }).compileComponents();
-
-      localStorageRef = TestBed.inject(LocalStorageRef);
 
       fixture = TestBed.createComponent(BallotPage);
       component = fixture.componentInstance;

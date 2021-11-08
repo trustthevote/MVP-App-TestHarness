@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Browser } from '@capacitor/browser';
-import { VoterartifactsService } from 'src/app/api/voterartifacts.service';
 
-import { LocalStorageRef } from 'src/app/class/local-storage-ref/local-storage-ref.service';
+import { UserService } from 'src/app/class/user/user.service';
 
 @Component({
   selector: 'app-print-return',
@@ -13,31 +12,30 @@ import { LocalStorageRef } from 'src/app/class/local-storage-ref/local-storage-r
 export class PrintReturnPage implements OnInit {
   paramData: any;
   precinct: any;
-
   precinctNum: number;
   results = [];
-  userObject: any;
 
-  constructor(private router: Router, private voterartifactsService: VoterartifactsService, private localStorageRef: LocalStorageRef) {
+  constructor(private router: Router, private userService: UserService) {
     if (this.router.getCurrentNavigation().extras.state) {
       this.paramData = this.router.getCurrentNavigation().extras.state.user;
     }
   }
 
   ngOnInit() {
-    this.userObject = JSON.parse(this.localStorageRef.getLocalStorage().getItem('userNameInfo'));
     fetch('./assets/inputFile/input.json')
       .then((res) => res.json())
       .then((json) => {
         this.results = json[0].print_return_page;
       });
-    if (this.userObject.lastName !== undefined) {
-      const lastName = this.userObject.lastName.charAt(0).toUpperCase() + this.userObject.lastName.slice(1);
-      if (lastName.includes('A', 0)) {
+
+    const lastName = this.userService.getUser().lastName;
+    if (lastName !== undefined) {
+      const modifiedLastName = lastName.charAt(0).toUpperCase() + lastName.slice(1);
+      if (modifiedLastName.includes('A', 0)) {
         this.precinctNum = 1;
-      } else if (lastName.includes('B', 0)) {
+      } else if (modifiedLastName.includes('B', 0)) {
         this.precinctNum = 2;
-      } else if (lastName.includes('C', 0)) {
+      } else if (modifiedLastName.includes('C', 0)) {
         this.precinctNum = 3;
       } else {
         this.precinctNum = 4;
@@ -72,6 +70,7 @@ export class PrintReturnPage implements OnInit {
       });
     }
   }
+
   async openPDF2(precinctNum) {
     if (precinctNum === 1) {
       await Browser.open({

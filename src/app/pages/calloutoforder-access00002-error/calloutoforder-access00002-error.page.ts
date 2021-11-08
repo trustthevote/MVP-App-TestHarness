@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { LocalStorageRef } from 'src/app/class/local-storage-ref/local-storage-ref.service';
+import { UserService } from 'src/app/class/user/user.service';
 
 @Component({
   selector: 'app-calloutoforder-access00002-error',
@@ -10,19 +10,21 @@ import { LocalStorageRef } from 'src/app/class/local-storage-ref/local-storage-r
 })
 export class CalloutoforderAccess00002ErrorPage implements OnInit {
   results = [];
-  userObject: any;
-  constructor(private route: Router, private localStorageRef: LocalStorageRef) {}
+
+  constructor(private route: Router, private userService: UserService) {}
 
   ngOnInit() {
-    this.userObject = JSON.parse(this.localStorageRef.getLocalStorage().getItem('userNameInfo'));
     fetch('./assets/inputFile/input.json')
       .then((res) => res.json())
       .then((json) => {
         this.results = json[0].calloutoforder_access00002_error;
       });
-    if (this.userObject.lastName !== undefined) {
-      const lastName = this.userObject.lastName.charAt(0).toUpperCase() + this.userObject.lastName.slice(1);
-      if (lastName === 'OOOOO') {
+
+    const lastName = this.userService.getUser().lastName;
+    if (lastName !== undefined) {
+      const modifiedLastName = lastName.charAt(0).toUpperCase() + lastName.slice(1);
+      if (modifiedLastName === 'OOOOO') {
+        // todo: this conditional is empty - what was the intent here?
       }
     }
   }

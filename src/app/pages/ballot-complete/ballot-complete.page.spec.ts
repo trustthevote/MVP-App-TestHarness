@@ -3,8 +3,8 @@ import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { LocalStorageRef } from 'src/app/class/local-storage-ref/local-storage-ref.service';
-import { LocalStorageRefStub } from 'src/app/class/local-storage-ref/local-storage-ref.stub';
+import { UserService } from 'src/app/class/user/user.service';
+import { UserServiceStub } from 'src/app/class/user/user.service.stub';
 import { BallotCompletePage } from './ballot-complete.page';
 
 class RouterStub {
@@ -30,7 +30,7 @@ describe('BallotCompletePage', () => {
         imports: [IonicModule.forRoot(), RouterTestingModule],
         providers: [
           { provide: Router, useClass: RouterStub },
-          { provide: LocalStorageRef, useClass: LocalStorageRefStub },
+          { provide: UserService, useClass: UserServiceStub },
         ],
       }).compileComponents();
 

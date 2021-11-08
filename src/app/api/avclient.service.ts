@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { StatuscodeService } from 'src/app/api/statuscode.service';
 import { Receipt } from 'src/app/class/receipt';
 import { VoterartifactsService } from 'src/app/api/voterartifacts.service';
-import { LocalStorageRef } from 'src/app/class/local-storage-ref.service';
+import { UserService } from 'src/app/class/user/user.service';
 
 @Injectable({
   providedIn: 'root',
@@ -11,19 +11,17 @@ import { LocalStorageRef } from 'src/app/class/local-storage-ref.service';
 export class AvclientService {
   cachedAccessCode: any;
   serverURL: any;
-  userObject: any;
 
   constructor(
     public statuscodeService: StatuscodeService,
     public voterartifactsService: VoterartifactsService,
-    private localStorageRef: LocalStorageRef
+    private userService: UserService
   ) {}
 
   initServerURL(bulletinBoardURL) {
     this.serverURL = bulletinBoardURL; // to be used in other constructor/initializer calls
-    this.userObject = JSON.parse(this.localStorageRef.getLocalStorage().getItem('userNameInfo'));
-    if (this.userObject !== undefined) {
-      this.voterartifactsService.initialize(this.userObject.lastName);
+    if (this.userService.getUser() !== undefined) {
+      this.voterartifactsService.initialize(this.userService.getUser().lastName);
     } // to be added: other initializer calls included the one deprecated below
   }
 
@@ -68,6 +66,9 @@ export class AvclientService {
       }
     });
   }
+
+  // todo: implement placeholder logic and remove the eslint-disable
+  // eslint-disable-next-line unused-imports/no-unused-vars
   constructBallotCryptograms(cvr: string): Promise<string> {
     return new Promise((resolve, reject) => {
       switch (this.cachedAccessCode) {
@@ -104,6 +105,8 @@ export class AvclientService {
     });
   }
 
+  // todo: implement placeholder logic and remove the eslint-disable
+  // eslint-disable-next-line unused-imports/no-unused-vars
   submitBallotCryptograms(affidavit: string): Promise<Receipt> {
     return new Promise((resolve, reject) => {
       switch (this.cachedAccessCode) {

@@ -5,7 +5,7 @@ import { StatuscodeService } from 'src/app/api/statuscode.service';
 import { AvclientService } from 'src/app/api/avclient.service';
 import { environment } from 'src/environments/environment';
 import { VoterartifactsService } from 'src/app/api/voterartifacts.service';
-import { LocalStorageRef } from 'src/app/class/local-storage-ref/local-storage-ref.service';
+import { UserService } from 'src/app/class/user/user.service';
 
 @Component({
   selector: 'app-request-access-code',
@@ -14,11 +14,10 @@ import { LocalStorageRef } from 'src/app/class/local-storage-ref/local-storage-r
 })
 export class RequestAccessCodePage implements OnInit {
   results = [];
-  userObject: any;
 
   constructor(
     private route: Router,
-    private localStorageRef: LocalStorageRef,
+    private userService: UserService,
     public statuscodeService: StatuscodeService,
     public avclientService: AvclientService,
     private voterartifactsService: VoterartifactsService
@@ -29,8 +28,7 @@ export class RequestAccessCodePage implements OnInit {
     // todo: determine the appropriate time for calling that method, and resolve the duplicate calls to a single one
     this.avclientService.initServerURL(environment.url);
     this.avclientService.initialize();
-    this.userObject = JSON.parse(this.localStorageRef.getLocalStorage().getItem('userNameInfo'));
-    this.voterartifactsService.initialize(this.userObject.lastName);
+    this.voterartifactsService.initialize(this.userService.getUser().lastName);
   }
 
   ngOnInit() {
@@ -42,8 +40,8 @@ export class RequestAccessCodePage implements OnInit {
   }
 
   async continuebtn() {
-    if (this.userObject.lastName !== undefined) {
-      const opaqueVoterId = this.userObject.lastName;
+    if (this.userService.getUser().lastName !== undefined) {
+      const opaqueVoterId = this.userService.getUser().lastName;
       await this.avclientService
         .requestAccessCode(opaqueVoterId)
         .then(() => {

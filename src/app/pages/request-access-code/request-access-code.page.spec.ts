@@ -3,8 +3,8 @@ import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { LocalStorageRef } from 'src/app/class/local-storage-ref/local-storage-ref.service';
-import { LocalStorageRefStub } from 'src/app/class/local-storage-ref/local-storage-ref.stub';
+import { UserService } from 'src/app/class/user/user.service';
+import { UserServiceStub } from 'src/app/class/user/user.service.stub';
 import { RequestAccessCodePage } from './request-access-code.page';
 
 const router = {
@@ -14,7 +14,7 @@ const router = {
 describe('RequestAccessCodePage', () => {
   let component: RequestAccessCodePage;
   let fixture: ComponentFixture<RequestAccessCodePage>;
-  let localStorageRef: LocalStorageRef;
+  let userService: UserService;
 
   beforeEach(
     waitForAsync(() => {
@@ -23,17 +23,17 @@ describe('RequestAccessCodePage', () => {
         imports: [IonicModule.forRoot(), RouterTestingModule],
         providers: [
           { provide: Router, useValue: router },
-          { provide: LocalStorageRef, useClass: LocalStorageRefStub },
+          { provide: UserService, useClass: UserServiceStub },
         ],
       }).compileComponents();
 
-      localStorageRef = TestBed.inject(LocalStorageRef);
+      userService = TestBed.inject(UserService);
     })
   );
 
   describe('continuebtn', () => {
     it('should navigate to the access code page by default', async () => {
-      localStorageRef.getLocalStorage().setItem('userNameInfo', JSON.stringify({ lastName: 'foo' }));
+      userService.upsertUser({ lastName: 'foo' });
       fixture = TestBed.createComponent(RequestAccessCodePage);
       component = fixture.componentInstance;
       fixture.detectChanges();
@@ -41,7 +41,7 @@ describe('RequestAccessCodePage', () => {
       expect(router.navigate).toHaveBeenCalledWith(['/access-code', { t: jasmine.any(Number) }]);
     });
     it('should navigate to the voter record not found page if voter ID is T0000', async () => {
-      localStorageRef.getLocalStorage().setItem('userNameInfo', JSON.stringify({ lastName: 'T0000' }));
+      userService.upsertUser({ lastName: 'T0000' });
       fixture = TestBed.createComponent(RequestAccessCodePage);
       component = fixture.componentInstance;
       fixture.detectChanges();
@@ -50,7 +50,7 @@ describe('RequestAccessCodePage', () => {
       expect(router.navigate).toHaveBeenCalledWith(['/voter_record_notfound00000_error']);
     });
     it('should navigate to the network code page if voter ID is T0001', async () => {
-      localStorageRef.getLocalStorage().setItem('userNameInfo', JSON.stringify({ lastName: 'T0001' }));
+      userService.upsertUser({ lastName: 'T0001' });
       fixture = TestBed.createComponent(RequestAccessCodePage);
       component = fixture.componentInstance;
       fixture.detectChanges();
@@ -62,7 +62,7 @@ describe('RequestAccessCodePage', () => {
 
   describe('backbtn', () => {
     it('should navigate to ballot complete page', async () => {
-      localStorageRef.getLocalStorage().setItem('userNameInfo', JSON.stringify({ lastName: 'foo' }));
+      userService.upsertUser({ lastName: 'foo' });
       fixture = TestBed.createComponent(RequestAccessCodePage);
       component = fixture.componentInstance;
       fixture.detectChanges();
