@@ -13,7 +13,11 @@ export class TestPage implements OnInit {
   serverURL: any;
   results = [];
 
-  constructor(private alertctrl: AlertController, private router: Router, public statuscodeService: StatuscodeService) {}
+  constructor(
+    private alertctrl: AlertController,
+    private router: Router,
+    public statuscodeService: StatuscodeService
+  ) {}
 
   ngOnInit() {
     this.autoCall();
@@ -39,14 +43,20 @@ export class TestPage implements OnInit {
   requestAccessCodeStatic() {
     return new Promise((resolve) => {
       const code = '00000';
-      this.presentAlertEmpty(code, this.statuscodeService.statusCode('VoterRecordNotFound'));
+      this.presentAlertEmpty(
+        code,
+        this.statuscodeService.statusCode('VoterRecordNotFound')
+      );
       resolve(true);
     });
   }
   requestAccessCodeStaticT1() {
     return new Promise((resolve) => {
       const code = '00001';
-      this.presentAlertEmpty(code, this.statuscodeService.statusCode('NetworkError'));
+      this.presentAlertEmpty(
+        code,
+        this.statuscodeService.statusCode('NetworkError')
+      );
       resolve(true);
     });
   }
@@ -54,28 +64,40 @@ export class TestPage implements OnInit {
   validateAccessCodeStatic() {
     return new Promise((resolve) => {
       const code = '00002';
-      this.presentAlertEmpty(code, this.statuscodeService.statusCode('CallOutOfOrderError'));
+      this.presentAlertEmpty(
+        code,
+        this.statuscodeService.statusCode('CallOutOfOrderError')
+      );
       resolve(true);
     });
   }
   validateAccessCodeStatic3() {
     return new Promise((resolve) => {
       const code = '00003';
-      this.presentAlertEmpty(code, this.statuscodeService.statusCode('AccessCodeExpired'));
+      this.presentAlertEmpty(
+        code,
+        this.statuscodeService.statusCode('AccessCodeExpired')
+      );
       resolve(true);
     });
   }
   validateAccessCodeStatic4() {
     return new Promise((resolve) => {
       const code = '00004';
-      this.presentAlertEmpty(code, this.statuscodeService.statusCode('AccessCodeInvalid'));
+      this.presentAlertEmpty(
+        code,
+        this.statuscodeService.statusCode('AccessCodeInvalid')
+      );
       resolve(true);
     });
   }
   validateAccessCodeStatic5() {
     return new Promise((resolve) => {
       const code = '00005';
-      this.presentAlertEmpty(code, this.statuscodeService.statusCode('NetworkError'));
+      this.presentAlertEmpty(
+        code,
+        this.statuscodeService.statusCode('NetworkError')
+      );
       resolve(true);
     });
   }

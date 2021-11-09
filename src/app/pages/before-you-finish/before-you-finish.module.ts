@@ -9,7 +9,12 @@ import { BeforeYouFinishPageRoutingModule } from './before-you-finish-routing.mo
 import { BeforeYouFinishPage } from './before-you-finish.page';
 
 @NgModule({
-  imports: [CommonModule, FormsModule, IonicModule, BeforeYouFinishPageRoutingModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    BeforeYouFinishPageRoutingModule,
+  ],
   declarations: [BeforeYouFinishPage],
 })
 export class BeforeYouFinishPageModule {}

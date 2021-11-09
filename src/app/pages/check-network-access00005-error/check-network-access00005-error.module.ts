@@ -9,7 +9,12 @@ import { CheckNetworkAccess00005ErrorPageRoutingModule } from './check-network-a
 import { CheckNetworkAccess00005ErrorPage } from './check-network-access00005-error.page';
 
 @NgModule({
-  imports: [CommonModule, FormsModule, IonicModule, CheckNetworkAccess00005ErrorPageRoutingModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    CheckNetworkAccess00005ErrorPageRoutingModule,
+  ],
   declarations: [CheckNetworkAccess00005ErrorPage],
 })
 export class CheckNetworkAccess00005ErrorPageModule {}

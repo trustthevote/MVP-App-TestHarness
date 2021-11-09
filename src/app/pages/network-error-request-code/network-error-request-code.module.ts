@@ -9,7 +9,12 @@ import { NetworkErrorRequestCodePageRoutingModule } from './network-error-reques
 import { NetworkErrorRequestCodePage } from './network-error-request-code.page';
 
 @NgModule({
-  imports: [CommonModule, FormsModule, IonicModule, NetworkErrorRequestCodePageRoutingModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    NetworkErrorRequestCodePageRoutingModule,
+  ],
   declarations: [NetworkErrorRequestCodePage],
 })
 export class NetworkErrorRequestCodePageModule {}

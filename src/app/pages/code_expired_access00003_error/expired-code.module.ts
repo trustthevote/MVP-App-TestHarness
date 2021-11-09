@@ -9,7 +9,12 @@ import { ExpiredCodePageRoutingModule } from './expired-code-routing.module';
 import { ExpiredCodePage } from './expired-code.page';
 
 @NgModule({
-  imports: [CommonModule, FormsModule, IonicModule, ExpiredCodePageRoutingModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    ExpiredCodePageRoutingModule,
+  ],
   declarations: [ExpiredCodePage],
 })
 export class ExpiredCodePageModule {}

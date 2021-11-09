@@ -3,7 +3,6 @@ import { StatuscodeService } from 'src/app/api/statuscode.service';
 import { Receipt } from 'src/app/class/receipt';
 import { VoterartifactsService } from 'src/app/api/voterartifacts.service';
 
-
 @Injectable({
   providedIn: 'root',
 })
@@ -11,13 +10,15 @@ export class AvclientService {
   cachedAccessCode: any;
   serverURL: any;
   userObject: any;
-  constructor(public statuscodeService: StatuscodeService,
-    public voterartifactsService: VoterartifactsService) {}
+  constructor(
+    public statuscodeService: StatuscodeService,
+    public voterartifactsService: VoterartifactsService
+  ) {}
 
   initServerURL(bulletinBoardURL) {
     this.serverURL = bulletinBoardURL; // to be used in other constructor/initializer calls
     this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
-    if(this.userObject !== undefined){
+    if (this.userObject !== undefined) {
       const lastname = this.userObject.lastname;
       this.voterartifactsService.initialize(lastname);
     } // to be added: other initializer calls included the one deprecated below
@@ -31,7 +32,9 @@ export class AvclientService {
     return new Promise((resolve, reject) => {
       switch (opaqueVoterId) {
         case 'T0000':
-          reject(new Error(this.statuscodeService.statusCode('VoterRecordNotFound')));
+          reject(
+            new Error(this.statuscodeService.statusCode('VoterRecordNotFound'))
+          );
           break;
         case 'T0001':
           reject(new Error(this.statuscodeService.statusCode('NetworkError')));
@@ -47,13 +50,19 @@ export class AvclientService {
       this.cachedAccessCode = code;
       switch (code) {
         case '00002':
-          reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));
+          reject(
+            new Error(this.statuscodeService.statusCode('CallOutOfOrderError'))
+          );
           break;
         case '00003':
-          reject(new Error(this.statuscodeService.statusCode('AccessCodeExpired')));
+          reject(
+            new Error(this.statuscodeService.statusCode('AccessCodeExpired'))
+          );
           break;
         case '00004':
-          reject(new Error(this.statuscodeService.statusCode('AccessCodeInvalid')));
+          reject(
+            new Error(this.statuscodeService.statusCode('AccessCodeInvalid'))
+          );
           break;
         case '00005':
           reject(new Error(this.statuscodeService.statusCode('NetworkError')));
@@ -67,13 +76,17 @@ export class AvclientService {
     return new Promise((resolve, reject) => {
       switch (this.cachedAccessCode) {
         case '00006':
-          reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));
+          reject(
+            new Error(this.statuscodeService.statusCode('CallOutOfOrderError'))
+          );
           break;
         case '00007':
           reject(new Error(this.statuscodeService.statusCode('NetworkError')));
           break;
         case '00008':
-          reject(new Error(this.statuscodeService.statusCode('CorruptCVRError')));
+          reject(
+            new Error(this.statuscodeService.statusCode('CorruptCVRError'))
+          );
           break;
         default:
           resolve('zyx098-wvu765-tsr432-1234');
@@ -85,13 +98,19 @@ export class AvclientService {
     return new Promise((resolve, reject) => {
       switch (this.cachedAccessCode) {
         case '00009':
-          reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));
+          reject(
+            new Error(this.statuscodeService.statusCode('CallOutOfOrderError'))
+          );
           break;
         case '00010':
           reject(new Error(this.statuscodeService.statusCode('NetworkError')));
           break;
         case '00011':
-          reject(new Error(this.statuscodeService.statusCode('ServerCommitmentError')));
+          reject(
+            new Error(
+              this.statuscodeService.statusCode('ServerCommitmentError')
+            )
+          );
           break;
         default:
           resolve();
@@ -106,7 +125,9 @@ export class AvclientService {
           reject(new Error(this.statuscodeService.statusCode('NetworkError')));
           break;
         case '00013':
-          reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));
+          reject(
+            new Error(this.statuscodeService.statusCode('CallOutOfOrderError'))
+          );
           break;
         default:
           resolve({
