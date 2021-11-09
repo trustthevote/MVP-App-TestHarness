@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { StatuscodeService } from 'src/app/api/statuscode.service';
-import { Receipt } from 'src/app/class/receipt';
 import { VoterartifactsService } from 'src/app/api/voterartifacts.service';
 import { MockClient as MockClient } from './mockclient';
-import { IAVClient, AVClient, CastVoteRecord } from '@aion-dk/js-client';
+import { IAVClient, AVClient, CastVoteRecord, BallotBoxReceipt } from '@aion-dk/js-client';
 import { environment } from '../../environments/environment';
 
 @Injectable({
@@ -56,7 +55,7 @@ export class AvclientService {
     return this.client.spoilBallotCryptograms();
   }
 
-  submitBallotCryptograms(affidavit: string): Promise<Receipt> {
+  submitBallotCryptograms(affidavit: string): Promise<BallotBoxReceipt> {
     return this.client.submitBallotCryptograms(affidavit);
   }
 

@@ -1,6 +1,5 @@
 import { StatuscodeService } from './statuscode.service';
-import { Receipt } from 'src/app/class/receipt';
-import { IAVClient } from '@aion-dk/js-client';
+import { BallotBoxReceipt, IAVClient } from '@aion-dk/js-client';
 
 export class MockClient implements IAVClient {
   private statuscodeService: StatuscodeService;
@@ -94,7 +93,7 @@ export class MockClient implements IAVClient {
   }
 
   // eslint-disable-next-line unused-imports/no-unused-vars
-  submitBallotCryptograms(_affidavit: string): Promise<Receipt> {
+  submitBallotCryptograms(_affidavit: string): Promise<BallotBoxReceipt> {
     return new Promise((resolve, reject) => {
       switch (this.cachedAccessCode) {
         case '00012':
@@ -111,7 +110,7 @@ export class MockClient implements IAVClient {
             serverSignature:
               // eslint-disable-next-line max-len
               'dbcce518142b8740a5c911f727f3c02829211a8ddfccabeb89297877e4198bc1,46826ddfccaac9ca105e39c8a2d015098479624c411b4783ca1a3600daf4e8fa',
-            voteSubmissionId: 6,
+            voteSubmissionId: '6',
           });
       }
     });
