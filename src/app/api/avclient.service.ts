@@ -37,8 +37,9 @@ export class AvclientService {
     }
   }
 
-  requestAccessCode(opaqueVoterId: string): Promise<void> {
-    return this.client.requestAccessCode(opaqueVoterId, 'voter-email-address@domain.tld');
+  async requestAccessCode(opaqueVoterId: string): Promise<void> {
+    await this.client.initialize();
+    await this.client.requestAccessCode(opaqueVoterId, 'voter-email-address@domain.tld');
   }
 
   async validateAccessCode(code: string): Promise<void> {
