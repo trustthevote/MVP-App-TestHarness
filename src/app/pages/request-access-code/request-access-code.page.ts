@@ -34,7 +34,9 @@ export class RequestAccessCodePage implements OnInit {
   }
   async continuebtn() {
     if (this.userObject.lastname !== undefined) {
-      const opaqueVoterId = this.userObject.lastname;
+      // Introduce randomness. Currently no support for voter-restart scenario
+      const opaqueVoterId = environment.production ? Date.now().toString() : this.userObject.lastname;
+
       await this.avclientService
         .requestAccessCode(opaqueVoterId)
         .then(() => {

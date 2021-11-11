@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { StatuscodeService } from 'src/app/api/statuscode.service';
 import { VoterartifactsService } from 'src/app/api/voterartifacts.service';
 import { MockClient as MockClient } from './mockclient';
-import { IAVClient, AVClient, CastVoteRecord, BallotBoxReceipt } from '@aion-dk/js-client';
+import { IAVClient, AVClient, CastVoteRecord, BallotBoxReceipt, NistConverter } from '@aion-dk/js-client';
 import { environment } from '../../environments/environment';
 
 @Injectable({
@@ -16,10 +16,9 @@ export class AvclientService {
   constructor(public statuscodeService: StatuscodeService, public voterartifactsService: VoterartifactsService) {}
 
   // eslint-disable-next-line unused-imports/no-unused-vars
-  private static convertNIST103ToAvCvr(_nistCvr: string): CastVoteRecord {
+  private static convertNIST103ToAvCvr(nistCvr: string): CastVoteRecord {
     //console.log('Ready to parse NIST CVR', nistCvr);
-
-    return {};
+    return NistConverter.default.nistCvrToAvCvr(nistCvr);
   }
 
   initServerURL(bulletinBoardURL) {
@@ -39,7 +38,9 @@ export class AvclientService {
 
   async requestAccessCode(opaqueVoterId: string): Promise<void> {
     await this.client.initialize();
-    await this.client.requestAccessCode(opaqueVoterId, 'voter-email-address@domain.tld');
+
+    const email = `us-voter-${opaqueVoterId}@aion.dk`;
+    await this.client.requestAccessCode(opaqueVoterId, email);
   }
 
   async validateAccessCode(code: string): Promise<void> {

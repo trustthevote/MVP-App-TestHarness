@@ -32,6 +32,7 @@ export class BeforeYouFinishPage implements OnInit {
   }
   nextbtn() {
     this.cvr = this.voterartifactsService.cvr;
+
     this.avclientService
       .constructBallotCryptograms(this.cvr)
       .then(() => {
@@ -50,6 +51,8 @@ export class BeforeYouFinishPage implements OnInit {
         } else if (res.message === 'corrupt CVR') {
           this.route.navigate(['/corrupt_cv_construct00008_error']);
         }
+
+        // TODO: Handle the any-case
       });
   }
 }
