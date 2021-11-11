@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { AccessCodePageRoutingModule } from './access-code-routing.module';
@@ -14,8 +14,8 @@ import { AccessCodePage } from './access-code.page';
     FormsModule,
     IonicModule,
     ReactiveFormsModule,
-    AccessCodePageRoutingModule
+    AccessCodePageRoutingModule,
   ],
-  declarations: [AccessCodePage]
+  declarations: [AccessCodePage],
 })
 export class AccessCodePageModule {}

@@ -9,7 +9,12 @@ import { CheckNetworkPageRoutingModule } from './check-network-routing.module';
 import { CheckNetworkPage } from './check-network.page';
 
 @NgModule({
-  imports: [CommonModule, FormsModule, IonicModule, CheckNetworkPageRoutingModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    CheckNetworkPageRoutingModule,
+  ],
   declarations: [CheckNetworkPage],
 })
 export class CheckNetworkPageModule {}

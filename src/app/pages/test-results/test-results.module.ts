@@ -9,7 +9,12 @@ import { TestResultsPageRoutingModule } from './test-results-routing.module';
 import { TestResultsPage } from './test-results.page';
 
 @NgModule({
-  imports: [CommonModule, FormsModule, IonicModule, TestResultsPageRoutingModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    TestResultsPageRoutingModule,
+  ],
   declarations: [TestResultsPage],
 })
 export class TestResultsPageModule {}

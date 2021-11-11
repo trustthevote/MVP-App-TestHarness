@@ -10,7 +10,11 @@ import { AvclientService } from 'src/app/api/avclient.service';
 export class BallotResealedPage implements OnInit {
   results = [];
   getCode: any;
-  constructor(private route: Router, public avclientService: AvclientService, private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private route: Router,
+    public avclientService: AvclientService,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit() {
     this.getCode = this.activatedRoute.snapshot.paramMap.get('code');

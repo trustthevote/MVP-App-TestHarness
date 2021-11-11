@@ -31,25 +31,38 @@ describe('RequestAccessCodePage', () => {
       fixture.detectChanges();
 
       await component.continuebtn();
-      expect(router.navigate).toHaveBeenCalledWith(['/access-code', { t: jasmine.any(Number) }]);
+      expect(router.navigate).toHaveBeenCalledWith([
+        '/access-code',
+        { t: jasmine.any(Number) },
+      ]);
     });
     it('should navigate to the voter record not found page if voter ID is T0000', async () => {
-      localStorage.setItem('userNameInfo', JSON.stringify({ lastname: 'T0000' }));
+      localStorage.setItem(
+        'userNameInfo',
+        JSON.stringify({ lastname: 'T0000' })
+      );
       fixture = TestBed.createComponent(RequestAccessCodePage);
       component = fixture.componentInstance;
       fixture.detectChanges();
 
       await component.continuebtn();
-      expect(router.navigate).toHaveBeenCalledWith(['/voter_record_notfound00000_error']);
+      expect(router.navigate).toHaveBeenCalledWith([
+        '/voter_record_notfound00000_error',
+      ]);
     });
     it('should navigate to the network code page if voter ID is T0001', async () => {
-      localStorage.setItem('userNameInfo', JSON.stringify({ lastname: 'T0001' }));
+      localStorage.setItem(
+        'userNameInfo',
+        JSON.stringify({ lastname: 'T0001' })
+      );
       fixture = TestBed.createComponent(RequestAccessCodePage);
       component = fixture.componentInstance;
       fixture.detectChanges();
 
       await component.continuebtn();
-      expect(router.navigate).toHaveBeenCalledWith(['/check_network_request00001_error']);
+      expect(router.navigate).toHaveBeenCalledWith([
+        '/check_network_request00001_error',
+      ]);
     });
   });
 

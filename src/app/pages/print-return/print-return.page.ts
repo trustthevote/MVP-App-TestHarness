@@ -16,7 +16,10 @@ export class PrintReturnPage implements OnInit {
   results = [];
   userObject: any;
 
-  constructor(private router: Router, private voterartifactsService: VoterartifactsService) {
+  constructor(
+    private router: Router,
+    private voterartifactsService: VoterartifactsService
+  ) {
     if (this.router.getCurrentNavigation().extras.state) {
       this.paramData = this.router.getCurrentNavigation().extras.state.user;
     }
@@ -30,7 +33,9 @@ export class PrintReturnPage implements OnInit {
         this.results = json[0].print_return_page;
       });
     if (this.userObject.lastname !== undefined) {
-      const lastName = this.userObject.lastname.charAt(0).toUpperCase() + this.userObject.lastname.slice(1);
+      const lastName =
+        this.userObject.lastname.charAt(0).toUpperCase() +
+        this.userObject.lastname.slice(1);
       if (lastName.includes('A', 0)) {
         this.precinctNum = 1;
       } else if (lastName.includes('B', 0)) {
