@@ -17,7 +17,6 @@ import { AvclientService } from 'src/app/api/avclient.service';
 export class AccessCodePage implements OnInit {
   OTP = '';
   otp = '';
-  disabledbutton;
   otpError = '';
   alertController: any;
   otpForm: FormGroup;
@@ -129,7 +128,6 @@ export class AccessCodePage implements OnInit {
     if (this.data == '') {
       this.presentAlertEmpty();
     } else {
-      this.disabledbutton = true;
       const loading = await this.loadingctrl.create({
         message: 'Check Authorization....',
       });
@@ -162,7 +160,6 @@ export class AccessCodePage implements OnInit {
           });
         (err) => {
           loading.dismiss();
-          this.disabledbutton = false;
           this.presentAlertConfirm('Timeout');
         };
       });

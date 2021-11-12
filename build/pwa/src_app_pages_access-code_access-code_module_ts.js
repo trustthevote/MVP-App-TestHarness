@@ -200,7 +200,6 @@ let AccessCodePage = class AccessCodePage {
                 this.presentAlertEmpty();
             }
             else {
-                this.disabledbutton = true;
                 const loading = yield this.loadingctrl.create({
                     message: 'Check Authorization....',
                 });
@@ -235,7 +234,6 @@ let AccessCodePage = class AccessCodePage {
                     });
                     (err) => {
                         loading.dismiss();
-                        this.disabledbutton = false;
                         this.presentAlertConfirm('Timeout');
                     };
                 });
