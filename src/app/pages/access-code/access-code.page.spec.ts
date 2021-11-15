@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { FormBuilder } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { AccessCodePage } from './access-code.page';
@@ -11,7 +13,8 @@ describe('AccessCodePage', () => {
     waitForAsync(() => {
       TestBed.configureTestingModule({
         declarations: [AccessCodePage],
-        imports: [IonicModule.forRoot()],
+        imports: [IonicModule.forRoot(), RouterTestingModule],
+        providers: [FormBuilder],
       }).compileComponents();
 
       fixture = TestBed.createComponent(AccessCodePage);
