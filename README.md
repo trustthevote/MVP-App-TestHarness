@@ -51,3 +51,13 @@ npm run test
 Unit tests will fail if any tests fail, or if code coverage drops below the enforced thresholds. Generally, ideal code coverage levels (for statements/branches/functions/lines) would be around 80%; however, this repo has been set to
 
 To view detailed coverage reports, run the unit tests and then load `./coverage/index.html` in a web browser. This will allow you to view specific coverage information for any file in the repo.
+
+### Integration testing
+
+This repo uses [Cypress](https://www.cypress.io/) for integration testing.
+
+To run integration tests manually, have the development server running (`npm run start`), then execute the following:
+
+```bash
+npm run e2e
+```
