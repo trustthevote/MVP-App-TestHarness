@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
+
 import { StatuscodeService } from 'src/app/api/statuscode.service';
 import { Receipt } from 'src/app/class/receipt';
 import { VoterartifactsService } from 'src/app/api/voterartifacts.service';
+import { UserService } from 'src/app/class/user/user.service';
 
 @Injectable({
   providedIn: 'root',
@@ -9,15 +11,17 @@ import { VoterartifactsService } from 'src/app/api/voterartifacts.service';
 export class AvclientService {
   cachedAccessCode: any;
   serverURL: any;
-  userObject: any;
-  constructor(public statuscodeService: StatuscodeService, public voterartifactsService: VoterartifactsService) {}
+
+  constructor(
+    public statuscodeService: StatuscodeService,
+    public voterartifactsService: VoterartifactsService,
+    private userService: UserService
+  ) {}
 
   initServerURL(bulletinBoardURL) {
     this.serverURL = bulletinBoardURL; // to be used in other constructor/initializer calls
-    this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
-    if (this.userObject !== undefined) {
-      const lastname = this.userObject.lastname;
-      this.voterartifactsService.initialize(lastname);
+    if (this.userService.getUser() !== undefined) {
+      this.voterartifactsService.initialize(this.userService.getUser().lastName);
     } // to be added: other initializer calls included the one deprecated below
   }
 

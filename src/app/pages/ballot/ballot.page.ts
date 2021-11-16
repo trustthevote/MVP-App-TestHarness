@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NavigationExtras, Router } from '@angular/router';
 import { ToastController, AlertController } from '@ionic/angular';
 
+import { UserService } from 'src/app/class/user/user.service';
+
 @Component({
   selector: 'app-ballot',
   templateUrl: './ballot.page.html',
@@ -12,14 +14,16 @@ export class BallotPage implements OnInit {
   signupForm: FormGroup;
   isSubmitted = false;
   results = [];
+
   constructor(
     public formBuilder: FormBuilder,
     public toastController: ToastController,
     private router: Router,
-    private alertctrl: AlertController
+    private alertctrl: AlertController,
+    private userService: UserService
   ) {
     this.signupForm = this.formBuilder.group({
-      firstname: [
+      firstName: [
         '',
         [
           Validators.required,
@@ -28,7 +32,7 @@ export class BallotPage implements OnInit {
           Validators.pattern('^[a-zA-Z-( )][\x20-\x7F]+$'), // allow only letters, spaces, hyphens and PrintableASCII chars
         ],
       ],
-      lastname: [
+      lastName: [
         '',
         [
           Validators.required,
@@ -41,13 +45,14 @@ export class BallotPage implements OnInit {
   }
 
   ngOnInit() {
-    localStorage.clear();
+    this.userService.resetUser();
     fetch('./assets/inputFile/input.json')
       .then((res) => res.json())
       .then((json) => {
         this.results = json[0].ballot;
       });
   }
+
   get errorControl() {
     return this.signupForm.controls;
   }
@@ -61,6 +66,7 @@ export class BallotPage implements OnInit {
     });
     toast.present();
   }
+
   async presentAlertEmpty(msg) {
     const alert = await this.alertctrl.create({
       message: msg,
@@ -88,7 +94,7 @@ export class BallotPage implements OnInit {
           user: this.signupForm.value,
         },
       };
-      localStorage.setItem('userNameInfo', JSON.stringify(this.signupForm.value));
+      this.userService.upsertUser(this.signupForm.value);
       this.router.navigate(['ballot-form', { t: new Date().getTime() }], naviExtras);
       this.signupForm.reset();
     }

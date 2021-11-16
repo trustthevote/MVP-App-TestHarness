@@ -11,32 +11,37 @@ import { AvclientService } from 'src/app/api/avclient.service';
   styleUrls: ['./access-code.page.scss'],
 })
 export class AccessCodePage implements OnInit {
+  alertController: any;
+  otpForm: FormGroup;
+  // eslint-disable-next-line @typescript-eslint/member-ordering
   @ViewChild('first', {
     static: false,
   })
+  first: ElementRef;
+  // eslint-disable-next-line @typescript-eslint/member-ordering
   @ViewChild('second', {
     static: false,
   })
+  second: ElementRef;
+  // eslint-disable-next-line @typescript-eslint/member-ordering
   @ViewChild('third', {
     static: false,
   })
+  third: ElementRef;
+  // eslint-disable-next-line @typescript-eslint/member-ordering
   @ViewChild('four', {
     static: false,
   })
+  four: ElementRef;
+  // eslint-disable-next-line @typescript-eslint/member-ordering
   @ViewChild('five', {
     static: false,
   })
+  five: ElementRef;
+  // eslint-disable-next-line @typescript-eslint/member-ordering
   @ViewChild('singUp', {
     static: false,
   })
-  disabledbutton;
-  alertController: any;
-  otpForm: FormGroup;
-  first: ElementRef;
-  second: ElementRef;
-  third: ElementRef;
-  four: ElementRef;
-  five: ElementRef;
   singUp: ElementRef;
   data: string;
   results = [];

@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { IonicModule } from '@ionic/angular';
 
+import { UserService } from 'src/app/class/user/user.service';
+import { UserServiceStub } from 'src/app/class/user/user.service.stub';
 import { BallotCompletePage } from './ballot-complete.page';
 
 class RouterStub {
@@ -26,7 +28,10 @@ describe('BallotCompletePage', () => {
       TestBed.configureTestingModule({
         declarations: [BallotCompletePage],
         imports: [IonicModule.forRoot(), RouterTestingModule],
-        providers: [{ provide: Router, useClass: RouterStub }],
+        providers: [
+          { provide: Router, useClass: RouterStub },
+          { provide: UserService, useClass: UserServiceStub },
+        ],
       }).compileComponents();
 
       fixture = TestBed.createComponent(BallotCompletePage);

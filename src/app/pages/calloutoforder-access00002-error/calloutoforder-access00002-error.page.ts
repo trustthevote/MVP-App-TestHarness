@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { UserService } from 'src/app/class/user/user.service';
+
 @Component({
   selector: 'app-calloutoforder-access00002-error',
   templateUrl: './calloutoforder-access00002-error.page.html',
@@ -8,19 +10,21 @@ import { Router } from '@angular/router';
 })
 export class CalloutoforderAccess00002ErrorPage implements OnInit {
   results = [];
-  userObject: any;
-  constructor(private route: Router) {}
+
+  constructor(private route: Router, private userService: UserService) {}
 
   ngOnInit() {
-    this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
     fetch('./assets/inputFile/input.json')
       .then((res) => res.json())
       .then((json) => {
         this.results = json[0].calloutoforder_access00002_error;
       });
-    if (this.userObject.lastname !== undefined) {
-      const lastName = this.userObject.lastname.charAt(0).toUpperCase() + this.userObject.lastname.slice(1);
-      if (lastName === 'OOOOO') {
+
+    const lastName = this.userService.getUser().lastName;
+    if (lastName !== undefined) {
+      const modifiedLastName = lastName.charAt(0).toUpperCase() + lastName.slice(1);
+      if (modifiedLastName === 'OOOOO') {
+        // todo: this conditional is empty - what was the intent here?
       }
     }
   }
