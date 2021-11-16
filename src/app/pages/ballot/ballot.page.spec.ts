@@ -3,6 +3,8 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { IonicModule } from '@ionic/angular';
 import { FormBuilder } from '@angular/forms';
 
+import { UserService } from 'src/app/class/user/user.service';
+import { UserServiceStub } from 'src/app/class/user/user.service.stub';
 import { BallotPage } from './ballot.page';
 
 describe('BallotPage', () => {
@@ -14,7 +16,7 @@ describe('BallotPage', () => {
       TestBed.configureTestingModule({
         declarations: [BallotPage],
         imports: [IonicModule.forRoot(), RouterTestingModule],
-        providers: [FormBuilder],
+        providers: [FormBuilder, { provide: UserService, useClass: UserServiceStub }],
       }).compileComponents();
 
       fixture = TestBed.createComponent(BallotPage);

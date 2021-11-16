@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { UserService } from './class/user/user.service';
+import { LocalStorageRef } from './class/local-storage-ref/local-storage-ref.service';
 // import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @NgModule({
@@ -27,6 +29,8 @@ import { environment } from '../environments/environment';
     }),
   ],
   providers: [
+    UserService,
+    LocalStorageRef,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     // InAppBrowser
   ],

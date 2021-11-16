@@ -1,19 +1,24 @@
 import { Injectable } from '@angular/core';
+
 import { StatuscodeService } from 'src/app/api/statuscode.service';
 import { VoterartifactsService } from 'src/app/api/voterartifacts.service';
 import { MockClient as MockClient } from './mockclient';
 import { IAVClient, AVClient, CastVoteRecord, BallotBoxReceipt, NistConverter } from '@aion-dk/js-client';
 import { environment } from '../../environments/environment';
+import { UserService } from 'src/app/class/user/user.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AvclientService {
   serverURL: any;
-  userObject: any;
   client: IAVClient;
 
-  constructor(public statuscodeService: StatuscodeService, public voterartifactsService: VoterartifactsService) {}
+  constructor(
+    public statuscodeService: StatuscodeService,
+    public voterartifactsService: VoterartifactsService,
+    private userService: UserService
+  ) {}
 
   // eslint-disable-next-line unused-imports/no-unused-vars
   private static convertNIST103ToAvCvr(nistCvr: string): CastVoteRecord {
@@ -23,10 +28,8 @@ export class AvclientService {
 
   initServerURL(bulletinBoardURL) {
     this.serverURL = bulletinBoardURL; // to be used in other constructor/initializer calls
-    this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
-    if (this.userObject !== undefined) {
-      const lastname = this.userObject.lastname;
-      this.voterartifactsService.initialize(lastname);
+    if (this.userService.getUser() !== undefined) {
+      this.voterartifactsService.initialize(this.userService.getUser().lastName);
     } // to be added: other initializer calls included the one deprecated below
 
     if (environment.production) {

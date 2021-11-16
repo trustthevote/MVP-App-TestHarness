@@ -11,29 +11,27 @@
         <ion-col size="6">
           <ion-item lines="none">
             <ion-label position="stacked">{{results.first_name}}</ion-label>
-            <ion-input formControlName="firstname" type="text" placeholder="{{results.first_name}}" required clearInput>
-            </ion-input>
+            <ion-input formControlName="firstName" type="text" placeholder="{{results.first_name}}" required clearInput> </ion-input>
           </ion-item>
 
           <div class="err-messages">
-            <ng-container *ngIf="isSubmitted && errorControl.firstname.errors?.required"> </ng-container>
-            <ng-container *ngIf="isSubmitted && errorControl.firstname.errors?.minlength"> </ng-container>
-            <ng-container *ngIf="isSubmitted && errorControl.firstname.errors?.maxlength"> </ng-container>
-            <ng-container *ngIf="isSubmitted && errorControl.firstname.errors?.pattern"> </ng-container>
+            <ng-container *ngIf="isSubmitted && errorControl.firstName.errors?.required"> </ng-container>
+            <ng-container *ngIf="isSubmitted && errorControl.firstName.errors?.minlength"> </ng-container>
+            <ng-container *ngIf="isSubmitted && errorControl.firstName.errors?.maxlength"> </ng-container>
+            <ng-container *ngIf="isSubmitted && errorControl.firstName.errors?.pattern"> </ng-container>
           </div>
         </ion-col>
         <ion-col size="6">
           <ion-item lines="none">
             <ion-label position="stacked">{{results.last_name}}</ion-label>
-            <ion-input formControlName="lastname" type="text" placeholder="{{results.last_name}}" required clearInput>
-            </ion-input>
+            <ion-input formControlName="lastName" type="text" placeholder="{{results.last_name}}" required clearInput> </ion-input>
           </ion-item>
 
           <div class="err-messages">
-            <ng-container *ngIf="isSubmitted && errorControl.lastname.errors?.required"> </ng-container>
-            <ng-container *ngIf="isSubmitted && errorControl.lastname.errors?.minlength"> </ng-container>
-            <ng-container *ngIf="isSubmitted && errorControl.lastname.errors?.maxlength"> </ng-container>
-            <ng-container *ngIf="isSubmitted && errorControl.lastname.errors?.pattern"> </ng-container>
+            <ng-container *ngIf="isSubmitted && errorControl.lastName.errors?.required"> </ng-container>
+            <ng-container *ngIf="isSubmitted && errorControl.lastName.errors?.minlength"> </ng-container>
+            <ng-container *ngIf="isSubmitted && errorControl.lastName.errors?.maxlength"> </ng-container>
+            <ng-container *ngIf="isSubmitted && errorControl.lastName.errors?.pattern"> </ng-container>
           </div>
         </ion-col>
       </ion-row>
@@ -45,7 +43,6 @@
     </form>
   </ion-grid>
   <div class="mt30 ion-text-center">
-    <ion-button href="https://trustthevote.org/about_abc/" color="primary" fill="clear">{{results.about_this_app}}
-    </ion-button>
+    <ion-button href="https://trustthevote.org/about_abc/" color="primary" fill="clear">{{results.about_this_app}} </ion-button>
   </div>
 </ion-content>

@@ -12,7 +12,6 @@ export class BeforeYouFinishPage implements OnInit {
   results = [];
   getCode: any;
   cvr: any;
-  userObject: any;
 
   constructor(
     private route: Router,
@@ -22,7 +21,6 @@ export class BeforeYouFinishPage implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
     this.getCode = this.activatedRoute.snapshot.paramMap.get('code');
     fetch('./assets/inputFile/input.json')
       .then((res) => res.json())
@@ -30,6 +28,7 @@ export class BeforeYouFinishPage implements OnInit {
         this.results = json[0].beforeyoufinish_page;
       });
   }
+
   nextbtn() {
     this.cvr = this.voterartifactsService.cvr;
 

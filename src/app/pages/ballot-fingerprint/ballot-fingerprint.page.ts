@@ -16,16 +16,13 @@ export class BallotFingerprintPage implements OnInit {
   fsticon = true;
   getCode: any;
   affidavit: any;
-  userObject: any;
 
   constructor(
     private route: Router,
     public avclientService: AvclientService,
     private activatedRoute: ActivatedRoute,
     public voterartifactsService: VoterartifactsService
-  ) {
-    this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
-  }
+  ) {}
 
   policyDetails() {
     this.isVisible = true;
@@ -46,6 +43,7 @@ export class BallotFingerprintPage implements OnInit {
         this.results = json[0].ballot_fingerp;
       });
   }
+
   sendbtn() {
     this.affidavit = this.voterartifactsService.affidavit;
     this.avclientService
@@ -66,6 +64,7 @@ export class BallotFingerprintPage implements OnInit {
         }
       });
   }
+
   copybtn() {
     this.avclientService
       .spoilBallotCryptograms()

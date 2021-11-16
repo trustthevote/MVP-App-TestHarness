@@ -217,6 +217,7 @@ const routes: Routes = [
   },
   {
     path: 'ballot-test-failed-test',
+    // eslint-disable-next-line sonarjs/no-identical-functions
     loadChildren: () =>
       import('./pages/ballot-test-failed-test/ballot-test-failed-test.module').then((m) => m.BallotTestFailedTestPageModule),
   },

@@ -56,8 +56,8 @@ To view detailed coverage reports, run the unit tests and then load `./coverage/
 
 This repo uses [Cypress](https://www.cypress.io/) for integration testing.
 
-To run integration tests manually, execute the following:
+To run integration tests manually, have the development server running (`npm run start`), then execute the following:
 
 ```bash
-$(npm bin)/cypress run
+npm run e2e
 ```

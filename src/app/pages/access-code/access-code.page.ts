@@ -11,36 +11,37 @@ import { AvclientService } from 'src/app/api/avclient.service';
   styleUrls: ['./access-code.page.scss'],
 })
 export class AccessCodePage implements OnInit {
+  alertController: any;
+  otpForm: FormGroup;
+  // eslint-disable-next-line @typescript-eslint/member-ordering
   @ViewChild('first', {
     static: false,
   })
+  first: ElementRef;
+  // eslint-disable-next-line @typescript-eslint/member-ordering
   @ViewChild('second', {
     static: false,
   })
+  second: ElementRef;
+  // eslint-disable-next-line @typescript-eslint/member-ordering
   @ViewChild('third', {
     static: false,
   })
+  third: ElementRef;
+  // eslint-disable-next-line @typescript-eslint/member-ordering
   @ViewChild('four', {
     static: false,
   })
+  four: ElementRef;
+  // eslint-disable-next-line @typescript-eslint/member-ordering
   @ViewChild('five', {
     static: false,
   })
+  five: ElementRef;
+  // eslint-disable-next-line @typescript-eslint/member-ordering
   @ViewChild('singUp', {
     static: false,
   })
-  // eslint-disable-next-line @typescript-eslint/naming-convention
-  OTP = '';
-  otp = '';
-  disabledbutton;
-  otpError = '';
-  alertController: any;
-  otpForm: FormGroup;
-  first: ElementRef;
-  second: ElementRef;
-  third: ElementRef;
-  four: ElementRef;
-  five: ElementRef;
   singUp: ElementRef;
   data: string;
   results = [];
@@ -123,12 +124,10 @@ export class AccessCodePage implements OnInit {
   }
 
   async nextbtn() {
-    const enteredOtp = this.getOtpValue();
-    this.data = enteredOtp;
+    this.data = this.getOtpValue();
     if (this.data === '') {
       this.presentAlertEmpty();
     } else {
-      this.disabledbutton = true;
       const loading = await this.loadingctrl.create({
         message: 'Check Authorization....',
       });
@@ -163,12 +162,12 @@ export class AccessCodePage implements OnInit {
         // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         () => {
           loading.dismiss();
-          this.disabledbutton = false;
           this.presentAlertConfirm('Timeout');
         };
       });
     }
   }
+
   async presentAlertEmpty() {
     const alert = await this.alertctrl.create({
       message: (this.results as any).alert_msg,
@@ -214,9 +213,11 @@ export class AccessCodePage implements OnInit {
     });
     await alert.present();
   }
+
   backbtn() {
     this.route.navigate(['/request-access-code']);
   }
+
   numberOnlyValidation(event: any) {
     const pattern = /[0-9]/;
     const inputChar = String.fromCharCode(event.charCode);
