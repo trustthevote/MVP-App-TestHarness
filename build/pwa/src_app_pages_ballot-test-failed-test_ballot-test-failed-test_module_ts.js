@@ -67,7 +67,12 @@ let BallotTestFailedTestPageModule = class BallotTestFailedTestPageModule {
 };
 BallotTestFailedTestPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.NgModule)({
-        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule, _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule, _ballot_test_failed_test_routing_module__WEBPACK_IMPORTED_MODULE_0__.BallotTestFailedTestPageRoutingModule],
+        imports: [
+            _angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule,
+            _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule,
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule,
+            _ballot_test_failed_test_routing_module__WEBPACK_IMPORTED_MODULE_0__.BallotTestFailedTestPageRoutingModule,
+        ],
         declarations: [_ballot_test_failed_test_page__WEBPACK_IMPORTED_MODULE_1__.BallotTestFailedTestPage],
     })
 ], BallotTestFailedTestPageModule);
@@ -142,7 +147,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("ion-content {\n  --padding-bottom: 10px;\n  --padding-end: 20px;\n  --padding-start: 20px;\n  --padding-top: 50px;\n}\n\n.upr-text {\n  font-size: 23px;\n  font-weight: 600;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJhbGxvdC10ZXN0LWZhaWxlZC10ZXN0LnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLHNCQUFBO0VBQ0EsbUJBQUE7RUFDQSxxQkFBQTtFQUNBLG1CQUFBO0FBQ0Y7O0FBQ0E7RUFDRSxlQUFBO0VBQ0EsZ0JBQUE7QUFFRiIsImZpbGUiOiJiYWxsb3QtdGVzdC1mYWlsZWQtdGVzdC5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24tY29udGVudCB7XHJcbiAgLS1wYWRkaW5nLWJvdHRvbTogMTBweDtcclxuICAtLXBhZGRpbmctZW5kOiAyMHB4O1xyXG4gIC0tcGFkZGluZy1zdGFydDogMjBweDtcclxuICAtLXBhZGRpbmctdG9wOiA1MHB4O1xyXG59XHJcbi51cHItdGV4dCB7XHJcbiAgZm9udC1zaXplOiAyM3B4O1xyXG4gIGZvbnQtd2VpZ2h0OiA2MDA7XHJcbn1cclxuIl19 */");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("ion-content {\n  --padding-bottom: 10px;\n  --padding-end: 20px;\n  --padding-start: 20px;\n  --padding-top: 50px;\n}\n\n.upr-text {\n  font-size: 23px;\n  font-weight: 600;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJhbGxvdC10ZXN0LWZhaWxlZC10ZXN0LnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLHNCQUFBO0VBQ0EsbUJBQUE7RUFDQSxxQkFBQTtFQUNBLG1CQUFBO0FBQ0Y7O0FBQ0E7RUFDRSxlQUFBO0VBQ0EsZ0JBQUE7QUFFRiIsImZpbGUiOiJiYWxsb3QtdGVzdC1mYWlsZWQtdGVzdC5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24tY29udGVudCB7XG4gIC0tcGFkZGluZy1ib3R0b206IDEwcHg7XG4gIC0tcGFkZGluZy1lbmQ6IDIwcHg7XG4gIC0tcGFkZGluZy1zdGFydDogMjBweDtcbiAgLS1wYWRkaW5nLXRvcDogNTBweDtcbn1cbi51cHItdGV4dCB7XG4gIGZvbnQtc2l6ZTogMjNweDtcbiAgZm9udC13ZWlnaHQ6IDYwMDtcbn1cbiJdfQ== */");
 
 /***/ }),
 
@@ -157,7 +162,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n  <div class=\"upr-text\">{{results.first_para}}</div>\r\n  <br /><br />\r\n  <div class=\"upr-text\">{{results.sec_para}}</div>\r\n  <br /><br /><br />\r\n  <ion-button color=\"dark\" (click)=\"newballot()\">\r\n    {{results.fist_btn}}\r\n    <ion-icon slot=\"end\" name=\"reader-outline\"></ion-icon> </ion-button\r\n  ><br /><br /><br />\r\n  <ion-button color=\"dark\" (click)=\"requestballot()\">\r\n    {{results.sec_btn}}\r\n    <ion-icon slot=\"end\" name=\"mail-outline\"></ion-icon>\r\n  </ion-button>\r\n</ion-content>\r\n<ion-footer>\r\n  <ion-toolbar> </ion-toolbar>\r\n</ion-footer>\r\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\n  <div class=\"upr-text\">{{results.first_para}}</div>\n  <br /><br />\n  <div class=\"upr-text\">{{results.sec_para}}</div>\n  <br /><br /><br />\n  <ion-button color=\"dark\" (click)=\"newballot()\">\n    {{results.fist_btn}}\n    <ion-icon slot=\"end\" name=\"reader-outline\"></ion-icon> </ion-button\n  ><br /><br /><br />\n  <ion-button color=\"dark\" (click)=\"requestballot()\">\n    {{results.sec_btn}}\n    <ion-icon slot=\"end\" name=\"mail-outline\"></ion-icon>\n  </ion-button>\n</ion-content>\n<ion-footer>\n  <ion-toolbar> </ion-toolbar>\n</ion-footer>\n");
 
 /***/ })
 

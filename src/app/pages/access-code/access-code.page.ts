@@ -1,6 +1,10 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
-import { ToastController, AlertController, LoadingController } from '@ionic/angular';
+import {
+  ToastController,
+  AlertController,
+  LoadingController,
+} from '@ionic/angular';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { StatuscodeService } from 'src/app/api/statuscode.service';
 import { AvclientService } from 'src/app/api/avclient.service';
@@ -11,40 +15,37 @@ import { AvclientService } from 'src/app/api/avclient.service';
   styleUrls: ['./access-code.page.scss'],
 })
 export class AccessCodePage implements OnInit {
-  @ViewChild('first', {
-    static: false,
-  })
-  @ViewChild('second', {
-    static: false,
-  })
-  @ViewChild('third', {
-    static: false,
-  })
-  @ViewChild('four', {
-    static: false,
-  })
-  @ViewChild('five', {
-    static: false,
-  })
-  @ViewChild('singUp', {
-    static: false,
-  })
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   OTP = '';
   otp = '';
-  disabledbutton;
   otpError = '';
   alertController: any;
   otpForm: FormGroup;
+  @ViewChild('first', {
+    static: false,
+  })
   first: ElementRef;
+  @ViewChild('second', {
+    static: false,
+  })
   second: ElementRef;
+  @ViewChild('third', {
+    static: false,
+  })
   third: ElementRef;
+  @ViewChild('four', {
+    static: false,
+  })
   four: ElementRef;
+  @ViewChild('five', {
+    static: false,
+  })
   five: ElementRef;
+  @ViewChild('singUp', {
+    static: false,
+  })
   singUp: ElementRef;
   data: string;
   results = [];
-
   constructor(
     private route: Router,
     public fb: FormBuilder,
@@ -84,8 +85,6 @@ export class AccessCodePage implements OnInit {
       five: [null, Validators.required],
     });
   }
-
-  // eslint-disable-next-line sonarjs/cognitive-complexity
   focusNext(event, index) {
     if (index === 1) {
       console.log(event.which !== 8);
@@ -123,22 +122,22 @@ export class AccessCodePage implements OnInit {
   }
 
   async nextbtn() {
-    const enteredOtp = this.getOtpValue();
+    let enteredOtp: string;
+    enteredOtp = this.getOtpValue();
     this.data = enteredOtp;
-    if (this.data === '') {
+    if (this.data == '') {
       this.presentAlertEmpty();
     } else {
-      this.disabledbutton = true;
       const loading = await this.loadingctrl.create({
         message: 'Check Authorization....',
       });
       await loading.present();
 
-      return new Promise(() => {
+      return new Promise((resolve) => {
         loading.dismiss();
         this.avclientService
           .validateAccessCode(this.data)
-          .then(() => {
+          .then((res) => {
             this.route.navigate([
               '/before-you-finish',
               {
@@ -149,22 +148,18 @@ export class AccessCodePage implements OnInit {
           })
           .catch((res) => {
             console.log('res', res);
-            if (res.message === 'Error: call out of order error') {
+            if (res == 'Error: call out of order error') {
               this.route.navigate(['/calloutoforder-access00002-error']);
-            } else if (res.message === 'Error: access code expired') {
+            } else if (res == 'Error: access code expired') {
               this.route.navigate(['/code_expired_access00003_error']);
-            } else if (res.message === 'Error: access code invalid') {
+            } else if (res == 'Error: access code invalid') {
               this.route.navigate(['/code_invalid_access00004_error']);
-            } else if (res.message === 'Error: network code') {
+            } else if (res == 'Error: network code') {
               this.route.navigate(['/check-network-access00005-error']);
             }
           });
-        // this appears to be a function declaration, so I'm not entirely sure what it does
-        // todo: figure out the original intent, implement accordingly, and remove the eslint disable
-        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-        () => {
+        (err) => {
           loading.dismiss();
-          this.disabledbutton = false;
           this.presentAlertConfirm('Timeout');
         };
       });
@@ -172,7 +167,7 @@ export class AccessCodePage implements OnInit {
   }
   async presentAlertEmpty() {
     const alert = await this.alertctrl.create({
-      message: (this.results as any).alert_msg,
+      message: this.results['alert_msg'],
       buttons: [
         {
           text: 'Retry',

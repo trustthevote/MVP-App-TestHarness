@@ -9,7 +9,13 @@ import { AccessCodePageRoutingModule } from './access-code-routing.module';
 import { AccessCodePage } from './access-code.page';
 
 @NgModule({
-  imports: [CommonModule, FormsModule, IonicModule, ReactiveFormsModule, AccessCodePageRoutingModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    ReactiveFormsModule,
+    AccessCodePageRoutingModule,
+  ],
   declarations: [AccessCodePage],
 })
 export class AccessCodePageModule {}

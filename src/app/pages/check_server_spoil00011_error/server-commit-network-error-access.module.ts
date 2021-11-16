@@ -9,7 +9,12 @@ import { ServerCommitNetworkErrorAccessPageRoutingModule } from './server-commit
 import { ServerCommitNetworkErrorAccessPage } from './server-commit-network-error-access.page';
 
 @NgModule({
-  imports: [CommonModule, FormsModule, IonicModule, ServerCommitNetworkErrorAccessPageRoutingModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    ServerCommitNetworkErrorAccessPageRoutingModule,
+  ],
   declarations: [ServerCommitNetworkErrorAccessPage],
 })
 export class ServerCommitNetworkErrorAccessPageModule {}

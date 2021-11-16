@@ -9,7 +9,12 @@ import { TestResultsBallotPrepErrorPageRoutingModule } from './test-results-ball
 import { TestResultsBallotPrepErrorPage } from './test-results-ballot-prep-error.page';
 
 @NgModule({
-  imports: [CommonModule, FormsModule, IonicModule, TestResultsBallotPrepErrorPageRoutingModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    TestResultsBallotPrepErrorPageRoutingModule,
+  ],
   declarations: [TestResultsBallotPrepErrorPage],
 })
 export class TestResultsBallotPrepErrorPageModule {}

@@ -9,7 +9,12 @@ import { TestResultsFaildErrorPageRoutingModule } from './test-results-faild-err
 import { TestResultsFaildErrorPage } from './test-results-faild-error.page';
 
 @NgModule({
-  imports: [CommonModule, FormsModule, IonicModule, TestResultsFaildErrorPageRoutingModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    TestResultsFaildErrorPageRoutingModule,
+  ],
   declarations: [TestResultsFaildErrorPage],
 })
 export class TestResultsFaildErrorPageModule {}

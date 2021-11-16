@@ -9,7 +9,12 @@ import { CheckNetworkOOOOErrorPageRoutingModule } from './check-network-oooo-err
 import { CheckNetworkOOOOErrorPage } from './check-network-oooo-error.page';
 
 @NgModule({
-  imports: [CommonModule, FormsModule, IonicModule, CheckNetworkOOOOErrorPageRoutingModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    CheckNetworkOOOOErrorPageRoutingModule,
+  ],
   declarations: [CheckNetworkOOOOErrorPage],
 })
 export class CheckNetworkOOOOErrorPageModule {}
