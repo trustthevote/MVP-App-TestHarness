@@ -19,9 +19,7 @@ export class CheckNetworkPage implements OnInit {
         this.results = json[0].check_network_request00001_error;
       });
     if (this.userObject.lastname !== undefined) {
-      const lastName =
-        this.userObject.lastname.charAt(0).toUpperCase() +
-        this.userObject.lastname.slice(1);
+      const lastName = this.userObject.lastname.charAt(0).toUpperCase() + this.userObject.lastname.slice(1);
       if (lastName === 'OOOO') {
       }
     }

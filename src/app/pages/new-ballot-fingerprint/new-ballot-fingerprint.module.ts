@@ -9,12 +9,7 @@ import { NewBallotFingerprintPageRoutingModule } from './new-ballot-fingerprint-
 import { NewBallotFingerprintPage } from './new-ballot-fingerprint.page';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    NewBallotFingerprintPageRoutingModule,
-  ],
+  imports: [CommonModule, FormsModule, IonicModule, NewBallotFingerprintPageRoutingModule],
   declarations: [NewBallotFingerprintPage],
 })
 export class NewBallotFingerprintPageModule {}
