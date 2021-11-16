@@ -6,12 +6,7 @@ import { BallotFormPageRoutingModule } from './ballot-form-routing.module';
 import { BallotFormPage } from './ballot-form.page';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    BallotFormPageRoutingModule,
-  ],
+  imports: [CommonModule, FormsModule, IonicModule, BallotFormPageRoutingModule],
   declarations: [BallotFormPage],
 })
 export class BallotFormPageModule {}

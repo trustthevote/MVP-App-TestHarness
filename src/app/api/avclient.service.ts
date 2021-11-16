@@ -10,10 +10,7 @@ export class AvclientService {
   cachedAccessCode: any;
   serverURL: any;
   userObject: any;
-  constructor(
-    public statuscodeService: StatuscodeService,
-    public voterartifactsService: VoterartifactsService
-  ) {}
+  constructor(public statuscodeService: StatuscodeService, public voterartifactsService: VoterartifactsService) {}
 
   initServerURL(bulletinBoardURL) {
     this.serverURL = bulletinBoardURL; // to be used in other constructor/initializer calls
@@ -32,9 +29,7 @@ export class AvclientService {
     return new Promise((resolve, reject) => {
       switch (opaqueVoterId) {
         case 'T0000':
-          reject(
-            new Error(this.statuscodeService.statusCode('VoterRecordNotFound'))
-          );
+          reject(new Error(this.statuscodeService.statusCode('VoterRecordNotFound')));
           break;
         case 'T0001':
           reject(new Error(this.statuscodeService.statusCode('NetworkError')));
@@ -50,43 +45,37 @@ export class AvclientService {
       this.cachedAccessCode = code;
       switch (code) {
         case '00002':
-          reject(
-            new Error(this.statuscodeService.statusCode('CallOutOfOrderError'))
-          );
+          reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));
           break;
         case '00003':
-          reject(
-            new Error(this.statuscodeService.statusCode('AccessCodeExpired'))
-          );
+          reject(new Error(this.statuscodeService.statusCode('AccessCodeExpired')));
           break;
         case '00004':
-          reject(
-            new Error(this.statuscodeService.statusCode('AccessCodeInvalid'))
-          );
+          reject(new Error(this.statuscodeService.statusCode('AccessCodeInvalid')));
           break;
         case '00005':
           reject(new Error(this.statuscodeService.statusCode('NetworkError')));
           break;
-        default: // to be added: call(s) to other functions related to successfully validated access code
+        default:
+          // to be added: call(s) to other functions related to successfully validated access code
           resolve();
       }
     });
   }
+
+  // todo: implement placeholder logic and remove the eslint-disable
+  // eslint-disable-next-line unused-imports/no-unused-vars
   constructBallotCryptograms(cvr: string): Promise<string> {
     return new Promise((resolve, reject) => {
       switch (this.cachedAccessCode) {
         case '00006':
-          reject(
-            new Error(this.statuscodeService.statusCode('CallOutOfOrderError'))
-          );
+          reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));
           break;
         case '00007':
           reject(new Error(this.statuscodeService.statusCode('NetworkError')));
           break;
         case '00008':
-          reject(
-            new Error(this.statuscodeService.statusCode('CorruptCVRError'))
-          );
+          reject(new Error(this.statuscodeService.statusCode('CorruptCVRError')));
           break;
         default:
           resolve('zyx098-wvu765-tsr432-1234');
@@ -98,19 +87,13 @@ export class AvclientService {
     return new Promise((resolve, reject) => {
       switch (this.cachedAccessCode) {
         case '00009':
-          reject(
-            new Error(this.statuscodeService.statusCode('CallOutOfOrderError'))
-          );
+          reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));
           break;
         case '00010':
           reject(new Error(this.statuscodeService.statusCode('NetworkError')));
           break;
         case '00011':
-          reject(
-            new Error(
-              this.statuscodeService.statusCode('ServerCommitmentError')
-            )
-          );
+          reject(new Error(this.statuscodeService.statusCode('ServerCommitmentError')));
           break;
         default:
           resolve();
@@ -118,6 +101,8 @@ export class AvclientService {
     });
   }
 
+  // todo: implement placeholder logic and remove the eslint-disable
+  // eslint-disable-next-line unused-imports/no-unused-vars
   submitBallotCryptograms(affidavit: string): Promise<Receipt> {
     return new Promise((resolve, reject) => {
       switch (this.cachedAccessCode) {
@@ -125,9 +110,7 @@ export class AvclientService {
           reject(new Error(this.statuscodeService.statusCode('NetworkError')));
           break;
         case '00013':
-          reject(
-            new Error(this.statuscodeService.statusCode('CallOutOfOrderError'))
-          );
+          reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));
           break;
         default:
           resolve({

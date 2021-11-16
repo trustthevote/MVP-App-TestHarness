@@ -88,14 +88,8 @@ export class BallotPage implements OnInit {
           user: this.signupForm.value,
         },
       };
-      localStorage.setItem(
-        'userNameInfo',
-        JSON.stringify(this.signupForm.value)
-      );
-      this.router.navigate(
-        ['ballot-form', { t: new Date().getTime() }],
-        naviExtras
-      );
+      localStorage.setItem('userNameInfo', JSON.stringify(this.signupForm.value));
+      this.router.navigate(['ballot-form', { t: new Date().getTime() }], naviExtras);
       this.signupForm.reset();
     }
   }

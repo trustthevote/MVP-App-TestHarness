@@ -1,0 +1,29 @@
+name: mvp-test-harness
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "The ${{ github.ref }} branch job was automatically triggered by a ${{ github.event_name }} event"
+      - name: Clone repo
+        uses: actions/checkout@v2
+      - name: Install
+        run: |
+          npm install
+      - name: Build
+        run: |
+          npm run build
+      - name: Lint
+        run: |
+          npm run lint
+      - name: Format
+        run: |
+          npm run format:check
+      - name: Test
+        run: |
+          npm run test
+      - run: echo "CI completed with status ${{ job.status }}"

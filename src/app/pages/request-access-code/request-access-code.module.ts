@@ -6,12 +6,7 @@ import { RequestAccessCodePageRoutingModule } from './request-access-code-routin
 import { RequestAccessCodePage } from './request-access-code.page';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    RequestAccessCodePageRoutingModule,
-  ],
+  imports: [CommonModule, FormsModule, IonicModule, RequestAccessCodePageRoutingModule],
   declarations: [RequestAccessCodePage],
 })
 export class RequestAccessCodePageModule {}

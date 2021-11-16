@@ -6,12 +6,7 @@ import { TobecontinuePageRoutingModule } from './tobecontinue-routing.module';
 import { TobecontinuePage } from './tobecontinue.page';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    TobecontinuePageRoutingModule,
-  ],
+  imports: [CommonModule, FormsModule, IonicModule, TobecontinuePageRoutingModule],
   declarations: [TobecontinuePage],
 })
 export class TobecontinuePageModule {}
