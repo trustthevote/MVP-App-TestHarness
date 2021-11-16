@@ -9,12 +9,7 @@ import { CopyConfirmedPageRoutingModule } from './copy-confirmed-routing.module'
 import { CopyConfirmedPage } from './copy-confirmed.page';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    CopyConfirmedPageRoutingModule,
-  ],
+  imports: [CommonModule, FormsModule, IonicModule, CopyConfirmedPageRoutingModule],
   declarations: [CopyConfirmedPage],
 })
 export class CopyConfirmedPageModule {}

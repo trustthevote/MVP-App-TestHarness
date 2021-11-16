@@ -11,7 +11,7 @@ export class TestResultsPage implements OnInit {
   results = [];
   getCode: any;
   cvr: any;
-  userObject: any;
+
   constructor(
     private route: Router,
     public avclientService: AvclientService,
@@ -20,7 +20,6 @@ export class TestResultsPage implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.userObject = JSON.parse(localStorage.getItem('userNameInfo'));
     this.getCode = this.activatedRoute.snapshot.paramMap.get('code');
     fetch('./assets/inputFile/input.json')
       .then((res) => res.json())
@@ -28,6 +27,7 @@ export class TestResultsPage implements OnInit {
         this.results = json[0].test_result_page;
       });
   }
+
   passbtn() {
     this.cvr = this.voterartifactsService.cvr;
     this.avclientService
@@ -54,6 +54,7 @@ export class TestResultsPage implements OnInit {
   failbtn() {
     this.route.navigate(['/ballot-test-failed-test']);
   }
+
   backbtn() {
     this.route.navigate([
       '/ballot-fingerprint',

@@ -9,12 +9,7 @@ import { CheckServersPageRoutingModule } from './check-servers-routing.module';
 import { CheckServersPage } from './check-servers.page';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    CheckServersPageRoutingModule,
-  ],
+  imports: [CommonModule, FormsModule, IonicModule, CheckServersPageRoutingModule],
   declarations: [CheckServersPage],
 })
 export class CheckServersPageModule {}

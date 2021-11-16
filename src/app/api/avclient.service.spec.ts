@@ -1,10 +1,14 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+
+import { UserService } from 'src/app/class/user/user.service';
+import { UserServiceStub } from 'src/app/class/user/user.service.stub';
 import { AvclientService } from './avclient.service';
 import { PRECINCT_1_CVR, PRECINCT_1_AFFIDAVIT } from './artifacts';
 
 describe('AvclientService', () => {
   let service: AvclientService;
+  let userService: UserService;
   const networkCode = 'network code';
   const voterRecordNotFound = 'voter record not found';
   const callOutOfOrder = 'call out of order error';
@@ -16,20 +20,21 @@ describe('AvclientService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
+      providers: [{ provide: UserService, useClass: UserServiceStub }],
     });
+
+    userService = TestBed.inject(UserService);
+    userService.upsertUser({ lastName: 'foo' });
+
     service = TestBed.inject(AvclientService);
   });
 
   describe('requestAccessCode', () => {
     it('should reject T0000', async () => {
-      await expectAsync(service.requestAccessCode('T0000')).toBeRejectedWith(
-        new Error(voterRecordNotFound)
-      );
+      await expectAsync(service.requestAccessCode('T0000')).toBeRejectedWith(new Error(voterRecordNotFound));
     });
     it('should reject T0001', async () => {
-      await expectAsync(service.requestAccessCode('T0001')).toBeRejectedWith(
-        new Error(networkCode)
-      );
+      await expectAsync(service.requestAccessCode('T0001')).toBeRejectedWith(new Error(networkCode));
     });
     it('should resolve any other random ID', async () => {
       await expectAsync(service.requestAccessCode('008')).toBeResolved();
@@ -38,24 +43,16 @@ describe('AvclientService', () => {
 
   describe('validateAccessCode', () => {
     it('should reject 00002', async () => {
-      await expectAsync(service.validateAccessCode('00002')).toBeRejectedWith(
-        new Error(callOutOfOrder)
-      );
+      await expectAsync(service.validateAccessCode('00002')).toBeRejectedWith(new Error(callOutOfOrder));
     });
     it('should reject 00003', async () => {
-      await expectAsync(service.validateAccessCode('00003')).toBeRejectedWith(
-        new Error(accessCodeExpired)
-      );
+      await expectAsync(service.validateAccessCode('00003')).toBeRejectedWith(new Error(accessCodeExpired));
     });
     it('should reject 00004', async () => {
-      await expectAsync(service.validateAccessCode('00004')).toBeRejectedWith(
-        new Error(accessCodeInvalid)
-      );
+      await expectAsync(service.validateAccessCode('00004')).toBeRejectedWith(new Error(accessCodeInvalid));
     });
     it('should reject 00005', async () => {
-      await expectAsync(service.validateAccessCode('00005')).toBeRejectedWith(
-        new Error(networkCode)
-      );
+      await expectAsync(service.validateAccessCode('00005')).toBeRejectedWith(new Error(networkCode));
     });
     it('should resolve any other acceptable ID', async () => {
       await expectAsync(service.validateAccessCode('002')).toBeResolved();
@@ -65,48 +62,34 @@ describe('AvclientService', () => {
   describe('constructBallotCryptograms', () => {
     it('should reject 00006', async () => {
       service.validateAccessCode('00006');
-      await expectAsync(
-        service.constructBallotCryptograms(PRECINCT_1_CVR)
-      ).toBeRejectedWith(new Error(callOutOfOrder));
+      await expectAsync(service.constructBallotCryptograms(PRECINCT_1_CVR)).toBeRejectedWith(new Error(callOutOfOrder));
     });
     it('should reject 00007', async () => {
       service.validateAccessCode('00007');
-      await expectAsync(
-        service.constructBallotCryptograms(PRECINCT_1_CVR)
-      ).toBeRejectedWith(new Error(networkCode));
+      await expectAsync(service.constructBallotCryptograms(PRECINCT_1_CVR)).toBeRejectedWith(new Error(networkCode));
     });
     it('should reject 00008', async () => {
       service.validateAccessCode('00008');
-      await expectAsync(
-        service.constructBallotCryptograms(PRECINCT_1_CVR)
-      ).toBeRejectedWith(new Error(corruptCvr));
+      await expectAsync(service.constructBallotCryptograms(PRECINCT_1_CVR)).toBeRejectedWith(new Error(corruptCvr));
     });
     it('should resolve any other acceptable ID', async () => {
       service.validateAccessCode('00009');
-      await expectAsync(
-        service.constructBallotCryptograms(PRECINCT_1_CVR)
-      ).toBeResolvedTo('zyx098-wvu765-tsr432-1234');
+      await expectAsync(service.constructBallotCryptograms(PRECINCT_1_CVR)).toBeResolvedTo('zyx098-wvu765-tsr432-1234');
     });
   });
 
   describe('spoilBallotCryptograms', () => {
     it('should reject 00009', async () => {
       service.validateAccessCode('00009');
-      await expectAsync(service.spoilBallotCryptograms()).toBeRejectedWith(
-        new Error(callOutOfOrder)
-      );
+      await expectAsync(service.spoilBallotCryptograms()).toBeRejectedWith(new Error(callOutOfOrder));
     });
     it('should reject 00010', async () => {
       service.validateAccessCode('00010');
-      await expectAsync(service.spoilBallotCryptograms()).toBeRejectedWith(
-        new Error(networkCode)
-      );
+      await expectAsync(service.spoilBallotCryptograms()).toBeRejectedWith(new Error(networkCode));
     });
     it('should reject 00011', async () => {
       service.validateAccessCode('00011');
-      await expectAsync(service.spoilBallotCryptograms()).toBeRejectedWith(
-        new Error(serverCommitment)
-      );
+      await expectAsync(service.spoilBallotCryptograms()).toBeRejectedWith(new Error(serverCommitment));
     });
     it('should resolve any other ID', async () => {
       service.validateAccessCode('00014');
@@ -117,21 +100,15 @@ describe('AvclientService', () => {
   describe('submitBallotCryptograms', () => {
     it('should reject 00012', async () => {
       service.validateAccessCode('00012');
-      await expectAsync(
-        service.submitBallotCryptograms(PRECINCT_1_AFFIDAVIT)
-      ).toBeRejectedWith(new Error(networkCode));
+      await expectAsync(service.submitBallotCryptograms(PRECINCT_1_AFFIDAVIT)).toBeRejectedWith(new Error(networkCode));
     });
     it('should reject 00013', async () => {
       service.validateAccessCode('00013');
-      await expectAsync(
-        service.submitBallotCryptograms(PRECINCT_1_AFFIDAVIT)
-      ).toBeRejectedWith(new Error(callOutOfOrder));
+      await expectAsync(service.submitBallotCryptograms(PRECINCT_1_AFFIDAVIT)).toBeRejectedWith(new Error(callOutOfOrder));
     });
     it('should resolve any other ID', async () => {
       service.validateAccessCode('00014');
-      await expectAsync(
-        service.submitBallotCryptograms(PRECINCT_1_AFFIDAVIT)
-      ).toBeResolvedTo({
+      await expectAsync(service.submitBallotCryptograms(PRECINCT_1_AFFIDAVIT)).toBeResolvedTo({
         previousBoardHash: 'tsr432-wvu765-zyx098-4321',
         boardHash: 'zyx098-wvu765-tsr432-1234',
         registeredAt: '2020-03-01T10:00:00.000+01:00',

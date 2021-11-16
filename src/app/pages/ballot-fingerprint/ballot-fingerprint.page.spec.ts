@@ -2,6 +2,8 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { IonicModule } from '@ionic/angular';
 
+import { UserService } from 'src/app/class/user/user.service';
+import { UserServiceStub } from 'src/app/class/user/user.service.stub';
 import { BallotFingerprintPage } from './ballot-fingerprint.page';
 
 describe('BallotFingerprintPage', () => {
@@ -13,6 +15,7 @@ describe('BallotFingerprintPage', () => {
       TestBed.configureTestingModule({
         declarations: [BallotFingerprintPage],
         imports: [IonicModule.forRoot(), RouterTestingModule],
+        providers: [{ provide: UserService, useClass: UserServiceStub }],
       }).compileComponents();
 
       fixture = TestBed.createComponent(BallotFingerprintPage);

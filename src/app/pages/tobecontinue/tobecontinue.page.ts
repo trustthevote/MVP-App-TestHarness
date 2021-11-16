@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
+import { UserService } from 'src/app/class/user/user.service';
+
 @Component({
   selector: 'app-tobecontinue',
   templateUrl: './tobecontinue.page.html',
@@ -7,7 +10,8 @@ import { Router } from '@angular/router';
 })
 export class TobecontinuePage implements OnInit {
   results = [];
-  constructor(private route: Router) {}
+
+  constructor(private route: Router, private userService: UserService) {}
 
   ngOnInit() {
     fetch('./assets/inputFile/input.json')
@@ -16,8 +20,9 @@ export class TobecontinuePage implements OnInit {
         this.results = json[0].tobe_continue_page;
       });
   }
+
   reloadCurrentPage() {
-    localStorage.clear();
+    this.userService.resetUser();
     this.route.navigate(['/intro']);
   }
 
