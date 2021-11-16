@@ -49,9 +49,9 @@ export class BeforeYouFinishPage implements OnInit {
           this.route.navigate(['/check_network_construct00007_error']);
         } else if (res.message === 'corrupt CVR') {
           this.route.navigate(['/corrupt_cv_construct00008_error']);
+        } else {
+          console.error(res);
         }
-
-        // TODO: Handle the any-case
       });
   }
 }
