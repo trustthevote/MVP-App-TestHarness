@@ -9,6 +9,16 @@ PWA (Progress Web app): It must be hosted on a website and the URL is http://abc
 
 iOS: Apple requires notarization. During development, each iOS revision is notarized and distributed via TestFlight.
 
+## Development workflow
+
+To ensure a standardized development workflow, all new changes must be added as Pull Requests. In order to be merged to the main branch, PRs must be:
+
+1. Passing all status checks (there are implemented using GitHub Actions)
+2. Up to date with the main branch
+3. Approved by at least one other person
+
+When merging, the "squash and merge" strategy is used, which ensures all commits in the feature branch have been squashed to a single commit. This keeps the main branch's commit logs clean and readable.
+
 ## Standardization and Quality Checks
 
 ### Linting
@@ -61,3 +71,11 @@ To run integration tests manually, have the development server running (`npm run
 ```bash
 npm run e2e
 ```
+
+## Using local storage
+
+Given that `localStorage` is a globally available object, using it directly introduces the possibility of scope bleed during test execution. As an example, test 1 may configure the local storage with some specific state, which it might require during its execution. Later on, test 2 may run some code which unintentionally relies on the local storage state set by test 1. So if test 1 is removed (or if test 2 executes before test 1), then test 2 will fail.
+
+A better approach is to [wrap `localStorage` in a `LocalStorageRef` service](https://github.com/trustthevote/MVP-App-TestHarness/blob/main/src/app/class/local-storage-ref/local-storage-ref.service.ts), which provides it upon request. In tests, a [`LocalStorageRefStub` class](https://github.com/trustthevote/MVP-App-TestHarness/blob/main/src/app/class/local-storage-ref/local-storage-ref.stub.ts) can be provided in tests' `TestBed` configurations, which allows the test to configure local storage in a way that's scoped to that single test.
+
+This application currently uses local storage for only one thing: user data. To facilitate simple and consistent user state management, a [`UserService` class](https://github.com/trustthevote/MVP-App-TestHarness/blob/main/src/app/class/user/user.service.ts) is available for setting/retrieving/clearing user state. Similar to the above, [a `UserServiceStub` class](https://github.com/trustthevote/MVP-App-TestHarness/blob/main/src/app/class/user/user.service.stub.ts) can be provided in tests' `TestBed` configurations, which allows the test to configure user state in a way that's scoped to that single test.
