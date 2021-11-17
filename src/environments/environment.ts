@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  url: 'http://voterreg.tbd.com/',
+  url: 'http://us-avx:3000/us/app',
 };
 
 /*
