@@ -1,5 +1,13 @@
 # MVP-App-TestHarness
 
+- [Development workflow](#development-workflow)
+- [Standardization and Quality Checks](#standardization-and-quality-checks)
+  - [Linting](#linting)
+  - [Formatting](#formatting)
+  - [Unit testing](#unit-testing)
+  - [Integration testing](#integration-testing)
+- [Using local storage](#using-local-storage)
+
 A simple app that shows the endpoint of the workflow of the future ABC app.
 To run the current version of this app
 
