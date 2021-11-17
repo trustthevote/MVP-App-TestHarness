@@ -79,3 +79,36 @@ Given that `localStorage` is a globally available object, using it directly intr
 A better approach is to use a [`LocalStorageRef` service](https://github.com/trustthevote/MVP-App-TestHarness/blob/main/src/app/class/local-storage-ref/local-storage-ref.service.ts), which wraps `localStorage` and provides it upon request. In tests, a [`LocalStorageRefStub` class](https://github.com/trustthevote/MVP-App-TestHarness/blob/main/src/app/class/local-storage-ref/local-storage-ref.stub.ts) can be provided in tests' `TestBed` configurations, which allows the test to configure local storage in a way that's scoped to that single test.
 
 This application currently uses local storage for only one thing: storing user information. To facilitate simple and consistent user state management, we use a [`UserService` class](https://github.com/trustthevote/MVP-App-TestHarness/blob/main/src/app/class/user/user.service.ts) for setting/retrieving/clearing user state. In tests, [a `UserServiceStub` class](https://github.com/trustthevote/MVP-App-TestHarness/blob/main/src/app/class/user/user.service.stub.ts) can be provided in tests' `TestBed` configurations, which allows the test to configure user state in a way that's scoped to that single test.
+
+Here's an example of using the `UserService` class to get the user's last name:
+
+```ts
+  constructor(private userService: UserService) {
+    ...
+  }
+
+  foo() {
+      const const lastName = this.userService.getUser().lastName;
+  }
+```
+
+And in the tests, here's an example of how you might condition the data in a `beforeEach`:
+
+```ts
+beforeEach(
+  waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [FooPage],
+      imports: [IonicModule.forRoot()],
+      providers: [{ provide: UserService, useClass: UserServiceStub }],
+    }).compileComponents();
+
+    userService = TestBed.inject(UserService);
+    userService.upsertUser({ lastName: 'foo' });
+
+    fixture = TestBed.createComponent(FooPage);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  })
+);
+```
