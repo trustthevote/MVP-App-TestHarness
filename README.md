@@ -74,7 +74,7 @@ To view detailed coverage reports, run the unit tests and then load `./coverage/
 
 This repo uses [Cypress](https://www.cypress.io/) for integration testing.
 
-To run integration tests manually, have the development server running (`npm run start`), then execute the following:
+To run integration tests manually, execute the following:
 
 ```bash
 npm run e2e
@@ -88,7 +88,7 @@ A better approach is to use a [`LocalStorageRef` service](https://github.com/tru
 
 This application currently uses local storage for only one thing: storing user information. To facilitate simple and consistent user state management, we use a [`UserService` class](https://github.com/trustthevote/MVP-App-TestHarness/blob/main/src/app/class/user/user.service.ts) for setting/retrieving/clearing user state. In tests, [a `UserServiceStub` class](https://github.com/trustthevote/MVP-App-TestHarness/blob/main/src/app/class/user/user.service.stub.ts) can be provided in tests' `TestBed` configurations, which allows the test to configure user state in a way that's scoped to that single test.
 
-Here's an example of using the `UserService` class to get the user's last name:
+Here's an example of a "page" class using the `UserService` class to get the user's last name:
 
 ```ts
   constructor(private userService: UserService) {
@@ -100,7 +100,7 @@ Here's an example of using the `UserService` class to get the user's last name:
   }
 ```
 
-And in the tests, here's an example of how you might condition the data in a `beforeEach`:
+And in that "page" class's tests, here's an example of how you might condition the data in a `beforeEach`:
 
 ```ts
 beforeEach(
