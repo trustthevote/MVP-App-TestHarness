@@ -11,12 +11,12 @@ jobs:
       - run: echo "The ${{ github.ref }} branch job was automatically triggered by a ${{ github.event_name }} event"
       - name: Clone repo
         uses: actions/checkout@v2
-      - name: Install
-        run: |
-          npm install
-      - name: Build
-        run: |
-          npm run build
+      - name: E2E
+        uses: cypress-io/github-action@v2
+        with:
+          start: npm run start
+          wait-on: http://localhost:4200
+          wait-on-timeout: 180
       - name: Lint
         run: |
           npm run lint
@@ -26,9 +26,6 @@ jobs:
       - name: Test
         run: |
           npm run test
-      - name: E2E
-        run: |
-          npm run e2e
       - name: Upload E2E videos
         uses: actions/upload-artifact@master
         if: success()
