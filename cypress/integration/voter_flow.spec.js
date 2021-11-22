@@ -37,14 +37,14 @@ describe('Voter', () => {
 
     cy.contains('app-access-code ion-button', 'Next').click();
     cy.wait(pageTransitionDuration);
-    cy.contains('app-before-you-finish', 'Before You Finish').should('be.visible');
+    cy.contains('app-before-you-finish', 'Your ballot is being digitally sealed').should('be.visible');
 
     cy.contains('app-before-you-finish ion-button', 'Next').click();
     cy.wait(pageTransitionDuration);
-    cy.contains('app-ballot-fingerprint', 'Your Ballot Has Been Sealed and Is Ready To Cast').should('be.visible');
+    cy.contains('app-ballot-fingerprint', 'Your Ballot Is Sealed').should('be.visible');
 
     cy.contains('app-ballot-fingerprint ion-button', 'Cast Ballot Now').click();
     cy.wait(pageTransitionDuration);
-    cy.contains('app-sending-confirmation', 'Congrats! Your ballot has been cast!').should('be.visible');
+    cy.contains('app-sending-confirmation', 'Congrats! Your ballot has been sent!').should('be.visible');
   });
 });
