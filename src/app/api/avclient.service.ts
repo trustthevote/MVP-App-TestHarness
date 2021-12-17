@@ -42,7 +42,7 @@ export class AvclientService {
   async requestAccessCode(opaqueVoterId: string): Promise<void> {
     await this.client.initialize();
 
-    const email = `us-voter-${opaqueVoterId}@aion.dk`;
+    const email = 'mvptuser@yahoo.com';
     await this.client.requestAccessCode(opaqueVoterId, email);
   }
 
