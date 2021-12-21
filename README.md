@@ -53,7 +53,7 @@ To run Prettier manually, execute the following:
 
 ```bash
 npm run format:write # writes all formatting changes to disk
-npm run format:write # will fail if more than one file is improperly formatted
+npm run format:check # will fail if more than one file is improperly formatted
 ```
 
 ### Unit testing

@@ -1,7 +1,7 @@
+import { IBackendClient } from './avclient.service';
 import { StatuscodeService } from './statuscode.service';
-import { BallotBoxReceipt, IAVClient } from '@aion-dk/js-client';
 
-export class MockClient implements IAVClient {
+export class MockClient implements IBackendClient {
   private statuscodeService: StatuscodeService;
   private cachedAccessCode: string;
 
@@ -93,7 +93,7 @@ export class MockClient implements IAVClient {
   }
 
   // eslint-disable-next-line unused-imports/no-unused-vars
-  submitBallotCryptograms(_affidavit: string): Promise<BallotBoxReceipt> {
+  submitBallotCryptograms(_affidavit: string): Promise<any> {
     return new Promise((resolve, reject) => {
       switch (this.cachedAccessCode) {
         case '00012':
