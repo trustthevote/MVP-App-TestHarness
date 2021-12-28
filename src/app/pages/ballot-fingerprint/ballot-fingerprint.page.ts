@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { AvclientService } from 'src/app/api/avclient.service';
+import { DrClientService } from 'src/app/api/drclient.service';
 import { VoterartifactsService } from 'src/app/api/voterartifacts.service';
 
 @Component({
@@ -19,7 +19,7 @@ export class BallotFingerprintPage implements OnInit {
 
   constructor(
     private route: Router,
-    public avclientService: AvclientService,
+    public drClientService: DrClientService,
     private activatedRoute: ActivatedRoute,
     public voterartifactsService: VoterartifactsService
   ) {}
@@ -46,7 +46,7 @@ export class BallotFingerprintPage implements OnInit {
 
   sendbtn() {
     this.affidavit = this.voterartifactsService.affidavit;
-    this.avclientService
+    this.drClientService
       .submitBallotCryptograms(this.affidavit)
       .then(() => {
         this.route.navigate([
@@ -66,7 +66,7 @@ export class BallotFingerprintPage implements OnInit {
   }
 
   copybtn() {
-    this.avclientService
+    this.drClientService
       .spoilBallotCryptograms()
       .then(() => {
         this.route.navigate([

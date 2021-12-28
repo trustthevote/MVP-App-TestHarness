@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { AvclientService } from 'src/app/api/avclient.service';
+import { DrClientService } from 'src/app/api/drclient.service';
 
 @Component({
   selector: 'app-ballot-resealed',
@@ -10,7 +10,7 @@ import { AvclientService } from 'src/app/api/avclient.service';
 export class BallotResealedPage implements OnInit {
   results = [];
   getCode: any;
-  constructor(private route: Router, public avclientService: AvclientService, private activatedRoute: ActivatedRoute) {}
+  constructor(private route: Router, public drClientService: DrClientService, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
     this.getCode = this.activatedRoute.snapshot.paramMap.get('code');

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { AvclientService } from 'src/app/api/avclient.service';
+import { DrClientService } from 'src/app/api/drclient.service';
 import { VoterartifactsService } from 'src/app/api/voterartifacts.service';
 
 @Component({
@@ -16,7 +16,7 @@ export class BeforeYouFinishPage implements OnInit {
   constructor(
     private route: Router,
     private activatedRoute: ActivatedRoute,
-    public avclientService: AvclientService,
+    public drClientService: DrClientService,
     public voterartifactsService: VoterartifactsService
   ) {}
 
@@ -32,7 +32,7 @@ export class BeforeYouFinishPage implements OnInit {
   nextbtn() {
     this.cvr = this.voterartifactsService.cvr;
 
-    this.avclientService
+    this.drClientService
       .constructBallotCryptograms(this.cvr)
       .then(() => {
         this.route.navigate([
