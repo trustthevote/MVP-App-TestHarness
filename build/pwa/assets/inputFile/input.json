@@ -40,28 +40,28 @@
     },
 
     "beforeyoufinish_page": {
-      "beforeyoufinish": " Before You Finish",
-      "para": "Your ballot is almost ready, but before you finish, you have two options.",
-      "para_center": "On the next screen you'll have  the option to send your ballot immediately, and also the option to test your ballot using the ",
-      "btc": "Ballot test code ",
-      "next": "Next",
-      "bck": "that you will see at the top of the screen.",
-      "link": "The ballot test process is ..."
+      "beforeyoufinish": "Your ballot is being digitally sealed.",
+      "para": "Before you submit your ballot, you can perform a check to make sure it is recorded and sealed correctly. How? It's easy.",
+      "para_center": "1. Use a laptop or other device if you have one. If you don't have a second device, open the browser app on this device.",
+      "btc": " 2. Go to VerifyMyBallot.gov. ",
+      "bck": "3. Follow the instructions shown.",
+      "link": "Want to learn more about ballot checking? Visit electionwebsite.gov.",
+      "next": "Next"
     },
 
     "ballot_fingerp": {
-      "ybr": "Your Ballot Has Been Sealed and Is Ready To Cast",
-      "ydn": "You can perform a test to verify it will be cast correctly to the digital ballot box.",
-      "bfp": "Ballot Fingerprint:",
+      "ybr": "Your Ballot Is Sealed",
+      "bfp": "Ballot Checking Code:",
       "zyx098": "zyx098-wvu765-tsr432-1234",
+      "ydn": "To check your ballot, go to VerifyMyBallot.gov and enter the Ballot Checking Code displayed above. After you enter the code, tap the Code Entered button below.",
+      "copy": "Code Entered ",
+      "tv3_fb": "For more information on testing, click the link below.",
+      "link": "www.linkto.site.org",
       "tv_fp": "Or, you can cast your ballot digitally now.",
       "send": "Cast Ballot Now",
-      "copy": "Start Ballot Test ",
-      "tv1_fp": " On a computer or other device,go to",
-      "link": "www.linkto.site.org",
-      "tv2_fb": "and enter  the  following code to review your ballot",
-      "tv3_fb": "For more information on testing, click the link below.",
       "shmd": "Show more details",
+      "tv1_fp": " On a computer or other device,go to",
+      "tv2_fb": "and enter  the  following code to review your ballot",
       "mp": "My Progress"
     },
 
@@ -75,15 +75,15 @@
     },
 
     "test_result_page": {
-      "test_results": "Test Results",
+      "test_results": "Ballot Check Results",
       "dbf": "Is your ballot correct?",
       "bfp": "Ballot Checking Code:",
       "zyx098": "zyx098-wvu765-tsr432-1234",
-      "ydn": "By now you should have used your choice of a Verify My Ballot site to provide your Ballot Test Code and view the contents of your ballot. ",
+      "ydn": "Your ballot was unsealed and is now displayed on the VerifyMyBallot site. Review to confirm your choices are all correct.",
       "tv2_fb": "If you did first use a Verify  My Ballot site, before you  selected  ",
       "str": "Start Ballot Test",
       "tv2_fb1": "then you should re-try the  test using the Re-Try option below.",
-      "tv3": "Otherwise, please indicate  whether this test of your ballot showed that the  contents of your ballot were correct.",
+      "tv3": "Does everything look correct?",
       "passed": "Yes",
       "failed": "No",
       "next": "Next",
@@ -91,8 +91,8 @@
     },
 
     "ballot_resealed_page": {
-      "test_results": "Ballot Resealed!",
-      "ydn": "Great! Your ballot has been resealed and is ready to cast. Please continue!. ",
+      "test_results": "Ballot Check Complete",
+      "ydn": "Your ballot is being digitally sealed again. You can perform the check again or submit your ballot.",
       "next": "Continue"
     },
 
@@ -152,8 +152,8 @@
     },
 
     "sending_confirmation_page": {
-      "heading": "Congrats! Your ballot has been cast!",
-      "para_center": "To track your ballot and confirm it was received correctly, touch the code below to copy it to your clipboard. Then click the link and follow the steps to confirm your ballot was received.",
+      "heading": "Congrats! Your ballot has been sent!",
+      "para_center": "To track your ballot and confirm it was received, visit electionwebsite.gov and enter the Ballot Tracking Code displayed below.",
       "next": "how was your experience?",
       "heading_link": "Ballot Tracking Code :",
       "btr": "zyx098-wvu765-tsr432-1234",
@@ -165,7 +165,7 @@
     "howitdo_page": {
       "heading": "How'd it Go?",
       "para": "Please tell us how your experience was, using the Markit App.",
-      "para_center": "Your feedback will be greatly appreciated, and will be used to further enhance our app for future users.",
+      "para_center": "Your feedback is greatly appreciated and will help us further improve the voting experience in MarkIt. Tap the link below to complete a brief survey.",
       "next": "Exit Markit App ",
       "back": "Back",
       "heading_link": "Follow the link below to let us know!",
@@ -183,7 +183,7 @@
 
     "ballotpreperror": {
       "upr_para": "Something went wrong, and we can't complete the preparation of your digital ballot. ",
-      "mid_para": "You can report a problem, and you have the option of using the Print button below to print your ballot and affidavit for postal return. ",
+      "mid_para": "You can report a problem, and you have the option of using the Print button below to print your ballot and affidavit for physical return. ",
       "link": "www.linktosite.org",
       "back": "Report  A Problem",
       "print": "Print",
@@ -192,7 +192,7 @@
 
     "ballotballotpreperror": {
       "upr_para": "Something went wrong, and we can't complete the preparation of your digital ballot. ",
-      "mid_para": "You can report a problem, and you have the option of using the Print button below to print your ballot and affidavit for postal return. ",
+      "mid_para": "You can report a problem, and you have the option of using the Print button below to print your ballot and affidavit for physical return. ",
       "link": "www.linktosite.org",
       "back": "Report  A Problem",
       "print": "Print",
@@ -241,7 +241,7 @@
     },
 
     "ballot_test_failed_page": {
-      "upr_para": "Your local election office has been notified to issue you a replacement ballot by mail. For more information, you may contact your election office through the link below.",
+      "upr_para": "Sorry to hear that. We do not recommend you use this voting app. You can report a problem and contact your election administrator for additional options.",
       "link": "www.linktosite.org",
       "back": "Report  A Problem",
       "print": "Print"
@@ -249,7 +249,7 @@
 
     "voter_record_notfound00000_error": {
       "first_para": " Something went wrong,and we can't send the access code required to finish your digital ballot.",
-      "sec_para": " You can report a problem, and you have the option of using the Print button below to print your ballot and affidavit for postal return.",
+      "sec_para": " You can report a problem, and you have the option of using the Print button below to print your ballot and affidavit for physical return.",
       "rbtn": "report a problem",
       "print": "Print"
     },
@@ -264,7 +264,7 @@
 
     "calloutoforder_access00002_error": {
       "first_para": " Something went wrong,and we can't send the access code required to finish your digital ballot.",
-      "sec_para": " You can report a problem, and you have the option of using the Print button below to print your ballot and affidavit for postal return.",
+      "sec_para": " You can report a problem, and you have the option of using the Print button below to print your ballot and affidavit for physical return.",
       "rbtn": "report a problem",
       "print": "Print"
     },
@@ -288,8 +288,8 @@
     },
 
     "calloutoforder_construct00006_error": {
-      "upr_para": "Something went wrong, and we can't complete your digital ballot test. ",
-      "mid_para": "You can report a problem, and you have the option of using the Print button below to print your ballot and affidavit for postal return. ",
+      "upr_para": "Something went wrong. You will not be able to submit your ballot digitally at this time.",
+      "mid_para": "You can report a problem and use the Print button below to print your ballot for physical return.",
       "link": "www.linktosite.org",
       "back": "Report  A Problem",
       "print": "Print",
@@ -300,7 +300,7 @@
       "text": " Sorry, it seems there was a network error. Please check your connection and try again.",
       "try_again": "Try again",
       "first_para": " Sorry, it seems there was a network error. Please check your connection and try again.",
-      "sec_para": " You can also click the print button below to proceed with a physical return instead.",
+      "sec_para": "You can report a problem, and you can print your ballot and use physical return by tapping the print button below.",
       "rbtn": "report a problem",
       "print": "Print"
     },
@@ -315,7 +315,7 @@
 
     "calloutoforder_spoil00009_error": {
       "upr_para": "Something went wrong, and we can't complete the preparation of your digital ballot. ",
-      "mid_para": "You can report a problem, and you have the option of using the Print button below to print your ballot and affidavit for postal return. ",
+      "mid_para": "You can report a problem, and you have the option of using the Print button below to print your ballot and affidavit for physical return. ",
       "link": "www.linktosite.org",
       "back": "Report  A Problem",
       "print": "Print",
@@ -350,7 +350,7 @@
     },
     "calloutoforder_submit00013_error": {
       "upr_para": "Something went wrong, and we can't complete the preparation of your digital ballot. ",
-      "mid_para": "You can report a problem, and you have the option of using the Print button below to print your ballot and affidavit for postal return. ",
+      "mid_para": "You can report a problem, and you have the option of using the Print button below to print your ballot and affidavit for physical return. ",
       "link": "www.linktosite.org",
       "back": "Report  A Problem",
       "print": "Print",
