@@ -1,5 +1,66 @@
 (self["webpackChunkMVP_Test_Harness"] = self["webpackChunkMVP_Test_Harness"] || []).push([["src_app_pages_test_test_module_ts"],{
 
+/***/ 52413:
+/*!*******************************************!*\
+  !*** ./src/app/api/statuscode.service.ts ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "StatuscodeService": () => (/* binding */ StatuscodeService)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 37716);
+
+
+let StatuscodeService = class StatuscodeService {
+    constructor() { }
+    statusCode(statusCode) {
+        if (statusCode === 'VoterRecordNotFound') {
+            return 'voter record not found';
+        }
+        else if (statusCode === 'NetworkError') {
+            return 'network code';
+        }
+        else if (statusCode === 'CallOutOfOrderError') {
+            return 'call out of order error';
+        }
+        else if (statusCode === 'AccessCodeExpired') {
+            return 'access code expired';
+        }
+        else if (statusCode === 'AccessCodeInvalid') {
+            return 'access code invalid';
+        }
+        else if (statusCode === 'CorruptCVRError') {
+            return 'corrupt CVR';
+        }
+        else if (statusCode === 'ServerCommitmentError') {
+            return 'server commitment error';
+        }
+        else if (statusCode === 'Initialized') {
+            return 'initialized';
+        }
+        else if (statusCode === 'Uninitialized') {
+            return 'uninitialized';
+        }
+        else if (statusCode === 'OK') {
+            return 'ok';
+        }
+    }
+};
+StatuscodeService.ctorParameters = () => [];
+StatuscodeService = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.Injectable)({
+        providedIn: 'root',
+    })
+], StatuscodeService);
+
+
+
+/***/ }),
+
 /***/ 44385:
 /*!***************************************************!*\
   !*** ./src/app/pages/test/test-routing.module.ts ***!
@@ -236,7 +297,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\n  <ion-row>\n    <ion-col size=\"4\" class=\"back-btn\">\n      <ion-button color=\"dark\" (click)=\"backbtn()\">\n        Back\n        <ion-icon slot=\"start\" name=\"chevron-back-outline\"></ion-icon>\n      </ion-button>\n    </ion-col>\n  </ion-row>\n</ion-content>\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n  <ion-row>\r\n    <ion-col size=\"4\" class=\"back-btn\">\r\n      <ion-button color=\"dark\" (click)=\"backbtn()\">\r\n        Back\r\n        <ion-icon slot=\"start\" name=\"chevron-back-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-col>\r\n  </ion-row>\r\n</ion-content>\r\n");
 
 /***/ })
 

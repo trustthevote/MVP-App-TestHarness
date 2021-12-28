@@ -59,7 +59,7 @@ const routes = [
     },
     {
         path: 'ballot-complete',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_api_voterartifacts_service_ts"), __webpack_require__.e("default-node_modules_capacitor_browser_dist_esm_index_js"), __webpack_require__.e("common"), __webpack_require__.e("src_app_pages_ballot-complete_ballot-complete_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-complete/ballot-complete.module */ 35919)).then((m) => m.BallotCompletePageModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_api_avclient_service_ts"), __webpack_require__.e("default-node_modules_capacitor_browser_dist_esm_index_js"), __webpack_require__.e("src_app_pages_ballot-complete_ballot-complete_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-complete/ballot-complete.module */ 35919)).then((m) => m.BallotCompletePageModule),
     },
     {
         path: 'print',
@@ -67,11 +67,11 @@ const routes = [
     },
     {
         path: 'access-code',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_api_voterartifacts_service_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_pages_access-code_access-code_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/access-code/access-code.module */ 81055)).then((m) => m.AccessCodePageModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_api_avclient_service_ts"), __webpack_require__.e("src_app_pages_access-code_access-code_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/access-code/access-code.module */ 81055)).then((m) => m.AccessCodePageModule),
     },
     {
         path: 'ballot-fingerprint',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_api_voterartifacts_service_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_pages_ballot-fingerprint_ballot-fingerprint_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-fingerprint/ballot-fingerprint.module */ 32168)).then((m) => m.BallotFingerprintPageModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_api_avclient_service_ts"), __webpack_require__.e("src_app_pages_ballot-fingerprint_ballot-fingerprint_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-fingerprint/ballot-fingerprint.module */ 32168)).then((m) => m.BallotFingerprintPageModule),
     },
     {
         path: 'code_invalid_access00004_error',
@@ -87,7 +87,7 @@ const routes = [
     },
     {
         path: 'test-results',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_api_voterartifacts_service_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_pages_test-results_test-results_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/test-results/test-results.module */ 48530)).then((m) => m.TestResultsPageModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_api_avclient_service_ts"), __webpack_require__.e("src_app_pages_test-results_test-results_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/test-results/test-results.module */ 48530)).then((m) => m.TestResultsPageModule),
     },
     {
         path: 'new-ballot-fingerprint',
@@ -115,7 +115,7 @@ const routes = [
     },
     {
         path: 'print-return',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_api_voterartifacts_service_ts"), __webpack_require__.e("default-node_modules_capacitor_browser_dist_esm_index_js"), __webpack_require__.e("src_app_pages_print-return_print-return_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/print-return/print-return.module */ 69249)).then((m) => m.PrintReturnPageModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_capacitor_browser_dist_esm_index_js"), __webpack_require__.e("src_app_pages_print-return_print-return_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/print-return/print-return.module */ 69249)).then((m) => m.PrintReturnPageModule),
     },
     {
         path: 'user-time-out',
@@ -139,11 +139,11 @@ const routes = [
     },
     {
         path: 'request-access-code',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_api_voterartifacts_service_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_pages_request-access-code_request-access-code_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/request-access-code/request-access-code.module */ 28554)).then((m) => m.RequestAccessCodePageModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_api_avclient_service_ts"), __webpack_require__.e("src_app_pages_request-access-code_request-access-code_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/request-access-code/request-access-code.module */ 28554)).then((m) => m.RequestAccessCodePageModule),
     },
     {
         path: 'test',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_pages_test_test_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/test/test.module */ 95011)).then((m) => m.TestPageModule),
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_test_test_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/test/test.module */ 95011)).then((m) => m.TestPageModule),
     },
     {
         path: 'check_network_construct00007_error',
@@ -159,7 +159,7 @@ const routes = [
     },
     {
         path: 'before-you-finish',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_api_voterartifacts_service_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_pages_before-you-finish_before-you-finish_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/before-you-finish/before-you-finish.module */ 66362)).then((m) => m.BeforeYouFinishPageModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_api_avclient_service_ts"), __webpack_require__.e("src_app_pages_before-you-finish_before-you-finish_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/before-you-finish/before-you-finish.module */ 66362)).then((m) => m.BeforeYouFinishPageModule),
     },
     {
         path: 'corrupt_cv_construct00008_error',
@@ -219,7 +219,7 @@ const routes = [
     },
     {
         path: 'ballot-resealed',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_api_voterartifacts_service_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_pages_ballot-resealed_ballot-resealed_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-resealed/ballot-resealed.module */ 41857)).then((m) => m.BallotResealedPageModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_api_avclient_service_ts"), __webpack_require__.e("src_app_pages_ballot-resealed_ballot-resealed_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-resealed/ballot-resealed.module */ 41857)).then((m) => m.BallotResealedPageModule),
     },
     {
         path: 'calloutoforder-access00002-error',
@@ -227,6 +227,7 @@ const routes = [
     },
     {
         path: 'ballot-test-failed-test',
+        // eslint-disable-next-line sonarjs/no-identical-functions
         loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_ballot-test-failed-test_ballot-test-failed-test_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-test-failed-test/ballot-test-failed-test.module */ 9436)).then((m) => m.BallotTestFailedTestPageModule),
     },
 ];
@@ -234,9 +235,7 @@ let AppRoutingModule = class AppRoutingModule {
 };
 AppRoutingModule = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.NgModule)({
-        imports: [
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__.RouterModule.forRoot(routes, { preloadingStrategy: _angular_router__WEBPACK_IMPORTED_MODULE_2__.PreloadAllModules }),
-        ],
+        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__.RouterModule.forRoot(routes, { preloadingStrategy: _angular_router__WEBPACK_IMPORTED_MODULE_2__.PreloadAllModules })],
         exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__.RouterModule],
     })
 ], AppRoutingModule);
@@ -291,15 +290,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppModule": () => (/* binding */ AppModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 64762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 37716);
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/platform-browser */ 39075);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ 39895);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/platform-browser */ 39075);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/router */ 39895);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ionic/angular */ 80476);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app.component */ 55041);
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app-routing.module */ 90158);
-/* harmony import */ var _angular_service_worker__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/service-worker */ 72249);
+/* harmony import */ var _angular_service_worker__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/service-worker */ 72249);
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../environments/environment */ 92340);
+/* harmony import */ var _class_user_user_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./class/user/user.service */ 94098);
+/* harmony import */ var _class_local_storage_ref_local_storage_ref_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./class/local-storage-ref/local-storage-ref.service */ 48100);
+
+
 
 
 
@@ -312,17 +315,17 @@ __webpack_require__.r(__webpack_exports__);
 // import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 let AppModule = class AppModule {
 };
-AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.NgModule)({
+AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.NgModule)({
         declarations: [_app_component__WEBPACK_IMPORTED_MODULE_0__.AppComponent],
         entryComponents: [],
         imports: [
-            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__.BrowserModule,
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule.forRoot({
+            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_7__.BrowserModule,
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_8__.IonicModule.forRoot({
                 mode: 'ios',
             }),
             _app_routing_module__WEBPACK_IMPORTED_MODULE_1__.AppRoutingModule,
-            _angular_service_worker__WEBPACK_IMPORTED_MODULE_7__.ServiceWorkerModule.register('ngsw-worker.js', {
+            _angular_service_worker__WEBPACK_IMPORTED_MODULE_9__.ServiceWorkerModule.register('ngsw-worker.js', {
                 enabled: _environments_environment__WEBPACK_IMPORTED_MODULE_2__.environment.production,
                 // Register the ServiceWorker as soon as the app is stable
                 // or after 30 seconds (whichever comes first).....
@@ -330,12 +333,113 @@ AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
             }),
         ],
         providers: [
-            { provide: _angular_router__WEBPACK_IMPORTED_MODULE_8__.RouteReuseStrategy, useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicRouteStrategy },
+            _class_user_user_service__WEBPACK_IMPORTED_MODULE_3__.UserService,
+            _class_local_storage_ref_local_storage_ref_service__WEBPACK_IMPORTED_MODULE_4__.LocalStorageRef,
+            { provide: _angular_router__WEBPACK_IMPORTED_MODULE_10__.RouteReuseStrategy, useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_8__.IonicRouteStrategy },
             // InAppBrowser
         ],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_0__.AppComponent],
     })
 ], AppModule);
+
+
+
+/***/ }),
+
+/***/ 48100:
+/*!**********************************************************************!*\
+  !*** ./src/app/class/local-storage-ref/local-storage-ref.service.ts ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "LocalStorageRef": () => (/* binding */ LocalStorageRef)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 37716);
+
+
+let LocalStorageRef = class LocalStorageRef {
+    getLocalStorage() {
+        return localStorage;
+    }
+};
+LocalStorageRef = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.Injectable)()
+], LocalStorageRef);
+
+
+
+/***/ }),
+
+/***/ 94098:
+/*!********************************************!*\
+  !*** ./src/app/class/user/user.service.ts ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "UserService": () => (/* binding */ UserService)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _local_storage_ref_local_storage_ref_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../local-storage-ref/local-storage-ref.service */ 48100);
+
+
+
+const LOCAL_STORAGE_KEY = 'user';
+let UserService = class UserService {
+    constructor(localStorageRef) {
+        this.localStorageRef = localStorageRef;
+    }
+    /**
+     * Fetches and returns the current user object from local storage
+     * If the user does not exist, it will return null
+     *
+     * @returns
+     */
+    getUser() {
+        const userString = this.localStorageRef.getLocalStorage().getItem(LOCAL_STORAGE_KEY);
+        if (!userString || userString === '{}') {
+            return null;
+        }
+        return JSON.parse(userString);
+    }
+    /**
+     * Inserts or updates local storage with the partial values specified
+     *
+     * @param updatedUser
+     */
+    upsertUser(updatedUser) {
+        const currentUser = this.getUser() || this.getEmptyUser();
+        const user = Object.assign(Object.assign({}, currentUser), updatedUser);
+        this.localStorageRef.getLocalStorage().setItem(LOCAL_STORAGE_KEY, JSON.stringify(user));
+    }
+    /**
+     * Deletes the user item in localstorage
+     */
+    resetUser() {
+        this.localStorageRef.getLocalStorage().removeItem(LOCAL_STORAGE_KEY);
+    }
+    getEmptyUser() {
+        return {
+            firstName: '',
+            lastName: '',
+        };
+    }
+};
+UserService.ctorParameters = () => [
+    { type: _local_storage_ref_local_storage_ref_service__WEBPACK_IMPORTED_MODULE_0__.LocalStorageRef }
+];
+UserService = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.Injectable)({
+        providedIn: 'root',
+    })
+], UserService);
 
 
 
@@ -357,7 +461,8 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 const environment = {
     production: false,
-    url: 'http://voterreg.tbd.com/',
+    // note: this is a temporary value to satisfy function signatures; it does not suggest that a server should be running on port 3000
+    url: 'http://localhost:3000/',
 };
 /*
  * For easier debugging in development mode, you can import the following file
@@ -658,7 +763,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-app>\n  <ion-router-outlet></ion-router-outlet>\n</ion-app>\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-app>\r\n  <ion-router-outlet></ion-router-outlet>\r\n</ion-app>\r\n");
 
 /***/ })
 
