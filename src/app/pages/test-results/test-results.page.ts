@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { AvclientService } from 'src/app/api/avclient.service';
+import { DrClientService } from 'src/app/api/drclient.service';
 import { VoterartifactsService } from 'src/app/api/voterartifacts.service';
 @Component({
   selector: 'app-test-results',
@@ -14,7 +14,7 @@ export class TestResultsPage implements OnInit {
 
   constructor(
     private route: Router,
-    public avclientService: AvclientService,
+    public drClientService: DrClientService,
     private activatedRoute: ActivatedRoute,
     public voterartifactsService: VoterartifactsService
   ) {}
@@ -30,7 +30,7 @@ export class TestResultsPage implements OnInit {
 
   passbtn() {
     this.cvr = this.voterartifactsService.cvr;
-    this.avclientService
+    this.drClientService
       .constructBallotCryptograms(this.cvr)
       .then(() => {
         this.route.navigate([

@@ -1,4 +1,4 @@
-export const AV_SAMPLE_CVR = `<?xml version="1.0" encoding="UTF-8"?>
+export const DR_SAMPLE_CVR = `<?xml version="1.0" encoding="UTF-8"?>
 <CastVoteRecordReport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://itl.nist.gov/ns/voting/1500-103/v1 ../../../../../CastVoteRecords/NIST_V0_cast_vote_records.xsd"
     xmlns="http://itl.nist.gov/ns/voting/1500-103/v1">

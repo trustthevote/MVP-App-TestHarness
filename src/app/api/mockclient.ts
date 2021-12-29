@@ -1,7 +1,7 @@
-import { IBackendClient } from './avclient.service';
+import { IDigitalReturnClient } from './drclient.service';
 import { StatuscodeService } from './statuscode.service';
 
-export class MockClient implements IBackendClient {
+export class MockClient implements IDigitalReturnClient {
   private statuscodeService: StatuscodeService;
   private cachedAccessCode: string;
 

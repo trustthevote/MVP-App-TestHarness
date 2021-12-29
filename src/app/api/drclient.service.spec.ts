@@ -3,11 +3,11 @@ import { RouterTestingModule } from '@angular/router/testing';
 
 import { UserService } from 'src/app/class/user/user.service';
 import { UserServiceStub } from 'src/app/class/user/user.service.stub';
-import { AvclientService } from './avclient.service';
+import { DrClientService } from './drclient.service';
 import { PRECINCT_2_CVR, PRECINCT_2_AFFIDAVIT } from './artifacts';
 
-describe('AvclientService', () => {
-  let service: AvclientService;
+describe('DrClientService', () => {
+  let service: DrClientService;
   let userService: UserService;
   const networkCode = 'network code';
   const voterRecordNotFound = 'voter record not found';
@@ -26,7 +26,7 @@ describe('AvclientService', () => {
     userService = TestBed.inject(UserService);
     userService.upsertUser({ lastName: 'foo' });
 
-    service = TestBed.inject(AvclientService);
+    service = TestBed.inject(DrClientService);
     service.initServerURL('https://random.local/');
   });
 

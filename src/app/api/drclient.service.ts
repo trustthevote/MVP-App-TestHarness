@@ -6,7 +6,7 @@ import { MockClient as MockClient } from './mockclient';
 import { UserService } from 'src/app/class/user/user.service';
 
 // todo: replace anys in favor of real types
-export interface IBackendClient {
+export interface IDigitalReturnClient {
   initialize(electionConfig?: any): Promise<void>;
   requestAccessCode(opaqueVoterId: string, email: string): Promise<void>;
   validateAccessCode(code: string): Promise<void>;
@@ -20,9 +20,9 @@ export interface IBackendClient {
 @Injectable({
   providedIn: 'root',
 })
-export class AvclientService {
+export class DrClientService {
   serverURL: any;
-  client: IBackendClient;
+  client: IDigitalReturnClient;
 
   constructor(
     public statuscodeService: StatuscodeService,
