@@ -92,7 +92,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ballot_resealed_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ballot-resealed.page.scss */ 82873);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37716);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 39895);
-/* harmony import */ var src_app_api_avclient_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/api/avclient.service */ 55913);
+/* harmony import */ var src_app_api_drclient_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/api/drclient.service */ 37167);
 
 
 
@@ -100,9 +100,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let BallotResealedPage = class BallotResealedPage {
-    constructor(route, avclientService, activatedRoute) {
+    constructor(route, drClientService, activatedRoute) {
         this.route = route;
-        this.avclientService = avclientService;
+        this.drClientService = drClientService;
         this.activatedRoute = activatedRoute;
         this.results = [];
     }
@@ -125,7 +125,7 @@ let BallotResealedPage = class BallotResealedPage {
 };
 BallotResealedPage.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__.Router },
-    { type: src_app_api_avclient_service__WEBPACK_IMPORTED_MODULE_2__.AvclientService },
+    { type: src_app_api_drclient_service__WEBPACK_IMPORTED_MODULE_2__.DrClientService },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__.ActivatedRoute }
 ];
 BallotResealedPage = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([

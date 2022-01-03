@@ -92,7 +92,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _before_you_finish_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./before-you-finish.page.scss */ 97844);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 37716);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 39895);
-/* harmony import */ var src_app_api_avclient_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/api/avclient.service */ 55913);
+/* harmony import */ var src_app_api_drclient_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/api/drclient.service */ 37167);
 /* harmony import */ var src_app_api_voterartifacts_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/api/voterartifacts.service */ 22130);
 
 
@@ -102,10 +102,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let BeforeYouFinishPage = class BeforeYouFinishPage {
-    constructor(route, activatedRoute, avclientService, voterartifactsService) {
+    constructor(route, activatedRoute, drClientService, voterartifactsService) {
         this.route = route;
         this.activatedRoute = activatedRoute;
-        this.avclientService = avclientService;
+        this.drClientService = drClientService;
         this.voterartifactsService = voterartifactsService;
         this.results = [];
     }
@@ -119,7 +119,7 @@ let BeforeYouFinishPage = class BeforeYouFinishPage {
     }
     nextbtn() {
         this.cvr = this.voterartifactsService.cvr;
-        this.avclientService
+        this.drClientService
             .constructBallotCryptograms(this.cvr)
             .then(() => {
             this.route.navigate([
@@ -148,7 +148,7 @@ let BeforeYouFinishPage = class BeforeYouFinishPage {
 BeforeYouFinishPage.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__.Router },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__.ActivatedRoute },
-    { type: src_app_api_avclient_service__WEBPACK_IMPORTED_MODULE_2__.AvclientService },
+    { type: src_app_api_drclient_service__WEBPACK_IMPORTED_MODULE_2__.DrClientService },
     { type: src_app_api_voterartifacts_service__WEBPACK_IMPORTED_MODULE_3__.VoterartifactsService }
 ];
 BeforeYouFinishPage = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
@@ -189,7 +189,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content padding>\r\n  <div class=\"list-question\">\r\n    <p>{{results.beforeyoufinish}}</p>\r\n  </div>\r\n  <div style=\"text-align: center; padding-top: 25px\">\r\n    <div class=\"para-center\">{{results.para}}</div>\r\n    <div class=\"mid\">\r\n      {{results.para_center}}\r\n      <br>\r\n      <br>\r\n      {{results.btc}} \r\n      <br>\r\n      <br>\r\n      {{results.bck}}\r\n      <br>\r\n    </div>\r\n    <div class=\"mid\">{{results.link}}</div>\r\n  </div>\r\n</ion-content>\r\n<ion-footer>\r\n  <ion-toolbar style=\"text-align: end\">\r\n    <ion-row>\r\n      <ion-col size=\"6\" class=\"back-btn\" style=\"text-align: start\"> </ion-col>\r\n      <ion-col size=\"6\" class=\"next-btn\">\r\n        <ion-button color=\"dark\" (click)=\"nextbtn()\">\r\n          {{results.next}}\r\n          <ion-icon slot=\"end\" name=\"chevron-forward-outline\"></ion-icon>\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-toolbar>\r\n</ion-footer>\r\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content padding>\r\n  <div class=\"list-question\">\r\n    <p>{{results.beforeyoufinish}}</p>\r\n  </div>\r\n  <div style=\"text-align: center; padding-top: 25px\">\r\n    <div class=\"para-center\">{{results.para}}</div>\r\n    <div class=\"mid\">{{results.para_center}}\"{{results.btc}}\" {{results.bck}}</div>\r\n    <div class=\"mid\">{{results.link}}</div>\r\n  </div>\r\n</ion-content>\r\n<ion-footer>\r\n  <ion-toolbar style=\"text-align: end\">\r\n    <ion-row>\r\n      <ion-col size=\"6\" class=\"back-btn\" style=\"text-align: start\"> </ion-col>\r\n      <ion-col size=\"6\" class=\"next-btn\">\r\n        <ion-button color=\"dark\" (click)=\"nextbtn()\">\r\n          {{results.next}}\r\n          <ion-icon slot=\"end\" name=\"chevron-forward-outline\"></ion-icon>\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-toolbar>\r\n</ion-footer>\r\n");
 
 /***/ })
 

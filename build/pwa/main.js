@@ -59,7 +59,7 @@ const routes = [
     },
     {
         path: 'ballot-complete',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_api_avclient_service_ts"), __webpack_require__.e("default-node_modules_capacitor_browser_dist_esm_index_js"), __webpack_require__.e("src_app_pages_ballot-complete_ballot-complete_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-complete/ballot-complete.module */ 35919)).then((m) => m.BallotCompletePageModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_api_drclient_service_ts"), __webpack_require__.e("default-node_modules_capacitor_browser_dist_esm_index_js"), __webpack_require__.e("src_app_pages_ballot-complete_ballot-complete_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-complete/ballot-complete.module */ 35919)).then((m) => m.BallotCompletePageModule),
     },
     {
         path: 'print',
@@ -67,11 +67,11 @@ const routes = [
     },
     {
         path: 'access-code',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_api_avclient_service_ts"), __webpack_require__.e("src_app_pages_access-code_access-code_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/access-code/access-code.module */ 81055)).then((m) => m.AccessCodePageModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_api_drclient_service_ts"), __webpack_require__.e("src_app_pages_access-code_access-code_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/access-code/access-code.module */ 81055)).then((m) => m.AccessCodePageModule),
     },
     {
         path: 'ballot-fingerprint',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_api_avclient_service_ts"), __webpack_require__.e("src_app_pages_ballot-fingerprint_ballot-fingerprint_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-fingerprint/ballot-fingerprint.module */ 32168)).then((m) => m.BallotFingerprintPageModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_api_drclient_service_ts"), __webpack_require__.e("src_app_pages_ballot-fingerprint_ballot-fingerprint_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-fingerprint/ballot-fingerprint.module */ 32168)).then((m) => m.BallotFingerprintPageModule),
     },
     {
         path: 'code_invalid_access00004_error',
@@ -87,7 +87,7 @@ const routes = [
     },
     {
         path: 'test-results',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_api_avclient_service_ts"), __webpack_require__.e("src_app_pages_test-results_test-results_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/test-results/test-results.module */ 48530)).then((m) => m.TestResultsPageModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_api_drclient_service_ts"), __webpack_require__.e("src_app_pages_test-results_test-results_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/test-results/test-results.module */ 48530)).then((m) => m.TestResultsPageModule),
     },
     {
         path: 'new-ballot-fingerprint',
@@ -139,7 +139,7 @@ const routes = [
     },
     {
         path: 'request-access-code',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_api_avclient_service_ts"), __webpack_require__.e("src_app_pages_request-access-code_request-access-code_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/request-access-code/request-access-code.module */ 28554)).then((m) => m.RequestAccessCodePageModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_api_drclient_service_ts"), __webpack_require__.e("src_app_pages_request-access-code_request-access-code_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/request-access-code/request-access-code.module */ 28554)).then((m) => m.RequestAccessCodePageModule),
     },
     {
         path: 'test',
@@ -159,7 +159,7 @@ const routes = [
     },
     {
         path: 'before-you-finish',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_api_avclient_service_ts"), __webpack_require__.e("src_app_pages_before-you-finish_before-you-finish_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/before-you-finish/before-you-finish.module */ 66362)).then((m) => m.BeforeYouFinishPageModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_api_drclient_service_ts"), __webpack_require__.e("src_app_pages_before-you-finish_before-you-finish_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/before-you-finish/before-you-finish.module */ 66362)).then((m) => m.BeforeYouFinishPageModule),
     },
     {
         path: 'corrupt_cv_construct00008_error',
@@ -219,7 +219,7 @@ const routes = [
     },
     {
         path: 'ballot-resealed',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_api_avclient_service_ts"), __webpack_require__.e("src_app_pages_ballot-resealed_ballot-resealed_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-resealed/ballot-resealed.module */ 41857)).then((m) => m.BallotResealedPageModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_api_drclient_service_ts"), __webpack_require__.e("src_app_pages_ballot-resealed_ballot-resealed_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/ballot-resealed/ballot-resealed.module */ 41857)).then((m) => m.BallotResealedPageModule),
     },
     {
         path: 'calloutoforder-access00002-error',

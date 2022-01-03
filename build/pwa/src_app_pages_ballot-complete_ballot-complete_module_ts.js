@@ -93,7 +93,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 37716);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 39895);
 /* harmony import */ var _capacitor_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @capacitor/browser */ 28427);
-/* harmony import */ var src_app_api_avclient_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/api/avclient.service */ 55913);
+/* harmony import */ var src_app_api_drclient_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/api/drclient.service */ 37167);
 
 
 
@@ -102,9 +102,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let BallotCompletePage = class BallotCompletePage {
-    constructor(router, avclientService) {
+    constructor(router, drClientService) {
         this.router = router;
-        this.avclientService = avclientService;
+        this.drClientService = drClientService;
         this.results = [];
         if (this.router.getCurrentNavigation().extras.state) {
             this.paramData = this.router.getCurrentNavigation().extras.state.user;
@@ -210,7 +210,7 @@ let BallotCompletePage = class BallotCompletePage {
 };
 BallotCompletePage.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__.Router },
-    { type: src_app_api_avclient_service__WEBPACK_IMPORTED_MODULE_3__.AvclientService }
+    { type: src_app_api_drclient_service__WEBPACK_IMPORTED_MODULE_3__.DrClientService }
 ];
 BallotCompletePage = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.Component)({

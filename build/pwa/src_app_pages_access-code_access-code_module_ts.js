@@ -95,7 +95,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic/angular */ 80476);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ 3679);
 /* harmony import */ var src_app_api_statuscode_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/api/statuscode.service */ 52413);
-/* harmony import */ var src_app_api_avclient_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/api/avclient.service */ 55913);
+/* harmony import */ var src_app_api_drclient_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/api/drclient.service */ 37167);
 
 
 
@@ -106,14 +106,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let AccessCodePage = class AccessCodePage {
-    constructor(route, fb, toastctrl, alertctrl, loadingctrl, statuscodeService, avclientService) {
+    constructor(route, fb, toastctrl, alertctrl, loadingctrl, statuscodeService, drClientService) {
         this.route = route;
         this.fb = fb;
         this.toastctrl = toastctrl;
         this.alertctrl = alertctrl;
         this.loadingctrl = loadingctrl;
         this.statuscodeService = statuscodeService;
-        this.avclientService = avclientService;
+        this.drClientService = drClientService;
         this.results = [];
         this.createOTPForm();
     }
@@ -196,7 +196,7 @@ let AccessCodePage = class AccessCodePage {
                 yield loading.present();
                 return new Promise(() => {
                     loading.dismiss();
-                    this.avclientService
+                    this.drClientService
                         .validateAccessCode(this.data)
                         .then(() => {
                         this.route.navigate([
@@ -299,7 +299,7 @@ AccessCodePage.ctorParameters = () => [
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.AlertController },
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.LoadingController },
     { type: src_app_api_statuscode_service__WEBPACK_IMPORTED_MODULE_2__.StatuscodeService },
-    { type: src_app_api_avclient_service__WEBPACK_IMPORTED_MODULE_3__.AvclientService }
+    { type: src_app_api_drclient_service__WEBPACK_IMPORTED_MODULE_3__.DrClientService }
 ];
 AccessCodePage.propDecorators = {
     first: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_8__.ViewChild, args: ['first', {

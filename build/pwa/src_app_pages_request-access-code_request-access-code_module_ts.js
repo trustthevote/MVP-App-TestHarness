@@ -93,7 +93,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/core */ 37716);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ 39895);
 /* harmony import */ var src_app_api_statuscode_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/api/statuscode.service */ 52413);
-/* harmony import */ var src_app_api_avclient_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/api/avclient.service */ 55913);
+/* harmony import */ var src_app_api_drclient_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/api/drclient.service */ 37167);
 /* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/environments/environment */ 92340);
 /* harmony import */ var src_app_api_voterartifacts_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/api/voterartifacts.service */ 22130);
 /* harmony import */ var src_app_class_user_user_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/class/user/user.service */ 94098);
@@ -108,18 +108,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let RequestAccessCodePage = class RequestAccessCodePage {
-    constructor(route, userService, statuscodeService, avclientService, voterartifactsService) {
+    constructor(route, userService, statuscodeService, drClientService, voterartifactsService) {
         this.route = route;
         this.userService = userService;
         this.statuscodeService = statuscodeService;
-        this.avclientService = avclientService;
+        this.drClientService = drClientService;
         this.voterartifactsService = voterartifactsService;
         this.results = [];
         // there's a bug here where voterartifactsService.initialize will be called twice:
-        // - once indirectly by the avclientService.initServerURL method
+        // - once indirectly by the drClientService.initServerURL method
         // - again directly in this constructor
         // todo: determine the appropriate time for calling that method, and resolve the duplicate calls to a single one
-        this.avclientService.initServerURL(src_environments_environment__WEBPACK_IMPORTED_MODULE_4__.environment.url);
+        this.drClientService.initServerURL(src_environments_environment__WEBPACK_IMPORTED_MODULE_4__.environment.url);
         this.voterartifactsService.initialize(this.userService.getUser().lastName);
     }
     ngOnInit() {
@@ -134,7 +134,7 @@ let RequestAccessCodePage = class RequestAccessCodePage {
             if (this.userService.getUser().lastName !== undefined) {
                 // Introduce randomness. Currently no support for voter-restart scenario
                 const opaqueVoterId = src_environments_environment__WEBPACK_IMPORTED_MODULE_4__.environment.production ? Date.now().toString() : this.userService.getUser().lastName;
-                yield this.avclientService
+                yield this.drClientService
                     .requestAccessCode(opaqueVoterId)
                     .then(() => {
                     this.route.navigate([
@@ -163,7 +163,7 @@ RequestAccessCodePage.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_8__.Router },
     { type: src_app_class_user_user_service__WEBPACK_IMPORTED_MODULE_6__.UserService },
     { type: src_app_api_statuscode_service__WEBPACK_IMPORTED_MODULE_2__.StatuscodeService },
-    { type: src_app_api_avclient_service__WEBPACK_IMPORTED_MODULE_3__.AvclientService },
+    { type: src_app_api_drclient_service__WEBPACK_IMPORTED_MODULE_3__.DrClientService },
     { type: src_app_api_voterartifacts_service__WEBPACK_IMPORTED_MODULE_5__.VoterartifactsService }
 ];
 RequestAccessCodePage = (0,tslib__WEBPACK_IMPORTED_MODULE_7__.__decorate)([
