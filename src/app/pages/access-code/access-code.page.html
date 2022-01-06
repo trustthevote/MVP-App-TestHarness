@@ -3,7 +3,8 @@
     <p>{{results.enter_access_code}}</p>
   </div>
   <p>{{results.text_ac}}</p>
-  <div class="opt-box-area" [formGroup]="otpForm" style="text-align: center">
+  <form [formGroup]="otpForm">
+  <div class="opt-box-area"  style="text-align: center">
     <div>
       <input
         class="nk-otp-box-first"
@@ -72,6 +73,7 @@
       />
     </div>
   </div>
+  </form>
 </ion-content>
 
 <ion-footer>

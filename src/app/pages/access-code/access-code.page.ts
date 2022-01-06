@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastController, AlertController, LoadingController } from '@ionic/angular';
@@ -147,13 +148,13 @@ export class AccessCodePage implements OnInit {
           })
           .catch((res) => {
             console.log('res', res);
-            if (res.message === 'Error: call out of order error') {
+            if (res == 'Error: call out of order error') {
               this.route.navigate(['/calloutoforder-access00002-error']);
-            } else if (res.message === 'Error: access code expired') {
+            } else if (res == 'Error: access code expired') {
               this.route.navigate(['/code_expired_access00003_error']);
-            } else if (res.message === 'Error: access code invalid') {
+            } else if (res == 'Error: access code invalid') {
               this.route.navigate(['/code_invalid_access00004_error']);
-            } else if (res.message === 'Error: network code') {
+            } else if (res == 'Error: network code') {
               this.route.navigate(['/check-network-access00005-error']);
             }
           });

@@ -1,5 +1,5 @@
 {
-  "name": "MVP-Test-Harness",
+  "name": "Rosie Prototype",
   "version": "0.0.1",
   "author": "OSET Foundation",
   "homepage": "https://www.osetfoundation.org/",
@@ -33,6 +33,7 @@
     "@capacitor/keyboard": "1.0.0",
     "@ionic-native/in-app-browser": "^5.36.0",
     "@ionic/angular": "^5.5.2",
+    "@ionic/app-scripts": "^3.2.4",
     "cordova-plugin-inappbrowser": "^5.0.0",
     "crypto-browserify": "^3.12.0",
     "rxjs": "~6.6.0",
