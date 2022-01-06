@@ -29,6 +29,12 @@ This application uses node 16 / npm 7, which is the current active LTS version. 
 nvm use
 ```
 
+Then install the dependencies as follows:
+
+```bash
+npm i
+```
+
 To run the application, simply execute the following:
 
 ```bash
