@@ -1,5 +1,6 @@
 # MVP-App-TestHarness
 
+- [Running the Application](#running-the-application)
 - [Development workflow](#development-workflow)
   - [What to do when your PR shows a failing status check](#what-to-do-when-your-pr-shows-a-failing-status-check)
 - [Standardization and Quality Checks](#standardization-and-quality-checks)
@@ -17,6 +18,24 @@ Android: Only an Android build can be directly downloaded from this project. The
 PWA (Progress Web app): It must be hosted on a website and the URL is http://abcbe-mvp-test-harness.s3-website-us-east-1.amazonaws.com/
 
 iOS: Apple requires notarization. During development, each iOS revision is notarized and distributed via TestFlight.
+
+## Running the Application
+
+Ensure you're using [nvm](https://github.com/nvm-sh/nvm#installing-and-updating) to handle your node versions. If you don't already have it set up on your machine, use nvm's instructions to download and install it.
+
+This application uses node 16 / npm 7, which is the current active LTS version. To ensure you're on the same version, execute the following:
+
+```bash
+nvm use
+```
+
+To run the application, simply execute the following:
+
+```bash
+npm start
+```
+
+And navigate to [http://localhost:4200/home](http://localhost:4200/home) in your browser.
 
 ## Development workflow
 
@@ -43,6 +62,10 @@ Once the fix is pushed, GitHub Actions will run again and will re-check your lat
 So, how do you find out what the problem is? First, click on the "Details" button next to the failing status check. This will take you to the GitHub Actions page, and you'll see what quality gate failed.
 
 Below are some common examples:
+
+#### Install issues
+
+If the install fails, you may see any number of errors. One potential common culprit is an npm version mismatch. Generally speaking, you should only see changes in `package-lock.json` if the dependencies in `package.json` have changed. So if there's a large diff in `package-lock.json` without corresponding changes in `package.json`, you'll need to double check your version of node and ensure you're using the correct one. To do so, follow the steps in the [Running the Application](#running-the-application) section.
 
 #### Formatting issues
 
