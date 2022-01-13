@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Browser } from '@capacitor/browser';
-import { AvclientService } from 'src/app/api/avclient.service';
+import { DrClientService } from 'src/app/api/drclient.service';
 
 @Component({
   selector: 'app-ballot-complete',
@@ -14,7 +14,7 @@ export class BallotCompletePage implements OnInit {
   results = [];
   serverURL: any;
 
-  constructor(private router: Router, public avclientService: AvclientService) {
+  constructor(private router: Router, public drClientService: DrClientService) {
     if (this.router.getCurrentNavigation().extras.state) {
       this.paramData = this.router.getCurrentNavigation().extras.state.user;
     }

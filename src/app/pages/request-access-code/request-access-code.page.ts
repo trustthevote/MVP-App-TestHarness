@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { StatuscodeService } from 'src/app/api/statuscode.service';
-import { AvclientService } from 'src/app/api/avclient.service';
+import { DrClientService } from 'src/app/api/drclient.service';
 import { environment } from 'src/environments/environment';
 import { VoterartifactsService } from 'src/app/api/voterartifacts.service';
 import { UserService } from 'src/app/class/user/user.service';
@@ -19,14 +19,14 @@ export class RequestAccessCodePage implements OnInit {
     private route: Router,
     private userService: UserService,
     public statuscodeService: StatuscodeService,
-    public avclientService: AvclientService,
+    public drClientService: DrClientService,
     private voterartifactsService: VoterartifactsService
   ) {
     // there's a bug here where voterartifactsService.initialize will be called twice:
-    // - once indirectly by the avclientService.initServerURL method
+    // - once indirectly by the drClientService.initServerURL method
     // - again directly in this constructor
     // todo: determine the appropriate time for calling that method, and resolve the duplicate calls to a single one
-    this.avclientService.initServerURL(environment.url);
+    this.drClientService.initServerURL(environment.url);
     this.voterartifactsService.initialize(this.userService.getUser().lastName);
   }
 
@@ -41,8 +41,8 @@ export class RequestAccessCodePage implements OnInit {
   async continuebtn() {
     if (this.userService.getUser().lastName !== undefined) {
       // Introduce randomness. Currently no support for voter-restart scenario
-      const opaqueVoterId = environment.production ? 'A00000000006' : this.userService.getUser().lastName;
-      await this.avclientService
+      const opaqueVoterId = environment.production ? Date.now().toString() : this.userService.getUser().lastName;
+      await this.drClientService
         .requestAccessCode(opaqueVoterId)
         .then(() => {
           this.route.navigate([

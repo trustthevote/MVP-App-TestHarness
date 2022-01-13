@@ -14,4 +14,4 @@ export { PRECINCT_4_CVR } from './precinct-4-cvr';
 export { PRECINCT_4_BALLOT } from './precinct-4-ballot';
 export { PRECINCT_4_AFFIDAVIT } from './precinct-4-affidavit';
 
-export { AV_SAMPLE_CVR } from './av-sample-cvr';
+export { DR_SAMPLE_CVR } from './dr-sample-cvr';

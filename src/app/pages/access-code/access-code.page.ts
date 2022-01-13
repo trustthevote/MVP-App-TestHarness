@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { ToastController, AlertController, LoadingController } from '@ionic/angular';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { StatuscodeService } from 'src/app/api/statuscode.service';
-import { AvclientService } from 'src/app/api/avclient.service';
+import { DrClientService } from 'src/app/api/drclient.service';
 
 @Component({
   selector: 'app-access-code',
@@ -53,7 +53,7 @@ export class AccessCodePage implements OnInit {
     private alertctrl: AlertController,
     private loadingctrl: LoadingController,
     public statuscodeService: StatuscodeService,
-    public avclientService: AvclientService
+    public drClientService: DrClientService
   ) {
     this.createOTPForm();
   }
@@ -135,7 +135,7 @@ export class AccessCodePage implements OnInit {
 
       return new Promise(() => {
         loading.dismiss();
-        this.avclientService
+        this.drClientService
           .validateAccessCode(this.data)
           .then(() => {
             this.route.navigate([
