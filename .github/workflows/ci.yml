@@ -1,9 +1,9 @@
 name: mvp-test-harness
 on:
   push:
-    branches: [main]
+    branches: [main,av-floating]
   pull_request:
-    branches: [main]
+    branches: [main,av-floating]
 jobs:
   CI:
     runs-on: ubuntu-latest
