@@ -1,8 +1,11 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="header-backgrond-color">
+    <h1 class="header-position">{{results.enter_access_code}}</h1>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content>
-  <div class="list-question">
-    <p>{{results.enter_access_code}}</p>
-  </div>
-  <p>{{results.text_ac}}</p>
+  <h3>{{results.text_ac}}</h3>
   <form [formGroup]="otpForm">
     <div class="opt-box-area" style="text-align: center">
       <div>
@@ -75,17 +78,16 @@
     </div>
   </form>
 </ion-content>
-
 <ion-footer>
   <ion-toolbar>
-    <ion-row>
-      <ion-col size="6" class="back-btn" style="text-align: start">
-        <ion-button color="dark" (click)="backbtn()">
+    <ion-row class="ion-footer-row">
+      <ion-col size="6" class="ion-left-col">
+        <ion-button class="ion-button-left" color="danger" (click)="backbtn()">
           {{results.back}}
           <ion-icon slot="start" name="chevron-back-outline"></ion-icon>
         </ion-button>
       </ion-col>
-      <ion-col size="6" class="next-btn">
+      <ion-col size="6" class="ion-right-col">
         <ion-button color="dark" (click)="nextbtn()" [disabled]="!otpForm.valid">
           {{results.next}}
           <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
