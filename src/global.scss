@@ -41,9 +41,12 @@ ion-content {
 .header-backgrond-color {
   --background: #ffffff;
 }
-ion-toolbar {
-  --border-style: none;
+ion-header {
+  ion-toolbar {
+    --border-style: none;
+  }
 }
+
 .header-text {
   font-family: museo slab;
   font-size: 32px;
@@ -112,6 +115,9 @@ ion-button {
 }
 .request-access-btn {
   width: 115px;
+}
+.try-again {
+  width: 125px;
 }
 // ---------------end-footer-sections-----------------------
 // -----------------error-pages---------------------------
@@ -311,7 +317,6 @@ input {
   font-size: 16px;
   height: 20px;
 }
-
 .receive-otp {
   text-align: left;
   font-family: 'Roboto';
@@ -320,7 +325,6 @@ input {
   opacity: 1;
   font-size: 16px;
 }
-
 .resend {
   text-align: left;
   text-decoration: underline;
@@ -334,7 +338,36 @@ input {
 .Report-A-Problem-btn {
   margin-top: 20px;
 }
-// -----------------------------------------------------------------
+// -----------------sending-confirmation-page----------------------------------------------
+.cir-icon {
+  font-size: 65px;
+  padding-top: 4%;
+  padding-bottom: 10px;
+}
+.icon-in-center {
+  text-align: center;
+}
+ion-footer {
+  .ion-toolbar-btn-in-center {
+    text-align: center;
+    margin: 10px 0;
+    padding: 10px 0;
+  }
+}
+// ----------------------------test-results-page--------------------------------------
+
+.div-text-mid {
+  text-align: center;
+  ion-icon {
+    font-size: 11vh;
+  }
+}
+// -------------------------sending-page---------------------------------------
+.sending-page-icon-div {
+  text-align: center;
+  padding-top: 75%;
+}
+// -----------------------------------------------------------------------------
 .toast {
   --color: white;
   --background: #2d2d2d;
@@ -374,12 +407,6 @@ ion-button {
   text-transform: capitalize;
   --border-radius: 5px;
 }
-// ion-toolbar {
-//   height: 100px;
-//   padding-right: 15px;
-//   padding-left: 15px;
-// }
-
 ion-col {
   padding-left: 0;
   padding-right: 0;

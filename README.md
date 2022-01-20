@@ -228,3 +228,13 @@ beforeEach(
   })
 );
 ```
+
+## Using scripts/resources.js file
+
+This file is used to convert the source App Icon and Splash screen image to the target App Icon and Splash screen image size for both IOS and Android mobile's for any responsive and version's. It contains all size target and source images name in it. The command is added in the package.json file in Script tag.
+
+```
+
+
+
+```
