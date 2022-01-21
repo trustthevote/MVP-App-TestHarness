@@ -1,4 +1,3 @@
-/* eslint-disable eqeqeq */
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastController, AlertController, LoadingController } from '@ionic/angular';
