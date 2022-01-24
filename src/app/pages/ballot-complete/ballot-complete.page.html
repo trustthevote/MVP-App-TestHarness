@@ -4,13 +4,13 @@
     <div class="upr-text"><h3>{{results.your_ballot_is_complete}}</h3></div>
     <h4 class="lineboader">{{results.choose_a_return}}</h4>
   </div>
-  <div class="cen-div-text" (click)="physicalret(); ballotReturnChoice()">
+  <div class="cen-div-text" (click)="physicalret(); ballotReturnChoice('physical')">
     <h3>{{results.physical_return}} <br /></h3>
     <h4>{{results.requires_printer}}</h4>
 
     <ion-icon name="archive-outline"></ion-icon>
   </div>
-  <div class="bottom-div-text" (click)="digitalret(); ballotReturnChoice()">
+  <div class="bottom-div-text" (click)="digitalret(); ballotReturnChoice('digital')">
     <h3>{{results.online_ballot_return}}</h3>
     <ion-icon name="tv-outline"></ion-icon>
   </div>
