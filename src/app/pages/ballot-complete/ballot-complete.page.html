@@ -4,11 +4,6 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <div class="list-question">
-    <div class="upr-text"><h2>{{results.thank_you}} {{ paramData?.firstName }}</h2></div>
-    <div class="upr-text"><h3>{{results.your_ballot_is_complete}}</h3></div>
-    <h4 class="lineboader">{{results.choose_a_return}}</h4>
-  </div>
   <div class="cen-div-text" (click)="physicalret(); ballotReturnChoice('physical')">
     <h3>{{results.physical_return}} <br /></h3>
     <h4>{{results.requires_printer}}</h4>
