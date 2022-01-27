@@ -1,17 +1,17 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="ion-no-padding header-backgrond-color">
+    <h1 class="header-position">{{results.choose_a_return}}</h1>
+  </ion-toolbar>
+</ion-header>
 <ion-content>
-  <div class="list-question">
-    <div class="upr-text"><h2>{{results.thank_you}} {{ paramData?.firstName }}</h2></div>
-    <div class="upr-text"><h3>{{results.your_ballot_is_complete}}</h3></div>
-    <h4 class="lineboader">{{results.choose_a_return}}</h4>
-  </div>
-  <div class="cen-div-text" (click)="physicalret(); ballotReturnChoice()">
+  <div class="cen-div-text" (click)="physicalret(); ballotReturnChoice('physical')">
     <h3>{{results.physical_return}} <br /></h3>
     <h4>{{results.requires_printer}}</h4>
 
-    <ion-icon name="archive-outline"></ion-icon>
+    <ion-icon name="mail-outline"></ion-icon>
   </div>
-  <div class="bottom-div-text" (click)="digitalret(); ballotReturnChoice()">
+  <div class="bottom-div-text" (click)="digitalret(); ballotReturnChoice('digital')">
     <h3>{{results.online_ballot_return}}</h3>
-    <ion-icon name="tv-outline"></ion-icon>
+    <ion-icon name="desktop-outline"></ion-icon>
   </div>
 </ion-content>

@@ -18,7 +18,6 @@ describe('Voter', () => {
 
     cy.contains('app-ballot-form ion-button', 'Start').click();
     cy.wait(pageTransitionDuration);
-    cy.contains('app-ballot-complete', 'Your ballot is complete').should('be.visible');
     cy.contains('app-ballot-complete', 'Choose A Return').should('be.visible');
 
     cy.contains('app-ballot-complete .bottom-div-text', 'Digital Return').click();
