@@ -22,7 +22,6 @@
 
     "ballot_comp": {
       "thank_you": "Thank you",
-      "your_ballot_is_complete": "Your ballot is complete",
       "choose_a_return": "Choose A Return",
       "physical_return": "Physical Return",
       "requires_printer": "Requires a Printer",
