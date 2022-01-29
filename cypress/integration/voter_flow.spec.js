@@ -42,7 +42,7 @@ describe('Voter', () => {
     cy.wait(pageTransitionDuration);
     cy.contains('app-ballot-fingerprint', 'Your Ballot Is Sealed').should('be.visible');
 
-    cy.contains('app-ballot-fingerprint ion-button', 'Cast Ballot Now').click();
+    cy.contains('app-ballot-fingerprint ion-button', 'Submit Ballot Now').click();
     cy.wait(pageTransitionDuration);
     cy.contains('app-sending-confirmation', 'Congrats! Your ballot has been sent!').should('be.visible');
   });
