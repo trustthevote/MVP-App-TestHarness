@@ -10,7 +10,7 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <h3>{{results.fisrt_para_text}}</h3>
+  <h3>{{results.first_para_text_bfp}}</h3>
   <ion-button class="ballot-btns" color="danger" (click)="sendbtn()">
     {{results.send}}
     <ion-icon slot="end" name="paper-plane-outline"></ion-icon>
@@ -21,11 +21,15 @@
     {{results.copy}}
     <ion-icon slot="end" name="checkmark-outline"></ion-icon>
   </ion-button>
-  <h3>{{results.tv4}}</h3>
+  <h3>
+    {{results.tv4}}
+    <br />
+    {{results.report}}
+  </h3>
   <ion-button color="medium" class="ballot-btns" (click)="rpbtn()">
     {{results.rap}}
     <ion-icon slot="end" name="help-outline"></ion-icon>
   </ion-button>
 
-  <h3>{{results.tv3_fb}}{{results.link}}</h3>
+  <h3>{{results.tv3_fb}}<br />{{results.link}}</h3>
 </ion-content>
