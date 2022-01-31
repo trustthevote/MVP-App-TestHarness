@@ -64,9 +64,9 @@
       "send": "Submit Ballot Now",
       "shmd": "Show more details",
       "tv1_fp": " On a computer or other device,go to",
-      "tv2_fb": "and enter  the  following code to review your ballot",
+      "tv2_fb": "and enter the following code to review your ballot",
       "mp": "My Progress",
-      "rap": "Report  A Problem"
+      "rap": "Report A Problem"
     },
 
     "copy_confirm": {
@@ -84,9 +84,9 @@
       "bfp": "Ballot Checking Code:",
       "zyx098": "zyx098-wvu765-tsr432-1234",
       "ydn": "Your ballot was unsealed and is now displayed on the VerifyMyBallot site. Review to confirm your choices are all correct.",
-      "tv2_fb": "If you did first use a Verify  My Ballot site, before you  selected  ",
+      "tv2_fb": "If you did first use a Verify My Ballot site, before you selected ",
       "str": "Start Ballot Test",
-      "tv2_fb1": "then you should re-try the  test using the Re-Try option below.",
+      "tv2_fb1": "then you should re-try the test using the Re-Try option below.",
       "tv3": "Does everything look correct?",
       "passed": "Yes",
       "failed": "No",
@@ -109,8 +109,8 @@
       "auth_p_2": "You can also click the print button below to proceed with a physical return instead."
     },
     "ballot_test_faild_test_page": {
-      "first_para": "Sorry to hear that. Your  ballot will be discarded. ",
-      "sec_para": "  Would you like to mark a new ballot or request a ballot be mailed to you?",
+      "first_para": "Sorry to hear that. Your ballot will be discarded. ",
+      "sec_para": " Would you like to mark a new ballot or request a ballot be mailed to you?",
       "fist_btn": "Mark a new ballot",
       "sec_btn": " request new ballot"
     },
@@ -125,7 +125,7 @@
       "heading": "Your Ballot Is Ready",
       "text": "You can send it digitally now.",
       "send": "send",
-      "text_detail": "  Or if you like, you may perform a technical test to verify your ballot fingerprint. To do so, copy the ballot fingerprint below, and paste into your external validator of choice.",
+      "text_detail": " Or if you like, you may perform a technical test to verify your ballot fingerprint. To do so, copy the ballot fingerprint below, and paste into your external validator of choice.",
       "copy": "Copy",
       "nbf": "New Ballot Fingerprint:",
       "tsr432": "tsr432-wvu765-zyx098-4321"
@@ -178,7 +178,7 @@
     },
 
     "rap_page": {
-      "para": "To use digital return, touch  Next to request a one-time access code to be sent to your email address.",
+      "para": "To use digital return, touch Next to request a one-time access code to be sent to your email address.",
       "para_center": "If you did not receive a code upon requesting, please check the email we have on file by following the link below.",
       "next": "Next",
       "back": "Back",
@@ -189,7 +189,7 @@
       "upr_para": "Something went wrong, and we can't complete the preparation of your digital ballot. ",
       "mid_para": "You can report a problem, and you have the option of using the Print button below to print your ballot and affidavit for physical return. ",
       "link": "www.linktosite.org",
-      "back": "Report  A Problem",
+      "back": "Report A Problem",
       "print": "Print",
       "try_again": "Try Again"
     },
@@ -198,7 +198,7 @@
       "upr_para": "Something went wrong, and we can't complete the preparation of your digital ballot. ",
       "mid_para": "You can report a problem, and you have the option of using the Print button below to print your ballot and affidavit for physical return. ",
       "link": "www.linktosite.org",
-      "back": "Report  A Problem",
+      "back": "Report A Problem",
       "print": "Print",
       "try_again": "Try Again"
     },
@@ -247,7 +247,7 @@
     "ballot_test_failed_page": {
       "upr_para": "Sorry to hear that. We do not recommend you use this voting app. You can report a problem and contact your election administrator for additional options.",
       "link": "www.linktosite.org",
-      "back": "Report  A Problem",
+      "back": "Report A Problem",
       "print": "Print"
     },
 
@@ -295,7 +295,7 @@
       "upr_para": "Something went wrong. You will not be able to submit your ballot digitally at this time.",
       "mid_para": "You can report a problem and use the Print button below to print your ballot for physical return.",
       "link": "www.linktosite.org",
-      "back": "Report  A Problem",
+      "back": "Report A Problem",
       "print": "Print",
       "try_again": "Try Again"
     },
@@ -312,7 +312,7 @@
     "corrupt_cv_construct00008_error": {
       "upr_para": "Your local election office has been notified to issue you a replacement ballot by mail. For more information, you may contact your election office through the link below. ",
       "link": "www.linktosite.org",
-      "back": "Report  A Problem",
+      "back": "Report A Problem",
       "print": "Print",
       "try_again": "Try Again"
     },
@@ -321,7 +321,7 @@
       "upr_para": "Something went wrong, and we can't complete the preparation of your digital ballot. ",
       "mid_para": "You can report a problem, and you have the option of using the Print button below to print your ballot and affidavit for physical return. ",
       "link": "www.linktosite.org",
-      "back": "Report  A Problem",
+      "back": "Report A Problem",
       "print": "Print",
       "try_again": "Try Again"
     },
@@ -340,7 +340,7 @@
       "test_pr": "You can also click the print button below to proceed with a physical return instead.",
       "link": "www.linktosite.gov ",
       "try_again": "Try again",
-      "report_prob": "Report  A Problem",
+      "report_prob": "Report A Problem",
       "print": "Print"
     },
 
@@ -356,7 +356,7 @@
       "upr_para": "Something went wrong, and we can't complete the preparation of your digital ballot. ",
       "mid_para": "You can report a problem, and you have the option of using the Print button below to print your ballot and affidavit for physical return. ",
       "link": "www.linktosite.org",
-      "back": "Report  A Problem",
+      "back": "Report A Problem",
       "print": "Print",
       "try_again": "Try Again"
     },
