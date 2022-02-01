@@ -95,8 +95,9 @@
     },
 
     "ballot_resealed_page": {
-      "test_results": "Ballot Check Complete",
-      "ydn": "Your ballot is being digitally sealed again. You can perform the check again or submit your ballot.",
+      "test_results": "Ballot Check Complete!",
+      "ydn": "Your ballot is being digitally sealed again.",
+      "ycp": "You can perform the check again or submit your ballot.",
       "next": "Continue"
     },
 
