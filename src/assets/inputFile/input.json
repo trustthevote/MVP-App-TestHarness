@@ -84,8 +84,10 @@
       "bfp": "Ballot Checking Code:",
       "zyx098": "zyx098-wvu765-tsr432-1234",
       "ydn": "Your ballot was unsealed and is now displayed on the VerifyMyBallot site. Review to confirm your choices are all correct.",
+      "tv2_fb": "If you did first use a Verify My Ballot site, before you selected ",
+      "str": "Start Ballot Test",
+      "tv2_fb1": "then you should re-try the test using the Re-Try option below.",
       "tv3": "Does everything look correct?",
-      "ids": "I don't see my ballot?",
       "passed": "Yes",
       "failed": "No",
       "next": "Next",
@@ -93,9 +95,8 @@
     },
 
     "ballot_resealed_page": {
-      "test_results": "Ballot Check Complete!",
-      "ydn": "Your ballot is being digitally sealed again.",
-      "ycp": "You can perform the check again or submit your ballot.",
+      "test_results": "Ballot Check Complete",
+      "ydn": "Your ballot is being digitally sealed again. You can perform the check again or submit your ballot.",
       "next": "Continue"
     },
 
