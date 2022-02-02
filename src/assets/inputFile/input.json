@@ -84,10 +84,8 @@
       "bfp": "Ballot Checking Code:",
       "zyx098": "zyx098-wvu765-tsr432-1234",
       "ydn": "Your ballot was unsealed and is now displayed on the VerifyMyBallot site. Review to confirm your choices are all correct.",
-      "tv2_fb": "If you did first use a Verify My Ballot site, before you selected ",
-      "str": "Start Ballot Test",
-      "tv2_fb1": "then you should re-try the test using the Re-Try option below.",
       "tv3": "Does everything look correct?",
+      "ids": "I don't see my ballot?",
       "passed": "Yes",
       "failed": "No",
       "next": "Next",
@@ -95,19 +93,12 @@
     },
 
     "ballot_resealed_page": {
-      "test_results": "Ballot Check Complete",
-      "ydn": "Your ballot is being digitally sealed again. You can perform the check again or submit your ballot.",
+      "test_results": "Ballot Check Complete!",
+      "ydn": "Your ballot is being digitally sealed again.",
+      "ycp": "You can perform the check again or submit your ballot.",
       "next": "Continue"
     },
 
-    "code_invalid_access00004_error": {
-      "try_again": "Try again",
-      "btn_report": "Report A problem",
-      "print": "Print",
-      "www_link": "www.linktosite.org",
-      "auth_p_1": " Sorry, your access code did not work. Please try again, or click the link below for help. ",
-      "auth_p_2": "You can also click the print button below to proceed with a physical return instead."
-    },
     "ballot_test_faild_test_page": {
       "first_para": "Sorry to hear that. Your ballot will be discarded. ",
       "sec_para": " Would you like to mark a new ballot or request a ballot be mailed to you?",
@@ -144,15 +135,6 @@
       "text2": " We are sorry for the inconvenience!",
       "link": "www.linktosite.gov ",
       "try_again": "Try again"
-    },
-
-    "check_network_oooo_error_page": {
-      "text": " Sorry, it seems there was a network error. Please check your connection and try again.",
-      "try_again": "Try again",
-      "first_para": " Sorry, it seems there was a network error. Please check your connection and try again.",
-      "sec_para": " You can also click the print button below to proceed with a physical return instead.",
-      "rbtn": "report a problem",
-      "print": "Print"
     },
 
     "sending_confirmation_page": {
@@ -258,7 +240,6 @@
       "print": "Print"
     },
     "check_network_request00001_error": {
-      "text": " Sorry, it seems there was a network error. Please check your connection and try again.",
       "try_again": "Try again",
       "first_para": " Sorry, it seems there was a network error. Please check your connection and try again.",
       "sec_para": " You can also click the print button below to proceed with a physical return instead.",
@@ -281,9 +262,15 @@
       "rbtn": "report a problem",
       "btn": "Request"
     },
-
+    "code_invalid_access00004_error": {
+      "try_again": "Try again",
+      "btn_report": "Report A problem",
+      "print": "Print",
+      "www_link": "www.linktosite.org",
+      "auth_p_1": " Sorry, your access code did not work. Please try again, or click the link below for help. ",
+      "auth_p_2": "You can also click the print button below to proceed with a physical return instead."
+    },
     "check_network_access00005_error": {
-      "text": " Sorry, it seems there was a network error. Please check your connection and try again.",
       "try_again": "Try again",
       "first_para": " Sorry, it seems there was a network error. Please check your connection and try again.",
       "sec_para": " You can also click the print button below to proceed with a physical return instead.",
@@ -301,7 +288,6 @@
     },
 
     "check_network_construct00007_error": {
-      "text": " Sorry, it seems there was a network error. Please check your connection and try again.",
       "try_again": "Try again",
       "first_para": " Sorry, it seems there was a network error. Please check your connection and try again.",
       "sec_para": "You can report a problem, and you can print your ballot and use physical return by tapping the print button below.",
@@ -326,7 +312,6 @@
       "try_again": "Try Again"
     },
     "check_network_spoil00010_error": {
-      "text": " Sorry, it seems there was a network error. Please check your connection and try again.",
       "try_again": "Try again",
       "first_para": " Sorry, it seems there was a network error. Please check your connection and try again.",
       "sec_para": " You can also click the print button below to proceed with a physical return instead.",
@@ -345,7 +330,6 @@
     },
 
     "check_network_submit00012_error": {
-      "text": " Sorry, it seems there was a network error. Please check your connection and try again.",
       "try_again": "Try again",
       "first_para": " Sorry, it seems there was a network error. Please check your connection and try again.",
       "sec_para": " You can also click the print button below to proceed with a physical return instead.",
@@ -359,15 +343,6 @@
       "back": "Report A Problem",
       "print": "Print",
       "try_again": "Try Again"
-    },
-
-    "network_error_request_code_page": {
-      "text": " Sorry, it seems there was a network error. Please check your connection and try again.",
-      "try_again": "Try again",
-      "first_para": " Sorry, it seems there was a network error. Please check your connection and try again.",
-      "sec_para": " You can also click the print button below to proceed with a physical return instead.",
-      "rbtn": "report a problem",
-      "print": "Print"
     },
 
     "provide_information": "Provide Information",
