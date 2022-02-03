@@ -1,4 +1,4 @@
-# MVP-App-TestHarness
+# MVP-App-TestHarness (aka Rosie)
 
 - [Running the Application](#running-the-application)
 - [Development workflow](#development-workflow)
