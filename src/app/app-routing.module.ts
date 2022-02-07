@@ -211,6 +211,10 @@ const routes: Routes = [
     loadChildren: () =>
       import('./pages/ballot-test-failed-test/ballot-test-failed-test.module').then((m) => m.BallotTestFailedTestPageModule),
   },
+  {
+    path: 'cannot-see-ballot',
+    loadChildren: () => import('./pages/cannot-see-ballot/cannot-see-ballot.module').then((m) => m.CannotSeeBallotPageModule),
+  },
 ];
 
 @NgModule({
