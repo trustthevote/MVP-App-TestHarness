@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
-
+import { RouterTestingModule } from '@angular/router/testing';
 import { CannotSeeBallotPage } from './cannot-see-ballot.page';
 
 describe('CannotSeeBallotPage', () => {
@@ -11,7 +11,7 @@ describe('CannotSeeBallotPage', () => {
     waitForAsync(() => {
       TestBed.configureTestingModule({
         declarations: [CannotSeeBallotPage],
-        imports: [IonicModule.forRoot()],
+        imports: [IonicModule.forRoot(), RouterTestingModule],
       }).compileComponents();
 
       fixture = TestBed.createComponent(CannotSeeBallotPage);
