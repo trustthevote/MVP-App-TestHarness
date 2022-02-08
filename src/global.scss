@@ -244,13 +244,11 @@ ion-input {
 }
 .bottom-div-text {
   text-align: center;
-  margin-right: 20px;
   font-size: 85px;
 }
 
 .cen-div-text {
   text-align: center;
-  margin-right: 20px;
   font-size: 85px;
   padding-top: 40px;
   padding-bottom: 40px;
@@ -262,6 +260,9 @@ input {
   -webkit-appearance: none;
   box-shadow: none !important;
   border: none;
+}
+.center-div {
+  text-align: center;
 }
 .opt-box-area {
   justify-content: left;
@@ -338,6 +339,10 @@ input {
 .Report-A-Problem-btn {
   margin-top: 20px;
 }
+.ballot-btns {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 // -----------------sending-confirmation-page----------------------------------------------
 .cir-icon {
   font-size: 65px;
@@ -362,10 +367,33 @@ ion-footer {
     font-size: 11vh;
   }
 }
+.add-question {
+  ion-row {
+    text-align: center;
+    margin-top: 30px;
+
+    .question-icon {
+      font-size: 20px;
+      padding-top: 18px;
+      text-align: end;
+    }
+    .question-text {
+      text-align: start;
+    }
+  }
+}
+// -------------------------cannot-see-ballot-page----------------------------
+.cannot-see-ballot-css h3 {
+  padding-top: 35px;
+  padding-bottom: 20px;
+}
 // -------------------------sending-page---------------------------------------
 .sending-page-icon-div {
   text-align: center;
   padding-top: 75%;
+}
+.sending-icon {
+  font-size: 70px;
 }
 // -----------------------------------------------------------------------------
 .toast {

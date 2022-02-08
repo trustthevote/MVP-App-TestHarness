@@ -51,16 +51,7 @@ export class TestResultsPage implements OnInit {
       });
   }
 
-  failbtn() {
-    this.route.navigate(['/ballot-test-failed-test']);
-  }
-
-  backbtn() {
-    this.route.navigate([
-      '/ballot-fingerprint',
-      {
-        code: this.getCode,
-      },
-    ]);
+  canNotSeeBallot() {
+    this.route.navigate(['/cannot-see-ballot']);
   }
 }
