@@ -28,7 +28,7 @@ export class TestResultsPage implements OnInit {
       });
   }
 
-  passbtn() {
+  passBtn() {
     this.cvr = this.voterartifactsService.cvr;
     this.drClientService
       .constructBallotCryptograms(this.cvr)
