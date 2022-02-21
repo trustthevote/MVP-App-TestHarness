@@ -109,15 +109,7 @@ describe('DrClientService', () => {
     });
     it('should resolve any other ID', async () => {
       service.validateAccessCode('00014');
-      await expectAsync(service.castBallot(PRECINCT_2_AFFIDAVIT)).toBeResolvedTo({
-        previousBoardHash: 'tsr432-wvu765-zyx098-4321',
-        boardHash: 'zyx098-wvu765-tsr432-1234',
-        registeredAt: '2020-03-01T10:00:00.000+01:00',
-        serverSignature:
-          // eslint-disable-next-line max-len
-          'dbcce518142b8740a5c911f727f3c02829211a8ddfccabeb89297877e4198bc1,46826ddfccaac9ca105e39c8a2d015098479624c411b4783ca1a3600daf4e8fa',
-        voteSubmissionId: '6',
-      });
+      await expectAsync(service.castBallot(PRECINCT_2_AFFIDAVIT)).toBeResolvedTo('ballot-tracking-code');
     });
   });
 
