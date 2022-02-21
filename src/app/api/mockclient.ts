@@ -9,6 +9,10 @@ export class MockClient implements IDigitalReturnClient {
     this.statuscodeService = statuscodeService;
   }
 
+  challengeBallot(): Promise<void> {
+    return Promise.resolve();
+  }
+
   registerVoter(): Promise<void> {
     return Promise.resolve();
   }
@@ -56,7 +60,7 @@ export class MockClient implements IDigitalReturnClient {
   }
 
   // eslint-disable-next-line unused-imports/no-unused-vars
-  constructBallotCryptograms(_cvr: any): Promise<string> {
+  constructBallot(_cvr: any): Promise<string> {
     return new Promise((resolve, reject) => {
       switch (this.cachedAccessCode) {
         case '00006':
@@ -74,7 +78,7 @@ export class MockClient implements IDigitalReturnClient {
     });
   }
 
-  spoilBallotCryptograms(): Promise<void> {
+  spoilBallot(): Promise<string> {
     return new Promise((resolve, reject) => {
       switch (this.cachedAccessCode) {
         case '00009':
@@ -87,13 +91,13 @@ export class MockClient implements IDigitalReturnClient {
           reject(new Error(this.statuscodeService.statusCode('ServerCommitmentError')));
           break;
         default:
-          resolve();
+          resolve('qwerty-verifier-code');
       }
     });
   }
 
   // eslint-disable-next-line unused-imports/no-unused-vars
-  submitBallotCryptograms(_affidavit: string): Promise<any> {
+  castBallot(_affidavit: string): Promise<any> {
     return new Promise((resolve, reject) => {
       switch (this.cachedAccessCode) {
         case '00012':
