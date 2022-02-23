@@ -9,28 +9,27 @@
 <ion-content>
   <div>
     <h3>{{results.ydn}}</h3>
-    <h2>{{results.tv3}}</h2>
+    <h3>{{results.tv3}}</h3>
   </div>
+  <br />
   <div>
-    <ion-row>
-      <ion-col size="6">
-        <div class="div-text-mid" (click)="canNotSeeBallot()">
-          <h3>{{results.failed}}</h3>
-          <ion-icon name="close-circle-outline"></ion-icon>
-        </div>
+    <ion-row class="ion-footer-row">
+      <ion-col size="6" class="ion-left-col">
+        <ion-button color="danger" (click)="cannotSeeBallot()">
+          {{results.failed}}
+          <ion-icon class="margin5" name="close-circle-outline"></ion-icon>
+        </ion-button>
       </ion-col>
-      <ion-col size="6">
-        <div class="div-two">
-          <div class="div-text-mid" (click)="passBtn()">
-            <h3>{{results.passed}}</h3>
-            <ion-icon name="checkmark-circle-outline"></ion-icon>
-          </div>
-        </div>
+      <ion-col size="6" class="ion-right-col">
+        <ion-button color="dark" (click)="passBtn()">
+          {{results.passed}}
+          <ion-icon class="margin5" name="checkmark-outline"></ion-icon>
+        </ion-button>
       </ion-col>
     </ion-row>
     <div>
       <div class="add-question">
-        <ion-row (click)="canNotSeeBallot()">
+        <ion-row (click)="cannotSeeBallot()">
           <ion-col size="3" class="question-icon">
             <ion-icon name="information-circle-outline"></ion-icon>
           </ion-col>
