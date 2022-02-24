@@ -23,8 +23,7 @@
     "ballot_comp": {
       "thank_you": "Thank you",
       "choose_a_return": "Choose A Return",
-      "physical_return": "Physical Return",
-      "requires_printer": "Requires a Printer",
+      "physical_return": "Physical Return. This option requires a printer.",
       "online_ballot_return": "Digital Return"
     },
 
