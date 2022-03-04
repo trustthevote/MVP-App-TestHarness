@@ -51,7 +51,7 @@ export class TestResultsPage implements OnInit {
       });
   }
 
-  canNotSeeBallot() {
+  cannotSeeBallot() {
     this.route.navigate(['/cannot-see-ballot']);
   }
 }
