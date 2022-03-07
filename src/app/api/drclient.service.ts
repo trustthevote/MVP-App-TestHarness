@@ -13,6 +13,7 @@ export interface IDigitalReturnClient {
   registerVoter(): Promise<void>;
   constructBallot(cvr: any): Promise<string>;
   spoilBallot(): Promise<string>;
+  waitForVerifierRegistration(): Promise<string>;
   castBallot(affidavit: any): Promise<string>;
   challengeBallot(): Promise<void>;
   purgeData(): void;
@@ -59,6 +60,10 @@ export class DrClientService {
 
   spoilBallot(): Promise<string> {
     return this.client.spoilBallot();
+  }
+
+  waitForVerifierRegistration(): Promise<string> {
+    return this.client.waitForVerifierRegistration();
   }
 
   castBallot(affidavit: string): Promise<string> {

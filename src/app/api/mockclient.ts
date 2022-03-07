@@ -9,16 +9,37 @@ export class MockClient implements IDigitalReturnClient {
     this.statuscodeService = statuscodeService;
   }
 
-  challengeBallot(): Promise<void> {
-    return Promise.resolve();
-  }
-
   registerVoter(): Promise<void> {
-    return Promise.resolve();
+    return new Promise((resolve, reject) => {
+      switch (this.cachedAccessCode) {
+        case '00021':
+          reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));
+          break;
+        case '00022':
+          reject(new Error(this.statuscodeService.statusCode('InvalidTokenError')));
+          break;
+        case '00023':
+          reject(new Error(this.statuscodeService.statusCode('NetworkError')));
+          break;
+        default:
+          resolve();
+      }
+    });
   }
 
   initialize(): Promise<void> {
-    return Promise.resolve();
+    return new Promise((resolve, reject) => {
+      switch (this.cachedAccessCode) {
+        case '00019':
+          reject(new Error(this.statuscodeService.statusCode('InvalidConfigError')));
+          break;
+        case '00020':
+          reject(new Error(this.statuscodeService.statusCode('NetworkError')));
+          break;
+        default:
+          resolve();
+      }
+    });
   }
 
   requestAccessCode(opaqueVoterId: string): Promise<void> {
@@ -72,8 +93,11 @@ export class MockClient implements IDigitalReturnClient {
         case '00008':
           reject(new Error(this.statuscodeService.statusCode('CorruptCVRError')));
           break;
+        case '000024':
+          reject(new Error(this.statuscodeService.statusCode('VoterSessionTimeoutError')));
+          break;
         default:
-          resolve('zyx098-wvu765-tsr432-1234');
+          resolve('7654321');
       }
     });
   }
@@ -89,6 +113,9 @@ export class MockClient implements IDigitalReturnClient {
           break;
         case '00011':
           reject(new Error(this.statuscodeService.statusCode('ServerCommitmentError')));
+          break;
+        case '000025':
+          reject(new Error(this.statuscodeService.statusCode('VoterSessionTimeoutError')));
           break;
         default:
           resolve('qwerty-verifier-code');
@@ -106,8 +133,45 @@ export class MockClient implements IDigitalReturnClient {
         case '00013':
           reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));
           break;
+        case '000026':
+          reject(new Error(this.statuscodeService.statusCode('VoterSessionTimeoutError')));
+          break;
         default:
           resolve('ballot-tracking-code');
+      }
+    });
+  }
+
+  // Should be called right after 'spoilBallot'
+  waitForVerifierRegistration(): Promise<string> {
+    return new Promise((resolve, reject) => {
+      switch (this.cachedAccessCode) {
+        case '00014':
+          reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));
+          break;
+        case '00015':
+          reject(new Error(this.statuscodeService.statusCode('NetworkError')));
+          break;
+        case '00016':
+          reject(new Error(this.statuscodeService.statusCode('TimeoutError')));
+          break;
+        default:
+          resolve('1234567');
+      }
+    });
+  }
+
+  challengeBallot(): Promise<void> {
+    return new Promise((resolve, reject) => {
+      switch (this.cachedAccessCode) {
+        case '00017':
+          reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));
+          break;
+        case '00018':
+          reject(new Error(this.statuscodeService.statusCode('NetworkError')));
+          break;
+        default:
+          resolve();
       }
     });
   }
