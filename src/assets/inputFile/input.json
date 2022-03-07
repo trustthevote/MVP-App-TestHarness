@@ -23,8 +23,7 @@
     "ballot_comp": {
       "thank_you": "Thank you",
       "choose_a_return": "Choose A Return",
-      "physical_return": "Physical Return",
-      "requires_printer": "Requires a Printer",
+      "physical_return": "Physical Return. This option requires a printer.",
       "online_ballot_return": "Digital Return"
     },
 
@@ -351,6 +350,16 @@
       "third_csb_text": "You can review the step-by-step instructions at",
       "link_csb": "electionwebsite.gov",
       "back_btn_csb": "retry"
+    },
+    "check_your_pairing_code_page": {
+      "check_your_pairing_code": "Check Your Pairing Codes",
+      "cypc_1": "Your first step is the compare your pairing codes.",
+      "cypc_2": "You should see a pairing code on the VerifyMyBallot Site that you are using to perform your ballot check. ",
+      "cypc_3": "Please compare it the checking code shown below.",
+      "Z8ph0dB": "Z8ph0dB",
+      "do_pcm": "Do the pairing codes match?",
+      "yes": "Yes",
+      "no": "No"
     },
 
     "provide_information": "Provide Information",

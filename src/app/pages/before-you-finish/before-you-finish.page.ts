@@ -33,7 +33,7 @@ export class BeforeYouFinishPage implements OnInit {
     this.cvr = this.voterartifactsService.cvr;
 
     this.drClientService
-      .constructBallot(this.cvr)
+      .constructBallotCryptograms(this.cvr)
       .then(() => {
         this.route.navigate([
           '/ballot-fingerprint',

@@ -51,7 +51,7 @@ export class BallotFingerprintPage implements OnInit {
   sendbtn() {
     this.affidavit = this.voterartifactsService.affidavit;
     this.drClientService
-      .castBallot(this.affidavit)
+      .submitBallotCryptograms(this.affidavit)
       .then(() => {
         this.route.navigate([
           '/sending-confirmation',
@@ -71,10 +71,10 @@ export class BallotFingerprintPage implements OnInit {
 
   copybtn() {
     this.drClientService
-      .spoilBallot()
+      .spoilBallotCryptograms()
       .then(() => {
         this.route.navigate([
-          '/test-results',
+          '/check-your-pairing-codes',
           {
             code: this.getCode,
           },

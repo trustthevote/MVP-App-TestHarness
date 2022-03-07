@@ -9,10 +9,6 @@ export class MockClient implements IDigitalReturnClient {
     this.statuscodeService = statuscodeService;
   }
 
-  challengeBallot(): Promise<void> {
-    return Promise.resolve();
-  }
-
   registerVoter(): Promise<void> {
     return Promise.resolve();
   }
@@ -60,7 +56,7 @@ export class MockClient implements IDigitalReturnClient {
   }
 
   // eslint-disable-next-line unused-imports/no-unused-vars
-  constructBallot(_cvr: any): Promise<string> {
+  constructBallotCryptograms(_cvr: any): Promise<string> {
     return new Promise((resolve, reject) => {
       switch (this.cachedAccessCode) {
         case '00006':
@@ -78,7 +74,7 @@ export class MockClient implements IDigitalReturnClient {
     });
   }
 
-  spoilBallot(): Promise<string> {
+  spoilBallotCryptograms(): Promise<void> {
     return new Promise((resolve, reject) => {
       switch (this.cachedAccessCode) {
         case '00009':
@@ -91,13 +87,13 @@ export class MockClient implements IDigitalReturnClient {
           reject(new Error(this.statuscodeService.statusCode('ServerCommitmentError')));
           break;
         default:
-          resolve('qwerty-verifier-code');
+          resolve();
       }
     });
   }
 
   // eslint-disable-next-line unused-imports/no-unused-vars
-  castBallot(_affidavit: string): Promise<string> {
+  submitBallotCryptograms(_affidavit: string): Promise<any> {
     return new Promise((resolve, reject) => {
       switch (this.cachedAccessCode) {
         case '00012':
@@ -107,7 +103,15 @@ export class MockClient implements IDigitalReturnClient {
           reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));
           break;
         default:
-          resolve('ballot-tracking-code');
+          resolve({
+            previousBoardHash: 'tsr432-wvu765-zyx098-4321',
+            boardHash: 'zyx098-wvu765-tsr432-1234',
+            registeredAt: '2020-03-01T10:00:00.000+01:00',
+            serverSignature:
+              // eslint-disable-next-line max-len
+              'dbcce518142b8740a5c911f727f3c02829211a8ddfccabeb89297877e4198bc1,46826ddfccaac9ca105e39c8a2d015098479624c411b4783ca1a3600daf4e8fa',
+            voteSubmissionId: '6',
+          });
       }
     });
   }
