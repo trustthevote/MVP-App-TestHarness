@@ -13,7 +13,7 @@ export class MockClient implements IDigitalReturnClient {
     return new Promise((resolve, reject) => {
       switch (this.cachedAccessCode) {
         case '00021':
-          reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));
+          reject(new Error(this.statuscodeService.statusCode('InvalidStateError')));
           break;
         case '00022':
           reject(new Error(this.statuscodeService.statusCode('InvalidTokenError')));
@@ -62,7 +62,7 @@ export class MockClient implements IDigitalReturnClient {
       this.cachedAccessCode = code;
       switch (code) {
         case '00002':
-          reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));
+          reject(new Error(this.statuscodeService.statusCode('InvalidStateError')));
           break;
         case '00003':
           reject(new Error(this.statuscodeService.statusCode('AccessCodeExpired')));
@@ -85,7 +85,7 @@ export class MockClient implements IDigitalReturnClient {
     return new Promise((resolve, reject) => {
       switch (this.cachedAccessCode) {
         case '00006':
-          reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));
+          reject(new Error(this.statuscodeService.statusCode('InvalidStateError')));
           break;
         case '00007':
           reject(new Error(this.statuscodeService.statusCode('NetworkError')));
@@ -106,7 +106,7 @@ export class MockClient implements IDigitalReturnClient {
     return new Promise((resolve, reject) => {
       switch (this.cachedAccessCode) {
         case '00009':
-          reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));
+          reject(new Error(this.statuscodeService.statusCode('InvalidStateError')));
           break;
         case '00010':
           reject(new Error(this.statuscodeService.statusCode('NetworkError')));
@@ -131,7 +131,7 @@ export class MockClient implements IDigitalReturnClient {
           reject(new Error(this.statuscodeService.statusCode('NetworkError')));
           break;
         case '00013':
-          reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));
+          reject(new Error(this.statuscodeService.statusCode('InvalidStateError')));
           break;
         case '000026':
           reject(new Error(this.statuscodeService.statusCode('VoterSessionTimeoutError')));
@@ -147,7 +147,7 @@ export class MockClient implements IDigitalReturnClient {
     return new Promise((resolve, reject) => {
       switch (this.cachedAccessCode) {
         case '00014':
-          reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));
+          reject(new Error(this.statuscodeService.statusCode('InvalidStateError')));
           break;
         case '00015':
           reject(new Error(this.statuscodeService.statusCode('NetworkError')));
@@ -165,7 +165,7 @@ export class MockClient implements IDigitalReturnClient {
     return new Promise((resolve, reject) => {
       switch (this.cachedAccessCode) {
         case '00017':
-          reject(new Error(this.statuscodeService.statusCode('CallOutOfOrderError')));
+          reject(new Error(this.statuscodeService.statusCode('InvalidStateError')));
           break;
         case '00018':
           reject(new Error(this.statuscodeService.statusCode('NetworkError')));
