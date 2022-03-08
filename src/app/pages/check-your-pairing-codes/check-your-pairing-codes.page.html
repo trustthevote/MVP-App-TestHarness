@@ -8,14 +8,12 @@
 <ion-content>
   <div>
     <h3>{{results.cypc_1}}</h3>
-    <h3>{{results.cypc_2}}</h3>
-    <h3>{{results.cypc_3}}</h3>
   </div>
-  <p class="centerStaticNum">{{results.Z8ph0dB}}</p>
+  <p class="centerStaticNum">{{results.xyzabc42}}</p>
   <div>
     <div class="add-question">
       <ion-row>
-        <ion-col class="centerTextAlign">
+        <ion-col class="question-text">
           <h3>{{results.do_pcm}}</h3>
         </ion-col>
       </ion-row>
@@ -24,15 +22,15 @@
   <div>
     <ion-row class="ion-footer-row">
       <ion-col size="6" class="ion-left-col">
-        <ion-button color="danger" (click)="tobecontinueBtn()">
-          {{results.no}}
-          <ion-icon class="margin5" name="close-circle-outline"></ion-icon>
-        </ion-button>
-      </ion-col>
-      <ion-col size="6" class="ion-right-col">
         <ion-button color="dark" (click)="yesBtn()">
           {{results.yes}}
           <ion-icon class="margin5" name="checkmark-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col size="6" class="ion-right-col">
+        <ion-button color="danger" (click)="tobecontinueBtn()">
+          {{results.no}}
+          <ion-icon class="margin5" name="close-circle-outline"></ion-icon>
         </ion-button>
       </ion-col>
     </ion-row>
