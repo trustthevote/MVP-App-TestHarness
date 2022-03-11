@@ -74,7 +74,7 @@ export class BallotFingerprintPage implements OnInit {
       .spoilBallot()
       .then(() => {
         this.route.navigate([
-          '/test-results',
+          '/check-your-pairing-codes',
           {
             code: this.getCode,
           },
