@@ -1,4 +1,3 @@
-
 The Jetsons live in Orbit City, in Gadget County.
 
 The Gadget County Elections Board runs elections for the electoral district that is the county itself (including statewide and state level elections), as well as the two jurisdictions within the county: Orbit City with its offices for City Council and for Mayor; and the Spaceport District, with its offices for the Spaceport Control Board that regulates the use of the SpacePort and who supervise staff actitvity to collect landing fees and use funds for spaceport upkeep.
