@@ -157,7 +157,6 @@ h3 {
 h4 {
   font-size: 18px;
   color: #807f74;
-
   font-family: 'Trebuchet_MS';
 }
 // --------------------------h5-tag-css-----------------
@@ -244,13 +243,11 @@ ion-input {
 }
 .bottom-div-text {
   text-align: center;
-  margin-right: 20px;
   font-size: 85px;
 }
 
 .cen-div-text {
   text-align: center;
-  margin-right: 20px;
   font-size: 85px;
   padding-top: 40px;
   padding-bottom: 40px;
@@ -262,6 +259,9 @@ input {
   -webkit-appearance: none;
   box-shadow: none !important;
   border: none;
+}
+.center-div {
+  text-align: center;
 }
 .opt-box-area {
   justify-content: left;
@@ -338,7 +338,23 @@ input {
 .Report-A-Problem-btn {
   margin-top: 20px;
 }
+.ballot-btns {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 // -----------------sending-confirmation-page----------------------------------------------
+.sending-page-text {
+  h2 {
+    margin-top: 20px;
+  }
+  h3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  h4 {
+    margin-bottom: 20px;
+  }
+}
 .cir-icon {
   font-size: 65px;
   padding-top: 4%;
@@ -362,12 +378,47 @@ ion-footer {
     font-size: 11vh;
   }
 }
+.add-question {
+  ion-row {
+    text-align: center;
+    margin-top: 30px;
+
+    .question-icon {
+      font-size: 20px;
+      padding-top: 17px;
+      text-align: end;
+    }
+    .question-text {
+      text-align: start;
+    }
+  }
+}
+// -------------------------cannot-see-ballot-page----------------------------
+.cannot-see-ballot-css h3 {
+  padding-top: 35px;
+  padding-bottom: 20px;
+}
 // -------------------------sending-page---------------------------------------
 .sending-page-icon-div {
   text-align: center;
   padding-top: 75%;
 }
-// -----------------------------------------------------------------------------
+.sending-icon {
+  font-size: 70px;
+}
+// -------------------------------before-you-page-------------------------------
+
+.before-you-page-text {
+  h3 {
+    margin-bottom: 20px;
+  }
+  h4 {
+    margin-bottom: 20px;
+  }
+}
+
+// ------------------------------------------------------------------------------
+
 .toast {
   --color: white;
   --background: #2d2d2d;
@@ -410,4 +461,10 @@ ion-button {
 ion-col {
   padding-left: 0;
   padding-right: 0;
+}
+.margin5 {
+  margin-left: 5px;
+}
+.colorDarkBlue {
+  --background: #232c67;
 }

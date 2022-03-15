@@ -11,13 +11,13 @@
 </ion-header>
 <ion-content>
   <h3>{{results.first_para_text_bfp}}</h3>
-  <ion-button class="ballot-btns" color="danger" (click)="sendbtn()">
+  <ion-button class="ballot-btns" color="dark" (click)="sendbtn()">
     {{results.send}}
     <ion-icon slot="end" name="paper-plane-outline"></ion-icon>
   </ion-button>
   <h3>{{results.ydn}}</h3>
   <h3>{{results.second_para_text}}</h3>
-  <ion-button color="dark" class="ballot-btns" (click)="copybtn()">
+  <ion-button class="colorDarkBlue ballot-btns" (click)="copybtn()">
     {{results.copy}}
     <ion-icon slot="end" name="checkmark-outline"></ion-icon>
   </ion-button>
@@ -26,7 +26,7 @@
     <br />
     {{results.report}}
   </h3>
-  <ion-button color="medium" class="ballot-btns" (click)="rpbtn()">
+  <ion-button color="danger" class="ballot-btns" (click)="rpbtn()">
     {{results.rap}}
     <ion-icon slot="end" name="help-outline"></ion-icon>
   </ion-button>

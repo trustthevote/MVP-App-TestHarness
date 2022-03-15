@@ -23,8 +23,7 @@
     "ballot_comp": {
       "thank_you": "Thank you",
       "choose_a_return": "Choose A Return",
-      "physical_return": "Physical Return",
-      "requires_printer": "Requires a Printer",
+      "physical_return": "Physical Return. This option requires a printer.",
       "online_ballot_return": "Digital Return"
     },
 
@@ -343,6 +342,14 @@
       "back": "Report A Problem",
       "print": "Print",
       "try_again": "Try Again"
+    },
+
+    "cannot_see_ballot_page": {
+      "first_csb_text": "It looks like you didn't enter the ballot checking code in the VerifyMyBallot site.",
+      "second_csb_text": "Tap Retry to try again. Be sure to enter the code into the VerifyMyBallot site before you tap the Code Entered button in this app.",
+      "third_csb_text": "You can review the step-by-step instructions at",
+      "link_csb": "electionwebsite.gov",
+      "back_btn_csb": "retry"
     },
 
     "provide_information": "Provide Information",
