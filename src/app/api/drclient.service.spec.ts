@@ -75,7 +75,7 @@ describe('DrClientService', () => {
     });
     it('should resolve any other acceptable ID', async () => {
       service.validateAccessCode('00009');
-      await expectAsync(service.constructBallot(PRECINCT_2_CVR)).toBeResolvedTo('zyx098-wvu765-tsr432-1234');
+      await expectAsync(service.constructBallot(PRECINCT_2_CVR)).toBeResolvedTo('7654321');
     });
   });
 
