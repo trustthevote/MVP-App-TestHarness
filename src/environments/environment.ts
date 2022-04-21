@@ -4,7 +4,6 @@
 
 export const environment = {
   production: false,
-  // note: this is a temporary value to satisfy function signatures; it does not suggest that a server should be running on port 3000
   url: 'http://localhost:3000/',
 };
 
